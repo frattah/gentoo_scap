@@ -4,7 +4,7 @@
     <oval:product_name>build_cpe.py from SCAP Security Guide</oval:product_name>
     <oval:product_version>ssg: [0, 1, 73], python: 3.12.2</oval:product_version>
     <oval:schema_version>5.11</oval:schema_version>
-    <oval:timestamp>2024-05-29T08:46:42</oval:timestamp>
+    <oval:timestamp>2024-05-29T09:35:50</oval:timestamp>
   </oval-def:generator>
   <oval-def:definitions>
     <oval-def:definition id="oval:ssg-installed_OS_is_gentoo:def:1" version="3" class="inventory">
@@ -18,7 +18,7 @@
       </oval-def:metadata>
       <oval-def:criteria comment="current OS is " operator="AND">
         <oval-def:extend_definition comment="Installed OS is part of the Unix family" definition_ref="oval:ssg-installed_OS_is_part_of_Unix_family:def:1"/>
-        <oval-def:criterion comment="Gentoo is installed" test_ref="oval:ssg-test_gentoo:tst:1"/>
+        <oval-def:criterion comment="Gentoo is installed" test_ref="oval:ssg-test_gentoo_release:tst:1"/>
       </oval-def:criteria>
     </oval-def:definition>
     <oval-def:definition id="oval:ssg-installed_OS_is_part_of_Unix_family:def:1" version="1" class="inventory">
@@ -47,8 +47,8 @@
     </oval-def:definition>
   </oval-def:definitions>
   <oval-def:tests>
-    <unix:file_test id="oval:ssg-test_gentoo:tst:1" version="1" check="all" comment="/etc/gentoo exists" check_existence="all_exist" state_operator="AND">
-      <unix:object object_ref="oval:ssg-obj_gentoo:obj:1"/>
+    <unix:file_test id="oval:ssg-test_gentoo_release:tst:1" version="1" check="all" comment="/etc/gentoo exists" check_existence="all_exist" state_operator="AND">
+      <unix:object object_ref="oval:ssg-obj_gentoo_release:obj:1"/>
     </unix:file_test>
     <ind:family_test id="oval:ssg-test_unix_family:tst:1" version="1" check="all" comment="Test installed OS is part of the unix family" state_operator="AND">
       <ind:object object_ref="oval:ssg-object_unix_family:obj:1"/>
@@ -59,8 +59,8 @@
     </linux:rpminfo_test>
   </oval-def:tests>
   <oval-def:objects>
-    <unix:file_object id="oval:ssg-obj_gentoo:obj:1" version="1" comment="check /etc/gentoo file">
-      <unix:filepath>/etc/gentoo</unix:filepath>
+    <unix:file_object id="oval:ssg-obj_gentoo_release:obj:1" version="1" comment="check /etc/gentoo-release file">
+      <unix:filepath>/etc/gentoo-release</unix:filepath>
     </unix:file_object>
     <ind:family_object id="oval:ssg-object_unix_family:obj:1" version="1"/>
     <linux:rpminfo_object id="oval:ssg-obj_inventory_test_package_shadow-utils_installed:obj:1" version="1">

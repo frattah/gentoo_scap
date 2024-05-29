@@ -23,7 +23,7 @@
       <ds:component-ref id="scap_org.open-scap_cref_ssg-gentoo-cpe-oval.xml" xlink:href="#scap_org.open-scap_comp_ssg-gentoo-cpe-oval.xml"/>
     </ds:checks>
   </ds:data-stream>
-  <ds:component id="scap_org.open-scap_comp_ssg-gentoo-cpe-dictionary.xml" timestamp="2024-05-29T10:46:44">
+  <ds:component id="scap_org.open-scap_comp_ssg-gentoo-cpe-dictionary.xml" timestamp="2024-05-29T11:35:53">
     <cpe-dict:cpe-list xsi:schemaLocation="http://cpe.mitre.org/dictionary/2.0 http://cpe.mitre.org/files/cpe-dictionary_2.1.xsd">
       <cpe-dict:cpe-item name="cpe:/o:gentoo:linux">
         <cpe-dict:title xml:lang="en-us">Gentoo</cpe-dict:title>
@@ -31,7 +31,7 @@
       </cpe-dict:cpe-item>
     </cpe-dict:cpe-list>
   </ds:component>
-  <ds:component id="scap_org.open-scap_comp_ssg-gentoo-xccdf.xml" timestamp="2024-05-29T10:46:42">
+  <ds:component id="scap_org.open-scap_comp_ssg-gentoo-xccdf.xml" timestamp="2024-05-29T11:35:50">
     <xccdf-1.2:Benchmark id="xccdf_org.ssgproject.content_benchmark_GENTOO" xsi:schemaLocation="http://checklists.nist.gov/xccdf/1.2 xccdf-1.2.xsd" style="SCAP_1.2" resolved="true" xml:lang="en-US">
       <xccdf-1.2:status date="2024-05-29">draft</xccdf-1.2:status>
       <xccdf-1.2:title>Guide to the Secure Configuration of Gentoo</xccdf-1.2:title>
@@ -590,13 +590,13 @@ behavior that may result.</xccdf-1.2:rationale>
       </xccdf-1.2:Group>
     </xccdf-1.2:Benchmark>
   </ds:component>
-  <ds:component id="scap_org.open-scap_comp_ssg-gentoo-oval.xml" timestamp="2024-05-29T10:46:42">
+  <ds:component id="scap_org.open-scap_comp_ssg-gentoo-oval.xml" timestamp="2024-05-29T11:35:50">
     <oval-def:oval_definitions xsi:schemaLocation="http://oval.mitre.org/XMLSchema/oval-common-5 oval-common-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5 oval-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#independent independent-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#unix unix-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#linux linux-definitions-schema.xsd">
       <oval-def:generator>
         <oval:product_name>OVALFileLinker from SCAP Security Guide</oval:product_name>
         <oval:product_version>ssg: [0, 1, 73], python: 3.12.2</oval:product_version>
         <oval:schema_version>5.11</oval:schema_version>
-        <oval:timestamp>2024-05-29T08:46:20</oval:timestamp>
+        <oval:timestamp>2024-05-29T09:35:30</oval:timestamp>
       </oval-def:generator>
       <oval-def:definitions>
         <oval-def:definition id="oval:ssg-accounts_password_minlen_login_defs:def:1" version="3" class="compliance">
@@ -645,13 +645,13 @@ behavior that may result.</xccdf-1.2:rationale>
       </oval-def:variables>
     </oval-def:oval_definitions>
   </ds:component>
-  <ds:component id="scap_org.open-scap_comp_ssg-gentoo-ocil.xml" timestamp="2024-05-29T10:46:42">
+  <ds:component id="scap_org.open-scap_comp_ssg-gentoo-ocil.xml" timestamp="2024-05-29T11:35:50">
     <ocil:ocil>
       <ocil:generator>
         <ocil:product_name>build_shorthand.py from SCAP Security Guide</ocil:product_name>
         <ocil:product_version>ssg: 0.1.73</ocil:product_version>
         <ocil:schema_version>2.0</ocil:schema_version>
-        <ocil:timestamp>2024-05-29T08:46:20</ocil:timestamp>
+        <ocil:timestamp>2024-05-29T09:35:30</ocil:timestamp>
       </ocil:generator>
       <ocil:questionnaires>
         <ocil:questionnaire id="ocil:ssg-accounts_password_minlen_login_defs_ocil:questionnaire:1">
@@ -682,13 +682,13 @@ The DoD requirement is 15.
       </ocil:questions>
     </ocil:ocil>
   </ds:component>
-  <ds:component id="scap_org.open-scap_comp_ssg-gentoo-cpe-oval.xml" timestamp="2024-05-29T10:46:44">
+  <ds:component id="scap_org.open-scap_comp_ssg-gentoo-cpe-oval.xml" timestamp="2024-05-29T11:35:53">
     <oval-def:oval_definitions xsi:schemaLocation="http://oval.mitre.org/XMLSchema/oval-common-5 oval-common-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5 oval-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#independent independent-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#unix unix-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#linux linux-definitions-schema.xsd">
       <oval-def:generator>
         <oval:product_name>build_cpe.py from SCAP Security Guide</oval:product_name>
         <oval:product_version>ssg: [0, 1, 73], python: 3.12.2</oval:product_version>
         <oval:schema_version>5.11</oval:schema_version>
-        <oval:timestamp>2024-05-29T08:46:42</oval:timestamp>
+        <oval:timestamp>2024-05-29T09:35:50</oval:timestamp>
       </oval-def:generator>
       <oval-def:definitions>
         <oval-def:definition id="oval:ssg-installed_OS_is_gentoo:def:1" version="3" class="inventory">
@@ -702,7 +702,7 @@ The DoD requirement is 15.
           </oval-def:metadata>
           <oval-def:criteria comment="current OS is " operator="AND">
             <oval-def:extend_definition comment="Installed OS is part of the Unix family" definition_ref="oval:ssg-installed_OS_is_part_of_Unix_family:def:1"/>
-            <oval-def:criterion comment="Gentoo is installed" test_ref="oval:ssg-test_gentoo:tst:1"/>
+            <oval-def:criterion comment="Gentoo is installed" test_ref="oval:ssg-test_gentoo_release:tst:1"/>
           </oval-def:criteria>
         </oval-def:definition>
         <oval-def:definition id="oval:ssg-installed_OS_is_part_of_Unix_family:def:1" version="1" class="inventory">
@@ -731,8 +731,8 @@ The DoD requirement is 15.
         </oval-def:definition>
       </oval-def:definitions>
       <oval-def:tests>
-        <unix:file_test id="oval:ssg-test_gentoo:tst:1" version="1" check="all" comment="/etc/gentoo exists" check_existence="all_exist" state_operator="AND">
-          <unix:object object_ref="oval:ssg-obj_gentoo:obj:1"/>
+        <unix:file_test id="oval:ssg-test_gentoo_release:tst:1" version="1" check="all" comment="/etc/gentoo exists" check_existence="all_exist" state_operator="AND">
+          <unix:object object_ref="oval:ssg-obj_gentoo_release:obj:1"/>
         </unix:file_test>
         <ind:family_test id="oval:ssg-test_unix_family:tst:1" version="1" check="all" comment="Test installed OS is part of the unix family" state_operator="AND">
           <ind:object object_ref="oval:ssg-object_unix_family:obj:1"/>
@@ -743,8 +743,8 @@ The DoD requirement is 15.
         </linux:rpminfo_test>
       </oval-def:tests>
       <oval-def:objects>
-        <unix:file_object id="oval:ssg-obj_gentoo:obj:1" version="1" comment="check /etc/gentoo file">
-          <unix:filepath>/etc/gentoo</unix:filepath>
+        <unix:file_object id="oval:ssg-obj_gentoo_release:obj:1" version="1" comment="check /etc/gentoo-release file">
+          <unix:filepath>/etc/gentoo-release</unix:filepath>
         </unix:file_object>
         <ind:family_object id="oval:ssg-object_unix_family:obj:1" version="1"/>
         <linux:rpminfo_object id="oval:ssg-obj_inventory_test_package_shadow-utils_installed:obj:1" version="1">
