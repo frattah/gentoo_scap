@@ -4,7 +4,7 @@
     <ocil:product_name>build_shorthand.py from SCAP Security Guide</ocil:product_name>
     <ocil:product_version>ssg: 0.1.73</ocil:product_version>
     <ocil:schema_version>2.0</ocil:schema_version>
-    <ocil:timestamp>2024-05-29T15:03:41</ocil:timestamp>
+    <ocil:timestamp>2024-05-29T18:31:16</ocil:timestamp>
   </ocil:generator>
   <ocil:questionnaires>
     <ocil:questionnaire id="ocil:ssg-accounts_password_minlen_login_defs_ocil:questionnaire:1">
