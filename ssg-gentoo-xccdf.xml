@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <xccdf-1.2:Benchmark xmlns:cpe-lang="http://cpe.mitre.org/language/2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xccdf-1.2="http://checklists.nist.gov/xccdf/1.2" id="xccdf_org.ssgproject.content_benchmark_GENTOO" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://checklists.nist.gov/xccdf/1.2 xccdf-1.2.xsd" style="SCAP_1.2" resolved="true" xml:lang="en-US">
-  <xccdf-1.2:status date="2024-05-29">draft</xccdf-1.2:status>
+  <xccdf-1.2:status date="2024-05-31">draft</xccdf-1.2:status>
   <xccdf-1.2:title>Guide to the Secure Configuration of Gentoo</xccdf-1.2:title>
   <xccdf-1.2:description>This guide presents a catalog of security-relevant
 configuration settings for Gentoo. It is a rendering of
@@ -67,9 +67,9 @@ respective companies.</xccdf-1.2:rear-matter>
   <xccdf-1.2:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cunix-linux">stigid</xccdf-1.2:reference>
   <xccdf-1.2:reference href="https://public.cyber.mil/stigs/srg-stig-tools/">stigref</xccdf-1.2:reference>
   <cpe-lang:platform-specification>
-    <cpe-lang:platform id="package_shadow-utils">
+    <cpe-lang:platform id="machine">
       <cpe-lang:logical-test operator="AND" negate="false">
-        <cpe-lang:check-fact-ref system="http://oval.mitre.org/XMLSchema/oval-definitions-5" href="ssg-gentoo-cpe-oval.xml" id-ref="oval:ssg-package_shadow-utils:def:1" />
+        <cpe-lang:check-fact-ref system="http://oval.mitre.org/XMLSchema/oval-definitions-5" href="ssg-gentoo-cpe-oval.xml" id-ref="oval:ssg-installed_env_is_a_machine:def:1" />
       </cpe-lang:logical-test>
     </cpe-lang:platform>
   </cpe-lang:platform-specification>
@@ -378,7 +378,7 @@ respective companies.</xccdf-1.2:rear-matter>
     <xccdf-1.2:description override="true">This profile contains rules to ensure standard security baseline
 of a Gentoo system. Regardless of your system's workload
 all of these checks should pass.</xccdf-1.2:description>
-    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_accounts_password_minlen_login_defs" selected="true" />
+    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_accounts_tmout" selected="true" />
   </xccdf-1.2:Profile>
   <xccdf-1.2:Group id="xccdf_org.ssgproject.content_group_system">
     <xccdf-1.2:title>System Settings</xccdf-1.2:title>
@@ -393,166 +393,182 @@ access to accounts, particularly to privileged accounts, is a
 necessary part of securing a system. This section introduces
 mechanisms for restricting access to accounts under
 Gentoo.</xccdf-1.2:description>
-      <xccdf-1.2:Group id="xccdf_org.ssgproject.content_group_accounts-restrictions">
-        <xccdf-1.2:title>Protect Accounts by Restricting Password-Based Login</xccdf-1.2:title>
-        <xccdf-1.2:description>Conventionally, Unix shell accounts are accessed by
-providing a username and password to a login program, which tests
-these values for correctness using the <html:code>/etc/passwd</html:code> and
-<html:code>/etc/shadow</html:code> files. Password-based login is vulnerable to
-guessing of weak passwords, and to sniffing and man-in-the-middle
-attacks against passwords entered over a network or at an insecure
-console. Therefore, mechanisms for accessing accounts by entering
-usernames and passwords should be restricted to those which are
-operationally necessary.</xccdf-1.2:description>
-        <xccdf-1.2:Group id="xccdf_org.ssgproject.content_group_password_expiration">
-          <xccdf-1.2:title>Set Password Expiration Parameters</xccdf-1.2:title>
-          <xccdf-1.2:description>The file <html:code>/etc/login.defs</html:code> controls several
-password-related settings. Programs such as <html:code>passwd</html:code>,
-<html:code>su</html:code>, and
-<html:code>login</html:code> consult <html:code>/etc/login.defs</html:code> to determine
-behavior with regard to password aging, expiration warnings,
-and length. See the man page <html:code>login.defs(5)</html:code> for more information.
-<html:br />
-            <html:br />
-Users should be forced to change their passwords, in order to
-decrease the utility of compromised passwords. However, the need to
-change passwords often should be balanced against the risk that
-users will reuse or write down passwords if forced to change them
-too often. Forcing password changes every 90-360 days, depending on
-the environment, is recommended. Set the appropriate value as
-<html:code>PASS_MAX_DAYS</html:code> and apply it to existing accounts with the
-<html:code>-M</html:code> flag.
-<html:br />
-            <html:br />
-The <html:code>PASS_MIN_DAYS</html:code> (<html:code>-m</html:code>) setting prevents password
-changes for 7 days after the first change, to discourage password
-cycling. If you use this setting, train users to contact an administrator
-for an emergency password change in case a new password becomes
-compromised. The <html:code>PASS_WARN_AGE</html:code> (<html:code>-W</html:code>) setting gives
-users 7 days of warnings at login time that their passwords are about to expire.
-<html:br />
-            <html:br />
-For example, for each existing human user <html:i>USER</html:i>, expiration parameters
-could be adjusted to a 180 day maximum password age, 7 day minimum password
-age, and 7 day warning period with the following command:
-<html:pre>$ sudo chage -M 180 -m 7 -W 7 USER</html:pre>
-          </xccdf-1.2:description>
-          <xccdf-1.2:Value id="xccdf_org.ssgproject.content_value_var_accounts_password_minlen_login_defs" type="number">
-            <xccdf-1.2:title>minimum password length</xccdf-1.2:title>
-            <xccdf-1.2:description>Minimum number of characters in password</xccdf-1.2:description>
-            <xccdf-1.2:warning category="general">This will only check new passwords</xccdf-1.2:warning>
-            <xccdf-1.2:value selector="10">10</xccdf-1.2:value>
-            <xccdf-1.2:value selector="12">12</xccdf-1.2:value>
-            <xccdf-1.2:value selector="14">14</xccdf-1.2:value>
-            <xccdf-1.2:value selector="15">15</xccdf-1.2:value>
-            <xccdf-1.2:value selector="18">18</xccdf-1.2:value>
-            <xccdf-1.2:value selector="20">20</xccdf-1.2:value>
-            <xccdf-1.2:value selector="6">6</xccdf-1.2:value>
-            <xccdf-1.2:value selector="8">8</xccdf-1.2:value>
-            <xccdf-1.2:value>15</xccdf-1.2:value>
-          </xccdf-1.2:Value>
-          <xccdf-1.2:Rule selected="false" id="xccdf_org.ssgproject.content_rule_accounts_password_minlen_login_defs" severity="medium">
-            <xccdf-1.2:title>Set Password Minimum Length in login.defs</xccdf-1.2:title>
-            <xccdf-1.2:description>To specify password length requirements for new accounts, edit the file
-<html:code>/etc/login.defs</html:code> and add or correct the following line:
-<html:pre>PASS_MIN_LEN <xccdf-1.2:sub idref="xccdf_org.ssgproject.content_value_var_accounts_password_minlen_login_defs" use="legacy" />
-              </html:pre>
-              <html:br />
-              <html:br />
-The DoD requirement is <html:code>15</html:code>.
-The FISMA requirement is <html:code>12</html:code>.
-The profile requirement is
-<html:code>
-                <xccdf-1.2:sub idref="xccdf_org.ssgproject.content_value_var_accounts_password_minlen_login_defs" use="legacy" />
-              </html:code>.
-If a program consults <html:code>/etc/login.defs</html:code> and also another PAM module
-(such as <html:code>pam_pwquality</html:code>) during a password change operation, then
-the most restrictive must be satisfied. See PAM section for more
-information about enforcing password quality requirements.</xccdf-1.2:description>
-            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">1</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">12</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">15</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">16</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">5</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.fbi.gov/file-repository/cjis-security-policy-v5_5_20160601-2-1.pdf">5.6.2.1</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.04</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.05</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.07</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.10</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS06.03</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS06.10</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-171.pdf">3.5.7</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://public.cyber.mil/stigs/cci/">CCI-000205</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.2.2</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.5.1</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.5.2</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.1</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.2</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.3</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.4</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.5</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.6</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.7</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.8</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.9</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.7.2</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.7.4</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.1</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.10</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.2</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.3</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.4</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.5</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.7</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.8</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.9</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 2.1</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">0421</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">0422</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">0431</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">0974</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1173</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1401</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1504</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1505</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1546</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1557</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1558</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1559</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1560</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1561</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.18.1.4</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.1.1</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.1</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.2</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.3</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.4</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.6</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.3.1</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.2</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.3</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">IA-5(f)</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">IA-5(1)(a)</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">CM-6(a)</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-1</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-6</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-7</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000078-GPOS-00046</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R31</xccdf-1.2:reference>
-            <xccdf-1.2:rationale>Requiring a minimum password length makes password
-cracking attacks more difficult by ensuring a larger
-search space. However, any security benefit from an onerous requirement
-must be carefully weighed against usability problems, support costs, or counterproductive
-behavior that may result.</xccdf-1.2:rationale>
-            <xccdf-1.2:platform idref="#package_shadow-utils" />
-            <xccdf-1.2:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-              <xccdf-1.2:check-export export-name="oval:ssg-var_accounts_password_minlen_login_defs:var:1" value-id="xccdf_org.ssgproject.content_value_var_accounts_password_minlen_login_defs" /><xccdf-1.2:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-accounts_password_minlen_login_defs:def:1" />
-            </xccdf-1.2:check>
-            <xccdf-1.2:check system="http://scap.nist.gov/schema/ocil/2">
-              <xccdf-1.2:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-accounts_password_minlen_login_defs_ocil:questionnaire:1" />
-            </xccdf-1.2:check>
-          </xccdf-1.2:Rule>
-        </xccdf-1.2:Group>
+      <xccdf-1.2:Group id="xccdf_org.ssgproject.content_group_accounts-session">
+        <xccdf-1.2:title>Secure Session Configuration Files for Login Accounts</xccdf-1.2:title>
+        <xccdf-1.2:description>When a user logs into a Unix account, the system
+configures the user's session by reading a number of files. Many of
+these files are located in the user's home directory, and may have
+weak permissions as a result of user error or misconfiguration. If
+an attacker can modify or even read certain types of account
+configuration information, they can often gain full access to the
+affected user's account. Therefore, it is important to test and
+correct configuration file permissions for interactive accounts,
+particularly those of privileged users such as root or system
+administrators.</xccdf-1.2:description>
+        <xccdf-1.2:Value id="xccdf_org.ssgproject.content_value_var_accounts_tmout" type="number">
+          <xccdf-1.2:title>Account Inactivity Timeout (seconds)</xccdf-1.2:title>
+          <xccdf-1.2:description>In an interactive shell, the value is interpreted as the
+number of seconds to wait for input after issuing the primary prompt.
+Bash terminates after waiting for that number of seconds if input does
+not arrive.</xccdf-1.2:description>
+          <xccdf-1.2:value selector="30_min">1800</xccdf-1.2:value>
+          <xccdf-1.2:value selector="10_min">600</xccdf-1.2:value>
+          <xccdf-1.2:value selector="15_min">900</xccdf-1.2:value>
+          <xccdf-1.2:value selector="5_min">300</xccdf-1.2:value>
+          <xccdf-1.2:value>600</xccdf-1.2:value>
+        </xccdf-1.2:Value>
+        <xccdf-1.2:Rule selected="false" id="xccdf_org.ssgproject.content_rule_accounts_tmout" severity="medium">
+          <xccdf-1.2:title>Set Interactive Session Timeout</xccdf-1.2:title>
+          <xccdf-1.2:description>Setting the <html:code>TMOUT</html:code> option in <html:code>/etc/profile</html:code> ensures that
+all user sessions will terminate based on inactivity.
+The value of TMOUT should be exported and read only.
+The <html:code>TMOUT</html:code>
+
+setting in a file loaded by <html:code>/etc/profile</html:code>, e.g.
+<html:code>/etc/profile.d/tmout.sh</html:code> should read as follows:
+<html:pre>typeset -xr TMOUT=<xccdf-1.2:sub idref="xccdf_org.ssgproject.content_value_var_accounts_tmout" use="legacy" />
+            </html:pre>
+or
+<html:pre>declare -xr TMOUT=<xccdf-1.2:sub idref="xccdf_org.ssgproject.content_value_var_accounts_tmout" use="legacy" />
+            </html:pre>
+Using the <html:code>typeset</html:code> keyword is preferred for wider compatibility with ksh and other shells.</xccdf-1.2:description>
+          <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">1</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">12</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">15</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">16</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.04</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.10</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS06.10</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-171.pdf">3.1.11</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://public.cyber.mil/stigs/cci/">CCI-000057</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://public.cyber.mil/stigs/cci/">CCI-001133</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://public.cyber.mil/stigs/cci/">CCI-002361</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.1</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.2</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.3</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.4</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.5</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.6</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.7</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.8</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.9</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.1</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.10</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.2</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.5</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.7</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.8</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.9</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.18.1.4</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.1</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.4</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.3.1</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.2</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.3</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-004-6 R2.2.3</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.2</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.3.1</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.3.2</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.3.3</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">AC-12</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">SC-10</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">AC-2(5)</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">CM-6(a)</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-7</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://www.niap-ccevs.org/Profile/PP.cfm">FMT_MOF_EXT.1</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000163-GPOS-00072</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000029-GPOS-00010</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R32</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf">8.6.1</xccdf-1.2:reference>
+          <xccdf-1.2:rationale>Terminating an idle session within a short time period reduces
+the window of opportunity for unauthorized personnel to take control of a
+management session enabled on the console or console port that has been
+left unattended.</xccdf-1.2:rationale>
+          <xccdf-1.2:platform idref="#machine" />
+          <xccdf-1.2:fix system="urn:xccdf:fix:script:sh" id="accounts_tmout"># Remediation is applicable only in certain platforms
+if [ ! -f /.dockerenv ] &amp;&amp; [ ! -f /run/.containerenv ]; then
+
+var_accounts_tmout='<xccdf-1.2:sub idref="xccdf_org.ssgproject.content_value_var_accounts_tmout" use="legacy" />'
+
+
+# if 0, no occurence of tmout found, if 1, occurence found
+tmout_found=0
+
+
+for f in /etc/profile /etc/profile.d/*.sh; do
+
+    if grep --silent '^[^#].*TMOUT' $f; then
+        sed -i -E "s/^(.*)TMOUT\s*=\s*(\w|\$)*(.*)$/typeset -xr TMOUT=$var_accounts_tmout\3/g" $f
+        tmout_found=1
+    fi
+done
+
+if [ $tmout_found -eq 0 ]; then
+        echo -e "\n# Set TMOUT to $var_accounts_tmout per security requirements" &gt;&gt; /etc/profile.d/tmout.sh
+        echo "typeset -xr TMOUT=$var_accounts_tmout" &gt;&gt; /etc/profile.d/tmout.sh
+fi
+
+else
+    &gt;&amp;2 echo 'Remediation is not applicable, nothing was done'
+fi
+</xccdf-1.2:fix>
+          <xccdf-1.2:fix system="urn:xccdf:fix:script:ansible" id="accounts_tmout" complexity="low" disruption="low" reboot="false" strategy="restrict">- name: XCCDF Value var_accounts_tmout # promote to variable
+  set_fact:
+    var_accounts_tmout: !!str <xccdf-1.2:sub idref="xccdf_org.ssgproject.content_value_var_accounts_tmout" use="legacy" />
+  tags:
+    - always
+
+- name: Correct any occurrence of TMOUT in /etc/profile
+  replace:
+    path: /etc/profile
+    regexp: ^[^#].*TMOUT=.*
+    replace: typeset -xr TMOUT={{ var_accounts_tmout }}
+  register: profile_replaced
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  tags:
+  - NIST-800-171-3.1.11
+  - NIST-800-53-AC-12
+  - NIST-800-53-AC-2(5)
+  - NIST-800-53-CM-6(a)
+  - NIST-800-53-SC-10
+  - PCI-DSSv4-8.6.1
+  - accounts_tmout
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+
+- name: Set Interactive Session Timeout
+  lineinfile:
+    path: /etc/profile.d/tmout.sh
+    create: true
+    regexp: TMOUT=
+    line: typeset -xr TMOUT={{ var_accounts_tmout }}
+    state: present
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  tags:
+  - NIST-800-171-3.1.11
+  - NIST-800-53-AC-12
+  - NIST-800-53-AC-2(5)
+  - NIST-800-53-CM-6(a)
+  - NIST-800-53-SC-10
+  - PCI-DSSv4-8.6.1
+  - accounts_tmout
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+</xccdf-1.2:fix>
+          <xccdf-1.2:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+            <xccdf-1.2:check-export export-name="oval:ssg-var_accounts_tmout:var:1" value-id="xccdf_org.ssgproject.content_value_var_accounts_tmout" /><xccdf-1.2:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-accounts_tmout:def:1" />
+          </xccdf-1.2:check>
+          <xccdf-1.2:check system="http://scap.nist.gov/schema/ocil/2">
+            <xccdf-1.2:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-accounts_tmout_ocil:questionnaire:1" />
+          </xccdf-1.2:check>
+        </xccdf-1.2:Rule>
       </xccdf-1.2:Group>
     </xccdf-1.2:Group>
   </xccdf-1.2:Group>

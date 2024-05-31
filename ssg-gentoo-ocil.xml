@@ -4,18 +4,18 @@
     <ocil:product_name>build_shorthand.py from SCAP Security Guide</ocil:product_name>
     <ocil:product_version>ssg: 0.1.73</ocil:product_version>
     <ocil:schema_version>2.0</ocil:schema_version>
-    <ocil:timestamp>2024-05-29T18:31:16</ocil:timestamp>
+    <ocil:timestamp>2024-05-31T08:00:05</ocil:timestamp>
   </ocil:generator>
   <ocil:questionnaires>
-    <ocil:questionnaire id="ocil:ssg-accounts_password_minlen_login_defs_ocil:questionnaire:1">
-      <ocil:title>Set Password Minimum Length in login.defs</ocil:title>
+    <ocil:questionnaire id="ocil:ssg-accounts_tmout_ocil:questionnaire:1">
+      <ocil:title>Set Interactive Session Timeout</ocil:title>
       <ocil:actions>
-        <ocil:test_action_ref>ocil:ssg-accounts_password_minlen_login_defs_action:testaction:1</ocil:test_action_ref>
+        <ocil:test_action_ref>ocil:ssg-accounts_tmout_action:testaction:1</ocil:test_action_ref>
       </ocil:actions>
     </ocil:questionnaire>
   </ocil:questionnaires>
   <ocil:test_actions>
-    <ocil:boolean_question_test_action id="ocil:ssg-accounts_password_minlen_login_defs_action:testaction:1" question_ref="ocil:ssg-accounts_password_minlen_login_defs_question:question:1">
+    <ocil:boolean_question_test_action id="ocil:ssg-accounts_tmout_action:testaction:1" question_ref="ocil:ssg-accounts_tmout_question:question:1">
       <ocil:when_true>
         <ocil:result>PASS</ocil:result>
       </ocil:when_true>
@@ -25,11 +25,15 @@
     </ocil:boolean_question_test_action>
   </ocil:test_actions>
   <ocil:questions>
-    <ocil:boolean_question id="ocil:ssg-accounts_password_minlen_login_defs_question:question:1">
-      <ocil:question_text>To check the minimum password length, run the command:
-$ grep PASS_MIN_LEN /etc/login.defs
-The DoD requirement is 15.
-      Is it the case that it is not set to the required value?
+    <ocil:boolean_question id="ocil:ssg-accounts_tmout_question:question:1">
+      <ocil:question_text>Run the following command to ensure the TMOUT value is configured for all users
+on the system:
+
+$ sudo grep TMOUT /etc/profile /etc/profile.d/*.sh
+
+The output should return the following:
+TMOUT=
+      Is it the case that value of TMOUT is not less than or equal to expected setting?
       </ocil:question_text>
     </ocil:boolean_question>
   </ocil:questions>

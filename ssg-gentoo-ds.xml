@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ds:data-stream-collection xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:cpe-dict="http://cpe.mitre.org/dictionary/2.0" xmlns:cpe-lang="http://cpe.mitre.org/language/2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ds="http://scap.nist.gov/schema/scap/source/1.2" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:ind="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" xmlns:linux="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux" xmlns:ocil="http://scap.nist.gov/schema/ocil/2.0" xmlns:oval="http://oval.mitre.org/XMLSchema/oval-common-5" xmlns:oval-def="http://oval.mitre.org/XMLSchema/oval-definitions-5" xmlns:unix="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" xmlns:xccdf-1.2="http://checklists.nist.gov/xccdf/1.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="scap_org.open-scap_collection_from_xccdf_ssg-gentoo-xccdf.xml" schematron-version="1.3">
+<ds:data-stream-collection xmlns:cat="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:cpe-dict="http://cpe.mitre.org/dictionary/2.0" xmlns:cpe-lang="http://cpe.mitre.org/language/2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ds="http://scap.nist.gov/schema/scap/source/1.2" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:ind="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" xmlns:ocil="http://scap.nist.gov/schema/ocil/2.0" xmlns:oval="http://oval.mitre.org/XMLSchema/oval-common-5" xmlns:oval-def="http://oval.mitre.org/XMLSchema/oval-definitions-5" xmlns:unix="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" xmlns:xccdf-1.2="http://checklists.nist.gov/xccdf/1.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="scap_org.open-scap_collection_from_xccdf_ssg-gentoo-xccdf.xml" schematron-version="1.3">
   <ds:data-stream id="scap_org.open-scap_datastream_from_xccdf_ssg-gentoo-xccdf.xml" scap-version="1.3" use-case="OTHER">
     <ds:dictionaries>
       <ds:component-ref id="scap_org.open-scap_cref_ssg-gentoo-cpe-dictionary.xml" xlink:href="#scap_org.open-scap_comp_ssg-gentoo-cpe-dictionary.xml">
@@ -23,7 +23,7 @@
       <ds:component-ref id="scap_org.open-scap_cref_ssg-gentoo-cpe-oval.xml" xlink:href="#scap_org.open-scap_comp_ssg-gentoo-cpe-oval.xml"/>
     </ds:checks>
   </ds:data-stream>
-  <ds:component id="scap_org.open-scap_comp_ssg-gentoo-cpe-dictionary.xml" timestamp="2024-05-29T20:31:31">
+  <ds:component id="scap_org.open-scap_comp_ssg-gentoo-cpe-dictionary.xml" timestamp="2024-05-31T10:00:26">
     <cpe-dict:cpe-list xsi:schemaLocation="http://cpe.mitre.org/dictionary/2.0 http://cpe.mitre.org/files/cpe-dictionary_2.1.xsd">
       <cpe-dict:cpe-item name="cpe:/o:gentoo:linux">
         <cpe-dict:title xml:lang="en-us">Gentoo</cpe-dict:title>
@@ -31,9 +31,9 @@
       </cpe-dict:cpe-item>
     </cpe-dict:cpe-list>
   </ds:component>
-  <ds:component id="scap_org.open-scap_comp_ssg-gentoo-xccdf.xml" timestamp="2024-05-29T20:31:29">
+  <ds:component id="scap_org.open-scap_comp_ssg-gentoo-xccdf.xml" timestamp="2024-05-31T10:00:24">
     <xccdf-1.2:Benchmark id="xccdf_org.ssgproject.content_benchmark_GENTOO" xsi:schemaLocation="http://checklists.nist.gov/xccdf/1.2 xccdf-1.2.xsd" style="SCAP_1.2" resolved="true" xml:lang="en-US">
-      <xccdf-1.2:status date="2024-05-29">draft</xccdf-1.2:status>
+      <xccdf-1.2:status date="2024-05-31">draft</xccdf-1.2:status>
       <xccdf-1.2:title>Guide to the Secure Configuration of Gentoo</xccdf-1.2:title>
       <xccdf-1.2:description>This guide presents a catalog of security-relevant
 configuration settings for Gentoo. It is a rendering of
@@ -100,9 +100,9 @@ respective companies.</xccdf-1.2:rear-matter>
       <xccdf-1.2:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cunix-linux">stigid</xccdf-1.2:reference>
       <xccdf-1.2:reference href="https://public.cyber.mil/stigs/srg-stig-tools/">stigref</xccdf-1.2:reference>
       <cpe-lang:platform-specification>
-        <cpe-lang:platform id="package_shadow-utils">
+        <cpe-lang:platform id="machine">
           <cpe-lang:logical-test operator="AND" negate="false">
-            <cpe-lang:check-fact-ref system="http://oval.mitre.org/XMLSchema/oval-definitions-5" href="ssg-gentoo-cpe-oval.xml" id-ref="oval:ssg-package_shadow-utils:def:1"/>
+            <cpe-lang:check-fact-ref system="http://oval.mitre.org/XMLSchema/oval-definitions-5" href="ssg-gentoo-cpe-oval.xml" id-ref="oval:ssg-installed_env_is_a_machine:def:1"/>
           </cpe-lang:logical-test>
         </cpe-lang:platform>
       </cpe-lang:platform-specification>
@@ -411,7 +411,7 @@ respective companies.</xccdf-1.2:rear-matter>
         <xccdf-1.2:description override="true">This profile contains rules to ensure standard security baseline
 of a Gentoo system. Regardless of your system's workload
 all of these checks should pass.</xccdf-1.2:description>
-        <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_accounts_password_minlen_login_defs" selected="true"/>
+        <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_accounts_tmout" selected="true"/>
       </xccdf-1.2:Profile>
       <xccdf-1.2:Group id="xccdf_org.ssgproject.content_group_system">
         <xccdf-1.2:title>System Settings</xccdf-1.2:title>
@@ -426,243 +426,285 @@ access to accounts, particularly to privileged accounts, is a
 necessary part of securing a system. This section introduces
 mechanisms for restricting access to accounts under
 Gentoo.</xccdf-1.2:description>
-          <xccdf-1.2:Group id="xccdf_org.ssgproject.content_group_accounts-restrictions">
-            <xccdf-1.2:title>Protect Accounts by Restricting Password-Based Login</xccdf-1.2:title>
-            <xccdf-1.2:description>Conventionally, Unix shell accounts are accessed by
-providing a username and password to a login program, which tests
-these values for correctness using the <html:code>/etc/passwd</html:code> and
-<html:code>/etc/shadow</html:code> files. Password-based login is vulnerable to
-guessing of weak passwords, and to sniffing and man-in-the-middle
-attacks against passwords entered over a network or at an insecure
-console. Therefore, mechanisms for accessing accounts by entering
-usernames and passwords should be restricted to those which are
-operationally necessary.</xccdf-1.2:description>
-            <xccdf-1.2:Group id="xccdf_org.ssgproject.content_group_password_expiration">
-              <xccdf-1.2:title>Set Password Expiration Parameters</xccdf-1.2:title>
-              <xccdf-1.2:description>The file <html:code>/etc/login.defs</html:code> controls several
-password-related settings. Programs such as <html:code>passwd</html:code>,
-<html:code>su</html:code>, and
-<html:code>login</html:code> consult <html:code>/etc/login.defs</html:code> to determine
-behavior with regard to password aging, expiration warnings,
-and length. See the man page <html:code>login.defs(5)</html:code> for more information.
-<html:br/>
-        <html:br/>
-Users should be forced to change their passwords, in order to
-decrease the utility of compromised passwords. However, the need to
-change passwords often should be balanced against the risk that
-users will reuse or write down passwords if forced to change them
-too often. Forcing password changes every 90-360 days, depending on
-the environment, is recommended. Set the appropriate value as
-<html:code>PASS_MAX_DAYS</html:code> and apply it to existing accounts with the
-<html:code>-M</html:code> flag.
-<html:br/>
-        <html:br/>
-The <html:code>PASS_MIN_DAYS</html:code> (<html:code>-m</html:code>) setting prevents password
-changes for 7 days after the first change, to discourage password
-cycling. If you use this setting, train users to contact an administrator
-for an emergency password change in case a new password becomes
-compromised. The <html:code>PASS_WARN_AGE</html:code> (<html:code>-W</html:code>) setting gives
-users 7 days of warnings at login time that their passwords are about to expire.
-<html:br/>
-        <html:br/>
-For example, for each existing human user <html:i>USER</html:i>, expiration parameters
-could be adjusted to a 180 day maximum password age, 7 day minimum password
-age, and 7 day warning period with the following command:
-<html:pre>$ sudo chage -M 180 -m 7 -W 7 USER</html:pre>
-       </xccdf-1.2:description>
-              <xccdf-1.2:Value id="xccdf_org.ssgproject.content_value_var_accounts_password_minlen_login_defs" type="number">
-                <xccdf-1.2:title>minimum password length</xccdf-1.2:title>
-                <xccdf-1.2:description>Minimum number of characters in password</xccdf-1.2:description>
-                <xccdf-1.2:warning category="general">This will only check new passwords</xccdf-1.2:warning>
-                <xccdf-1.2:value selector="10">10</xccdf-1.2:value>
-                <xccdf-1.2:value selector="12">12</xccdf-1.2:value>
-                <xccdf-1.2:value selector="14">14</xccdf-1.2:value>
-                <xccdf-1.2:value selector="15">15</xccdf-1.2:value>
-                <xccdf-1.2:value selector="18">18</xccdf-1.2:value>
-                <xccdf-1.2:value selector="20">20</xccdf-1.2:value>
-                <xccdf-1.2:value selector="6">6</xccdf-1.2:value>
-                <xccdf-1.2:value selector="8">8</xccdf-1.2:value>
-                <xccdf-1.2:value>15</xccdf-1.2:value>
-              </xccdf-1.2:Value>
-              <xccdf-1.2:Rule selected="false" id="xccdf_org.ssgproject.content_rule_accounts_password_minlen_login_defs" severity="medium">
-                <xccdf-1.2:title>Set Password Minimum Length in login.defs</xccdf-1.2:title>
-                <xccdf-1.2:description>To specify password length requirements for new accounts, edit the file
-<html:code>/etc/login.defs</html:code> and add or correct the following line:
-<html:pre>PASS_MIN_LEN <xccdf-1.2:sub idref="xccdf_org.ssgproject.content_value_var_accounts_password_minlen_login_defs" use="legacy"/>
-         </html:pre>
-         <html:br/>
-         <html:br/>
-The DoD requirement is <html:code>15</html:code>.
-The FISMA requirement is <html:code>12</html:code>.
-The profile requirement is
-<html:code><xccdf-1.2:sub idref="xccdf_org.ssgproject.content_value_var_accounts_password_minlen_login_defs" use="legacy"/></html:code>.
-If a program consults <html:code>/etc/login.defs</html:code> and also another PAM module
-(such as <html:code>pam_pwquality</html:code>) during a password change operation, then
-the most restrictive must be satisfied. See PAM section for more
-information about enforcing password quality requirements.</xccdf-1.2:description>
-                <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">1</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">12</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">15</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">16</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">5</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.fbi.gov/file-repository/cjis-security-policy-v5_5_20160601-2-1.pdf">5.6.2.1</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.04</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.05</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.07</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.10</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS06.03</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS06.10</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-171.pdf">3.5.7</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://public.cyber.mil/stigs/cci/">CCI-000205</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.2.2</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.5.1</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.5.2</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.1</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.2</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.3</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.4</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.5</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.6</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.7</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.8</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.9</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.7.2</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.7.4</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.1</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.10</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.2</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.3</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.4</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.5</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.7</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.8</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.9</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 2.1</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">0421</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">0422</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">0431</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">0974</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1173</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1401</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1504</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1505</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1546</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1557</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1558</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1559</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1560</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1561</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.18.1.4</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.1.1</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.1</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.2</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.3</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.4</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.6</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.3.1</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.2</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.3</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">IA-5(f)</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">IA-5(1)(a)</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">CM-6(a)</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-1</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-6</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-7</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000078-GPOS-00046</xccdf-1.2:reference>
-                <xccdf-1.2:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R31</xccdf-1.2:reference>
-                <xccdf-1.2:rationale>Requiring a minimum password length makes password
-cracking attacks more difficult by ensuring a larger
-search space. However, any security benefit from an onerous requirement
-must be carefully weighed against usability problems, support costs, or counterproductive
-behavior that may result.</xccdf-1.2:rationale>
-                <xccdf-1.2:platform idref="#package_shadow-utils"/>
-                <xccdf-1.2:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-                  <xccdf-1.2:check-export export-name="oval:ssg-var_accounts_password_minlen_login_defs:var:1" value-id="xccdf_org.ssgproject.content_value_var_accounts_password_minlen_login_defs"/>
-                  <xccdf-1.2:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-accounts_password_minlen_login_defs:def:1"/>
-                </xccdf-1.2:check>
-                <xccdf-1.2:check system="http://scap.nist.gov/schema/ocil/2">
-                  <xccdf-1.2:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-accounts_password_minlen_login_defs_ocil:questionnaire:1"/>
-                </xccdf-1.2:check>
-              </xccdf-1.2:Rule>
-            </xccdf-1.2:Group>
+          <xccdf-1.2:Group id="xccdf_org.ssgproject.content_group_accounts-session">
+            <xccdf-1.2:title>Secure Session Configuration Files for Login Accounts</xccdf-1.2:title>
+            <xccdf-1.2:description>When a user logs into a Unix account, the system
+configures the user's session by reading a number of files. Many of
+these files are located in the user's home directory, and may have
+weak permissions as a result of user error or misconfiguration. If
+an attacker can modify or even read certain types of account
+configuration information, they can often gain full access to the
+affected user's account. Therefore, it is important to test and
+correct configuration file permissions for interactive accounts,
+particularly those of privileged users such as root or system
+administrators.</xccdf-1.2:description>
+            <xccdf-1.2:Value id="xccdf_org.ssgproject.content_value_var_accounts_tmout" type="number">
+              <xccdf-1.2:title>Account Inactivity Timeout (seconds)</xccdf-1.2:title>
+              <xccdf-1.2:description>In an interactive shell, the value is interpreted as the
+number of seconds to wait for input after issuing the primary prompt.
+Bash terminates after waiting for that number of seconds if input does
+not arrive.</xccdf-1.2:description>
+              <xccdf-1.2:value selector="30_min">1800</xccdf-1.2:value>
+              <xccdf-1.2:value selector="10_min">600</xccdf-1.2:value>
+              <xccdf-1.2:value selector="15_min">900</xccdf-1.2:value>
+              <xccdf-1.2:value selector="5_min">300</xccdf-1.2:value>
+              <xccdf-1.2:value>600</xccdf-1.2:value>
+            </xccdf-1.2:Value>
+            <xccdf-1.2:Rule selected="false" id="xccdf_org.ssgproject.content_rule_accounts_tmout" severity="medium">
+              <xccdf-1.2:title>Set Interactive Session Timeout</xccdf-1.2:title>
+              <xccdf-1.2:description>Setting the <html:code>TMOUT</html:code> option in <html:code>/etc/profile</html:code> ensures that
+all user sessions will terminate based on inactivity.
+The value of TMOUT should be exported and read only.
+The <html:code>TMOUT</html:code>
+
+setting in a file loaded by <html:code>/etc/profile</html:code>, e.g.
+<html:code>/etc/profile.d/tmout.sh</html:code> should read as follows:
+<html:pre>typeset -xr TMOUT=<xccdf-1.2:sub idref="xccdf_org.ssgproject.content_value_var_accounts_tmout" use="legacy"/>
+        </html:pre>
+or
+<html:pre>declare -xr TMOUT=<xccdf-1.2:sub idref="xccdf_org.ssgproject.content_value_var_accounts_tmout" use="legacy"/>
+        </html:pre>
+Using the <html:code>typeset</html:code> keyword is preferred for wider compatibility with ksh and other shells.</xccdf-1.2:description>
+              <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">12</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">15</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">16</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.04</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.10</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS06.10</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-171.pdf">3.1.11</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://public.cyber.mil/stigs/cci/">CCI-000057</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://public.cyber.mil/stigs/cci/">CCI-001133</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://public.cyber.mil/stigs/cci/">CCI-002361</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.3</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.4</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.5</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.6</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.7</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.8</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.9</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.10</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.5</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.7</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.8</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.9</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.18.1.4</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.4</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.3.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.3</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-004-6 R2.2.3</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.3.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.3.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.3.3</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">AC-12</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">SC-10</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">AC-2(5)</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">CM-6(a)</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-7</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.niap-ccevs.org/Profile/PP.cfm">FMT_MOF_EXT.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000163-GPOS-00072</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000029-GPOS-00010</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R32</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf">8.6.1</xccdf-1.2:reference>
+              <xccdf-1.2:rationale>Terminating an idle session within a short time period reduces
+the window of opportunity for unauthorized personnel to take control of a
+management session enabled on the console or console port that has been
+left unattended.</xccdf-1.2:rationale>
+              <xccdf-1.2:platform idref="#machine"/>
+              <xccdf-1.2:fix system="urn:xccdf:fix:script:sh" id="accounts_tmout"># Remediation is applicable only in certain platforms
+if [ ! -f /.dockerenv ] &amp;&amp; [ ! -f /run/.containerenv ]; then
+
+var_accounts_tmout='<xccdf-1.2:sub idref="xccdf_org.ssgproject.content_value_var_accounts_tmout" use="legacy"/>'
+
+
+# if 0, no occurence of tmout found, if 1, occurence found
+tmout_found=0
+
+
+for f in /etc/profile /etc/profile.d/*.sh; do
+
+    if grep --silent '^[^#].*TMOUT' $f; then
+        sed -i -E "s/^(.*)TMOUT\s*=\s*(\w|\$)*(.*)$/typeset -xr TMOUT=$var_accounts_tmout\3/g" $f
+        tmout_found=1
+    fi
+done
+
+if [ $tmout_found -eq 0 ]; then
+        echo -e "\n# Set TMOUT to $var_accounts_tmout per security requirements" &gt;&gt; /etc/profile.d/tmout.sh
+        echo "typeset -xr TMOUT=$var_accounts_tmout" &gt;&gt; /etc/profile.d/tmout.sh
+fi
+
+else
+    &gt;&amp;2 echo 'Remediation is not applicable, nothing was done'
+fi
+</xccdf-1.2:fix>
+              <xccdf-1.2:fix system="urn:xccdf:fix:script:ansible" id="accounts_tmout" complexity="low" disruption="low" reboot="false" strategy="restrict">- name: XCCDF Value var_accounts_tmout # promote to variable
+  set_fact:
+    var_accounts_tmout: !!str <xccdf-1.2:sub idref="xccdf_org.ssgproject.content_value_var_accounts_tmout" use="legacy"/>
+  tags:
+    - always
+
+- name: Correct any occurrence of TMOUT in /etc/profile
+  replace:
+    path: /etc/profile
+    regexp: ^[^#].*TMOUT=.*
+    replace: typeset -xr TMOUT={{ var_accounts_tmout }}
+  register: profile_replaced
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  tags:
+  - NIST-800-171-3.1.11
+  - NIST-800-53-AC-12
+  - NIST-800-53-AC-2(5)
+  - NIST-800-53-CM-6(a)
+  - NIST-800-53-SC-10
+  - PCI-DSSv4-8.6.1
+  - accounts_tmout
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+
+- name: Set Interactive Session Timeout
+  lineinfile:
+    path: /etc/profile.d/tmout.sh
+    create: true
+    regexp: TMOUT=
+    line: typeset -xr TMOUT={{ var_accounts_tmout }}
+    state: present
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  tags:
+  - NIST-800-171-3.1.11
+  - NIST-800-53-AC-12
+  - NIST-800-53-AC-2(5)
+  - NIST-800-53-CM-6(a)
+  - NIST-800-53-SC-10
+  - PCI-DSSv4-8.6.1
+  - accounts_tmout
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+</xccdf-1.2:fix>
+              <xccdf-1.2:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                <xccdf-1.2:check-export export-name="oval:ssg-var_accounts_tmout:var:1" value-id="xccdf_org.ssgproject.content_value_var_accounts_tmout"/>
+                <xccdf-1.2:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-accounts_tmout:def:1"/>
+              </xccdf-1.2:check>
+              <xccdf-1.2:check system="http://scap.nist.gov/schema/ocil/2">
+                <xccdf-1.2:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-accounts_tmout_ocil:questionnaire:1"/>
+              </xccdf-1.2:check>
+            </xccdf-1.2:Rule>
           </xccdf-1.2:Group>
         </xccdf-1.2:Group>
       </xccdf-1.2:Group>
     </xccdf-1.2:Benchmark>
   </ds:component>
-  <ds:component id="scap_org.open-scap_comp_ssg-gentoo-oval.xml" timestamp="2024-05-29T20:31:29">
+  <ds:component id="scap_org.open-scap_comp_ssg-gentoo-oval.xml" timestamp="2024-05-31T10:00:24">
     <oval-def:oval_definitions xsi:schemaLocation="http://oval.mitre.org/XMLSchema/oval-common-5 oval-common-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5 oval-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#independent independent-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#unix unix-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#linux linux-definitions-schema.xsd">
       <oval-def:generator>
         <oval:product_name>OVALFileLinker from SCAP Security Guide</oval:product_name>
         <oval:product_version>ssg: [0, 1, 73], python: 3.12.2</oval:product_version>
         <oval:schema_version>5.11</oval:schema_version>
-        <oval:timestamp>2024-05-29T18:31:16</oval:timestamp>
+        <oval:timestamp>2024-05-31T08:00:05</oval:timestamp>
       </oval-def:generator>
       <oval-def:definitions>
-        <oval-def:definition id="oval:ssg-accounts_password_minlen_login_defs:def:1" version="3" class="compliance">
+        <oval-def:definition id="oval:ssg-accounts_tmout:def:1" version="3" class="compliance">
           <oval-def:metadata>
-            <oval-def:title>Set Password Minimum Length in login.defs</oval-def:title>
+            <oval-def:title>Set Interactive Session Timeout</oval-def:title>
             <oval-def:affected family="unix">
               <oval-def:platform>Gentoo</oval-def:platform>
             </oval-def:affected>
-            <oval-def:reference ref_id="accounts_password_minlen_login_defs" source="ssg"/>
-            <oval-def:description>The password minimum length should be set appropriately.</oval-def:description>
+            <oval-def:reference ref_id="accounts_tmout" source="ssg"/>
+            <oval-def:description>Checks interactive shell timeout</oval-def:description>
           </oval-def:metadata>
           <oval-def:criteria operator="AND">
-            <oval-def:criterion test_ref="oval:ssg-test_pass_min_len:tst:1"/>
+            <oval-def:criterion comment="TMOUT value in /etc/profile &lt;= var_accounts_tmout" test_ref="oval:ssg-test_etc_profile_tmout:tst:1"/>
+            <oval-def:criterion comment="TMOUT value in /etc/profile.d/*.sh &lt;= var_accounts_tmout" test_ref="oval:ssg-test_etc_profiled_tmout:tst:1"/>
+            <oval-def:criterion comment="At least one config file has TMOUT defined" test_ref="oval:ssg-test_accounts_tmout_defined:tst:1"/>
           </oval-def:criteria>
         </oval-def:definition>
       </oval-def:definitions>
       <oval-def:tests>
-        <ind:variable_test id="oval:ssg-test_pass_min_len:tst:1" version="1" check="all" comment="The value of PASS_MIN_LEN should be set appropriately in /etc/login.defs" state_operator="AND">
-          <ind:object object_ref="oval:ssg-object_last_pass_min_len_instance_value:obj:1"/>
-          <ind:state state_ref="oval:ssg-state_last_pass_min_len_instance_value:ste:1"/>
+        <ind:textfilecontent54_test id="oval:ssg-test_etc_profile_tmout:tst:1" version="2" check="all" comment="TMOUT in /etc/profile" check_existence="any_exist" state_operator="AND">
+          <ind:object object_ref="oval:ssg-object_etc_profile_tmout:obj:1"/>
+          <ind:state state_ref="oval:ssg-state_etc_profile_tmout:ste:1"/>
+        </ind:textfilecontent54_test>
+        <ind:textfilecontent54_test id="oval:ssg-test_etc_profiled_tmout:tst:1" version="2" check="all" comment="TMOUT in /etc/profile.d/*.sh" check_existence="any_exist" state_operator="AND">
+          <ind:object object_ref="oval:ssg-object_etc_profiled_tmout:obj:1"/>
+          <ind:state state_ref="oval:ssg-state_etc_profile_tmout:ste:1"/>
+        </ind:textfilecontent54_test>
+        <ind:variable_test id="oval:ssg-test_accounts_tmout_defined:tst:1" version="1" check="all" comment="Check that at least one TMOUT is defined" check_existence="all_exist" state_operator="AND">
+          <ind:object object_ref="oval:ssg-object_accounts_tmout_defined:obj:1"/>
+          <ind:state state_ref="oval:ssg-state_accounts_tmout_defined:ste:1"/>
         </ind:variable_test>
       </oval-def:tests>
       <oval-def:objects>
-        <ind:textfilecontent54_object id="oval:ssg-object_last_pass_min_len_from_etc_login_defs:obj:1" version="1">
-          <ind:behaviors singleline="true"/>
-          <ind:filepath>/etc/login.defs</ind:filepath>
-          <ind:pattern operation="pattern match">.*\n[^#]*(PASS_MIN_LEN\s+\d+)\s*\n</ind:pattern>
-          <ind:instance datatype="int" operation="greater than or equal">1</ind:instance>
+        <ind:textfilecontent54_object id="oval:ssg-object_etc_profile_tmout:obj:1" version="3">
+          <ind:filepath>/etc/profile</ind:filepath>
+          <ind:pattern operation="pattern match">^[\s]*(?:typeset|declare)[\s]+-xr[\s]+TMOUT=([\w$]+).*$</ind:pattern>
+          <ind:instance operation="greater than or equal" datatype="int">1</ind:instance>
         </ind:textfilecontent54_object>
-        <ind:variable_object id="oval:ssg-object_last_pass_min_len_instance_value:obj:1" version="1">
-          <ind:var_ref>oval:ssg-variable_last_pass_min_len_instance_value:var:1</ind:var_ref>
+        <ind:textfilecontent54_object id="oval:ssg-object_etc_profiled_tmout:obj:1" version="3">
+          <ind:path>/etc/profile.d</ind:path>
+          <ind:filename operation="pattern match">^.*\.sh$</ind:filename>
+          <ind:pattern operation="pattern match">^[\s]*(?:typeset|declare)[\s]+-xr[\s]+TMOUT=([\w$]+).*$</ind:pattern>
+          <ind:instance operation="greater than or equal" datatype="int">1</ind:instance>
+        </ind:textfilecontent54_object>
+        <ind:textfilecontent54_object id="oval:ssg-object_accounts_tmout_all_tmout_instances:obj:1" version="1">
+          <oval-def:set>
+            <oval-def:object_reference>oval:ssg-object_etc_profile_tmout:obj:1</oval-def:object_reference>
+            <oval-def:object_reference>oval:ssg-object_etc_profiled_tmout:obj:1</oval-def:object_reference>
+          </oval-def:set>
+        </ind:textfilecontent54_object>
+        <ind:variable_object id="oval:ssg-object_accounts_tmout_defined:obj:1" version="1">
+          <ind:var_ref>oval:ssg-variable_count_of_tmout_instances:var:1</ind:var_ref>
         </ind:variable_object>
       </oval-def:objects>
       <oval-def:states>
-        <ind:variable_state id="oval:ssg-state_last_pass_min_len_instance_value:ste:1" version="1" operator="AND">
-          <ind:value operation="greater than or equal" var_ref="oval:ssg-var_accounts_password_minlen_login_defs:var:1" datatype="int" var_check="at least one"/>
+        <ind:variable_state id="oval:ssg-state_accounts_tmout_defined:ste:1" version="1" operator="AND">
+          <ind:value operation="greater than or equal" datatype="int">1</ind:value>
         </ind:variable_state>
+        <ind:textfilecontent54_state id="oval:ssg-state_etc_profile_tmout:ste:1" version="2" operator="AND">
+          <ind:subexpression datatype="int" operation="less than or equal" var_check="all" var_ref="oval:ssg-var_accounts_tmout:var:1"/>
+        </ind:textfilecontent54_state>
       </oval-def:states>
       <oval-def:variables>
-        <oval-def:local_variable id="oval:ssg-variable_last_pass_min_len_instance_value:var:1" version="1" datatype="int" comment="The value of last PASS_MIN_LEN directive in /etc/login.defs">
-          <oval-def:regex_capture pattern="PASS_MIN_LEN\s+(\d+)">
-            <oval-def:object_component item_field="subexpression" object_ref="oval:ssg-object_last_pass_min_len_from_etc_login_defs:obj:1"/>
-          </oval-def:regex_capture>
+        <oval-def:local_variable id="oval:ssg-variable_count_of_tmout_instances:var:1" version="1" datatype="int" comment="Count of TMOUT instances">
+          <oval-def:count>
+            <oval-def:object_component object_ref="oval:ssg-object_accounts_tmout_all_tmout_instances:obj:1" item_field="text"/>
+          </oval-def:count>
         </oval-def:local_variable>
-        <oval-def:external_variable id="oval:ssg-var_accounts_password_minlen_login_defs:var:1" version="1" datatype="int" comment="Password minimum length"/>
+        <oval-def:external_variable id="oval:ssg-var_accounts_tmout:var:1" version="1" datatype="int" comment="external variable for TMOUT"/>
       </oval-def:variables>
     </oval-def:oval_definitions>
   </ds:component>
-  <ds:component id="scap_org.open-scap_comp_ssg-gentoo-ocil.xml" timestamp="2024-05-29T20:31:29">
+  <ds:component id="scap_org.open-scap_comp_ssg-gentoo-ocil.xml" timestamp="2024-05-31T10:00:24">
     <ocil:ocil>
       <ocil:generator>
         <ocil:product_name>build_shorthand.py from SCAP Security Guide</ocil:product_name>
         <ocil:product_version>ssg: 0.1.73</ocil:product_version>
         <ocil:schema_version>2.0</ocil:schema_version>
-        <ocil:timestamp>2024-05-29T18:31:16</ocil:timestamp>
+        <ocil:timestamp>2024-05-31T08:00:05</ocil:timestamp>
       </ocil:generator>
       <ocil:questionnaires>
-        <ocil:questionnaire id="ocil:ssg-accounts_password_minlen_login_defs_ocil:questionnaire:1">
-          <ocil:title>Set Password Minimum Length in login.defs</ocil:title>
+        <ocil:questionnaire id="ocil:ssg-accounts_tmout_ocil:questionnaire:1">
+          <ocil:title>Set Interactive Session Timeout</ocil:title>
           <ocil:actions>
-            <ocil:test_action_ref>ocil:ssg-accounts_password_minlen_login_defs_action:testaction:1</ocil:test_action_ref>
+            <ocil:test_action_ref>ocil:ssg-accounts_tmout_action:testaction:1</ocil:test_action_ref>
           </ocil:actions>
         </ocil:questionnaire>
       </ocil:questionnaires>
       <ocil:test_actions>
-        <ocil:boolean_question_test_action id="ocil:ssg-accounts_password_minlen_login_defs_action:testaction:1" question_ref="ocil:ssg-accounts_password_minlen_login_defs_question:question:1">
+        <ocil:boolean_question_test_action id="ocil:ssg-accounts_tmout_action:testaction:1" question_ref="ocil:ssg-accounts_tmout_question:question:1">
           <ocil:when_true>
             <ocil:result>PASS</ocil:result>
           </ocil:when_true>
@@ -672,25 +714,56 @@ behavior that may result.</xccdf-1.2:rationale>
         </ocil:boolean_question_test_action>
       </ocil:test_actions>
       <ocil:questions>
-        <ocil:boolean_question id="ocil:ssg-accounts_password_minlen_login_defs_question:question:1">
-          <ocil:question_text>To check the minimum password length, run the command:
-$ grep PASS_MIN_LEN /etc/login.defs
-The DoD requirement is 15.
-      Is it the case that it is not set to the required value?
+        <ocil:boolean_question id="ocil:ssg-accounts_tmout_question:question:1">
+          <ocil:question_text>Run the following command to ensure the TMOUT value is configured for all users
+on the system:
+
+$ sudo grep TMOUT /etc/profile /etc/profile.d/*.sh
+
+The output should return the following:
+TMOUT=
+      Is it the case that value of TMOUT is not less than or equal to expected setting?
       </ocil:question_text>
         </ocil:boolean_question>
       </ocil:questions>
     </ocil:ocil>
   </ds:component>
-  <ds:component id="scap_org.open-scap_comp_ssg-gentoo-cpe-oval.xml" timestamp="2024-05-29T20:31:31">
+  <ds:component id="scap_org.open-scap_comp_ssg-gentoo-cpe-oval.xml" timestamp="2024-05-31T10:00:26">
     <oval-def:oval_definitions xsi:schemaLocation="http://oval.mitre.org/XMLSchema/oval-common-5 oval-common-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5 oval-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#independent independent-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#unix unix-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#linux linux-definitions-schema.xsd">
       <oval-def:generator>
         <oval:product_name>build_cpe.py from SCAP Security Guide</oval:product_name>
         <oval:product_version>ssg: [0, 1, 73], python: 3.12.2</oval:product_version>
         <oval:schema_version>5.11</oval:schema_version>
-        <oval:timestamp>2024-05-29T18:31:29</oval:timestamp>
+        <oval:timestamp>2024-05-31T08:00:24</oval:timestamp>
       </oval-def:generator>
       <oval-def:definitions>
+        <oval-def:definition id="oval:ssg-installed_env_is_a_container:def:1" version="2" class="inventory">
+          <oval-def:metadata>
+            <oval-def:title>Check if the scan target is a container</oval-def:title>
+            <oval-def:affected family="unix">
+              <oval-def:platform>Gentoo</oval-def:platform>
+            </oval-def:affected>
+            <oval-def:reference ref_id="cpe:/a:container" source="CPE"/>
+            <oval-def:description>Check for presence of files characterizing container filesystems.</oval-def:description>
+          </oval-def:metadata>
+          <oval-def:criteria operator="OR">
+            <oval-def:criterion comment="Check if /.dockerenv exists" test_ref="oval:ssg-test_installed_env_is_a_docker_container:tst:1"/>
+            <oval-def:criterion comment="Check if /run/.containerenv exists" test_ref="oval:ssg-test_installed_env_is_a_podman_container:tst:1"/>
+          </oval-def:criteria>
+        </oval-def:definition>
+        <oval-def:definition id="oval:ssg-installed_env_is_a_machine:def:1" version="2" class="inventory">
+          <oval-def:metadata>
+            <oval-def:title>Check if the scan target is a machine</oval-def:title>
+            <oval-def:affected family="unix">
+              <oval-def:platform>Gentoo</oval-def:platform>
+            </oval-def:affected>
+            <oval-def:reference ref_id="cpe:/a:machine" source="CPE"/>
+            <oval-def:description>Check for absence of files characterizing container filesystems.</oval-def:description>
+          </oval-def:metadata>
+          <oval-def:criteria operator="AND">
+            <oval-def:extend_definition negate="true" comment="If environment is not a container, it is machine" definition_ref="oval:ssg-installed_env_is_a_container:def:1"/>
+          </oval-def:criteria>
+        </oval-def:definition>
         <oval-def:definition id="oval:ssg-installed_OS_is_gentoo:def:1" version="2" class="inventory">
           <oval-def:metadata>
             <oval-def:title>Gentoo</oval-def:title>
@@ -717,20 +790,14 @@ The DoD requirement is 15.
             <oval-def:criterion comment="Installed operating system is part of the unix family" test_ref="oval:ssg-test_unix_family:tst:1"/>
           </oval-def:criteria>
         </oval-def:definition>
-        <oval-def:definition id="oval:ssg-package_shadow-utils:def:1" version="1" class="inventory">
-          <oval-def:metadata>
-            <oval-def:title>Package shadow-utils is installed</oval-def:title>
-            <oval-def:affected family="unix">
-              <oval-def:platform>Gentoo</oval-def:platform>
-            </oval-def:affected>
-            <oval-def:description>The RPM package shadow-utils should be installed.</oval-def:description>
-          </oval-def:metadata>
-          <oval-def:criteria operator="AND">
-            <oval-def:criterion comment="Platform package shadow-utils is installed" test_ref="oval:ssg-inventory_test_package_shadow-utils_installed:tst:1"/>
-          </oval-def:criteria>
-        </oval-def:definition>
       </oval-def:definitions>
       <oval-def:tests>
+        <unix:file_test id="oval:ssg-test_installed_env_is_a_docker_container:tst:1" version="1" check="all" comment="Check if /.dockerenv exists" check_existence="all_exist" state_operator="AND">
+          <unix:object object_ref="oval:ssg-object_installed_env_is_a_docker_container:obj:1"/>
+        </unix:file_test>
+        <unix:file_test id="oval:ssg-test_installed_env_is_a_podman_container:tst:1" version="1" check="all" comment="Check if /run/.containerenv exists" check_existence="all_exist" state_operator="AND">
+          <unix:object object_ref="oval:ssg-object_installed_env_is_a_podman_container:obj:1"/>
+        </unix:file_test>
         <unix:file_test id="oval:ssg-test_gentoo_release:tst:1" version="1" check="all" comment="/etc/gentoo exists" check_existence="all_exist" state_operator="AND">
           <unix:object object_ref="oval:ssg-obj_gentoo_release:obj:1"/>
         </unix:file_test>
@@ -738,18 +805,18 @@ The DoD requirement is 15.
           <ind:object object_ref="oval:ssg-object_unix_family:obj:1"/>
           <ind:state state_ref="oval:ssg-state_unix_family:ste:1"/>
         </ind:family_test>
-        <linux:rpminfo_test id="oval:ssg-inventory_test_package_shadow-utils_installed:tst:1" version="1" check="all" comment="package shadow-utils is installed" check_existence="all_exist" state_operator="AND">
-          <linux:object object_ref="oval:ssg-obj_inventory_test_package_shadow-utils_installed:obj:1"/>
-        </linux:rpminfo_test>
       </oval-def:tests>
       <oval-def:objects>
+        <unix:file_object id="oval:ssg-object_installed_env_is_a_docker_container:obj:1" version="1" comment="Check file /.dockerenv">
+          <unix:filepath datatype="string">/.dockerenv</unix:filepath>
+        </unix:file_object>
+        <unix:file_object id="oval:ssg-object_installed_env_is_a_podman_container:obj:1" version="1" comment="Check file /run/.containerenv">
+          <unix:filepath datatype="string">/run/.containerenv</unix:filepath>
+        </unix:file_object>
         <unix:file_object id="oval:ssg-obj_gentoo_release:obj:1" version="1" comment="check /etc/gentoo-release file">
           <unix:filepath>/etc/gentoo-release</unix:filepath>
         </unix:file_object>
         <ind:family_object id="oval:ssg-object_unix_family:obj:1" version="1"/>
-        <linux:rpminfo_object id="oval:ssg-obj_inventory_test_package_shadow-utils_installed:obj:1" version="1">
-          <linux:name>shadow-utils</linux:name>
-        </linux:rpminfo_object>
       </oval-def:objects>
       <oval-def:states>
         <ind:family_state id="oval:ssg-state_unix_family:ste:1" version="1" operator="AND">
