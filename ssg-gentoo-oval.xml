@@ -4,7 +4,7 @@
     <oval:product_name>OVALFileLinker from SCAP Security Guide</oval:product_name>
     <oval:product_version>ssg: [0, 1, 73], python: 3.12.2</oval:product_version>
     <oval:schema_version>5.11</oval:schema_version>
-    <oval:timestamp>2024-05-31T09:06:05</oval:timestamp>
+    <oval:timestamp>2024-05-31T11:16:09</oval:timestamp>
   </oval-def:generator>
   <oval-def:definitions>
     <oval-def:definition id="oval:ssg-enable_authselect:def:1" version="1" class="compliance">
@@ -85,6 +85,50 @@
             <oval-def:criterion comment="Ensure the even_deny_root parameter is present in /etc/security/faillock.conf" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_deny_root_parameter_faillock_conf:tst:1" />
           </oval-def:criteria>
         </oval-def:criteria>
+      </oval-def:criteria>
+    </oval-def:definition>
+    <oval-def:definition id="oval:ssg-accounts_passwords_pam_tally2:def:1" version="4" class="compliance">
+      <oval-def:metadata>
+        <oval-def:title>Set Deny For Failed Password Attempts</oval-def:title>
+        <oval-def:affected family="unix">
+          <oval-def:platform>Gentoo</oval-def:platform>
+        </oval-def:affected>
+        <oval-def:reference ref_id="accounts_passwords_pam_tally2" source="ssg" />
+        <oval-def:description>The number of allowed failed logins should be set correctly.</oval-def:description>
+      </oval-def:metadata>
+      <oval-def:criteria comment="Checks common to both scenarios" operator="AND">
+        <oval-def:criterion comment="Verify deny configuation of pam_tally2 in common-auth" test_ref="oval:ssg-test_accounts_passwords_pam_tally2_deny_auth:tst:1" />
+        <oval-def:criterion comment="Verify deny configuation of pam_tally2 in common-account" test_ref="oval:ssg-test_accounts_passwords_pam_tally2_deny_account:tst:1" />
+      </oval-def:criteria>
+    </oval-def:definition>
+    <oval-def:definition id="oval:ssg-accounts_passwords_pam_tally2_deny_root:def:1" version="1" class="compliance">
+      <oval-def:metadata>
+        <oval-def:title>Configure the root Account lock for Failed Password Attempts via pam_tally2</oval-def:title>
+        <oval-def:affected family="unix">
+          <oval-def:platform>Gentoo</oval-def:platform>
+        </oval-def:affected>
+        <oval-def:reference ref_id="accounts_passwords_pam_tally2_deny_root" source="ssg" />
+        <oval-def:description>The root account should be configured to deny access after the number of
+    defined failed attempts has been reached.</oval-def:description>
+      </oval-def:metadata>
+      <oval-def:criteria comment="Checks common to both scenarios" operator="AND">
+        <oval-def:criterion comment="Verify deny root configuation of pam_tally2 in common-auth" test_ref="oval:ssg-test_accounts_passwords_pam_tally2_even_deny_root:tst:1" />
+        <oval-def:criterion comment="Verify deny number configuation of pam_tally2 in common-auth" test_ref="oval:ssg-test_accounts_passwords_pam_tally2_deny_number:tst:1" />
+        <oval-def:criterion comment="Verify deny configuation of pam_tally2 in common-account" test_ref="oval:ssg-test_accounts_passwords_pam_tally2_even_deny_root_account:tst:1" />
+      </oval-def:criteria>
+    </oval-def:definition>
+    <oval-def:definition id="oval:ssg-accounts_passwords_pam_tally2_unlock_time:def:1" version="1" class="compliance">
+      <oval-def:metadata>
+        <oval-def:title>Set Lockout Time for Failed Password Attempts using pam_tally2</oval-def:title>
+        <oval-def:affected family="unix">
+          <oval-def:platform>Gentoo</oval-def:platform>
+        </oval-def:affected>
+        <oval-def:reference ref_id="accounts_passwords_pam_tally2_unlock_time" source="ssg" />
+        <oval-def:description>The unlock time after number of failed logins should be set correctly.</oval-def:description>
+      </oval-def:metadata>
+      <oval-def:criteria comment="Checks common to both scenarios" operator="AND">
+        <oval-def:criterion comment="Verify unlock time configuation of pam_tally2 in common-auth" test_ref="oval:ssg-test_accounts_passwords_pam_tally2_unlock_time:tst:1" />
+        <oval-def:criterion comment="Verify unlock time configuation of pam_tally2 in common-account" test_ref="oval:ssg-test_accounts_passwords_pam_tally2_unlock_time_account:tst:1" />
       </oval-def:criteria>
     </oval-def:definition>
     <oval-def:definition id="oval:ssg-accounts_password_pam_retry:def:1" version="2" class="compliance">
@@ -541,6 +585,71 @@
         </oval-def:criteria>
       </oval-def:criteria>
     </oval-def:definition>
+    <oval-def:definition id="oval:ssg-cracklib_accounts_password_pam_dcredit:def:1" version="3" class="compliance">
+      <oval-def:metadata>
+        <oval-def:title>Set Password Strength Minimum Digit Characters</oval-def:title>
+        <oval-def:affected family="unix">
+          <oval-def:platform>Gentoo</oval-def:platform>
+        </oval-def:affected>
+        <oval-def:reference ref_id="cracklib_accounts_password_pam_dcredit" source="ssg" />
+        <oval-def:description>Configure PAM module</oval-def:description>
+      </oval-def:metadata>
+      <oval-def:criteria comment="Make sure arguments are properly configured" operator="AND">
+        <oval-def:criterion comment="Verify dcredit is set to the desired state" test_ref="oval:ssg-test_pam_password_pam_cracklib_dcredit:tst:1" />
+      </oval-def:criteria>
+    </oval-def:definition>
+    <oval-def:definition id="oval:ssg-cracklib_accounts_password_pam_lcredit:def:1" version="3" class="compliance">
+      <oval-def:metadata>
+        <oval-def:title>Set Password Strength Minimum Lowercase Characters</oval-def:title>
+        <oval-def:affected family="unix">
+          <oval-def:platform>Gentoo</oval-def:platform>
+        </oval-def:affected>
+        <oval-def:reference ref_id="cracklib_accounts_password_pam_lcredit" source="ssg" />
+        <oval-def:description>Configure PAM module</oval-def:description>
+      </oval-def:metadata>
+      <oval-def:criteria comment="Make sure arguments are properly configured" operator="AND">
+        <oval-def:criterion comment="Verify lcredit is set to the desired state" test_ref="oval:ssg-test_pam_password_pam_cracklib_lcredit:tst:1" />
+      </oval-def:criteria>
+    </oval-def:definition>
+    <oval-def:definition id="oval:ssg-cracklib_accounts_password_pam_minlen:def:1" version="3" class="compliance">
+      <oval-def:metadata>
+        <oval-def:title>Set Password Minimum Length</oval-def:title>
+        <oval-def:affected family="unix">
+          <oval-def:platform>Gentoo</oval-def:platform>
+        </oval-def:affected>
+        <oval-def:reference ref_id="cracklib_accounts_password_pam_minlen" source="ssg" />
+        <oval-def:description>Configure PAM module</oval-def:description>
+      </oval-def:metadata>
+      <oval-def:criteria comment="Make sure arguments are properly configured" operator="AND">
+        <oval-def:criterion comment="Verify minlen is set to the desired state" test_ref="oval:ssg-test_pam_password_pam_cracklib_minlen:tst:1" />
+      </oval-def:criteria>
+    </oval-def:definition>
+    <oval-def:definition id="oval:ssg-cracklib_accounts_password_pam_ocredit:def:1" version="3" class="compliance">
+      <oval-def:metadata>
+        <oval-def:title>Set Password Strength Minimum Special Characters</oval-def:title>
+        <oval-def:affected family="unix">
+          <oval-def:platform>Gentoo</oval-def:platform>
+        </oval-def:affected>
+        <oval-def:reference ref_id="cracklib_accounts_password_pam_ocredit" source="ssg" />
+        <oval-def:description>Configure PAM module</oval-def:description>
+      </oval-def:metadata>
+      <oval-def:criteria comment="Make sure arguments are properly configured" operator="AND">
+        <oval-def:criterion comment="Verify ocredit is set to the desired state" test_ref="oval:ssg-test_pam_password_pam_cracklib_ocredit:tst:1" />
+      </oval-def:criteria>
+    </oval-def:definition>
+    <oval-def:definition id="oval:ssg-cracklib_accounts_password_pam_ucredit:def:1" version="3" class="compliance">
+      <oval-def:metadata>
+        <oval-def:title>Set Password Strength Minimum Uppercase Characters</oval-def:title>
+        <oval-def:affected family="unix">
+          <oval-def:platform>Gentoo</oval-def:platform>
+        </oval-def:affected>
+        <oval-def:reference ref_id="cracklib_accounts_password_pam_ucredit" source="ssg" />
+        <oval-def:description>Configure PAM module</oval-def:description>
+      </oval-def:metadata>
+      <oval-def:criteria comment="Make sure arguments are properly configured" operator="AND">
+        <oval-def:criterion comment="Verify ucredit is set to the desired state" test_ref="oval:ssg-test_pam_password_pam_cracklib_ucredit:tst:1" />
+      </oval-def:criteria>
+    </oval-def:definition>
     <oval-def:definition id="oval:ssg-package_dhcp_removed:def:1" version="1" class="compliance">
       <oval-def:metadata>
         <oval-def:title>Uninstall DHCP Server Package</oval-def:title>
@@ -832,6 +941,30 @@
     <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_deny_root_parameter_no_faillock_conf:tst:1" version="1" check="all" comment="Check the absence of even_deny_root parameter in /etc/security/faillock.conf" check_existence="none_exist" state_operator="AND">
       <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_deny_root_parameter_faillock_conf:obj:1" />
     </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_tally2_deny_auth:tst:1" version="1" check="all" comment="Verify deny configuation of pam_tally2" check_existence="all_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_tally2_deny_auth:obj:1" />
+      <ind:state state_ref="oval:ssg-state_var_accounts_passwords_pam_tally2_deny_value_upper_bound:ste:1" />
+      <ind:state state_ref="oval:ssg-state_var_accounts_passwords_pam_tally2_deny_value_lower_bound:ste:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_tally2_deny_account:tst:1" version="1" check="all" comment="Verify deny configuation of pam_tally2_account" check_existence="all_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_tally2_deny_account:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_tally2_even_deny_root:tst:1" version="1" check="all" comment="Verify even_deny_root configuation of pam_tally2" check_existence="all_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_tally2_even_deny_root:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_tally2_deny_number:tst:1" version="1" check="all" comment="Verify deny number configuation of pam_tally2" check_existence="all_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_tally2_deny_number:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_tally2_even_deny_root_account:tst:1" version="1" check="all" comment="Verify deny configuation of pam_tally2_account" check_existence="all_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_tally2_even_deny_root_account:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_tally2_unlock_time:tst:1" version="1" check="all" comment="Verify unlock_time configuation of pam_tally2" check_existence="all_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_tally2_unlock_time:obj:1" />
+      <ind:state state_ref="oval:ssg-state_accounts_passwords_pam_tally2_unlock_time:ste:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_tally2_unlock_time_account:tst:1" version="1" check="all" comment="Verify  configuation of pam_tally2_account" check_existence="all_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_tally2_unlock_time_account:obj:1" />
+    </ind:textfilecontent54_test>
     <ind:textfilecontent54_test id="oval:ssg-test_password_pam_pwquality_retry_system_auth:tst:1" version="1" check="all" comment="check the configuration of /etc/pam.d/system-auth" state_operator="AND">
       <ind:object object_ref="oval:ssg-obj_password_pam_pwquality_retry_system_auth:obj:1" />
       <ind:state state_ref="oval:ssg-state_password_pam_retry_upper_bound:ste:1" />
@@ -1052,6 +1185,26 @@
     <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_unlock_time_parameter_no_faillock_conf:tst:1" version="1" check="all" comment="Check the absence of unlock_time parameter in /etc/security/faillock.conf" check_existence="none_exist" state_operator="AND">
       <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_unlock_time_parameter_faillock_conf:obj:1" />
     </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_pam_password_pam_cracklib_dcredit:tst:1" version="1" check="all" comment="Verify dcredit configuation of pam_cracklib.so" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_pam_password_pam_cracklib_dcredit:obj:1" />
+      <ind:state state_ref="oval:ssg-state_pam_password_pam_cracklib_dcredit:ste:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_pam_password_pam_cracklib_lcredit:tst:1" version="1" check="all" comment="Verify lcredit configuation of pam_cracklib.so" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_pam_password_pam_cracklib_lcredit:obj:1" />
+      <ind:state state_ref="oval:ssg-state_pam_password_pam_cracklib_lcredit:ste:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_pam_password_pam_cracklib_minlen:tst:1" version="1" check="all" comment="Verify minlen configuation of pam_cracklib.so" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_pam_password_pam_cracklib_minlen:obj:1" />
+      <ind:state state_ref="oval:ssg-state_pam_password_pam_cracklib_minlen:ste:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_pam_password_pam_cracklib_ocredit:tst:1" version="1" check="all" comment="Verify ocredit configuation of pam_cracklib.so" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_pam_password_pam_cracklib_ocredit:obj:1" />
+      <ind:state state_ref="oval:ssg-state_pam_password_pam_cracklib_ocredit:ste:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_pam_password_pam_cracklib_ucredit:tst:1" version="1" check="all" comment="Verify ucredit configuation of pam_cracklib.so" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_pam_password_pam_cracklib_ucredit:obj:1" />
+      <ind:state state_ref="oval:ssg-state_pam_password_pam_cracklib_ucredit:ste:1" />
+    </ind:textfilecontent54_test>
     <linux:rpminfo_test id="oval:ssg-test_package_dhcp_removed:tst:1" version="1" check="all" comment="package dhcp is removed" check_existence="none_exist" state_operator="AND">
       <linux:object object_ref="oval:ssg-obj_test_package_dhcp_removed:obj:1" />
     </linux:rpminfo_test>
@@ -1186,6 +1339,41 @@
       <ind:filepath operation="pattern match">^/etc/security/faillock.conf$</ind:filepath>
       <ind:pattern operation="pattern match" var_ref="oval:ssg-var_accounts_passwords_pam_faillock_deny_root_faillock_conf_parameter_regex:var:1" />
       <ind:instance datatype="int" operation="equals">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_passwords_pam_tally2_deny_auth:obj:1" version="1" comment="Check deny configuration of pam_tally2">
+      <ind:filepath>/etc/pam.d/common-auth</ind:filepath>
+      <ind:pattern operation="pattern match">^\s*auth(?:(?!\n)\s)+required(?:(?!\n)\s)+pam_tally2.so(?:(?!\n)\s)+(?:(?:(?:(?!\n)\s)?[^\n]+)?onerr=fail(?:(?:(?!\n)\s)+[^\n]+)?(?:(?!\n)\s)+deny=(\d+)(?:(?:\s+\S+)*\s*$))|(?:(?:(?:(?!\n)\s)?[^\n]+)?deny=(\d+)(?:(?:(?!\n)\s)+[^\n]+)?(?:(?!\n)\s)+onerr=fail(?:(?:\s+\S+)*\s*$))</ind:pattern>
+      <ind:instance datatype="int">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_passwords_pam_tally2_deny_account:obj:1" version="1" comment="Check deny configuration of pam_tally2">
+      <ind:filepath>/etc/pam.d/common-account</ind:filepath>
+      <ind:pattern operation="pattern match">^\s*account(?:(?!\n)\s)+required(?:(?!\n)\s)+pam_tally2.so(\s|$)</ind:pattern>
+      <ind:instance datatype="int">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_passwords_pam_tally2_even_deny_root:obj:1" version="1" comment="Check even deny root configuration of pam_tally2">
+      <ind:filepath>/etc/pam.d/login</ind:filepath>
+      <ind:pattern operation="pattern match">^\s*auth(?:(?!\n)\s)+required(?:(?!\n)\s)+pam_tally2.so(?:(?!\n)\s)+(?:(?:(?:(?!\n)\s)?[^\n]+)?even_deny_root(?:(?:\s+\S+)*\s*$))</ind:pattern>
+      <ind:instance datatype="int">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_passwords_pam_tally2_deny_number:obj:1" version="1" comment="Check deny number configuration of pam_tally2">
+      <ind:filepath>/etc/pam.d/login</ind:filepath>
+      <ind:pattern operation="pattern match">^\s*auth(?:(?!\n)\s)+required(?:(?!\n)\s)+pam_tally2.so(?:(?!\n)\s)+(?:(?:(?:(?!\n)\s)?[^\n]+)?deny=(\d+)(?:(?:\s+\S+)*\s*$))</ind:pattern>
+      <ind:instance datatype="int">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_passwords_pam_tally2_even_deny_root_account:obj:1" version="1" comment="Check deny configuration of pam_tally2">
+      <ind:filepath>/etc/pam.d/common-account</ind:filepath>
+      <ind:pattern operation="pattern match">^\s*account(?:(?!\n)\s)+required(?:(?!\n)\s)+pam_tally2.so(\s|$)</ind:pattern>
+      <ind:instance datatype="int">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_passwords_pam_tally2_unlock_time:obj:1" version="1" comment="Check unlock_time configuration of pam_tally2">
+      <ind:filepath>/etc/pam.d/login</ind:filepath>
+      <ind:pattern operation="pattern match">^\s*auth\s+required\s+pam_tally2\.so\s+[^\n]*unlock_time=([0-9]+)[\s+\S+]*\s*\\*$</ind:pattern>
+      <ind:instance datatype="int" operation="greater than or equal">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_passwords_pam_tally2_unlock_time_account:obj:1" version="1" comment="Check account configuration of pam_tally2">
+      <ind:filepath>/etc/pam.d/common-account</ind:filepath>
+      <ind:pattern operation="pattern match">^\s*account(?:(?!\n)\s)+required(?:(?!\n)\s)+pam_tally2.so(\s|$)</ind:pattern>
+      <ind:instance datatype="int">1</ind:instance>
     </ind:textfilecontent54_object>
     <ind:textfilecontent54_object id="oval:ssg-obj_password_pam_pwquality_retry_system_auth:obj:1" version="1">
       <ind:filepath>/etc/pam.d/system-auth</ind:filepath>
@@ -1522,6 +1710,31 @@
       <ind:pattern operation="pattern match" var_ref="oval:ssg-var_accounts_passwords_pam_faillock_unlock_time_faillock_conf_unlock_time_parameter_regex:var:1" />
       <ind:instance datatype="int" operation="equals">1</ind:instance>
     </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_pam_password_pam_cracklib_dcredit:obj:1" version="1" comment="Check dcredit configuration of PAM pam_cracklib.so module">
+      <ind:filepath>/etc/pam.d/common-password</ind:filepath>
+      <ind:pattern operation="pattern match">^\s*password\s+requisite\s+pam_cracklib.so.*\sdcredit=(-?\d+)(?:\s+.*)?</ind:pattern>
+      <ind:instance datatype="int" operation="greater than or equal">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_pam_password_pam_cracklib_lcredit:obj:1" version="1" comment="Check lcredit configuration of PAM pam_cracklib.so module">
+      <ind:filepath>/etc/pam.d/common-password</ind:filepath>
+      <ind:pattern operation="pattern match">^\s*password\s+requisite\s+pam_cracklib.so.*\slcredit=(-?\d+)(?:\s+.*)?</ind:pattern>
+      <ind:instance datatype="int" operation="greater than or equal">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_pam_password_pam_cracklib_minlen:obj:1" version="1" comment="Check minlen configuration of PAM pam_cracklib.so module">
+      <ind:filepath>/etc/pam.d/common-password</ind:filepath>
+      <ind:pattern operation="pattern match">^\s*password\s+requisite\s+pam_cracklib.so.*\sminlen=(-?\d+)(?:\s+.*)?</ind:pattern>
+      <ind:instance datatype="int" operation="greater than or equal">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_pam_password_pam_cracklib_ocredit:obj:1" version="1" comment="Check ocredit configuration of PAM pam_cracklib.so module">
+      <ind:filepath>/etc/pam.d/common-password</ind:filepath>
+      <ind:pattern operation="pattern match">^\s*password\s+requisite\s+pam_cracklib.so.*\socredit=(-?\d+)(?:\s+.*)?</ind:pattern>
+      <ind:instance datatype="int" operation="greater than or equal">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_pam_password_pam_cracklib_ucredit:obj:1" version="1" comment="Check ucredit configuration of PAM pam_cracklib.so module">
+      <ind:filepath>/etc/pam.d/common-password</ind:filepath>
+      <ind:pattern operation="pattern match">^\s*password\s+requisite\s+pam_cracklib.so.*\sucredit=(-?\d+)(?:\s+.*)?</ind:pattern>
+      <ind:instance datatype="int" operation="greater than or equal">1</ind:instance>
+    </ind:textfilecontent54_object>
     <linux:rpminfo_object id="oval:ssg-obj_test_package_dhcp_removed:obj:1" version="1">
       <linux:name>dhcp</linux:name>
     </linux:rpminfo_object>
@@ -1600,6 +1813,15 @@
     </unix:symlink_state>
     <ind:textfilecontent54_state id="oval:ssg-state_accounts_password_pam_unix_remember:ste:1" version="1" operator="AND">
       <ind:subexpression datatype="int" operation="greater than or equal" var_ref="oval:ssg-var_password_pam_unix_remember:var:1" />
+    </ind:textfilecontent54_state>
+    <ind:textfilecontent54_state id="oval:ssg-state_var_accounts_passwords_pam_tally2_deny_value_upper_bound:ste:1" version="1" operator="AND">
+      <ind:subexpression datatype="int" operation="less than or equal" var_ref="oval:ssg-var_password_pam_tally2:var:1" />
+    </ind:textfilecontent54_state>
+    <ind:textfilecontent54_state id="oval:ssg-state_var_accounts_passwords_pam_tally2_deny_value_lower_bound:ste:1" version="1" operator="AND">
+      <ind:subexpression datatype="int" operation="greater than">0</ind:subexpression>
+    </ind:textfilecontent54_state>
+    <ind:textfilecontent54_state id="oval:ssg-state_accounts_passwords_pam_tally2_unlock_time:ste:1" version="1" operator="AND">
+      <ind:subexpression datatype="int" operation="greater than or equal" var_ref="oval:ssg-var_accounts_passwords_pam_tally2_unlock_time:var:1" />
     </ind:textfilecontent54_state>
     <ind:textfilecontent54_state id="oval:ssg-state_password_pam_retry_upper_bound:ste:1" version="1" operator="AND" comment="upper bound of password_pam_retry">
       <ind:subexpression datatype="int" operation="less than or equal" var_ref="oval:ssg-var_password_pam_retry:var:1" />
@@ -1706,6 +1928,21 @@
     <ind:textfilecontent54_state id="oval:ssg-state_accounts_passwords_pam_faillock_unlock_time_parameter_lower_bound:ste:1" version="1" operator="AND">
       <ind:subexpression datatype="int" operation="greater than or equal" var_ref="oval:ssg-var_accounts_passwords_pam_faillock_unlock_time:var:1" />
     </ind:textfilecontent54_state>
+    <ind:textfilecontent54_state id="oval:ssg-state_pam_password_pam_cracklib_dcredit:ste:1" version="3" operator="AND">
+      <ind:subexpression datatype="int" operation="less than or equal" var_ref="oval:ssg-var_password_pam_dcredit:var:1" />
+    </ind:textfilecontent54_state>
+    <ind:textfilecontent54_state id="oval:ssg-state_pam_password_pam_cracklib_lcredit:ste:1" version="3" operator="AND">
+      <ind:subexpression datatype="int" operation="less than or equal" var_ref="oval:ssg-var_password_pam_lcredit:var:1" />
+    </ind:textfilecontent54_state>
+    <ind:textfilecontent54_state id="oval:ssg-state_pam_password_pam_cracklib_minlen:ste:1" version="3" operator="AND">
+      <ind:subexpression datatype="int" operation="greater than or equal" var_ref="oval:ssg-var_password_pam_minlen:var:1" />
+    </ind:textfilecontent54_state>
+    <ind:textfilecontent54_state id="oval:ssg-state_pam_password_pam_cracklib_ocredit:ste:1" version="3" operator="AND">
+      <ind:subexpression datatype="int" operation="less than or equal" var_ref="oval:ssg-var_password_pam_ocredit:var:1" />
+    </ind:textfilecontent54_state>
+    <ind:textfilecontent54_state id="oval:ssg-state_pam_password_pam_cracklib_ucredit:ste:1" version="3" operator="AND">
+      <ind:subexpression datatype="int" operation="less than or equal" var_ref="oval:ssg-var_password_pam_ucredit:var:1" />
+    </ind:textfilecontent54_state>
     <linux:systemdunitdependency_state id="oval:ssg-state_systemd_dnf-automatic_on:ste:1" version="1" operator="AND" comment="dnf-automatic listed at least once in the dependencies">
       <linux:dependency entity_check="at least one">dnf-automatic.timer</linux:dependency>
     </linux:systemdunitdependency_state>
@@ -1739,6 +1976,8 @@
     <oval-def:constant_variable id="oval:ssg-var_accounts_passwords_pam_faillock_deny_root_faillock_conf_parameter_regex:var:1" version="1" datatype="string" comment="regex to identify deny entry in /etc/security/faillock.conf">
       <oval-def:value>^[\s]*even_deny_root</oval-def:value>
     </oval-def:constant_variable>
+    <oval-def:external_variable id="oval:ssg-var_password_pam_tally2:var:1" version="1" datatype="int" comment="number of failed login attempts allowed" />
+    <oval-def:external_variable id="oval:ssg-var_accounts_passwords_pam_tally2_unlock_time:var:1" version="1" datatype="int" comment="number of failed login attempts allowed" />
     <oval-def:external_variable id="oval:ssg-var_password_pam_retry:var:1" version="1" datatype="int" comment="External variable for pam_pwquality retry" />
     <oval-def:local_variable id="oval:ssg-variable_last_pass_min_len_instance_value:var:1" version="1" datatype="int" comment="The value of last PASS_MIN_LEN directive in /etc/login.defs">
       <oval-def:regex_capture pattern="PASS_MIN_LEN\s+(\d+)">

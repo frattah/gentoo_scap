@@ -29,17 +29,17 @@
 ###############################################################################
 
 ###############################################################################
-# BEGIN fix (1 / 47) for 'xccdf_org.ssgproject.content_rule_package_dnf-automatic_installed'
+# BEGIN fix (1 / 56) for 'xccdf_org.ssgproject.content_rule_package_dnf-automatic_installed'
 ###############################################################################
-(>&2 echo "Remediating rule 1/47: 'xccdf_org.ssgproject.content_rule_package_dnf-automatic_installed'")
+(>&2 echo "Remediating rule 1/56: 'xccdf_org.ssgproject.content_rule_package_dnf-automatic_installed'")
 (>&2 echo "FIX FOR THIS RULE 'xccdf_org.ssgproject.content_rule_package_dnf-automatic_installed' IS MISSING!")
 
 # END fix for 'xccdf_org.ssgproject.content_rule_package_dnf-automatic_installed'
 
 ###############################################################################
-# BEGIN fix (2 / 47) for 'xccdf_org.ssgproject.content_rule_dnf-automatic_apply_updates'
+# BEGIN fix (2 / 56) for 'xccdf_org.ssgproject.content_rule_dnf-automatic_apply_updates'
 ###############################################################################
-(>&2 echo "Remediating rule 2/47: 'xccdf_org.ssgproject.content_rule_dnf-automatic_apply_updates'")
+(>&2 echo "Remediating rule 2/56: 'xccdf_org.ssgproject.content_rule_dnf-automatic_apply_updates'")
 
 found=false
 
@@ -71,9 +71,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_dnf-automatic_apply_updates'
 
 ###############################################################################
-# BEGIN fix (3 / 47) for 'xccdf_org.ssgproject.content_rule_dnf-automatic_security_updates_only'
+# BEGIN fix (3 / 56) for 'xccdf_org.ssgproject.content_rule_dnf-automatic_security_updates_only'
 ###############################################################################
-(>&2 echo "Remediating rule 3/47: 'xccdf_org.ssgproject.content_rule_dnf-automatic_security_updates_only'")
+(>&2 echo "Remediating rule 3/56: 'xccdf_org.ssgproject.content_rule_dnf-automatic_security_updates_only'")
 
 found=false
 
@@ -105,17 +105,17 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_dnf-automatic_security_updates_only'
 
 ###############################################################################
-# BEGIN fix (4 / 47) for 'xccdf_org.ssgproject.content_rule_ensure_gpgcheck_globally_activated'
+# BEGIN fix (4 / 56) for 'xccdf_org.ssgproject.content_rule_ensure_gpgcheck_globally_activated'
 ###############################################################################
-(>&2 echo "Remediating rule 4/47: 'xccdf_org.ssgproject.content_rule_ensure_gpgcheck_globally_activated'")
+(>&2 echo "Remediating rule 4/56: 'xccdf_org.ssgproject.content_rule_ensure_gpgcheck_globally_activated'")
 (>&2 echo "FIX FOR THIS RULE 'xccdf_org.ssgproject.content_rule_ensure_gpgcheck_globally_activated' IS MISSING!")
 
 # END fix for 'xccdf_org.ssgproject.content_rule_ensure_gpgcheck_globally_activated'
 
 ###############################################################################
-# BEGIN fix (5 / 47) for 'xccdf_org.ssgproject.content_rule_ensure_gpgcheck_local_packages'
+# BEGIN fix (5 / 56) for 'xccdf_org.ssgproject.content_rule_ensure_gpgcheck_local_packages'
 ###############################################################################
-(>&2 echo "Remediating rule 5/47: 'xccdf_org.ssgproject.content_rule_ensure_gpgcheck_local_packages'")
+(>&2 echo "Remediating rule 5/56: 'xccdf_org.ssgproject.content_rule_ensure_gpgcheck_local_packages'")
 # Remediation is applicable only in certain platforms
 if rpm --quiet -q yum; then
 
@@ -146,33 +146,41 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_ensure_gpgcheck_local_packages'
 
 ###############################################################################
-# BEGIN fix (6 / 47) for 'xccdf_org.ssgproject.content_rule_ensure_gpgcheck_never_disabled'
+# BEGIN fix (6 / 56) for 'xccdf_org.ssgproject.content_rule_ensure_gpgcheck_never_disabled'
 ###############################################################################
-(>&2 echo "Remediating rule 6/47: 'xccdf_org.ssgproject.content_rule_ensure_gpgcheck_never_disabled'")
+(>&2 echo "Remediating rule 6/56: 'xccdf_org.ssgproject.content_rule_ensure_gpgcheck_never_disabled'")
 (>&2 echo "FIX FOR THIS RULE 'xccdf_org.ssgproject.content_rule_ensure_gpgcheck_never_disabled' IS MISSING!")
 
 # END fix for 'xccdf_org.ssgproject.content_rule_ensure_gpgcheck_never_disabled'
 
 ###############################################################################
-# BEGIN fix (7 / 47) for 'xccdf_org.ssgproject.content_rule_ensure_redhat_gpgkey_installed'
+# BEGIN fix (7 / 56) for 'xccdf_org.ssgproject.content_rule_ensure_oracle_gpgkey_installed'
 ###############################################################################
-(>&2 echo "Remediating rule 7/47: 'xccdf_org.ssgproject.content_rule_ensure_redhat_gpgkey_installed'")
+(>&2 echo "Remediating rule 7/56: 'xccdf_org.ssgproject.content_rule_ensure_oracle_gpgkey_installed'")
+(>&2 echo "FIX FOR THIS RULE 'xccdf_org.ssgproject.content_rule_ensure_oracle_gpgkey_installed' IS MISSING!")
+
+# END fix for 'xccdf_org.ssgproject.content_rule_ensure_oracle_gpgkey_installed'
+
+###############################################################################
+# BEGIN fix (8 / 56) for 'xccdf_org.ssgproject.content_rule_ensure_redhat_gpgkey_installed'
+###############################################################################
+(>&2 echo "Remediating rule 8/56: 'xccdf_org.ssgproject.content_rule_ensure_redhat_gpgkey_installed'")
 (>&2 echo "FIX FOR THIS RULE 'xccdf_org.ssgproject.content_rule_ensure_redhat_gpgkey_installed' IS MISSING!")
 
 # END fix for 'xccdf_org.ssgproject.content_rule_ensure_redhat_gpgkey_installed'
 
 ###############################################################################
-# BEGIN fix (8 / 47) for 'xccdf_org.ssgproject.content_rule_security_patches_up_to_date'
+# BEGIN fix (9 / 56) for 'xccdf_org.ssgproject.content_rule_security_patches_up_to_date'
 ###############################################################################
-(>&2 echo "Remediating rule 8/47: 'xccdf_org.ssgproject.content_rule_security_patches_up_to_date'")
+(>&2 echo "Remediating rule 9/56: 'xccdf_org.ssgproject.content_rule_security_patches_up_to_date'")
 (>&2 echo "FIX FOR THIS RULE 'xccdf_org.ssgproject.content_rule_security_patches_up_to_date' IS MISSING!")
 
 # END fix for 'xccdf_org.ssgproject.content_rule_security_patches_up_to_date'
 
 ###############################################################################
-# BEGIN fix (9 / 47) for 'xccdf_org.ssgproject.content_rule_timer_dnf-automatic_enabled'
+# BEGIN fix (10 / 56) for 'xccdf_org.ssgproject.content_rule_timer_dnf-automatic_enabled'
 ###############################################################################
-(>&2 echo "Remediating rule 9/47: 'xccdf_org.ssgproject.content_rule_timer_dnf-automatic_enabled'")
+(>&2 echo "Remediating rule 10/56: 'xccdf_org.ssgproject.content_rule_timer_dnf-automatic_enabled'")
 
 SYSTEMCTL_EXEC='/usr/bin/systemctl'
 "$SYSTEMCTL_EXEC" start 'dnf-automatic.timer'
@@ -181,9 +189,9 @@ SYSTEMCTL_EXEC='/usr/bin/systemctl'
 # END fix for 'xccdf_org.ssgproject.content_rule_timer_dnf-automatic_enabled'
 
 ###############################################################################
-# BEGIN fix (10 / 47) for 'xccdf_org.ssgproject.content_rule_enable_authselect'
+# BEGIN fix (11 / 56) for 'xccdf_org.ssgproject.content_rule_enable_authselect'
 ###############################################################################
-(>&2 echo "Remediating rule 10/47: 'xccdf_org.ssgproject.content_rule_enable_authselect'")
+(>&2 echo "Remediating rule 11/56: 'xccdf_org.ssgproject.content_rule_enable_authselect'")
 
 var_authselect_profile='minimal'
 
@@ -201,9 +209,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_enable_authselect'
 
 ###############################################################################
-# BEGIN fix (11 / 47) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_unix_remember'
+# BEGIN fix (12 / 56) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_unix_remember'
 ###############################################################################
-(>&2 echo "Remediating rule 11/47: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_unix_remember'")
+(>&2 echo "Remediating rule 12/56: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_unix_remember'")
 # Remediation is applicable only in certain platforms
 if rpm --quiet -q pam; then
 
@@ -403,9 +411,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_unix_remember'
 
 ###############################################################################
-# BEGIN fix (12 / 47) for 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_deny'
+# BEGIN fix (13 / 56) for 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_deny'
 ###############################################################################
-(>&2 echo "Remediating rule 12/47: 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_deny'")
+(>&2 echo "Remediating rule 13/56: 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_deny'")
 # Remediation is applicable only in certain platforms
 if rpm --quiet -q pam; then
 
@@ -517,17 +525,17 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_deny'
 
 ###############################################################################
-# BEGIN fix (13 / 47) for 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_deny_root'
+# BEGIN fix (14 / 56) for 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_deny_root'
 ###############################################################################
-(>&2 echo "Remediating rule 13/47: 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_deny_root'")
+(>&2 echo "Remediating rule 14/56: 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_deny_root'")
 (>&2 echo "FIX FOR THIS RULE 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_deny_root' IS MISSING!")
 
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_deny_root'
 
 ###############################################################################
-# BEGIN fix (14 / 47) for 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_interval'
+# BEGIN fix (15 / 56) for 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_interval'
 ###############################################################################
-(>&2 echo "Remediating rule 14/47: 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_interval'")
+(>&2 echo "Remediating rule 15/56: 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_interval'")
 # Remediation is applicable only in certain platforms
 if rpm --quiet -q pam; then
 
@@ -639,9 +647,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_interval'
 
 ###############################################################################
-# BEGIN fix (15 / 47) for 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_unlock_time'
+# BEGIN fix (16 / 56) for 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_unlock_time'
 ###############################################################################
-(>&2 echo "Remediating rule 15/47: 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_unlock_time'")
+(>&2 echo "Remediating rule 16/56: 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_unlock_time'")
 # Remediation is applicable only in certain platforms
 if rpm --quiet -q pam; then
 
@@ -753,9 +761,298 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_unlock_time'
 
 ###############################################################################
-# BEGIN fix (16 / 47) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit'
+# BEGIN fix (17 / 56) for 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_tally2'
 ###############################################################################
-(>&2 echo "Remediating rule 16/47: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit'")
+(>&2 echo "Remediating rule 17/56: 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_tally2'")
+(>&2 echo "FIX FOR THIS RULE 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_tally2' IS MISSING!")
+
+# END fix for 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_tally2'
+
+###############################################################################
+# BEGIN fix (18 / 56) for 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_tally2_deny_root'
+###############################################################################
+(>&2 echo "Remediating rule 18/56: 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_tally2_deny_root'")
+(>&2 echo "FIX FOR THIS RULE 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_tally2_deny_root' IS MISSING!")
+
+# END fix for 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_tally2_deny_root'
+
+###############################################################################
+# BEGIN fix (19 / 56) for 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_tally2_unlock_time'
+###############################################################################
+(>&2 echo "Remediating rule 19/56: 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_tally2_unlock_time'")
+(>&2 echo "FIX FOR THIS RULE 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_tally2_unlock_time' IS MISSING!")
+
+# END fix for 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_tally2_unlock_time'
+
+###############################################################################
+# BEGIN fix (20 / 56) for 'xccdf_org.ssgproject.content_rule_cracklib_accounts_password_pam_dcredit'
+###############################################################################
+(>&2 echo "Remediating rule 20/56: 'xccdf_org.ssgproject.content_rule_cracklib_accounts_password_pam_dcredit'")
+
+declare -a VALUES=()
+declare -a VALUE_NAMES=()
+declare -a ARGS=()
+declare -a NEW_ARGS=()
+
+var_password_pam_dcredit='-1'
+
+VALUES+=("$var_password_pam_dcredit")
+VALUE_NAMES+=("dcredit")
+ARGS+=("")
+NEW_ARGS+=("")
+
+for idx in "${!VALUES[@]}"
+do
+    if [ -e "/etc/pam.d/common-password" ] ; then
+        valueRegex="${VALUES[$idx]}" defaultValue="${VALUES[$idx]}"
+        # non-empty values need to be preceded by an equals sign
+        [ -n "${valueRegex}" ] && valueRegex="=${valueRegex}"
+        # add an equals sign to non-empty values
+        [ -n "${defaultValue}" ] && defaultValue="=${defaultValue}"
+
+        # fix the value for 'option' if one exists but does not match 'valueRegex'
+        if grep -q -P "^\\s*password\\s+requisite\\s+pam_cracklib.so(\\s.+)?\\s+${VALUE_NAMES[$idx]}(?"'!'"${valueRegex}(\\s|\$))" < "/etc/pam.d/common-password" ; then
+            sed --follow-symlinks -i -E -e "s/^(\\s*password\\s+requisite\\s+pam_cracklib.so(\\s.+)?\\s)${VALUE_NAMES[$idx]}=[^[:space:]]*/\\1${VALUE_NAMES[$idx]}${defaultValue}/" "/etc/pam.d/common-password"
+
+        # add 'option=default' if option is not set
+        elif grep -q -E "^\\s*password\\s+requisite\\s+pam_cracklib.so" < "/etc/pam.d/common-password" &&
+                grep    -E "^\\s*password\\s+requisite\\s+pam_cracklib.so" < "/etc/pam.d/common-password" | grep -q -E -v "\\s${VALUE_NAMES[$idx]}(=|\\s|\$)" ; then
+
+            sed --follow-symlinks -i -E -e "s/^(\\s*password\\s+requisite\\s+pam_cracklib.so[^\\n]*)/\\1 ${VALUE_NAMES[$idx]}${defaultValue}/" "/etc/pam.d/common-password"
+        # add a new entry if none exists
+        elif ! grep -q -P "^\\s*password\\s+requisite\\s+pam_cracklib.so(\\s.+)?\\s+${VALUE_NAMES[$idx]}${valueRegex}(\\s|\$)" < "/etc/pam.d/common-password" ; then
+            echo "password requisite pam_cracklib.so ${VALUE_NAMES[$idx]}${defaultValue}" >> "/etc/pam.d/common-password"
+        fi
+    else
+        echo "/etc/pam.d/common-password doesn't exist" >&2
+    fi
+done
+
+for idx in "${!ARGS[@]}"
+do
+    if ! grep -q -P "^\s*password\s+requisite\s+pam_cracklib.so.*\s+${ARGS[$idx]}\s*$" /etc/pam.d/common-password ; then
+        sed --follow-symlinks -i -E -e "s/^\\s*password\\s+requisite\\s+pam_cracklib.so.*\$/& ${NEW_ARGS[$idx]}/" /etc/pam.d/common-password
+    fi
+done
+
+# END fix for 'xccdf_org.ssgproject.content_rule_cracklib_accounts_password_pam_dcredit'
+
+###############################################################################
+# BEGIN fix (21 / 56) for 'xccdf_org.ssgproject.content_rule_cracklib_accounts_password_pam_lcredit'
+###############################################################################
+(>&2 echo "Remediating rule 21/56: 'xccdf_org.ssgproject.content_rule_cracklib_accounts_password_pam_lcredit'")
+
+declare -a VALUES=()
+declare -a VALUE_NAMES=()
+declare -a ARGS=()
+declare -a NEW_ARGS=()
+
+var_password_pam_lcredit='-1'
+
+VALUES+=("$var_password_pam_lcredit")
+VALUE_NAMES+=("lcredit")
+ARGS+=("")
+NEW_ARGS+=("")
+
+for idx in "${!VALUES[@]}"
+do
+    if [ -e "/etc/pam.d/common-password" ] ; then
+        valueRegex="${VALUES[$idx]}" defaultValue="${VALUES[$idx]}"
+        # non-empty values need to be preceded by an equals sign
+        [ -n "${valueRegex}" ] && valueRegex="=${valueRegex}"
+        # add an equals sign to non-empty values
+        [ -n "${defaultValue}" ] && defaultValue="=${defaultValue}"
+
+        # fix the value for 'option' if one exists but does not match 'valueRegex'
+        if grep -q -P "^\\s*password\\s+requisite\\s+pam_cracklib.so(\\s.+)?\\s+${VALUE_NAMES[$idx]}(?"'!'"${valueRegex}(\\s|\$))" < "/etc/pam.d/common-password" ; then
+            sed --follow-symlinks -i -E -e "s/^(\\s*password\\s+requisite\\s+pam_cracklib.so(\\s.+)?\\s)${VALUE_NAMES[$idx]}=[^[:space:]]*/\\1${VALUE_NAMES[$idx]}${defaultValue}/" "/etc/pam.d/common-password"
+
+        # add 'option=default' if option is not set
+        elif grep -q -E "^\\s*password\\s+requisite\\s+pam_cracklib.so" < "/etc/pam.d/common-password" &&
+                grep    -E "^\\s*password\\s+requisite\\s+pam_cracklib.so" < "/etc/pam.d/common-password" | grep -q -E -v "\\s${VALUE_NAMES[$idx]}(=|\\s|\$)" ; then
+
+            sed --follow-symlinks -i -E -e "s/^(\\s*password\\s+requisite\\s+pam_cracklib.so[^\\n]*)/\\1 ${VALUE_NAMES[$idx]}${defaultValue}/" "/etc/pam.d/common-password"
+        # add a new entry if none exists
+        elif ! grep -q -P "^\\s*password\\s+requisite\\s+pam_cracklib.so(\\s.+)?\\s+${VALUE_NAMES[$idx]}${valueRegex}(\\s|\$)" < "/etc/pam.d/common-password" ; then
+            echo "password requisite pam_cracklib.so ${VALUE_NAMES[$idx]}${defaultValue}" >> "/etc/pam.d/common-password"
+        fi
+    else
+        echo "/etc/pam.d/common-password doesn't exist" >&2
+    fi
+done
+
+for idx in "${!ARGS[@]}"
+do
+    if ! grep -q -P "^\s*password\s+requisite\s+pam_cracklib.so.*\s+${ARGS[$idx]}\s*$" /etc/pam.d/common-password ; then
+        sed --follow-symlinks -i -E -e "s/^\\s*password\\s+requisite\\s+pam_cracklib.so.*\$/& ${NEW_ARGS[$idx]}/" /etc/pam.d/common-password
+    fi
+done
+
+# END fix for 'xccdf_org.ssgproject.content_rule_cracklib_accounts_password_pam_lcredit'
+
+###############################################################################
+# BEGIN fix (22 / 56) for 'xccdf_org.ssgproject.content_rule_cracklib_accounts_password_pam_minlen'
+###############################################################################
+(>&2 echo "Remediating rule 22/56: 'xccdf_org.ssgproject.content_rule_cracklib_accounts_password_pam_minlen'")
+
+declare -a VALUES=()
+declare -a VALUE_NAMES=()
+declare -a ARGS=()
+declare -a NEW_ARGS=()
+
+var_password_pam_minlen='15'
+
+VALUES+=("$var_password_pam_minlen")
+VALUE_NAMES+=("minlen")
+ARGS+=("")
+NEW_ARGS+=("")
+
+for idx in "${!VALUES[@]}"
+do
+    if [ -e "/etc/pam.d/common-password" ] ; then
+        valueRegex="${VALUES[$idx]}" defaultValue="${VALUES[$idx]}"
+        # non-empty values need to be preceded by an equals sign
+        [ -n "${valueRegex}" ] && valueRegex="=${valueRegex}"
+        # add an equals sign to non-empty values
+        [ -n "${defaultValue}" ] && defaultValue="=${defaultValue}"
+
+        # fix the value for 'option' if one exists but does not match 'valueRegex'
+        if grep -q -P "^\\s*password\\s+requisite\\s+pam_cracklib.so(\\s.+)?\\s+${VALUE_NAMES[$idx]}(?"'!'"${valueRegex}(\\s|\$))" < "/etc/pam.d/common-password" ; then
+            sed --follow-symlinks -i -E -e "s/^(\\s*password\\s+requisite\\s+pam_cracklib.so(\\s.+)?\\s)${VALUE_NAMES[$idx]}=[^[:space:]]*/\\1${VALUE_NAMES[$idx]}${defaultValue}/" "/etc/pam.d/common-password"
+
+        # add 'option=default' if option is not set
+        elif grep -q -E "^\\s*password\\s+requisite\\s+pam_cracklib.so" < "/etc/pam.d/common-password" &&
+                grep    -E "^\\s*password\\s+requisite\\s+pam_cracklib.so" < "/etc/pam.d/common-password" | grep -q -E -v "\\s${VALUE_NAMES[$idx]}(=|\\s|\$)" ; then
+
+            sed --follow-symlinks -i -E -e "s/^(\\s*password\\s+requisite\\s+pam_cracklib.so[^\\n]*)/\\1 ${VALUE_NAMES[$idx]}${defaultValue}/" "/etc/pam.d/common-password"
+        # add a new entry if none exists
+        elif ! grep -q -P "^\\s*password\\s+requisite\\s+pam_cracklib.so(\\s.+)?\\s+${VALUE_NAMES[$idx]}${valueRegex}(\\s|\$)" < "/etc/pam.d/common-password" ; then
+            echo "password requisite pam_cracklib.so ${VALUE_NAMES[$idx]}${defaultValue}" >> "/etc/pam.d/common-password"
+        fi
+    else
+        echo "/etc/pam.d/common-password doesn't exist" >&2
+    fi
+done
+
+for idx in "${!ARGS[@]}"
+do
+    if ! grep -q -P "^\s*password\s+requisite\s+pam_cracklib.so.*\s+${ARGS[$idx]}\s*$" /etc/pam.d/common-password ; then
+        sed --follow-symlinks -i -E -e "s/^\\s*password\\s+requisite\\s+pam_cracklib.so.*\$/& ${NEW_ARGS[$idx]}/" /etc/pam.d/common-password
+    fi
+done
+
+# END fix for 'xccdf_org.ssgproject.content_rule_cracklib_accounts_password_pam_minlen'
+
+###############################################################################
+# BEGIN fix (23 / 56) for 'xccdf_org.ssgproject.content_rule_cracklib_accounts_password_pam_ocredit'
+###############################################################################
+(>&2 echo "Remediating rule 23/56: 'xccdf_org.ssgproject.content_rule_cracklib_accounts_password_pam_ocredit'")
+
+declare -a VALUES=()
+declare -a VALUE_NAMES=()
+declare -a ARGS=()
+declare -a NEW_ARGS=()
+
+var_password_pam_ocredit='-1'
+
+VALUES+=("$var_password_pam_ocredit")
+VALUE_NAMES+=("ocredit")
+ARGS+=("")
+NEW_ARGS+=("")
+
+for idx in "${!VALUES[@]}"
+do
+    if [ -e "/etc/pam.d/common-password" ] ; then
+        valueRegex="${VALUES[$idx]}" defaultValue="${VALUES[$idx]}"
+        # non-empty values need to be preceded by an equals sign
+        [ -n "${valueRegex}" ] && valueRegex="=${valueRegex}"
+        # add an equals sign to non-empty values
+        [ -n "${defaultValue}" ] && defaultValue="=${defaultValue}"
+
+        # fix the value for 'option' if one exists but does not match 'valueRegex'
+        if grep -q -P "^\\s*password\\s+requisite\\s+pam_cracklib.so(\\s.+)?\\s+${VALUE_NAMES[$idx]}(?"'!'"${valueRegex}(\\s|\$))" < "/etc/pam.d/common-password" ; then
+            sed --follow-symlinks -i -E -e "s/^(\\s*password\\s+requisite\\s+pam_cracklib.so(\\s.+)?\\s)${VALUE_NAMES[$idx]}=[^[:space:]]*/\\1${VALUE_NAMES[$idx]}${defaultValue}/" "/etc/pam.d/common-password"
+
+        # add 'option=default' if option is not set
+        elif grep -q -E "^\\s*password\\s+requisite\\s+pam_cracklib.so" < "/etc/pam.d/common-password" &&
+                grep    -E "^\\s*password\\s+requisite\\s+pam_cracklib.so" < "/etc/pam.d/common-password" | grep -q -E -v "\\s${VALUE_NAMES[$idx]}(=|\\s|\$)" ; then
+
+            sed --follow-symlinks -i -E -e "s/^(\\s*password\\s+requisite\\s+pam_cracklib.so[^\\n]*)/\\1 ${VALUE_NAMES[$idx]}${defaultValue}/" "/etc/pam.d/common-password"
+        # add a new entry if none exists
+        elif ! grep -q -P "^\\s*password\\s+requisite\\s+pam_cracklib.so(\\s.+)?\\s+${VALUE_NAMES[$idx]}${valueRegex}(\\s|\$)" < "/etc/pam.d/common-password" ; then
+            echo "password requisite pam_cracklib.so ${VALUE_NAMES[$idx]}${defaultValue}" >> "/etc/pam.d/common-password"
+        fi
+    else
+        echo "/etc/pam.d/common-password doesn't exist" >&2
+    fi
+done
+
+for idx in "${!ARGS[@]}"
+do
+    if ! grep -q -P "^\s*password\s+requisite\s+pam_cracklib.so.*\s+${ARGS[$idx]}\s*$" /etc/pam.d/common-password ; then
+        sed --follow-symlinks -i -E -e "s/^\\s*password\\s+requisite\\s+pam_cracklib.so.*\$/& ${NEW_ARGS[$idx]}/" /etc/pam.d/common-password
+    fi
+done
+
+# END fix for 'xccdf_org.ssgproject.content_rule_cracklib_accounts_password_pam_ocredit'
+
+###############################################################################
+# BEGIN fix (24 / 56) for 'xccdf_org.ssgproject.content_rule_cracklib_accounts_password_pam_ucredit'
+###############################################################################
+(>&2 echo "Remediating rule 24/56: 'xccdf_org.ssgproject.content_rule_cracklib_accounts_password_pam_ucredit'")
+
+declare -a VALUES=()
+declare -a VALUE_NAMES=()
+declare -a ARGS=()
+declare -a NEW_ARGS=()
+
+var_password_pam_ucredit='-1'
+
+VALUES+=("$var_password_pam_ucredit")
+VALUE_NAMES+=("ucredit")
+ARGS+=("")
+NEW_ARGS+=("")
+
+for idx in "${!VALUES[@]}"
+do
+    if [ -e "/etc/pam.d/common-password" ] ; then
+        valueRegex="${VALUES[$idx]}" defaultValue="${VALUES[$idx]}"
+        # non-empty values need to be preceded by an equals sign
+        [ -n "${valueRegex}" ] && valueRegex="=${valueRegex}"
+        # add an equals sign to non-empty values
+        [ -n "${defaultValue}" ] && defaultValue="=${defaultValue}"
+
+        # fix the value for 'option' if one exists but does not match 'valueRegex'
+        if grep -q -P "^\\s*password\\s+requisite\\s+pam_cracklib.so(\\s.+)?\\s+${VALUE_NAMES[$idx]}(?"'!'"${valueRegex}(\\s|\$))" < "/etc/pam.d/common-password" ; then
+            sed --follow-symlinks -i -E -e "s/^(\\s*password\\s+requisite\\s+pam_cracklib.so(\\s.+)?\\s)${VALUE_NAMES[$idx]}=[^[:space:]]*/\\1${VALUE_NAMES[$idx]}${defaultValue}/" "/etc/pam.d/common-password"
+
+        # add 'option=default' if option is not set
+        elif grep -q -E "^\\s*password\\s+requisite\\s+pam_cracklib.so" < "/etc/pam.d/common-password" &&
+                grep    -E "^\\s*password\\s+requisite\\s+pam_cracklib.so" < "/etc/pam.d/common-password" | grep -q -E -v "\\s${VALUE_NAMES[$idx]}(=|\\s|\$)" ; then
+
+            sed --follow-symlinks -i -E -e "s/^(\\s*password\\s+requisite\\s+pam_cracklib.so[^\\n]*)/\\1 ${VALUE_NAMES[$idx]}${defaultValue}/" "/etc/pam.d/common-password"
+        # add a new entry if none exists
+        elif ! grep -q -P "^\\s*password\\s+requisite\\s+pam_cracklib.so(\\s.+)?\\s+${VALUE_NAMES[$idx]}${valueRegex}(\\s|\$)" < "/etc/pam.d/common-password" ; then
+            echo "password requisite pam_cracklib.so ${VALUE_NAMES[$idx]}${defaultValue}" >> "/etc/pam.d/common-password"
+        fi
+    else
+        echo "/etc/pam.d/common-password doesn't exist" >&2
+    fi
+done
+
+for idx in "${!ARGS[@]}"
+do
+    if ! grep -q -P "^\s*password\s+requisite\s+pam_cracklib.so.*\s+${ARGS[$idx]}\s*$" /etc/pam.d/common-password ; then
+        sed --follow-symlinks -i -E -e "s/^\\s*password\\s+requisite\\s+pam_cracklib.so.*\$/& ${NEW_ARGS[$idx]}/" /etc/pam.d/common-password
+    fi
+done
+
+# END fix for 'xccdf_org.ssgproject.content_rule_cracklib_accounts_password_pam_ucredit'
+
+###############################################################################
+# BEGIN fix (25 / 56) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit'
+###############################################################################
+(>&2 echo "Remediating rule 25/56: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit'")
 # Remediation is applicable only in certain platforms
 if rpm --quiet -q pam; then
 
@@ -793,9 +1090,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit'
 
 ###############################################################################
-# BEGIN fix (17 / 47) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit'
+# BEGIN fix (26 / 56) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit'
 ###############################################################################
-(>&2 echo "Remediating rule 17/47: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit'")
+(>&2 echo "Remediating rule 26/56: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit'")
 # Remediation is applicable only in certain platforms
 if rpm --quiet -q pam; then
 
@@ -833,9 +1130,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit'
 
 ###############################################################################
-# BEGIN fix (18 / 47) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_minclass'
+# BEGIN fix (27 / 56) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_minclass'
 ###############################################################################
-(>&2 echo "Remediating rule 18/47: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_minclass'")
+(>&2 echo "Remediating rule 27/56: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_minclass'")
 # Remediation is applicable only in certain platforms
 if rpm --quiet -q pam; then
 
@@ -873,9 +1170,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_minclass'
 
 ###############################################################################
-# BEGIN fix (19 / 47) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen'
+# BEGIN fix (28 / 56) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen'
 ###############################################################################
-(>&2 echo "Remediating rule 19/47: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen'")
+(>&2 echo "Remediating rule 28/56: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen'")
 # Remediation is applicable only in certain platforms
 if rpm --quiet -q pam; then
 
@@ -913,9 +1210,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen'
 
 ###############################################################################
-# BEGIN fix (20 / 47) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit'
+# BEGIN fix (29 / 56) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit'
 ###############################################################################
-(>&2 echo "Remediating rule 20/47: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit'")
+(>&2 echo "Remediating rule 29/56: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit'")
 # Remediation is applicable only in certain platforms
 if rpm --quiet -q pam; then
 
@@ -953,9 +1250,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit'
 
 ###############################################################################
-# BEGIN fix (21 / 47) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_retry'
+# BEGIN fix (30 / 56) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_retry'
 ###############################################################################
-(>&2 echo "Remediating rule 21/47: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_retry'")
+(>&2 echo "Remediating rule 30/56: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_retry'")
 # Remediation is applicable only in certain platforms
 if rpm --quiet -q pam; then
 
@@ -1032,9 +1329,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_retry'
 
 ###############################################################################
-# BEGIN fix (22 / 47) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit'
+# BEGIN fix (31 / 56) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit'
 ###############################################################################
-(>&2 echo "Remediating rule 22/47: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit'")
+(>&2 echo "Remediating rule 31/56: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit'")
 # Remediation is applicable only in certain platforms
 if rpm --quiet -q pam; then
 
@@ -1072,9 +1369,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit'
 
 ###############################################################################
-# BEGIN fix (23 / 47) for 'xccdf_org.ssgproject.content_rule_set_password_hashing_algorithm_systemauth'
+# BEGIN fix (32 / 56) for 'xccdf_org.ssgproject.content_rule_set_password_hashing_algorithm_systemauth'
 ###############################################################################
-(>&2 echo "Remediating rule 23/47: 'xccdf_org.ssgproject.content_rule_set_password_hashing_algorithm_systemauth'")
+(>&2 echo "Remediating rule 32/56: 'xccdf_org.ssgproject.content_rule_set_password_hashing_algorithm_systemauth'")
 # Remediation is applicable only in certain platforms
 if rpm --quiet -q pam; then
 
@@ -1139,41 +1436,41 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_set_password_hashing_algorithm_systemauth'
 
 ###############################################################################
-# BEGIN fix (24 / 47) for 'xccdf_org.ssgproject.content_rule_accounts_password_minlen_login_defs'
+# BEGIN fix (33 / 56) for 'xccdf_org.ssgproject.content_rule_accounts_password_minlen_login_defs'
 ###############################################################################
-(>&2 echo "Remediating rule 24/47: 'xccdf_org.ssgproject.content_rule_accounts_password_minlen_login_defs'")
+(>&2 echo "Remediating rule 33/56: 'xccdf_org.ssgproject.content_rule_accounts_password_minlen_login_defs'")
 (>&2 echo "FIX FOR THIS RULE 'xccdf_org.ssgproject.content_rule_accounts_password_minlen_login_defs' IS MISSING!")
 
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_password_minlen_login_defs'
 
 ###############################################################################
-# BEGIN fix (25 / 47) for 'xccdf_org.ssgproject.content_rule_accounts_password_set_max_life_root'
+# BEGIN fix (34 / 56) for 'xccdf_org.ssgproject.content_rule_accounts_password_set_max_life_root'
 ###############################################################################
-(>&2 echo "Remediating rule 25/47: 'xccdf_org.ssgproject.content_rule_accounts_password_set_max_life_root'")
+(>&2 echo "Remediating rule 34/56: 'xccdf_org.ssgproject.content_rule_accounts_password_set_max_life_root'")
 (>&2 echo "FIX FOR THIS RULE 'xccdf_org.ssgproject.content_rule_accounts_password_set_max_life_root' IS MISSING!")
 
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_password_set_max_life_root'
 
 ###############################################################################
-# BEGIN fix (26 / 47) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_unix_rounds_password_auth'
+# BEGIN fix (35 / 56) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_unix_rounds_password_auth'
 ###############################################################################
-(>&2 echo "Remediating rule 26/47: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_unix_rounds_password_auth'")
+(>&2 echo "Remediating rule 35/56: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_unix_rounds_password_auth'")
 (>&2 echo "FIX FOR THIS RULE 'xccdf_org.ssgproject.content_rule_accounts_password_pam_unix_rounds_password_auth' IS MISSING!")
 
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_unix_rounds_password_auth'
 
 ###############################################################################
-# BEGIN fix (27 / 47) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_unix_rounds_system_auth'
+# BEGIN fix (36 / 56) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_unix_rounds_system_auth'
 ###############################################################################
-(>&2 echo "Remediating rule 27/47: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_unix_rounds_system_auth'")
+(>&2 echo "Remediating rule 36/56: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_unix_rounds_system_auth'")
 (>&2 echo "FIX FOR THIS RULE 'xccdf_org.ssgproject.content_rule_accounts_password_pam_unix_rounds_system_auth' IS MISSING!")
 
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_unix_rounds_system_auth'
 
 ###############################################################################
-# BEGIN fix (28 / 47) for 'xccdf_org.ssgproject.content_rule_dir_perms_world_writable_root_owned'
+# BEGIN fix (37 / 56) for 'xccdf_org.ssgproject.content_rule_dir_perms_world_writable_root_owned'
 ###############################################################################
-(>&2 echo "Remediating rule 28/47: 'xccdf_org.ssgproject.content_rule_dir_perms_world_writable_root_owned'")
+(>&2 echo "Remediating rule 37/56: 'xccdf_org.ssgproject.content_rule_dir_perms_world_writable_root_owned'")
 
 # At least under containerized env /proc can have files w/o possilibity to
 # modify even as root. And touching /proc is not good idea anyways.
@@ -1187,33 +1484,33 @@ find / -path /proc -prune -o \
 # END fix for 'xccdf_org.ssgproject.content_rule_dir_perms_world_writable_root_owned'
 
 ###############################################################################
-# BEGIN fix (29 / 47) for 'xccdf_org.ssgproject.content_rule_dir_perms_world_writable_sticky_bits'
+# BEGIN fix (38 / 56) for 'xccdf_org.ssgproject.content_rule_dir_perms_world_writable_sticky_bits'
 ###############################################################################
-(>&2 echo "Remediating rule 29/47: 'xccdf_org.ssgproject.content_rule_dir_perms_world_writable_sticky_bits'")
+(>&2 echo "Remediating rule 38/56: 'xccdf_org.ssgproject.content_rule_dir_perms_world_writable_sticky_bits'")
 (>&2 echo "FIX FOR THIS RULE 'xccdf_org.ssgproject.content_rule_dir_perms_world_writable_sticky_bits' IS MISSING!")
 
 # END fix for 'xccdf_org.ssgproject.content_rule_dir_perms_world_writable_sticky_bits'
 
 ###############################################################################
-# BEGIN fix (30 / 47) for 'xccdf_org.ssgproject.content_rule_file_permissions_unauthorized_sgid'
+# BEGIN fix (39 / 56) for 'xccdf_org.ssgproject.content_rule_file_permissions_unauthorized_sgid'
 ###############################################################################
-(>&2 echo "Remediating rule 30/47: 'xccdf_org.ssgproject.content_rule_file_permissions_unauthorized_sgid'")
+(>&2 echo "Remediating rule 39/56: 'xccdf_org.ssgproject.content_rule_file_permissions_unauthorized_sgid'")
 (>&2 echo "FIX FOR THIS RULE 'xccdf_org.ssgproject.content_rule_file_permissions_unauthorized_sgid' IS MISSING!")
 
 # END fix for 'xccdf_org.ssgproject.content_rule_file_permissions_unauthorized_sgid'
 
 ###############################################################################
-# BEGIN fix (31 / 47) for 'xccdf_org.ssgproject.content_rule_file_permissions_unauthorized_suid'
+# BEGIN fix (40 / 56) for 'xccdf_org.ssgproject.content_rule_file_permissions_unauthorized_suid'
 ###############################################################################
-(>&2 echo "Remediating rule 31/47: 'xccdf_org.ssgproject.content_rule_file_permissions_unauthorized_suid'")
+(>&2 echo "Remediating rule 40/56: 'xccdf_org.ssgproject.content_rule_file_permissions_unauthorized_suid'")
 (>&2 echo "FIX FOR THIS RULE 'xccdf_org.ssgproject.content_rule_file_permissions_unauthorized_suid' IS MISSING!")
 
 # END fix for 'xccdf_org.ssgproject.content_rule_file_permissions_unauthorized_suid'
 
 ###############################################################################
-# BEGIN fix (32 / 47) for 'xccdf_org.ssgproject.content_rule_file_permissions_unauthorized_world_writable'
+# BEGIN fix (41 / 56) for 'xccdf_org.ssgproject.content_rule_file_permissions_unauthorized_world_writable'
 ###############################################################################
-(>&2 echo "Remediating rule 32/47: 'xccdf_org.ssgproject.content_rule_file_permissions_unauthorized_world_writable'")
+(>&2 echo "Remediating rule 41/56: 'xccdf_org.ssgproject.content_rule_file_permissions_unauthorized_world_writable'")
 
 FILTER_NODEV=$(awk '/nodev/ { print $2 }' /proc/filesystems | paste -sd,)
 PARTITIONS=$(findmnt -n -l -k -it $FILTER_NODEV | awk '{ print $1 }')
@@ -1229,25 +1526,25 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_file_permissions_unauthorized_world_writable'
 
 ###############################################################################
-# BEGIN fix (33 / 47) for 'xccdf_org.ssgproject.content_rule_file_permissions_ungroupowned'
+# BEGIN fix (42 / 56) for 'xccdf_org.ssgproject.content_rule_file_permissions_ungroupowned'
 ###############################################################################
-(>&2 echo "Remediating rule 33/47: 'xccdf_org.ssgproject.content_rule_file_permissions_ungroupowned'")
+(>&2 echo "Remediating rule 42/56: 'xccdf_org.ssgproject.content_rule_file_permissions_ungroupowned'")
 (>&2 echo "FIX FOR THIS RULE 'xccdf_org.ssgproject.content_rule_file_permissions_ungroupowned' IS MISSING!")
 
 # END fix for 'xccdf_org.ssgproject.content_rule_file_permissions_ungroupowned'
 
 ###############################################################################
-# BEGIN fix (34 / 47) for 'xccdf_org.ssgproject.content_rule_no_files_unowned_by_user'
+# BEGIN fix (43 / 56) for 'xccdf_org.ssgproject.content_rule_no_files_unowned_by_user'
 ###############################################################################
-(>&2 echo "Remediating rule 34/47: 'xccdf_org.ssgproject.content_rule_no_files_unowned_by_user'")
+(>&2 echo "Remediating rule 43/56: 'xccdf_org.ssgproject.content_rule_no_files_unowned_by_user'")
 (>&2 echo "FIX FOR THIS RULE 'xccdf_org.ssgproject.content_rule_no_files_unowned_by_user' IS MISSING!")
 
 # END fix for 'xccdf_org.ssgproject.content_rule_no_files_unowned_by_user'
 
 ###############################################################################
-# BEGIN fix (35 / 47) for 'xccdf_org.ssgproject.content_rule_package_dhcp_removed'
+# BEGIN fix (44 / 56) for 'xccdf_org.ssgproject.content_rule_package_dhcp_removed'
 ###############################################################################
-(>&2 echo "Remediating rule 35/47: 'xccdf_org.ssgproject.content_rule_package_dhcp_removed'")
+(>&2 echo "Remediating rule 44/56: 'xccdf_org.ssgproject.content_rule_package_dhcp_removed'")
 
 # CAUTION: This remediation script will remove dhcp
 #	   from the system, and may remove any packages
@@ -1264,9 +1561,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_package_dhcp_removed'
 
 ###############################################################################
-# BEGIN fix (36 / 47) for 'xccdf_org.ssgproject.content_rule_package_sendmail_removed'
+# BEGIN fix (45 / 56) for 'xccdf_org.ssgproject.content_rule_package_sendmail_removed'
 ###############################################################################
-(>&2 echo "Remediating rule 36/47: 'xccdf_org.ssgproject.content_rule_package_sendmail_removed'")
+(>&2 echo "Remediating rule 45/56: 'xccdf_org.ssgproject.content_rule_package_sendmail_removed'")
 # Remediation is applicable only in certain platforms
 if [ ! -f /.dockerenv ] && [ ! -f /run/.containerenv ]; then
 
@@ -1289,9 +1586,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_package_sendmail_removed'
 
 ###############################################################################
-# BEGIN fix (37 / 47) for 'xccdf_org.ssgproject.content_rule_package_xinetd_removed'
+# BEGIN fix (46 / 56) for 'xccdf_org.ssgproject.content_rule_package_xinetd_removed'
 ###############################################################################
-(>&2 echo "Remediating rule 37/47: 'xccdf_org.ssgproject.content_rule_package_xinetd_removed'")
+(>&2 echo "Remediating rule 46/56: 'xccdf_org.ssgproject.content_rule_package_xinetd_removed'")
 # Remediation is applicable only in certain platforms
 if [ ! -f /.dockerenv ] && [ ! -f /run/.containerenv ]; then
 
@@ -1314,9 +1611,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_package_xinetd_removed'
 
 ###############################################################################
-# BEGIN fix (38 / 47) for 'xccdf_org.ssgproject.content_rule_package_ypbind_removed'
+# BEGIN fix (47 / 56) for 'xccdf_org.ssgproject.content_rule_package_ypbind_removed'
 ###############################################################################
-(>&2 echo "Remediating rule 38/47: 'xccdf_org.ssgproject.content_rule_package_ypbind_removed'")
+(>&2 echo "Remediating rule 47/56: 'xccdf_org.ssgproject.content_rule_package_ypbind_removed'")
 
 # CAUTION: This remediation script will remove ypbind
 #	   from the system, and may remove any packages
@@ -1333,9 +1630,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_package_ypbind_removed'
 
 ###############################################################################
-# BEGIN fix (39 / 47) for 'xccdf_org.ssgproject.content_rule_package_ypserv_removed'
+# BEGIN fix (48 / 56) for 'xccdf_org.ssgproject.content_rule_package_ypserv_removed'
 ###############################################################################
-(>&2 echo "Remediating rule 39/47: 'xccdf_org.ssgproject.content_rule_package_ypserv_removed'")
+(>&2 echo "Remediating rule 48/56: 'xccdf_org.ssgproject.content_rule_package_ypserv_removed'")
 
 # CAUTION: This remediation script will remove ypserv
 #	   from the system, and may remove any packages
@@ -1352,9 +1649,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_package_ypserv_removed'
 
 ###############################################################################
-# BEGIN fix (40 / 47) for 'xccdf_org.ssgproject.content_rule_package_rsh-server_removed'
+# BEGIN fix (49 / 56) for 'xccdf_org.ssgproject.content_rule_package_rsh-server_removed'
 ###############################################################################
-(>&2 echo "Remediating rule 40/47: 'xccdf_org.ssgproject.content_rule_package_rsh-server_removed'")
+(>&2 echo "Remediating rule 49/56: 'xccdf_org.ssgproject.content_rule_package_rsh-server_removed'")
 
 # CAUTION: This remediation script will remove rsh-server
 #	   from the system, and may remove any packages
@@ -1371,9 +1668,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_package_rsh-server_removed'
 
 ###############################################################################
-# BEGIN fix (41 / 47) for 'xccdf_org.ssgproject.content_rule_package_rsh_removed'
+# BEGIN fix (50 / 56) for 'xccdf_org.ssgproject.content_rule_package_rsh_removed'
 ###############################################################################
-(>&2 echo "Remediating rule 41/47: 'xccdf_org.ssgproject.content_rule_package_rsh_removed'")
+(>&2 echo "Remediating rule 50/56: 'xccdf_org.ssgproject.content_rule_package_rsh_removed'")
 
 # CAUTION: This remediation script will remove rsh
 #	   from the system, and may remove any packages
@@ -1390,9 +1687,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_package_rsh_removed'
 
 ###############################################################################
-# BEGIN fix (42 / 47) for 'xccdf_org.ssgproject.content_rule_package_talk-server_removed'
+# BEGIN fix (51 / 56) for 'xccdf_org.ssgproject.content_rule_package_talk-server_removed'
 ###############################################################################
-(>&2 echo "Remediating rule 42/47: 'xccdf_org.ssgproject.content_rule_package_talk-server_removed'")
+(>&2 echo "Remediating rule 51/56: 'xccdf_org.ssgproject.content_rule_package_talk-server_removed'")
 
 # CAUTION: This remediation script will remove talk-server
 #	   from the system, and may remove any packages
@@ -1409,9 +1706,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_package_talk-server_removed'
 
 ###############################################################################
-# BEGIN fix (43 / 47) for 'xccdf_org.ssgproject.content_rule_package_talk_removed'
+# BEGIN fix (52 / 56) for 'xccdf_org.ssgproject.content_rule_package_talk_removed'
 ###############################################################################
-(>&2 echo "Remediating rule 43/47: 'xccdf_org.ssgproject.content_rule_package_talk_removed'")
+(>&2 echo "Remediating rule 52/56: 'xccdf_org.ssgproject.content_rule_package_talk_removed'")
 
 # CAUTION: This remediation script will remove talk
 #	   from the system, and may remove any packages
@@ -1428,9 +1725,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_package_talk_removed'
 
 ###############################################################################
-# BEGIN fix (44 / 47) for 'xccdf_org.ssgproject.content_rule_package_telnet-server_removed'
+# BEGIN fix (53 / 56) for 'xccdf_org.ssgproject.content_rule_package_telnet-server_removed'
 ###############################################################################
-(>&2 echo "Remediating rule 44/47: 'xccdf_org.ssgproject.content_rule_package_telnet-server_removed'")
+(>&2 echo "Remediating rule 53/56: 'xccdf_org.ssgproject.content_rule_package_telnet-server_removed'")
 
 # CAUTION: This remediation script will remove telnet-server
 #	   from the system, and may remove any packages
@@ -1447,9 +1744,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_package_telnet-server_removed'
 
 ###############################################################################
-# BEGIN fix (45 / 47) for 'xccdf_org.ssgproject.content_rule_package_telnet_removed'
+# BEGIN fix (54 / 56) for 'xccdf_org.ssgproject.content_rule_package_telnet_removed'
 ###############################################################################
-(>&2 echo "Remediating rule 45/47: 'xccdf_org.ssgproject.content_rule_package_telnet_removed'")
+(>&2 echo "Remediating rule 54/56: 'xccdf_org.ssgproject.content_rule_package_telnet_removed'")
 
 # CAUTION: This remediation script will remove telnet
 #	   from the system, and may remove any packages
@@ -1466,9 +1763,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_package_telnet_removed'
 
 ###############################################################################
-# BEGIN fix (46 / 47) for 'xccdf_org.ssgproject.content_rule_package_tftp-server_removed'
+# BEGIN fix (55 / 56) for 'xccdf_org.ssgproject.content_rule_package_tftp-server_removed'
 ###############################################################################
-(>&2 echo "Remediating rule 46/47: 'xccdf_org.ssgproject.content_rule_package_tftp-server_removed'")
+(>&2 echo "Remediating rule 55/56: 'xccdf_org.ssgproject.content_rule_package_tftp-server_removed'")
 
 # CAUTION: This remediation script will remove tftp-server
 #	   from the system, and may remove any packages
@@ -1485,9 +1782,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_package_tftp-server_removed'
 
 ###############################################################################
-# BEGIN fix (47 / 47) for 'xccdf_org.ssgproject.content_rule_package_tftp_removed'
+# BEGIN fix (56 / 56) for 'xccdf_org.ssgproject.content_rule_package_tftp_removed'
 ###############################################################################
-(>&2 echo "Remediating rule 47/47: 'xccdf_org.ssgproject.content_rule_package_tftp_removed'")
+(>&2 echo "Remediating rule 56/56: 'xccdf_org.ssgproject.content_rule_package_tftp_removed'")
 
 # CAUTION: This remediation script will remove tftp
 #	   from the system, and may remove any packages
