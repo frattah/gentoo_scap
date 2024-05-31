@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<xccdf-1.2:Benchmark xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xccdf-1.2="http://checklists.nist.gov/xccdf/1.2" id="xccdf_org.ssgproject.content_benchmark_GENTOO" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://checklists.nist.gov/xccdf/1.2 xccdf-1.2.xsd" style="SCAP_1.2" resolved="true" xml:lang="en-US">
+<xccdf-1.2:Benchmark xmlns:cpe-lang="http://cpe.mitre.org/language/2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xccdf-1.2="http://checklists.nist.gov/xccdf/1.2" id="xccdf_org.ssgproject.content_benchmark_GENTOO" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://checklists.nist.gov/xccdf/1.2 xccdf-1.2.xsd" style="SCAP_1.2" resolved="true" xml:lang="en-US">
   <xccdf-1.2:status date="2024-05-31">draft</xccdf-1.2:status>
   <xccdf-1.2:title>Guide to the Secure Configuration of Gentoo</xccdf-1.2:title>
   <xccdf-1.2:description>This guide presents a catalog of security-relevant
@@ -66,6 +66,13 @@ respective companies.</xccdf-1.2:rear-matter>
   <xccdf-1.2:reference href="https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf">pcidss4</xccdf-1.2:reference>
   <xccdf-1.2:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cunix-linux">stigid</xccdf-1.2:reference>
   <xccdf-1.2:reference href="https://public.cyber.mil/stigs/srg-stig-tools/">stigref</xccdf-1.2:reference>
+  <cpe-lang:platform-specification>
+    <cpe-lang:platform id="package_pam">
+      <cpe-lang:logical-test operator="AND" negate="false">
+        <cpe-lang:check-fact-ref system="http://oval.mitre.org/XMLSchema/oval-definitions-5" href="ssg-gentoo-cpe-oval.xml" id-ref="oval:ssg-package_pam:def:1" />
+      </cpe-lang:logical-test>
+    </cpe-lang:platform>
+  </cpe-lang:platform-specification>
   <xccdf-1.2:platform idref="cpe:/o:gentoo:linux" />
   <xccdf-1.2:version update="https://github.com/ComplianceAsCode/content/releases/latest">0.1.73</xccdf-1.2:version>
   <xccdf-1.2:metadata>
@@ -378,8 +385,9 @@ https://www.ssi.gouv.fr/administration/guide/recommandations-de-securite-relativ
 
 An English version of the ANSSI-BP-028 can also be found at the ANSSI website:
 https://cyber.gouv.fr/publications/configuration-recommendations-gnulinux-system</xccdf-1.2:description>
-    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_accounts_password_set_max_life_root" selected="true" />
-    <xccdf-1.2:refine-value idref="xccdf_org.ssgproject.content_value_var_accounts_maximum_age_root" selector="365" />
+    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen" selected="true" />
+    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_cracklib_accounts_password_pam_minlen" selected="true" />
+    <xccdf-1.2:refine-value idref="xccdf_org.ssgproject.content_value_var_password_pam_minlen" selector="15" />
   </xccdf-1.2:Profile>
   <xccdf-1.2:Group id="xccdf_org.ssgproject.content_group_system">
     <xccdf-1.2:title>System Settings</xccdf-1.2:title>
@@ -394,74 +402,366 @@ access to accounts, particularly to privileged accounts, is a
 necessary part of securing a system. This section introduces
 mechanisms for restricting access to accounts under
 Gentoo.</xccdf-1.2:description>
-      <xccdf-1.2:Group id="xccdf_org.ssgproject.content_group_accounts-restrictions">
-        <xccdf-1.2:title>Protect Accounts by Restricting Password-Based Login</xccdf-1.2:title>
-        <xccdf-1.2:description>Conventionally, Unix shell accounts are accessed by
-providing a username and password to a login program, which tests
-these values for correctness using the <html:code>/etc/passwd</html:code> and
-<html:code>/etc/shadow</html:code> files. Password-based login is vulnerable to
-guessing of weak passwords, and to sniffing and man-in-the-middle
-attacks against passwords entered over a network or at an insecure
-console. Therefore, mechanisms for accessing accounts by entering
-usernames and passwords should be restricted to those which are
-operationally necessary.</xccdf-1.2:description>
-        <xccdf-1.2:Group id="xccdf_org.ssgproject.content_group_password_expiration">
-          <xccdf-1.2:title>Set Password Expiration Parameters</xccdf-1.2:title>
-          <xccdf-1.2:description>The file <html:code>/etc/login.defs</html:code> controls several
-password-related settings. Programs such as <html:code>passwd</html:code>,
-<html:code>su</html:code>, and
-<html:code>login</html:code> consult <html:code>/etc/login.defs</html:code> to determine
-behavior with regard to password aging, expiration warnings,
-and length. See the man page <html:code>login.defs(5)</html:code> for more information.
+      <xccdf-1.2:Group id="xccdf_org.ssgproject.content_group_accounts-pam">
+        <xccdf-1.2:title>Protect Accounts by Configuring PAM</xccdf-1.2:title>
+        <xccdf-1.2:description>PAM, or Pluggable Authentication Modules, is a system
+which implements modular authentication for Linux programs. PAM provides
+a flexible and configurable architecture for authentication, and it should be configured
+to minimize exposure to unnecessary risk. This section contains
+guidance on how to accomplish that.
+<html:br />
+          <html:br />
+PAM is implemented as a set of shared objects which are
+loaded and invoked whenever an application wishes to authenticate a
+user. Typically, the application must be running as root in order
+to take advantage of PAM, because PAM's modules often need to be able
+to access sensitive stores of account information, such as /etc/shadow.
+Traditional privileged network listeners
+(e.g. sshd) or SUID programs (e.g. sudo) already meet this
+requirement. An SUID root application, userhelper, is provided so
+that programs which are not SUID or privileged themselves can still
+take advantage of PAM.
+<html:br />
+          <html:br />
+PAM looks in the directory <html:code>/etc/pam.d</html:code> for
+application-specific configuration information. For instance, if
+the program login attempts to authenticate a user, then PAM's
+libraries follow the instructions in the file <html:code>/etc/pam.d/login</html:code>
+to determine what actions should be taken.
+<html:br />
+          <html:br />
+One very important file in <html:code>/etc/pam.d</html:code> is
+<html:code>/etc/pam.d/system-auth</html:code>. This file, which is included by
+many other PAM configuration files, defines 'default' system authentication
+measures. Modifying this file is a good way to make far-reaching
+authentication changes, for instance when implementing a
+centralized authentication service.</xccdf-1.2:description>
+        <xccdf-1.2:warning category="functionality">Be careful when making changes to PAM's configuration files.
+The syntax for these files is complex, and modifications can
+have unexpected consequences. The default configurations shipped
+with applications should be sufficient for most users.</xccdf-1.2:warning>
+        <xccdf-1.2:warning category="functionality">Running <html:code>authconfig</html:code> or <html:code>system-config-authentication</html:code>
+will re-write the PAM configuration files, destroying any manually
+made changes and replacing them with a series of system defaults.
+One reference to the configuration file syntax can be found at
+
+<html:a href="https://fossies.org/linux/Linux-PAM-docs/doc/sag/Linux-PAM_SAG.pdf">https://fossies.org/linux/Linux-PAM-docs/doc/sag/Linux-PAM_SAG.pdf</html:a>.</xccdf-1.2:warning>
+        <xccdf-1.2:Group id="xccdf_org.ssgproject.content_group_password_quality">
+          <xccdf-1.2:title>Set Password Quality Requirements</xccdf-1.2:title>
+          <xccdf-1.2:description>The default <html:code>pam_pwquality</html:code> PAM module provides strength
+checking for passwords. It performs a number of checks, such as
+making sure passwords are not similar to dictionary words, are of
+at least a certain length, are not the previous password reversed,
+and are not simply a change of case from the previous password. It
+can also require passwords to be in certain character classes. The
+<html:code>pam_pwquality</html:code> module is the preferred way of configuring
+password requirements.
 <html:br />
             <html:br />
-Users should be forced to change their passwords, in order to
-decrease the utility of compromised passwords. However, the need to
-change passwords often should be balanced against the risk that
-users will reuse or write down passwords if forced to change them
-too often. Forcing password changes every 90-360 days, depending on
-the environment, is recommended. Set the appropriate value as
-<html:code>PASS_MAX_DAYS</html:code> and apply it to existing accounts with the
-<html:code>-M</html:code> flag.
+The man pages <html:code>pam_pwquality(8)</html:code>
+provide information on the capabilities and configuration of
+each.</xccdf-1.2:description>
+          <xccdf-1.2:Group id="xccdf_org.ssgproject.content_group_password_quality_pamcracklib">
+            <xccdf-1.2:title>Set Password Quality Requirements, if using
+pam_cracklib</xccdf-1.2:title>
+            <xccdf-1.2:description>The <html:code>pam_cracklib</html:code> PAM module can be configured to meet
+requirements for a variety of policies.
 <html:br />
-            <html:br />
-The <html:code>PASS_MIN_DAYS</html:code> (<html:code>-m</html:code>) setting prevents password
-changes for 7 days after the first change, to discourage password
-cycling. If you use this setting, train users to contact an administrator
-for an emergency password change in case a new password becomes
-compromised. The <html:code>PASS_WARN_AGE</html:code> (<html:code>-W</html:code>) setting gives
-users 7 days of warnings at login time that their passwords are about to expire.
+              <html:br />
+For example, to configure <html:code>pam_cracklib</html:code> to require at least one uppercase
+character, lowercase character, digit, and other (special)
+character, locate the following line in <html:code>/etc/pam.d/system-auth</html:code>:
+<html:pre>password requisite pam_cracklib.so try_first_pass retry=3</html:pre>
+and then alter it to read:
+<html:pre>password required pam_cracklib.so try_first_pass retry=3 maxrepeat=3 minlen=14 dcredit=-1 ucredit=-1 ocredit=-1 lcredit=-1 difok=4</html:pre>
+If no such line exists, add one as the first line of the password section in <html:code>/etc/pam.d/system-auth</html:code>.
+The arguments can be modified to ensure compliance with
+your organization's security policy. Discussion of each parameter follows.</xccdf-1.2:description>
+            <xccdf-1.2:warning category="general">Note that the password quality requirements are not enforced for the
+root account for some reason.</xccdf-1.2:warning>
+            <xccdf-1.2:Rule selected="false" id="xccdf_org.ssgproject.content_rule_cracklib_accounts_password_pam_minlen" severity="medium">
+              <xccdf-1.2:title>Set Password Minimum Length</xccdf-1.2:title>
+              <xccdf-1.2:description>The pam_cracklib module's <html:code>minlen</html:code> parameter controls requirements for
+minimum characters required in a password. Add <html:code>minlen=<xccdf-1.2:sub idref="xccdf_org.ssgproject.content_value_var_password_pam_minlen" use="legacy" />
+                </html:code>
+ to set minimum password length requirements.</xccdf-1.2:description>
+              <xccdf-1.2:reference href="https://public.cyber.mil/stigs/cci/">CCI-000205</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">Req-8.2.3</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000078-GPOS-00046</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R31</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf">8.3.6</xccdf-1.2:reference>
+              <xccdf-1.2:rationale>Password length is one factor of several that helps to determine
+strength and how long it takes to crack a password. Use of more characters in
+a password helps to exponentially increase the time and/or resources
+required to compromise the password.</xccdf-1.2:rationale>
+              <xccdf-1.2:fix system="urn:xccdf:fix:script:sh" id="cracklib_accounts_password_pam_minlen" complexity="low" disruption="low" reboot="false" strategy="restrict">
+declare -a VALUES=()
+declare -a VALUE_NAMES=()
+declare -a ARGS=()
+declare -a NEW_ARGS=()
+
+var_password_pam_minlen='<xccdf-1.2:sub idref="xccdf_org.ssgproject.content_value_var_password_pam_minlen" use="legacy" />'
+
+VALUES+=("$var_password_pam_minlen")
+VALUE_NAMES+=("minlen")
+ARGS+=("")
+NEW_ARGS+=("")
+
+for idx in "${!VALUES[@]}"
+do
+    if [ -e "/etc/pam.d/common-password" ] ; then
+        valueRegex="${VALUES[$idx]}" defaultValue="${VALUES[$idx]}"
+        # non-empty values need to be preceded by an equals sign
+        [ -n "${valueRegex}" ] &amp;&amp; valueRegex="=${valueRegex}"
+        # add an equals sign to non-empty values
+        [ -n "${defaultValue}" ] &amp;&amp; defaultValue="=${defaultValue}"
+
+        # fix the value for 'option' if one exists but does not match 'valueRegex'
+        if grep -q -P "^\\s*password\\s+requisite\\s+pam_cracklib.so(\\s.+)?\\s+${VALUE_NAMES[$idx]}(?"'!'"${valueRegex}(\\s|\$))" &lt; "/etc/pam.d/common-password" ; then
+            sed --follow-symlinks -i -E -e "s/^(\\s*password\\s+requisite\\s+pam_cracklib.so(\\s.+)?\\s)${VALUE_NAMES[$idx]}=[^[:space:]]*/\\1${VALUE_NAMES[$idx]}${defaultValue}/" "/etc/pam.d/common-password"
+
+        # add 'option=default' if option is not set
+        elif grep -q -E "^\\s*password\\s+requisite\\s+pam_cracklib.so" &lt; "/etc/pam.d/common-password" &amp;&amp;
+                grep    -E "^\\s*password\\s+requisite\\s+pam_cracklib.so" &lt; "/etc/pam.d/common-password" | grep -q -E -v "\\s${VALUE_NAMES[$idx]}(=|\\s|\$)" ; then
+
+            sed --follow-symlinks -i -E -e "s/^(\\s*password\\s+requisite\\s+pam_cracklib.so[^\\n]*)/\\1 ${VALUE_NAMES[$idx]}${defaultValue}/" "/etc/pam.d/common-password"
+        # add a new entry if none exists
+        elif ! grep -q -P "^\\s*password\\s+requisite\\s+pam_cracklib.so(\\s.+)?\\s+${VALUE_NAMES[$idx]}${valueRegex}(\\s|\$)" &lt; "/etc/pam.d/common-password" ; then
+            echo "password requisite pam_cracklib.so ${VALUE_NAMES[$idx]}${defaultValue}" &gt;&gt; "/etc/pam.d/common-password"
+        fi
+    else
+        echo "/etc/pam.d/common-password doesn't exist" &gt;&amp;2
+    fi
+done
+
+for idx in "${!ARGS[@]}"
+do
+    if ! grep -q -P "^\s*password\s+requisite\s+pam_cracklib.so.*\s+${ARGS[$idx]}\s*$" /etc/pam.d/common-password ; then
+        sed --follow-symlinks -i -E -e "s/^\\s*password\\s+requisite\\s+pam_cracklib.so.*\$/&amp; ${NEW_ARGS[$idx]}/" /etc/pam.d/common-password
+    fi
+done
+</xccdf-1.2:fix>
+              <xccdf-1.2:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                <xccdf-1.2:check-export export-name="oval:ssg-var_password_pam_minlen:var:1" value-id="xccdf_org.ssgproject.content_value_var_password_pam_minlen" /><xccdf-1.2:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-cracklib_accounts_password_pam_minlen:def:1" />
+              </xccdf-1.2:check>
+              <xccdf-1.2:check system="http://scap.nist.gov/schema/ocil/2">
+                <xccdf-1.2:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-cracklib_accounts_password_pam_minlen_ocil:questionnaire:1" />
+              </xccdf-1.2:check>
+            </xccdf-1.2:Rule>
+          </xccdf-1.2:Group>
+          <xccdf-1.2:Group id="xccdf_org.ssgproject.content_group_password_quality_pwquality">
+            <xccdf-1.2:title>Set Password Quality Requirements with pam_pwquality</xccdf-1.2:title>
+            <xccdf-1.2:description>The <html:code>pam_pwquality</html:code> PAM module can be configured to meet
+requirements for a variety of policies.
 <html:br />
-            <html:br />
-For example, for each existing human user <html:i>USER</html:i>, expiration parameters
-could be adjusted to a 180 day maximum password age, 7 day minimum password
-age, and 7 day warning period with the following command:
-<html:pre>$ sudo chage -M 180 -m 7 -W 7 USER</html:pre>
-          </xccdf-1.2:description>
-          <xccdf-1.2:Value id="xccdf_org.ssgproject.content_value_var_accounts_maximum_age_root" type="number">
-            <xccdf-1.2:title>Maximum Root Password Age</xccdf-1.2:title>
-            <xccdf-1.2:description>Maximum age of password in days for the root account</xccdf-1.2:description>
-            <xccdf-1.2:value selector="365">365</xccdf-1.2:value>
-            <xccdf-1.2:value>99999</xccdf-1.2:value>
-          </xccdf-1.2:Value>
-          <xccdf-1.2:Rule selected="false" id="xccdf_org.ssgproject.content_rule_accounts_password_set_max_life_root" severity="medium">
-            <xccdf-1.2:title>Set Root Account Password Maximum Age</xccdf-1.2:title>
-            <xccdf-1.2:description>Configure the root account to enforce a <xccdf-1.2:sub idref="xccdf_org.ssgproject.content_value_var_accounts_maximum_age_root" use="legacy" />-day maximum password lifetime restriction by running the following command:
-<html:pre>$ sudo chage -M <xccdf-1.2:sub idref="xccdf_org.ssgproject.content_value_var_accounts_maximum_age_root" use="legacy" /> root</html:pre>
-            </xccdf-1.2:description>
-            <xccdf-1.2:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R31</xccdf-1.2:reference>
-            <xccdf-1.2:rationale>Any password, no matter how complex, can eventually be cracked. Therefore,
-passwords need to be changed periodically. If the operating system does
-not limit the lifetime of passwords and force users to change their
-passwords, there is the risk that the operating system passwords could be
-compromised.</xccdf-1.2:rationale>
-            <xccdf-1.2:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-              <xccdf-1.2:check-export export-name="oval:ssg-var_accounts_maximum_age_root:var:1" value-id="xccdf_org.ssgproject.content_value_var_accounts_maximum_age_root" /><xccdf-1.2:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-accounts_password_set_max_life_root:def:1" />
-            </xccdf-1.2:check>
-            <xccdf-1.2:check system="http://scap.nist.gov/schema/ocil/2">
-              <xccdf-1.2:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-accounts_password_set_max_life_root_ocil:questionnaire:1" />
-            </xccdf-1.2:check>
-          </xccdf-1.2:Rule>
+              <html:br />
+For example, to configure <html:code>pam_pwquality</html:code> to require at least one uppercase
+character, lowercase character, digit, and other (special)
+character, make sure that <html:code>pam_pwquality</html:code> exists in <html:code>/etc/pam.d/system-auth</html:code>:
+<html:pre>password    requisite     pam_pwquality.so try_first_pass local_users_only retry=3 authtok_type=</html:pre>
+If no such line exists, add one as the first line of the password section in <html:code>/etc/pam.d/system-auth</html:code>.
+Next, modify the settings in <html:code>/etc/security/pwquality.conf</html:code> to match the following:
+<html:pre>difok = 4
+minlen = 14
+dcredit = -1
+ucredit = -1
+lcredit = -1
+ocredit = -1
+maxrepeat = 3</html:pre>
+The arguments can be modified to ensure compliance with
+your organization's security policy. Discussion of each parameter follows.</xccdf-1.2:description>
+            <xccdf-1.2:Value id="xccdf_org.ssgproject.content_value_var_password_pam_minlen" type="number">
+              <xccdf-1.2:title>minlen</xccdf-1.2:title>
+              <xccdf-1.2:description>Minimum number of characters in password</xccdf-1.2:description>
+              <xccdf-1.2:value selector="10">10</xccdf-1.2:value>
+              <xccdf-1.2:value selector="12">12</xccdf-1.2:value>
+              <xccdf-1.2:value selector="14">14</xccdf-1.2:value>
+              <xccdf-1.2:value selector="15">15</xccdf-1.2:value>
+              <xccdf-1.2:value selector="18">18</xccdf-1.2:value>
+              <xccdf-1.2:value selector="20">20</xccdf-1.2:value>
+              <xccdf-1.2:value selector="6">6</xccdf-1.2:value>
+              <xccdf-1.2:value selector="7">7</xccdf-1.2:value>
+              <xccdf-1.2:value selector="8">8</xccdf-1.2:value>
+              <xccdf-1.2:value>15</xccdf-1.2:value>
+            </xccdf-1.2:Value>
+            <xccdf-1.2:Rule selected="false" id="xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen" severity="medium">
+              <xccdf-1.2:title>Ensure PAM Enforces Password Requirements - Minimum Length</xccdf-1.2:title>
+              <xccdf-1.2:description>The pam_pwquality module's <html:code>minlen</html:code> parameter controls requirements for
+minimum characters required in a password. Add <html:code>minlen=<xccdf-1.2:sub idref="xccdf_org.ssgproject.content_value_var_password_pam_minlen" use="legacy" />
+                </html:code>
+after pam_pwquality to set minimum password length requirements.</xccdf-1.2:description>
+              <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">12</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">15</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">16</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">5</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.fbi.gov/file-repository/cjis-security-policy-v5_5_20160601-2-1.pdf">5.6.2.1.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.04</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.05</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.07</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.10</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS06.03</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS06.10</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://public.cyber.mil/stigs/cci/">CCI-000205</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.2.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.5.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.5.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.3</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.4</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.5</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.6</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.7</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.8</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.9</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.7.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.7.4</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.10</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.3</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.4</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.5</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.7</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.8</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.9</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 2.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">0421</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">0422</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">0431</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">0974</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1173</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1401</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1504</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1505</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1546</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1557</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1558</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1559</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1560</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1561</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.18.1.4</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.1.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.3</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.4</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.6</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.3.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.3</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">IA-5(c)</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">IA-5(1)(a)</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">CM-6(a)</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">IA-5(4)</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-6</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-7</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.niap-ccevs.org/Profile/PP.cfm">FMT_SMF_EXT.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">Req-8.2.3</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000078-GPOS-00046</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R31</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R68</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf">8.3.6</xccdf-1.2:reference>
+              <xccdf-1.2:rationale>The shorter the password, the lower the number of possible combinations
+that need to be tested before the password is compromised.
+<html:br />
+Password complexity, or strength, is a measure of the effectiveness of a
+password in resisting attempts at guessing and brute-force attacks.
+Password length is one factor of several that helps to determine strength
+and how long it takes to crack a password. Use of more characters in a password
+helps to exponentially increase the time and/or resources required to
+compromise the password.</xccdf-1.2:rationale>
+              <xccdf-1.2:platform idref="#package_pam" />
+              <xccdf-1.2:fix system="urn:xccdf:fix:script:sh" id="accounts_password_pam_minlen" complexity="low" disruption="low" reboot="false" strategy="restrict"># Remediation is applicable only in certain platforms
+if rpm --quiet -q pam; then
+
+var_password_pam_minlen='<xccdf-1.2:sub idref="xccdf_org.ssgproject.content_value_var_password_pam_minlen" use="legacy" />'
+
+
+
+
+
+
+# Strip any search characters in the key arg so that the key can be replaced without
+# adding any search characters to the config file.
+stripped_key=$(sed 's/[\^=\$,;+]*//g' &lt;&lt;&lt; "^minlen")
+
+# shellcheck disable=SC2059
+printf -v formatted_output "%s = %s" "$stripped_key" "$var_password_pam_minlen"
+
+# If the key exists, change it. Otherwise, add it to the config_file.
+# We search for the key string followed by a word boundary (matched by \&gt;),
+# so if we search for 'setting', 'setting2' won't match.
+if LC_ALL=C grep -q -m 1 -i -e "^minlen\\&gt;" "/etc/security/pwquality.conf"; then
+    escaped_formatted_output=$(sed -e 's|/|\\/|g' &lt;&lt;&lt; "$formatted_output")
+    LC_ALL=C sed -i --follow-symlinks "s/^minlen\\&gt;.*/$escaped_formatted_output/gi" "/etc/security/pwquality.conf"
+else
+    if [[ -s "/etc/security/pwquality.conf" ]] &amp;&amp; [[ -n "$(tail -c 1 -- "/etc/security/pwquality.conf" || true)" ]]; then
+        LC_ALL=C sed -i --follow-symlinks '$a'\\ "/etc/security/pwquality.conf"
+    fi
+    printf '%s\n' "$formatted_output" &gt;&gt; "/etc/security/pwquality.conf"
+fi
+
+else
+    &gt;&amp;2 echo 'Remediation is not applicable, nothing was done'
+fi
+</xccdf-1.2:fix>
+              <xccdf-1.2:fix system="urn:xccdf:fix:script:ansible" id="accounts_password_pam_minlen" complexity="low" disruption="low" reboot="false" strategy="restrict">- name: Gather the package facts
+  package_facts:
+    manager: auto
+  tags:
+  - CJIS-5.6.2.1.1
+  - NIST-800-53-CM-6(a)
+  - NIST-800-53-IA-5(1)(a)
+  - NIST-800-53-IA-5(4)
+  - NIST-800-53-IA-5(c)
+  - PCI-DSS-Req-8.2.3
+  - PCI-DSSv4-8.3.6
+  - accounts_password_pam_minlen
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+- name: XCCDF Value var_password_pam_minlen # promote to variable
+  set_fact:
+    var_password_pam_minlen: !!str <xccdf-1.2:sub idref="xccdf_org.ssgproject.content_value_var_password_pam_minlen" use="legacy" />
+  tags:
+    - always
+
+- name: Ensure PAM Enforces Password Requirements - Minimum Length - Ensure PAM variable
+    minlen is set accordingly
+  ansible.builtin.lineinfile:
+    create: true
+    dest: /etc/security/pwquality.conf
+    regexp: ^#?\s*minlen
+    line: minlen = {{ var_password_pam_minlen }}
+  when: '"pam" in ansible_facts.packages'
+  tags:
+  - CJIS-5.6.2.1.1
+  - NIST-800-53-CM-6(a)
+  - NIST-800-53-IA-5(1)(a)
+  - NIST-800-53-IA-5(4)
+  - NIST-800-53-IA-5(c)
+  - PCI-DSS-Req-8.2.3
+  - PCI-DSSv4-8.3.6
+  - accounts_password_pam_minlen
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+</xccdf-1.2:fix>
+              <xccdf-1.2:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                <xccdf-1.2:check-export export-name="oval:ssg-var_password_pam_minlen:var:1" value-id="xccdf_org.ssgproject.content_value_var_password_pam_minlen" /><xccdf-1.2:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-accounts_password_pam_minlen:def:1" />
+              </xccdf-1.2:check>
+              <xccdf-1.2:check system="http://scap.nist.gov/schema/ocil/2">
+                <xccdf-1.2:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-accounts_password_pam_minlen_ocil:questionnaire:1" />
+              </xccdf-1.2:check>
+            </xccdf-1.2:Rule>
+          </xccdf-1.2:Group>
         </xccdf-1.2:Group>
       </xccdf-1.2:Group>
     </xccdf-1.2:Group>

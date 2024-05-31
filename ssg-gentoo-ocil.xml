@@ -4,18 +4,32 @@
     <ocil:product_name>build_shorthand.py from SCAP Security Guide</ocil:product_name>
     <ocil:product_version>ssg: 0.1.73</ocil:product_version>
     <ocil:schema_version>2.0</ocil:schema_version>
-    <ocil:timestamp>2024-05-31T13:45:58</ocil:timestamp>
+    <ocil:timestamp>2024-05-31T16:32:27</ocil:timestamp>
   </ocil:generator>
   <ocil:questionnaires>
-    <ocil:questionnaire id="ocil:ssg-accounts_password_set_max_life_root_ocil:questionnaire:1">
-      <ocil:title>Set Root Account Password Maximum Age</ocil:title>
+    <ocil:questionnaire id="ocil:ssg-cracklib_accounts_password_pam_minlen_ocil:questionnaire:1">
+      <ocil:title>Set Password Minimum Length</ocil:title>
       <ocil:actions>
-        <ocil:test_action_ref>ocil:ssg-accounts_password_set_max_life_root_action:testaction:1</ocil:test_action_ref>
+        <ocil:test_action_ref>ocil:ssg-cracklib_accounts_password_pam_minlen_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-accounts_password_pam_minlen_ocil:questionnaire:1">
+      <ocil:title>Ensure PAM Enforces Password Requirements - Minimum Length</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-accounts_password_pam_minlen_action:testaction:1</ocil:test_action_ref>
       </ocil:actions>
     </ocil:questionnaire>
   </ocil:questionnaires>
   <ocil:test_actions>
-    <ocil:boolean_question_test_action id="ocil:ssg-accounts_password_set_max_life_root_action:testaction:1" question_ref="ocil:ssg-accounts_password_set_max_life_root_question:question:1">
+    <ocil:boolean_question_test_action id="ocil:ssg-cracklib_accounts_password_pam_minlen_action:testaction:1" question_ref="ocil:ssg-cracklib_accounts_password_pam_minlen_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-accounts_password_pam_minlen_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_minlen_question:question:1">
       <ocil:when_true>
         <ocil:result>PASS</ocil:result>
       </ocil:when_true>
@@ -25,11 +39,20 @@
     </ocil:boolean_question_test_action>
   </ocil:test_actions>
   <ocil:questions>
-    <ocil:boolean_question id="ocil:ssg-accounts_password_set_max_life_root_question:question:1">
-      <ocil:question_text>Check whether the maximum time period for root account password is restricted to  days with the following commands:
+    <ocil:boolean_question id="ocil:ssg-cracklib_accounts_password_pam_minlen_question:question:1">
+      <ocil:question_text>To check how many characters are required in a password, run the following command:
+$ grep pam_cracklib.so /etc/pam.d/common-password
+Your output should contain minlen=
+      Is it the case that minlen is not found or not set to the required value (or higher)?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-accounts_password_pam_minlen_question:question:1">
+      <ocil:question_text>Verify that Gentoo enforces a minimum -character password length with the following command:
 
-$ sudo awk -F: '$1 == "root" {print $1 " " $5}' /etc/shadow
-      Is it the case that any results are returned that are not associated with a system account?
+$ grep minlen /etc/security/pwquality.conf
+
+minlen = 
+      Is it the case that the command does not return a "minlen" value of "&lt;sub idref="var_password_pam_minlen" /&gt;" or greater, does not return a line, or the line is commented out?
       </ocil:question_text>
     </ocil:boolean_question>
   </ocil:questions>
