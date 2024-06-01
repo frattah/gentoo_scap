@@ -4,10 +4,10 @@
   tasks:
   - name: Create a password flag file in /etc/portage/package.use
     ansible.builtin.file:
-      path: /etc/portage/package.use/pwquality
-      owner: root
-      group: root
-      state: file
+      path: /etc/portage/package.use/pambase
+      state: touch
+      modification_time: preserve
+      access_time: preserve
   - name: Add pwquality and -passwdqc flag
     ansible.builtin.lineinfile:
       path: /etc/portage/package.use/pwquality
@@ -22,9 +22,16 @@
   - name: Ensure pam is correctly configured
     ansible.builtin.lineinfile:
       path: /etc/pam.d/system-auth
+      state: present
       regexp: '^password[\s]*required[\s]*pam_pwquality.so'
       state: present
       line: 'password    required    pam_pwquality.so'
+  - name: Create a pwquality.conf file
+    ansible.builtin.file:
+      path: /etc/security/pwquality.conf
+      state: touch
+      modification_time: preserve
+      access_time: preserve
   - name: Ensure passwords with minimum of 15 characters
     ansible.builtin.lineinfile:
       path: /etc/security/pwquality.conf
