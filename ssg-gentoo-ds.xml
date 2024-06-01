@@ -23,7 +23,7 @@
       <ds:component-ref id="scap_org.open-scap_cref_ssg-gentoo-cpe-oval.xml" xlink:href="#scap_org.open-scap_comp_ssg-gentoo-cpe-oval.xml"/>
     </ds:checks>
   </ds:data-stream>
-  <ds:component id="scap_org.open-scap_comp_ssg-gentoo-cpe-dictionary.xml" timestamp="2024-05-31T18:32:48">
+  <ds:component id="scap_org.open-scap_comp_ssg-gentoo-cpe-dictionary.xml" timestamp="2024-06-01T13:10:13">
     <cpe-dict:cpe-list xsi:schemaLocation="http://cpe.mitre.org/dictionary/2.0 http://cpe.mitre.org/files/cpe-dictionary_2.1.xsd">
       <cpe-dict:cpe-item name="cpe:/o:gentoo:linux">
         <cpe-dict:title xml:lang="en-us">Gentoo</cpe-dict:title>
@@ -31,9 +31,9 @@
       </cpe-dict:cpe-item>
     </cpe-dict:cpe-list>
   </ds:component>
-  <ds:component id="scap_org.open-scap_comp_ssg-gentoo-xccdf.xml" timestamp="2024-05-31T18:32:46">
+  <ds:component id="scap_org.open-scap_comp_ssg-gentoo-xccdf.xml" timestamp="2024-06-01T13:10:10">
     <xccdf-1.2:Benchmark id="xccdf_org.ssgproject.content_benchmark_GENTOO" xsi:schemaLocation="http://checklists.nist.gov/xccdf/1.2 xccdf-1.2.xsd" style="SCAP_1.2" resolved="true" xml:lang="en-US">
-      <xccdf-1.2:status date="2024-05-31">draft</xccdf-1.2:status>
+      <xccdf-1.2:status date="2024-06-01">draft</xccdf-1.2:status>
       <xccdf-1.2:title>Guide to the Secure Configuration of Gentoo</xccdf-1.2:title>
       <xccdf-1.2:description>This guide presents a catalog of security-relevant
 configuration settings for Gentoo. It is a rendering of
@@ -408,18 +408,8 @@ respective companies.</xccdf-1.2:rear-matter>
       </xccdf-1.2:metadata>
       <xccdf-1.2:Profile id="xccdf_org.ssgproject.content_profile_anssi_bp28_minimal">
         <xccdf-1.2:title override="true">ANSSI-BP-028 (minimal)</xccdf-1.2:title>
-        <xccdf-1.2:description override="true">This profile contains configurations that align to ANSSI-BP-028 v2.0 at the minimal hardening level.
-
-ANSSI is the French National Information Security Agency, and stands for Agence nationale de la sécurité des systèmes d'information.
-ANSSI-BP-028 is a configuration recommendation for GNU/Linux systems.
-
-A copy of the ANSSI-BP-028 can be found at the ANSSI website:
-https://www.ssi.gouv.fr/administration/guide/recommandations-de-securite-relatives-a-un-systeme-gnulinux/
-
-An English version of the ANSSI-BP-028 can also be found at the ANSSI website:
-https://cyber.gouv.fr/publications/configuration-recommendations-gnulinux-system</xccdf-1.2:description>
+        <xccdf-1.2:description override="true">Pass</xccdf-1.2:description>
         <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen" selected="true"/>
-        <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_cracklib_accounts_password_pam_minlen" selected="true"/>
         <xccdf-1.2:refine-value idref="xccdf_org.ssgproject.content_value_var_password_pam_minlen" selector="15"/>
       </xccdf-1.2:Profile>
       <xccdf-1.2:Group id="xccdf_org.ssgproject.content_group_system">
@@ -494,95 +484,6 @@ password requirements.
 The man pages <html:code>pam_pwquality(8)</html:code>
 provide information on the capabilities and configuration of
 each.</xccdf-1.2:description>
-              <xccdf-1.2:Group id="xccdf_org.ssgproject.content_group_password_quality_pamcracklib">
-                <xccdf-1.2:title>Set Password Quality Requirements, if using
-pam_cracklib</xccdf-1.2:title>
-                <xccdf-1.2:description>The <html:code>pam_cracklib</html:code> PAM module can be configured to meet
-requirements for a variety of policies.
-<html:br/>
-         <html:br/>
-For example, to configure <html:code>pam_cracklib</html:code> to require at least one uppercase
-character, lowercase character, digit, and other (special)
-character, locate the following line in <html:code>/etc/pam.d/system-auth</html:code>:
-<html:pre>password requisite pam_cracklib.so try_first_pass retry=3</html:pre>
-and then alter it to read:
-<html:pre>password required pam_cracklib.so try_first_pass retry=3 maxrepeat=3 minlen=14 dcredit=-1 ucredit=-1 ocredit=-1 lcredit=-1 difok=4</html:pre>
-If no such line exists, add one as the first line of the password section in <html:code>/etc/pam.d/system-auth</html:code>.
-The arguments can be modified to ensure compliance with
-your organization's security policy. Discussion of each parameter follows.</xccdf-1.2:description>
-                <xccdf-1.2:warning category="general">Note that the password quality requirements are not enforced for the
-root account for some reason.</xccdf-1.2:warning>
-                <xccdf-1.2:Rule selected="false" id="xccdf_org.ssgproject.content_rule_cracklib_accounts_password_pam_minlen" severity="medium">
-                  <xccdf-1.2:title>Set Password Minimum Length</xccdf-1.2:title>
-                  <xccdf-1.2:description>The pam_cracklib module's <html:code>minlen</html:code> parameter controls requirements for
-minimum characters required in a password. Add <html:code>minlen=<xccdf-1.2:sub idref="xccdf_org.ssgproject.content_value_var_password_pam_minlen" use="legacy"/>
-          </html:code>
- to set minimum password length requirements.</xccdf-1.2:description>
-                  <xccdf-1.2:reference href="https://public.cyber.mil/stigs/cci/">CCI-000205</xccdf-1.2:reference>
-                  <xccdf-1.2:reference href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">Req-8.2.3</xccdf-1.2:reference>
-                  <xccdf-1.2:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000078-GPOS-00046</xccdf-1.2:reference>
-                  <xccdf-1.2:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R31</xccdf-1.2:reference>
-                  <xccdf-1.2:reference href="https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf">8.3.6</xccdf-1.2:reference>
-                  <xccdf-1.2:rationale>Password length is one factor of several that helps to determine
-strength and how long it takes to crack a password. Use of more characters in
-a password helps to exponentially increase the time and/or resources
-required to compromise the password.</xccdf-1.2:rationale>
-                  <xccdf-1.2:fix system="urn:xccdf:fix:script:sh" id="cracklib_accounts_password_pam_minlen" complexity="low" disruption="low" reboot="false" strategy="restrict">
-declare -a VALUES=()
-declare -a VALUE_NAMES=()
-declare -a ARGS=()
-declare -a NEW_ARGS=()
-
-var_password_pam_minlen='<xccdf-1.2:sub idref="xccdf_org.ssgproject.content_value_var_password_pam_minlen" use="legacy"/>'
-
-VALUES+=("$var_password_pam_minlen")
-VALUE_NAMES+=("minlen")
-ARGS+=("")
-NEW_ARGS+=("")
-
-for idx in "${!VALUES[@]}"
-do
-    if [ -e "/etc/pam.d/common-password" ] ; then
-        valueRegex="${VALUES[$idx]}" defaultValue="${VALUES[$idx]}"
-        # non-empty values need to be preceded by an equals sign
-        [ -n "${valueRegex}" ] &amp;&amp; valueRegex="=${valueRegex}"
-        # add an equals sign to non-empty values
-        [ -n "${defaultValue}" ] &amp;&amp; defaultValue="=${defaultValue}"
-
-        # fix the value for 'option' if one exists but does not match 'valueRegex'
-        if grep -q -P "^\\s*password\\s+requisite\\s+pam_cracklib.so(\\s.+)?\\s+${VALUE_NAMES[$idx]}(?"'!'"${valueRegex}(\\s|\$))" &lt; "/etc/pam.d/common-password" ; then
-            sed --follow-symlinks -i -E -e "s/^(\\s*password\\s+requisite\\s+pam_cracklib.so(\\s.+)?\\s)${VALUE_NAMES[$idx]}=[^[:space:]]*/\\1${VALUE_NAMES[$idx]}${defaultValue}/" "/etc/pam.d/common-password"
-
-        # add 'option=default' if option is not set
-        elif grep -q -E "^\\s*password\\s+requisite\\s+pam_cracklib.so" &lt; "/etc/pam.d/common-password" &amp;&amp;
-                grep    -E "^\\s*password\\s+requisite\\s+pam_cracklib.so" &lt; "/etc/pam.d/common-password" | grep -q -E -v "\\s${VALUE_NAMES[$idx]}(=|\\s|\$)" ; then
-
-            sed --follow-symlinks -i -E -e "s/^(\\s*password\\s+requisite\\s+pam_cracklib.so[^\\n]*)/\\1 ${VALUE_NAMES[$idx]}${defaultValue}/" "/etc/pam.d/common-password"
-        # add a new entry if none exists
-        elif ! grep -q -P "^\\s*password\\s+requisite\\s+pam_cracklib.so(\\s.+)?\\s+${VALUE_NAMES[$idx]}${valueRegex}(\\s|\$)" &lt; "/etc/pam.d/common-password" ; then
-            echo "password requisite pam_cracklib.so ${VALUE_NAMES[$idx]}${defaultValue}" &gt;&gt; "/etc/pam.d/common-password"
-        fi
-    else
-        echo "/etc/pam.d/common-password doesn't exist" &gt;&amp;2
-    fi
-done
-
-for idx in "${!ARGS[@]}"
-do
-    if ! grep -q -P "^\s*password\s+requisite\s+pam_cracklib.so.*\s+${ARGS[$idx]}\s*$" /etc/pam.d/common-password ; then
-        sed --follow-symlinks -i -E -e "s/^\\s*password\\s+requisite\\s+pam_cracklib.so.*\$/&amp; ${NEW_ARGS[$idx]}/" /etc/pam.d/common-password
-    fi
-done
-</xccdf-1.2:fix>
-                  <xccdf-1.2:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-                    <xccdf-1.2:check-export export-name="oval:ssg-var_password_pam_minlen:var:1" value-id="xccdf_org.ssgproject.content_value_var_password_pam_minlen"/>
-                    <xccdf-1.2:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-cracklib_accounts_password_pam_minlen:def:1"/>
-                  </xccdf-1.2:check>
-                  <xccdf-1.2:check system="http://scap.nist.gov/schema/ocil/2">
-                    <xccdf-1.2:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-cracklib_accounts_password_pam_minlen_ocil:questionnaire:1"/>
-                  </xccdf-1.2:check>
-                </xccdf-1.2:Rule>
-              </xccdf-1.2:Group>
               <xccdf-1.2:Group id="xccdf_org.ssgproject.content_group_password_quality_pwquality">
                 <xccdf-1.2:title>Set Password Quality Requirements with pam_pwquality</xccdf-1.2:title>
                 <xccdf-1.2:description>The <html:code>pam_pwquality</html:code> PAM module can be configured to meet
@@ -803,13 +704,13 @@ fi
       </xccdf-1.2:Group>
     </xccdf-1.2:Benchmark>
   </ds:component>
-  <ds:component id="scap_org.open-scap_comp_ssg-gentoo-oval.xml" timestamp="2024-05-31T18:32:46">
+  <ds:component id="scap_org.open-scap_comp_ssg-gentoo-oval.xml" timestamp="2024-06-01T13:10:11">
     <oval-def:oval_definitions xsi:schemaLocation="http://oval.mitre.org/XMLSchema/oval-common-5 oval-common-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5 oval-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#independent independent-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#unix unix-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#linux linux-definitions-schema.xsd">
       <oval-def:generator>
         <oval:product_name>OVALFileLinker from SCAP Security Guide</oval:product_name>
         <oval:product_version>ssg: [0, 1, 73], python: 3.12.2</oval:product_version>
         <oval:schema_version>5.11</oval:schema_version>
-        <oval:timestamp>2024-05-31T16:32:27</oval:timestamp>
+        <oval:timestamp>2024-06-01T11:09:43</oval:timestamp>
       </oval-def:generator>
       <oval-def:definitions>
         <oval-def:definition id="oval:ssg-accounts_password_pam_minlen:def:1" version="3" class="compliance">
@@ -826,19 +727,6 @@ fi
             <oval-def:criteria operator="OR">
               <oval-def:criterion comment="pwquality.conf" test_ref="oval:ssg-test_password_pam_pwquality_minlen:tst:1"/>
             </oval-def:criteria>
-          </oval-def:criteria>
-        </oval-def:definition>
-        <oval-def:definition id="oval:ssg-cracklib_accounts_password_pam_minlen:def:1" version="3" class="compliance">
-          <oval-def:metadata>
-            <oval-def:title>Set Password Minimum Length</oval-def:title>
-            <oval-def:affected family="unix">
-              <oval-def:platform>Gentoo</oval-def:platform>
-            </oval-def:affected>
-            <oval-def:reference ref_id="cracklib_accounts_password_pam_minlen" source="ssg"/>
-            <oval-def:description>Configure PAM module</oval-def:description>
-          </oval-def:metadata>
-          <oval-def:criteria comment="Make sure arguments are properly configured" operator="AND">
-            <oval-def:criterion comment="Verify minlen is set to the desired state" test_ref="oval:ssg-test_pam_password_pam_cracklib_minlen:tst:1"/>
           </oval-def:criteria>
         </oval-def:definition>
         <oval-def:definition id="oval:ssg-accounts_password_pam_pwquality:def:1" version="1" class="compliance">
@@ -860,10 +748,6 @@ fi
           <ind:object object_ref="oval:ssg-obj_password_pam_pwquality_minlen:obj:1"/>
           <ind:state state_ref="oval:ssg-state_password_pam_minlen:ste:1"/>
         </ind:textfilecontent54_test>
-        <ind:textfilecontent54_test id="oval:ssg-test_pam_password_pam_cracklib_minlen:tst:1" version="1" check="all" comment="Verify minlen configuation of pam_cracklib.so" state_operator="AND">
-          <ind:object object_ref="oval:ssg-object_pam_password_pam_cracklib_minlen:obj:1"/>
-          <ind:state state_ref="oval:ssg-state_pam_password_pam_cracklib_minlen:ste:1"/>
-        </ind:textfilecontent54_test>
         <ind:textfilecontent54_test id="oval:ssg-test_password_pam_pwquality:tst:1" version="1" check="all" comment="check the configuration of /etc/pam.d/system-auth" state_operator="AND">
           <ind:object object_ref="oval:ssg-obj_password_pam_pwquality:obj:1"/>
         </ind:textfilecontent54_test>
@@ -872,11 +756,6 @@ fi
         <ind:textfilecontent54_object id="oval:ssg-obj_password_pam_pwquality_minlen:obj:1" version="3">
           <ind:filepath operation="pattern match">^/etc/security/pwquality\.conf$</ind:filepath>
           <ind:pattern operation="pattern match">^\s*minlen[\s]*=[\s]*(-?\d+)(?:[\s]|$)</ind:pattern>
-          <ind:instance datatype="int" operation="greater than or equal">1</ind:instance>
-        </ind:textfilecontent54_object>
-        <ind:textfilecontent54_object id="oval:ssg-object_pam_password_pam_cracklib_minlen:obj:1" version="1" comment="Check minlen configuration of PAM pam_cracklib.so module">
-          <ind:filepath>/etc/pam.d/common-password</ind:filepath>
-          <ind:pattern operation="pattern match">^\s*password\s+requisite\s+pam_cracklib.so.*\sminlen=(-?\d+)(?:\s+.*)?</ind:pattern>
           <ind:instance datatype="int" operation="greater than or equal">1</ind:instance>
         </ind:textfilecontent54_object>
         <ind:textfilecontent54_object id="oval:ssg-obj_password_pam_pwquality:obj:1" version="1">
@@ -889,9 +768,6 @@ fi
         <ind:textfilecontent54_state id="oval:ssg-state_password_pam_minlen:ste:1" version="3" operator="AND">
           <ind:subexpression datatype="int" operation="greater than or equal" var_ref="oval:ssg-var_password_pam_minlen:var:1"/>
         </ind:textfilecontent54_state>
-        <ind:textfilecontent54_state id="oval:ssg-state_pam_password_pam_cracklib_minlen:ste:1" version="3" operator="AND">
-          <ind:subexpression datatype="int" operation="greater than or equal" var_ref="oval:ssg-var_password_pam_minlen:var:1"/>
-        </ind:textfilecontent54_state>
       </oval-def:states>
       <oval-def:variables>
         <oval-def:external_variable id="oval:ssg-var_password_pam_minlen:var:1" version="3" datatype="int" comment="External variable for pam_minlen"/>
@@ -901,21 +777,15 @@ fi
       </oval-def:variables>
     </oval-def:oval_definitions>
   </ds:component>
-  <ds:component id="scap_org.open-scap_comp_ssg-gentoo-ocil.xml" timestamp="2024-05-31T18:32:46">
+  <ds:component id="scap_org.open-scap_comp_ssg-gentoo-ocil.xml" timestamp="2024-06-01T13:10:10">
     <ocil:ocil>
       <ocil:generator>
         <ocil:product_name>build_shorthand.py from SCAP Security Guide</ocil:product_name>
         <ocil:product_version>ssg: 0.1.73</ocil:product_version>
         <ocil:schema_version>2.0</ocil:schema_version>
-        <ocil:timestamp>2024-05-31T16:32:27</ocil:timestamp>
+        <ocil:timestamp>2024-06-01T11:09:43</ocil:timestamp>
       </ocil:generator>
       <ocil:questionnaires>
-        <ocil:questionnaire id="ocil:ssg-cracklib_accounts_password_pam_minlen_ocil:questionnaire:1">
-          <ocil:title>Set Password Minimum Length</ocil:title>
-          <ocil:actions>
-            <ocil:test_action_ref>ocil:ssg-cracklib_accounts_password_pam_minlen_action:testaction:1</ocil:test_action_ref>
-          </ocil:actions>
-        </ocil:questionnaire>
         <ocil:questionnaire id="ocil:ssg-accounts_password_pam_minlen_ocil:questionnaire:1">
           <ocil:title>Ensure PAM Enforces Password Requirements - Minimum Length</ocil:title>
           <ocil:actions>
@@ -924,14 +794,6 @@ fi
         </ocil:questionnaire>
       </ocil:questionnaires>
       <ocil:test_actions>
-        <ocil:boolean_question_test_action id="ocil:ssg-cracklib_accounts_password_pam_minlen_action:testaction:1" question_ref="ocil:ssg-cracklib_accounts_password_pam_minlen_question:question:1">
-          <ocil:when_true>
-            <ocil:result>PASS</ocil:result>
-          </ocil:when_true>
-          <ocil:when_false>
-            <ocil:result>FAIL</ocil:result>
-          </ocil:when_false>
-        </ocil:boolean_question_test_action>
         <ocil:boolean_question_test_action id="ocil:ssg-accounts_password_pam_minlen_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_minlen_question:question:1">
           <ocil:when_true>
             <ocil:result>PASS</ocil:result>
@@ -942,13 +804,6 @@ fi
         </ocil:boolean_question_test_action>
       </ocil:test_actions>
       <ocil:questions>
-        <ocil:boolean_question id="ocil:ssg-cracklib_accounts_password_pam_minlen_question:question:1">
-          <ocil:question_text>To check how many characters are required in a password, run the following command:
-$ grep pam_cracklib.so /etc/pam.d/common-password
-Your output should contain minlen=
-      Is it the case that minlen is not found or not set to the required value (or higher)?
-      </ocil:question_text>
-        </ocil:boolean_question>
         <ocil:boolean_question id="ocil:ssg-accounts_password_pam_minlen_question:question:1">
           <ocil:question_text>Verify that Gentoo enforces a minimum -character password length with the following command:
 
@@ -961,13 +816,13 @@ minlen =
       </ocil:questions>
     </ocil:ocil>
   </ds:component>
-  <ds:component id="scap_org.open-scap_comp_ssg-gentoo-cpe-oval.xml" timestamp="2024-05-31T18:32:48">
+  <ds:component id="scap_org.open-scap_comp_ssg-gentoo-cpe-oval.xml" timestamp="2024-06-01T13:10:13">
     <oval-def:oval_definitions xsi:schemaLocation="http://oval.mitre.org/XMLSchema/oval-common-5 oval-common-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5 oval-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#independent independent-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#unix unix-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#linux linux-definitions-schema.xsd">
       <oval-def:generator>
         <oval:product_name>build_cpe.py from SCAP Security Guide</oval:product_name>
         <oval:product_version>ssg: [0, 1, 73], python: 3.12.2</oval:product_version>
         <oval:schema_version>5.11</oval:schema_version>
-        <oval:timestamp>2024-05-31T16:32:46</oval:timestamp>
+        <oval:timestamp>2024-06-01T11:10:11</oval:timestamp>
       </oval-def:generator>
       <oval-def:definitions>
         <oval-def:definition id="oval:ssg-installed_OS_is_gentoo:def:1" version="2" class="inventory">

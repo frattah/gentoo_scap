@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <xccdf-1.2:Benchmark xmlns:cpe-lang="http://cpe.mitre.org/language/2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xccdf-1.2="http://checklists.nist.gov/xccdf/1.2" id="xccdf_org.ssgproject.content_benchmark_GENTOO" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://checklists.nist.gov/xccdf/1.2 xccdf-1.2.xsd" style="SCAP_1.2" resolved="true" xml:lang="en-US">
-  <xccdf-1.2:status date="2024-05-31">draft</xccdf-1.2:status>
+  <xccdf-1.2:status date="2024-06-01">draft</xccdf-1.2:status>
   <xccdf-1.2:title>Guide to the Secure Configuration of Gentoo</xccdf-1.2:title>
   <xccdf-1.2:description>This guide presents a catalog of security-relevant
 configuration settings for Gentoo. It is a rendering of
@@ -375,18 +375,8 @@ respective companies.</xccdf-1.2:rear-matter>
   </xccdf-1.2:metadata>
   <xccdf-1.2:Profile id="xccdf_org.ssgproject.content_profile_anssi_bp28_minimal">
     <xccdf-1.2:title override="true">ANSSI-BP-028 (minimal)</xccdf-1.2:title>
-    <xccdf-1.2:description override="true">This profile contains configurations that align to ANSSI-BP-028 v2.0 at the minimal hardening level.
-
-ANSSI is the French National Information Security Agency, and stands for Agence nationale de la sécurité des systèmes d'information.
-ANSSI-BP-028 is a configuration recommendation for GNU/Linux systems.
-
-A copy of the ANSSI-BP-028 can be found at the ANSSI website:
-https://www.ssi.gouv.fr/administration/guide/recommandations-de-securite-relatives-a-un-systeme-gnulinux/
-
-An English version of the ANSSI-BP-028 can also be found at the ANSSI website:
-https://cyber.gouv.fr/publications/configuration-recommendations-gnulinux-system</xccdf-1.2:description>
+    <xccdf-1.2:description override="true">Pass</xccdf-1.2:description>
     <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen" selected="true" />
-    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_cracklib_accounts_password_pam_minlen" selected="true" />
     <xccdf-1.2:refine-value idref="xccdf_org.ssgproject.content_value_var_password_pam_minlen" selector="15" />
   </xccdf-1.2:Profile>
   <xccdf-1.2:Group id="xccdf_org.ssgproject.content_group_system">
@@ -461,94 +451,6 @@ password requirements.
 The man pages <html:code>pam_pwquality(8)</html:code>
 provide information on the capabilities and configuration of
 each.</xccdf-1.2:description>
-          <xccdf-1.2:Group id="xccdf_org.ssgproject.content_group_password_quality_pamcracklib">
-            <xccdf-1.2:title>Set Password Quality Requirements, if using
-pam_cracklib</xccdf-1.2:title>
-            <xccdf-1.2:description>The <html:code>pam_cracklib</html:code> PAM module can be configured to meet
-requirements for a variety of policies.
-<html:br />
-              <html:br />
-For example, to configure <html:code>pam_cracklib</html:code> to require at least one uppercase
-character, lowercase character, digit, and other (special)
-character, locate the following line in <html:code>/etc/pam.d/system-auth</html:code>:
-<html:pre>password requisite pam_cracklib.so try_first_pass retry=3</html:pre>
-and then alter it to read:
-<html:pre>password required pam_cracklib.so try_first_pass retry=3 maxrepeat=3 minlen=14 dcredit=-1 ucredit=-1 ocredit=-1 lcredit=-1 difok=4</html:pre>
-If no such line exists, add one as the first line of the password section in <html:code>/etc/pam.d/system-auth</html:code>.
-The arguments can be modified to ensure compliance with
-your organization's security policy. Discussion of each parameter follows.</xccdf-1.2:description>
-            <xccdf-1.2:warning category="general">Note that the password quality requirements are not enforced for the
-root account for some reason.</xccdf-1.2:warning>
-            <xccdf-1.2:Rule selected="false" id="xccdf_org.ssgproject.content_rule_cracklib_accounts_password_pam_minlen" severity="medium">
-              <xccdf-1.2:title>Set Password Minimum Length</xccdf-1.2:title>
-              <xccdf-1.2:description>The pam_cracklib module's <html:code>minlen</html:code> parameter controls requirements for
-minimum characters required in a password. Add <html:code>minlen=<xccdf-1.2:sub idref="xccdf_org.ssgproject.content_value_var_password_pam_minlen" use="legacy" />
-                </html:code>
- to set minimum password length requirements.</xccdf-1.2:description>
-              <xccdf-1.2:reference href="https://public.cyber.mil/stigs/cci/">CCI-000205</xccdf-1.2:reference>
-              <xccdf-1.2:reference href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">Req-8.2.3</xccdf-1.2:reference>
-              <xccdf-1.2:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000078-GPOS-00046</xccdf-1.2:reference>
-              <xccdf-1.2:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R31</xccdf-1.2:reference>
-              <xccdf-1.2:reference href="https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf">8.3.6</xccdf-1.2:reference>
-              <xccdf-1.2:rationale>Password length is one factor of several that helps to determine
-strength and how long it takes to crack a password. Use of more characters in
-a password helps to exponentially increase the time and/or resources
-required to compromise the password.</xccdf-1.2:rationale>
-              <xccdf-1.2:fix system="urn:xccdf:fix:script:sh" id="cracklib_accounts_password_pam_minlen" complexity="low" disruption="low" reboot="false" strategy="restrict">
-declare -a VALUES=()
-declare -a VALUE_NAMES=()
-declare -a ARGS=()
-declare -a NEW_ARGS=()
-
-var_password_pam_minlen='<xccdf-1.2:sub idref="xccdf_org.ssgproject.content_value_var_password_pam_minlen" use="legacy" />'
-
-VALUES+=("$var_password_pam_minlen")
-VALUE_NAMES+=("minlen")
-ARGS+=("")
-NEW_ARGS+=("")
-
-for idx in "${!VALUES[@]}"
-do
-    if [ -e "/etc/pam.d/common-password" ] ; then
-        valueRegex="${VALUES[$idx]}" defaultValue="${VALUES[$idx]}"
-        # non-empty values need to be preceded by an equals sign
-        [ -n "${valueRegex}" ] &amp;&amp; valueRegex="=${valueRegex}"
-        # add an equals sign to non-empty values
-        [ -n "${defaultValue}" ] &amp;&amp; defaultValue="=${defaultValue}"
-
-        # fix the value for 'option' if one exists but does not match 'valueRegex'
-        if grep -q -P "^\\s*password\\s+requisite\\s+pam_cracklib.so(\\s.+)?\\s+${VALUE_NAMES[$idx]}(?"'!'"${valueRegex}(\\s|\$))" &lt; "/etc/pam.d/common-password" ; then
-            sed --follow-symlinks -i -E -e "s/^(\\s*password\\s+requisite\\s+pam_cracklib.so(\\s.+)?\\s)${VALUE_NAMES[$idx]}=[^[:space:]]*/\\1${VALUE_NAMES[$idx]}${defaultValue}/" "/etc/pam.d/common-password"
-
-        # add 'option=default' if option is not set
-        elif grep -q -E "^\\s*password\\s+requisite\\s+pam_cracklib.so" &lt; "/etc/pam.d/common-password" &amp;&amp;
-                grep    -E "^\\s*password\\s+requisite\\s+pam_cracklib.so" &lt; "/etc/pam.d/common-password" | grep -q -E -v "\\s${VALUE_NAMES[$idx]}(=|\\s|\$)" ; then
-
-            sed --follow-symlinks -i -E -e "s/^(\\s*password\\s+requisite\\s+pam_cracklib.so[^\\n]*)/\\1 ${VALUE_NAMES[$idx]}${defaultValue}/" "/etc/pam.d/common-password"
-        # add a new entry if none exists
-        elif ! grep -q -P "^\\s*password\\s+requisite\\s+pam_cracklib.so(\\s.+)?\\s+${VALUE_NAMES[$idx]}${valueRegex}(\\s|\$)" &lt; "/etc/pam.d/common-password" ; then
-            echo "password requisite pam_cracklib.so ${VALUE_NAMES[$idx]}${defaultValue}" &gt;&gt; "/etc/pam.d/common-password"
-        fi
-    else
-        echo "/etc/pam.d/common-password doesn't exist" &gt;&amp;2
-    fi
-done
-
-for idx in "${!ARGS[@]}"
-do
-    if ! grep -q -P "^\s*password\s+requisite\s+pam_cracklib.so.*\s+${ARGS[$idx]}\s*$" /etc/pam.d/common-password ; then
-        sed --follow-symlinks -i -E -e "s/^\\s*password\\s+requisite\\s+pam_cracklib.so.*\$/&amp; ${NEW_ARGS[$idx]}/" /etc/pam.d/common-password
-    fi
-done
-</xccdf-1.2:fix>
-              <xccdf-1.2:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
-                <xccdf-1.2:check-export export-name="oval:ssg-var_password_pam_minlen:var:1" value-id="xccdf_org.ssgproject.content_value_var_password_pam_minlen" /><xccdf-1.2:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-cracklib_accounts_password_pam_minlen:def:1" />
-              </xccdf-1.2:check>
-              <xccdf-1.2:check system="http://scap.nist.gov/schema/ocil/2">
-                <xccdf-1.2:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-cracklib_accounts_password_pam_minlen_ocil:questionnaire:1" />
-              </xccdf-1.2:check>
-            </xccdf-1.2:Rule>
-          </xccdf-1.2:Group>
           <xccdf-1.2:Group id="xccdf_org.ssgproject.content_group_password_quality_pwquality">
             <xccdf-1.2:title>Set Password Quality Requirements with pam_pwquality</xccdf-1.2:title>
             <xccdf-1.2:description>The <html:code>pam_pwquality</html:code> PAM module can be configured to meet

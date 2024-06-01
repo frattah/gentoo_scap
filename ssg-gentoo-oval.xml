@@ -4,7 +4,7 @@
     <oval:product_name>OVALFileLinker from SCAP Security Guide</oval:product_name>
     <oval:product_version>ssg: [0, 1, 73], python: 3.12.2</oval:product_version>
     <oval:schema_version>5.11</oval:schema_version>
-    <oval:timestamp>2024-05-31T16:32:27</oval:timestamp>
+    <oval:timestamp>2024-06-01T11:09:43</oval:timestamp>
   </oval-def:generator>
   <oval-def:definitions>
     <oval-def:definition id="oval:ssg-accounts_password_pam_minlen:def:1" version="3" class="compliance">
@@ -21,19 +21,6 @@
         <oval-def:criteria operator="OR">
           <oval-def:criterion comment="pwquality.conf" test_ref="oval:ssg-test_password_pam_pwquality_minlen:tst:1" />
         </oval-def:criteria>
-      </oval-def:criteria>
-    </oval-def:definition>
-    <oval-def:definition id="oval:ssg-cracklib_accounts_password_pam_minlen:def:1" version="3" class="compliance">
-      <oval-def:metadata>
-        <oval-def:title>Set Password Minimum Length</oval-def:title>
-        <oval-def:affected family="unix">
-          <oval-def:platform>Gentoo</oval-def:platform>
-        </oval-def:affected>
-        <oval-def:reference ref_id="cracklib_accounts_password_pam_minlen" source="ssg" />
-        <oval-def:description>Configure PAM module</oval-def:description>
-      </oval-def:metadata>
-      <oval-def:criteria comment="Make sure arguments are properly configured" operator="AND">
-        <oval-def:criterion comment="Verify minlen is set to the desired state" test_ref="oval:ssg-test_pam_password_pam_cracklib_minlen:tst:1" />
       </oval-def:criteria>
     </oval-def:definition>
     <oval-def:definition id="oval:ssg-accounts_password_pam_pwquality:def:1" version="1" class="compliance">
@@ -55,10 +42,6 @@
       <ind:object object_ref="oval:ssg-obj_password_pam_pwquality_minlen:obj:1" />
       <ind:state state_ref="oval:ssg-state_password_pam_minlen:ste:1" />
     </ind:textfilecontent54_test>
-    <ind:textfilecontent54_test id="oval:ssg-test_pam_password_pam_cracklib_minlen:tst:1" version="1" check="all" comment="Verify minlen configuation of pam_cracklib.so" state_operator="AND">
-      <ind:object object_ref="oval:ssg-object_pam_password_pam_cracklib_minlen:obj:1" />
-      <ind:state state_ref="oval:ssg-state_pam_password_pam_cracklib_minlen:ste:1" />
-    </ind:textfilecontent54_test>
     <ind:textfilecontent54_test id="oval:ssg-test_password_pam_pwquality:tst:1" version="1" check="all" comment="check the configuration of /etc/pam.d/system-auth" state_operator="AND">
       <ind:object object_ref="oval:ssg-obj_password_pam_pwquality:obj:1" />
     </ind:textfilecontent54_test>
@@ -69,11 +52,6 @@
       <ind:pattern operation="pattern match">^\s*minlen[\s]*=[\s]*(-?\d+)(?:[\s]|$)</ind:pattern>
       <ind:instance datatype="int" operation="greater than or equal">1</ind:instance>
     </ind:textfilecontent54_object>
-    <ind:textfilecontent54_object id="oval:ssg-object_pam_password_pam_cracklib_minlen:obj:1" version="1" comment="Check minlen configuration of PAM pam_cracklib.so module">
-      <ind:filepath>/etc/pam.d/common-password</ind:filepath>
-      <ind:pattern operation="pattern match">^\s*password\s+requisite\s+pam_cracklib.so.*\sminlen=(-?\d+)(?:\s+.*)?</ind:pattern>
-      <ind:instance datatype="int" operation="greater than or equal">1</ind:instance>
-    </ind:textfilecontent54_object>
     <ind:textfilecontent54_object id="oval:ssg-obj_password_pam_pwquality:obj:1" version="1">
       <ind:filepath var_ref="oval:ssg-var_pam_pwquality_config_path:var:1" var_check="at least one" />
       <ind:pattern operation="pattern match">^\s*password\s+(?:(?:required)|(?:requisite))\s+pam_pwquality\.so.*$</ind:pattern>
@@ -82,9 +60,6 @@
   </oval-def:objects>
   <oval-def:states>
     <ind:textfilecontent54_state id="oval:ssg-state_password_pam_minlen:ste:1" version="3" operator="AND">
-      <ind:subexpression datatype="int" operation="greater than or equal" var_ref="oval:ssg-var_password_pam_minlen:var:1" />
-    </ind:textfilecontent54_state>
-    <ind:textfilecontent54_state id="oval:ssg-state_pam_password_pam_cracklib_minlen:ste:1" version="3" operator="AND">
       <ind:subexpression datatype="int" operation="greater than or equal" var_ref="oval:ssg-var_password_pam_minlen:var:1" />
     </ind:textfilecontent54_state>
   </oval-def:states>

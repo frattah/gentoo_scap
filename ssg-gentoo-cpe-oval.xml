@@ -4,7 +4,7 @@
     <oval:product_name>build_cpe.py from SCAP Security Guide</oval:product_name>
     <oval:product_version>ssg: [0, 1, 73], python: 3.12.2</oval:product_version>
     <oval:schema_version>5.11</oval:schema_version>
-    <oval:timestamp>2024-05-31T16:32:46</oval:timestamp>
+    <oval:timestamp>2024-06-01T11:10:11</oval:timestamp>
   </oval-def:generator>
   <oval-def:definitions>
     <oval-def:definition id="oval:ssg-installed_OS_is_gentoo:def:1" version="2" class="inventory">
