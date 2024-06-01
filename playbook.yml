@@ -1,0 +1,32 @@
+- name: fix
+  hosts: localhost
+  vars:
+  tasks:
+  - name: Create a password flag file in /etc/portage/package.use
+    ansible.builtin.file:
+      path: /etc/portage/package.use/pwquality
+      owner: root
+      group: root
+      state: file
+  - name: Add pwquality and -passwdqc flag
+    ansible.builtin.lineinfile:
+      path: /etc/portage/package.use/pwquality
+      line: 'pwquality -passwdqc'
+    register: compile_flags
+  - name: Emerge pambase
+    community.general.portage:
+      package: pambase
+      state: present
+      noreplace: false
+    when: compile_flags.changed
+  - name: Ensure pam is correctly configured
+    ansible.builtin.lineinfile:
+      path: /etc/pam.d/system-auth
+      regexp: '^password[\s]*required[\s]*pam_pwquality.so'
+      state: present
+      line: 'password    required    pam_pwquality.so'
+  - name: Ensure passwords with minimum of 15 characters
+    ansible.builtin.lineinfile:
+      path: /etc/security/pwquality.conf
+      line: 'minlen = 15'
+
