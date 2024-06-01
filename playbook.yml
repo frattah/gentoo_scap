@@ -10,8 +10,8 @@
       access_time: preserve
   - name: Add pwquality and -passwdqc flag
     ansible.builtin.lineinfile:
-      path: /etc/portage/package.use/pwquality
-      line: 'pwquality -passwdqc'
+      path: /etc/portage/package.use/pambase
+      line: 'sys-auth/pambase pwquality -passwdqc'
     register: compile_flags
   - name: Emerge pambase
     community.general.portage:
