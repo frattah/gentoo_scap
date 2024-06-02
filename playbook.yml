@@ -6,54 +6,72 @@
     var_password_pam_lcredit: -1
     var_password_pam_ocredit: -1
     var_password_pam_ucredit: -1
+    var_password_pam_unix_remember: 2
+    var_accounts_tmout: 600
   tasks:
-  - name: Create a password flag file in /etc/portage/package.use
-    ansible.builtin.file:
-      path: /etc/portage/package.use/pambase
-      state: touch
-      modification_time: preserve
-      access_time: preserve
   - name: Add pwquality and -passwdqc flag
     ansible.builtin.lineinfile:
       path: /etc/portage/package.use/pambase
-      line: 'sys-auth/pambase pwquality -passwdqc'
+      line: sys-auth/pambase pwquality -passwdqc
+      create: true
     register: compile_flags
+
   - name: Emerge pambase
     community.general.portage:
       package: pambase
       state: present
       noreplace: false
     when: compile_flags.changed
-  - name: Ensure pam is correctly configured
+
+  - name: Ensure pam is correctly configured to use pwquality.so
     ansible.builtin.lineinfile:
       path: /etc/pam.d/system-auth
       state: present
-      regexp: '^password[\s]*required[\s]*pam_pwquality.so'
+      regexp: ^password[\s]*required[\s]*pam_pwquality.so
       state: present
-      line: 'password    required    pam_pwquality.so'
-  - name: Create a pwquality.conf file
-    ansible.builtin.file:
-      path: /etc/security/pwquality.conf
-      state: touch
-      modification_time: preserve
-      access_time: preserve
+      line: password    required    pam_pwquality.so
+
   - name: Ensure passwords with minimum of {{ var_password_pam_minlen }} characters
     ansible.builtin.lineinfile:
       path: /etc/security/pwquality.conf
-      line: 'minlen = {{ var_password_pam_minlen }} '
+      line: minlen = {{ var_password_pam_minlen }}
+
   - name: Ensure passwords with minimum of {{ var_password_pam_dcredit }} digit character
     ansible.builtin.lineinfile:
       path: /etc/security/pwquality.conf
-      line: 'ocredit = {{ var_password_pam_dcredit }}'
+      line: ocredit = {{ var_password_pam_dcredit }}
+
   - name: Ensure passwords with minimum of {{ var_password_pam_lcredit }} lower case character
     ansible.builtin.lineinfile:
       path: /etc/security/pwquality.conf
-      line: 'dcredit = {{ var_password_pam_lcredit }}'
+      line: dcredit = {{ var_password_pam_lcredit }}
+
   - name: Ensure passwords with minimum of {{ var_password_pam_ocredit }} special character
     ansible.builtin.lineinfile:
       path: /etc/security/pwquality.conf
-      line: 'ucredit = {{ var_password_pam_ocredit }}'
+      line: ucredit = {{ var_password_pam_ocredit }}
+
   - name: Ensure passwords with minimum of {{ var_password_pam_ucredit }} upper case character
     ansible.builtin.lineinfile:
       path: /etc/security/pwquality.conf
-      line: 'lcredit = {{ var_password_pam_ucredit }}'
+      line: lcredit = {{ var_password_pam_ucredit }}
+
+  - name: Ensure pam is correctly configured to use pwhistory.so
+    ansible.builtin.lineinfile:
+      path: /etc/pam.d/system-auth
+      state: present
+      regexp: ^password[\s]*required[\s]*pam_pwhistory.so
+      state: present
+      line: password    required    pam_pwhistory.so
+
+  - name: Ensure passwords different by the last {{ var_password_pam_unix_remember }}
+    ansible.builtin.lineinfile:
+      path: /etc/security/pwhistory.conf
+      line: remember = {{ var_password_pam_unix_remember }}
+
+  - name: Set interactive session timeout at {{ var_accounts_tmout }}
+    ansible.builtin.lineinfile:
+      path: /etc/profile.d/tmout.sh
+      create: true
+      regexp: (?:typeset|declare)[\s]+-xr[\s]+TMOUT=([\w$]+).*$
+      line: typeset -xr TMOUT={{ var_accounts_tmout }}
