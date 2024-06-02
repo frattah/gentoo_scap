@@ -3,6 +3,7 @@ import xml.etree.ElementTree as ET
 OVAL_DEF = "{http://oval.mitre.org/XMLSchema/oval-definitions-5}"
 LINUX = "{http://oval.mitre.org/XMLSchema/oval-definitions-5#linux}"
 CPE_LANG = "{http://cpe.mitre.org/language/2.0}"
+DC = "{http://purl.org/dc/elements/1.1/}"
 
 tree = ET.parse('ssg-gentoo-ds.xml')
 root = tree.getroot()
@@ -24,6 +25,11 @@ for tests in root.iter(OVAL_DEF+'tests'):
 for logical_test in root.iter(CPE_LANG+'logical-test'):
 	for check_fact_ref in logical_test.findall(CPE_LANG+'check-fact-ref'):
 		logical_test.remove(check_fact_ref)
+
+for metadata in root.iter(OVAL_DEF+'metadata'):
+	for contributor in metadata.findall(DC+'contributor'):
+		metadata.remove(contributor)
+
 
 # Substitute the datastream collection
 tree.write('ssg-gentoo-ds.xml')

@@ -1,6 +1,11 @@
 - name: fix
   hosts: localhost
   vars:
+    var_password_pam_minlen: 15
+    var_password_pam_dcredit: -1
+    var_password_pam_lcredit: -1
+    var_password_pam_ocredit: -1
+    var_password_pam_ucredit: -1
   tasks:
   - name: Create a password flag file in /etc/portage/package.use
     ansible.builtin.file:
@@ -32,8 +37,23 @@
       state: touch
       modification_time: preserve
       access_time: preserve
-  - name: Ensure passwords with minimum of 15 characters
+  - name: Ensure passwords with minimum of {{ var_password_pam_minlen }} characters
     ansible.builtin.lineinfile:
       path: /etc/security/pwquality.conf
-      line: 'minlen = 15'
-
+      line: 'minlen = {{ var_password_pam_minlen }} '
+  - name: Ensure passwords with minimum of {{ var_password_pam_dcredit }} digit character
+    ansible.builtin.lineinfile:
+      path: /etc/security/pwquality.conf
+      line: 'ocredit = {{ var_password_pam_dcredit }}'
+  - name: Ensure passwords with minimum of {{ var_password_pam_lcredit }} lower case character
+    ansible.builtin.lineinfile:
+      path: /etc/security/pwquality.conf
+      line: 'dcredit = {{ var_password_pam_lcredit }}'
+  - name: Ensure passwords with minimum of {{ var_password_pam_ocredit }} special character
+    ansible.builtin.lineinfile:
+      path: /etc/security/pwquality.conf
+      line: 'ucredit = {{ var_password_pam_ocredit }}'
+  - name: Ensure passwords with minimum of {{ var_password_pam_ucredit }} upper case character
+    ansible.builtin.lineinfile:
+      path: /etc/security/pwquality.conf
+      line: 'lcredit = {{ var_password_pam_ucredit }}'
