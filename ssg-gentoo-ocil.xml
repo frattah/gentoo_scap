@@ -4,25 +4,19 @@
     <ocil:product_name>build_shorthand.py from SCAP Security Guide</ocil:product_name>
     <ocil:product_version>ssg: 0.1.73</ocil:product_version>
     <ocil:schema_version>2.0</ocil:schema_version>
-    <ocil:timestamp>2024-06-02T09:33:36</ocil:timestamp>
+    <ocil:timestamp>2024-06-02T12:01:16</ocil:timestamp>
   </ocil:generator>
   <ocil:questionnaires>
-    <ocil:questionnaire id="ocil:ssg-accounts_password_pam_dcredit_ocil:questionnaire:1">
-      <ocil:title>Ensure PAM Enforces Password Requirements - Minimum Digit Characters</ocil:title>
+    <ocil:questionnaire id="ocil:ssg-accounts_password_pam_lcredit_ocil:questionnaire:1">
+      <ocil:title>Ensure PAM Enforces Password Requirements - Minimum Lowercase Characters</ocil:title>
       <ocil:actions>
-        <ocil:test_action_ref>ocil:ssg-accounts_password_pam_dcredit_action:testaction:1</ocil:test_action_ref>
+        <ocil:test_action_ref>ocil:ssg-accounts_password_pam_lcredit_action:testaction:1</ocil:test_action_ref>
       </ocil:actions>
     </ocil:questionnaire>
-    <ocil:questionnaire id="ocil:ssg-accounts_password_pam_minlen_ocil:questionnaire:1">
-      <ocil:title>Ensure PAM Enforces Password Requirements - Minimum Length</ocil:title>
+    <ocil:questionnaire id="ocil:ssg-accounts_passwords_pam_faillock_deny_ocil:questionnaire:1">
+      <ocil:title>Lock Accounts After Failed Password Attempts</ocil:title>
       <ocil:actions>
-        <ocil:test_action_ref>ocil:ssg-accounts_password_pam_minlen_action:testaction:1</ocil:test_action_ref>
-      </ocil:actions>
-    </ocil:questionnaire>
-    <ocil:questionnaire id="ocil:ssg-accounts_tmout_ocil:questionnaire:1">
-      <ocil:title>Set Interactive Session Timeout</ocil:title>
-      <ocil:actions>
-        <ocil:test_action_ref>ocil:ssg-accounts_tmout_action:testaction:1</ocil:test_action_ref>
+        <ocil:test_action_ref>ocil:ssg-accounts_passwords_pam_faillock_deny_action:testaction:1</ocil:test_action_ref>
       </ocil:actions>
     </ocil:questionnaire>
     <ocil:questionnaire id="ocil:ssg-accounts_password_pam_unix_remember_ocil:questionnaire:1">
@@ -31,10 +25,22 @@
         <ocil:test_action_ref>ocil:ssg-accounts_password_pam_unix_remember_action:testaction:1</ocil:test_action_ref>
       </ocil:actions>
     </ocil:questionnaire>
-    <ocil:questionnaire id="ocil:ssg-accounts_password_pam_ucredit_ocil:questionnaire:1">
-      <ocil:title>Ensure PAM Enforces Password Requirements - Minimum Uppercase Characters</ocil:title>
+    <ocil:questionnaire id="ocil:ssg-accounts_passwords_pam_faillock_deny_root_ocil:questionnaire:1">
+      <ocil:title>Configure the root Account for Failed Password Attempts</ocil:title>
       <ocil:actions>
-        <ocil:test_action_ref>ocil:ssg-accounts_password_pam_ucredit_action:testaction:1</ocil:test_action_ref>
+        <ocil:test_action_ref>ocil:ssg-accounts_passwords_pam_faillock_deny_root_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-accounts_password_pam_minlen_ocil:questionnaire:1">
+      <ocil:title>Ensure PAM Enforces Password Requirements - Minimum Length</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-accounts_password_pam_minlen_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-accounts_password_pam_dcredit_ocil:questionnaire:1">
+      <ocil:title>Ensure PAM Enforces Password Requirements - Minimum Digit Characters</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-accounts_password_pam_dcredit_action:testaction:1</ocil:test_action_ref>
       </ocil:actions>
     </ocil:questionnaire>
     <ocil:questionnaire id="ocil:ssg-accounts_password_pam_ocredit_ocil:questionnaire:1">
@@ -43,15 +49,27 @@
         <ocil:test_action_ref>ocil:ssg-accounts_password_pam_ocredit_action:testaction:1</ocil:test_action_ref>
       </ocil:actions>
     </ocil:questionnaire>
-    <ocil:questionnaire id="ocil:ssg-accounts_password_pam_lcredit_ocil:questionnaire:1">
-      <ocil:title>Ensure PAM Enforces Password Requirements - Minimum Lowercase Characters</ocil:title>
+    <ocil:questionnaire id="ocil:ssg-accounts_tmout_ocil:questionnaire:1">
+      <ocil:title>Set Interactive Session Timeout</ocil:title>
       <ocil:actions>
-        <ocil:test_action_ref>ocil:ssg-accounts_password_pam_lcredit_action:testaction:1</ocil:test_action_ref>
+        <ocil:test_action_ref>ocil:ssg-accounts_tmout_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-accounts_passwords_pam_faillock_interval_ocil:questionnaire:1">
+      <ocil:title>Set Interval For Counting Failed Password Attempts</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-accounts_passwords_pam_faillock_interval_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-accounts_password_pam_ucredit_ocil:questionnaire:1">
+      <ocil:title>Ensure PAM Enforces Password Requirements - Minimum Uppercase Characters</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-accounts_password_pam_ucredit_action:testaction:1</ocil:test_action_ref>
       </ocil:actions>
     </ocil:questionnaire>
   </ocil:questionnaires>
   <ocil:test_actions>
-    <ocil:boolean_question_test_action id="ocil:ssg-accounts_password_pam_dcredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_dcredit_question:question:1">
+    <ocil:boolean_question_test_action id="ocil:ssg-accounts_password_pam_lcredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_lcredit_question:question:1">
       <ocil:when_true>
         <ocil:result>PASS</ocil:result>
       </ocil:when_true>
@@ -59,15 +77,7 @@
         <ocil:result>FAIL</ocil:result>
       </ocil:when_false>
     </ocil:boolean_question_test_action>
-    <ocil:boolean_question_test_action id="ocil:ssg-accounts_password_pam_minlen_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_minlen_question:question:1">
-      <ocil:when_true>
-        <ocil:result>PASS</ocil:result>
-      </ocil:when_true>
-      <ocil:when_false>
-        <ocil:result>FAIL</ocil:result>
-      </ocil:when_false>
-    </ocil:boolean_question_test_action>
-    <ocil:boolean_question_test_action id="ocil:ssg-accounts_tmout_action:testaction:1" question_ref="ocil:ssg-accounts_tmout_question:question:1">
+    <ocil:boolean_question_test_action id="ocil:ssg-accounts_passwords_pam_faillock_deny_action:testaction:1" question_ref="ocil:ssg-accounts_passwords_pam_faillock_deny_question:question:1">
       <ocil:when_true>
         <ocil:result>PASS</ocil:result>
       </ocil:when_true>
@@ -83,7 +93,23 @@
         <ocil:result>FAIL</ocil:result>
       </ocil:when_false>
     </ocil:boolean_question_test_action>
-    <ocil:boolean_question_test_action id="ocil:ssg-accounts_password_pam_ucredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_ucredit_question:question:1">
+    <ocil:boolean_question_test_action id="ocil:ssg-accounts_passwords_pam_faillock_deny_root_action:testaction:1" question_ref="ocil:ssg-accounts_passwords_pam_faillock_deny_root_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-accounts_password_pam_minlen_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_minlen_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-accounts_password_pam_dcredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_dcredit_question:question:1">
       <ocil:when_true>
         <ocil:result>PASS</ocil:result>
       </ocil:when_true>
@@ -99,7 +125,23 @@
         <ocil:result>FAIL</ocil:result>
       </ocil:when_false>
     </ocil:boolean_question_test_action>
-    <ocil:boolean_question_test_action id="ocil:ssg-accounts_password_pam_lcredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_lcredit_question:question:1">
+    <ocil:boolean_question_test_action id="ocil:ssg-accounts_tmout_action:testaction:1" question_ref="ocil:ssg-accounts_tmout_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-accounts_passwords_pam_faillock_interval_action:testaction:1" question_ref="ocil:ssg-accounts_passwords_pam_faillock_interval_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-accounts_password_pam_ucredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_ucredit_question:question:1">
       <ocil:when_true>
         <ocil:result>PASS</ocil:result>
       </ocil:when_true>
@@ -109,35 +151,26 @@
     </ocil:boolean_question_test_action>
   </ocil:test_actions>
   <ocil:questions>
-    <ocil:boolean_question id="ocil:ssg-accounts_password_pam_dcredit_question:question:1">
-      <ocil:question_text>Verify that Gentoo enforces password complexity by requiring that at least one numeric character be used.
+    <ocil:boolean_question id="ocil:ssg-accounts_password_pam_lcredit_question:question:1">
+      <ocil:question_text>Verify that Gentoo enforces password complexity by requiring that at least one lower-case character.
 
-Check the value for "dcredit" with the following command:
+Check the value for "lcredit" with the following command:
 
-$ sudo grep dcredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/*.conf
+$ sudo grep lcredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/*.conf
 
-/etc/security/pwquality.conf:dcredit = 
-      Is it the case that the value of "dcredit" is a positive number or is commented out?
+/etc/security/pwquality.conf:lcredit = -1
+      Is it the case that the value of "lcredit" is a positive number or is commented out?
       </ocil:question_text>
     </ocil:boolean_question>
-    <ocil:boolean_question id="ocil:ssg-accounts_password_pam_minlen_question:question:1">
-      <ocil:question_text>Verify that Gentoo enforces a minimum -character password length with the following command:
+    <ocil:boolean_question id="ocil:ssg-accounts_passwords_pam_faillock_deny_question:question:1">
+      <ocil:question_text>Verify Gentoo is configured to lock an account after 
+unsuccessful logon attempts with the command:
 
-$ grep minlen /etc/security/pwquality.conf
 
-minlen = 
-      Is it the case that the command does not return a "minlen" value of "&lt;sub idref="var_password_pam_minlen" /&gt;" or greater, does not return a line, or the line is commented out?
-      </ocil:question_text>
-    </ocil:boolean_question>
-    <ocil:boolean_question id="ocil:ssg-accounts_tmout_question:question:1">
-      <ocil:question_text>Run the following command to ensure the TMOUT value is configured for all users
-on the system:
-
-$ sudo grep TMOUT /etc/profile /etc/profile.d/*.sh
-
-The output should return the following:
-TMOUT=
-      Is it the case that value of TMOUT is not less than or equal to expected setting?
+$ grep 'deny =' /etc/security/faillock.conf
+deny = .
+      Is it the case that the "deny" option is not set to "&lt;sub idref="var_accounts_passwords_pam_faillock_deny" /&gt;"
+or less (but not "0"), is missing or commented out?
       </ocil:question_text>
     </ocil:boolean_question>
     <ocil:boolean_question id="ocil:ssg-accounts_password_pam_unix_remember_question:question:1">
@@ -156,15 +189,34 @@ The pam_pwhistory remember option must be configured only in one file.
       Is it the case that the value of remember is not equal to or greater than the expected value?
       </ocil:question_text>
     </ocil:boolean_question>
-    <ocil:boolean_question id="ocil:ssg-accounts_password_pam_ucredit_question:question:1">
-      <ocil:question_text>Verify that Gentoo enforces password complexity by requiring that at least one upper-case character.
+    <ocil:boolean_question id="ocil:ssg-accounts_passwords_pam_faillock_deny_root_question:question:1">
+      <ocil:question_text>Verify Gentoo is configured to lock the root account after 
+unsuccessful logon attempts with the command:
 
-Check the value for "ucredit" with the following command:
 
-$ sudo grep ucredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/*.conf
+$ grep even_deny_root /etc/security/faillock.conf
+even_deny_root
+      Is it the case that the "even_deny_root" option is not set, is missing or commented out?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-accounts_password_pam_minlen_question:question:1">
+      <ocil:question_text>Verify that Gentoo enforces a minimum -character password length with the following command:
 
-ucredit = -1
-      Is it the case that the value of "ucredit" is a positive number or is commented out?
+$ grep minlen /etc/security/pwquality.conf
+
+minlen = 
+      Is it the case that the command does not return a "minlen" value of "&lt;sub idref="var_password_pam_minlen" /&gt;" or greater, does not return a line, or the line is commented out?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-accounts_password_pam_dcredit_question:question:1">
+      <ocil:question_text>Verify that Gentoo enforces password complexity by requiring that at least one numeric character be used.
+
+Check the value for "dcredit" with the following command:
+
+$ sudo grep dcredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/*.conf
+
+/etc/security/pwquality.conf:dcredit = 
+      Is it the case that the value of "dcredit" is a positive number or is commented out?
       </ocil:question_text>
     </ocil:boolean_question>
     <ocil:boolean_question id="ocil:ssg-accounts_password_pam_ocredit_question:question:1">
@@ -176,15 +228,35 @@ ocredit =
       Is it the case that value of "ocredit" is a positive number or is commented out?
       </ocil:question_text>
     </ocil:boolean_question>
-    <ocil:boolean_question id="ocil:ssg-accounts_password_pam_lcredit_question:question:1">
-      <ocil:question_text>Verify that Gentoo enforces password complexity by requiring that at least one lower-case character.
+    <ocil:boolean_question id="ocil:ssg-accounts_tmout_question:question:1">
+      <ocil:question_text>Run the following command to ensure the TMOUT value is configured for all users
+on the system:
 
-Check the value for "lcredit" with the following command:
+$ sudo grep TMOUT /etc/profile /etc/profile.d/*.sh
 
-$ sudo grep lcredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/*.conf
+The output should return the following:
+TMOUT=
+      Is it the case that value of TMOUT is not less than or equal to expected setting?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-accounts_passwords_pam_faillock_interval_question:question:1">
+      <ocil:question_text>To ensure the failed password attempt policy is configured correctly, run the following command:
 
-/etc/security/pwquality.conf:lcredit = -1
-      Is it the case that the value of "lcredit" is a positive number or is commented out?
+$ grep fail_interval /etc/security/faillock.conf
+The output should show fail_interval = &lt;interval-in-seconds&gt; where interval-in-seconds is  or greater.
+      Is it the case that the "fail_interval" option is not set to "&lt;sub idref="var_accounts_passwords_pam_faillock_fail_interval" /&gt;"
+or less (but not "0"), the line is commented out, or the line is missing?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-accounts_password_pam_ucredit_question:question:1">
+      <ocil:question_text>Verify that Gentoo enforces password complexity by requiring that at least one upper-case character.
+
+Check the value for "ucredit" with the following command:
+
+$ sudo grep ucredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/*.conf
+
+ucredit = -1
+      Is it the case that the value of "ucredit" is a positive number or is commented out?
       </ocil:question_text>
     </ocil:boolean_question>
   </ocil:questions>
