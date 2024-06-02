@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <xccdf-1.2:Benchmark xmlns:cpe-lang="http://cpe.mitre.org/language/2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xccdf-1.2="http://checklists.nist.gov/xccdf/1.2" id="xccdf_org.ssgproject.content_benchmark_GENTOO" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://checklists.nist.gov/xccdf/1.2 xccdf-1.2.xsd" style="SCAP_1.2" resolved="true" xml:lang="en-US">
-  <xccdf-1.2:status date="2024-06-01">draft</xccdf-1.2:status>
+  <xccdf-1.2:status date="2024-06-02">draft</xccdf-1.2:status>
   <xccdf-1.2:title>Guide to the Secure Configuration of Gentoo</xccdf-1.2:title>
   <xccdf-1.2:description>This guide presents a catalog of security-relevant
 configuration settings for Gentoo. It is a rendering of
@@ -376,8 +376,16 @@ respective companies.</xccdf-1.2:rear-matter>
   <xccdf-1.2:Profile id="xccdf_org.ssgproject.content_profile_anssi_bp28_minimal">
     <xccdf-1.2:title override="true">ANSSI-BP-028 (minimal)</xccdf-1.2:title>
     <xccdf-1.2:description override="true">Pass</xccdf-1.2:description>
+    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit" selected="true" />
+    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit" selected="true" />
     <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen" selected="true" />
+    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit" selected="true" />
+    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit" selected="true" />
     <xccdf-1.2:refine-value idref="xccdf_org.ssgproject.content_value_var_password_pam_minlen" selector="15" />
+    <xccdf-1.2:refine-value idref="xccdf_org.ssgproject.content_value_var_password_pam_ocredit" selector="1" />
+    <xccdf-1.2:refine-value idref="xccdf_org.ssgproject.content_value_var_password_pam_dcredit" selector="1" />
+    <xccdf-1.2:refine-value idref="xccdf_org.ssgproject.content_value_var_password_pam_ucredit" selector="1" />
+    <xccdf-1.2:refine-value idref="xccdf_org.ssgproject.content_value_var_password_pam_lcredit" selector="1" />
   </xccdf-1.2:Profile>
   <xccdf-1.2:Group id="xccdf_org.ssgproject.content_group_system">
     <xccdf-1.2:title>System Settings</xccdf-1.2:title>
@@ -472,6 +480,22 @@ ocredit = -1
 maxrepeat = 3</html:pre>
 The arguments can be modified to ensure compliance with
 your organization's security policy. Discussion of each parameter follows.</xccdf-1.2:description>
+            <xccdf-1.2:Value id="xccdf_org.ssgproject.content_value_var_password_pam_dcredit" type="number">
+              <xccdf-1.2:title>dcredit</xccdf-1.2:title>
+              <xccdf-1.2:description>Minimum number of digits in password</xccdf-1.2:description>
+              <xccdf-1.2:value selector="0">0</xccdf-1.2:value>
+              <xccdf-1.2:value selector="1">-1</xccdf-1.2:value>
+              <xccdf-1.2:value selector="2">-2</xccdf-1.2:value>
+              <xccdf-1.2:value>-1</xccdf-1.2:value>
+            </xccdf-1.2:Value>
+            <xccdf-1.2:Value id="xccdf_org.ssgproject.content_value_var_password_pam_lcredit" type="number">
+              <xccdf-1.2:title>lcredit</xccdf-1.2:title>
+              <xccdf-1.2:description>Minimum number of lower case in password</xccdf-1.2:description>
+              <xccdf-1.2:value selector="0">0</xccdf-1.2:value>
+              <xccdf-1.2:value selector="1">-1</xccdf-1.2:value>
+              <xccdf-1.2:value selector="2">-2</xccdf-1.2:value>
+              <xccdf-1.2:value>-1</xccdf-1.2:value>
+            </xccdf-1.2:Value>
             <xccdf-1.2:Value id="xccdf_org.ssgproject.content_value_var_password_pam_minlen" type="number">
               <xccdf-1.2:title>minlen</xccdf-1.2:title>
               <xccdf-1.2:description>Minimum number of characters in password</xccdf-1.2:description>
@@ -486,6 +510,374 @@ your organization's security policy. Discussion of each parameter follows.</xccd
               <xccdf-1.2:value selector="8">8</xccdf-1.2:value>
               <xccdf-1.2:value>15</xccdf-1.2:value>
             </xccdf-1.2:Value>
+            <xccdf-1.2:Value id="xccdf_org.ssgproject.content_value_var_password_pam_ocredit" type="number">
+              <xccdf-1.2:title>ocredit</xccdf-1.2:title>
+              <xccdf-1.2:description>Minimum number of other (special characters) in
+password</xccdf-1.2:description>
+              <xccdf-1.2:value selector="0">0</xccdf-1.2:value>
+              <xccdf-1.2:value selector="1">-1</xccdf-1.2:value>
+              <xccdf-1.2:value selector="2">-2</xccdf-1.2:value>
+              <xccdf-1.2:value>-1</xccdf-1.2:value>
+            </xccdf-1.2:Value>
+            <xccdf-1.2:Value id="xccdf_org.ssgproject.content_value_var_password_pam_ucredit" type="number">
+              <xccdf-1.2:title>ucredit</xccdf-1.2:title>
+              <xccdf-1.2:description>Minimum number of upper case in password</xccdf-1.2:description>
+              <xccdf-1.2:value selector="0">0</xccdf-1.2:value>
+              <xccdf-1.2:value selector="1">-1</xccdf-1.2:value>
+              <xccdf-1.2:value selector="2">-2</xccdf-1.2:value>
+              <xccdf-1.2:value>-1</xccdf-1.2:value>
+            </xccdf-1.2:Value>
+            <xccdf-1.2:Rule selected="false" id="xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit" severity="medium">
+              <xccdf-1.2:title>Ensure PAM Enforces Password Requirements - Minimum Digit Characters</xccdf-1.2:title>
+              <xccdf-1.2:description>The pam_pwquality module's <html:code>dcredit</html:code> parameter controls requirements for
+usage of digits in a password. When set to a negative number, any password will be required to
+contain that many digits. When set to a positive number, pam_pwquality will grant +1 additional
+length credit for each digit. Modify the <html:code>dcredit</html:code> setting in
+<html:code>/etc/security/pwquality.conf</html:code> to require the use of a digit in passwords.</xccdf-1.2:description>
+              <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">12</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">15</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">16</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">5</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.04</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.05</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.07</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.10</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS06.03</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS06.10</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://public.cyber.mil/stigs/cci/">CCI-000194</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.2.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.5.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.5.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.3</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.4</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.5</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.6</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.7</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.8</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.9</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.7.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.7.4</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.10</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.3</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.4</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.5</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.7</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.8</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.9</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 2.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">0421</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">0422</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">0431</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">0974</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1173</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1401</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1504</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1505</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1546</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1557</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1558</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1559</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1560</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1561</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.18.1.4</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.1.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.3</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.4</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.6</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.3.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.3</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">IA-5(c)</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">IA-5(1)(a)</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">CM-6(a)</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">IA-5(4)</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-6</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-7</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.niap-ccevs.org/Profile/PP.cfm">FMT_SMF_EXT.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">Req-8.2.3</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000071-GPOS-00039</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R31</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf">8.3.6</xccdf-1.2:reference>
+              <xccdf-1.2:rationale>Use of a complex password helps to increase the time and resources required
+to compromise the password. Password complexity, or strength, is a measure of
+the effectiveness of a password in resisting attempts at guessing and brute-force
+attacks.
+<html:br />
+                <html:br />
+Password complexity is one factor of several that determines how long it takes
+to crack a password. The more complex the password, the greater the number of
+possible combinations that need to be tested before the password is compromised.
+Requiring digits makes password guessing attacks more difficult by ensuring a larger
+search space.</xccdf-1.2:rationale>
+              <xccdf-1.2:platform idref="#package_pam" />
+              <xccdf-1.2:fix system="urn:xccdf:fix:script:sh" id="accounts_password_pam_dcredit" complexity="low" disruption="low" reboot="false" strategy="restrict"># Remediation is applicable only in certain platforms
+if rpm --quiet -q pam; then
+
+var_password_pam_dcredit='<xccdf-1.2:sub idref="xccdf_org.ssgproject.content_value_var_password_pam_dcredit" use="legacy" />'
+
+
+
+
+
+
+# Strip any search characters in the key arg so that the key can be replaced without
+# adding any search characters to the config file.
+stripped_key=$(sed 's/[\^=\$,;+]*//g' &lt;&lt;&lt; "^dcredit")
+
+# shellcheck disable=SC2059
+printf -v formatted_output "%s = %s" "$stripped_key" "$var_password_pam_dcredit"
+
+# If the key exists, change it. Otherwise, add it to the config_file.
+# We search for the key string followed by a word boundary (matched by \&gt;),
+# so if we search for 'setting', 'setting2' won't match.
+if LC_ALL=C grep -q -m 1 -i -e "^dcredit\\&gt;" "/etc/security/pwquality.conf"; then
+    escaped_formatted_output=$(sed -e 's|/|\\/|g' &lt;&lt;&lt; "$formatted_output")
+    LC_ALL=C sed -i --follow-symlinks "s/^dcredit\\&gt;.*/$escaped_formatted_output/gi" "/etc/security/pwquality.conf"
+else
+    if [[ -s "/etc/security/pwquality.conf" ]] &amp;&amp; [[ -n "$(tail -c 1 -- "/etc/security/pwquality.conf" || true)" ]]; then
+        LC_ALL=C sed -i --follow-symlinks '$a'\\ "/etc/security/pwquality.conf"
+    fi
+    printf '%s\n' "$formatted_output" &gt;&gt; "/etc/security/pwquality.conf"
+fi
+
+else
+    &gt;&amp;2 echo 'Remediation is not applicable, nothing was done'
+fi
+</xccdf-1.2:fix>
+              <xccdf-1.2:fix system="urn:xccdf:fix:script:ansible" id="accounts_password_pam_dcredit" complexity="low" disruption="low" reboot="false" strategy="restrict">- name: Gather the package facts
+  package_facts:
+    manager: auto
+  tags:
+  - NIST-800-53-CM-6(a)
+  - NIST-800-53-IA-5(1)(a)
+  - NIST-800-53-IA-5(4)
+  - NIST-800-53-IA-5(c)
+  - PCI-DSS-Req-8.2.3
+  - PCI-DSSv4-8.3.6
+  - accounts_password_pam_dcredit
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+- name: XCCDF Value var_password_pam_dcredit # promote to variable
+  set_fact:
+    var_password_pam_dcredit: !!str <xccdf-1.2:sub idref="xccdf_org.ssgproject.content_value_var_password_pam_dcredit" use="legacy" />
+  tags:
+    - always
+
+- name: Ensure PAM Enforces Password Requirements - Minimum Digit Characters - Ensure
+    PAM variable dcredit is set accordingly
+  ansible.builtin.lineinfile:
+    create: true
+    dest: /etc/security/pwquality.conf
+    regexp: ^#?\s*dcredit
+    line: dcredit = {{ var_password_pam_dcredit }}
+  when: '"pam" in ansible_facts.packages'
+  tags:
+  - NIST-800-53-CM-6(a)
+  - NIST-800-53-IA-5(1)(a)
+  - NIST-800-53-IA-5(4)
+  - NIST-800-53-IA-5(c)
+  - PCI-DSS-Req-8.2.3
+  - PCI-DSSv4-8.3.6
+  - accounts_password_pam_dcredit
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+</xccdf-1.2:fix>
+              <xccdf-1.2:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                <xccdf-1.2:check-export export-name="oval:ssg-var_password_pam_dcredit:var:1" value-id="xccdf_org.ssgproject.content_value_var_password_pam_dcredit" /><xccdf-1.2:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-accounts_password_pam_dcredit:def:1" />
+              </xccdf-1.2:check>
+              <xccdf-1.2:check system="http://scap.nist.gov/schema/ocil/2">
+                <xccdf-1.2:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-accounts_password_pam_dcredit_ocil:questionnaire:1" />
+              </xccdf-1.2:check>
+            </xccdf-1.2:Rule>
+            <xccdf-1.2:Rule selected="false" id="xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit" severity="medium">
+              <xccdf-1.2:title>Ensure PAM Enforces Password Requirements - Minimum Lowercase Characters</xccdf-1.2:title>
+              <xccdf-1.2:description>The pam_pwquality module's <html:code>lcredit</html:code> parameter controls requirements for
+usage of lowercase letters in a password. When set to a negative number, any password will be required to
+contain that many lowercase characters. When set to a positive number, pam_pwquality will grant +1 additional
+length credit for each lowercase character. Modify the <html:code>lcredit</html:code> setting in
+<html:code>/etc/security/pwquality.conf</html:code> to require the use of a lowercase character in passwords.</xccdf-1.2:description>
+              <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">12</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">15</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">16</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">5</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.04</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.05</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.07</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.10</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS06.03</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS06.10</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://public.cyber.mil/stigs/cci/">CCI-000193</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.2.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.5.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.5.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.3</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.4</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.5</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.6</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.7</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.8</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.9</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.7.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.7.4</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.10</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.3</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.4</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.5</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.7</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.8</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.9</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 2.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">0421</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">0422</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">0431</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">0974</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1173</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1401</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1504</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1505</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1546</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1557</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1558</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1559</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1560</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1561</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.18.1.4</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.1.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.3</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.4</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.6</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.3.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.3</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">IA-5(c)</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">IA-5(1)(a)</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">CM-6(a)</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">IA-5(4)</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-6</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-7</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.niap-ccevs.org/Profile/PP.cfm">FMT_SMF_EXT.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">Req-8.2.3</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000070-GPOS-00038</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R31</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf">8.3.6</xccdf-1.2:reference>
+              <xccdf-1.2:rationale>Use of a complex password helps to increase the time and resources required
+to compromise the password. Password complexity, or strength, is a measure of
+the effectiveness of a password in resisting attempts at guessing and brute-force
+attacks.
+<html:br />
+Password complexity is one factor of several that determines how long it takes
+to crack a password. The more complex the password, the greater the number of
+possble combinations that need to be tested before the password is compromised.
+Requiring a minimum number of lowercase characters makes password guessing attacks
+more difficult by ensuring a larger search space.</xccdf-1.2:rationale>
+              <xccdf-1.2:platform idref="#package_pam" />
+              <xccdf-1.2:fix system="urn:xccdf:fix:script:sh" id="accounts_password_pam_lcredit" complexity="low" disruption="low" reboot="false" strategy="restrict"># Remediation is applicable only in certain platforms
+if rpm --quiet -q pam; then
+
+var_password_pam_lcredit='<xccdf-1.2:sub idref="xccdf_org.ssgproject.content_value_var_password_pam_lcredit" use="legacy" />'
+
+
+
+
+
+
+# Strip any search characters in the key arg so that the key can be replaced without
+# adding any search characters to the config file.
+stripped_key=$(sed 's/[\^=\$,;+]*//g' &lt;&lt;&lt; "^lcredit")
+
+# shellcheck disable=SC2059
+printf -v formatted_output "%s = %s" "$stripped_key" "$var_password_pam_lcredit"
+
+# If the key exists, change it. Otherwise, add it to the config_file.
+# We search for the key string followed by a word boundary (matched by \&gt;),
+# so if we search for 'setting', 'setting2' won't match.
+if LC_ALL=C grep -q -m 1 -i -e "^lcredit\\&gt;" "/etc/security/pwquality.conf"; then
+    escaped_formatted_output=$(sed -e 's|/|\\/|g' &lt;&lt;&lt; "$formatted_output")
+    LC_ALL=C sed -i --follow-symlinks "s/^lcredit\\&gt;.*/$escaped_formatted_output/gi" "/etc/security/pwquality.conf"
+else
+    if [[ -s "/etc/security/pwquality.conf" ]] &amp;&amp; [[ -n "$(tail -c 1 -- "/etc/security/pwquality.conf" || true)" ]]; then
+        LC_ALL=C sed -i --follow-symlinks '$a'\\ "/etc/security/pwquality.conf"
+    fi
+    printf '%s\n' "$formatted_output" &gt;&gt; "/etc/security/pwquality.conf"
+fi
+
+else
+    &gt;&amp;2 echo 'Remediation is not applicable, nothing was done'
+fi
+</xccdf-1.2:fix>
+              <xccdf-1.2:fix system="urn:xccdf:fix:script:ansible" id="accounts_password_pam_lcredit" complexity="low" disruption="low" reboot="false" strategy="restrict">- name: Gather the package facts
+  package_facts:
+    manager: auto
+  tags:
+  - NIST-800-53-CM-6(a)
+  - NIST-800-53-IA-5(1)(a)
+  - NIST-800-53-IA-5(4)
+  - NIST-800-53-IA-5(c)
+  - PCI-DSS-Req-8.2.3
+  - PCI-DSSv4-8.3.6
+  - accounts_password_pam_lcredit
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+- name: XCCDF Value var_password_pam_lcredit # promote to variable
+  set_fact:
+    var_password_pam_lcredit: !!str <xccdf-1.2:sub idref="xccdf_org.ssgproject.content_value_var_password_pam_lcredit" use="legacy" />
+  tags:
+    - always
+
+- name: Ensure PAM Enforces Password Requirements - Minimum Lowercase Characters -
+    Ensure PAM variable lcredit is set accordingly
+  ansible.builtin.lineinfile:
+    create: true
+    dest: /etc/security/pwquality.conf
+    regexp: ^#?\s*lcredit
+    line: lcredit = {{ var_password_pam_lcredit }}
+  when: '"pam" in ansible_facts.packages'
+  tags:
+  - NIST-800-53-CM-6(a)
+  - NIST-800-53-IA-5(1)(a)
+  - NIST-800-53-IA-5(4)
+  - NIST-800-53-IA-5(c)
+  - PCI-DSS-Req-8.2.3
+  - PCI-DSSv4-8.3.6
+  - accounts_password_pam_lcredit
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+</xccdf-1.2:fix>
+              <xccdf-1.2:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                <xccdf-1.2:check-export export-name="oval:ssg-var_password_pam_lcredit:var:1" value-id="xccdf_org.ssgproject.content_value_var_password_pam_lcredit" /><xccdf-1.2:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-accounts_password_pam_lcredit:def:1" />
+              </xccdf-1.2:check>
+              <xccdf-1.2:check system="http://scap.nist.gov/schema/ocil/2">
+                <xccdf-1.2:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-accounts_password_pam_lcredit_ocil:questionnaire:1" />
+              </xccdf-1.2:check>
+            </xccdf-1.2:Rule>
             <xccdf-1.2:Rule selected="false" id="xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen" severity="medium">
               <xccdf-1.2:title>Ensure PAM Enforces Password Requirements - Minimum Length</xccdf-1.2:title>
               <xccdf-1.2:description>The pam_pwquality module's <html:code>minlen</html:code> parameter controls requirements for
@@ -661,6 +1053,350 @@ fi
               </xccdf-1.2:check>
               <xccdf-1.2:check system="http://scap.nist.gov/schema/ocil/2">
                 <xccdf-1.2:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-accounts_password_pam_minlen_ocil:questionnaire:1" />
+              </xccdf-1.2:check>
+            </xccdf-1.2:Rule>
+            <xccdf-1.2:Rule selected="false" id="xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit" severity="medium">
+              <xccdf-1.2:title>Ensure PAM Enforces Password Requirements - Minimum Special Characters</xccdf-1.2:title>
+              <xccdf-1.2:description>The pam_pwquality module's <html:code>ocredit=</html:code> parameter controls requirements for
+usage of special (or "other") characters in a password. When set to a negative number,
+any password will be required to contain that many special characters.
+When set to a positive number, pam_pwquality will grant +1
+additional length credit for each special character. Modify the <html:code>ocredit</html:code> setting
+in <html:code>/etc/security/pwquality.conf</html:code> to equal <xccdf-1.2:sub idref="xccdf_org.ssgproject.content_value_var_password_pam_ocredit" use="legacy" />
+to require use of a special character in passwords.</xccdf-1.2:description>
+              <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">12</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">15</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">16</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">5</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.04</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.05</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.07</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.10</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS06.03</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS06.10</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://public.cyber.mil/stigs/cci/">CCI-001619</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.2.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.5.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.5.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.3</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.4</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.5</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.6</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.7</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.8</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.9</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.7.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.7.4</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.10</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.3</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.4</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.5</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.7</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.8</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.9</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 2.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">0421</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">0422</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">0431</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">0974</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1173</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1401</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1504</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1505</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1546</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1557</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1558</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1559</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1560</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1561</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.18.1.4</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.1.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.3</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.4</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.6</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.3.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.3</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">IA-5(c)</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">IA-5(1)(a)</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">CM-6(a)</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">IA-5(4)</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-6</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-7</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.niap-ccevs.org/Profile/PP.cfm">FMT_SMF_EXT.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000266-GPOS-00101</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R31</xccdf-1.2:reference>
+              <xccdf-1.2:rationale>Use of a complex password helps to increase the time and resources required
+to compromise the password. Password complexity, or strength, is a measure of
+the effectiveness of a password in resisting attempts at guessing and brute-force
+attacks.
+<html:br />
+                <html:br />
+Password complexity is one factor of several that determines how long it takes
+to crack a password. The more complex the password, the greater the number of
+possible combinations that need to be tested before the password is compromised.
+Requiring a minimum number of special characters makes password guessing attacks
+more difficult by ensuring a larger search space.</xccdf-1.2:rationale>
+              <xccdf-1.2:platform idref="#package_pam" />
+              <xccdf-1.2:fix system="urn:xccdf:fix:script:sh" id="accounts_password_pam_ocredit" complexity="low" disruption="low" reboot="false" strategy="restrict"># Remediation is applicable only in certain platforms
+if rpm --quiet -q pam; then
+
+var_password_pam_ocredit='<xccdf-1.2:sub idref="xccdf_org.ssgproject.content_value_var_password_pam_ocredit" use="legacy" />'
+
+
+
+
+
+
+# Strip any search characters in the key arg so that the key can be replaced without
+# adding any search characters to the config file.
+stripped_key=$(sed 's/[\^=\$,;+]*//g' &lt;&lt;&lt; "^ocredit")
+
+# shellcheck disable=SC2059
+printf -v formatted_output "%s = %s" "$stripped_key" "$var_password_pam_ocredit"
+
+# If the key exists, change it. Otherwise, add it to the config_file.
+# We search for the key string followed by a word boundary (matched by \&gt;),
+# so if we search for 'setting', 'setting2' won't match.
+if LC_ALL=C grep -q -m 1 -i -e "^ocredit\\&gt;" "/etc/security/pwquality.conf"; then
+    escaped_formatted_output=$(sed -e 's|/|\\/|g' &lt;&lt;&lt; "$formatted_output")
+    LC_ALL=C sed -i --follow-symlinks "s/^ocredit\\&gt;.*/$escaped_formatted_output/gi" "/etc/security/pwquality.conf"
+else
+    if [[ -s "/etc/security/pwquality.conf" ]] &amp;&amp; [[ -n "$(tail -c 1 -- "/etc/security/pwquality.conf" || true)" ]]; then
+        LC_ALL=C sed -i --follow-symlinks '$a'\\ "/etc/security/pwquality.conf"
+    fi
+    printf '%s\n' "$formatted_output" &gt;&gt; "/etc/security/pwquality.conf"
+fi
+
+else
+    &gt;&amp;2 echo 'Remediation is not applicable, nothing was done'
+fi
+</xccdf-1.2:fix>
+              <xccdf-1.2:fix system="urn:xccdf:fix:script:ansible" id="accounts_password_pam_ocredit" complexity="low" disruption="low" reboot="false" strategy="restrict">- name: Gather the package facts
+  package_facts:
+    manager: auto
+  tags:
+  - NIST-800-53-CM-6(a)
+  - NIST-800-53-IA-5(1)(a)
+  - NIST-800-53-IA-5(4)
+  - NIST-800-53-IA-5(c)
+  - accounts_password_pam_ocredit
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+- name: XCCDF Value var_password_pam_ocredit # promote to variable
+  set_fact:
+    var_password_pam_ocredit: !!str <xccdf-1.2:sub idref="xccdf_org.ssgproject.content_value_var_password_pam_ocredit" use="legacy" />
+  tags:
+    - always
+
+- name: Ensure PAM Enforces Password Requirements - Minimum Special Characters - Ensure
+    PAM variable ocredit is set accordingly
+  ansible.builtin.lineinfile:
+    create: true
+    dest: /etc/security/pwquality.conf
+    regexp: ^#?\s*ocredit
+    line: ocredit = {{ var_password_pam_ocredit }}
+  when: '"pam" in ansible_facts.packages'
+  tags:
+  - NIST-800-53-CM-6(a)
+  - NIST-800-53-IA-5(1)(a)
+  - NIST-800-53-IA-5(4)
+  - NIST-800-53-IA-5(c)
+  - accounts_password_pam_ocredit
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+</xccdf-1.2:fix>
+              <xccdf-1.2:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                <xccdf-1.2:check-export export-name="oval:ssg-var_password_pam_ocredit:var:1" value-id="xccdf_org.ssgproject.content_value_var_password_pam_ocredit" /><xccdf-1.2:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-accounts_password_pam_ocredit:def:1" />
+              </xccdf-1.2:check>
+              <xccdf-1.2:check system="http://scap.nist.gov/schema/ocil/2">
+                <xccdf-1.2:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-accounts_password_pam_ocredit_ocil:questionnaire:1" />
+              </xccdf-1.2:check>
+            </xccdf-1.2:Rule>
+            <xccdf-1.2:Rule selected="false" id="xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit" severity="medium">
+              <xccdf-1.2:title>Ensure PAM Enforces Password Requirements - Minimum Uppercase Characters</xccdf-1.2:title>
+              <xccdf-1.2:description>The pam_pwquality module's <html:code>ucredit=</html:code> parameter controls requirements for
+usage of uppercase letters in a password. When set to a negative number, any password will be required to
+contain that many uppercase characters. When set to a positive number, pam_pwquality will grant +1 additional
+length credit for each uppercase character. Modify the <html:code>ucredit</html:code> setting in
+<html:code>/etc/security/pwquality.conf</html:code> to require the use of an uppercase character in passwords.</xccdf-1.2:description>
+              <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">12</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">15</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">16</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">5</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.04</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.05</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.07</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.10</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS06.03</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS06.10</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://public.cyber.mil/stigs/cci/">CCI-000192</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://public.cyber.mil/stigs/cci/">CCI-000193</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.2.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.5.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.5.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.3</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.4</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.5</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.6</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.7</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.8</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.6.9</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.7.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.7.4</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.10</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.3</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.4</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.5</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.7</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.8</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 1.9</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 2.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">0421</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">0422</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">0431</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">0974</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1173</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1401</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1504</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1505</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1546</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1557</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1558</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1559</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1560</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.cyber.gov.au/acsc/view-all-content/ism">1561</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.18.1.4</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.1.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.3</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.4</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.6</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.3.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.2</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.3</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">IA-5(c)</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">IA-5(1)(a)</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">CM-6(a)</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">IA-5(4)</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-6</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-7</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.niap-ccevs.org/Profile/PP.cfm">FMT_SMF_EXT.1</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">Req-8.2.3</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000069-GPOS-00037</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000070-GPOS-00038</xccdf-1.2:reference>
+              <xccdf-1.2:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R31</xccdf-1.2:reference>
+              <xccdf-1.2:rationale>Use of a complex password helps to increase the time and resources required to compromise the password.
+Password complexity, or strength, is a measure of the effectiveness of a password in resisting attempts
+at guessing and brute-force attacks.
+<html:br />
+                <html:br />
+Password complexity is one factor of several that determines how long it takes to crack a password. The more
+complex the password, the greater the number of possible combinations that need to be tested before
+the password is compromised.</xccdf-1.2:rationale>
+              <xccdf-1.2:platform idref="#package_pam" />
+              <xccdf-1.2:fix system="urn:xccdf:fix:script:sh" id="accounts_password_pam_ucredit" complexity="low" disruption="low" reboot="false" strategy="restrict"># Remediation is applicable only in certain platforms
+if rpm --quiet -q pam; then
+
+var_password_pam_ucredit='<xccdf-1.2:sub idref="xccdf_org.ssgproject.content_value_var_password_pam_ucredit" use="legacy" />'
+
+
+
+
+
+
+# Strip any search characters in the key arg so that the key can be replaced without
+# adding any search characters to the config file.
+stripped_key=$(sed 's/[\^=\$,;+]*//g' &lt;&lt;&lt; "^ucredit")
+
+# shellcheck disable=SC2059
+printf -v formatted_output "%s = %s" "$stripped_key" "$var_password_pam_ucredit"
+
+# If the key exists, change it. Otherwise, add it to the config_file.
+# We search for the key string followed by a word boundary (matched by \&gt;),
+# so if we search for 'setting', 'setting2' won't match.
+if LC_ALL=C grep -q -m 1 -i -e "^ucredit\\&gt;" "/etc/security/pwquality.conf"; then
+    escaped_formatted_output=$(sed -e 's|/|\\/|g' &lt;&lt;&lt; "$formatted_output")
+    LC_ALL=C sed -i --follow-symlinks "s/^ucredit\\&gt;.*/$escaped_formatted_output/gi" "/etc/security/pwquality.conf"
+else
+    if [[ -s "/etc/security/pwquality.conf" ]] &amp;&amp; [[ -n "$(tail -c 1 -- "/etc/security/pwquality.conf" || true)" ]]; then
+        LC_ALL=C sed -i --follow-symlinks '$a'\\ "/etc/security/pwquality.conf"
+    fi
+    printf '%s\n' "$formatted_output" &gt;&gt; "/etc/security/pwquality.conf"
+fi
+
+else
+    &gt;&amp;2 echo 'Remediation is not applicable, nothing was done'
+fi
+</xccdf-1.2:fix>
+              <xccdf-1.2:fix system="urn:xccdf:fix:script:ansible" id="accounts_password_pam_ucredit" complexity="low" disruption="low" reboot="false" strategy="restrict">- name: Gather the package facts
+  package_facts:
+    manager: auto
+  tags:
+  - NIST-800-53-CM-6(a)
+  - NIST-800-53-IA-5(1)(a)
+  - NIST-800-53-IA-5(4)
+  - NIST-800-53-IA-5(c)
+  - PCI-DSS-Req-8.2.3
+  - accounts_password_pam_ucredit
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+- name: XCCDF Value var_password_pam_ucredit # promote to variable
+  set_fact:
+    var_password_pam_ucredit: !!str <xccdf-1.2:sub idref="xccdf_org.ssgproject.content_value_var_password_pam_ucredit" use="legacy" />
+  tags:
+    - always
+
+- name: Ensure PAM Enforces Password Requirements - Minimum Uppercase Characters -
+    Ensure PAM variable ucredit is set accordingly
+  ansible.builtin.lineinfile:
+    create: true
+    dest: /etc/security/pwquality.conf
+    regexp: ^#?\s*ucredit
+    line: ucredit = {{ var_password_pam_ucredit }}
+  when: '"pam" in ansible_facts.packages'
+  tags:
+  - NIST-800-53-CM-6(a)
+  - NIST-800-53-IA-5(1)(a)
+  - NIST-800-53-IA-5(4)
+  - NIST-800-53-IA-5(c)
+  - PCI-DSS-Req-8.2.3
+  - accounts_password_pam_ucredit
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+</xccdf-1.2:fix>
+              <xccdf-1.2:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                <xccdf-1.2:check-export export-name="oval:ssg-var_password_pam_ucredit:var:1" value-id="xccdf_org.ssgproject.content_value_var_password_pam_ucredit" /><xccdf-1.2:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-accounts_password_pam_ucredit:def:1" />
+              </xccdf-1.2:check>
+              <xccdf-1.2:check system="http://scap.nist.gov/schema/ocil/2">
+                <xccdf-1.2:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-accounts_password_pam_ucredit_ocil:questionnaire:1" />
               </xccdf-1.2:check>
             </xccdf-1.2:Rule>
           </xccdf-1.2:Group>
