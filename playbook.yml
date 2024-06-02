@@ -8,6 +8,8 @@
     var_password_pam_ucredit: -1
     var_password_pam_unix_remember: 2
     var_accounts_tmout: 600
+    var_accounts_passwords_pam_faillock_deny: 3
+    var_accounts_passwords_pam_faillock_fail_interval: 900
   tasks:
   - name: Add pwquality and -passwdqc flag
     ansible.builtin.lineinfile:
@@ -27,13 +29,14 @@
     ansible.builtin.lineinfile:
       path: /etc/pam.d/system-auth
       state: present
-      regexp: ^password[\s]*required[\s]*pam_pwquality.so
+      regexp: ^password[\s]+required[\s]+pam_pwquality.so
       state: present
       line: password    required    pam_pwquality.so
 
   - name: Ensure passwords with minimum of {{ var_password_pam_minlen }} characters
     ansible.builtin.lineinfile:
       path: /etc/security/pwquality.conf
+      create: true
       line: minlen = {{ var_password_pam_minlen }}
 
   - name: Ensure passwords with minimum of {{ var_password_pam_dcredit }} digit character
@@ -60,18 +63,43 @@
     ansible.builtin.lineinfile:
       path: /etc/pam.d/system-auth
       state: present
-      regexp: ^password[\s]*required[\s]*pam_pwhistory.so
+      regexp: ^password[\s]+required[\s]+pam_pwhistory.so
       state: present
       line: password    required    pam_pwhistory.so
 
   - name: Ensure passwords different by the last {{ var_password_pam_unix_remember }}
     ansible.builtin.lineinfile:
       path: /etc/security/pwhistory.conf
+      create: true
       line: remember = {{ var_password_pam_unix_remember }}
 
-  - name: Set interactive session timeout at {{ var_accounts_tmout }}
+  - name: Set interactive session timeout at {{ var_accounts_tmout }} s
     ansible.builtin.lineinfile:
       path: /etc/profile.d/tmout.sh
       create: true
       regexp: (?:typeset|declare)[\s]+-xr[\s]+TMOUT=([\w$]+).*$
       line: typeset -xr TMOUT={{ var_accounts_tmout }}
+
+  - name: Ensure pam is correctly configured to use faillock.so
+    ansible.builtin.lineinfile:
+      path: /etc/pam.d/system-auth
+      state: present
+      regexp: ^auth[\s]+required[\s]+pam_faillock.so[\s]+(preauth|authfail)
+      state: present
+      line: password    required    pam_faillock.so preauth
+
+  - name: Lock out users after {{ var_accounts_passwords_pam_faillock_deny }} failed authentication attempts
+    ansible.builtin.lineinfile:
+      path: /etc/security/faillock.conf
+      create: true
+      line: deny = {{ var_accounts_passwords_pam_faillock_deny }}
+
+  - name: Lock out users after failed authentication attempts within {{ var_accounts_passwords_pam_faillock_fail_interaval }}s
+    ansible.builtin.lineinfile:
+      path: /etc/security/faillock.conf
+      line: fail_interval = {{ var_accounts_passwords_pam_faillock_fail_interval }}
+
+  - name: Ensure the lock is enabled also for root
+    ansible.builtin.lineinfile:
+      path: /etc/security/faillock.conf
+      line: even_deny_root
