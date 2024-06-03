@@ -472,3 +472,4 @@ if test "$_arg_profiling" = on; then
 	utils/build_profiler.sh `echo "${_arg_product[@]}" | sed 's/ /_/g'`
 fi
 # ] <-- needed because of Argbash
+python3 ../make_compatible.py
