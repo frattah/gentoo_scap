@@ -1,0 +1,11 @@
+# platform = multi_platform_rhel,multi_platform_fedora,multi_platform_ol,multi_platform_rhv,multi_platform_ubuntu,multi_platform_sle,multi_platform_debian
+{{#
+   See the OVAL template for more comments.
+   Product-specific categorization should be synced across all template content types
+-#}}
+{{%- if ARG_VARIABLE %}}
+{{{- bash_instantiate_variables(ARG_VARIABLE) }}}
+{{%- set ARG_NAME_VALUE= ARG_NAME ~ "=$" ~ ARG_VARIABLE %}}
+{{%- endif %}}
+
+{{{ grub2_bootloader_argument_remediation(ARG_NAME, ARG_NAME_VALUE) }}}

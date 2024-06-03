@@ -1,0 +1,25 @@
+# platform = multi_platform_rhel,multi_platform_fedora,multi_platform_ol,multi_platform_rhv,SUSE Linux Enterprise 15
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+
+
+
+
+
+- name: "Disable the samba_export_all_rw SELinux Boolean - Ensure libsemanage-python Installed"
+  package:
+    name: "libsemanage-python"
+    state: present
+
+
+
+
+- (xccdf-var var_samba_export_all_rw)
+- name: "Disable the samba_export_all_rw SELinux Boolean - Set SELinux Boolean samba_export_all_rw Accordingly"
+  seboolean:
+    name: samba_export_all_rw
+    state: "{{ var_samba_export_all_rw }}"
+    persistent: yes
+  when: ansible_facts.selinux.status == 'enabled'  

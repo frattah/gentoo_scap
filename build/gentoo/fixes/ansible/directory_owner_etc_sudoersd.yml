@@ -1,0 +1,17 @@
+# platform = multi_platform_all
+# reboot = false
+# strategy = configure
+# complexity = low
+# disruption = low
+- name: Ensure owner on directory /etc/sudoers.d/
+  file:
+    path: /etc/sudoers.d/
+    state: directory
+    owner: '0'
+  tags:
+  - configure_strategy
+  - directory_owner_etc_sudoersd
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed

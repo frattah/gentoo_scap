@@ -1,0 +1,25 @@
+# platform = multi_platform_rhel,multi_platform_fedora,multi_platform_ol,multi_platform_rhv,SUSE Linux Enterprise 15
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+
+
+
+
+
+- name: "Enable the antivirus_can_scan_system SELinux Boolean - Ensure libsemanage-python Installed"
+  package:
+    name: "libsemanage-python"
+    state: present
+
+
+
+
+- (xccdf-var var_antivirus_can_scan_system)
+- name: "Enable the antivirus_can_scan_system SELinux Boolean - Set SELinux Boolean antivirus_can_scan_system Accordingly"
+  seboolean:
+    name: antivirus_can_scan_system
+    state: "{{ var_antivirus_can_scan_system }}"
+    persistent: yes
+  when: ansible_facts.selinux.status == 'enabled'  

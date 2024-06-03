@@ -1,0 +1,49 @@
+description: '<tt>systemd-timesyncd</tt> server configuration should have RootDistanceMaxSec
+    is
+
+    listed in accordance with local policy. This setting describes the maximum estimated
+
+    time required for a packet to travel to the server connected.'
+rationale: 'Configuring <tt>systemd-timesyncd</tt> RootDistanceMaxSec ensures time
+    synchronization
+
+    is using servers that are close enough to the client.'
+severity: medium
+references:
+    disa:
+    - CCI-001891
+    pcidss:
+    - Req-10.4.3
+components:
+- ntp
+- systemd
+identifiers: {}
+ocil_clause: a remote time server RootDistanceMaxSec is not configured
+ocil: 'Review /etc/systemd/timesyncd.conf and ensure that the RootDistanceMaxSec
+
+    configuration is listed and in accordance with local policy.'
+oval_external_content: null
+fixtext: ''
+checktext: ''
+vuldiscussion: ''
+srg_requirement: ''
+warnings: []
+conflicts: []
+requires: []
+policy_specific_content: {}
+platform: package[systemd]
+platforms: !!set
+    package[systemd]: null
+sce_metadata: {}
+inherited_platforms: !!set
+    machine: null
+cpe_platform_names: !!set
+    package_systemd: null
+inherited_cpe_platform_names: !!set
+    machine: null
+bash_conditional: null
+fixes: {}
+title: Configure Systemd Timesyncd Root Distance Servers
+definition_location: /home/frattah/old/linux_os/guide/services/ntp/service_timesyncd_root_distance_configured/rule.yml
+template: null
+documentation_complete: true

@@ -1,0 +1,18 @@
+# platform = multi_platform_all
+# reboot = false
+# strategy = configure
+# complexity = low
+# disruption = low
+
+- name: Test for existence /etc/sestatus.conf
+  stat:
+    path: "/etc/sestatus.conf"
+  register: file_exists
+
+- name: Ensure owner 0 on /etc/sestatus.conf
+  file:
+    path: "/etc/sestatus.conf"
+    owner: "0"
+  when: file_exists.stat is defined and file_exists.stat.exists
+
+

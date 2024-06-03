@@ -1,0 +1,25 @@
+# platform = multi_platform_rhel,multi_platform_fedora,multi_platform_ol,multi_platform_rhv,SUSE Linux Enterprise 15
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+
+
+
+
+
+- name: "Disable the samba_load_libgfapi SELinux Boolean - Ensure libsemanage-python Installed"
+  package:
+    name: "libsemanage-python"
+    state: present
+
+
+
+
+- (xccdf-var var_samba_load_libgfapi)
+- name: "Disable the samba_load_libgfapi SELinux Boolean - Set SELinux Boolean samba_load_libgfapi Accordingly"
+  seboolean:
+    name: samba_load_libgfapi
+    state: "{{ var_samba_load_libgfapi }}"
+    persistent: yes
+  when: ansible_facts.selinux.status == 'enabled'  

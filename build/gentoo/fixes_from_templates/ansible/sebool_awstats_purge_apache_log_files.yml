@@ -1,0 +1,25 @@
+# platform = multi_platform_rhel,multi_platform_fedora,multi_platform_ol,multi_platform_rhv,SUSE Linux Enterprise 15
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+
+
+
+
+
+- name: "Disable the awstats_purge_apache_log_files SELinux Boolean - Ensure libsemanage-python Installed"
+  package:
+    name: "libsemanage-python"
+    state: present
+
+
+
+
+- (xccdf-var var_awstats_purge_apache_log_files)
+- name: "Disable the awstats_purge_apache_log_files SELinux Boolean - Set SELinux Boolean awstats_purge_apache_log_files Accordingly"
+  seboolean:
+    name: awstats_purge_apache_log_files
+    state: "{{ var_awstats_purge_apache_log_files }}"
+    persistent: yes
+  when: ansible_facts.selinux.status == 'enabled'  

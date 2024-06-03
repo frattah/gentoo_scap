@@ -1,0 +1,18 @@
+# platform = multi_platform_all
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+- name: "Enable the pcscd Service - Enable service pcscd"
+  block:
+  - name: Gather the package facts
+    package_facts:
+      manager: auto
+  - name: "Enable the pcscd Service - Enable Service pcscd"
+    ansible.builtin.systemd:
+      name: "pcscd"
+      enabled: true
+      state: "started"
+      masked: false
+    when:
+    - '"pcsc-lite" in ansible_facts.packages'

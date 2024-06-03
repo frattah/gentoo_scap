@@ -1,0 +1,20 @@
+description: The setting for admin_space_left_action in /etc/audit/auditd.conf
+type: string
+operator: equals
+interactive: false
+options:
+    default: single
+    email: email
+    exec: exec
+    halt: halt
+    single: single
+    suspend: suspend
+    syslog: syslog
+    rotate: rotate
+    ignore: ignore
+    cis_rhel7: single|halt
+    cis_rhel8: single|halt
+warnings: []
+title: Action for auditd to take when disk space is low
+definition_location: /home/frattah/old/linux_os/guide/auditing/configure_auditd_data_retention/var_auditd_admin_space_left_action.var
+documentation_complete: true

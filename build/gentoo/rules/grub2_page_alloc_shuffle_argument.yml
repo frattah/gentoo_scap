@@ -1,0 +1,76 @@
+description: 'To enable randomization of the page allocator in the kernel, add the
+
+    <tt>page_alloc.shuffle=1</tt> argument to the default GRUB 2 command line.
+
+    Configure the default Grub2 kernel command line to contain page_alloc.shuffle=1
+    as follows:
+
+    <pre># grub2-editenv - set "$(grub2-editenv - list | grep kernelopts) page_alloc.shuffle=1"</pre>'
+rationale: 'The <tt>CONFIG_SHUFFLE_PAGE_ALLOCATOR</tt> config option is primarily
+
+    focused on improving the average utilization of a direct-mapped
+
+    memory-side-cache. Aside of this performance effect, it also reduces
+
+    predictability of page allocations in situations when the bad actor can
+
+    crash the system and somehow leverage knowledge of (page) allocation order
+
+    right after a fresh reboot, or can control the timing between a
+
+    hot-pluggable memory node (as in NUMA node) and applications allocating
+
+    memory ouf of that node. The <tt>page_alloc.shuffle=1</tt> kernel command
+
+    line parameter then forces this functionality irrespectively of memory cache
+
+    architecture.'
+severity: medium
+references:
+    anssi:
+    - R8
+components:
+- grub2
+identifiers: {}
+ocil_clause: randomization of the page allocator is not enabled in the kernel
+ocil: 'Inspect the form of default GRUB 2 command line for the Linux operating system
+
+    in <tt>/boot/grub2/grubenv</tt>.
+
+    If they include <tt>page_alloc.shuffle=1</tt>, then the parameter
+
+    is configured at boot time.
+
+    <pre>$ sudo grep ''kernelopts.*page_alloc.shuffle=1.*'' GRUBENV_FILE_LOCATION</pre>
+
+    Fill in <tt>GRUBENV_FILE_LOCATION</tt> based on information above.'
+oval_external_content: null
+fixtext: ''
+checktext: ''
+vuldiscussion: ''
+srg_requirement: ''
+warnings: []
+conflicts: []
+requires: []
+policy_specific_content: {}
+platform: machine
+platforms: !!set
+    machine: null
+sce_metadata: {}
+inherited_platforms: !!set
+    grub2: null
+cpe_platform_names: !!set
+    machine: null
+inherited_cpe_platform_names: !!set
+    grub2: null
+bash_conditional: null
+fixes: {}
+title: Enable randomization of the page allocator
+definition_location: /home/frattah/old/linux_os/guide/system/bootloader-grub2/grub2_page_alloc_shuffle_argument/rule.yml
+template:
+    name: grub2_bootloader_argument
+    vars:
+        arg_name: page_alloc.shuffle
+        arg_value: '1'
+    backends: {}
+documentation_complete: true

@@ -1,0 +1,25 @@
+# platform = multi_platform_rhel,multi_platform_fedora,multi_platform_ol,multi_platform_rhv,SUSE Linux Enterprise 15
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+
+
+
+
+
+- name: "Disable the logging_syslogd_run_nagios_plugins SELinux Boolean - Ensure libsemanage-python Installed"
+  package:
+    name: "libsemanage-python"
+    state: present
+
+
+
+
+- (xccdf-var var_logging_syslogd_run_nagios_plugins)
+- name: "Disable the logging_syslogd_run_nagios_plugins SELinux Boolean - Set SELinux Boolean logging_syslogd_run_nagios_plugins Accordingly"
+  seboolean:
+    name: logging_syslogd_run_nagios_plugins
+    state: "{{ var_logging_syslogd_run_nagios_plugins }}"
+    persistent: yes
+  when: ansible_facts.selinux.status == 'enabled'  

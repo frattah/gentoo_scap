@@ -1,0 +1,25 @@
+# platform = multi_platform_rhel,multi_platform_fedora,multi_platform_ol,multi_platform_rhv,SUSE Linux Enterprise 15
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+
+
+
+
+
+- name: "Disable the staff_use_svirt SELinux Boolean - Ensure libsemanage-python Installed"
+  package:
+    name: "libsemanage-python"
+    state: present
+
+
+
+
+- (xccdf-var var_staff_use_svirt)
+- name: "Disable the staff_use_svirt SELinux Boolean - Set SELinux Boolean staff_use_svirt Accordingly"
+  seboolean:
+    name: staff_use_svirt
+    state: "{{ var_staff_use_svirt }}"
+    persistent: yes
+  when: ansible_facts.selinux.status == 'enabled'  

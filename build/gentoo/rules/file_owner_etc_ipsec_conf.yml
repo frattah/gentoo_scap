@@ -1,0 +1,57 @@
+description: ' To properly set the owner of <code>/etc/ipsec.conf</code>, run the
+    command: <pre>$ sudo chown root /etc/ipsec.conf </pre>'
+rationale: 'The ownership of the /etc/ipsec.conf file by the root user is important
+
+    because this file hosts Libreswan configuration. Protection of this
+
+    file is critical for system security. Assigning the ownership to root
+
+    ensures exclusive control of the Libreswan configuration.'
+severity: medium
+references:
+    anssi:
+    - R50
+components:
+- libreswan
+identifiers: {}
+ocil_clause: /etc/ipsec.conf does not have an owner of root
+ocil: 'To check the ownership of <code>/etc/ipsec.conf</code>,
+
+    run the command:
+
+    <pre>$ ls -lL /etc/ipsec.conf</pre>
+
+    If properly configured, the output should indicate the following owner:
+
+    <code>root</code>'
+oval_external_content: null
+fixtext: ' Change the owner of the file /etc/ipsec.conf to root by running the following
+    command:
+
+    $ sudo chown root /etc/ipsec.conf'
+checktext: ''
+vuldiscussion: ''
+srg_requirement: ' The Gentoo /etc/ipsec.conf file must be owned by root.'
+warnings: []
+conflicts: []
+requires: []
+policy_specific_content: {}
+platform: package[libreswan]
+platforms: !!set
+    package[libreswan]: null
+sce_metadata: {}
+inherited_platforms: !!set {}
+cpe_platform_names: !!set
+    package_libreswan: null
+inherited_cpe_platform_names: !!set {}
+bash_conditional: null
+fixes: {}
+title: Verify User Who Owns /etc/ipsec.conf File
+definition_location: /home/frattah/old/linux_os/guide/system/network/network-ipsec/file_owner_etc_ipsec_conf/rule.yml
+template:
+    name: file_owner
+    vars:
+        filepath: /etc/ipsec.conf
+        fileuid: '0'
+    backends: {}
+documentation_complete: true

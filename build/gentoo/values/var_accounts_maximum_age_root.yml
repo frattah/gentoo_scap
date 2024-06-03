@@ -1,0 +1,11 @@
+description: Maximum age of password in days for the root account
+type: number
+operator: equals
+interactive: false
+options:
+    365: 365
+    default: 99999
+warnings: []
+title: Maximum Root Password Age
+definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-restrictions/password_expiration/var_accounts_maximum_age_root.var
+documentation_complete: true

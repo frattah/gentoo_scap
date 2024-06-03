@@ -1,0 +1,25 @@
+# platform = multi_platform_rhel,multi_platform_fedora,multi_platform_ol,multi_platform_rhv,SUSE Linux Enterprise 15
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+
+
+
+
+
+- name: "Disable the tor_can_network_relay SELinux Boolean - Ensure libsemanage-python Installed"
+  package:
+    name: "libsemanage-python"
+    state: present
+
+
+
+
+- (xccdf-var var_tor_can_network_relay)
+- name: "Disable the tor_can_network_relay SELinux Boolean - Set SELinux Boolean tor_can_network_relay Accordingly"
+  seboolean:
+    name: tor_can_network_relay
+    state: "{{ var_tor_can_network_relay }}"
+    persistent: yes
+  when: ansible_facts.selinux.status == 'enabled'  

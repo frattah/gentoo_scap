@@ -1,0 +1,25 @@
+# platform = multi_platform_rhel,multi_platform_fedora,multi_platform_ol,multi_platform_rhv,SUSE Linux Enterprise 15
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+
+
+
+
+
+- name: "Disable the postgresql_can_rsync SELinux Boolean - Ensure libsemanage-python Installed"
+  package:
+    name: "libsemanage-python"
+    state: present
+
+
+
+
+- (xccdf-var var_postgresql_can_rsync)
+- name: "Disable the postgresql_can_rsync SELinux Boolean - Set SELinux Boolean postgresql_can_rsync Accordingly"
+  seboolean:
+    name: postgresql_can_rsync
+    state: "{{ var_postgresql_can_rsync }}"
+    persistent: yes
+  when: ansible_facts.selinux.status == 'enabled'  

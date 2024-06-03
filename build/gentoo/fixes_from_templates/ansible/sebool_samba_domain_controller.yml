@@ -1,0 +1,25 @@
+# platform = multi_platform_rhel,multi_platform_fedora,multi_platform_ol,multi_platform_rhv,SUSE Linux Enterprise 15
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+
+
+
+
+
+- name: "Disable the samba_domain_controller SELinux Boolean - Ensure libsemanage-python Installed"
+  package:
+    name: "libsemanage-python"
+    state: present
+
+
+
+
+- (xccdf-var var_samba_domain_controller)
+- name: "Disable the samba_domain_controller SELinux Boolean - Set SELinux Boolean samba_domain_controller Accordingly"
+  seboolean:
+    name: samba_domain_controller
+    state: "{{ var_samba_domain_controller }}"
+    persistent: yes
+  when: ansible_facts.selinux.status == 'enabled'  

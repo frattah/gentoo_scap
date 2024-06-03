@@ -1,0 +1,14 @@
+# platform = multi_platform_all
+# reboot = false
+# strategy = disable
+# complexity = low
+# disruption = low
+
+
+
+- name: Add empty /etc/cron.allow
+  file:
+      path: /etc/cron.allow
+      state: touch
+      owner: "0"
+      mode: "0600"

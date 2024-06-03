@@ -1,0 +1,25 @@
+# platform = multi_platform_rhel,multi_platform_fedora,multi_platform_ol,multi_platform_rhv,SUSE Linux Enterprise 15
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+
+
+
+
+
+- name: "Disable the unprivuser_use_svirt SELinux Boolean - Ensure libsemanage-python Installed"
+  package:
+    name: "libsemanage-python"
+    state: present
+
+
+
+
+- (xccdf-var var_unprivuser_use_svirt)
+- name: "Disable the unprivuser_use_svirt SELinux Boolean - Set SELinux Boolean unprivuser_use_svirt Accordingly"
+  seboolean:
+    name: unprivuser_use_svirt
+    state: "{{ var_unprivuser_use_svirt }}"
+    persistent: yes
+  when: ansible_facts.selinux.status == 'enabled'  

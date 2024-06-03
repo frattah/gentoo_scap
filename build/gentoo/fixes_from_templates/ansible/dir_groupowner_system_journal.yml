@@ -1,0 +1,30 @@
+# platform = multi_platform_all
+# reboot = false
+# strategy = configure
+# complexity = low
+# disruption = low
+
+- name: Ensure group owner on /run/log/journal/ recursively
+  file:
+    path: "/run/log/journal/"
+    state: directory
+
+    recurse: yes
+
+    group: "systemd-journal"
+
+
+
+
+
+- name: Ensure group owner on /var/log/journal/ recursively
+  file:
+    path: "/var/log/journal/"
+    state: directory
+
+    recurse: yes
+
+    group: "systemd-journal"
+
+
+

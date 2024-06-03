@@ -1,0 +1,29 @@
+srg_requirement: |-
+    {{{ full_name }}} must enable the Pluggable Authentication Module (PAM) interface for SSHD.
+
+vuldiscussion: |-
+    When UsePAM is set to yes, PAM runs through account and session types properly. This is
+    important if you want to restrict access to services based off of IP, time or other factors of
+    the account. Additionally, you can make sure users inherit certain environment variables
+    on login or disallow access to the server.
+
+checktext: |-
+    Verify the {{{ full_name }}} SSHD is configured to allow for the UsePAM interface with the following command:
+
+    $ sudo grep -ir usepam /etc/ssh/sshd_config /etc/ssh/sshd_config.d/*
+
+    UsePAM yes
+
+    If the "UsePAM" keyword is set to "no", is missing, or is commented out, this is a finding.
+
+fixtext: |-
+    Configure the {{{ full_name }}} SSHD to use the UsePAM interface add or modify the following line in "/etc/ssh/sshd_config".
+
+    UsePAM yes
+
+    Restart the SSH daemon for the settings to take effect:
+
+    $ sudo systemctl restart sshd.service
+
+vuln_discussion: |-
+    When UsePAM is set to "yes", PAM runs through account and session types properly. This is important when restricted access to services based off of IP, time, or other factors of the account is needed. Additionally, this ensures users can inherit certain environment variables on login or disallow access to the server.

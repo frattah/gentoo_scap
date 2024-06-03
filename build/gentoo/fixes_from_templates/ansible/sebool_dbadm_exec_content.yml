@@ -1,0 +1,25 @@
+# platform = multi_platform_rhel,multi_platform_fedora,multi_platform_ol,multi_platform_rhv,SUSE Linux Enterprise 15
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+
+
+
+
+
+- name: "Enable the dbadm_exec_content SELinux Boolean - Ensure libsemanage-python Installed"
+  package:
+    name: "libsemanage-python"
+    state: present
+
+
+
+
+- (xccdf-var var_dbadm_exec_content)
+- name: "Enable the dbadm_exec_content SELinux Boolean - Set SELinux Boolean dbadm_exec_content Accordingly"
+  seboolean:
+    name: dbadm_exec_content
+    state: "{{ var_dbadm_exec_content }}"
+    persistent: yes
+  when: ansible_facts.selinux.status == 'enabled'  

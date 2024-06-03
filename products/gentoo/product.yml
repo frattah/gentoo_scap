@@ -1,0 +1,20 @@
+product: gentoo
+full_name: Gentoo
+type: platform
+
+benchmark_id: GENTOO
+benchmark_root: "../../linux_os/guide"
+components_root: "../../components"
+
+profiles_root: "./profiles"
+
+pkg_manager: "yum"
+
+init_system: "systemd"
+
+cpes_root: "../../shared/applicability"
+cpes:
+  - gentoo:
+      name: "cpe:/o:gentoo:linux"
+      title: "Gentoo"
+      check_id: installed_OS_is_gentoo

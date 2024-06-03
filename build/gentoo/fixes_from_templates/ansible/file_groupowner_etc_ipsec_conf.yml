@@ -1,0 +1,18 @@
+# platform = multi_platform_all
+# reboot = false
+# strategy = configure
+# complexity = low
+# disruption = low
+
+- name: Test for existence /etc/ipsec.conf
+  stat:
+    path: "/etc/ipsec.conf"
+  register: file_exists
+
+- name: Ensure group owner root on /etc/ipsec.conf
+  file:
+    path: "/etc/ipsec.conf"
+    group: "root"
+  when: file_exists.stat is defined and file_exists.stat.exists
+
+

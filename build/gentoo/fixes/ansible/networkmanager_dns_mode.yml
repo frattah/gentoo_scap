@@ -1,0 +1,51 @@
+# platform = multi_platform_all
+# reboot = false
+# strategy = configure
+# complexity = low
+# disruption = low
+- name: Gather the package facts
+  package_facts:
+    manager: auto
+  tags:
+  - NIST-800-53-CM-6(b)
+  - configure_strategy
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - networkmanager_dns_mode
+  - no_reboot_needed
+- (xccdf-var var_networkmanager_dns_mode)
+
+- name: Set 'dns' to '{{ var_networkmanager_dns_mode }}' in the [main] section of
+    '/etc/NetworkManager/NetworkManager.conf'
+  ini_file:
+    path: /etc/NetworkManager/NetworkManager.conf
+    section: main
+    option: dns
+    value: '{{ var_networkmanager_dns_mode }}'
+    create: true
+    mode: 420
+    no_extra_spaces: true
+  when: '"NetworkManager" in ansible_facts.packages'
+  tags:
+  - NIST-800-53-CM-6(b)
+  - configure_strategy
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - networkmanager_dns_mode
+  - no_reboot_needed
+
+- name: NetworkManager DNS Mode Must Be Must Configured - Ensure Network Manager
+  ansible.builtin.systemd:
+    name: NetworkManager
+    state: reloaded
+  when: '"NetworkManager" in ansible_facts.packages'
+  tags:
+  - NIST-800-53-CM-6(b)
+  - configure_strategy
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - networkmanager_dns_mode
+  - no_reboot_needed

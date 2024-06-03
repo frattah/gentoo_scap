@@ -1,0 +1,25 @@
+# platform = multi_platform_rhel,multi_platform_fedora,multi_platform_ol,multi_platform_rhv,SUSE Linux Enterprise 15
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+
+
+
+
+
+- name: "Enable the xend_run_blktap SELinux Boolean - Ensure libsemanage-python Installed"
+  package:
+    name: "libsemanage-python"
+    state: present
+
+
+
+
+- (xccdf-var var_xend_run_blktap)
+- name: "Enable the xend_run_blktap SELinux Boolean - Set SELinux Boolean xend_run_blktap Accordingly"
+  seboolean:
+    name: xend_run_blktap
+    state: "{{ var_xend_run_blktap }}"
+    persistent: yes
+  when: ansible_facts.selinux.status == 'enabled'  

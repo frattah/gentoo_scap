@@ -1,0 +1,18 @@
+# platform = multi_platform_all
+# reboot = false
+# strategy = configure
+# complexity = low
+# disruption = low
+
+- name: Test for existence /etc/chrony.keys
+  stat:
+    path: "/etc/chrony.keys"
+  register: file_exists
+
+- name: Ensure group owner root on /etc/chrony.keys
+  file:
+    path: "/etc/chrony.keys"
+    group: "root"
+  when: file_exists.stat is defined and file_exists.stat.exists
+
+

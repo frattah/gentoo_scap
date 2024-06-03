@@ -1,0 +1,57 @@
+description: ' To properly set the owner of <code>/etc/nftables</code>, run the command:
+    <pre>$ sudo chown root /etc/nftables </pre>'
+rationale: 'The ownership of the /etc/nftables directory by the root user is important
+
+    because this directory hosts nftables configuration. Protection of this
+
+    directory is critical for system security. Assigning the ownership to root
+
+    ensures exclusive control of the nftables configuration.'
+severity: medium
+references:
+    anssi:
+    - R50
+components:
+- nftables
+identifiers: {}
+ocil_clause: /etc/nftables does not have an owner of root
+ocil: 'To check the ownership of <code>/etc/nftables</code>,
+
+    run the command:
+
+    <pre>$ ls -lL /etc/nftables</pre>
+
+    If properly configured, the output should indicate the following owner:
+
+    <code>root</code>'
+oval_external_content: null
+fixtext: ' Change the owner of the file /etc/nftables to root by running the following
+    command:
+
+    $ sudo chown root /etc/nftables'
+checktext: ''
+vuldiscussion: ''
+srg_requirement: ' The Gentoo /etc/nftables file must be owned by root.'
+warnings: []
+conflicts: []
+requires: []
+policy_specific_content: {}
+platform: package[nftables]
+platforms: !!set
+    package[nftables]: null
+sce_metadata: {}
+inherited_platforms: !!set {}
+cpe_platform_names: !!set
+    package_nftables: null
+inherited_cpe_platform_names: !!set {}
+bash_conditional: null
+fixes: {}
+title: Verify User Who Owns /etc/nftables Directory
+definition_location: /home/frattah/old/linux_os/guide/system/network/network-nftables/directory_owner_etc_nftables/rule.yml
+template:
+    name: file_owner
+    vars:
+        filepath: /etc/nftables/
+        fileuid: '0'
+    backends: {}
+documentation_complete: true

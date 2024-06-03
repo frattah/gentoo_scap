@@ -1,0 +1,49 @@
+description: 'The <code>iptables-persistent</code> package can be installed with the
+    following command:
+
+    <pre>
+
+    $ sudo yum install iptables-persistent</pre>'
+rationale: 'A method of configuring and maintaining firewall rules is
+
+    necessary to configure a Host Based Firewall.'
+severity: medium
+references: {}
+components:
+- iptables
+identifiers: {}
+ocil_clause: the package is not installed
+ocil: 'Run the following command to determine if the <code>iptables-persistent</code>
+    package is installed: <pre>$ rpm -q iptables-persistent</pre>'
+oval_external_content: null
+fixtext: 'The <code>iptables-persistent</code> package can be installed with the following
+    command:
+
+    <pre>
+
+    $ sudo yum install iptables-persistent</pre>'
+checktext: ''
+vuldiscussion: ''
+srg_requirement: ''
+warnings: []
+conflicts: []
+requires: []
+policy_specific_content: {}
+platform: package[iptables]
+platforms: !!set
+    package[iptables]: null
+sce_metadata: {}
+inherited_platforms: !!set {}
+cpe_platform_names: !!set
+    package_iptables: null
+inherited_cpe_platform_names: !!set {}
+bash_conditional: null
+fixes: {}
+title: Install iptables-persistent Package
+definition_location: /home/frattah/old/linux_os/guide/system/network/network-iptables/package_iptables-persistent_installed/rule.yml
+template:
+    name: package_installed
+    vars:
+        pkgname: iptables-persistent
+    backends: {}
+documentation_complete: true

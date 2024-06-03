@@ -1,0 +1,57 @@
+description: ' To properly set the group owner of <code>/etc/nftables</code>, run
+    the command: <pre>$ sudo chgrp root /etc/nftables</pre>'
+rationale: 'The ownership of the /etc/nftables directory by the root group is important
+
+    because this directory hosts nftables configuration. Protection of this
+
+    directory is critical for system security. Assigning the ownership to root
+
+    ensures exclusive control of the nftables configuration.'
+severity: medium
+references:
+    anssi:
+    - R50
+components:
+- nftables
+identifiers: {}
+ocil_clause: /etc/nftables does not have a group owner of root
+ocil: 'To check the group ownership of <code>/etc/nftables</code>,
+
+    run the command:
+
+    <pre>$ ls -lL /etc/nftables</pre>
+
+    If properly configured, the output should indicate the following group-owner:
+
+    <code>root</code>'
+oval_external_content: null
+fixtext: ' Change the group of the file /etc/nftables to root by running the following
+    command:
+
+    $ sudo chgrp root /etc/nftables'
+checktext: ''
+vuldiscussion: ''
+srg_requirement: ' The Gentoo /etc/nftables file must be group-owned by root.'
+warnings: []
+conflicts: []
+requires: []
+policy_specific_content: {}
+platform: package[nftables]
+platforms: !!set
+    package[nftables]: null
+sce_metadata: {}
+inherited_platforms: !!set {}
+cpe_platform_names: !!set
+    package_nftables: null
+inherited_cpe_platform_names: !!set {}
+bash_conditional: null
+fixes: {}
+title: Verify Group Who Owns /etc/nftables Directory
+definition_location: /home/frattah/old/linux_os/guide/system/network/network-nftables/directory_groupowner_etc_nftables/rule.yml
+template:
+    name: file_groupowner
+    vars:
+        filepath: /etc/nftables/
+        gid_or_name: root
+    backends: {}
+documentation_complete: true

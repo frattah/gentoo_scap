@@ -1,0 +1,35 @@
+# platform = multi_platform_all
+# reboot = false
+# strategy = configure
+# complexity = low
+# disruption = low
+- name: Find /etc/ssh/ file(s) matching ^.*\.pub$
+  command: find -H /etc/ssh/ -maxdepth 1 -type f ! -uid 0 -regex "^.*\.pub$"
+  register: files_found
+  changed_when: false
+  failed_when: false
+  check_mode: false
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  tags:
+  - configure_strategy
+  - file_ownership_sshd_pub_key
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+
+- name: Ensure owner on /etc/ssh/ file(s) matching ^.*\.pub$
+  file:
+    path: '{{ item }}'
+    owner: '0'
+    state: file
+  with_items:
+  - '{{ files_found.stdout_lines }}'
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  tags:
+  - configure_strategy
+  - file_ownership_sshd_pub_key
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed

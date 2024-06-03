@@ -1,0 +1,25 @@
+# platform = multi_platform_rhel,multi_platform_fedora,multi_platform_ol,multi_platform_rhv,SUSE Linux Enterprise 15
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+
+
+
+
+
+- name: "Disable the minidlna_read_generic_user_content SELinux Boolean - Ensure libsemanage-python Installed"
+  package:
+    name: "libsemanage-python"
+    state: present
+
+
+
+
+- (xccdf-var var_minidlna_read_generic_user_content)
+- name: "Disable the minidlna_read_generic_user_content SELinux Boolean - Set SELinux Boolean minidlna_read_generic_user_content Accordingly"
+  seboolean:
+    name: minidlna_read_generic_user_content
+    state: "{{ var_minidlna_read_generic_user_content }}"
+    persistent: yes
+  when: ansible_facts.selinux.status == 'enabled'  

@@ -1,0 +1,12 @@
+name: cpe:/a:x86_64_arch
+check_id: proc_sys_kernel_osrelease_arch_x86_64
+bash_conditional: grep -q x86_64 /proc/sys/kernel/osrelease
+ansible_conditional: ansible_architecture == "x86_64"
+is_product_cpe: false
+versioned: false
+args: {}
+content_id: ssg
+title: System architecture is x86_64
+definition_location: /home/frattah/old/shared/applicability/x86_64_arch.yml
+template: null
+documentation_complete: true

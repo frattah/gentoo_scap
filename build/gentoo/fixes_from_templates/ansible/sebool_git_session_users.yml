@@ -1,0 +1,25 @@
+# platform = multi_platform_rhel,multi_platform_fedora,multi_platform_ol,multi_platform_rhv,SUSE Linux Enterprise 15
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+
+
+
+
+
+- name: "Disable the git_session_users SELinux Boolean - Ensure libsemanage-python Installed"
+  package:
+    name: "libsemanage-python"
+    state: present
+
+
+
+
+- (xccdf-var var_git_session_users)
+- name: "Disable the git_session_users SELinux Boolean - Set SELinux Boolean git_session_users Accordingly"
+  seboolean:
+    name: git_session_users
+    state: "{{ var_git_session_users }}"
+    persistent: yes
+  when: ansible_facts.selinux.status == 'enabled'  

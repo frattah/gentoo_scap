@@ -1,0 +1,58 @@
+description: ' To properly set the permissions of <code>/etc/sysctl.d</code>, run
+    the command: <pre>$ sudo chmod 0755 /etc/sysctl.d</pre>'
+rationale: 'Setting correct permissions on the /etc/sysctl.d directory is important
+
+    because this directory hosts kernel configuration. Protection of this
+
+    directory is critical for system security. Restricting the permissions
+
+    ensures exclusive control of the kernel configuration.'
+severity: medium
+references:
+    anssi:
+    - R50
+components:
+- filesystem
+- kernel
+identifiers: {}
+ocil_clause: /etc/sysctl.d does not have unix mode 0755
+ocil: 'To check the permissions of <code>/etc/sysctl.d</code>,
+
+    run the command:
+
+    <pre>$ ls -l /etc/sysctl.d</pre>
+
+    If properly configured, the output should indicate the following permissions:
+
+    <code>0755</code>'
+oval_external_content: null
+fixtext: ' Configure the "/etc/sysctl.d" file to "0755" by running the following command:
+
+    $ sudo chmod 0755 /etc/sysctl.d'
+checktext: ''
+vuldiscussion: ''
+srg_requirement: ' The Gentoo /etc/sysctl.d file must have mode 0755 or less permissive
+    to prevent unauthorized access.'
+warnings: []
+conflicts: []
+requires: []
+policy_specific_content: {}
+platform: machine
+platforms: !!set
+    machine: null
+sce_metadata: {}
+inherited_platforms: !!set {}
+cpe_platform_names: !!set
+    machine: null
+inherited_cpe_platform_names: !!set {}
+bash_conditional: null
+fixes: {}
+title: Verify Permissions On /etc/sysctl.d Directory
+definition_location: /home/frattah/old/linux_os/guide/system/permissions/files/permissions_within_important_dirs/directory_permissions_etc_sysctld/rule.yml
+template:
+    name: file_permissions
+    vars:
+        filepath: /etc/sysctl.d/
+        filemode: '0755'
+    backends: {}
+documentation_complete: true

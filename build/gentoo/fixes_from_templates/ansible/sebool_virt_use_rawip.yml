@@ -1,0 +1,25 @@
+# platform = multi_platform_rhel,multi_platform_fedora,multi_platform_ol,multi_platform_rhv,SUSE Linux Enterprise 15
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+
+
+
+
+
+- name: "Disable the virt_use_rawip SELinux Boolean - Ensure libsemanage-python Installed"
+  package:
+    name: "libsemanage-python"
+    state: present
+
+
+
+
+- (xccdf-var var_virt_use_rawip)
+- name: "Disable the virt_use_rawip SELinux Boolean - Set SELinux Boolean virt_use_rawip Accordingly"
+  seboolean:
+    name: virt_use_rawip
+    state: "{{ var_virt_use_rawip }}"
+    persistent: yes
+  when: ansible_facts.selinux.status == 'enabled'  

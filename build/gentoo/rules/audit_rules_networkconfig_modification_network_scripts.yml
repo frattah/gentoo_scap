@@ -1,0 +1,67 @@
+description: 'If the <tt>auditd</tt> daemon is configured to use the
+
+    <tt>augenrules</tt> program to read audit rules during daemon startup (the
+
+    default), add the following line to a file with suffix <tt>.rules</tt> in the
+
+    directory <tt>/etc/audit/rules.d</tt>:
+
+    <pre>-w /etc/sysconfig/network-scripts -p wa -k audit_rules_networkconfig_modification_network_scripts</pre>
+
+    If the <tt>auditd</tt> daemon is configured to use the <tt>auditctl</tt>
+
+    utility to read audit rules during daemon startup, add the following line to
+
+    <tt>/etc/audit/audit.rules</tt> file:
+
+    <pre>-w /etc/sysconfig/network-scripts -p wa -k audit_rules_networkconfig_modification_network_scripts</pre>'
+rationale: 'The network environment should not be modified by anything other
+
+    than administrator action. Any change to network parameters should be
+
+    audited.'
+severity: medium
+references: {}
+components:
+- audit
+identifiers: {}
+ocil_clause: the system is not configured to audit changes of the network configuration
+ocil: 'To determine if the system is configured to audit changes to its network configuration,
+
+    run the following command:
+
+    <pre>auditctl -l | grep -E ''/etc/sysconfig/network-scripts''</pre>
+
+    If the system is configured to watch for network configuration changes, a line
+    should
+
+    be returned and <tt>perm=wa</tt> should be indicated.'
+oval_external_content: null
+fixtext: ''
+checktext: ''
+vuldiscussion: ''
+srg_requirement: ''
+warnings: []
+conflicts: []
+requires: []
+policy_specific_content: {}
+platform: null
+platforms: !!set {}
+sce_metadata: {}
+inherited_platforms: !!set
+    package[audit]: null
+    machine: null
+cpe_platform_names: !!set {}
+inherited_cpe_platform_names: !!set
+    machine: null
+    package_audit: null
+bash_conditional: null
+fixes: {}
+title: Record Events that Modify the System's Network Environment
+definition_location: /home/frattah/old/linux_os/guide/auditing/auditd_configure_rules/audit_rules_networkconfig_modification_network_scripts/rule.yml
+template:
+    name: audit_rules_watch
+    vars:
+        path: /etc/sysconfig/network-scripts
+    backends: {}
+documentation_complete: true

@@ -1,0 +1,572 @@
+id: bsi_app_4_4
+policy: BSI-APP-4-4
+title: BSI APP.4.4 Kubernetes
+source: https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/Grundschutz/International/bsi_it_gs_comp_2022.pdf
+definition_location: /home/frattah/old/controls/bsi_app_4_4.yml
+controls:
+-   id: APP.4.4.A1
+    levels:
+    - basic
+    notes: These requirements must be implemented organizationally. OpenShift fully
+        supports them. OpenShift simplifies the implementation of the stated requirements
+        for separating applications as well as development and production environments
+        by setting up projects (tenants). Namespaces, networks/network separation,
+        meta tags as well as CPU and memory separation are already configured by OpenShift
+        as required (security-by-design). Special requirements for protection and
+        network zone concepts can also be flexibly and easily mapped using additional
+        measures. This particularly includes the ability to define application classes,
+        operate in multiple, separate clusters, and automatically distribute workloads
+        to protection zones and fire compartments. Particularly in the case of separate
+        clusters, ACM can support rule-based distribution of applications using labels.
+    title: Planning the Separation of the Applications
+    description: Before going live, the manner in which the applications running in
+        the pods in question and their different test and production operating environments
+        will be separated MUST be planned. Based on the protection needs of the applications,
+        the planning MUST determine which architecture of namespaces, meta tags, clusters,
+        and networks adequately addresses the risks at hand and whether virtualised
+        servers and networks should also be used. The planning MUST include provisions
+        separating for networks, CPUs, and persistent volumes. The separation SHOULD
+        also take into account and be aligned with the network zone concept and the
+        protection requirements at hand. Each application SHOULD run in a separate
+        Kubernetes namespace that includes all the programs of the application. Only
+        applications with similar protection needs and similar possible attack vectors
+        SHOULD share a Kubernetes cluster.
+    rationale: null
+    automated: 'no'
+    status: manual
+    mitigation: null
+    artifact_description: null
+    status_justification: null
+    fixtext: null
+    check: null
+    tickets: null
+    original_title: null
+    related_rules: []
+    rules: []
+    controls: []
+-   id: APP.4.4.A2
+    levels:
+    - basic
+    notes: 'Since this requirement is a plan only, we cannot test this with compliance
+        checks. Section 1: This requirement must be implemented organizationally.
+        The documentation at https://docs.openshift.com/container-platform/latest/cicd/pipelines/understanding-openshift-pipelines.html
+        provides information on the planning Section 2: The protective measure is
+        primarily of an organizational nature. OpenShift fully supports them. With
+        the integrated CI/CD technologies Jenkins, Tekton and OpenShift GitOps, OpenShift
+        already offers preconfigured solutions for automated CI/CD pipelines. Of course,
+        other technologies such as Gitlab CI and GitHub Actions can also be integrated.
+        Section 3: Kubernetes secrets are secured by a Role Based Access Control (RBAC)
+        system. Depending on the protection requirement, Kubernetes secrets can be
+        secured via an (encrypted) etcd metadata store or additionally via an integration
+        of Vault components or "sealed secrets" for CD and GitOps mechanisms. Secrets
+        and roles can also be managed centrally using ACM and rolled out consistently
+        to the managed clusters using policies.'
+    title: Planning Automation with CI/CD
+    description: (1) Automating the operation of applications in Kubernetes using
+        CI/CD MUST ONLY take place after appropriate planning. (2) The planning MUST
+        cover the entire lifecycle from commissioning to decommissioning, including
+        development, testing, operation, monitoring, and updates. (3) A roles and
+        rights concept and the securing of Kubernetes Secrets MUST be part of the
+        planning
+    rationale: null
+    automated: 'no'
+    status: documentation
+    mitigation: null
+    artifact_description: null
+    status_justification: null
+    fixtext: null
+    check: null
+    tickets: null
+    original_title: null
+    related_rules: []
+    rules: []
+    controls: []
+-   id: APP.4.4.A3
+    levels:
+    - basic
+    notes: 'Section 1: In the default configuration, OpenShift restricts the use of
+        the web console and APIs only to authenticated and authorized users.| Connection
+        to external directory services (LDAP, OIDC and others) is possible. Section
+        2: OpenShift already offers roles for a least privilege concept. The RBAC
+        roles can be adapted or supplemented with new roles. The preconfigured roles
+        enable easy authorization assignment according to the least-privilege and
+        need-to-know principles. User actions can be tracked via the audit log. Section
+        3: In the default configuration, persistent storage can only be integrated
+        by cluster administrators. For dynamically provisioned storage, the corresponding
+        provisioners have the necessary authorizations. These provisioners must be
+        set up and configured by an admin. Storage requirements are controlled and
+        restricted using quota mechanisms.'
+    title: Identity and Access Management for Kubernetes
+    description: (1) Kubernetes and all other control plane applications MUST authenticate
+        and authorise each action taken by a user or, in automated mode, corresponding
+        software. This applies whether the actions are taken via a client, a web interface,
+        or a corresponding API. Administrative actions MUST NOT be performed anonymously.
+        (2) Each user MUST ONLY be granted the permissions they absolutely require.
+        Unlimited access rights MUST be granted in a very restrictive manner. (3)
+        Only a small group of people SHOULD be authorised to define automation processes.
+        Only selected administrators SHOULD be given the right to create or change
+        shares for persistent volumes in Kubernetes.
+    rationale: null
+    automated: 'no'
+    status: partial
+    mitigation: null
+    artifact_description: null
+    status_justification: null
+    fixtext: null
+    check: null
+    tickets: null
+    original_title: null
+    related_rules: []
+    rules: []
+    controls: []
+-   id: APP.4.4.A4
+    levels:
+    - basic
+    notes: Since these are OS based requirements, they are included in the rhcos4
+        bsi profile. One of the key mechanisms in OCP4 to separate Workloads is SELinux.
+        Thus this should be enforced. Furthermore a admin should check the SCCs as
+        they might lift some of the separations between workloads and/or hosts.
+    title: Separation of Pods
+    description: (1) The operating system kernel of nodes MUST have isolation mechanisms
+        to restrict visibility and resource usage among the corresponding pods (cf.
+        Linux namespaces and cgroups). (2) At minimum, this isolation MUST include
+        process IDs, inter-process communication, user IDs, the file system, and the
+        network (including the hostname).
+    rationale: null
+    automated: 'no'
+    status: inherently met
+    mitigation: null
+    artifact_description: null
+    status_justification: null
+    fixtext: null
+    check: null
+    tickets: null
+    original_title: null
+    related_rules: []
+    rules:
+    - selinux_policytype
+    - coreos_enable_selinux_kernel_argument
+    - selinux_state
+    controls: []
+-   id: APP.4.4.A5
+    levels:
+    - basic
+    notes: TBD
+    title: Backup in the Cluster
+    description: "A cluster MUST have a backup. The backup MUST include:\n  \u2022
+        Persistent volumes\n  \u2022 Configuration files for Kubernetes and the other
+        programs of the control plane\n  \u2022 The current state of the Kubernetes
+        cluster, including extensions\n  \u2022 Databases of the configuration (namely
+        etcd in this case)\n  \u2022 All infrastructure applications required to operate
+        the cluster and the services within it\n  \u2022 The data storage of the code
+        and image registries\n  Snapshots for the operation of the applications SHOULD
+        also be considered. Snapshots MUST\n  NOT be considered a substitute for backups."
+    rationale: null
+    automated: 'no'
+    status: pending
+    mitigation: null
+    artifact_description: null
+    status_justification: null
+    fixtext: null
+    check: null
+    tickets: null
+    original_title: null
+    related_rules: []
+    rules: []
+    controls: []
+-   id: APP.4.4.A6
+    levels:
+    - standard
+    notes: TBD
+    title: Initialisation of Pods
+    description: If an initialisation (e.g. of an application) takes place in a pod
+        at start-up, this SHOULD take place in a separate Init container. It SHOULD
+        be ensured that the initialisation terminates all processes that are already
+        running. Kubernetes SHOULD ONLY start the other containers if the initialisation
+        is successful.
+    rationale: null
+    automated: 'no'
+    status: pending
+    mitigation: null
+    artifact_description: null
+    status_justification: null
+    fixtext: null
+    check: null
+    tickets: null
+    original_title: null
+    related_rules: []
+    rules: []
+    controls: []
+-   id: APP.4.4.A7
+    levels:
+    - standard
+    notes: TBD
+    title: Separation of Networks for Kubernetes
+    description: Networks for the administration of nodes, the control plane, and
+        the individual networks of application services SHOULD be separated. Only
+        the network ports of the pods necessary for operation SHOULD be released into
+        the designated networks. If a Kubernetes cluster contains multiple applications,
+        all the network connections between the Kubernetes namespaces SHOULD first
+        be prohibited and only required network connections permitted (whitelisting).
+        The network ports necessary for the administration of the nodes, the runtime,
+        and Kubernetes (including its extensions) SHOULD ONLY be accessible from the
+        corresponding administration network and from pods that need them. Only selected
+        administrators SHOULD be authorised in Kubernetes to manage the CNI and create
+        or change rules for the network.
+    rationale: null
+    automated: 'no'
+    status: pending
+    mitigation: null
+    artifact_description: null
+    status_justification: null
+    fixtext: null
+    check: null
+    tickets: null
+    original_title: null
+    related_rules: []
+    rules: []
+    controls: []
+-   id: APP.4.4.A8
+    levels:
+    - standard
+    notes: TBD
+    title: Securing Configuration Files on Kubernetes
+    description: The configuration files of a Kubernetes cluster, including all its
+        extensions and applications, SHOULD be versioned and annotated. Access rights
+        to configuration file management software SHOULD be granted in a restrictive
+        manner. Read and write access rights to the configuration files of the control
+        plane SHOULD be assigned and restricted with particular care.
+    rationale: null
+    automated: 'no'
+    status: pending
+    mitigation: null
+    artifact_description: null
+    status_justification: null
+    fixtext: null
+    check: null
+    tickets: null
+    original_title: null
+    related_rules: []
+    rules: []
+    controls: []
+-   id: APP.4.4.A9
+    levels:
+    - standard
+    notes: TBD
+    title: Use of Kubernetes Service Accounts
+    description: Pods SHOULD NOT use the "default" service account. Rights SHOULD
+        NOT be granted to the "default" service account. Pods for different applications
+        SHOULD run under their own service accounts. Access rights for the service
+        accounts of the applications' pods SHOULD be limited to those that are strictly
+        necessary. Pods that do not require a service account SHOULD not be able to
+        view it or have access to corresponding tokens. Only control plane pods and
+        pods that absolutely need them SHOULD use privileged service accounts. Automation
+        programs SHOULD each receive their own tokens, even if they share a common
+        service account due to similar tasks.
+    rationale: null
+    automated: 'no'
+    status: pending
+    mitigation: null
+    artifact_description: null
+    status_justification: null
+    fixtext: null
+    check: null
+    tickets: null
+    original_title: null
+    related_rules: []
+    rules: []
+    controls: []
+-   id: APP.4.4.A10
+    levels:
+    - standard
+    notes: This control needs to be adressed on an organizational level. All service
+        accounts used by  automation software need to adhere to the principle of least
+        privilege.
+    title: Securing Automation Processes
+    description: All automation software processes, such as CI/CD and their pipelines,
+        SHOULD only operate with the rights that are strictly necessary. If different
+        user groups can change configurations or start pods via automation software,
+        this SHOULD be done for each group through separate processes that only have
+        the rights necessary for the respective user group.
+    rationale: null
+    automated: 'no'
+    status: not applicable
+    mitigation: null
+    artifact_description: null
+    status_justification: null
+    fixtext: null
+    check: null
+    tickets: null
+    original_title: null
+    related_rules: []
+    rules: []
+    controls: []
+-   id: APP.4.4.A11
+    levels:
+    - standard
+    notes: TBD
+    title: Container Monitoring
+    description: In pods, each container SHOULD define a health check for start-up
+        and operation ("readiness" and "liveness"). These checks SHOULD provide information
+        about the availability of the software running in a pod. The checks SHOULD
+        fail if the monitored software cannot perform its tasks properly. For each
+        of these checks, a time period SHOULD be defined that is appropriate for the
+        service running in the pod. Based on these checks, Kubernetes SHOULD delete
+        or restart the pods.
+    rationale: null
+    automated: 'no'
+    status: pending
+    mitigation: null
+    artifact_description: null
+    status_justification: null
+    fixtext: null
+    check: null
+    tickets: null
+    original_title: null
+    related_rules: []
+    rules: []
+    controls: []
+-   id: APP.4.4.A12
+    levels:
+    - standard
+    notes: This requirement needs to be adressed in the respective separate systems.
+        However, one requirement (Encrypted communication on all network ports) can
+        partitially be checked by ensuring that no registry is allowed in over insecure
+        protocols
+    title: Securing Infrastructure Applications
+    description: "If a separate registry for images or automation software, persistent
+        volume management, configuration file storage, or similar is in use, its protection
+        SHOULD at least consider:\n  \u2022 Use of personal and service accounts for
+        access\n  \u2022 Encrypted communication on all network ports\n  \u2022 Restrictive
+        assignment of permissions to user and service accounts\n  \u2022 Logging of
+        changes\n  \u2022 Regular data backups."
+    rationale: null
+    automated: 'no'
+    status: partial
+    mitigation: null
+    artifact_description: null
+    status_justification: null
+    fixtext: null
+    check: null
+    tickets: null
+    original_title: null
+    related_rules: []
+    rules: []
+    controls: []
+-   id: APP.4.4.A13
+    levels:
+    - elevated
+    notes: TBD
+    title: Automated Configuration Auditing
+    description: There SHOULD be an automated audit that checks the settings of nodes,
+        of Kubernetes, and of the pods of applications against a defined list of allowed
+        settings and standardised benchmarks. Kubernetes SHOULD enforce these established
+        rules in each cluster by connecting appropriate tools.
+    rationale: null
+    automated: 'no'
+    status: pending
+    mitigation: null
+    artifact_description: null
+    status_justification: null
+    fixtext: null
+    check: null
+    tickets: null
+    original_title: null
+    related_rules: []
+    rules: []
+    controls: []
+-   id: APP.4.4.A14
+    levels:
+    - elevated
+    notes: TBD
+    title: Use of Dedicated Nodes
+    description: In a Kubernetes cluster, nodes SHOULD be assigned dedicated tasks
+        and only run pods that are assigned to each task. Bastion nodes SHOULD handle
+        all incoming and outgoing data connections of between applications and other
+        networks. Management nodes SHOULD operate control plane pods and only handle
+        control plane data connections. If deployed, storage nodes SHOULD only operate
+        the fixed persistent volume services pods in a cluster.
+    rationale: null
+    automated: 'no'
+    status: pending
+    mitigation: null
+    artifact_description: null
+    status_justification: null
+    fixtext: null
+    check: null
+    tickets: null
+    original_title: null
+    related_rules: []
+    rules: []
+    controls: []
+-   id: APP.4.4.A15
+    levels:
+    - elevated
+    notes: TBD
+    title: Separation of Applications at Node and Cluster Level
+    description: Applications with very high protection needs SHOULD each use their
+        own Kubernetes clusters or dedicated nodes that are not available for other
+        applications
+    rationale: null
+    automated: 'no'
+    status: pending
+    mitigation: null
+    artifact_description: null
+    status_justification: null
+    fixtext: null
+    check: null
+    tickets: null
+    original_title: null
+    related_rules: []
+    rules: []
+    controls: []
+-   id: APP.4.4.A16
+    levels:
+    - elevated
+    notes: TBD
+    title: Use of Operators
+    description: The automation of operational tasks in operators SHOULD be used for
+        particularly critical applications and control plane programs.
+    rationale: null
+    automated: 'no'
+    status: pending
+    mitigation: null
+    artifact_description: null
+    status_justification: null
+    fixtext: null
+    check: null
+    tickets: null
+    original_title: null
+    related_rules: []
+    rules: []
+    controls: []
+-   id: APP.4.4.A17
+    levels:
+    - elevated
+    notes: TBD
+    title: Attestation of Nodes
+    description: Nodes SHOULD send a cryptographically secured (and, if possible,
+        TPM-verified) status message to the control plane. The control plane SHOULD
+        ONLY accept nodes into a cluster that have successfully proven their integrity.
+    rationale: null
+    automated: 'no'
+    status: pending
+    mitigation: null
+    artifact_description: null
+    status_justification: null
+    fixtext: null
+    check: null
+    tickets: null
+    original_title: null
+    related_rules: []
+    rules: []
+    controls: []
+-   id: APP.4.4.A18
+    levels:
+    - elevated
+    notes: TBD
+    title: Use of Micro-Segmentation
+    description: "Pods SHOULD ONLY be able to communicate with each other through
+        the necessary network ports, even within a Kubernetes namespace. There SHOULD
+        be rules within the CNI that disallow all but the necessary network connections
+        within the Kubernetes namespace. These rules SHOULD precisely define the source
+        and destination of the allowed connections using at least one of the following
+        criteria: service name, metadata (\u201Clabels\u201D), Kubernetes service
+        accounts, or certificate-based authentication. All the criteria used as labels
+        for a connection SHOULD be secured in such a way that they can only be changed
+        by authorised persons and management services."
+    rationale: null
+    automated: 'no'
+    status: pending
+    mitigation: null
+    artifact_description: null
+    status_justification: null
+    fixtext: null
+    check: null
+    tickets: null
+    original_title: null
+    related_rules: []
+    rules: []
+    controls: []
+-   id: APP.4.4.A19
+    levels:
+    - elevated
+    notes: TBD
+    title: High Availability of Kubernetes
+    description: A Kubernetes operation SHOULD be set up in such a way that if a site
+        fails, the clusters (and thus the applications in the pods) either continue
+        to run without interruption or can be restarted in a short time at another
+        site. Should a restart be required, all the necessary configuration files,
+        images, user data, network connections, and other resources required for operation
+        (including the necessary hardware) SHOULD already be available at the alternative
+        site. For the uninterrupted operation of clusters, the control plane of Kubernetes,
+        the infrastructure applications of the clusters, and the pods of the applications
+        SHOULD be distributed across several fire zones based on the location data
+        of the corresponding nodes so that the failure of a fire zone will not lead
+        to the failure of an application.
+    rationale: null
+    automated: 'no'
+    status: pending
+    mitigation: null
+    artifact_description: null
+    status_justification: null
+    fixtext: null
+    check: null
+    tickets: null
+    original_title: null
+    related_rules: []
+    rules: []
+    controls: []
+-   id: APP.4.4.A20
+    levels:
+    - elevated
+    notes: TBD
+    title: Encrypted Data Storage for Pods
+    description: The file systems containing the persistent data of the control plane
+        (etcd in particular in this context) and the application services SHOULD be
+        encrypted.
+    rationale: null
+    automated: 'no'
+    status: pending
+    mitigation: null
+    artifact_description: null
+    status_justification: null
+    fixtext: null
+    check: null
+    tickets: null
+    original_title: null
+    related_rules: []
+    rules: []
+    controls: []
+-   id: APP.4.4.A21
+    levels:
+    - elevated
+    notes: TBD
+    title: Regular Restart of Pods
+    description: Pods SHOULD be stopped and restarted regularly if there is an increased
+        risk of external interference and a very high need for protection. No pod
+        SHOULD run for more than 24 hours. The availability of the applications in
+        a pod SHOULD be ensured.
+    rationale: null
+    automated: 'no'
+    status: pending
+    mitigation: null
+    artifact_description: null
+    status_justification: null
+    fixtext: null
+    check: null
+    tickets: null
+    original_title: null
+    related_rules: []
+    rules: []
+    controls: []
+levels:
+-   id: basic
+    inherits_from: null
+-   id: standard
+    inherits_from:
+    - basic
+-   id: elevated
+    inherits_from:
+    - standard
+documentation_complete: true

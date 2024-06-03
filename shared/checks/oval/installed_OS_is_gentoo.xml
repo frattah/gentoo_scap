@@ -1,0 +1,25 @@
+
+<def-group>
+  <definition class="inventory" id="installed_OS_is_gentoo" version="2">
+    <metadata>
+      <title>Gentoo</title>
+      <affected family="unix">
+        <platform>multi_platform_all</platform>
+      </affected>
+      <reference ref_id="cpe:/o:gentoo:linux" source="CPE" />
+      <description>The operating system installed on the system is Gentoo</description>
+    </metadata>
+    <criteria comment="current OS is " operator="AND">
+      <extend_definition comment="Installed OS is part of the Unix family" definition_ref="installed_OS_is_part_of_Unix_family" />
+      <criterion comment="Gentoo is installed" test_ref="test_gentoo_release" />
+    </criteria>
+  </definition>
+
+  <unix:file_test check="all" check_existence="all_exist" comment="/etc/gentoo exists" id="test_gentoo_release" version="1">
+    <unix:object object_ref="obj_gentoo_release" />
+  </unix:file_test>
+  <unix:file_object comment="check /etc/gentoo-release file" id="obj_gentoo_release" version="1">
+    <unix:filepath>/etc/gentoo-release</unix:filepath>
+  </unix:file_object>
+
+</def-group>

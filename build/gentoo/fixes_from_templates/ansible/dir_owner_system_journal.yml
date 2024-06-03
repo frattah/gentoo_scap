@@ -1,0 +1,30 @@
+# platform = multi_platform_all
+# reboot = false
+# strategy = configure
+# complexity = low
+# disruption = low
+
+- name: Ensure owner on directory /run/log/journal/ recursively
+  file:
+    path: "/run/log/journal/"
+    state: directory
+
+    recurse: yes
+
+    owner: "0"
+
+
+
+
+
+- name: Ensure owner on directory /var/log/journal/ recursively
+  file:
+    path: "/var/log/journal/"
+    state: directory
+
+    recurse: yes
+
+    owner: "0"
+
+
+

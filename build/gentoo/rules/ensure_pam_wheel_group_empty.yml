@@ -1,0 +1,69 @@
+description: 'Ensure that the group <tt><sub idref="var_pam_wheel_group_for_su" /></tt>
+    referenced by
+
+    <tt>var_pam_wheel_group_for_su</tt> variable and used as value for the <tt>pam_wheel.so</tt>
+
+    <tt>group</tt> option exists and has no members. This empty group used by
+
+    <tt>pam_wheel.so</tt> in <tt>/etc/pam.d/su</tt> ensures that no user can run commands
+    with
+
+    altered privileges through the <tt>su</tt> command.'
+rationale: 'The <tt>su</tt> program allows to run commands with a substitute user
+    and group ID.
+
+    It is commonly used to run commands as the root user.
+
+    Limiting access to such command is considered a good security practice.'
+severity: medium
+references:
+    pcidss4:
+    - 2.2.6
+components:
+- pam
+identifiers: {}
+ocil_clause: group  exists and has no user members
+ocil: 'Run the following command to check if the  group exists:
+
+    <pre>grep  /etc/group</pre>
+
+    The output should contain the following line:
+
+    <pre>:x:</pre>'
+oval_external_content: null
+fixtext: 'Run the following command to ensure the  group exists:
+
+    <pre>groupadd </pre>
+
+
+    Run the following command to ensure the  group has no members:
+
+    <pre>groupmems -g  -p</pre>'
+checktext: ''
+vuldiscussion: ''
+srg_requirement: ''
+warnings:
+-   general: 'Note that this rule just ensures the group exists and has no members.
+        This rule does not
+
+        configure <tt>pam_wheel.so</tt> module. The <tt>pam_wheel.so</tt> module configuration
+        is
+
+        accomplished by <tt>use_pam_wheel_group_for_su</tt> rule.'
+conflicts: []
+requires: []
+policy_specific_content: {}
+platform: package[pam]
+platforms: !!set
+    package[pam]: null
+sce_metadata: {}
+inherited_platforms: !!set {}
+cpe_platform_names: !!set
+    package_pam: null
+inherited_cpe_platform_names: !!set {}
+bash_conditional: null
+fixes: {}
+title: Ensure the Group Used by pam_wheel.so Module Exists on System and is Empty
+definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-restrictions/root_logins/ensure_pam_wheel_group_empty/rule.yml
+template: null
+documentation_complete: true

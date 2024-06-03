@@ -1,0 +1,29 @@
+# platform = multi_platform_all
+# reboot = false
+# strategy = configure
+# complexity = low
+# disruption = low
+- name: Gather the package facts
+  package_facts:
+    manager: auto
+  tags:
+  - configure_strategy
+  - directory_owner_etc_nftables
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+
+- name: Ensure owner on directory /etc/nftables/
+  file:
+    path: /etc/nftables/
+    state: directory
+    owner: '0'
+  when: '"nftables" in ansible_facts.packages'
+  tags:
+  - configure_strategy
+  - directory_owner_etc_nftables
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed

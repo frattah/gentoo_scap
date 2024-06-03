@@ -1,0 +1,25 @@
+# platform = multi_platform_rhel,multi_platform_fedora,multi_platform_ol,multi_platform_rhv,SUSE Linux Enterprise 15
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+
+
+
+
+
+- name: "Disable the privoxy_connect_any SELinux Boolean - Ensure libsemanage-python Installed"
+  package:
+    name: "libsemanage-python"
+    state: present
+
+
+
+
+- (xccdf-var var_privoxy_connect_any)
+- name: "Disable the privoxy_connect_any SELinux Boolean - Set SELinux Boolean privoxy_connect_any Accordingly"
+  seboolean:
+    name: privoxy_connect_any
+    state: "{{ var_privoxy_connect_any }}"
+    persistent: yes
+  when: ansible_facts.selinux.status == 'enabled'  

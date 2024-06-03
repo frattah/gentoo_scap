@@ -1,0 +1,12 @@
+name: cpe:/o:canonical:ubuntu_linux:16.04::~~lts~~~
+check_id: installed_OS_is_ubuntu1604
+bash_conditional: ''
+ansible_conditional: ''
+is_product_cpe: false
+versioned: false
+args: {}
+content_id: ssg
+title: Ubuntu release 16.04 (Xenial)
+definition_location: ''
+template: null
+documentation_complete: true

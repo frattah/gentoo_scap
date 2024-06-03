@@ -1,0 +1,263 @@
+id: e8
+policy: e8
+title: Australian Cyber Security Centre (ACSC)
+source: https://www.cyber.gov.au/sites/default/files/2023-11/PROTECT%20-%20Hardening%20Linux%20Workstations%20and%20Servers%20%28November%202023%29.pdf
+definition_location: /home/frattah/old/controls/e8.yml
+controls:
+-   id: patching
+    levels:
+    - base
+    notes: ''
+    title: Application and operating system patching
+    description: null
+    rationale: null
+    automated: 'yes'
+    status: automated
+    mitigation: null
+    artifact_description: null
+    status_justification: null
+    fixtext: null
+    check: null
+    tickets: null
+    original_title: null
+    related_rules: []
+    rules:
+    - service_avahi-daemon_disabled
+    - package_talk-server_removed
+    - service_telnet_disabled
+    - ensure_gpgcheck_globally_activated
+    - ensure_gpgcheck_never_disabled
+    - security_patches_up_to_date
+    - package_talk_removed
+    - package_quagga_removed
+    - ensure_gpgcheck_local_packages
+    - package_squid_removed
+    - package_telnet-server_removed
+    - service_squid_disabled
+    - ensure_redhat_gpgkey_installed
+    - dnf-automatic_security_updates_only
+    - package_telnet_removed
+    - package_ypbind_removed
+    - package_rsh_removed
+    - package_rsh-server_removed
+    controls: []
+-   id: mfa
+    levels:
+    - base
+    notes: ''
+    title: Multi-factor authentication
+    description: null
+    rationale: null
+    automated: 'no'
+    status: manual
+    mitigation: null
+    artifact_description: null
+    status_justification: null
+    fixtext: null
+    check: null
+    tickets: null
+    original_title: null
+    related_rules: []
+    rules: []
+    controls: []
+-   id: restrict_admin
+    levels:
+    - base
+    notes: ''
+    title: Restricting administrative privileges
+    description: null
+    rationale: null
+    automated: 'no'
+    status: partial
+    mitigation: null
+    artifact_description: null
+    status_justification: null
+    fixtext: null
+    check: null
+    tickets: null
+    original_title: null
+    related_rules: []
+    rules:
+    - sudo_require_authentication
+    - accounts_no_uid_except_zero
+    - sudo_remove_nopasswd
+    - sudo_remove_no_authenticate
+    controls: []
+-   id: app_control
+    levels:
+    - base
+    notes: ''
+    title: Application control
+    description: null
+    rationale: null
+    automated: 'no'
+    status: partial
+    mitigation: null
+    artifact_description: null
+    status_justification: null
+    fixtext: null
+    check: null
+    tickets: null
+    original_title: null
+    related_rules: []
+    rules:
+    - package_fapolicyd_installed
+    - service_fapolicyd_enabled
+    controls: []
+-   id: restrict_macros
+    levels:
+    - base
+    notes: ''
+    title: Restrict Microsoft Office macros
+    description: null
+    rationale: null
+    automated: 'no'
+    status: not applicable
+    mitigation: null
+    artifact_description: null
+    status_justification: null
+    fixtext: null
+    check: null
+    tickets: null
+    original_title: null
+    related_rules: []
+    rules: []
+    controls: []
+-   id: app_hardening
+    levels:
+    - base
+    notes: ''
+    title: User application hardening
+    description: null
+    rationale: null
+    automated: 'no'
+    status: pending
+    mitigation: null
+    artifact_description: null
+    status_justification: null
+    fixtext: null
+    check: null
+    tickets: null
+    original_title: null
+    related_rules: []
+    rules: []
+    controls: []
+-   id: backups
+    levels:
+    - base
+    notes: ''
+    title: Regular backups
+    description: null
+    rationale: null
+    automated: 'no'
+    status: partial
+    mitigation: null
+    artifact_description: null
+    status_justification: null
+    fixtext: null
+    check: null
+    tickets: null
+    original_title: null
+    related_rules: []
+    rules:
+    - package_rear_installed
+    controls: []
+-   id: hardening
+    levels:
+    - base
+    notes: ''
+    title: General hardening of Gentoo
+    description: null
+    rationale: null
+    automated: 'no'
+    status: partial
+    mitigation: null
+    artifact_description: null
+    status_justification: null
+    fixtext: null
+    check: null
+    tickets: null
+    original_title: null
+    related_rules: []
+    rules:
+    - sysctl_kernel_kexec_load_disabled
+    - configure_crypto_policy
+    - sshd_do_not_permit_user_env
+    - file_permissions_unauthorized_suid
+    - sysctl_kernel_randomize_va_space
+    - selinux_policytype
+    - sshd_use_directory_configuration
+    - sshd_disable_root_login
+    - sshd_disable_user_known_hosts
+    - service_rsyslog_enabled
+    - file_permissions_library_dirs
+    - audit_rules_dac_modification_chown
+    - file_permissions_unauthorized_world_writable
+    - auditd_log_format
+    - service_auditd_enabled
+    - sshd_disable_gssapi_auth
+    - sshd_enable_strictmodes
+    - audit_rules_login_events
+    - audit_rules_usergroup_modification
+    - sysctl_kernel_kptr_restrict
+    - mount_option_dev_shm_nosuid
+    - audit_rules_execution_setsebool
+    - package_firewalld_installed
+    - auditd_data_retention_flush
+    - rpm_verify_permissions
+    - file_permissions_unauthorized_sgid
+    - rpm_verify_ownership
+    - sysctl_kernel_unprivileged_bpf_disabled
+    - dir_perms_world_writable_sticky_bits
+    - auditd_name_format
+    - audit_rules_execution_setfiles
+    - sysctl_net_core_bpf_jit_harden
+    - audit_rules_execution_seunshare
+    - audit_rules_time_clock_settime
+    - auditd_write_logs
+    - sshd_disable_rhosts
+    - audit_rules_time_watch_localtime
+    - auditd_local_events
+    - sysctl_kernel_exec_shield
+    - audit_rules_time_adjtimex
+    - sshd_disable_empty_passwords
+    - audit_rules_time_settimeofday
+    - audit_rules_execution_restorecon
+    - enable_authselect
+    - audit_rules_login_events_tallylog
+    - selinux_state
+    - sysctl_kernel_yama_ptrace_scope
+    - rpm_verify_hashes
+    - configure_ssh_crypto_policy
+    - audit_rules_time_stime
+    - audit_rules_dac_modification_chmod
+    - no_empty_passwords
+    - mount_option_dev_shm_noexec
+    - audit_rules_login_events_lastlog
+    - file_permissions_binary_dirs
+    - sshd_print_last_log
+    - sshd_set_loglevel_info
+    - audit_rules_execution_chcon
+    - auditd_freq
+    - audit_rules_execution_semanage
+    - audit_rules_sysadmin_actions
+    - network_sniffer_disabled
+    - file_ownership_binary_dirs
+    - sysctl_kernel_dmesg_restrict
+    - audit_rules_login_events_faillock
+    - service_firewalld_enabled
+    - audit_rules_kernel_module_loading
+    - package_rsyslog_installed
+    - file_ownership_library_dirs
+    - mount_option_dev_shm_nodev
+    - audit_rules_networkconfig_modification
+    - var_system_crypto_policy=default_nosha1
+    - var_auditd_flush=incremental_async
+    - var_selinux_state=enforcing
+    - var_selinux_policy_name=targeted
+    - var_authselect_profile=sssd
+    controls: []
+levels:
+-   id: base
+    inherits_from: null
+documentation_complete: true

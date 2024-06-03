@@ -1,0 +1,85 @@
+description: 'The SELinux state should be set to <tt>enforcing</tt> or <tt>permissive</tt>
+    at system boot
+
+    time. In the file <tt>/etc/selinux/config</tt>, add or correct the following line
+    to configure
+
+    the system to boot into enforcing or permissive mode:
+
+    <pre>SELINUX=enforcing</pre>
+
+    OR
+
+    <pre>SELINUX=permissive</pre>'
+rationale: 'Running SELinux in disabled mode is strongly discouraged. It prevents
+    enforcing the SELinux
+
+    controls without a system reboot. It also avoids labeling any persistent objects
+    such as
+
+    files, making it difficult to enable SELinux in the future.'
+severity: high
+references: {}
+components:
+- selinux
+identifiers: {}
+ocil_clause: SELinux is disabled
+ocil: 'Ensure that Gentoo does not disable SELinux.
+
+
+    Check if "SELinux" is active and in "enforcing" or "permissive" mode with the
+    following command:
+
+
+    $ sudo getenforce
+
+    Enforcing
+
+    -OR-
+
+    Permissive'
+oval_external_content: null
+fixtext: 'Configure Gentoo to enable SELinux.
+
+
+    Edit the file <tt>/etc/selinux/config</tt> and add or modify the following line:
+
+    <pre>SELINUX=enforcing</pre>
+
+    OR
+
+    <pre>SELINUX=permissive</pre>
+
+
+    A reboot is required for the changes to take effect.'
+checktext: ''
+vuldiscussion: ''
+srg_requirement: ''
+warnings:
+-   general: 'In case the SELinux is "disabled", the automated remediation will adopt
+        a more
+
+        conservative approach and set it to "permissive" in order to avoid any system
+        disruption
+
+        and give the administrator the opportunity to assess the impact and necessary
+        efforts
+
+        before setting it to "enforcing", which is strongly recommended.'
+conflicts: []
+requires: []
+policy_specific_content: {}
+platform: null
+platforms: !!set {}
+sce_metadata: {}
+inherited_platforms: !!set
+    machine: null
+cpe_platform_names: !!set {}
+inherited_cpe_platform_names: !!set
+    machine: null
+bash_conditional: null
+fixes: {}
+title: Ensure SELinux is Not Disabled
+definition_location: /home/frattah/old/linux_os/guide/system/selinux/selinux_not_disabled/rule.yml
+template: null
+documentation_complete: true

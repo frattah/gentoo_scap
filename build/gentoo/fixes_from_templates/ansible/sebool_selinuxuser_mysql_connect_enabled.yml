@@ -1,0 +1,25 @@
+# platform = multi_platform_rhel,multi_platform_fedora,multi_platform_ol,multi_platform_rhv,SUSE Linux Enterprise 15
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+
+
+
+
+
+- name: "Disable the selinuxuser_mysql_connect_enabled SELinux Boolean - Ensure libsemanage-python Installed"
+  package:
+    name: "libsemanage-python"
+    state: present
+
+
+
+
+- (xccdf-var var_selinuxuser_mysql_connect_enabled)
+- name: "Disable the selinuxuser_mysql_connect_enabled SELinux Boolean - Set SELinux Boolean selinuxuser_mysql_connect_enabled Accordingly"
+  seboolean:
+    name: selinuxuser_mysql_connect_enabled
+    state: "{{ var_selinuxuser_mysql_connect_enabled }}"
+    persistent: yes
+  when: ansible_facts.selinux.status == 'enabled'  

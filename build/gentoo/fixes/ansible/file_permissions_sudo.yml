@@ -1,0 +1,43 @@
+# platform = multi_platform_all
+# reboot = false
+# strategy = configure
+# complexity = low
+# disruption = low
+- name: Gather the package facts
+  package_facts:
+    manager: auto
+  tags:
+  - configure_strategy
+  - file_permissions_sudo
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+
+- name: Test for existence /usr/bin/sudo
+  stat:
+    path: /usr/bin/sudo
+  register: file_exists
+  when: '"sudo" in ansible_facts.packages'
+  tags:
+  - configure_strategy
+  - file_permissions_sudo
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+
+- name: Ensure permission 4110 on /usr/bin/sudo
+  file:
+    path: /usr/bin/sudo
+    mode: '4110'
+  when:
+  - '"sudo" in ansible_facts.packages'
+  - file_exists.stat is defined and file_exists.stat.exists
+  tags:
+  - configure_strategy
+  - file_permissions_sudo
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed

@@ -1,0 +1,25 @@
+# platform = multi_platform_rhel,multi_platform_fedora,multi_platform_ol,multi_platform_rhv,SUSE Linux Enterprise 15
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+
+
+
+
+
+- name: "Disable the httpd_dontaudit_search_dirs SELinux Boolean - Ensure libsemanage-python Installed"
+  package:
+    name: "libsemanage-python"
+    state: present
+
+
+
+
+- (xccdf-var var_httpd_dontaudit_search_dirs)
+- name: "Disable the httpd_dontaudit_search_dirs SELinux Boolean - Set SELinux Boolean httpd_dontaudit_search_dirs Accordingly"
+  seboolean:
+    name: httpd_dontaudit_search_dirs
+    state: "{{ var_httpd_dontaudit_search_dirs }}"
+    persistent: yes
+  when: ansible_facts.selinux.status == 'enabled'  

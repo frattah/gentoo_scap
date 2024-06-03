@@ -1,0 +1,25 @@
+# platform = multi_platform_rhel,multi_platform_fedora,multi_platform_ol,multi_platform_rhv,SUSE Linux Enterprise 15
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+
+
+
+
+
+- name: "Disable the webadm_read_user_files SELinux Boolean - Ensure libsemanage-python Installed"
+  package:
+    name: "libsemanage-python"
+    state: present
+
+
+
+
+- (xccdf-var var_webadm_read_user_files)
+- name: "Disable the webadm_read_user_files SELinux Boolean - Set SELinux Boolean webadm_read_user_files Accordingly"
+  seboolean:
+    name: webadm_read_user_files
+    state: "{{ var_webadm_read_user_files }}"
+    persistent: yes
+  when: ansible_facts.selinux.status == 'enabled'  

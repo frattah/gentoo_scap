@@ -1,0 +1,18 @@
+# platform = multi_platform_all
+# reboot = false
+# strategy = configure
+# complexity = low
+# disruption = low
+- name: Ensure owner on directory /etc/sysctl.d/
+  file:
+    path: /etc/sysctl.d/
+    state: directory
+    owner: '0'
+  when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  tags:
+  - configure_strategy
+  - directory_owner_etc_sysctld
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed

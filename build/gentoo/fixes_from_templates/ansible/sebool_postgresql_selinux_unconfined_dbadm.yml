@@ -1,0 +1,25 @@
+# platform = multi_platform_rhel,multi_platform_fedora,multi_platform_ol,multi_platform_rhv,SUSE Linux Enterprise 15
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+
+
+
+
+
+- name: "Enable the postgresql_selinux_unconfined_dbadm SELinux Boolean - Ensure libsemanage-python Installed"
+  package:
+    name: "libsemanage-python"
+    state: present
+
+
+
+
+- (xccdf-var var_postgresql_selinux_unconfined_dbadm)
+- name: "Enable the postgresql_selinux_unconfined_dbadm SELinux Boolean - Set SELinux Boolean postgresql_selinux_unconfined_dbadm Accordingly"
+  seboolean:
+    name: postgresql_selinux_unconfined_dbadm
+    state: "{{ var_postgresql_selinux_unconfined_dbadm }}"
+    persistent: yes
+  when: ansible_facts.selinux.status == 'enabled'  

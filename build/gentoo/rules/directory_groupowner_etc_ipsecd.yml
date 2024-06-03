@@ -1,0 +1,57 @@
+description: ' To properly set the group owner of <code>/etc/ipsec.d</code>, run the
+    command: <pre>$ sudo chgrp root /etc/ipsec.d</pre>'
+rationale: 'The ownership of the /etc/ipsec.d directory by the root group is important
+
+    because this directory hosts Libreswan configuration. Protection of this
+
+    file is critical for system security. Assigning the ownership to root
+
+    ensures exclusive control of the Libreswan configuration.'
+severity: medium
+references:
+    anssi:
+    - R50
+components:
+- libreswan
+identifiers: {}
+ocil_clause: /etc/ipsec.d does not have a group owner of root
+ocil: 'To check the group ownership of <code>/etc/ipsec.d</code>,
+
+    run the command:
+
+    <pre>$ ls -lL /etc/ipsec.d</pre>
+
+    If properly configured, the output should indicate the following group-owner:
+
+    <code>root</code>'
+oval_external_content: null
+fixtext: ' Change the group of the file /etc/ipsec.d to root by running the following
+    command:
+
+    $ sudo chgrp root /etc/ipsec.d'
+checktext: ''
+vuldiscussion: ''
+srg_requirement: ' The Gentoo /etc/ipsec.d file must be group-owned by root.'
+warnings: []
+conflicts: []
+requires: []
+policy_specific_content: {}
+platform: package[libreswan]
+platforms: !!set
+    package[libreswan]: null
+sce_metadata: {}
+inherited_platforms: !!set {}
+cpe_platform_names: !!set
+    package_libreswan: null
+inherited_cpe_platform_names: !!set {}
+bash_conditional: null
+fixes: {}
+title: Verify Group Who Owns /etc/ipsec.d Directory
+definition_location: /home/frattah/old/linux_os/guide/system/network/network-ipsec/directory_groupowner_etc_ipsecd/rule.yml
+template:
+    name: file_groupowner
+    vars:
+        filepath: /etc/ipsec.d/
+        gid_or_name: root
+    backends: {}
+documentation_complete: true

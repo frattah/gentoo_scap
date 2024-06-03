@@ -1,0 +1,25 @@
+# platform = multi_platform_rhel,multi_platform_fedora,multi_platform_ol,multi_platform_rhv,SUSE Linux Enterprise 15
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+
+
+
+
+
+- name: "Disable the piranha_lvs_can_network_connect SELinux Boolean - Ensure libsemanage-python Installed"
+  package:
+    name: "libsemanage-python"
+    state: present
+
+
+
+
+- (xccdf-var var_piranha_lvs_can_network_connect)
+- name: "Disable the piranha_lvs_can_network_connect SELinux Boolean - Set SELinux Boolean piranha_lvs_can_network_connect Accordingly"
+  seboolean:
+    name: piranha_lvs_can_network_connect
+    state: "{{ var_piranha_lvs_can_network_connect }}"
+    persistent: yes
+  when: ansible_facts.selinux.status == 'enabled'  

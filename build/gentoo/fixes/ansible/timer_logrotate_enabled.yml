@@ -1,0 +1,46 @@
+# platform = multi_platform_all
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+- name: Gather the package facts
+  package_facts:
+    manager: auto
+  tags:
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-10.7
+  - PCI-DSSv4-10.5.1
+  - enable_strategy
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - timer_logrotate_enabled
+
+- name: Enable timer logrotate
+  block:
+
+  - name: Gather the package facts
+    package_facts:
+      manager: auto
+
+  - name: Enable timer logrotate
+    systemd:
+      name: logrotate.timer
+      enabled: 'yes'
+      state: started
+    when:
+    - '"logrotate" in ansible_facts.packages'
+  when:
+  - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
+  - '"logrotate" in ansible_facts.packages'
+  tags:
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-10.7
+  - PCI-DSSv4-10.5.1
+  - enable_strategy
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - timer_logrotate_enabled

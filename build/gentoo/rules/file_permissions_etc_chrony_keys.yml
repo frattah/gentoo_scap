@@ -1,0 +1,59 @@
+description: ' To properly set the permissions of <code>/etc/chrony.keys</code>, run
+    the command: <pre>$ sudo chmod 0600 /etc/chrony.keys</pre>'
+rationale: 'Setting correct permissions on the /etc/chrony.keys file is important
+
+    because this file hosts chrony cryptographic keys. Protection
+
+    of this file is critical for system security. Assigning the correct mode
+
+    ensures exclusive control of the chrony cryptographic keys.'
+severity: medium
+references:
+    anssi:
+    - R50
+components:
+- chrony
+- ntp
+identifiers: {}
+ocil_clause: /etc/chrony.keys does not have unix mode 0600
+ocil: 'To check the permissions of <code>/etc/chrony.keys</code>,
+
+    run the command:
+
+    <pre>$ ls -l /etc/chrony.keys</pre>
+
+    If properly configured, the output should indicate the following permissions:
+
+    <code>0600</code>'
+oval_external_content: null
+fixtext: ' Configure the "/etc/chrony.keys" file to "0600" by running the following
+    command:
+
+    $ sudo chmod 0600 /etc/chrony.keys'
+checktext: ''
+vuldiscussion: ''
+srg_requirement: ' The Gentoo /etc/chrony.keys file must have mode 0600 or less permissive
+    to prevent unauthorized access.'
+warnings: []
+conflicts: []
+requires: []
+policy_specific_content: {}
+platform: null
+platforms: !!set {}
+sce_metadata: {}
+inherited_platforms: !!set
+    machine: null
+cpe_platform_names: !!set {}
+inherited_cpe_platform_names: !!set
+    machine: null
+bash_conditional: null
+fixes: {}
+title: Verify Permissions On /etc/chrony.keys File
+definition_location: /home/frattah/old/linux_os/guide/services/ntp/file_permissions_etc_chrony_keys/rule.yml
+template:
+    name: file_permissions
+    vars:
+        filepath: /etc/chrony.keys
+        filemode: '0600'
+    backends: {}
+documentation_complete: true

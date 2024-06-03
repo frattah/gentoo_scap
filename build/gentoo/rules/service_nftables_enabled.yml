@@ -1,0 +1,62 @@
+description: 'The nftables service allows for the loading of nftables rulesets during
+    boot,
+
+    or starting on the nftables service
+
+
+    The <code>nftables</code> service can be enabled with the following command:
+
+    <pre>$ sudo systemctl enable nftables.service</pre>'
+rationale: 'The nftables service restores the nftables rules from the rules files
+    referenced
+
+    in the <tt>/etc/sysconfig/nftables.conf</tt> file during boot or the starting
+    of
+
+    the nftables service'
+severity: medium
+references: {}
+components:
+- nftables
+identifiers: {}
+ocil_clause: the "nftables" service is disabled, masked, or not started.
+ocil: '
+
+
+    Run the following command to determine the current status of the
+
+    <code>nftables</code> service:
+
+    <pre>$ sudo systemctl is-active nftables</pre>
+
+    If the service is running, it should return the following: <pre>active</pre>'
+oval_external_content: null
+fixtext: 'To enable the nftables service run the following command:
+
+
+    $ sudo systemctl enable --now nftables'
+checktext: ''
+vuldiscussion: ''
+srg_requirement: ''
+warnings: []
+conflicts: []
+requires: []
+policy_specific_content: {}
+platform: machine and package[nftables] and service_disabled[firewalld]
+platforms: !!set
+    machine and package[nftables] and service_disabled[firewalld]: null
+sce_metadata: {}
+inherited_platforms: !!set {}
+cpe_platform_names: !!set
+    machine_and_package_nftables_and_service_disabled_firewalld: null
+inherited_cpe_platform_names: !!set {}
+bash_conditional: null
+fixes: {}
+title: Verify nftables Service is Enabled
+definition_location: /home/frattah/old/linux_os/guide/system/network/network-nftables/service_nftables_enabled/rule.yml
+template:
+    name: service_enabled
+    vars:
+        servicename: nftables
+    backends: {}
+documentation_complete: true

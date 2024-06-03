@@ -1,0 +1,744 @@
+<?xml version='1.0' encoding='utf-8'?>
+<oval-def:oval_definitions xmlns:ind="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" xmlns:oval="http://oval.mitre.org/XMLSchema/oval-common-5" xmlns:oval-def="http://oval.mitre.org/XMLSchema/oval-definitions-5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://oval.mitre.org/XMLSchema/oval-common-5 oval-common-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5 oval-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#independent independent-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#unix unix-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#linux linux-definitions-schema.xsd">
+  <oval-def:generator>
+    <oval:product_name>OVALFileLinker from SCAP Security Guide</oval:product_name>
+    <oval:product_version>ssg: [0, 1, 73], python: 3.12.2</oval:product_version>
+    <oval:schema_version>5.11</oval:schema_version>
+    <oval:timestamp>2024-06-03T22:22:44</oval:timestamp>
+  </oval-def:generator>
+  <oval-def:definitions>
+    <oval-def:definition id="oval:ssg-accounts_password_pam_unix_remember:def:1" version="2" class="compliance">
+      <oval-def:metadata>
+        <oval-def:title>Limit Password Reuse</oval-def:title>
+        <oval-def:affected family="unix">
+          <oval-def:platform>Gentoo</oval-def:platform>
+        </oval-def:affected>
+        <oval-def:reference ref_id="accounts_password_pam_unix_remember" source="ssg" />
+        <oval-def:description>The passwords to remember should be set correctly.</oval-def:description>
+      </oval-def:metadata>
+      <oval-def:criteria comment="Check if pam_pwhistory.so or pam_unix.so are configured" operator="OR">
+        <oval-def:criteria comment="Check if pam_pwhistory.so is properly configured" operator="AND">
+          <oval-def:criterion comment="pam_pwhistory.so is properly defined in password section of PAM file" test_ref="oval:ssg-test_accounts_password_pam_unix_remember:tst:1" />
+          <oval-def:criteria comment="Check the expected value for pam_pwhistory.so remember parameter" operator="OR">
+            <oval-def:criteria comment="Check the pam_pwhistory.so remember parameter is only in PAM file" operator="AND">
+              <oval-def:criterion comment="Check the remember parameter in password section of PAM file" test_ref="oval:ssg-test_accounts_password_pam_unix_remember_pamd:tst:1" />
+              <oval-def:criterion comment="Check the pam_pwhistory.so remember parameter is absent in pwhistory.conf" test_ref="oval:ssg-test_accounts_password_pam_unix_remember_no_pwhistory_conf:tst:1" />
+            </oval-def:criteria>
+            <oval-def:criteria comment="Check the pam_pwhistory.so remember parameter is only in pwhistory.conf file" operator="AND">
+              <oval-def:criterion comment="Check the pam_pwhistory.so remember parameter is absent in PAM file" test_ref="oval:ssg-test_accounts_password_pam_unix_remember_no_pamd:tst:1" />
+              <oval-def:criterion comment="Check the remember parameter in /etc/security/pwhistory.conf" test_ref="oval:ssg-test_accounts_password_pam_unix_remember_pwhistory_conf:tst:1" />
+            </oval-def:criteria>
+          </oval-def:criteria>
+        </oval-def:criteria>
+        <oval-def:criterion comment="Remember parameter of pam_unix.so is properly configured" test_ref="oval:ssg-test_accounts_password_pam_unix_remember_legacy:tst:1" />
+      </oval-def:criteria>
+    </oval-def:definition>
+    <oval-def:definition id="oval:ssg-accounts_passwords_pam_faillock_deny_root:def:1" version="5" class="compliance">
+      <oval-def:metadata>
+        <oval-def:title>Configure the root Account for Failed Password Attempts</oval-def:title>
+        <oval-def:affected family="unix">
+          <oval-def:platform>Gentoo</oval-def:platform>
+        </oval-def:affected>
+        <oval-def:reference ref_id="accounts_passwords_pam_faillock_deny_root" source="ssg" />
+        <oval-def:description>The root account should be configured to deny access after the number of
+      defined failed attempts has been reached.</oval-def:description>
+      </oval-def:metadata>
+      <oval-def:criteria comment="Check the proper configuration of pam_faillock.so" operator="AND">
+        <oval-def:criteria comment="Check if pam_faillock.so is properly enabled" operator="AND">
+          <oval-def:criteria comment="Count occurrences of pam_unix.so in system-auth and password-auth" operator="AND">
+            <oval-def:criterion comment="pam_unix.so appears only once in auth section of system-auth" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_deny_root_system_pam_unix_auth:tst:1" />
+            <oval-def:criterion comment="pam_unix.so appears only once in auth section of password-auth" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_deny_root_password_pam_unix_auth:tst:1" />
+          </oval-def:criteria>
+          <oval-def:criteria comment="Check common definition of pam_faillock.so" operator="AND">
+            <oval-def:criterion comment="pam_faillock.so is properly defined in auth section of system-auth" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_deny_root_system_pam_faillock_auth:tst:1" />
+            <oval-def:criterion comment="pam_faillock.so is properly defined in account section of system-auth" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_deny_root_system_pam_faillock_account:tst:1" />
+            <oval-def:criterion comment="pam_faillock.so is properly defined in auth section of password-auth" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_deny_root_password_pam_faillock_auth:tst:1" />
+            <oval-def:criterion comment="pam_faillock.so is properly defined in account section of password-auth" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_deny_root_password_pam_faillock_account:tst:1" />
+          </oval-def:criteria>
+        </oval-def:criteria>
+        <oval-def:criteria comment="Check expected value for pam_faillock.so even_deny_root parameter" operator="OR">
+          <oval-def:criteria comment="Check expected pam_faillock.so even_deny_root parameter in pam files" operator="AND">
+            <oval-def:criterion comment="Check the even_deny_root parameter in auth section of system-auth file" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_deny_root_parameter_pamd_system:tst:1" />
+            <oval-def:criterion comment="Check the even_deny_root parameter in auth section of password-auth file" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_deny_root_parameter_pamd_password:tst:1" />
+            <oval-def:criterion comment="Ensure /etc/security/faillock.conf is not used together with pam files" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_deny_root_parameter_no_faillock_conf:tst:1" />
+          </oval-def:criteria>
+          <oval-def:criteria comment="Check expected pam_faillock.so even_deny_root parameter in faillock.conf" operator="AND">
+            <oval-def:criterion comment="Check the even_deny_root parameter is not present system-auth file" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_deny_root_parameter_no_pamd_system:tst:1" />
+            <oval-def:criterion comment="Check the even_deny_root parameter is not present password-auth file" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_deny_root_parameter_no_pamd_password:tst:1" />
+            <oval-def:criterion comment="Ensure the even_deny_root parameter is present in /etc/security/faillock.conf" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_deny_root_parameter_faillock_conf:tst:1" />
+          </oval-def:criteria>
+        </oval-def:criteria>
+      </oval-def:criteria>
+    </oval-def:definition>
+    <oval-def:definition id="oval:ssg-accounts_tmout:def:1" version="3" class="compliance">
+      <oval-def:metadata>
+        <oval-def:title>Set Interactive Session Timeout</oval-def:title>
+        <oval-def:affected family="unix">
+          <oval-def:platform>Gentoo</oval-def:platform>
+        </oval-def:affected>
+        <oval-def:reference ref_id="accounts_tmout" source="ssg" />
+        <oval-def:description>Checks interactive shell timeout</oval-def:description>
+      </oval-def:metadata>
+      <oval-def:criteria operator="AND">
+        <oval-def:criterion comment="TMOUT value in /etc/profile &lt;= var_accounts_tmout" test_ref="oval:ssg-test_etc_profile_tmout:tst:1" />
+        <oval-def:criterion comment="TMOUT value in /etc/profile.d/*.sh &lt;= var_accounts_tmout" test_ref="oval:ssg-test_etc_profiled_tmout:tst:1" />
+        <oval-def:criterion comment="At least one config file has TMOUT defined" test_ref="oval:ssg-test_accounts_tmout_defined:tst:1" />
+      </oval-def:criteria>
+    </oval-def:definition>
+    <oval-def:definition id="oval:ssg-accounts_password_pam_dcredit:def:1" version="3" class="compliance">
+      <oval-def:metadata>
+        <oval-def:title>Ensure PAM Enforces Password Requirements - Minimum Digit Characters</oval-def:title>
+        <oval-def:affected family="unix">
+          <oval-def:platform>Gentoo</oval-def:platform>
+        </oval-def:affected>
+        <oval-def:reference ref_id="accounts_password_pam_dcredit" source="ssg" />
+        <oval-def:description>The password dcredit should meet minimum requirements</oval-def:description>
+      </oval-def:metadata>
+      <oval-def:criteria comment="conditions for dcredit are satisfied" operator="AND">
+        <oval-def:extend_definition comment="pwquality.so exists in system-auth" definition_ref="oval:ssg-accounts_password_pam_pwquality:def:1" />
+        <oval-def:criteria operator="OR">
+          <oval-def:criterion comment="pwquality.conf" test_ref="oval:ssg-test_password_pam_pwquality_dcredit:tst:1" />
+        </oval-def:criteria>
+      </oval-def:criteria>
+    </oval-def:definition>
+    <oval-def:definition id="oval:ssg-accounts_password_pam_lcredit:def:1" version="3" class="compliance">
+      <oval-def:metadata>
+        <oval-def:title>Ensure PAM Enforces Password Requirements - Minimum Lowercase Characters</oval-def:title>
+        <oval-def:affected family="unix">
+          <oval-def:platform>Gentoo</oval-def:platform>
+        </oval-def:affected>
+        <oval-def:reference ref_id="accounts_password_pam_lcredit" source="ssg" />
+        <oval-def:description>The password lcredit should meet minimum requirements</oval-def:description>
+      </oval-def:metadata>
+      <oval-def:criteria comment="conditions for lcredit are satisfied" operator="AND">
+        <oval-def:extend_definition comment="pwquality.so exists in system-auth" definition_ref="oval:ssg-accounts_password_pam_pwquality:def:1" />
+        <oval-def:criteria operator="OR">
+          <oval-def:criterion comment="pwquality.conf" test_ref="oval:ssg-test_password_pam_pwquality_lcredit:tst:1" />
+        </oval-def:criteria>
+      </oval-def:criteria>
+    </oval-def:definition>
+    <oval-def:definition id="oval:ssg-accounts_password_pam_minlen:def:1" version="3" class="compliance">
+      <oval-def:metadata>
+        <oval-def:title>Ensure PAM Enforces Password Requirements - Minimum Length</oval-def:title>
+        <oval-def:affected family="unix">
+          <oval-def:platform>Gentoo</oval-def:platform>
+        </oval-def:affected>
+        <oval-def:reference ref_id="accounts_password_pam_minlen" source="ssg" />
+        <oval-def:description>The password minlen should meet minimum requirements</oval-def:description>
+      </oval-def:metadata>
+      <oval-def:criteria comment="conditions for minlen are satisfied" operator="AND">
+        <oval-def:extend_definition comment="pwquality.so exists in system-auth" definition_ref="oval:ssg-accounts_password_pam_pwquality:def:1" />
+        <oval-def:criteria operator="OR">
+          <oval-def:criterion comment="pwquality.conf" test_ref="oval:ssg-test_password_pam_pwquality_minlen:tst:1" />
+        </oval-def:criteria>
+      </oval-def:criteria>
+    </oval-def:definition>
+    <oval-def:definition id="oval:ssg-accounts_password_pam_ocredit:def:1" version="3" class="compliance">
+      <oval-def:metadata>
+        <oval-def:title>Ensure PAM Enforces Password Requirements - Minimum Special Characters</oval-def:title>
+        <oval-def:affected family="unix">
+          <oval-def:platform>Gentoo</oval-def:platform>
+        </oval-def:affected>
+        <oval-def:reference ref_id="accounts_password_pam_ocredit" source="ssg" />
+        <oval-def:description>The password ocredit should meet minimum requirements</oval-def:description>
+      </oval-def:metadata>
+      <oval-def:criteria comment="conditions for ocredit are satisfied" operator="AND">
+        <oval-def:extend_definition comment="pwquality.so exists in system-auth" definition_ref="oval:ssg-accounts_password_pam_pwquality:def:1" />
+        <oval-def:criteria operator="OR">
+          <oval-def:criterion comment="pwquality.conf" test_ref="oval:ssg-test_password_pam_pwquality_ocredit:tst:1" />
+        </oval-def:criteria>
+      </oval-def:criteria>
+    </oval-def:definition>
+    <oval-def:definition id="oval:ssg-accounts_password_pam_ucredit:def:1" version="3" class="compliance">
+      <oval-def:metadata>
+        <oval-def:title>Ensure PAM Enforces Password Requirements - Minimum Uppercase Characters</oval-def:title>
+        <oval-def:affected family="unix">
+          <oval-def:platform>Gentoo</oval-def:platform>
+        </oval-def:affected>
+        <oval-def:reference ref_id="accounts_password_pam_ucredit" source="ssg" />
+        <oval-def:description>The password ucredit should meet minimum requirements</oval-def:description>
+      </oval-def:metadata>
+      <oval-def:criteria comment="conditions for ucredit are satisfied" operator="AND">
+        <oval-def:extend_definition comment="pwquality.so exists in system-auth" definition_ref="oval:ssg-accounts_password_pam_pwquality:def:1" />
+        <oval-def:criteria operator="OR">
+          <oval-def:criterion comment="pwquality.conf" test_ref="oval:ssg-test_password_pam_pwquality_ucredit:tst:1" />
+        </oval-def:criteria>
+      </oval-def:criteria>
+    </oval-def:definition>
+    <oval-def:definition id="oval:ssg-accounts_passwords_pam_faillock_deny:def:1" version="6" class="compliance">
+      <oval-def:metadata>
+        <oval-def:title>Lock Accounts After Failed Password Attempts</oval-def:title>
+        <oval-def:affected family="unix">
+          <oval-def:platform>Gentoo</oval-def:platform>
+        </oval-def:affected>
+        <oval-def:reference ref_id="accounts_passwords_pam_faillock_deny" source="ssg" />
+        <oval-def:description>Lockout account after failed login attempts.</oval-def:description>
+      </oval-def:metadata>
+      <oval-def:criteria comment="Check the proper configuration of pam_faillock.so" operator="AND">
+        <oval-def:criteria comment="Check if pam_faillock.so is properly enabled" operator="AND">
+          <oval-def:criteria comment="Count occurrences of pam_unix.so in system-auth and password-auth" operator="AND">
+            <oval-def:criterion comment="pam_unix.so appears only once in auth section of system-auth" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_deny_system_pam_unix_auth:tst:1" />
+            <oval-def:criterion comment="pam_unix.so appears only once in auth section of password-auth" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_deny_password_pam_unix_auth:tst:1" />
+          </oval-def:criteria>
+          <oval-def:criteria comment="Check common definition of pam_faillock.so" operator="AND">
+            <oval-def:criterion comment="pam_faillock.so is properly defined in auth section of system-auth" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_deny_system_pam_faillock_auth:tst:1" />
+            <oval-def:criterion comment="pam_faillock.so is properly defined in account section of system-auth" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_deny_system_pam_faillock_account:tst:1" />
+            <oval-def:criterion comment="pam_faillock.so is properly defined in auth section of password-auth" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_deny_password_pam_faillock_auth:tst:1" />
+            <oval-def:criterion comment="pam_faillock.so is properly defined in account section of password-auth" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_deny_password_pam_faillock_account:tst:1" />
+          </oval-def:criteria>
+        </oval-def:criteria>
+        <oval-def:criteria comment="Check expected value for pam_faillock.so deny parameter" operator="OR">
+          <oval-def:criteria comment="Check expected pam_faillock.so deny parameter in pam files" operator="AND">
+            <oval-def:criterion comment="Check the deny parameter in auth section of system-auth file" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_deny_parameter_pamd_system:tst:1" />
+            <oval-def:criterion comment="Check the deny parameter in auth section of password-auth file" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_deny_parameter_pamd_password:tst:1" />
+            <oval-def:criterion comment="Ensure the deny parameter is not present in /etc/security/faillock.conf" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_deny_parameter_no_faillock_conf:tst:1" />
+          </oval-def:criteria>
+          <oval-def:criteria comment="Check expected pam_faillock.so deny parameter in faillock.conf" operator="AND">
+            <oval-def:criterion comment="Check the deny parameter is not present system-auth file" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_deny_parameter_no_pamd_system:tst:1" />
+            <oval-def:criterion comment="Check the deny parameter is not present password-auth file" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_deny_parameter_no_pamd_password:tst:1" />
+            <oval-def:criterion comment="Ensure the deny parameter is present in /etc/security/faillock.conf" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_deny_parameter_faillock_conf:tst:1" />
+          </oval-def:criteria>
+        </oval-def:criteria>
+      </oval-def:criteria>
+    </oval-def:definition>
+    <oval-def:definition id="oval:ssg-accounts_passwords_pam_faillock_interval:def:1" version="6" class="compliance">
+      <oval-def:metadata>
+        <oval-def:title>Set Interval For Counting Failed Password Attempts</oval-def:title>
+        <oval-def:affected family="unix">
+          <oval-def:platform>Gentoo</oval-def:platform>
+        </oval-def:affected>
+        <oval-def:reference ref_id="accounts_passwords_pam_faillock_interval" source="ssg" />
+        <oval-def:description>The number of allowed failed logins should be set correctly.</oval-def:description>
+      </oval-def:metadata>
+      <oval-def:criteria comment="Check the proper configuration of pam_faillock.so" operator="AND">
+        <oval-def:criteria comment="Check if pam_faillock.so is properly enabled" operator="AND">
+          <oval-def:criteria comment="Count occurrences of pam_unix.so in system-auth and password-auth" operator="AND">
+            <oval-def:criterion comment="pam_unix.so appears only once in auth section of system-auth" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_fail_interval_system_pam_unix_auth:tst:1" />
+            <oval-def:criterion comment="pam_unix.so appears only once in auth section of password-auth" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_fail_interval_password_pam_unix_auth:tst:1" />
+          </oval-def:criteria>
+          <oval-def:criteria comment="Check common definition of pam_faillock.so" operator="AND">
+            <oval-def:criterion comment="pam_faillock.so is properly defined in auth section of system-auth" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_fail_interval_system_pam_faillock_auth:tst:1" />
+            <oval-def:criterion comment="pam_faillock.so is properly defined in account section of system-auth" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_fail_interval_system_pam_faillock_account:tst:1" />
+            <oval-def:criterion comment="pam_faillock.so is properly defined in auth section of password-auth" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_fail_interval_password_pam_faillock_auth:tst:1" />
+            <oval-def:criterion comment="pam_faillock.so is properly defined in account section of password-auth" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_fail_interval_password_pam_faillock_account:tst:1" />
+          </oval-def:criteria>
+        </oval-def:criteria>
+        <oval-def:criteria comment="Check expected value for pam_faillock.so fail_interval parameter" operator="OR">
+          <oval-def:criteria comment="Check expected pam_faillock.so fail_interval parameter in pam files" operator="AND">
+            <oval-def:criterion comment="Check the fail_interval parameter in auth section of system-auth file" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_fail_interval_parameter_pamd_system:tst:1" />
+            <oval-def:criterion comment="Check the fail_interval parameter in auth section of password-auth file" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_fail_interval_parameter_pamd_password:tst:1" />
+            <oval-def:criterion comment="Ensure the fail_interval parameter is not present in /etc/security/faillock.conf" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_fail_interval_parameter_no_faillock_conf:tst:1" />
+          </oval-def:criteria>
+          <oval-def:criteria comment="Check expected pam_faillock.so fail_interval parameter in faillock.conf" operator="AND">
+            <oval-def:criterion comment="Check the fail_interval parameter is not present system-auth file" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_fail_interval_parameter_no_pamd_system:tst:1" />
+            <oval-def:criterion comment="Check the fail_interval parameter is not present password-auth file" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_fail_interval_parameter_no_pamd_password:tst:1" />
+            <oval-def:criterion comment="Ensure the fail_interval parameter is present in /etc/security/faillock.conf" test_ref="oval:ssg-test_accounts_passwords_pam_faillock_fail_interval_parameter_faillock_conf:tst:1" />
+          </oval-def:criteria>
+        </oval-def:criteria>
+      </oval-def:criteria>
+    </oval-def:definition>
+    <oval-def:definition id="oval:ssg-accounts_password_pam_pwquality:def:1" version="1" class="compliance">
+      <oval-def:metadata>
+        <oval-def:title>Check pam_pwquality Existence in system-auth</oval-def:title>
+        <oval-def:affected family="unix">
+          <oval-def:platform>Gentoo</oval-def:platform>
+        </oval-def:affected>
+        <oval-def:reference ref_id="accounts_password_pam_pwquality" source="ssg" />
+        <oval-def:description>Check that pam_pwquality.so exists in system-auth</oval-def:description>
+      </oval-def:metadata>
+      <oval-def:criteria operator="AND">
+        <oval-def:criterion comment="Conditions for pam_pwquality are satisfied" test_ref="oval:ssg-test_password_pam_pwquality:tst:1" />
+      </oval-def:criteria>
+    </oval-def:definition>
+  </oval-def:definitions>
+  <oval-def:tests>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_password_pam_unix_remember:tst:1" version="1" check="all" comment="Check pam_pwhistory.so presence in PAM file" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_password_pam_unix_remember:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_password_pam_unix_remember_pamd:tst:1" version="1" check="all" comment="Check remember parameter is present and correct in PAM file" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_password_pam_unix_remember_pamd:obj:1" />
+      <ind:state state_ref="oval:ssg-state_accounts_password_pam_unix_remember:ste:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_password_pam_unix_remember_no_pwhistory_conf:tst:1" version="1" check="all" comment="Check the absence of remember parameter in /etc/security/pwhistory.conf" check_existence="none_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_password_pam_unix_remember_param_conf:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_password_pam_unix_remember_no_pamd:tst:1" version="1" check="all" comment="Check remember parameter is absent in PAM file" check_existence="none_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_password_pam_unix_remember_pamd:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_password_pam_unix_remember_pwhistory_conf:tst:1" version="1" check="all" comment="Check remember parameter is present and correct in /etc/security/pwhistory.conf" check_existence="all_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_password_pam_unix_remember_param_conf:obj:1" />
+      <ind:state state_ref="oval:ssg-state_accounts_password_pam_unix_remember:ste:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_password_pam_unix_remember_legacy:tst:1" version="1" check="all" comment="Test if remember attribute of pam_unix.so is set correctly in /etc/pam.d/system-auth" check_existence="all_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_password_pam_unix_remember_legacy:obj:1" />
+      <ind:state state_ref="oval:ssg-state_accounts_password_pam_unix_remember:ste:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_deny_root_system_pam_unix_auth:tst:1" version="1" check="all" comment="No more than one pam_unix.so is expected in auth section of system-auth" check_existence="none_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_deny_root_system_pam_unix_auth:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_deny_root_password_pam_unix_auth:tst:1" version="1" check="all" comment="No more than one pam_unix.so is expected in auth section of password-auth" check_existence="none_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_deny_root_password_pam_unix_auth:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_deny_root_system_pam_faillock_auth:tst:1" version="1" check="all" comment="One and only one pattern occurrence is expected in auth section of system-auth" check_existence="only_one_exists" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_deny_root_system_pam_faillock_auth:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_deny_root_system_pam_faillock_account:tst:1" version="1" check="all" comment="One and only one pattern occurrence is expected in account section of system-auth" check_existence="only_one_exists" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_deny_root_system_pam_faillock_account:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_deny_root_password_pam_faillock_auth:tst:1" version="1" check="all" comment="One and only one pattern occurrence is expected in auth section of system-auth" check_existence="only_one_exists" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_deny_root_password_pam_faillock_auth:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_deny_root_password_pam_faillock_account:tst:1" version="1" check="all" comment="One and only one pattern occurrence is expected in account section of password-auth" check_existence="only_one_exists" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_deny_root_password_pam_faillock_account:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_deny_root_parameter_pamd_system:tst:1" version="1" check="all" comment="Check the expected even_deny_root parameter in system-auth" check_existence="all_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_deny_root_parameter_pamd_system:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_deny_root_parameter_no_pamd_system:tst:1" version="1" check="all" comment="Check the absence of even_deny_root parameter in system-auth" check_existence="none_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_deny_root_parameter_pamd_system:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_deny_root_parameter_pamd_password:tst:1" version="1" check="all" comment="Check the expected even_deny_root parameter in password-auth" check_existence="all_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_deny_root_parameter_pamd_password:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_deny_root_parameter_no_pamd_password:tst:1" version="1" check="all" comment="Check the absence of even_deny_root parameter in password-auth" check_existence="none_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_deny_root_parameter_pamd_password:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_deny_root_parameter_faillock_conf:tst:1" version="1" check="all" comment="Check the expected even_deny_root parameter in /etc/security/faillock.conf" check_existence="all_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_deny_root_parameter_faillock_conf:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_deny_root_parameter_no_faillock_conf:tst:1" version="1" check="all" comment="Check the absence of even_deny_root parameter in /etc/security/faillock.conf" check_existence="none_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_deny_root_parameter_faillock_conf:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_etc_profile_tmout:tst:1" version="2" check="all" comment="TMOUT in /etc/profile" check_existence="any_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_etc_profile_tmout:obj:1" />
+      <ind:state state_ref="oval:ssg-state_etc_profile_tmout:ste:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_etc_profiled_tmout:tst:1" version="2" check="all" comment="TMOUT in /etc/profile.d/*.sh" check_existence="any_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_etc_profiled_tmout:obj:1" />
+      <ind:state state_ref="oval:ssg-state_etc_profile_tmout:ste:1" />
+    </ind:textfilecontent54_test>
+    <ind:variable_test id="oval:ssg-test_accounts_tmout_defined:tst:1" version="1" check="all" comment="Check that at least one TMOUT is defined" check_existence="all_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_tmout_defined:obj:1" />
+      <ind:state state_ref="oval:ssg-state_accounts_tmout_defined:ste:1" />
+    </ind:variable_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_password_pam_pwquality_dcredit:tst:1" version="3" check="all" comment="check the configuration of /etc/security/pwquality.conf" state_operator="AND">
+      <ind:object object_ref="oval:ssg-obj_password_pam_pwquality_dcredit:obj:1" />
+      <ind:state state_ref="oval:ssg-state_password_pam_dcredit:ste:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_password_pam_pwquality_lcredit:tst:1" version="3" check="all" comment="check the configuration of /etc/security/pwquality.conf" state_operator="AND">
+      <ind:object object_ref="oval:ssg-obj_password_pam_pwquality_lcredit:obj:1" />
+      <ind:state state_ref="oval:ssg-state_password_pam_lcredit:ste:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_password_pam_pwquality_minlen:tst:1" version="3" check="all" comment="check the configuration of /etc/security/pwquality.conf" state_operator="AND">
+      <ind:object object_ref="oval:ssg-obj_password_pam_pwquality_minlen:obj:1" />
+      <ind:state state_ref="oval:ssg-state_password_pam_minlen:ste:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_password_pam_pwquality_ocredit:tst:1" version="3" check="all" comment="check the configuration of /etc/security/pwquality.conf" state_operator="AND">
+      <ind:object object_ref="oval:ssg-obj_password_pam_pwquality_ocredit:obj:1" />
+      <ind:state state_ref="oval:ssg-state_password_pam_ocredit:ste:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_password_pam_pwquality_ucredit:tst:1" version="3" check="all" comment="check the configuration of /etc/security/pwquality.conf" state_operator="AND">
+      <ind:object object_ref="oval:ssg-obj_password_pam_pwquality_ucredit:obj:1" />
+      <ind:state state_ref="oval:ssg-state_password_pam_ucredit:ste:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_deny_system_pam_unix_auth:tst:1" version="2" check="all" comment="no more that one pam_unix.so is expected in auth section of system-auth" check_existence="none_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_deny_system_pam_unix_auth:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_deny_system_pam_faillock_auth:tst:1" version="2" check="all" comment="One and only one occurrence is expected in auth section of system-auth" check_existence="only_one_exists" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_deny_system_pam_faillock_auth:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_deny_password_pam_unix_auth:tst:1" version="2" check="all" comment="no more that one pam_unix.so is expected in auth section of password-auth" check_existence="none_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_deny_password_pam_unix_auth:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_deny_password_pam_faillock_auth:tst:1" version="2" check="all" comment="One and only one occurrence is expected in auth section of password-auth" check_existence="only_one_exists" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_deny_password_pam_faillock_auth:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_deny_system_pam_faillock_account:tst:1" version="2" check="all" comment="One and only one occurrence is expected in system-auth" check_existence="only_one_exists" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_deny_system_pam_faillock_account:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_deny_password_pam_faillock_account:tst:1" version="2" check="all" comment="One and only one occurrence is expected in password-auth" check_existence="only_one_exists" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_deny_password_pam_faillock_account:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_deny_parameter_no_pamd_system:tst:1" version="2" check="all" comment="Check the absence of deny parameter in system-auth" check_existence="none_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_deny_parameter_pamd_system:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_deny_parameter_pamd_system:tst:1" version="2" check="all" comment="Check the expected deny value in system-auth" check_existence="all_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_deny_parameter_pamd_system:obj:1" />
+      <ind:state state_ref="oval:ssg-state_accounts_passwords_pam_faillock_deny_parameter_upper_bound:ste:1" />
+      <ind:state state_ref="oval:ssg-state_accounts_passwords_pam_faillock_deny_parameter_lower_bound:ste:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_deny_parameter_no_pamd_password:tst:1" version="2" check="all" comment="Check the absence of deny parameter in password-auth" check_existence="none_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_deny_parameter_pamd_password:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_deny_parameter_pamd_password:tst:1" version="2" check="all" comment="Check the expected deny value in password-auth" check_existence="all_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_deny_parameter_pamd_password:obj:1" />
+      <ind:state state_ref="oval:ssg-state_accounts_passwords_pam_faillock_deny_parameter_upper_bound:ste:1" />
+      <ind:state state_ref="oval:ssg-state_accounts_passwords_pam_faillock_deny_parameter_lower_bound:ste:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_deny_parameter_faillock_conf:tst:1" version="1" check="all" comment="Check the expected deny value in /etc/security/faillock.conf" check_existence="all_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_deny_parameter_faillock_conf:obj:1" />
+      <ind:state state_ref="oval:ssg-state_accounts_passwords_pam_faillock_deny_parameter_upper_bound:ste:1" />
+      <ind:state state_ref="oval:ssg-state_accounts_passwords_pam_faillock_deny_parameter_lower_bound:ste:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_deny_parameter_no_faillock_conf:tst:1" version="1" check="all" comment="Check the absence of deny parameter in /etc/security/faillock.conf" check_existence="none_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_deny_parameter_faillock_conf:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_fail_interval_system_pam_unix_auth:tst:1" version="2" check="all" comment="no more that one pam_unix.so is expected in auth section of system-auth" check_existence="none_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_fail_interval_system_pam_unix_auth:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_fail_interval_system_pam_faillock_auth:tst:1" version="2" check="all" comment="One and only one occurrence is expected in auth section of system-auth" check_existence="only_one_exists" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_fail_interval_system_pam_faillock_auth:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_fail_interval_password_pam_unix_auth:tst:1" version="2" check="all" comment="no more that one pam_unix.so is expected in auth section of password-auth" check_existence="none_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_fail_interval_password_pam_unix_auth:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_fail_interval_password_pam_faillock_auth:tst:1" version="2" check="all" comment="One and only one occurrence is expected in auth section of password-auth" check_existence="only_one_exists" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_fail_interval_password_pam_faillock_auth:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_fail_interval_system_pam_faillock_account:tst:1" version="2" check="all" comment="One and only one occurrence is expected in system-auth" check_existence="only_one_exists" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_fail_interval_system_pam_faillock_account:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_fail_interval_password_pam_faillock_account:tst:1" version="2" check="all" comment="One and only one occurrence is expected in password-auth" check_existence="only_one_exists" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_fail_interval_password_pam_faillock_account:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_fail_interval_parameter_no_pamd_system:tst:1" version="2" check="all" comment="Check the absence of fail_interval parameter in system-auth" check_existence="none_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_fail_interval_parameter_pamd_system:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_fail_interval_parameter_pamd_system:tst:1" version="2" check="all" comment="Check the expected fail_interval value in system-auth" check_existence="all_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_fail_interval_parameter_pamd_system:obj:1" />
+      <ind:state state_ref="oval:ssg-state_accounts_passwords_pam_faillock_fail_interval_parameter_lower_bound:ste:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_fail_interval_parameter_no_pamd_password:tst:1" version="2" check="all" comment="Check the absence of fail_interval parameter in password-auth" check_existence="none_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_fail_interval_parameter_pamd_password:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_fail_interval_parameter_pamd_password:tst:1" version="2" check="all" comment="Check the expected fail_interval value in password-auth" check_existence="all_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_fail_interval_parameter_pamd_password:obj:1" />
+      <ind:state state_ref="oval:ssg-state_accounts_passwords_pam_faillock_fail_interval_parameter_lower_bound:ste:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_fail_interval_parameter_faillock_conf:tst:1" version="1" check="all" comment="Check the expected fail_interval value in /etc/security/faillock.conf" check_existence="all_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_fail_interval_parameter_faillock_conf:obj:1" />
+      <ind:state state_ref="oval:ssg-state_accounts_passwords_pam_faillock_fail_interval_parameter_lower_bound:ste:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_accounts_passwords_pam_faillock_fail_interval_parameter_no_faillock_conf:tst:1" version="1" check="all" comment="Check the absence of fail_interval parameter in /etc/security/faillock.conf" check_existence="none_exist" state_operator="AND">
+      <ind:object object_ref="oval:ssg-object_accounts_passwords_pam_faillock_fail_interval_parameter_faillock_conf:obj:1" />
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_password_pam_pwquality:tst:1" version="1" check="all" comment="check the configuration of /etc/pam.d/system-auth" state_operator="AND">
+      <ind:object object_ref="oval:ssg-obj_password_pam_pwquality:obj:1" />
+    </ind:textfilecontent54_test>
+  </oval-def:tests>
+  <oval-def:objects>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_password_pam_unix_remember:obj:1" version="1">
+      <ind:filepath>/etc/pam.d/system-auth</ind:filepath>
+      <ind:pattern var_ref="oval:ssg-var_accounts_password_pam_unix_remember_module_regex:var:1" var_check="at least one" operation="pattern match" />
+      <ind:instance datatype="int">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_password_pam_unix_remember_pamd:obj:1" version="1">
+      <ind:filepath>/etc/pam.d/system-auth</ind:filepath>
+      <ind:pattern var_check="at least one" operation="pattern match" var_ref="oval:ssg-var_accounts_password_pam_unix_remember_pam_param_regex:var:1" />
+      <ind:instance datatype="int">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_password_pam_unix_remember_param_conf:obj:1" version="1" comment="Collect the pam_pwhistory.so remember parameter from /etc/security/pwhistory.conf">
+      <ind:filepath operation="pattern match">^/etc/security/pwhistory.conf$</ind:filepath>
+      <ind:pattern operation="pattern match" var_ref="oval:ssg-var_accounts_password_pam_unix_remember_conf_param_regex:var:1" />
+      <ind:instance datatype="int" operation="equals">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_password_pam_unix_remember_legacy:obj:1" version="1">
+      <ind:filepath>/etc/pam.d/system-auth</ind:filepath>
+      <ind:pattern operation="pattern match">^\s*password\s+(?:(?:sufficient)|(?:required)|(?:\[.*\]))\s+pam_unix\.so.*remember=([0-9]*).*$</ind:pattern>
+      <ind:instance datatype="int">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_passwords_pam_faillock_deny_root_system_pam_unix_auth:obj:1" version="1" comment="Get the second and subsequent occurrences of pam_unix.so in auth section of system-auth">
+      <ind:filepath operation="pattern match">^/etc/pam.d/system-auth$</ind:filepath>
+      <ind:pattern operation="pattern match" var_ref="oval:ssg-var_accounts_passwords_pam_faillock_deny_root_pam_unix_regex:var:1" />
+      <ind:instance datatype="int" operation="greater than">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_passwords_pam_faillock_deny_root_password_pam_unix_auth:obj:1" version="1" comment="Get the second and subsequent occurrences of pam_unix.so in auth section of password-auth">
+      <ind:filepath operation="pattern match">^/etc/pam.d/password-auth$</ind:filepath>
+      <ind:pattern operation="pattern match" var_ref="oval:ssg-var_accounts_passwords_pam_faillock_deny_root_pam_unix_regex:var:1" />
+      <ind:instance datatype="int" operation="greater than">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_passwords_pam_faillock_deny_root_system_pam_faillock_auth:obj:1" version="1" comment="Check common definition of pam_faillock.so in auth section of system-auth">
+      <ind:filepath operation="pattern match">^/etc/pam.d/system-auth$</ind:filepath>
+      <ind:pattern operation="pattern match" var_ref="oval:ssg-var_accounts_passwords_pam_faillock_deny_root_pam_faillock_auth_regex:var:1" />
+      <ind:instance datatype="int" operation="equals">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_passwords_pam_faillock_deny_root_system_pam_faillock_account:obj:1" version="1" comment="Check common definition of pam_faillock.so in account section of system-auth">
+      <ind:filepath operation="pattern match">^/etc/pam.d/system-auth$</ind:filepath>
+      <ind:pattern operation="pattern match" var_ref="oval:ssg-var_accounts_passwords_pam_faillock_deny_root_pam_faillock_account_regex:var:1" />
+      <ind:instance datatype="int" operation="equals">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_passwords_pam_faillock_deny_root_password_pam_faillock_auth:obj:1" version="1" comment="Check common definition of pam_faillock.so in auth section of password-auth">
+      <ind:filepath operation="pattern match">^/etc/pam.d/password-auth$</ind:filepath>
+      <ind:pattern operation="pattern match" var_ref="oval:ssg-var_accounts_passwords_pam_faillock_deny_root_pam_faillock_auth_regex:var:1" />
+      <ind:instance datatype="int" operation="equals">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_passwords_pam_faillock_deny_root_password_pam_faillock_account:obj:1" version="1" comment="Check common definition of pam_faillock.so in account section of password-auth">
+      <ind:filepath operation="pattern match">^/etc/pam.d/password-auth$</ind:filepath>
+      <ind:pattern operation="pattern match" var_ref="oval:ssg-var_accounts_passwords_pam_faillock_deny_root_pam_faillock_account_regex:var:1" />
+      <ind:instance datatype="int" operation="equals">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_passwords_pam_faillock_deny_root_parameter_pamd_system:obj:1" version="1" comment="Get the pam_faillock.so even_deny_root parameter from system-auth file">
+      <ind:filepath operation="pattern match">^/etc/pam.d/system-auth$</ind:filepath>
+      <ind:pattern operation="pattern match" var_ref="oval:ssg-var_accounts_passwords_pam_faillock_deny_root_pam_faillock_parameter_regex:var:1" />
+      <ind:instance datatype="int" operation="equals">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_passwords_pam_faillock_deny_root_parameter_pamd_password:obj:1" version="1" comment="Get the pam_faillock.so even_deny_root parameter from password-auth file">
+      <ind:filepath operation="pattern match">^/etc/pam.d/password-auth$</ind:filepath>
+      <ind:pattern operation="pattern match" var_ref="oval:ssg-var_accounts_passwords_pam_faillock_deny_root_pam_faillock_parameter_regex:var:1" />
+      <ind:instance datatype="int" operation="equals">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_passwords_pam_faillock_deny_root_parameter_faillock_conf:obj:1" version="1" comment="Try to get the even_deny_root parameter from /etc/security/faillock.conf">
+      <ind:filepath operation="pattern match">^/etc/security/faillock.conf$</ind:filepath>
+      <ind:pattern operation="pattern match" var_ref="oval:ssg-var_accounts_passwords_pam_faillock_deny_root_faillock_conf_parameter_regex:var:1" />
+      <ind:instance datatype="int" operation="equals">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_etc_profile_tmout:obj:1" version="3">
+      <ind:filepath>/etc/profile</ind:filepath>
+      <ind:pattern operation="pattern match">^[\s]*(?:typeset|declare)[\s]+-xr[\s]+TMOUT=([\w$]+).*$</ind:pattern>
+      <ind:instance operation="greater than or equal" datatype="int">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_etc_profiled_tmout:obj:1" version="3">
+      <ind:path>/etc/profile.d</ind:path>
+      <ind:filename operation="pattern match">^.*\.sh$</ind:filename>
+      <ind:pattern operation="pattern match">^[\s]*(?:typeset|declare)[\s]+-xr[\s]+TMOUT=([\w$]+).*$</ind:pattern>
+      <ind:instance operation="greater than or equal" datatype="int">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_tmout_all_tmout_instances:obj:1" version="1">
+      <oval-def:set>
+        <oval-def:object_reference>oval:ssg-object_etc_profile_tmout:obj:1</oval-def:object_reference>
+        <oval-def:object_reference>oval:ssg-object_etc_profiled_tmout:obj:1</oval-def:object_reference>
+      </oval-def:set>
+    </ind:textfilecontent54_object>
+    <ind:variable_object id="oval:ssg-object_accounts_tmout_defined:obj:1" version="1">
+      <ind:var_ref>oval:ssg-variable_count_of_tmout_instances:var:1</ind:var_ref>
+    </ind:variable_object>
+    <ind:textfilecontent54_object id="oval:ssg-obj_password_pam_pwquality_dcredit:obj:1" version="3">
+      <ind:filepath operation="pattern match">^/etc/security/pwquality\.conf$</ind:filepath>
+      <ind:pattern operation="pattern match">^\s*dcredit[\s]*=[\s]*(-?\d+)(?:[\s]|$)</ind:pattern>
+      <ind:instance datatype="int" operation="greater than or equal">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-obj_password_pam_pwquality_lcredit:obj:1" version="3">
+      <ind:filepath operation="pattern match">^/etc/security/pwquality\.conf$</ind:filepath>
+      <ind:pattern operation="pattern match">^\s*lcredit[\s]*=[\s]*(-?\d+)(?:[\s]|$)</ind:pattern>
+      <ind:instance datatype="int" operation="greater than or equal">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-obj_password_pam_pwquality_minlen:obj:1" version="3">
+      <ind:filepath operation="pattern match">^/etc/security/pwquality\.conf$</ind:filepath>
+      <ind:pattern operation="pattern match">^\s*minlen[\s]*=[\s]*(-?\d+)(?:[\s]|$)</ind:pattern>
+      <ind:instance datatype="int" operation="greater than or equal">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-obj_password_pam_pwquality_ocredit:obj:1" version="3">
+      <ind:filepath operation="pattern match">^/etc/security/pwquality\.conf$</ind:filepath>
+      <ind:pattern operation="pattern match">^\s*ocredit[\s]*=[\s]*(-?\d+)(?:[\s]|$)</ind:pattern>
+      <ind:instance datatype="int" operation="greater than or equal">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-obj_password_pam_pwquality_ucredit:obj:1" version="3">
+      <ind:filepath operation="pattern match">^/etc/security/pwquality\.conf$</ind:filepath>
+      <ind:pattern operation="pattern match">^\s*ucredit[\s]*=[\s]*(-?\d+)(?:[\s]|$)</ind:pattern>
+      <ind:instance datatype="int" operation="greater than or equal">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_passwords_pam_faillock_deny_system_pam_unix_auth:obj:1" version="2" comment="Get the second and subsequent occurrences of pam_unix.so in auth section of system-auth">
+      <ind:filepath>/etc/pam.d/system-auth</ind:filepath>
+      <ind:pattern operation="pattern match" var_ref="oval:ssg-var_accounts_passwords_pam_faillock_deny_pam_unix_regex:var:1" />
+      <ind:instance datatype="int" operation="greater than">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_passwords_pam_faillock_deny_system_pam_faillock_auth:obj:1" version="2" comment="Check common definition of pam_faillock.so in auth section of common-auth">
+      <ind:filepath>/etc/pam.d/system-auth</ind:filepath>
+      <ind:pattern operation="pattern match" var_ref="oval:ssg-var_accounts_passwords_pam_faillock_deny_pam_faillock_auth_regex:var:1" />
+      <ind:instance datatype="int" operation="equals">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_passwords_pam_faillock_deny_password_pam_unix_auth:obj:1" version="2" comment="Get the second and subsequent occurrences of pam_unix.so in auth section of password-auth">
+      <ind:filepath>/etc/pam.d/password-auth</ind:filepath>
+      <ind:pattern operation="pattern match" var_ref="oval:ssg-var_accounts_passwords_pam_faillock_deny_pam_unix_regex:var:1" />
+      <ind:instance datatype="int" operation="greater than">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_passwords_pam_faillock_deny_password_pam_faillock_auth:obj:1" version="2" comment="Check common definition of pam_faillock.so in auth section of common-auth">
+      <ind:filepath>/etc/pam.d/password-auth</ind:filepath>
+      <ind:pattern operation="pattern match" var_ref="oval:ssg-var_accounts_passwords_pam_faillock_deny_pam_faillock_auth_regex:var:1" />
+      <ind:instance datatype="int" operation="equals">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_passwords_pam_faillock_deny_system_pam_faillock_account:obj:1" version="2" comment="Check common definition of pam_faillock.so in account section of system-auth">
+      <ind:filepath>/etc/pam.d/system-auth</ind:filepath>
+      <ind:pattern operation="pattern match" var_ref="oval:ssg-var_accounts_passwords_pam_faillock_deny_pam_faillock_account_regex:var:1" />
+      <ind:instance datatype="int" operation="equals">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_passwords_pam_faillock_deny_password_pam_faillock_account:obj:1" version="2" comment="Check common definition of pam_faillock.so in account section of password-auth">
+      <ind:filepath>/etc/pam.d/password-auth</ind:filepath>
+      <ind:pattern operation="pattern match" var_ref="oval:ssg-var_accounts_passwords_pam_faillock_deny_pam_faillock_account_regex:var:1" />
+      <ind:instance datatype="int" operation="equals">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_passwords_pam_faillock_deny_parameter_pamd_system:obj:1" version="2" comment="Get the pam_faillock.so deny parameter from system-auth file">
+      <ind:filepath>/etc/pam.d/system-auth</ind:filepath>
+      <ind:pattern operation="pattern match" var_ref="oval:ssg-var_accounts_passwords_pam_faillock_deny_pam_faillock_deny_parameter_regex:var:1" />
+      <ind:instance datatype="int" operation="equals">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_passwords_pam_faillock_deny_parameter_pamd_password:obj:1" version="2" comment="Get the pam_faillock.so deny parameter from password-auth file">
+      <ind:filepath>/etc/pam.d/password-auth</ind:filepath>
+      <ind:pattern operation="pattern match" var_ref="oval:ssg-var_accounts_passwords_pam_faillock_deny_pam_faillock_deny_parameter_regex:var:1" />
+      <ind:instance datatype="int" operation="equals">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_passwords_pam_faillock_deny_parameter_faillock_conf:obj:1" version="1" comment="Check the expected pam_faillock.so deny parameter in /etc/security/faillock.conf">
+      <ind:filepath>/etc/security/faillock.conf</ind:filepath>
+      <ind:pattern operation="pattern match" var_ref="oval:ssg-var_accounts_passwords_pam_faillock_deny_faillock_conf_deny_parameter_regex:var:1" />
+      <ind:instance datatype="int" operation="equals">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_passwords_pam_faillock_fail_interval_system_pam_unix_auth:obj:1" version="2" comment="Get the second and subsequent occurrences of pam_unix.so in auth section of system-auth">
+      <ind:filepath>/etc/pam.d/system-auth</ind:filepath>
+      <ind:pattern operation="pattern match" var_ref="oval:ssg-var_accounts_passwords_pam_faillock_fail_interval_pam_unix_regex:var:1" />
+      <ind:instance datatype="int" operation="greater than">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_passwords_pam_faillock_fail_interval_system_pam_faillock_auth:obj:1" version="2" comment="Check common definition of pam_faillock.so in auth section of common-auth">
+      <ind:filepath>/etc/pam.d/system-auth</ind:filepath>
+      <ind:pattern operation="pattern match" var_ref="oval:ssg-var_accounts_passwords_pam_faillock_fail_interval_pam_faillock_auth_regex:var:1" />
+      <ind:instance datatype="int" operation="equals">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_passwords_pam_faillock_fail_interval_password_pam_unix_auth:obj:1" version="2" comment="Get the second and subsequent occurrences of pam_unix.so in auth section of password-auth">
+      <ind:filepath>/etc/pam.d/password-auth</ind:filepath>
+      <ind:pattern operation="pattern match" var_ref="oval:ssg-var_accounts_passwords_pam_faillock_fail_interval_pam_unix_regex:var:1" />
+      <ind:instance datatype="int" operation="greater than">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_passwords_pam_faillock_fail_interval_password_pam_faillock_auth:obj:1" version="2" comment="Check common definition of pam_faillock.so in auth section of common-auth">
+      <ind:filepath>/etc/pam.d/password-auth</ind:filepath>
+      <ind:pattern operation="pattern match" var_ref="oval:ssg-var_accounts_passwords_pam_faillock_fail_interval_pam_faillock_auth_regex:var:1" />
+      <ind:instance datatype="int" operation="equals">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_passwords_pam_faillock_fail_interval_system_pam_faillock_account:obj:1" version="2" comment="Check common definition of pam_faillock.so in account section of system-auth">
+      <ind:filepath>/etc/pam.d/system-auth</ind:filepath>
+      <ind:pattern operation="pattern match" var_ref="oval:ssg-var_accounts_passwords_pam_faillock_fail_interval_pam_faillock_account_regex:var:1" />
+      <ind:instance datatype="int" operation="equals">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_passwords_pam_faillock_fail_interval_password_pam_faillock_account:obj:1" version="2" comment="Check common definition of pam_faillock.so in account section of password-auth">
+      <ind:filepath>/etc/pam.d/password-auth</ind:filepath>
+      <ind:pattern operation="pattern match" var_ref="oval:ssg-var_accounts_passwords_pam_faillock_fail_interval_pam_faillock_account_regex:var:1" />
+      <ind:instance datatype="int" operation="equals">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_passwords_pam_faillock_fail_interval_parameter_pamd_system:obj:1" version="2" comment="Get the pam_faillock.so fail_interval parameter from system-auth file">
+      <ind:filepath>/etc/pam.d/system-auth</ind:filepath>
+      <ind:pattern operation="pattern match" var_ref="oval:ssg-var_accounts_passwords_pam_faillock_fail_interval_pam_faillock_fail_interval_parameter_regex:var:1" />
+      <ind:instance datatype="int" operation="equals">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_passwords_pam_faillock_fail_interval_parameter_pamd_password:obj:1" version="2" comment="Get the pam_faillock.so fail_interval parameter from password-auth file">
+      <ind:filepath>/etc/pam.d/password-auth</ind:filepath>
+      <ind:pattern operation="pattern match" var_ref="oval:ssg-var_accounts_passwords_pam_faillock_fail_interval_pam_faillock_fail_interval_parameter_regex:var:1" />
+      <ind:instance datatype="int" operation="equals">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-object_accounts_passwords_pam_faillock_fail_interval_parameter_faillock_conf:obj:1" version="1" comment="Check the expected pam_faillock.so fail_interval parameter in /etc/security/faillock.conf">
+      <ind:filepath>/etc/security/faillock.conf</ind:filepath>
+      <ind:pattern operation="pattern match" var_ref="oval:ssg-var_accounts_passwords_pam_faillock_fail_interval_faillock_conf_fail_interval_parameter_regex:var:1" />
+      <ind:instance datatype="int" operation="equals">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-obj_password_pam_pwquality:obj:1" version="1">
+      <ind:filepath var_ref="oval:ssg-var_pam_pwquality_config_path:var:1" var_check="at least one" />
+      <ind:pattern operation="pattern match">^\s*password\s+(?:(?:required)|(?:requisite))\s+pam_pwquality\.so.*$</ind:pattern>
+      <ind:instance datatype="int">1</ind:instance>
+    </ind:textfilecontent54_object>
+  </oval-def:objects>
+  <oval-def:states>
+    <ind:textfilecontent54_state id="oval:ssg-state_accounts_password_pam_unix_remember:ste:1" version="1" operator="AND">
+      <ind:subexpression datatype="int" operation="greater than or equal" var_ref="oval:ssg-var_password_pam_unix_remember:var:1" />
+    </ind:textfilecontent54_state>
+    <ind:variable_state id="oval:ssg-state_accounts_tmout_defined:ste:1" version="1" operator="AND">
+      <ind:value operation="greater than or equal" datatype="int">1</ind:value>
+    </ind:variable_state>
+    <ind:textfilecontent54_state id="oval:ssg-state_etc_profile_tmout:ste:1" version="2" operator="AND">
+      <ind:subexpression datatype="int" operation="less than or equal" var_check="all" var_ref="oval:ssg-var_accounts_tmout:var:1" />
+    </ind:textfilecontent54_state>
+    <ind:textfilecontent54_state id="oval:ssg-state_password_pam_dcredit:ste:1" version="3" operator="AND">
+      <ind:subexpression datatype="int" operation="less than or equal" var_ref="oval:ssg-var_password_pam_dcredit:var:1" />
+    </ind:textfilecontent54_state>
+    <ind:textfilecontent54_state id="oval:ssg-state_password_pam_lcredit:ste:1" version="3" operator="AND">
+      <ind:subexpression datatype="int" operation="less than or equal" var_ref="oval:ssg-var_password_pam_lcredit:var:1" />
+    </ind:textfilecontent54_state>
+    <ind:textfilecontent54_state id="oval:ssg-state_password_pam_minlen:ste:1" version="3" operator="AND">
+      <ind:subexpression datatype="int" operation="greater than or equal" var_ref="oval:ssg-var_password_pam_minlen:var:1" />
+    </ind:textfilecontent54_state>
+    <ind:textfilecontent54_state id="oval:ssg-state_password_pam_ocredit:ste:1" version="3" operator="AND">
+      <ind:subexpression datatype="int" operation="less than or equal" var_ref="oval:ssg-var_password_pam_ocredit:var:1" />
+    </ind:textfilecontent54_state>
+    <ind:textfilecontent54_state id="oval:ssg-state_password_pam_ucredit:ste:1" version="3" operator="AND">
+      <ind:subexpression datatype="int" operation="less than or equal" var_ref="oval:ssg-var_password_pam_ucredit:var:1" />
+    </ind:textfilecontent54_state>
+    <ind:textfilecontent54_state id="oval:ssg-state_accounts_passwords_pam_faillock_deny_parameter_upper_bound:ste:1" version="1" operator="AND">
+      <ind:subexpression datatype="int" operation="less than or equal" var_ref="oval:ssg-var_accounts_passwords_pam_faillock_deny:var:1" />
+    </ind:textfilecontent54_state>
+    <ind:textfilecontent54_state id="oval:ssg-state_accounts_passwords_pam_faillock_deny_parameter_lower_bound:ste:1" version="1" operator="AND">
+      <ind:subexpression datatype="int" operation="greater than">0</ind:subexpression>
+    </ind:textfilecontent54_state>
+    <ind:textfilecontent54_state id="oval:ssg-state_accounts_passwords_pam_faillock_fail_interval_parameter_lower_bound:ste:1" version="1" operator="AND">
+      <ind:subexpression datatype="int" operation="greater than or equal" var_ref="oval:ssg-var_accounts_passwords_pam_faillock_fail_interval:var:1" />
+    </ind:textfilecontent54_state>
+  </oval-def:states>
+  <oval-def:variables>
+    <oval-def:external_variable id="oval:ssg-var_password_pam_unix_remember:var:1" version="1" datatype="int" comment="number of passwords that should be remembered" />
+    <oval-def:local_variable id="oval:ssg-var_accounts_password_pam_unix_remember_module_regex:var:1" version="1" datatype="string" comment="The regex is to confirm the pam_pwhistory.so module is enabled">
+      <oval-def:literal_component>^\s*password\s+(?:(?:requisite)|(?:required))\s+pam_pwhistory\.so.*$</oval-def:literal_component>
+    </oval-def:local_variable>
+    <oval-def:local_variable id="oval:ssg-var_accounts_password_pam_unix_remember_pam_param_regex:var:1" version="1" datatype="string" comment="The regex is to collect the pam_pwhistory.so remember paramerter from PAM files">
+      <oval-def:literal_component>^\s*password\b.*\bpam_pwhistory\.so\b.*\bremember=([0-9]*).*$</oval-def:literal_component>
+    </oval-def:local_variable>
+    <oval-def:local_variable id="oval:ssg-var_accounts_password_pam_unix_remember_conf_param_regex:var:1" version="1" datatype="string" comment="The regex is to collect the pam_pwhistory.so remember paramerter in pwhistory.conf">
+      <oval-def:literal_component>^\s*remember\s*=\s*([0-9]+)</oval-def:literal_component>
+    </oval-def:local_variable>
+    <oval-def:constant_variable id="oval:ssg-var_accounts_passwords_pam_faillock_deny_root_pam_unix_regex:var:1" version="1" datatype="string" comment="regex to identify pam_unix.so in auth section of pam files">
+      <oval-def:value>^[\s]*auth\N+pam_unix\.so</oval-def:value>
+    </oval-def:constant_variable>
+    <oval-def:constant_variable id="oval:ssg-var_accounts_passwords_pam_faillock_deny_root_pam_faillock_auth_regex:var:1" version="1" datatype="string" comment="regex to identify pam_faillock.so entries in auth section of pam files">
+      <oval-def:value>^[\s]*auth[\s]+(required|\[(?=.*?\bsuccess=ok\b)(?=.*?\bnew_authtok_reqd=ok\b)(?=.*?\bignore=ignore\b)(?=.*?\bdefault=bad\b).*\])[\s]+pam_faillock\.so[\s\w\d=]+preauth[\s\S]*^[\s]*auth[\s]+(sufficient|\[(?=.*\bsuccess=done\b)(?=.*?\bnew_authtok_reqd=done\b)(?=.*?\bdefault=ignore\b).*\])[\s]+pam_unix\.so[\s\S]*^[\s]*auth[\s]+(required|\[(?=.*?\bsuccess=ok\b)(?=.*?\bnew_authtok_reqd=ok\b)(?=.*?\bignore=ignore\b)(?=.*?\bdefault=bad\b).*\])[\s]+pam_faillock\.so[\s\w\d=]+authfail</oval-def:value>
+    </oval-def:constant_variable>
+    <oval-def:constant_variable id="oval:ssg-var_accounts_passwords_pam_faillock_deny_root_pam_faillock_account_regex:var:1" version="1" datatype="string" comment="regex to identify pam_faillock.so entry in account section of pam files">
+      <oval-def:value>^[\s]*account[\s]+(required|\[(?=.*?\bsuccess=ok\b)(?=.*?\bnew_authtok_reqd=ok\b)(?=.*?\bignore=ignore\b)(?=.*?\bdefault=bad\b).*\])[\s]+pam_faillock\.so[\s\S]*^[\s]*account[\s]+(required|\[(?=.*?\bsuccess=ok\b)(?=.*?\bnew_authtok_reqd=ok\b)(?=.*?\bignore=ignore\b)(?=.*?\bdefault=bad\b).*\])[\s]+pam_unix\.so</oval-def:value>
+    </oval-def:constant_variable>
+    <oval-def:constant_variable id="oval:ssg-var_accounts_passwords_pam_faillock_deny_root_pam_faillock_parameter_regex:var:1" version="1" datatype="string" comment="regex to identify pam_faillock.so deny entry in auth section of pam files">
+      <oval-def:value>^[\s]*auth[\s]+.+[\s]+pam_faillock.so[\s]+[^\n]*even_deny_root</oval-def:value>
+    </oval-def:constant_variable>
+    <oval-def:constant_variable id="oval:ssg-var_accounts_passwords_pam_faillock_deny_root_faillock_conf_parameter_regex:var:1" version="1" datatype="string" comment="regex to identify deny entry in /etc/security/faillock.conf">
+      <oval-def:value>^[\s]*even_deny_root</oval-def:value>
+    </oval-def:constant_variable>
+    <oval-def:local_variable id="oval:ssg-variable_count_of_tmout_instances:var:1" version="1" datatype="int" comment="Count of TMOUT instances">
+      <oval-def:count>
+        <oval-def:object_component object_ref="oval:ssg-object_accounts_tmout_all_tmout_instances:obj:1" item_field="text" />
+      </oval-def:count>
+    </oval-def:local_variable>
+    <oval-def:external_variable id="oval:ssg-var_accounts_tmout:var:1" version="1" datatype="int" comment="external variable for TMOUT" />
+    <oval-def:external_variable id="oval:ssg-var_password_pam_dcredit:var:1" version="3" datatype="int" comment="External variable for pam_dcredit" />
+    <oval-def:external_variable id="oval:ssg-var_password_pam_lcredit:var:1" version="3" datatype="int" comment="External variable for pam_lcredit" />
+    <oval-def:external_variable id="oval:ssg-var_password_pam_minlen:var:1" version="3" datatype="int" comment="External variable for pam_minlen" />
+    <oval-def:external_variable id="oval:ssg-var_password_pam_ocredit:var:1" version="3" datatype="int" comment="External variable for pam_ocredit" />
+    <oval-def:external_variable id="oval:ssg-var_password_pam_ucredit:var:1" version="3" datatype="int" comment="External variable for pam_ucredit" />
+    <oval-def:constant_variable id="oval:ssg-var_accounts_passwords_pam_faillock_deny_pam_unix_regex:var:1" version="2" datatype="string" comment="regex to identify pam_unix.so in auth section of pam files">
+      <oval-def:value>^\s*auth\N+pam_unix\.so</oval-def:value>
+    </oval-def:constant_variable>
+    <oval-def:constant_variable id="oval:ssg-var_accounts_passwords_pam_faillock_deny_pam_faillock_auth_regex:var:1" version="2" datatype="string" comment="regex to identify pam_faillock.so entries in auth section of pam files">
+      <oval-def:value>^[\s]*auth[\s]+(required|\[(?=.*?\bsuccess=ok\b)(?=.*?\bnew_authtok_reqd=ok\b)(?=.*?\bignore=ignore\b)(?=.*?\bdefault=bad\b).*\])[\s]+pam_faillock\.so[\s\w\d=]+preauth[\s\S]*^[\s]*auth[\s]+(sufficient|\[(?=.*\bsuccess=done\b)(?=.*?\bnew_authtok_reqd=done\b)(?=.*?\bdefault=ignore\b).*\])[\s]+pam_unix\.so[\s\S]*^[\s]*auth[\s]+(required|\[(?=.*?\bsuccess=ok\b)(?=.*?\bnew_authtok_reqd=ok\b)(?=.*?\bignore=ignore\b)(?=.*?\bdefault=bad\b).*\])[\s]+pam_faillock\.so[\s\w\d=]+authfail</oval-def:value>
+    </oval-def:constant_variable>
+    <oval-def:constant_variable id="oval:ssg-var_accounts_passwords_pam_faillock_deny_pam_faillock_account_regex:var:1" version="2" datatype="string" comment="regex to identify pam_faillock.so entry in account section of pam files">
+      <oval-def:value>^[\s]*account[\s]+(required|\[(?=.*?\bsuccess=ok\b)(?=.*?\bnew_authtok_reqd=ok\b)(?=.*?\bignore=ignore\b)(?=.*?\bdefault=bad\b).*\])[\s]+pam_faillock\.so[\s\S]*^[\s]*account[\s]+(required|\[(?=.*?\bsuccess=ok\b)(?=.*?\bnew_authtok_reqd=ok\b)(?=.*?\bignore=ignore\b)(?=.*?\bdefault=bad\b).*\])[\s]+pam_unix\.so</oval-def:value>
+    </oval-def:constant_variable>
+    <oval-def:constant_variable id="oval:ssg-var_accounts_passwords_pam_faillock_deny_pam_faillock_deny_parameter_regex:var:1" version="1" datatype="string" comment="regex to identify pam_faillock.so deny entry in auth section of pam files">
+      <oval-def:value>^[\s]*auth[\s]+.+[\s]+pam_faillock.so[\s]+[^\n]*deny=([0-9]+)</oval-def:value>
+    </oval-def:constant_variable>
+    <oval-def:constant_variable id="oval:ssg-var_accounts_passwords_pam_faillock_deny_faillock_conf_deny_parameter_regex:var:1" version="1" datatype="string" comment="regex to identify deny entry in /etc/security/faillock.conf">
+      <oval-def:value>^[\s]*deny[\s]*=[\s]*([0-9]+)</oval-def:value>
+    </oval-def:constant_variable>
+    <oval-def:external_variable id="oval:ssg-var_accounts_passwords_pam_faillock_deny:var:1" version="1" datatype="int" comment="external variable to use" />
+    <oval-def:constant_variable id="oval:ssg-var_accounts_passwords_pam_faillock_fail_interval_pam_unix_regex:var:1" version="2" datatype="string" comment="regex to identify pam_unix.so in auth section of pam files">
+      <oval-def:value>^\s*auth\N+pam_unix\.so</oval-def:value>
+    </oval-def:constant_variable>
+    <oval-def:constant_variable id="oval:ssg-var_accounts_passwords_pam_faillock_fail_interval_pam_faillock_auth_regex:var:1" version="2" datatype="string" comment="regex to identify pam_faillock.so entries in auth section of pam files">
+      <oval-def:value>^[\s]*auth[\s]+(required|\[(?=.*?\bsuccess=ok\b)(?=.*?\bnew_authtok_reqd=ok\b)(?=.*?\bignore=ignore\b)(?=.*?\bdefault=bad\b).*\])[\s]+pam_faillock\.so[\s\w\d=]+preauth[\s\S]*^[\s]*auth[\s]+(sufficient|\[(?=.*\bsuccess=done\b)(?=.*?\bnew_authtok_reqd=done\b)(?=.*?\bdefault=ignore\b).*\])[\s]+pam_unix\.so[\s\S]*^[\s]*auth[\s]+(required|\[(?=.*?\bsuccess=ok\b)(?=.*?\bnew_authtok_reqd=ok\b)(?=.*?\bignore=ignore\b)(?=.*?\bdefault=bad\b).*\])[\s]+pam_faillock\.so[\s\w\d=]+authfail</oval-def:value>
+    </oval-def:constant_variable>
+    <oval-def:constant_variable id="oval:ssg-var_accounts_passwords_pam_faillock_fail_interval_pam_faillock_account_regex:var:1" version="2" datatype="string" comment="regex to identify pam_faillock.so entry in account section of pam files">
+      <oval-def:value>^[\s]*account[\s]+(required|\[(?=.*?\bsuccess=ok\b)(?=.*?\bnew_authtok_reqd=ok\b)(?=.*?\bignore=ignore\b)(?=.*?\bdefault=bad\b).*\])[\s]+pam_faillock\.so[\s\S]*^[\s]*account[\s]+(required|\[(?=.*?\bsuccess=ok\b)(?=.*?\bnew_authtok_reqd=ok\b)(?=.*?\bignore=ignore\b)(?=.*?\bdefault=bad\b).*\])[\s]+pam_unix\.so</oval-def:value>
+    </oval-def:constant_variable>
+    <oval-def:constant_variable id="oval:ssg-var_accounts_passwords_pam_faillock_fail_interval_pam_faillock_fail_interval_parameter_regex:var:1" version="1" datatype="string" comment="regex to identify pam_faillock.so fail_interval entry in auth section of pam files">
+      <oval-def:value>^[\s]*auth[\s]+.+[\s]+pam_faillock.so[\s]+[^\n]*fail_interval=([0-9]+)</oval-def:value>
+    </oval-def:constant_variable>
+    <oval-def:constant_variable id="oval:ssg-var_accounts_passwords_pam_faillock_fail_interval_faillock_conf_fail_interval_parameter_regex:var:1" version="1" datatype="string" comment="regex to identify fail_interval entry in /etc/security/faillock.conf">
+      <oval-def:value>^[\s]*fail_interval[\s]*=[\s]*([0-9]+)</oval-def:value>
+    </oval-def:constant_variable>
+    <oval-def:external_variable id="oval:ssg-var_accounts_passwords_pam_faillock_fail_interval:var:1" version="1" datatype="int" comment="external variable to use" />
+    <oval-def:constant_variable id="oval:ssg-var_pam_pwquality_config_path:var:1" version="1" datatype="string" comment="correct path for pam_pwquality.so check">
+      <oval-def:value>/etc/pam.d/system-auth</oval-def:value>
+    </oval-def:constant_variable>
+  </oval-def:variables>
+</oval-def:oval_definitions>

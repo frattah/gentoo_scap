@@ -1,0 +1,57 @@
+description: ' To properly set the permissions of <code>/etc/ipsec.d</code>, run the
+    command: <pre>$ sudo chmod 0700 /etc/ipsec.d</pre>'
+rationale: 'Setting correct permissions on the /etc/ipsec.d directory is important
+
+    because this directory hosts Libreswan configuration. Protection of this
+
+    directory is critical for system security. Restricting the permissions
+
+    ensures exclusive control of the Libreswan configuration.'
+severity: medium
+references:
+    anssi:
+    - R50
+components:
+- libreswan
+identifiers: {}
+ocil_clause: /etc/ipsec.d does not have unix mode 0700
+ocil: 'To check the permissions of <code>/etc/ipsec.d</code>,
+
+    run the command:
+
+    <pre>$ ls -l /etc/ipsec.d</pre>
+
+    If properly configured, the output should indicate the following permissions:
+
+    <code>0700</code>'
+oval_external_content: null
+fixtext: ' Configure the "/etc/ipsec.d" file to "0700" by running the following command:
+
+    $ sudo chmod 0700 /etc/ipsec.d'
+checktext: ''
+vuldiscussion: ''
+srg_requirement: ' The Gentoo /etc/ipsec.d file must have mode 0700 or less permissive
+    to prevent unauthorized access.'
+warnings: []
+conflicts: []
+requires: []
+policy_specific_content: {}
+platform: package[libreswan]
+platforms: !!set
+    package[libreswan]: null
+sce_metadata: {}
+inherited_platforms: !!set {}
+cpe_platform_names: !!set
+    package_libreswan: null
+inherited_cpe_platform_names: !!set {}
+bash_conditional: null
+fixes: {}
+title: Verify Permissions On /etc/ipsec.d Directory
+definition_location: /home/frattah/old/linux_os/guide/system/network/network-ipsec/directory_permissions_etc_ipsecd/rule.yml
+template:
+    name: file_permissions
+    vars:
+        filepath: /etc/ipsec.d/
+        filemode: '0700'
+    backends: {}
+documentation_complete: true

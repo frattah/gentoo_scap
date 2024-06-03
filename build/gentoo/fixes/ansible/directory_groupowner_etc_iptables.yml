@@ -1,0 +1,29 @@
+# platform = multi_platform_all
+# reboot = false
+# strategy = configure
+# complexity = low
+# disruption = low
+- name: Gather the package facts
+  package_facts:
+    manager: auto
+  tags:
+  - configure_strategy
+  - directory_groupowner_etc_iptables
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+
+- name: Ensure group owner on /etc/iptables/
+  file:
+    path: /etc/iptables/
+    state: directory
+    group: root
+  when: '"iptables" in ansible_facts.packages'
+  tags:
+  - configure_strategy
+  - directory_groupowner_etc_iptables
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed

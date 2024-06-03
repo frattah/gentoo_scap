@@ -1,0 +1,25 @@
+# platform = multi_platform_rhel,multi_platform_fedora,multi_platform_ol,multi_platform_rhv,SUSE Linux Enterprise 15
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+
+
+
+
+
+- name: "Disable the pppd_can_insmod SELinux Boolean - Ensure libsemanage-python Installed"
+  package:
+    name: "libsemanage-python"
+    state: present
+
+
+
+
+- (xccdf-var var_pppd_can_insmod)
+- name: "Disable the pppd_can_insmod SELinux Boolean - Set SELinux Boolean pppd_can_insmod Accordingly"
+  seboolean:
+    name: pppd_can_insmod
+    state: "{{ var_pppd_can_insmod }}"
+    persistent: yes
+  when: ansible_facts.selinux.status == 'enabled'  

@@ -1,0 +1,25 @@
+# platform = multi_platform_rhel,multi_platform_fedora,multi_platform_ol,multi_platform_rhv,SUSE Linux Enterprise 15
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+
+
+
+
+
+- name: "Disable the xen_use_nfs SELinux Boolean - Ensure libsemanage-python Installed"
+  package:
+    name: "libsemanage-python"
+    state: present
+
+
+
+
+- (xccdf-var var_xen_use_nfs)
+- name: "Disable the xen_use_nfs SELinux Boolean - Set SELinux Boolean xen_use_nfs Accordingly"
+  seboolean:
+    name: xen_use_nfs
+    state: "{{ var_xen_use_nfs }}"
+    persistent: yes
+  when: ansible_facts.selinux.status == 'enabled'  

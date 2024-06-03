@@ -1,0 +1,5 @@
+name: emerge
+packages:
+- emerge
+rules:
+- clean_components_post_updating

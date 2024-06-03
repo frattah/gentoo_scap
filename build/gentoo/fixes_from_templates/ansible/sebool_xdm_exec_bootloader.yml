@@ -1,0 +1,25 @@
+# platform = multi_platform_rhel,multi_platform_fedora,multi_platform_ol,multi_platform_rhv,SUSE Linux Enterprise 15
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+
+
+
+
+
+- name: "Disable the xdm_exec_bootloader SELinux Boolean - Ensure libsemanage-python Installed"
+  package:
+    name: "libsemanage-python"
+    state: present
+
+
+
+
+- (xccdf-var var_xdm_exec_bootloader)
+- name: "Disable the xdm_exec_bootloader SELinux Boolean - Set SELinux Boolean xdm_exec_bootloader Accordingly"
+  seboolean:
+    name: xdm_exec_bootloader
+    state: "{{ var_xdm_exec_bootloader }}"
+    persistent: yes
+  when: ansible_facts.selinux.status == 'enabled'  

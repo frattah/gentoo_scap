@@ -1,0 +1,25 @@
+# platform = multi_platform_rhel,multi_platform_fedora,multi_platform_ol,multi_platform_rhv,SUSE Linux Enterprise 15
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+
+
+
+
+
+- name: "Disable the httpd_setrlimit SELinux Boolean - Ensure libsemanage-python Installed"
+  package:
+    name: "libsemanage-python"
+    state: present
+
+
+
+
+- (xccdf-var var_httpd_setrlimit)
+- name: "Disable the httpd_setrlimit SELinux Boolean - Set SELinux Boolean httpd_setrlimit Accordingly"
+  seboolean:
+    name: httpd_setrlimit
+    state: "{{ var_httpd_setrlimit }}"
+    persistent: yes
+  when: ansible_facts.selinux.status == 'enabled'  

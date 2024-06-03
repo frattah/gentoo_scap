@@ -1,0 +1,57 @@
+description: ' To properly set the permissions of <code>/etc/nftables</code>, run
+    the command: <pre>$ sudo chmod 0700 /etc/nftables</pre>'
+rationale: 'Setting correct permissions on the /etc/nftables directory is important
+
+    because this directory hosts nftables configuration. Protection of this
+
+    directory is critical for system security. Restricting the permissions
+
+    ensures exclusive control of the nftables configuration.'
+severity: medium
+references:
+    anssi:
+    - R50
+components:
+- nftables
+identifiers: {}
+ocil_clause: /etc/nftables does not have unix mode 0700
+ocil: 'To check the permissions of <code>/etc/nftables</code>,
+
+    run the command:
+
+    <pre>$ ls -l /etc/nftables</pre>
+
+    If properly configured, the output should indicate the following permissions:
+
+    <code>0700</code>'
+oval_external_content: null
+fixtext: ' Configure the "/etc/nftables" file to "0700" by running the following command:
+
+    $ sudo chmod 0700 /etc/nftables'
+checktext: ''
+vuldiscussion: ''
+srg_requirement: ' The Gentoo /etc/nftables file must have mode 0700 or less permissive
+    to prevent unauthorized access.'
+warnings: []
+conflicts: []
+requires: []
+policy_specific_content: {}
+platform: package[nftables]
+platforms: !!set
+    package[nftables]: null
+sce_metadata: {}
+inherited_platforms: !!set {}
+cpe_platform_names: !!set
+    package_nftables: null
+inherited_cpe_platform_names: !!set {}
+bash_conditional: null
+fixes: {}
+title: Verify Permissions On /etc/nftables Directory
+definition_location: /home/frattah/old/linux_os/guide/system/network/network-nftables/directory_permissions_etc_nftables/rule.yml
+template:
+    name: file_permissions
+    vars:
+        filepath: /etc/nftables/
+        filemode: '0700'
+    backends: {}
+documentation_complete: true

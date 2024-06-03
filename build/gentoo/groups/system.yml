@@ -1,0 +1,25 @@
+description: Contains rules that check correct system settings.
+warnings: []
+requires: []
+conflicts: []
+values: {}
+groups:
+- accounts
+- apparmor
+- bootloader-grub2
+- bootloader-zipl
+- entropy
+- kernel_build_config
+- logging
+- network
+- permissions
+- selinux
+- software
+rules: {}
+platform: ''
+platforms: !!set {}
+inherited_platforms: !!set {}
+cpe_platform_names: !!set {}
+title: System Settings
+definition_location: /home/frattah/old/linux_os/guide/system/group.yml
+documentation_complete: true

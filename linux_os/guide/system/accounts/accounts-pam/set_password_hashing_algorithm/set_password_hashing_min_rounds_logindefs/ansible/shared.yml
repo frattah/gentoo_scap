@@ -1,0 +1,19 @@
+# platform = multi_platform_all
+# reboot = false
+# strategy = restrict
+# complexity = low
+# disruption = low
+
+- name: "{{{ rule_title }}} - Ensure SHA_CRYPT_MIN_ROUNDS has Minimum Value of 5000"
+  ansible.builtin.replace:
+    path: /etc/login.defs
+    regexp: '(^\s*SHA_CRYPT_MIN_ROUNDS\s+)(?!(?:[5-9]\d{3,}|\d{5,}))\S*(\s*$)'
+    replace: '\g<1>5000\g<2>'
+    backup: no
+
+- name: "{{{ rule_title }}} - Ensure SHA_CRYPT_MAX_ROUNDS has Minimum Value of 5000"
+  ansible.builtin.replace:
+    path: /etc/login.defs
+    regexp: '(^\s*SHA_CRYPT_MAX_ROUNDS\s+)(?!(?:[5-9]\d{3,}|\d{5,}))\S*(\s*$)'
+    replace: '\g<1>5000\g<2>'
+    backup: no

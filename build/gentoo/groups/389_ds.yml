@@ -1,0 +1,15 @@
+description: 389 Directory Server is a popular open-source LDAP server for Linux.
+warnings: []
+requires: []
+conflicts: []
+values: {}
+groups: {}
+rules:
+- package_389-ds-base_removed
+platform: ''
+platforms: !!set {}
+inherited_platforms: !!set {}
+cpe_platform_names: !!set {}
+title: 389 Directory Server
+definition_location: /home/frattah/old/linux_os/guide/services/ldap/389_ds/group.yml
+documentation_complete: true

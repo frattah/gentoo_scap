@@ -1,0 +1,18 @@
+# platform = multi_platform_all
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+- name: "Verify nftables Service is Enabled - Enable service nftables"
+  block:
+  - name: Gather the package facts
+    package_facts:
+      manager: auto
+  - name: "Verify nftables Service is Enabled - Enable Service nftables"
+    ansible.builtin.systemd:
+      name: "nftables"
+      enabled: true
+      state: "started"
+      masked: false
+    when:
+    - '"nftables" in ansible_facts.packages'

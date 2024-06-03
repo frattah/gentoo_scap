@@ -1,0 +1,66 @@
+description: 'The System.map files are symbol map files generated during the compilation
+    of the Linux
+
+    kernel. They contain the mapping between kernel symbols and their corresponding
+    memory
+
+    addresses. In general, there is no need for non-root users to read these files.
+
+
+
+    To properly set the permissions of <code>/boot/System.map*</code>, run the command:
+
+    <pre>$ sudo chmod 0600 /boot/System.map*</pre>'
+rationale: 'The purpose of <tt>System.map</tt> files is primarily for debugging and
+    profiling the kernel.
+
+    Unrestricted access to these files might disclose information useful to attackers
+    and
+
+    malicious software leading to more sophisticated exploitation.'
+severity: low
+references:
+    anssi:
+    - R29
+components:
+- filesystem
+identifiers: {}
+ocil_clause: /boot/System.map* does not have unix mode -rw-------
+ocil: 'To check the permissions of <code>/boot/System.map*</code>,
+
+    run the command:
+
+    <pre>$ ls -l /boot/System.map*</pre>
+
+    If properly configured, the output should indicate the following permissions:
+
+    <code>-rw-------</code>'
+oval_external_content: null
+fixtext: ''
+checktext: ''
+vuldiscussion: ''
+srg_requirement: ''
+warnings: []
+conflicts: []
+requires: []
+policy_specific_content: {}
+platform: null
+platforms: !!set {}
+sce_metadata: {}
+inherited_platforms: !!set {}
+cpe_platform_names: !!set {}
+inherited_cpe_platform_names: !!set {}
+bash_conditional: null
+fixes: {}
+title: Verify Permissions on System.map Files
+definition_location: /home/frattah/old/linux_os/guide/system/permissions/files/file_permissions_systemmap/rule.yml
+template:
+    name: file_permissions
+    vars:
+        filepath: /boot/
+        file_regex: ^.*System\.map.*$
+        filemode: '0600'
+        allow_stricter_permissions: 'true'
+        missing_file_pass: 'true'
+    backends: {}
+documentation_complete: true

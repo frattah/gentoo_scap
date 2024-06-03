@@ -1,0 +1,357 @@
+name: cpe:/a:{arg}:{ver_specs_cpe}
+check_id: ''
+bash_conditional: ''
+ansible_conditional: ''
+is_product_cpe: false
+versioned: true
+args:
+    emerge:
+        pkgname: portage
+    aide:
+        pkgname: aide
+        id: package_aide
+        name: package
+        arg: aide
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    apparmor:
+        pkgname: apparmor
+        id: package_apparmor
+        name: package
+        arg: apparmor
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    apport:
+        pkgname: apport
+        id: package_apport
+        name: package
+        arg: apport
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    audit:
+        pkgname: audit
+        id: package_audit
+        name: package
+        arg: audit
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    autofs:
+        pkgname: autofs
+        id: package_autofs
+        name: package
+        arg: autofs
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    avahi:
+        pkgname: avahi
+        id: package_avahi
+        name: package
+        arg: avahi
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    bash:
+        pkgname: bash
+        id: package_bash
+        name: package
+        arg: bash
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    bind:
+        pkgname: bind
+        id: package_bind
+        name: package
+        arg: bind
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    chrony:
+        pkgname: chrony
+        id: package_chrony
+        name: package
+        arg: chrony
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    dnf:
+        pkgname: dnf
+    firewalld:
+        pkgname: firewalld
+        id: package_firewalld
+        name: package
+        arg: firewalld
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    gdm:
+        pkgname: gdm
+        id: package_gdm
+        name: package
+        arg: gdm
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    iptables:
+        pkgname: iptables
+        id: package_iptables
+        name: package
+        arg: iptables
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    libreswan:
+        pkgname: libreswan
+        id: package_libreswan
+        name: package
+        arg: libreswan
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    libuser:
+        pkgname: libuser
+        id: package_libuser
+        name: package
+        arg: libuser
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    logrotate:
+        pkgname: logrotate
+        id: package_logrotate
+        name: package
+        arg: logrotate
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    net-snmp:
+        pkgname: net-snmp
+        id: package_net-snmp
+        name: package
+        arg: net-snmp
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    networkmanager:
+        pkgname: NetworkManager
+        id: package_networkmanager
+        name: package
+        arg: networkmanager
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    nftables:
+        pkgname: nftables
+        id: package_nftables
+        name: package
+        arg: nftables
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    nss-pam-ldapd:
+        pkgname: nss-pam-ldapd
+        id: package_nss-pam-ldapd
+        name: package
+        arg: nss-pam-ldapd
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    ntp:
+        pkgname: ntp
+        title: NTP daemon and utilities
+        id: package_ntp
+        name: package
+        arg: ntp
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    openssh:
+        pkgname: openssh
+    pam:
+        pkgname: pam
+        id: package_pam
+        name: package
+        arg: pam
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    pam_apparmor:
+        pkgname: pam_apparmor
+        id: package_pam_apparmor
+        name: package
+        arg: pam_apparmor
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    polkit:
+        pkgname: polkit
+        id: package_polkit
+        name: package
+        arg: polkit
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    postfix:
+        pkgname: postfix
+        id: package_postfix
+        name: package
+        arg: postfix
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    rsh-server:
+        pkgname: rsh-server
+        id: package_rsh-server
+        name: package
+        arg: rsh-server
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    shadow-utils:
+        pkgname: shadow-utils
+        id: package_shadow-utils
+        name: package
+        arg: shadow-utils
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    snmpd:
+        pkgname: net-snmp
+        id: package_snmpd
+        name: package
+        arg: snmpd
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    squid:
+        pkgname: squid
+        id: package_squid
+        name: package
+        arg: squid
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    sssd:
+        pkgname: sssd-common
+        id: package_sssd
+        name: package
+        arg: sssd
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    sudo:
+        pkgname: sudo
+        id: package_sudo
+        name: package
+        arg: sudo
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    systemd:
+        pkgname: systemd
+        id: package_systemd
+        name: package
+        arg: systemd
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    telnet-server:
+        pkgname: telnet-server
+        id: package_telnet-server
+        name: package
+        arg: telnet-server
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    tftp-server:
+        pkgname: tftp-server
+        id: package_tftp-server
+        name: package
+        arg: tftp-server
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    tmux:
+        pkgname: tmux
+        id: package_tmux
+        name: package
+        arg: tmux
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    ufw:
+        pkgname: ufw
+        id: package_ufw
+        name: package
+        arg: ufw
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    usbguard:
+        pkgname: usbguard
+        id: package_usbguard
+        name: package
+        arg: usbguard
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    yum:
+        pkgname: yum
+        id: package_yum
+        name: package
+        arg: yum
+        ver_specs: []
+        ver_specs_id: ''
+        ver_specs_cpe: ''
+        ver_specs_title: ''
+    zypper:
+        pkgname: zypper
+    apt_get:
+        pkgname: apt
+content_id: ssg
+title: Package {pkgname} is installed
+definition_location: /home/frattah/old/shared/applicability/package.yml
+template:
+    name: platform_package
+documentation_complete: true

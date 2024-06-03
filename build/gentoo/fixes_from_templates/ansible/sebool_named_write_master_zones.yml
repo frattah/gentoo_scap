@@ -1,0 +1,25 @@
+# platform = multi_platform_rhel,multi_platform_fedora,multi_platform_ol,multi_platform_rhv,SUSE Linux Enterprise 15
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+
+
+
+
+
+- name: "Disable the named_write_master_zones SELinux Boolean - Ensure libsemanage-python Installed"
+  package:
+    name: "libsemanage-python"
+    state: present
+
+
+
+
+- (xccdf-var var_named_write_master_zones)
+- name: "Disable the named_write_master_zones SELinux Boolean - Set SELinux Boolean named_write_master_zones Accordingly"
+  seboolean:
+    name: named_write_master_zones
+    state: "{{ var_named_write_master_zones }}"
+    persistent: yes
+  when: ansible_facts.selinux.status == 'enabled'  

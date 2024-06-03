@@ -1,0 +1,50 @@
+description: "Verify that an Endpoint Security Solution has been deployed on the operating
+    system.  \nIf there is not an Endpoint Security Solution deployed, this is a finding."
+rationale: 'Without the use of automated mechanisms to scan for security flaws on
+    a continuous
+
+    and/or periodic basis, the operating system or other system components may remain
+
+    vulnerable to the exploits presented by undetected software flaws.
+
+
+    To support this requirement, the operating system may have an integrated solution
+
+    incorporating continuous scanning and periodic scanning using other tools,
+
+    as specified in the requirement.'
+severity: medium
+references:
+    disa:
+    - CCI-001233
+components:
+- operating-system
+identifiers: {}
+ocil_clause: null
+ocil: null
+oval_external_content: null
+fixtext: 'Install an Endpoint Security Solution that can provide a continuous mechanism
+    to
+
+    monitor the state of system components with regard to flaw remediation and
+
+    threat prevention.'
+checktext: ''
+vuldiscussion: ''
+srg_requirement: ''
+warnings: []
+conflicts: []
+requires: []
+policy_specific_content: {}
+platform: null
+platforms: !!set {}
+sce_metadata: {}
+inherited_platforms: !!set {}
+cpe_platform_names: !!set {}
+inherited_cpe_platform_names: !!set {}
+bash_conditional: null
+fixes: {}
+title: Install an Endpoint Security Solution
+definition_location: /home/frattah/old/linux_os/guide/system/software/integrity/endpoint_security_software/install_endpoint_security_software/rule.yml
+template: null
+documentation_complete: true

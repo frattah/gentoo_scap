@@ -1,0 +1,15 @@
+# platform = multi_platform_all
+# reboot = false
+# strategy = configure
+# complexity = low
+# disruption = low
+
+- name: Ensure owner on directory /etc/iptables/
+  file:
+    path: "/etc/iptables/"
+    state: directory
+
+    owner: "0"
+
+
+

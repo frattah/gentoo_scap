@@ -1,0 +1,16 @@
+name: machine_and_package_nftables_and_service_disabled_firewalld
+original_expression: machine and package[nftables] and service_disabled[firewalld]
+xml_content: <ns0:platform xmlns:ns0="http://cpe.mitre.org/language/2.0" id="machine_and_package_nftables_and_service_disabled_firewalld"><ns0:logical-test
+    operator="AND" negate="false"><ns0:check-fact-ref system="http://oval.mitre.org/XMLSchema/oval-definitions-5"
+    href="ssg-gentoo-cpe-oval.xml" id-ref="oval:ssg-installed_env_is_a_machine:def:1"
+    /><ns0:check-fact-ref system="http://oval.mitre.org/XMLSchema/oval-definitions-5"
+    href="ssg-gentoo-cpe-oval.xml" id-ref="oval:ssg-package_nftables:def:1" /><ns0:check-fact-ref
+    system="http://oval.mitre.org/XMLSchema/oval-definitions-5" href="ssg-gentoo-cpe-oval.xml"
+    id-ref="oval:ssg-service_disabled_firewalld:def:1" /></ns0:logical-test></ns0:platform>
+bash_conditional: ( [ ! -f /.dockerenv ] && [ ! -f /run/.containerenv ] && rpm --quiet
+    -q nftables )
+ansible_conditional: ( ansible_virtualization_type not in ["docker", "lxc", "openvz",
+    "podman", "container"] and "nftables" in ansible_facts.packages )
+title: ''
+definition_location: /home/frattah/old/build/gentoo/platforms/machine_and_package_nftables_and_service_disabled_firewalld.yml
+documentation_complete: true

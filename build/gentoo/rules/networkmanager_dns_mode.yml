@@ -1,0 +1,65 @@
+description: The DNS processing mode in NetworkManager describes how DNS is processed
+    on the system. Depending the mode some changes the system's DNS may not be respected.
+rationale: To ensure that DNS resolver settings are respected, a DNS mode in NetworkManager
+    must be configured.
+severity: medium
+references:
+    disa:
+    - CCI-000366
+    nist:
+    - CM-6(b)
+    srg:
+    - SRG-OS-000480-GPOS-00227
+components:
+- NetworkManager
+identifiers: {}
+ocil_clause: the dns key under main does not exist or is not set to "none" or "default"
+ocil: 'Verify that Gentoo has a DNS mode configured in Network Manager.
+
+
+    $ NetworkManager --print-config
+
+    [main]
+
+    dns=<sub idref="var_networkmanager_dns_mode" />'
+oval_external_content: null
+fixtext: ''
+checktext: ''
+vuldiscussion: ''
+srg_requirement: ''
+warnings: []
+conflicts: []
+requires: []
+policy_specific_content:
+    stig:
+        checktext: '[main]
+
+            dns=none
+
+
+            If the dns key under main does not exist or is not set to "none" or "default",
+            this is a finding.'
+        fixtext: 'Configure NetworkManager in RHEL 9 to use a DNS mode.
+
+
+            In "/etc/NetworkManager/NetworkManager.conf" add the following line in
+            the "[main]" section:
+
+
+            dns = none'
+        srg_requirement: '{{ full_name }} must configure a DNS processing mode set
+            be Network Manager.'
+platform: package[NetworkManager]
+platforms: !!set
+    package[NetworkManager]: null
+sce_metadata: {}
+inherited_platforms: !!set {}
+cpe_platform_names: !!set
+    package_networkmanager: null
+inherited_cpe_platform_names: !!set {}
+bash_conditional: null
+fixes: {}
+title: NetworkManager DNS Mode Must Be Must Configured
+definition_location: /home/frattah/old/linux_os/guide/system/network/networkmanager/networkmanager_dns_mode/rule.yml
+template: null
+documentation_complete: true

@@ -1,0 +1,12 @@
+name: cpe:/a:selinux
+check_id: selinux_is_enabled
+bash_conditional: ''
+ansible_conditional: ''
+is_product_cpe: false
+versioned: false
+args: {}
+content_id: ssg
+title: SELinux enabled on system
+definition_location: /home/frattah/old/shared/applicability/selinux.yml
+template: null
+documentation_complete: true

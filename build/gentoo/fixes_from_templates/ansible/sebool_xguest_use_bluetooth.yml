@@ -1,0 +1,25 @@
+# platform = multi_platform_rhel,multi_platform_fedora,multi_platform_ol,multi_platform_rhv,SUSE Linux Enterprise 15
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+
+
+
+
+
+- name: "Disable the xguest_use_bluetooth SELinux Boolean - Ensure libsemanage-python Installed"
+  package:
+    name: "libsemanage-python"
+    state: present
+
+
+
+
+- (xccdf-var var_xguest_use_bluetooth)
+- name: "Disable the xguest_use_bluetooth SELinux Boolean - Set SELinux Boolean xguest_use_bluetooth Accordingly"
+  seboolean:
+    name: xguest_use_bluetooth
+    state: "{{ var_xguest_use_bluetooth }}"
+    persistent: yes
+  when: ansible_facts.selinux.status == 'enabled'  

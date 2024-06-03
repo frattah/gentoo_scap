@@ -1,0 +1,17 @@
+description: 'This sets how NetworkManager handles DNS.
+
+
+    none -  NetworkManager will not modify resolv.conf.
+
+    default - NetworkManager will update /etc/resolv.conf to reflect the nameservers
+    provided by currently active connections.'
+type: string
+operator: equals
+interactive: true
+options:
+    none: none
+    default: default
+warnings: []
+title: NetoworkManager DNS Mode
+definition_location: /home/frattah/old/linux_os/guide/system/network/networkmanager/var_networkmanager_dns_mode.var
+documentation_complete: true

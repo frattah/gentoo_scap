@@ -1,0 +1,25 @@
+# platform = multi_platform_rhel,multi_platform_fedora,multi_platform_ol,multi_platform_rhv,SUSE Linux Enterprise 15
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+
+
+
+
+
+- name: "Enable the httpd_graceful_shutdown SELinux Boolean - Ensure libsemanage-python Installed"
+  package:
+    name: "libsemanage-python"
+    state: present
+
+
+
+
+- (xccdf-var var_httpd_graceful_shutdown)
+- name: "Enable the httpd_graceful_shutdown SELinux Boolean - Set SELinux Boolean httpd_graceful_shutdown Accordingly"
+  seboolean:
+    name: httpd_graceful_shutdown
+    state: "{{ var_httpd_graceful_shutdown }}"
+    persistent: yes
+  when: ansible_facts.selinux.status == 'enabled'  

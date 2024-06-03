@@ -1,0 +1,50 @@
+description: The ntpd service should not be installed.
+rationale: 'Inaccurate time stamps make it more difficult to correlate events
+
+    and can lead to an inaccurate analysis. Determining the correct
+
+    time a particular event occurred on a system is critical when
+
+    conducting forensic analysis and investigating system events.
+
+    Sources outside the configured acceptable allowance (drift)
+
+    may be inaccurate.
+
+    '
+severity: low
+references:
+    disa:
+    - CCI-001891
+components:
+- ntp
+identifiers: {}
+ocil_clause: null
+ocil: null
+oval_external_content: null
+fixtext: ''
+checktext: ''
+vuldiscussion: ''
+srg_requirement: ''
+warnings: []
+conflicts: []
+requires: []
+policy_specific_content: {}
+platform: null
+platforms: !!set {}
+sce_metadata: {}
+inherited_platforms: !!set
+    machine: null
+cpe_platform_names: !!set {}
+inherited_cpe_platform_names: !!set
+    machine: null
+bash_conditional: null
+fixes: {}
+title: Remove the ntp service
+definition_location: /home/frattah/old/linux_os/guide/services/ntp/package_ntp_removed/rule.yml
+template:
+    name: package_removed
+    vars:
+        pkgname: ntp
+    backends: {}
+documentation_complete: true

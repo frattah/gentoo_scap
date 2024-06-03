@@ -1,0 +1,56 @@
+description: ' To properly set the permissions of <code>/etc/sudoers.d</code>, run
+    the command: <pre>$ sudo chmod 0750 /etc/sudoers.d</pre>'
+rationale: 'Setting correct permissions on the /etc/sudoers.d directory is important
+
+    because this directory hosts sudo configuration. Protection of this
+
+    directory is critical for system security. Restricting the permissions
+
+    ensures exclusive control of the sudo configuration.'
+severity: medium
+references:
+    anssi:
+    - R50
+components:
+- sudo
+identifiers: {}
+ocil_clause: /etc/sudoers.d does not have unix mode 0750
+ocil: 'To check the permissions of <code>/etc/sudoers.d</code>,
+
+    run the command:
+
+    <pre>$ ls -l /etc/sudoers.d</pre>
+
+    If properly configured, the output should indicate the following permissions:
+
+    <code>0750</code>'
+oval_external_content: null
+fixtext: ' Configure the "/etc/sudoers.d" file to "0750" by running the following
+    command:
+
+    $ sudo chmod 0750 /etc/sudoers.d'
+checktext: ''
+vuldiscussion: ''
+srg_requirement: ' The Gentoo /etc/sudoers.d file must have mode 0750 or less permissive
+    to prevent unauthorized access.'
+warnings: []
+conflicts: []
+requires: []
+policy_specific_content: {}
+platform: null
+platforms: !!set {}
+sce_metadata: {}
+inherited_platforms: !!set {}
+cpe_platform_names: !!set {}
+inherited_cpe_platform_names: !!set {}
+bash_conditional: null
+fixes: {}
+title: Verify Permissions On /etc/sudoers.d Directory
+definition_location: /home/frattah/old/linux_os/guide/system/software/sudo/directory_permissions_etc_sudoersd/rule.yml
+template:
+    name: file_permissions
+    vars:
+        filepath: /etc/sudoers.d/
+        filemode: '0750'
+    backends: {}
+documentation_complete: true

@@ -1,0 +1,18 @@
+# platform = multi_platform_all
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+- name: "Enable cron Service - Enable service cron"
+  block:
+  - name: Gather the package facts
+    package_facts:
+      manager: auto
+  - name: "Enable cron Service - Enable Service cron"
+    ansible.builtin.systemd:
+      name: "cron"
+      enabled: true
+      state: "started"
+      masked: false
+    when:
+    - '"cron" in ansible_facts.packages'

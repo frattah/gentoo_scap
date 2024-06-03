@@ -1,0 +1,57 @@
+description: 'Tables in nftables hold chains. Each table only has one address family
+    and only applies
+
+    to packets of this family. Tables can have one of six families.'
+rationale: 'Nftables doesn''t have any default tables. Without a table being built,
+    nftables will not
+
+    filter network traffic.'
+severity: medium
+references: {}
+components:
+- nftables
+identifiers: {}
+ocil_clause: a nftables table does not exist
+ocil: "To verify that a nftables table exists, run the following command:\n<pre>$
+    sudo nft list tables</pre>\nOutput should include a list of nftables similar to:\n<tt>\n
+    \ table <sub idref=\"var_nftables_family\" /> <sub idref=\"var_nftables_table\"
+    />\n</tt>"
+oval_external_content: null
+fixtext: ''
+checktext: ''
+vuldiscussion: ''
+srg_requirement: ''
+warnings:
+-   general: Adding or editing rules in a running nftables can cause loss of connectivity
+        to the system.
+-   general: 'Both the SCE check and remediation for this rule only consider runtime
+        settings.
+
+        There is no specific file to check as it depends on each site''s policy. Therefore,
+        check
+
+        and remediation use the nft command directly. The fix is not persistent across
+        system
+
+        reboots.'
+-   functionality: 'SCE check does not support variables, therefore the SCE check
+        in this rule only checks the
+
+        address family, regardless of the table name.'
+conflicts: []
+requires: []
+policy_specific_content: {}
+platform: package[nftables]
+platforms: !!set
+    package[nftables]: null
+sce_metadata: {}
+inherited_platforms: !!set {}
+cpe_platform_names: !!set
+    package_nftables: null
+inherited_cpe_platform_names: !!set {}
+bash_conditional: null
+fixes: {}
+title: Ensure a Table Exists for Nftables
+definition_location: /home/frattah/old/linux_os/guide/system/network/network-nftables/set_nftables_table/rule.yml
+template: null
+documentation_complete: true

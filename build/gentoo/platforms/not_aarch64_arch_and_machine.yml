@@ -1,0 +1,15 @@
+name: not_aarch64_arch_and_machine
+original_expression: machine and not aarch64_arch
+xml_content: <ns0:platform xmlns:ns0="http://cpe.mitre.org/language/2.0" id="not_aarch64_arch_and_machine"><ns0:logical-test
+    operator="AND" negate="false"><ns0:logical-test operator="AND" negate="true"><ns0:check-fact-ref
+    system="http://oval.mitre.org/XMLSchema/oval-definitions-5" href="ssg-gentoo-cpe-oval.xml"
+    id-ref="oval:ssg-proc_sys_kernel_osrelease_arch_aarch64:def:1" /></ns0:logical-test><ns0:check-fact-ref
+    system="http://oval.mitre.org/XMLSchema/oval-definitions-5" href="ssg-gentoo-cpe-oval.xml"
+    id-ref="oval:ssg-installed_env_is_a_machine:def:1" /></ns0:logical-test></ns0:platform>
+bash_conditional: ( ! ( grep -q aarch64 /proc/sys/kernel/osrelease ) && [ ! -f /.dockerenv
+    ] && [ ! -f /run/.containerenv ] )
+ansible_conditional: ( not ( ansible_architecture == "aarch64" ) and ansible_virtualization_type
+    not in ["docker", "lxc", "openvz", "podman", "container"] )
+title: ''
+definition_location: /home/frattah/old/build/gentoo/platforms/not_aarch64_arch_and_machine.yml
+documentation_complete: true

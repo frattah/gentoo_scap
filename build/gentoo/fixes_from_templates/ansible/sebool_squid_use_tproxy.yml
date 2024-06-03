@@ -1,0 +1,25 @@
+# platform = multi_platform_rhel,multi_platform_fedora,multi_platform_ol,multi_platform_rhv,SUSE Linux Enterprise 15
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+
+
+
+
+
+- name: "Disable the squid_use_tproxy SELinux Boolean - Ensure libsemanage-python Installed"
+  package:
+    name: "libsemanage-python"
+    state: present
+
+
+
+
+- (xccdf-var var_squid_use_tproxy)
+- name: "Disable the squid_use_tproxy SELinux Boolean - Set SELinux Boolean squid_use_tproxy Accordingly"
+  seboolean:
+    name: squid_use_tproxy
+    state: "{{ var_squid_use_tproxy }}"
+    persistent: yes
+  when: ansible_facts.selinux.status == 'enabled'  

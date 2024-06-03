@@ -1,0 +1,15 @@
+# platform = multi_platform_all
+# reboot = false
+# strategy = configure
+# complexity = low
+# disruption = low
+
+- name: Ensure group owner on /etc/sysctl.d/
+  file:
+    path: "/etc/sysctl.d/"
+    state: directory
+
+    group: "root"
+
+
+

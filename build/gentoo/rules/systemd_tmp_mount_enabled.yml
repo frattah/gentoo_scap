@@ -1,0 +1,58 @@
+description: 'The <tt>/tmp</tt> directory is a world-writable directory used
+
+    for temporary file storage. This directory is managed by <tt>systemd-tmpfiles</tt>.
+
+    Ensure that the <tt>tmp.mount</tt> systemd unit is enabled.'
+rationale: 'The <tt>/tmp</tt> directory is used as temporary storage by many programs.
+
+    Placing <tt>/tmp</tt> in a tmpfs filesystem enables the setting of more
+
+    restrictive mount options, which can help protect programs which use it.
+
+    The <tt>tmp.mount</tt> unit configures the tmpfs filesystem and ensures
+
+    the <tt>/tmp</tt> directory is wiped during reboot.'
+severity: low
+references:
+    anssi:
+    - R28
+components:
+- systemd
+identifiers: {}
+ocil_clause: the tmp.mount unit is masked or disabled
+ocil: '
+
+    Run the following command to determine the current status of the
+
+    <code>tmp</code> mount:
+
+    <pre>$ sudo systemctl is-active tmp.mount</pre>
+
+    If the mount unit is running, it should return the following: <pre>active</pre>'
+oval_external_content: null
+fixtext: ''
+checktext: ''
+vuldiscussion: ''
+srg_requirement: ''
+warnings: []
+conflicts: []
+requires: []
+policy_specific_content: {}
+platform: machine
+platforms: !!set
+    machine: null
+sce_metadata: {}
+inherited_platforms: !!set {}
+cpe_platform_names: !!set
+    machine: null
+inherited_cpe_platform_names: !!set {}
+bash_conditional: null
+fixes: {}
+title: Ensure tmp.mount Unit Us Enabled
+definition_location: /home/frattah/old/linux_os/guide/system/software/disk_partitioning/systemd_tmp_mount_enabled/rule.yml
+template:
+    name: systemd_mount_enabled
+    vars:
+        mountname: tmp
+    backends: {}
+documentation_complete: true

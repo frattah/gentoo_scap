@@ -1,0 +1,87 @@
+description: '
+
+    The SSH server service, sshd, is commonly needed.
+
+    However, if it can be disabled, do so.
+
+    This is unusual, as SSH is a common method for encrypted and authenticated
+
+    remote access.'
+rationale: ''
+severity: high
+references:
+    nist:
+    - CM-3(6)
+    - IA-2(4)
+    srg:
+    - SRG-APP-000185-CTR-000490
+    - SRG-APP-000141-CTR-000315
+components:
+- openssh
+identifiers: {}
+ocil_clause: the "sshd" is loaded and not masked
+ocil: 'To check that the <code>sshd</code> service is disabled in system boot configuration,
+
+    run the following command:
+
+    <pre>$ sudo systemctl is-enabled <code>sshd</code></pre>
+
+    Output should indicate the <code>sshd</code> service has either not been installed,
+
+    or has been disabled at all runlevels, as shown in the example below:
+
+    <pre>$ sudo systemctl is-enabled <code>sshd</code><br/> disabled</pre>
+
+
+    Run the following command to verify <code>sshd</code> is not active (i.e. not
+    running) through current runtime configuration:
+
+    <pre>$ sudo systemctl is-active sshd</pre>
+
+
+    If the service is not running the command will return the following output:
+
+    <pre>inactive</pre>
+
+
+    The service will also be masked, to check that the <code>sshd</code> is masked,
+    run the following command:
+
+    <pre>$ sudo systemctl show <code>sshd</code> | grep "LoadState\|UnitFileState"</pre>
+
+
+    If the service is masked the command will return the following outputs:
+
+
+    <pre>LoadState=masked</pre>
+
+
+    <pre>UnitFileState=masked</pre>'
+oval_external_content: null
+fixtext: ''
+checktext: ''
+vuldiscussion: ''
+srg_requirement: ''
+warnings: []
+conflicts: []
+requires: []
+policy_specific_content: {}
+platform: null
+platforms: !!set {}
+sce_metadata: {}
+inherited_platforms: !!set
+    machine: null
+cpe_platform_names: !!set {}
+inherited_cpe_platform_names: !!set
+    machine: null
+bash_conditional: null
+fixes: {}
+title: Disable SSH Server If Possible
+definition_location: /home/frattah/old/linux_os/guide/services/ssh/service_sshd_disabled/rule.yml
+template:
+    name: service_disabled
+    vars:
+        servicename: sshd
+        packagename: openssh-server
+    backends: {}
+documentation_complete: true

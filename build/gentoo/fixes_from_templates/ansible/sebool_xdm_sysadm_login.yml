@@ -1,0 +1,25 @@
+# platform = multi_platform_rhel,multi_platform_fedora,multi_platform_ol,multi_platform_rhv,SUSE Linux Enterprise 15
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+
+
+
+
+
+- name: "Disable the xdm_sysadm_login SELinux Boolean - Ensure libsemanage-python Installed"
+  package:
+    name: "libsemanage-python"
+    state: present
+
+
+
+
+- (xccdf-var var_xdm_sysadm_login)
+- name: "Disable the xdm_sysadm_login SELinux Boolean - Set SELinux Boolean xdm_sysadm_login Accordingly"
+  seboolean:
+    name: xdm_sysadm_login
+    state: "{{ var_xdm_sysadm_login }}"
+    persistent: yes
+  when: ansible_facts.selinux.status == 'enabled'  

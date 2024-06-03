@@ -1,0 +1,64 @@
+description: '
+
+    To properly set the owner of <code>/etc/cron.deny</code>, run the command:
+
+    <pre>$ sudo chown root /etc/cron.deny </pre>'
+rationale: 'Service configuration files enable or disable features of their respective
+    services that if configured incorrectly
+
+    can lead to insecure and vulnerable configurations. Therefore, service configuration
+    files should be owned by the
+
+    correct user to prevent unauthorized changes.'
+severity: medium
+references:
+    disa:
+    - CCI-000366
+    nist:
+    - CM-6 b
+    srg:
+    - SRG-OS-000480-GPOS-00227
+components:
+- cronie
+identifiers: {}
+ocil_clause: /etc/cron.deny does not have an owner of root
+ocil: 'To check the ownership of <code>/etc/cron.deny</code>,
+
+    run the command:
+
+    <pre>$ ls -lL /etc/cron.deny</pre>
+
+    If properly configured, the output should indicate the following owner:
+
+    <code>root</code>'
+oval_external_content: null
+fixtext: ' Change the owner of the file /etc/cron.deny/ to root by running the following
+    command:
+
+    $ sudo chown root /etc/cron.deny/'
+checktext: ''
+vuldiscussion: ''
+srg_requirement: ' The Gentoo /etc/cron.deny file must be owned by root.'
+warnings: []
+conflicts: []
+requires: []
+policy_specific_content: {}
+platform: null
+platforms: !!set {}
+sce_metadata: {}
+inherited_platforms: !!set
+    machine: null
+cpe_platform_names: !!set {}
+inherited_cpe_platform_names: !!set
+    machine: null
+bash_conditional: null
+fixes: {}
+title: Verify Owner on cron.deny
+definition_location: /home/frattah/old/linux_os/guide/services/cron_and_at/file_owner_cron_deny/rule.yml
+template:
+    name: file_owner
+    vars:
+        filepath: /etc/cron.deny
+        fileuid: '0'
+    backends: {}
+documentation_complete: true

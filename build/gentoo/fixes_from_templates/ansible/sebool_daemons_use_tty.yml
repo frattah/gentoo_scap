@@ -1,0 +1,25 @@
+# platform = multi_platform_rhel,multi_platform_fedora,multi_platform_ol,multi_platform_rhv,SUSE Linux Enterprise 15
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+
+
+
+
+
+- name: "Disable the daemons_use_tty SELinux Boolean - Ensure libsemanage-python Installed"
+  package:
+    name: "libsemanage-python"
+    state: present
+
+
+
+
+- (xccdf-var var_daemons_use_tty)
+- name: "Disable the daemons_use_tty SELinux Boolean - Set SELinux Boolean daemons_use_tty Accordingly"
+  seboolean:
+    name: daemons_use_tty
+    state: "{{ var_daemons_use_tty }}"
+    persistent: yes
+  when: ansible_facts.selinux.status == 'enabled'  

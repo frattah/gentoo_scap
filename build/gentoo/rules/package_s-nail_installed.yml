@@ -1,0 +1,77 @@
+description: 'A mail server is required for sending emails.
+
+    The <code>s-nail</code> package can be installed with the following command:
+
+    <pre>
+
+    $ sudo yum install s-nail</pre>'
+rationale: 'Emails can be used to notify designated personnel about important
+
+    system events such as failures or warnings.'
+severity: medium
+references:
+    disa:
+    - CCI-001744
+    nist:
+    - CM-3(5)
+    srg:
+    - SRG-OS-000363-GPOS-00150
+components:
+- s-nail
+identifiers: {}
+ocil_clause: the package is not installed
+ocil: 'Run the following command to determine if the <code>s-nail</code> package is
+    installed: <pre>$ rpm -q s-nail</pre>'
+oval_external_content: null
+fixtext: ''
+checktext: ''
+vuldiscussion: ''
+srg_requirement: ''
+warnings: []
+conflicts: []
+requires: []
+policy_specific_content:
+    stig:
+        srg_requirement: Gentoo must have the s-nail package installed.
+        fixtext: 'The s-nail package can be installed with the following command:
+
+
+            $ sudo dnf install s-nail'
+        checktext: 'Verify that Gentoo is configured to allow sending email notifications.
+
+
+            Note: The "s-nail" package provides the "mail" command that is used to
+            send email messages.
+
+
+            Verify that the "s-nail" package is installed on the system:
+
+
+            $ sudo dnf list --installed s-nail
+
+
+            s-nail.x86_64          14.9.22-6.el9
+
+
+            If "s-nail" package is not installed, this is a finding.'
+        vuln_discussion: The "s-nail" package provides the mail command required to
+            allow sending email notifications of unauthorized configuration changes
+            to designated personnel.
+platform: null
+platforms: !!set {}
+sce_metadata: {}
+inherited_platforms: !!set
+    machine: null
+cpe_platform_names: !!set {}
+inherited_cpe_platform_names: !!set
+    machine: null
+bash_conditional: null
+fixes: {}
+title: The s-nail Package Is Installed
+definition_location: /home/frattah/old/linux_os/guide/services/mail/package_s-nail_installed/rule.yml
+template:
+    name: package_installed
+    vars:
+        pkgname: s-nail
+    backends: {}
+documentation_complete: true

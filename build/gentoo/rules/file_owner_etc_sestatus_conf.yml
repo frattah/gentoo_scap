@@ -1,0 +1,57 @@
+description: ' To properly set the owner of <code>/etc/sestatus.conf</code>, run the
+    command: <pre>$ sudo chown root /etc/sestatus.conf </pre>'
+rationale: 'The ownership of the /etc/sestatus.conf file by the root user is important
+
+    because this file hosts SELinux configuration. Protection of this
+
+    file is critical for system security. Assigning the ownership to root
+
+    ensures exclusive control of the SELinux configuration.'
+severity: medium
+references:
+    anssi:
+    - R50
+components:
+- selinux
+identifiers: {}
+ocil_clause: /etc/sestatus.conf does not have an owner of root
+ocil: 'To check the ownership of <code>/etc/sestatus.conf</code>,
+
+    run the command:
+
+    <pre>$ ls -lL /etc/sestatus.conf</pre>
+
+    If properly configured, the output should indicate the following owner:
+
+    <code>root</code>'
+oval_external_content: null
+fixtext: ' Change the owner of the file /etc/sestatus.conf to root by running the
+    following command:
+
+    $ sudo chown root /etc/sestatus.conf'
+checktext: ''
+vuldiscussion: ''
+srg_requirement: ' The Gentoo /etc/sestatus.conf file must be owned by root.'
+warnings: []
+conflicts: []
+requires: []
+policy_specific_content: {}
+platform: null
+platforms: !!set {}
+sce_metadata: {}
+inherited_platforms: !!set
+    machine: null
+cpe_platform_names: !!set {}
+inherited_cpe_platform_names: !!set
+    machine: null
+bash_conditional: null
+fixes: {}
+title: Verify User Who Owns /etc/sestatus.conf File
+definition_location: /home/frattah/old/linux_os/guide/system/selinux/file_owner_etc_sestatus_conf/rule.yml
+template:
+    name: file_owner
+    vars:
+        filepath: /etc/sestatus.conf
+        fileuid: '0'
+    backends: {}
+documentation_complete: true

@@ -1,0 +1,25 @@
+# platform = multi_platform_rhel,multi_platform_fedora,multi_platform_ol,multi_platform_rhv,SUSE Linux Enterprise 15
+# reboot = false
+# strategy = enable
+# complexity = low
+# disruption = low
+
+
+
+
+
+- name: "Enable the kerberos_enabled SELinux Boolean - Ensure libsemanage-python Installed"
+  package:
+    name: "libsemanage-python"
+    state: present
+
+
+
+
+- (xccdf-var var_kerberos_enabled)
+- name: "Enable the kerberos_enabled SELinux Boolean - Set SELinux Boolean kerberos_enabled Accordingly"
+  seboolean:
+    name: kerberos_enabled
+    state: "{{ var_kerberos_enabled }}"
+    persistent: yes
+  when: ansible_facts.selinux.status == 'enabled'  
