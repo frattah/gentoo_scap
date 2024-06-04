@@ -153,3 +153,27 @@
       path: /etc/gshadow
       state: touch
       mode: '0000'
+
+  - name: Set /etc/shadow file ownership
+    ansible.builtin.file:
+      path: /etc/shadow
+      state: touch
+      owner: root
+
+  - name: Set /etc/gshadow file ownership
+    ansible.builtin.file:
+      path: /etc/gshadow
+      state: touch
+      owner: root
+
+  - name: Set /etc/shadow file group
+    ansible.builtin.file:
+      path: /etc/shadow
+      state: touch
+      group: 'root'
+
+  - name: Set /etc/gshadow file group
+    ansible.builtin.file:
+      path: /etc/gshadow
+      state: touch
+      group: 'root'
