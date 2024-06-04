@@ -77,8 +77,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - sshd_enable_pubkey_auth
     - configure_opensc_card_drivers
+    - sshd_enable_pubkey_auth
     controls: []
 -   id: SRG-OS-000304-GPOS-00121
     levels:
@@ -99,13 +99,13 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_usergroup_modification_passwd
-    - audit_rules_usergroup_modification_gshadow
-    - audit_rules_sudoers
-    - audit_rules_usergroup_modification_group
-    - audit_rules_usergroup_modification_shadow
-    - audit_rules_usergroup_modification_opasswd
     - audit_rules_sudoers_d
+    - audit_rules_usergroup_modification_shadow
+    - audit_rules_sudoers
+    - audit_rules_usergroup_modification_gshadow
+    - audit_rules_usergroup_modification_passwd
+    - audit_rules_usergroup_modification_group
+    - audit_rules_usergroup_modification_opasswd
     controls: []
 -   id: SRG-OS-000241-GPOS-00091
     levels:
@@ -125,13 +125,13 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_usergroup_modification_passwd
-    - audit_rules_usergroup_modification_gshadow
-    - audit_rules_sudoers
-    - audit_rules_usergroup_modification_group
-    - audit_rules_usergroup_modification_shadow
-    - audit_rules_usergroup_modification_opasswd
     - audit_rules_sudoers_d
+    - audit_rules_usergroup_modification_shadow
+    - audit_rules_sudoers
+    - audit_rules_usergroup_modification_gshadow
+    - audit_rules_usergroup_modification_passwd
+    - audit_rules_usergroup_modification_group
+    - audit_rules_usergroup_modification_opasswd
     controls: []
 -   id: SRG-OS-000142-GPOS-00071
     levels:
@@ -194,8 +194,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - kernel_module_bluetooth_disabled
     - wireless_disable_interfaces
+    - kernel_module_bluetooth_disabled
     controls: []
 -   id: SRG-OS-000071-GPOS-00039
     levels:
@@ -350,11 +350,11 @@ controls:
     related_rules: []
     rules:
     - sssd_certificate_verification
-    - install_smartcard_packages
     - package_opensc_installed
-    - sssd_enable_smartcards
     - package_pcsc-lite_installed
+    - sssd_enable_smartcards
     - service_pcscd_enabled
+    - install_smartcard_packages
     - var_sssd_certificate_verification_digest_function=sha512
     controls: []
 -   id: SRG-OS-000120-GPOS-00061
@@ -377,11 +377,11 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - accounts_password_all_shadowed_sha512
-    - set_password_hashing_algorithm_passwordauth
-    - libreswan_approved_tunnels
-    - set_password_hashing_algorithm_systemauth
     - package_rsyslog-gnutls_installed
+    - set_password_hashing_algorithm_passwordauth
+    - set_password_hashing_algorithm_systemauth
+    - libreswan_approved_tunnels
+    - accounts_password_all_shadowed_sha512
     controls: []
 -   id: SRG-OS-000076-GPOS-00044
     levels:
@@ -401,8 +401,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - accounts_maximum_age_login_defs
     - accounts_password_set_max_life_existing
+    - accounts_maximum_age_login_defs
     - var_accounts_maximum_age_login_defs=60
     controls: []
 -   id: SRG-OS-000364-GPOS-00151
@@ -469,11 +469,11 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - selinux_state
-    - grub2_slub_debug_argument
-    - grub2_vsyscall_argument
-    - grub2_page_poison_argument
     - package_policycoreutils_installed
+    - selinux_state
+    - grub2_vsyscall_argument
+    - grub2_slub_debug_argument
+    - grub2_page_poison_argument
     controls: []
 -   id: SRG-OS-000480-GPOS-00225
     levels:
@@ -514,9 +514,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
+    - selinux_policytype
     - selinux_state
     - package_aide_installed
-    - selinux_policytype
     - var_selinux_policy_name=targeted
     - var_selinux_state=enforcing
     controls: []
@@ -582,8 +582,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_audit_tools_permissions
     - file_audit_tools_group_ownership
+    - file_audit_tools_permissions
     - file_audit_tools_ownership
     controls: []
 -   id: SRG-OS-000360-GPOS-00147
@@ -660,16 +660,16 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_kernel_module_loading_init
-    - audit_privileged_commands_shutdown
     - audit_rules_privileged_commands_modprobe
-    - audit_rules_kernel_module_loading_delete
-    - audit_privileged_commands_poweroff
-    - audit_privileged_commands_init
-    - audit_rules_kernel_module_loading_finit
-    - audit_privileged_commands_reboot
+    - audit_rules_kernel_module_loading_init
     - audit_rules_privileged_commands_rmmod
+    - audit_rules_kernel_module_loading_finit
+    - audit_rules_kernel_module_loading_delete
     - audit_rules_privileged_commands_kmod
+    - audit_privileged_commands_poweroff
+    - audit_privileged_commands_shutdown
+    - audit_privileged_commands_reboot
+    - audit_privileged_commands_init
     controls: []
 -   id: SRG-OS-000004-GPOS-00004
     levels:
@@ -689,13 +689,13 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_usergroup_modification_passwd
-    - audit_rules_usergroup_modification_gshadow
-    - audit_rules_sudoers
-    - audit_rules_usergroup_modification_group
-    - audit_rules_usergroup_modification_shadow
-    - audit_rules_usergroup_modification_opasswd
     - audit_rules_sudoers_d
+    - audit_rules_usergroup_modification_shadow
+    - audit_rules_sudoers
+    - audit_rules_usergroup_modification_gshadow
+    - audit_rules_usergroup_modification_passwd
+    - audit_rules_usergroup_modification_group
+    - audit_rules_usergroup_modification_opasswd
     controls: []
 -   id: SRG-OS-000001-GPOS-00001
     levels:
@@ -779,10 +779,10 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - dir_perms_world_writable_root_owned
-    - sysctl_kernel_perf_event_paranoid
     - sysctl_kernel_dmesg_restrict
     - dir_perms_world_writable_sticky_bits
+    - dir_perms_world_writable_root_owned
+    - sysctl_kernel_perf_event_paranoid
     controls: []
 -   id: SRG-OS-000380-GPOS-00165
     levels:
@@ -918,10 +918,10 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_login_events_lastlog
     - grub2_audit_argument
     - audit_rules_login_events_faillock
     - audit_rules_login_events_tallylog
+    - audit_rules_login_events_lastlog
     controls: []
 -   id: SRG-OS-000420-GPOS-00186
     levels:
@@ -943,8 +943,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - sysctl_net_ipv4_tcp_invalid_ratelimit
     - sysctl_net_ipv4_tcp_syncookies
+    - sysctl_net_ipv4_tcp_invalid_ratelimit
     - sysctl_net_ipv4_tcp_invalid_ratelimit_value=five_hundred
     controls: []
 -   id: SRG-OS-000125-GPOS-00065
@@ -966,8 +966,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - sshd_enable_pam
     - sysctl_crypto_fips_enabled
+    - sshd_enable_pam
     controls: []
 -   id: SRG-OS-000376-GPOS-00161
     levels:
@@ -1008,12 +1008,12 @@ controls:
     original_title: null
     related_rules: []
     rules:
+    - account_temp_expire_date
+    - grub2_uefi_password
     - grub2_admin_username
+    - require_singleuser_auth
     - grub2_password
     - grub2_uefi_admin_username
-    - grub2_uefi_password
-    - account_temp_expire_date
-    - require_singleuser_auth
     controls: []
 -   id: SRG-OS-000466-GPOS-00210
     levels:
@@ -1034,31 +1034,31 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_dac_modification_chown
-    - audit_rules_dac_modification_fchmod
-    - audit_rules_file_deletion_events_rename
-    - audit_rules_dac_modification_lremovexattr
-    - audit_rules_usergroup_modification_shadow
-    - audit_rules_dac_modification_removexattr
     - audit_rules_file_deletion_events_rmdir
-    - audit_rules_usergroup_modification_passwd
-    - audit_rules_file_deletion_events_renameat
-    - audit_rules_execution_chacl
-    - audit_rules_privileged_commands_sudo
-    - audit_rules_dac_modification_fremovexattr
-    - audit_rules_dac_modification_fchmodat
-    - audit_rules_dac_modification_chmod
-    - audit_rules_dac_modification_fchownat
-    - audit_rules_sudoers
-    - audit_rules_file_deletion_events_unlinkat
-    - audit_rules_privileged_commands_usermod
+    - audit_rules_usergroup_modification_shadow
     - audit_rules_privileged_commands_su
-    - audit_rules_usergroup_modification_gshadow
-    - audit_rules_dac_modification_lchown
-    - audit_rules_usergroup_modification_group
+    - audit_rules_usergroup_modification_passwd
+    - audit_rules_dac_modification_chmod
+    - audit_rules_dac_modification_fchmodat
+    - audit_rules_dac_modification_chown
+    - audit_rules_file_deletion_events_renameat
+    - audit_rules_sudoers
+    - audit_rules_dac_modification_fremovexattr
     - audit_rules_file_deletion_events_unlink
-    - audit_rules_dac_modification_fchown
+    - audit_rules_usergroup_modification_group
+    - audit_rules_execution_chacl
     - audit_rules_sudoers_d
+    - audit_rules_dac_modification_lremovexattr
+    - audit_rules_dac_modification_fchown
+    - audit_rules_dac_modification_lchown
+    - audit_rules_file_deletion_events_rename
+    - audit_rules_dac_modification_fchmod
+    - audit_rules_dac_modification_fchownat
+    - audit_rules_usergroup_modification_gshadow
+    - audit_rules_dac_modification_removexattr
+    - audit_rules_privileged_commands_usermod
+    - audit_rules_privileged_commands_sudo
+    - audit_rules_file_deletion_events_unlinkat
     controls: []
 -   id: SRG-OS-000066-GPOS-00034
     levels:
@@ -1101,9 +1101,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
+    - sysctl_crypto_fips_enabled
     - configure_libreswan_crypto_policy
     - sshd_rekey_limit
-    - sysctl_crypto_fips_enabled
     - var_rekey_limit_size=1G
     - var_rekey_limit_time=1hour
     controls: []
@@ -1126,8 +1126,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - service_sshd_enabled
     - package_openssh-server_installed
+    - service_sshd_enabled
     - configure_bind_crypto_policy
     controls: []
 -   id: SRG-OS-000254-GPOS-00095
@@ -1148,9 +1148,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - grub2_audit_backlog_limit_argument
     - grub2_audit_argument
     - package_audit_installed
+    - grub2_audit_backlog_limit_argument
     - service_auditd_enabled
     controls: []
 -   id: SRG-OS-000358-GPOS-00145
@@ -1257,15 +1257,15 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_permissions_binary_dirs
-    - dir_ownership_library_dirs
-    - file_ownership_binary_dirs
     - dir_group_ownership_library_dirs
-    - file_groupownership_system_commands_dirs
-    - file_ownership_library_dirs
+    - file_ownership_binary_dirs
     - file_permissions_library_dirs
-    - root_permissions_syslibrary_files
     - dir_permissions_library_dirs
+    - root_permissions_syslibrary_files
+    - dir_ownership_library_dirs
+    - file_ownership_library_dirs
+    - file_groupownership_system_commands_dirs
+    - file_permissions_binary_dirs
     controls: []
 -   id: SRG-OS-000362-GPOS-00149
     levels:
@@ -1328,9 +1328,9 @@ controls:
     related_rules: []
     rules:
     - audit_rules_execution_semanage
-    - audit_rules_execution_chcon
     - audit_rules_execution_setfiles
     - audit_rules_execution_setsebool
+    - audit_rules_execution_chcon
     controls: []
 -   id: SRG-OS-000329-GPOS-00128
     levels:
@@ -1353,8 +1353,8 @@ controls:
     rules:
     - accounts_passwords_pam_faillock_unlock_time
     - accounts_passwords_pam_faillock_deny
-    - accounts_passwords_pam_faillock_interval
     - accounts_passwords_pam_faillock_deny_root
+    - accounts_passwords_pam_faillock_interval
     - var_accounts_passwords_pam_faillock_deny=3
     - var_accounts_passwords_pam_faillock_fail_interval=900
     - var_accounts_passwords_pam_faillock_unlock_time=never
@@ -1377,13 +1377,13 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_usergroup_modification_passwd
-    - audit_rules_usergroup_modification_gshadow
-    - audit_rules_sudoers
-    - audit_rules_usergroup_modification_group
-    - audit_rules_usergroup_modification_shadow
-    - audit_rules_usergroup_modification_opasswd
     - audit_rules_sudoers_d
+    - audit_rules_usergroup_modification_shadow
+    - audit_rules_sudoers
+    - audit_rules_usergroup_modification_gshadow
+    - audit_rules_usergroup_modification_passwd
+    - audit_rules_usergroup_modification_group
+    - audit_rules_usergroup_modification_opasswd
     controls: []
 -   id: SRG-OS-000297-GPOS-00115
     levels:
@@ -1403,9 +1403,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - package_firewalld_installed
-    - configure_firewalld_ports
     - service_firewalld_enabled
+    - configure_firewalld_ports
+    - package_firewalld_installed
     controls: []
 -   id: SRG-OS-000078-GPOS-00046
     levels:
@@ -1495,11 +1495,11 @@ controls:
     original_title: null
     related_rules: []
     rules:
+    - accounts_password_pam_retry
     - accounts_password_pam_ucredit
     - accounts_password_pam_enforce_root
-    - accounts_password_pam_pwquality_password_auth
-    - accounts_password_pam_retry
     - accounts_password_pam_pwquality_system_auth
+    - accounts_password_pam_pwquality_password_auth
     - var_password_pam_retry=3
     - var_password_pam_ucredit=1
     controls: []
@@ -1522,74 +1522,74 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_dac_modification_umount
-    - audit_rules_execution_semanage
-    - audit_rules_unsuccessful_file_modification_truncate
-    - audit_rules_dac_modification_chown
-    - audit_rules_dac_modification_fchmod
-    - audit_rules_file_deletion_events_rename
-    - audit_rules_dac_modification_lremovexattr
-    - audit_rules_unsuccessful_file_modification_open_by_handle_at
-    - audit_rules_usergroup_modification_shadow
-    - audit_rules_privileged_commands_crontab
-    - audit_rules_dac_modification_removexattr
-    - audit_rules_privileged_commands_newgrp
     - audit_rules_file_deletion_events_rmdir
-    - audit_rules_kernel_module_loading_finit
+    - audit_rules_usergroup_modification_shadow
+    - audit_rules_privileged_commands_su
+    - auditd_local_events
+    - audit_rules_privileged_commands_passwd
+    - audit_rules_execution_setfiles
     - service_auditd_enabled
-    - audit_rules_dac_modification_umount2
-    - audit_rules_unsuccessful_file_modification_open
     - audit_rules_usergroup_modification_passwd
-    - audit_rules_privileged_commands_unix_chkpwd
-    - audit_rules_privileged_commands_ssh_keysign
-    - package_audit_installed
-    - audit_rules_file_deletion_events_renameat
+    - audit_rules_dac_modification_chmod
+    - audit_rules_login_events_lastlog
+    - audit_rules_dac_modification_fchmodat
     - audit_rules_privileged_commands_pam_timestamp_check
-    - audit_rules_kernel_module_loading_delete
-    - audit_rules_execution_chacl
+    - audit_rules_dac_modification_chown
+    - audit_rules_file_deletion_events_renameat
     - audit_rules_execution_setsebool
     - audit_rules_privileged_commands_gpasswd
-    - audit_rules_privileged_commands_sudo
-    - audit_rules_usergroup_modification_opasswd
-    - audit_rules_dac_modification_fremovexattr
-    - audit_rules_unsuccessful_file_modification_creat
-    - audit_rules_privileged_commands_kmod
-    - audit_rules_kernel_module_loading_init
-    - audit_rules_privileged_commands_postqueue
-    - audit_rules_dac_modification_fchmodat
-    - audit_rules_dac_modification_chmod
-    - audit_rules_dac_modification_fchownat
-    - audit_rules_privileged_commands_unix_update
-    - audit_rules_media_export
     - audit_rules_sudoers
-    - audit_rules_login_events_lastlog
+    - audit_rules_dac_modification_fremovexattr
+    - audit_rules_file_deletion_events_unlink
     - audit_rules_privileged_commands_sudoedit
-    - audit_rules_dac_modification_setxattr
+    - audit_rules_usergroup_modification_group
+    - audit_rules_unsuccessful_file_modification_open_by_handle_at
+    - audit_rules_execution_chcon
+    - audit_rules_execution_chacl
+    - audit_rules_sudoers_d
+    - audit_rules_kernel_module_loading_init
+    - audit_rules_privileged_commands_unix_chkpwd
+    - audit_rules_unsuccessful_file_modification_ftruncate
+    - package_audit_installed
+    - audit_rules_dac_modification_lremovexattr
+    - audit_rules_dac_modification_fchown
+    - audit_rules_dac_modification_lchown
+    - audit_rules_file_deletion_events_rename
+    - audit_rules_unsuccessful_file_modification_creat
+    - audit_rules_unsuccessful_file_modification_openat
+    - audit_rules_dac_modification_fchmod
     - audit_rules_file_deletion_events_unlinkat
+    - audit_rules_dac_modification_fchownat
+    - audit_rules_dac_modification_setxattr
+    - audit_rules_privileged_commands_chage
+    - audit_rules_privileged_commands_kmod
     - audit_rules_privileged_commands_userhelper
+    - audit_rules_usergroup_modification_gshadow
+    - grub2_audit_argument
+    - audit_rules_execution_semanage
+    - audit_rules_privileged_commands_sudo
+    - audit_rules_kernel_module_loading_delete
+    - audit_rules_dac_modification_umount
+    - audit_rules_dac_modification_removexattr
+    - audit_rules_privileged_commands_postdrop
+    - audit_rules_privileged_commands_ssh_agent
+    - audit_rules_media_export
+    - audit_rules_dac_modification_lsetxattr
+    - audit_rules_dac_modification_umount2
+    - audit_rules_execution_setfacl
+    - audit_rules_unsuccessful_file_modification_truncate
+    - audit_rules_kernel_module_loading_finit
+    - audit_rules_privileged_commands_chsh
+    - audit_rules_privileged_commands_crontab
+    - audit_rules_unsuccessful_file_modification_open
+    - audit_rules_privileged_commands_newgrp
     - configure_usbguard_auditbackend
     - audit_rules_dac_modification_fsetxattr
-    - audit_rules_privileged_commands_passwd
-    - audit_rules_execution_setfacl
+    - audit_rules_privileged_commands_ssh_keysign
+    - audit_rules_privileged_commands_unix_update
     - audit_rules_privileged_commands_usermod
-    - audit_rules_execution_setfiles
-    - grub2_audit_argument
-    - audit_rules_privileged_commands_su
-    - audit_rules_usergroup_modification_gshadow
-    - audit_rules_dac_modification_lchown
-    - audit_rules_dac_modification_lsetxattr
-    - audit_rules_execution_chcon
-    - audit_rules_privileged_commands_ssh_agent
-    - audit_rules_file_deletion_events_unlink
-    - audit_rules_usergroup_modification_group
-    - audit_rules_unsuccessful_file_modification_openat
-    - audit_rules_unsuccessful_file_modification_ftruncate
-    - audit_rules_privileged_commands_chage
-    - audit_rules_dac_modification_fchown
-    - audit_rules_privileged_commands_chsh
-    - audit_rules_privileged_commands_postdrop
-    - auditd_local_events
-    - audit_rules_sudoers_d
+    - audit_rules_usergroup_modification_opasswd
+    - audit_rules_privileged_commands_postqueue
     controls: []
 -   id: SRG-OS-000109-GPOS-00056
     levels:
@@ -1631,8 +1631,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - service_sshd_enabled
     - package_openssh-server_installed
+    - service_sshd_enabled
     - sysctl_crypto_fips_enabled
     - configure_bind_crypto_policy
     controls: []
@@ -1655,13 +1655,13 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - package_audispd-plugins_installed
-    - rsyslog_remote_loghost
     - auditd_overflow_action
-    - rsyslog_encrypt_offload_actionsendstreamdriverauthmode
     - auditd_name_format
-    - rsyslog_encrypt_offload_actionsendstreamdrivermode
     - rsyslog_encrypt_offload_defaultnetstreamdriver
+    - package_audispd-plugins_installed
+    - rsyslog_encrypt_offload_actionsendstreamdriverauthmode
+    - rsyslog_remote_loghost
+    - rsyslog_encrypt_offload_actionsendstreamdrivermode
     controls: []
 -   id: SRG-OS-000480-GPOS-00232
     levels:
@@ -1681,8 +1681,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - package_firewalld_installed
     - service_firewalld_enabled
+    - package_firewalld_installed
     controls: []
 -   id: SRG-OS-000024-GPOS-00007
     levels:
@@ -1751,10 +1751,10 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - service_auditd_enabled
-    - package_rsyslog_installed
-    - package_audit_installed
     - auditd_freq
+    - package_audit_installed
+    - package_rsyslog_installed
+    - service_auditd_enabled
     - var_auditd_freq=100
     controls: []
 -   id: SRG-OS-000118-GPOS-00060
@@ -1859,13 +1859,13 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - dconf_gnome_screensaver_lock_enabled
     - no_tmux_in_shells
+    - dconf_gnome_screensaver_lock_locked
     - package_tmux_installed
     - configure_bashrc_exec_tmux
     - dconf_gnome_lock_screen_on_smartcard_removal
-    - dconf_gnome_screensaver_lock_locked
     - configure_tmux_lock_command
+    - dconf_gnome_screensaver_lock_enabled
     controls: []
 -   id: SRG-OS-000067-GPOS-00035
     levels:
@@ -1934,14 +1934,14 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_group_ownership_var_log_audit
-    - audit_rules_immutable
-    - directory_permissions_var_log_audit
-    - directory_ownership_var_log_audit
-    - file_ownership_var_log_audit_stig
     - directory_group_ownership_var_log_audit
     - audit_immutable_login_uids
+    - directory_ownership_var_log_audit
+    - audit_rules_immutable
+    - file_group_ownership_var_log_audit
     - file_permissions_var_log_audit
+    - directory_permissions_var_log_audit
+    - file_ownership_var_log_audit_stig
     controls: []
 -   id: SRG-OS-000057-GPOS-00027
     levels:
@@ -1961,13 +1961,13 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_group_ownership_var_log_audit
-    - audit_rules_immutable
-    - directory_ownership_var_log_audit
-    - file_ownership_var_log_audit_stig
     - directory_group_ownership_var_log_audit
     - audit_immutable_login_uids
+    - directory_ownership_var_log_audit
+    - audit_rules_immutable
+    - file_group_ownership_var_log_audit
     - file_permissions_var_log_audit
+    - file_ownership_var_log_audit_stig
     controls: []
 -   id: SRG-OS-000479-GPOS-00224
     levels:
@@ -1988,13 +1988,13 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - rsyslog_remote_loghost
     - auditd_overflow_action
-    - rsyslog_encrypt_offload_actionsendstreamdriverauthmode
-    - package_rsyslog_installed
     - auditd_name_format
-    - rsyslog_encrypt_offload_actionsendstreamdrivermode
     - rsyslog_encrypt_offload_defaultnetstreamdriver
+    - package_rsyslog_installed
+    - rsyslog_encrypt_offload_actionsendstreamdriverauthmode
+    - rsyslog_remote_loghost
+    - rsyslog_encrypt_offload_actionsendstreamdrivermode
     controls: []
 -   id: SRG-OS-000433-GPOS-00192
     levels:
@@ -2015,9 +2015,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - sysctl_kernel_kptr_restrict
-    - bios_enable_execution_restrictions
     - grub2_slub_debug_argument
+    - bios_enable_execution_restrictions
+    - sysctl_kernel_kptr_restrict
     controls: []
 -   id: SRG-OS-000350-GPOS-00138
     levels:
@@ -2081,17 +2081,17 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_group_ownership_var_log_audit
-    - directory_ownership_var_log_audit
-    - file_groupowner_var_log_messages
-    - file_owner_var_log_messages
-    - file_ownership_var_log_audit_stig
-    - file_permissions_var_log
     - directory_group_ownership_var_log_audit
-    - file_groupowner_var_log
+    - directory_ownership_var_log_audit
+    - file_group_ownership_var_log_audit
+    - file_permissions_var_log_audit
     - file_owner_var_log
     - file_permissions_var_log_messages
-    - file_permissions_var_log_audit
+    - file_owner_var_log_messages
+    - file_groupowner_var_log
+    - file_permissions_var_log
+    - file_groupowner_var_log_messages
+    - file_ownership_var_log_audit_stig
     controls: []
 -   id: SRG-OS-000461-GPOS-00205
     levels:
@@ -2112,12 +2112,12 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_unsuccessful_file_modification_open
-    - audit_rules_unsuccessful_file_modification_truncate
-    - audit_rules_unsuccessful_file_modification_open_by_handle_at
-    - audit_rules_unsuccessful_file_modification_openat
     - audit_rules_unsuccessful_file_modification_ftruncate
+    - audit_rules_unsuccessful_file_modification_truncate
+    - audit_rules_unsuccessful_file_modification_openat
     - audit_rules_unsuccessful_file_modification_creat
+    - audit_rules_unsuccessful_file_modification_open
+    - audit_rules_unsuccessful_file_modification_open_by_handle_at
     controls: []
 -   id: SRG-OS-000114-GPOS-00059
     levels:
@@ -2137,10 +2137,10 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - kernel_module_usb-storage_disabled
     - dconf_gnome_disable_automount_open
     - dconf_gnome_disable_autorun
     - service_autofs_disabled
+    - kernel_module_usb-storage_disabled
     controls: []
 -   id: SRG-OS-000269-GPOS-00103
     levels:
@@ -2207,27 +2207,27 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_dac_modification_chown
-    - audit_rules_dac_modification_fchmod
-    - audit_rules_unsuccessful_file_modification_open_by_handle_at
-    - audit_rules_dac_modification_lremovexattr
-    - audit_rules_dac_modification_removexattr
-    - audit_rules_unsuccessful_file_modification_open
-    - audit_rules_privileged_commands_sudo
-    - audit_rules_dac_modification_fremovexattr
-    - audit_rules_unsuccessful_file_modification_creat
-    - audit_rules_privileged_commands_unix_update
-    - audit_rules_dac_modification_fchmodat
+    - audit_rules_privileged_commands_su
     - audit_rules_dac_modification_chmod
+    - audit_rules_dac_modification_fchmodat
+    - audit_rules_dac_modification_chown
+    - audit_rules_dac_modification_fremovexattr
+    - audit_rules_unsuccessful_file_modification_open_by_handle_at
+    - audit_rules_unsuccessful_file_modification_ftruncate
+    - audit_rules_dac_modification_lremovexattr
+    - audit_rules_dac_modification_fchown
+    - audit_rules_dac_modification_lchown
+    - audit_rules_unsuccessful_file_modification_creat
+    - audit_rules_unsuccessful_file_modification_openat
+    - audit_rules_dac_modification_fchmod
     - audit_rules_dac_modification_fchownat
     - audit_rules_dac_modification_setxattr
-    - audit_rules_dac_modification_fsetxattr
-    - audit_rules_privileged_commands_su
-    - audit_rules_dac_modification_lchown
+    - audit_rules_dac_modification_removexattr
     - audit_rules_dac_modification_lsetxattr
-    - audit_rules_unsuccessful_file_modification_openat
-    - audit_rules_unsuccessful_file_modification_ftruncate
-    - audit_rules_dac_modification_fchown
+    - audit_rules_unsuccessful_file_modification_open
+    - audit_rules_privileged_commands_unix_update
+    - audit_rules_dac_modification_fsetxattr
+    - audit_rules_privileged_commands_sudo
     controls: []
 -   id: SRG-OS-000474-GPOS-00219
     levels:
@@ -2248,17 +2248,17 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_dac_modification_fchownat
     - package_audit_installed
-    - audit_rules_dac_modification_lchown
     - audit_rules_dac_modification_chown
-    - audit_rules_dac_modification_lremovexattr
     - audit_rules_dac_modification_lsetxattr
+    - audit_rules_dac_modification_lremovexattr
     - audit_rules_dac_modification_fchown
-    - audit_rules_dac_modification_fsetxattr
-    - audit_rules_dac_modification_removexattr
+    - audit_rules_dac_modification_lchown
     - audit_rules_dac_modification_fremovexattr
+    - audit_rules_dac_modification_fchownat
+    - audit_rules_dac_modification_fsetxattr
     - service_auditd_enabled
+    - audit_rules_dac_modification_removexattr
     controls: []
 -   id: SRG-OS-000324-GPOS-00125
     levels:
@@ -2283,12 +2283,12 @@ controls:
     related_rules: []
     rules:
     - no_tmux_in_shells
-    - sysctl_fs_protected_symlinks
-    - package_sudo_installed
-    - disable_ctrlaltdel_reboot
     - sysctl_fs_protected_hardlinks
+    - disable_ctrlaltdel_reboot
     - service_debug-shell_disabled
     - disable_ctrlaltdel_burstaction
+    - sysctl_fs_protected_symlinks
+    - package_sudo_installed
     controls: []
 -   id: SRG-OS-000250-GPOS-00093
     levels:
@@ -2309,9 +2309,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - configure_openssl_crypto_policy
     - configure_openssl_tls_crypto_policy
     - configure_ssh_crypto_policy
+    - configure_openssl_crypto_policy
     controls: []
 -   id: SRG-OS-000366-GPOS-00153
     levels:
@@ -2334,11 +2334,11 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - package_subscription-manager_installed
-    - ensure_gpgcheck_local_packages
-    - ensure_gpgcheck_globally_activated
-    - sysctl_kernel_kexec_load_disabled
     - ensure_gpgcheck_never_disabled
+    - ensure_gpgcheck_local_packages
+    - package_subscription-manager_installed
+    - sysctl_kernel_kexec_load_disabled
+    - ensure_gpgcheck_globally_activated
     controls: []
 -   id: SRG-OS-000123-GPOS-00064
     levels:
@@ -2402,11 +2402,11 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_file_deletion_events_renameat
+    - audit_rules_file_deletion_events_rmdir
     - audit_rules_file_deletion_events_rename
+    - audit_rules_file_deletion_events_renameat
     - audit_rules_file_deletion_events_unlink
     - audit_rules_file_deletion_events_unlinkat
-    - audit_rules_file_deletion_events_rmdir
     controls: []
 -   id: SRG-OS-000077-GPOS-00045
     levels:
@@ -2426,8 +2426,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - accounts_password_pam_pwhistory_remember_password_auth
     - accounts_password_pam_pwhistory_remember_system_auth
+    - accounts_password_pam_pwhistory_remember_password_auth
     - var_password_pam_remember=5
     - var_password_pam_remember_control_flag=requisite_or_required
     controls: []
@@ -2469,12 +2469,12 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - dconf_gnome_disable_autorun
-    - kernel_module_usb-storage_disabled
-    - service_usbguard_enabled
     - dconf_gnome_disable_automount_open
+    - service_usbguard_enabled
     - package_usbguard_installed
+    - kernel_module_usb-storage_disabled
     - usbguard_generate_policy
+    - dconf_gnome_disable_autorun
     - service_autofs_disabled
     controls: []
 -   id: SRG-OS-000432-GPOS-00191
@@ -2608,9 +2608,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - sshd_enable_pubkey_auth
     - sshd_disable_empty_passwords
     - configure_opensc_card_drivers
+    - sshd_enable_pubkey_auth
     - var_smartcard_drivers=cac
     controls: []
 -   id: SRG-OS-000278-GPOS-00108
@@ -2653,76 +2653,76 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_dac_modification_umount
-    - audit_rules_execution_semanage
-    - audit_rules_unsuccessful_file_modification_truncate
-    - audit_rules_dac_modification_chown
-    - audit_rules_dac_modification_fchmod
-    - audit_rules_file_deletion_events_rename
-    - audit_rules_dac_modification_lremovexattr
-    - audit_rules_unsuccessful_file_modification_open_by_handle_at
-    - audit_rules_usergroup_modification_shadow
-    - audit_rules_privileged_commands_crontab
-    - audit_rules_dac_modification_removexattr
-    - audit_rules_privileged_commands_newgrp
     - audit_rules_file_deletion_events_rmdir
-    - audit_rules_kernel_module_loading_finit
+    - audit_rules_usergroup_modification_shadow
+    - audit_rules_privileged_commands_mount
+    - audit_rules_privileged_commands_su
+    - audit_rules_privileged_commands_passwd
+    - audit_rules_execution_setfiles
+    - audit_rules_privileged_commands_pkexec
     - service_auditd_enabled
-    - audit_rules_privileged_commands_umount
-    - audit_rules_dac_modification_umount2
-    - audit_rules_unsuccessful_file_modification_open
     - audit_rules_usergroup_modification_passwd
-    - audit_rules_privileged_commands_unix_chkpwd
-    - audit_rules_privileged_commands_ssh_keysign
-    - package_audit_installed
-    - audit_rules_file_deletion_events_renameat
+    - audit_rules_dac_modification_chmod
+    - audit_rules_login_events_lastlog
+    - audit_rules_dac_modification_fchmodat
     - audit_rules_privileged_commands_pam_timestamp_check
-    - audit_rules_kernel_module_loading_delete
-    - audit_rules_execution_chacl
+    - audit_rules_dac_modification_chown
+    - audit_rules_file_deletion_events_renameat
     - audit_rules_execution_setsebool
     - audit_rules_privileged_commands_gpasswd
-    - audit_rules_privileged_commands_sudo
-    - audit_rules_usergroup_modification_opasswd
-    - audit_rules_dac_modification_fremovexattr
-    - audit_rules_unsuccessful_file_modification_creat
-    - audit_rules_privileged_commands_kmod
-    - audit_rules_kernel_module_loading_init
-    - audit_rules_privileged_commands_postqueue
-    - audit_rules_dac_modification_fchmodat
-    - audit_rules_dac_modification_chmod
-    - audit_rules_dac_modification_fchownat
-    - audit_rules_privileged_commands_unix_update
-    - audit_rules_media_export
-    - audit_rules_privileged_commands_pkexec
-    - audit_rules_login_events_lastlog
-    - audit_rules_privileged_commands_sudoedit
     - audit_rules_sudoers
-    - audit_rules_dac_modification_setxattr
-    - audit_rules_file_deletion_events_unlinkat
-    - audit_rules_privileged_commands_userhelper
-    - audit_rules_dac_modification_fsetxattr
-    - audit_rules_privileged_commands_passwd
-    - audit_rules_execution_setfacl
-    - audit_rules_privileged_commands_mount
-    - audit_rules_privileged_commands_usermod
-    - audit_rules_execution_setfiles
-    - grub2_audit_argument
-    - audit_rules_privileged_commands_su
-    - audit_rules_usergroup_modification_gshadow
-    - audit_rules_dac_modification_lchown
-    - audit_rules_dac_modification_lsetxattr
-    - audit_rules_usergroup_modification_group
-    - audit_rules_execution_chcon
-    - audit_rules_privileged_commands_modprobe
+    - audit_rules_dac_modification_fremovexattr
     - audit_rules_file_deletion_events_unlink
-    - audit_rules_privileged_commands_ssh_agent
-    - audit_rules_unsuccessful_file_modification_openat
-    - audit_rules_unsuccessful_file_modification_ftruncate
-    - audit_rules_privileged_commands_chage
-    - audit_rules_dac_modification_fchown
-    - audit_rules_privileged_commands_chsh
-    - audit_rules_privileged_commands_postdrop
+    - audit_rules_privileged_commands_sudoedit
+    - audit_rules_usergroup_modification_group
+    - audit_rules_unsuccessful_file_modification_open_by_handle_at
+    - audit_rules_execution_chcon
+    - audit_rules_execution_chacl
     - audit_rules_sudoers_d
+    - audit_rules_kernel_module_loading_init
+    - audit_rules_privileged_commands_unix_chkpwd
+    - audit_rules_unsuccessful_file_modification_ftruncate
+    - package_audit_installed
+    - audit_rules_dac_modification_lremovexattr
+    - audit_rules_dac_modification_fchown
+    - audit_rules_dac_modification_lchown
+    - audit_rules_file_deletion_events_rename
+    - audit_rules_unsuccessful_file_modification_creat
+    - audit_rules_unsuccessful_file_modification_openat
+    - audit_rules_dac_modification_fchmod
+    - audit_rules_privileged_commands_umount
+    - audit_rules_file_deletion_events_unlinkat
+    - audit_rules_dac_modification_fchownat
+    - audit_rules_dac_modification_setxattr
+    - audit_rules_privileged_commands_chage
+    - audit_rules_privileged_commands_kmod
+    - audit_rules_privileged_commands_userhelper
+    - audit_rules_usergroup_modification_gshadow
+    - grub2_audit_argument
+    - audit_rules_execution_semanage
+    - audit_rules_privileged_commands_sudo
+    - audit_rules_kernel_module_loading_delete
+    - audit_rules_dac_modification_umount
+    - audit_rules_dac_modification_removexattr
+    - audit_rules_privileged_commands_postdrop
+    - audit_rules_privileged_commands_ssh_agent
+    - audit_rules_privileged_commands_modprobe
+    - audit_rules_media_export
+    - audit_rules_dac_modification_lsetxattr
+    - audit_rules_dac_modification_umount2
+    - audit_rules_execution_setfacl
+    - audit_rules_unsuccessful_file_modification_truncate
+    - audit_rules_kernel_module_loading_finit
+    - audit_rules_privileged_commands_chsh
+    - audit_rules_privileged_commands_crontab
+    - audit_rules_unsuccessful_file_modification_open
+    - audit_rules_privileged_commands_newgrp
+    - audit_rules_privileged_commands_unix_update
+    - audit_rules_dac_modification_fsetxattr
+    - audit_rules_privileged_commands_ssh_keysign
+    - audit_rules_privileged_commands_usermod
+    - audit_rules_usergroup_modification_opasswd
+    - audit_rules_privileged_commands_postqueue
     controls: []
 -   id: SRG-OS-000104-GPOS-00051
     levels:
@@ -2743,9 +2743,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
+    - gid_passwd_group_same
     - account_unique_id
     - group_unique_id
-    - gid_passwd_group_same
     controls: []
 -   id: SRG-OS-000462-GPOS-00206
     levels:
@@ -2766,71 +2766,71 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_dac_modification_umount
-    - audit_rules_execution_semanage
-    - audit_rules_unsuccessful_file_modification_truncate
-    - audit_rules_dac_modification_chown
-    - audit_rules_dac_modification_fchmod
-    - audit_rules_file_deletion_events_rename
-    - audit_rules_dac_modification_lremovexattr
-    - audit_rules_unsuccessful_file_modification_open_by_handle_at
-    - audit_rules_usergroup_modification_shadow
-    - audit_rules_privileged_commands_crontab
-    - audit_rules_dac_modification_removexattr
-    - audit_immutable_login_uids
-    - audit_rules_privileged_commands_newgrp
     - audit_rules_file_deletion_events_rmdir
-    - audit_rules_kernel_module_loading_finit
-    - audit_rules_dac_modification_umount2
-    - audit_rules_unsuccessful_file_modification_open
+    - audit_rules_usergroup_modification_shadow
+    - audit_rules_privileged_commands_su
+    - audit_immutable_login_uids
+    - audit_rules_privileged_commands_passwd
+    - audit_rules_execution_setfiles
     - audit_rules_usergroup_modification_passwd
-    - audit_rules_privileged_commands_unix_chkpwd
-    - audit_rules_privileged_commands_ssh_keysign
-    - audit_rules_file_deletion_events_renameat
+    - audit_rules_dac_modification_chmod
+    - audit_rules_login_events_lastlog
+    - audit_rules_dac_modification_fchmodat
     - audit_rules_privileged_commands_pam_timestamp_check
-    - audit_rules_kernel_module_loading_delete
-    - audit_rules_execution_chacl
+    - audit_rules_dac_modification_chown
+    - audit_rules_file_deletion_events_renameat
     - audit_rules_execution_setsebool
     - audit_rules_privileged_commands_gpasswd
-    - audit_rules_privileged_commands_sudo
-    - audit_rules_usergroup_modification_opasswd
-    - audit_rules_dac_modification_fremovexattr
-    - audit_rules_unsuccessful_file_modification_creat
-    - audit_rules_privileged_commands_kmod
-    - audit_rules_kernel_module_loading_init
-    - audit_rules_privileged_commands_postqueue
-    - audit_rules_dac_modification_fchmodat
-    - audit_rules_dac_modification_chmod
-    - audit_rules_dac_modification_fchownat
-    - audit_rules_privileged_commands_unix_update
-    - audit_rules_media_export
     - audit_rules_sudoers
-    - audit_rules_login_events_lastlog
-    - audit_rules_privileged_commands_sudoedit
-    - audit_rules_dac_modification_setxattr
-    - audit_rules_file_deletion_events_unlinkat
-    - audit_rules_privileged_commands_userhelper
-    - audit_rules_dac_modification_fsetxattr
-    - audit_rules_privileged_commands_passwd
-    - audit_rules_execution_setfacl
-    - audit_rules_privileged_commands_usermod
-    - audit_rules_execution_setfiles
-    - grub2_audit_argument
-    - audit_rules_privileged_commands_su
-    - audit_rules_usergroup_modification_gshadow
-    - audit_rules_dac_modification_lchown
-    - audit_rules_dac_modification_lsetxattr
-    - audit_rules_execution_chcon
-    - audit_rules_privileged_commands_ssh_agent
+    - audit_rules_dac_modification_fremovexattr
     - audit_rules_file_deletion_events_unlink
+    - audit_rules_privileged_commands_sudoedit
     - audit_rules_usergroup_modification_group
-    - audit_rules_unsuccessful_file_modification_openat
-    - audit_rules_unsuccessful_file_modification_ftruncate
-    - audit_rules_privileged_commands_chage
-    - audit_rules_dac_modification_fchown
-    - audit_rules_privileged_commands_chsh
-    - audit_rules_privileged_commands_postdrop
+    - audit_rules_unsuccessful_file_modification_open_by_handle_at
+    - audit_rules_execution_chcon
+    - audit_rules_execution_chacl
     - audit_rules_sudoers_d
+    - audit_rules_kernel_module_loading_init
+    - audit_rules_privileged_commands_unix_chkpwd
+    - audit_rules_unsuccessful_file_modification_ftruncate
+    - audit_rules_dac_modification_lremovexattr
+    - audit_rules_dac_modification_fchown
+    - audit_rules_dac_modification_lchown
+    - audit_rules_file_deletion_events_rename
+    - audit_rules_unsuccessful_file_modification_creat
+    - audit_rules_unsuccessful_file_modification_openat
+    - audit_rules_dac_modification_fchmod
+    - audit_rules_file_deletion_events_unlinkat
+    - audit_rules_dac_modification_fchownat
+    - audit_rules_dac_modification_setxattr
+    - audit_rules_privileged_commands_chage
+    - audit_rules_privileged_commands_kmod
+    - audit_rules_privileged_commands_userhelper
+    - audit_rules_usergroup_modification_gshadow
+    - grub2_audit_argument
+    - audit_rules_execution_semanage
+    - audit_rules_privileged_commands_sudo
+    - audit_rules_kernel_module_loading_delete
+    - audit_rules_dac_modification_umount
+    - audit_rules_dac_modification_removexattr
+    - audit_rules_privileged_commands_postdrop
+    - audit_rules_privileged_commands_ssh_agent
+    - audit_rules_media_export
+    - audit_rules_dac_modification_lsetxattr
+    - audit_rules_dac_modification_umount2
+    - audit_rules_execution_setfacl
+    - audit_rules_unsuccessful_file_modification_truncate
+    - audit_rules_kernel_module_loading_finit
+    - audit_rules_privileged_commands_chsh
+    - audit_rules_privileged_commands_crontab
+    - audit_rules_unsuccessful_file_modification_open
+    - audit_rules_privileged_commands_newgrp
+    - audit_rules_privileged_commands_unix_update
+    - audit_rules_dac_modification_fsetxattr
+    - audit_rules_privileged_commands_ssh_keysign
+    - audit_rules_privileged_commands_usermod
+    - audit_rules_usergroup_modification_opasswd
+    - audit_rules_privileged_commands_postqueue
     controls: []
 -   id: SRG-OS-000403-GPOS-00182
     levels:
@@ -2908,11 +2908,11 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - sudo_remove_no_authenticate
-    - sudo_remove_nopasswd
     - sudo_require_reauthentication
-    - use_pam_wheel_for_su
+    - sudo_remove_no_authenticate
     - disallow_bypass_password_sudo
+    - use_pam_wheel_for_su
+    - sudo_remove_nopasswd
     - var_sudo_timestamp_timeout=always_prompt
     controls: []
 -   id: SRG-OS-000095-GPOS-00049
@@ -2934,18 +2934,18 @@ controls:
     related_rules: []
     rules:
     - kernel_module_can_disabled
-    - package_vsftpd_removed
-    - kernel_module_tipc_disabled
     - package_sendmail_removed
-    - kernel_module_bluetooth_disabled
-    - grub2_pti_argument
-    - kernel_module_sctp_disabled
-    - chronyd_client_only
-    - package_telnet-server_removed
-    - package_nfs-utils_removed
-    - package_gssproxy_removed
-    - package_iprutils_removed
     - chronyd_no_chronyc_network
+    - package_iprutils_removed
+    - kernel_module_sctp_disabled
+    - package_nfs-utils_removed
+    - grub2_pti_argument
+    - chronyd_client_only
+    - kernel_module_tipc_disabled
+    - package_telnet-server_removed
+    - package_gssproxy_removed
+    - kernel_module_bluetooth_disabled
+    - package_vsftpd_removed
     controls: []
 -   id: SRG-OS-000355-GPOS-00143
     levels:
@@ -2969,10 +2969,10 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - chronyd_or_ntpd_set_maxpoll
+    - chronyd_server_directive
     - chronyd_specify_remote_server
     - package_chrony_installed
-    - chronyd_server_directive
+    - chronyd_or_ntpd_set_maxpoll
     - service_chronyd_enabled
     - var_multiple_time_servers=stig
     controls: []
@@ -3108,13 +3108,13 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_usergroup_modification_passwd
-    - audit_rules_usergroup_modification_gshadow
-    - audit_rules_sudoers
-    - audit_rules_usergroup_modification_group
-    - audit_rules_usergroup_modification_shadow
-    - audit_rules_usergroup_modification_opasswd
     - audit_rules_sudoers_d
+    - audit_rules_usergroup_modification_shadow
+    - audit_rules_sudoers
+    - audit_rules_usergroup_modification_gshadow
+    - audit_rules_usergroup_modification_passwd
+    - audit_rules_usergroup_modification_group
+    - audit_rules_usergroup_modification_opasswd
     controls: []
 -   id: SRG-OS-000326-GPOS-00126
     levels:
@@ -3201,16 +3201,16 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - account_password_pam_faillock_system_auth
-    - account_password_pam_faillock_password_auth
     - accounts_passwords_pam_faillock_audit
-    - accounts_passwords_pam_faillock_unlock_time
-    - accounts_passwords_pam_faillock_deny
-    - account_password_selinux_faillock_dir
-    - accounts_passwords_pam_faillock_interval
     - accounts_passwords_pam_faillock_dir
-    - audit_rules_login_events_faillock
+    - account_password_pam_faillock_system_auth
+    - accounts_passwords_pam_faillock_interval
+    - accounts_passwords_pam_faillock_unlock_time
     - accounts_passwords_pam_faillock_deny_root
+    - accounts_passwords_pam_faillock_deny
+    - account_password_pam_faillock_password_auth
+    - account_password_selinux_faillock_dir
+    - audit_rules_login_events_faillock
     - var_accounts_passwords_pam_faillock_deny=3
     - var_accounts_passwords_pam_faillock_fail_interval=900
     - var_accounts_passwords_pam_faillock_unlock_time=never
@@ -3234,8 +3234,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - chronyd_or_ntpd_set_maxpoll
     - package_audit_installed
+    - chronyd_or_ntpd_set_maxpoll
     - var_time_service_set_maxpoll=18_hours
     controls: []
 -   id: SRG-OS-000377-GPOS-00162
@@ -3257,8 +3257,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - install_smartcard_packages
     - sssd_certificate_verification
+    - install_smartcard_packages
     - var_sssd_certificate_verification_digest_function=sha512
     controls: []
 -   id: SRG-OS-000463-GPOS-00207
@@ -3280,16 +3280,16 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_execution_semanage
-    - audit_rules_dac_modification_lremovexattr
     - audit_rules_dac_modification_lsetxattr
-    - audit_rules_execution_chcon
-    - audit_rules_dac_modification_removexattr
-    - audit_rules_dac_modification_fsetxattr
+    - audit_rules_dac_modification_lremovexattr
     - audit_rules_execution_setsebool
-    - audit_rules_usergroup_modification_opasswd
     - audit_rules_dac_modification_fremovexattr
     - audit_rules_execution_setfiles
+    - audit_rules_dac_modification_fsetxattr
+    - audit_rules_execution_semanage
+    - audit_rules_dac_modification_removexattr
+    - audit_rules_usergroup_modification_opasswd
+    - audit_rules_execution_chcon
     controls: []
 -   id: SRG-OS-000058-GPOS-00028
     levels:
@@ -3309,13 +3309,13 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_group_ownership_var_log_audit
-    - audit_rules_immutable
-    - directory_ownership_var_log_audit
-    - file_ownership_var_log_audit_stig
     - directory_group_ownership_var_log_audit
     - audit_immutable_login_uids
+    - directory_ownership_var_log_audit
+    - audit_rules_immutable
+    - file_group_ownership_var_log_audit
     - file_permissions_var_log_audit
+    - file_ownership_var_log_audit_stig
     controls: []
 -   id: SRG-OS-000042-GPOS-00020
     levels:
@@ -3336,71 +3336,71 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_execution_semanage
-    - audit_rules_unsuccessful_file_modification_truncate
-    - audit_rules_dac_modification_chown
-    - audit_rules_dac_modification_fchmod
-    - audit_rules_file_deletion_events_rename
-    - audit_rules_dac_modification_lremovexattr
-    - audit_rules_unsuccessful_file_modification_open_by_handle_at
-    - audit_rules_usergroup_modification_shadow
-    - audit_rules_privileged_commands_crontab
-    - audit_rules_dac_modification_removexattr
-    - audit_rules_privileged_commands_newgrp
     - audit_rules_file_deletion_events_rmdir
-    - audit_rules_kernel_module_loading_finit
-    - audit_rules_privileged_commands_umount
-    - audit_rules_unsuccessful_file_modification_open
+    - audit_rules_usergroup_modification_shadow
+    - audit_rules_privileged_commands_mount
+    - audit_rules_privileged_commands_su
+    - audit_rules_privileged_commands_passwd
+    - audit_rules_execution_setfiles
     - audit_rules_usergroup_modification_passwd
-    - audit_rules_privileged_commands_unix_chkpwd
-    - audit_rules_privileged_commands_ssh_keysign
-    - audit_rules_file_deletion_events_renameat
+    - audit_rules_dac_modification_chmod
+    - audit_rules_login_events_lastlog
+    - audit_rules_dac_modification_fchmodat
     - audit_rules_privileged_commands_pam_timestamp_check
-    - audit_rules_kernel_module_loading_delete
-    - audit_rules_execution_chacl
+    - audit_rules_dac_modification_chown
+    - audit_rules_file_deletion_events_renameat
     - audit_rules_execution_setsebool
     - audit_rules_privileged_commands_gpasswd
-    - audit_rules_privileged_commands_sudo
-    - audit_rules_usergroup_modification_opasswd
-    - audit_rules_dac_modification_fremovexattr
-    - audit_rules_unsuccessful_file_modification_creat
-    - audit_rules_privileged_commands_kmod
-    - audit_rules_kernel_module_loading_init
-    - audit_rules_privileged_commands_postqueue
-    - audit_rules_dac_modification_fchmodat
-    - audit_rules_dac_modification_chmod
-    - audit_rules_dac_modification_fchownat
-    - audit_rules_privileged_commands_unix_update
-    - audit_rules_media_export
     - audit_rules_sudoers
-    - audit_rules_login_events_lastlog
-    - audit_rules_privileged_commands_sudoedit
-    - audit_rules_dac_modification_setxattr
-    - audit_rules_file_deletion_events_unlinkat
-    - audit_rules_privileged_commands_userhelper
-    - audit_rules_dac_modification_fsetxattr
-    - audit_rules_privileged_commands_passwd
-    - audit_rules_execution_setfacl
-    - audit_rules_privileged_commands_mount
-    - audit_rules_privileged_commands_pt_chown
-    - audit_rules_privileged_commands_usermod
-    - audit_rules_execution_setfiles
-    - grub2_audit_argument
-    - audit_rules_privileged_commands_su
-    - audit_rules_usergroup_modification_gshadow
-    - audit_rules_dac_modification_lchown
-    - audit_rules_dac_modification_lsetxattr
-    - audit_rules_execution_chcon
-    - audit_rules_privileged_commands_ssh_agent
+    - audit_rules_dac_modification_fremovexattr
     - audit_rules_file_deletion_events_unlink
+    - audit_rules_privileged_commands_sudoedit
     - audit_rules_usergroup_modification_group
-    - audit_rules_unsuccessful_file_modification_openat
-    - audit_rules_unsuccessful_file_modification_ftruncate
-    - audit_rules_privileged_commands_chage
-    - audit_rules_dac_modification_fchown
-    - audit_rules_privileged_commands_chsh
-    - audit_rules_privileged_commands_postdrop
+    - audit_rules_unsuccessful_file_modification_open_by_handle_at
+    - audit_rules_execution_chcon
+    - audit_rules_execution_chacl
     - audit_rules_sudoers_d
+    - audit_rules_kernel_module_loading_init
+    - audit_rules_privileged_commands_unix_chkpwd
+    - audit_rules_unsuccessful_file_modification_ftruncate
+    - audit_rules_dac_modification_lremovexattr
+    - audit_rules_dac_modification_fchown
+    - audit_rules_dac_modification_lchown
+    - audit_rules_file_deletion_events_rename
+    - audit_rules_unsuccessful_file_modification_creat
+    - audit_rules_unsuccessful_file_modification_openat
+    - audit_rules_dac_modification_fchmod
+    - audit_rules_privileged_commands_umount
+    - audit_rules_file_deletion_events_unlinkat
+    - audit_rules_dac_modification_fchownat
+    - audit_rules_dac_modification_setxattr
+    - audit_rules_privileged_commands_chage
+    - audit_rules_privileged_commands_kmod
+    - audit_rules_privileged_commands_userhelper
+    - audit_rules_usergroup_modification_gshadow
+    - grub2_audit_argument
+    - audit_rules_execution_semanage
+    - audit_rules_privileged_commands_sudo
+    - audit_rules_kernel_module_loading_delete
+    - audit_rules_dac_modification_removexattr
+    - audit_rules_privileged_commands_postdrop
+    - audit_rules_privileged_commands_ssh_agent
+    - audit_rules_privileged_commands_pt_chown
+    - audit_rules_media_export
+    - audit_rules_dac_modification_lsetxattr
+    - audit_rules_execution_setfacl
+    - audit_rules_unsuccessful_file_modification_truncate
+    - audit_rules_kernel_module_loading_finit
+    - audit_rules_privileged_commands_chsh
+    - audit_rules_privileged_commands_crontab
+    - audit_rules_unsuccessful_file_modification_open
+    - audit_rules_privileged_commands_newgrp
+    - audit_rules_privileged_commands_unix_update
+    - audit_rules_dac_modification_fsetxattr
+    - audit_rules_privileged_commands_ssh_keysign
+    - audit_rules_privileged_commands_usermod
+    - audit_rules_usergroup_modification_opasswd
+    - audit_rules_privileged_commands_postqueue
     controls: []
 -   id: SRG-OS-000239-GPOS-00089
     levels:
@@ -3420,13 +3420,13 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_usergroup_modification_passwd
-    - audit_rules_usergroup_modification_gshadow
-    - audit_rules_sudoers
-    - audit_rules_usergroup_modification_group
-    - audit_rules_usergroup_modification_shadow
-    - audit_rules_usergroup_modification_opasswd
     - audit_rules_sudoers_d
+    - audit_rules_usergroup_modification_shadow
+    - audit_rules_sudoers
+    - audit_rules_usergroup_modification_gshadow
+    - audit_rules_usergroup_modification_passwd
+    - audit_rules_usergroup_modification_group
+    - audit_rules_usergroup_modification_opasswd
     controls: []
 -   id: SRG-OS-000383-GPOS-00166
     levels:
@@ -3669,10 +3669,10 @@ controls:
     related_rules: []
     rules:
     - audit_rules_kernel_module_loading_init
-    - audit_rules_kernel_module_loading_delete
-    - audit_rules_kernel_module_loading_finit
     - audit_rules_privileged_commands_rmmod
+    - audit_rules_kernel_module_loading_finit
     - audit_rules_privileged_commands_kmod
+    - audit_rules_kernel_module_loading_delete
     controls: []
 -   id: SRG-OS-000185-GPOS-00079
     levels:
@@ -3714,10 +3714,10 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - accounts_umask_etc_csh_cshrc
     - accounts_umask_etc_login_defs
-    - accounts_umask_etc_profile
+    - accounts_umask_etc_csh_cshrc
     - accounts_umask_etc_bashrc
+    - accounts_umask_etc_profile
     - var_accounts_user_umask=077
     controls: []
 -   id: SRG-OS-000468-GPOS-00212
@@ -3739,17 +3739,17 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_file_deletion_events_renameat
-    - audit_rules_file_deletion_events_rename
-    - audit_rules_dac_modification_lremovexattr
-    - audit_rules_execution_chcon
-    - audit_rules_dac_modification_lsetxattr
-    - audit_rules_file_deletion_events_unlink
-    - audit_rules_file_deletion_events_unlinkat
-    - audit_rules_privileged_commands_chage
-    - audit_rules_dac_modification_removexattr
-    - audit_rules_dac_modification_fsetxattr
     - audit_rules_file_deletion_events_rmdir
+    - audit_rules_dac_modification_lsetxattr
+    - audit_rules_dac_modification_lremovexattr
+    - audit_rules_file_deletion_events_rename
+    - audit_rules_file_deletion_events_renameat
+    - audit_rules_file_deletion_events_unlink
+    - audit_rules_privileged_commands_chage
+    - audit_rules_dac_modification_fsetxattr
+    - audit_rules_dac_modification_removexattr
+    - audit_rules_file_deletion_events_unlinkat
+    - audit_rules_execution_chcon
     controls: []
 -   id: SRG-OS-000476-GPOS-00221
     levels:
@@ -3770,13 +3770,13 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_usergroup_modification_passwd
-    - audit_rules_usergroup_modification_gshadow
-    - audit_rules_sudoers
-    - audit_rules_usergroup_modification_group
-    - audit_rules_usergroup_modification_shadow
-    - audit_rules_usergroup_modification_opasswd
     - audit_rules_sudoers_d
+    - audit_rules_usergroup_modification_shadow
+    - audit_rules_sudoers
+    - audit_rules_usergroup_modification_gshadow
+    - audit_rules_usergroup_modification_passwd
+    - audit_rules_usergroup_modification_group
+    - audit_rules_usergroup_modification_opasswd
     controls: []
 -   id: SRG-OS-000255-GPOS-00096
     levels:
@@ -3797,8 +3797,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - auditd_log_format
     - package_audit_installed
+    - auditd_log_format
     - service_auditd_enabled
     controls: []
 -   id: SRG-OS-000281-GPOS-00111
@@ -3857,11 +3857,11 @@ controls:
     original_title: null
     related_rules: []
     rules:
+    - auditd_data_retention_action_mail_acct
+    - auditd_data_retention_admin_space_left_action
+    - auditd_data_retention_admin_space_left_percentage
     - auditd_data_retention_space_left_action
     - auditd_data_retention_space_left_percentage
-    - auditd_data_retention_action_mail_acct
-    - auditd_data_retention_admin_space_left_percentage
-    - auditd_data_retention_admin_space_left_action
     - var_auditd_admin_space_left_percentage=5pc
     - var_auditd_space_left_percentage=25pc
     - var_auditd_action_mail_acct=root
@@ -3887,200 +3887,200 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_permissions_cron_allow
-    - sysctl_kernel_core_pattern
-    - rsyslog_remote_loghost
-    - partition_for_var_log_audit
-    - sysctl_net_ipv6_conf_default_accept_ra
-    - mount_option_home_nosuid
-    - sshd_x11_use_localhost
-    - accounts_umask_interactive_users
-    - use_kerberos_security_all_exports
-    - no_user_host_based_files
-    - file_permissions_backup_etc_shadow
-    - file_permissions_sshd_pub_key
-    - grub2_page_poison_argument
-    - package_iprutils_removed
-    - sysctl_net_ipv6_conf_default_accept_redirects
-    - installed_OS_is_vendor_supported
-    - sshd_disable_x11_forwarding
-    - file_groupowner_grub2_cfg
-    - file_permissions_sshd_private_key
-    - file_owner_etc_gshadow
-    - sshd_disable_gssapi_auth
-    - package_openssh-clients_installed
-    - display_login_attempts
-    - file_groupowner_cron_hourly
-    - accounts_no_uid_except_zero
-    - mount_option_nodev_nonroot_local_partitions
-    - file_groupowner_cron_daily
     - sysctl_net_ipv4_conf_default_rp_filter
-    - file_groupowner_backup_etc_gshadow
-    - sysctl_net_ipv4_conf_default_accept_redirects
-    - sysctl_user_max_user_namespaces
-    - no_empty_passwords_etc_shadow
-    - file_permissions_backup_etc_gshadow
-    - disable_ctrlaltdel_burstaction
-    - file_permissions_etc_gshadow
-    - accounts_authorized_local_users
-    - file_groupowner_etc_shadow
-    - file_owner_cron_d
-    - sshd_print_last_log
-    - sysctl_net_ipv4_conf_all_rp_filter
-    - file_permissions_cron_weekly
-    - no_shelllogin_for_systemaccounts
-    - file_groupownership_home_directories
-    - sysctl_net_ipv6_conf_all_accept_ra
-    - partition_for_var_log
-    - file_owner_backup_etc_gshadow
-    - sshd_disable_root_login
-    - dconf_gnome_disable_autorun
-    - kernel_module_usb-storage_disabled
-    - package_sendmail_removed
-    - sysctl_net_ipv6_conf_all_forwarding
-    - sysctl_net_core_bpf_jit_harden
-    - file_owner_etc_passwd
-    - package_xorg-x11-server-common_removed
-    - sysctl_kernel_kexec_load_disabled
-    - package_gssproxy_removed
-    - file_groupowner_etc_group
-    - file_owner_cron_weekly
-    - service_rsyslog_enabled
-    - file_permissions_cron_daily
-    - sysctl_net_ipv6_conf_all_accept_redirects
-    - package_MFEhiplsm_installed
-    - package_audit_installed
-    - file_owner_backup_etc_shadow
-    - package_firewalld_installed
-    - file_groupowner_etc_passwd
-    - file_permissions_etc_shadow
-    - postfix_prevent_unrestricted_relay
-    - no_host_based_files
-    - accounts_user_home_paths_only
-    - configured_firewalld_default_deny
-    - sysctl_kernel_yama_ptrace_scope
-    - file_groupowner_cron_monthly
-    - enable_authselect
+    - sysctl_kernel_core_pattern
     - sysctl_net_ipv6_conf_all_accept_source_route
-    - auditd_write_logs
-    - aide_verify_acls
-    - file_owner_etc_shadow
-    - file_owner_etc_group
-    - rsyslog_cron_logging
-    - file_owner_backup_etc_group
-    - sysctl_net_ipv4_tcp_syncookies
-    - file_owner_cron_allow
-    - package_quagga_removed
-    - mount_option_noexec_removable_partitions
-    - coredump_disable_backtraces
-    - sshd_disable_rhosts
-    - file_groupowner_cron_deny
-    - file_permissions_cron_d
-    - sysctl_net_ipv4_conf_all_accept_source_route
-    - file_groupowner_etc_gshadow
-    - partition_for_tmp
-    - accounts_user_dot_no_world_writable_programs
-    - package_libreswan_installed
-    - service_kdump_disabled
-    - file_groupowner_backup_etc_passwd
-    - mount_option_nosuid_remote_filesystems
-    - file_owner_sshd_config
-    - auditd_log_format
-    - sysctl_net_ipv4_conf_all_accept_redirects
-    - sysctl_kernel_kptr_restrict
-    - partition_for_var_tmp
-    - network_sniffer_disabled
-    - file_owner_cron_deny
-    - file_permissions_home_directories
-    - file_owner_cron_hourly
-    - file_owner_cron_monthly
-    - dconf_db_up_to_date
-    - file_permissions_sshd_config
-    - package_rng-tools_installed
-    - mount_option_krb_sec_remote_filesystems
-    - rsyslog_nolisten
-    - package_policycoreutils_installed
-    - service_auditd_enabled
+    - configured_firewalld_default_deny
     - sshd_enable_strictmodes
-    - package_tuned_removed
-    - file_permissions_cron_hourly
-    - sshd_rekey_limit
-    - firewalld_sshd_port_enabled
-    - disable_users_coredumps
-    - dconf_gnome_disable_user_list
-    - sshd_disable_user_known_hosts
+    - kernel_module_usb-storage_disabled
+    - file_permission_user_init_files
+    - file_owner_cron_deny
+    - file_groupownership_home_directories
+    - file_permissions_etc_passwd
+    - file_permissions_etc_group
+    - sysctl_kernel_yama_ptrace_scope
+    - file_groupowner_cron_d
+    - mount_option_nodev_remote_filesystems
     - sysctl_kernel_randomize_va_space
-    - no_empty_passwords
-    - file_owner_crontab
-    - file_permissions_ungroupowned
-    - accounts_user_interactive_home_directory_defined
-    - tftpd_uses_secure_mode
-    - sysctl_net_ipv4_icmp_echo_ignore_broadcasts
-    - security_patches_up_to_date
-    - dir_perms_world_writable_root_owned
-    - sudo_restrict_privilege_elevation_to_authorized
     - service_autofs_disabled
+    - package_libreswan_installed
+    - file_owner_backup_etc_group
+    - package_audit_installed
+    - coredump_disable_backtraces
+    - file_permissions_cron_d
+    - package_openssh-clients_installed
+    - grub2_vsyscall_argument
+    - partition_for_var_log_audit
+    - file_groupowner_cron_monthly
+    - file_permissions_cron_allow
+    - file_permissions_home_directories
+    - sysctl_net_ipv4_conf_all_rp_filter
+    - tftpd_uses_secure_mode
+    - sysctl_kernel_kptr_restrict
+    - accounts_authorized_local_users
+    - enable_authselect
+    - aide_verify_ext_attributes
+    - file_groupowner_backup_etc_passwd
     - file_groupowner_sshd_config
+    - aide_verify_acls
+    - file_permissions_cron_hourly
+    - file_groupowner_cron_hourly
+    - file_owner_etc_gshadow
+    - service_firewalld_enabled
+    - service_debug-shell_disabled
+    - sshd_disable_user_known_hosts
+    - sshd_x11_use_localhost
+    - service_auditd_enabled
+    - file_groupowner_etc_gshadow
+    - package_xorg-x11-server-common_removed
+    - file_permissions_sshd_pub_key
+    - grub2_disable_interactive_boot
+    - package_vsftpd_removed
+    - package_policycoreutils_installed
+    - no_user_host_based_files
+    - dconf_gnome_disable_user_list
+    - set_firewalld_default_zone
+    - file_groupowner_cron_daily
+    - file_groupowner_etc_group
+    - sysctl_net_ipv4_conf_all_accept_source_route
+    - package_rsyslog_installed
+    - file_permissions_cron_monthly
+    - file_permissions_backup_etc_shadow
+    - firewalld_sshd_port_enabled
+    - accounts_user_interactive_home_directory_defined
+    - network_sniffer_disabled
+    - rsyslog_remote_loghost
+    - file_owner_cron_hourly
+    - file_permissions_ungroupowned
+    - file_owner_sshd_config
+    - package_nss-tools_installed
+    - package_iprutils_removed
+    - file_groupowner_grub2_cfg
+    - dconf_gnome_disable_automount_open
+    - disable_ctrlaltdel_reboot
+    - rsyslog_nolisten
+    - file_groupowner_etc_passwd
+    - sysctl_user_max_user_namespaces
+    - postfix_prevent_unrestricted_relay
+    - auditd_write_logs
+    - file_groupowner_cron_deny
+    - package_tuned_removed
+    - sysctl_net_ipv4_conf_default_send_redirects
+    - installed_OS_is_vendor_supported
+    - file_groupowner_backup_etc_shadow
+    - mount_option_noexec_remote_filesystems
+    - rsyslog_cron_logging
+    - accounts_umask_interactive_users
+    - file_permissions_sshd_config
+    - sysctl_net_ipv6_conf_all_accept_ra
+    - service_kdump_disabled
+    - partition_for_tmp
+    - mount_option_nodev_removable_partitions
+    - file_permissions_etc_shadow
     - sshd_disable_empty_passwords
+    - file_permissions_backup_etc_passwd
+    - no_empty_passwords_etc_shadow
+    - file_groupowner_cron_weekly
+    - sshd_disable_gssapi_auth
+    - sysctl_net_ipv6_conf_all_accept_redirects
+    - file_owner_backup_etc_shadow
+    - package_gssproxy_removed
+    - file_owner_crontab
+    - file_permissions_cron_weekly
+    - no_host_based_files
+    - mount_option_krb_sec_remote_filesystems
+    - file_owner_cron_d
     - partition_for_home
     - service_systemd-coredump_disabled
-    - no_files_unowned_by_user
-    - file_permissions_cron_monthly
-    - package_rsyslog_installed
-    - file_permissions_backup_etc_passwd
-    - sysctl_net_ipv4_ip_forward
-    - xwindows_runlevel_target
-    - partition_for_var
-    - dconf_gnome_disable_restart_shutdown
-    - file_permissions_crontab
-    - file_permissions_etc_group
-    - package_rsyslog-gnutls_installed
-    - mount_option_nodev_removable_partitions
-    - package_policycoreutils-python-utils_installed
-    - mount_option_nosuid_removable_partitions
-    - sysctl_net_ipv4_conf_all_send_redirects
-    - accounts_user_interactive_home_directory_exists
-    - package_nss-tools_installed
-    - sysctl_kernel_unprivileged_bpf_disabled
-    - grub2_vsyscall_argument
-    - accounts_have_homedir_login_defs
-    - disable_ctrlaltdel_reboot
-    - dconf_gnome_disable_ctrlaltdel_reboot
-    - mount_option_home_noexec
-    - file_groupowner_backup_etc_shadow
-    - package_gnutls-utils_installed
-    - dconf_gnome_disable_automount_open
-    - file_permission_user_init_files
-    - sysctl_net_ipv4_conf_default_send_redirects
-    - mount_option_noexec_remote_filesystems
-    - file_groupowner_backup_etc_group
-    - file_permissions_backup_etc_group
-    - file_groupowner_crontab
-    - mount_option_nodev_remote_filesystems
-    - accounts_umask_etc_bashrc
-    - file_groupowner_cron_d
-    - file_groupowner_cron_allow
-    - file_owner_backup_etc_passwd
-    - mount_option_boot_nosuid
-    - package_vsftpd_removed
-    - sysctl_net_ipv6_conf_default_accept_source_route
-    - service_firewalld_enabled
-    - networkmanager_dns_mode
-    - grub2_disable_interactive_boot
-    - sudoers_validate_passwd
-    - service_debug-shell_disabled
-    - package_tftp-server_removed
-    - coredump_disable_storage
-    - aide_verify_ext_attributes
-    - set_firewalld_default_zone
+    - accounts_user_home_paths_only
+    - package_MFEhiplsm_installed
+    - package_firewalld_installed
+    - dconf_gnome_disable_autorun
+    - dconf_db_up_to_date
     - network_configure_name_resolution
-    - sshd_disable_kerb_auth
-    - sysctl_net_ipv4_conf_default_accept_source_route
-    - sshd_disable_compression
-    - file_permissions_etc_passwd
+    - file_permissions_backup_etc_group
+    - sysctl_net_ipv6_conf_default_accept_source_route
+    - file_permissions_crontab
+    - accounts_umask_etc_bashrc
+    - partition_for_var_log
+    - file_permissions_cron_daily
+    - mount_option_home_noexec
+    - sysctl_net_ipv4_conf_all_send_redirects
+    - file_groupowner_backup_etc_gshadow
+    - sudoers_validate_passwd
+    - file_groupowner_backup_etc_group
+    - package_gnutls-utils_installed
+    - display_login_attempts
+    - file_groupowner_cron_allow
+    - disable_users_coredumps
+    - auditd_log_format
+    - dir_perms_world_writable_root_owned
+    - accounts_user_interactive_home_directory_exists
+    - sysctl_kernel_unprivileged_bpf_disabled
+    - sudo_restrict_privilege_elevation_to_authorized
+    - file_owner_cron_weekly
+    - sysctl_net_ipv4_conf_all_accept_redirects
+    - sshd_print_last_log
     - file_owner_cron_daily
+    - sysctl_net_ipv4_ip_forward
+    - file_owner_etc_group
+    - file_owner_cron_monthly
+    - networkmanager_dns_mode
+    - sshd_disable_kerb_auth
+    - package_tftp-server_removed
+    - file_groupowner_crontab
+    - sysctl_kernel_kexec_load_disabled
+    - sshd_disable_compression
+    - file_permissions_etc_gshadow
+    - sysctl_net_ipv4_tcp_syncookies
+    - file_permissions_sshd_private_key
+    - use_kerberos_security_all_exports
+    - sshd_rekey_limit
+    - accounts_no_uid_except_zero
     - auditd_local_events
-    - file_groupowner_cron_weekly
+    - no_files_unowned_by_user
+    - disable_ctrlaltdel_burstaction
+    - file_groupowner_etc_shadow
+    - file_owner_etc_shadow
+    - no_empty_passwords
+    - sysctl_net_ipv6_conf_default_accept_ra
+    - mount_option_nosuid_removable_partitions
+    - accounts_user_dot_no_world_writable_programs
+    - partition_for_var_tmp
+    - file_owner_backup_etc_passwd
+    - sshd_disable_x11_forwarding
+    - mount_option_home_nosuid
+    - accounts_have_homedir_login_defs
+    - sshd_disable_root_login
+    - mount_option_nosuid_remote_filesystems
+    - mount_option_nodev_nonroot_local_partitions
+    - package_policycoreutils-python-utils_installed
+    - sysctl_net_ipv6_conf_default_accept_redirects
+    - sysctl_net_ipv4_conf_default_accept_source_route
+    - sysctl_net_ipv6_conf_all_forwarding
+    - xwindows_runlevel_target
+    - grub2_page_poison_argument
+    - package_sendmail_removed
+    - file_permissions_backup_etc_gshadow
+    - file_owner_cron_allow
+    - package_rsyslog-gnutls_installed
+    - package_rng-tools_installed
+    - dconf_gnome_disable_restart_shutdown
+    - mount_option_boot_nosuid
+    - file_owner_etc_passwd
+    - security_patches_up_to_date
+    - no_shelllogin_for_systemaccounts
+    - sysctl_net_ipv4_conf_default_accept_redirects
+    - coredump_disable_storage
+    - sysctl_net_ipv4_icmp_echo_ignore_broadcasts
+    - file_owner_backup_etc_gshadow
+    - service_rsyslog_enabled
+    - sysctl_net_core_bpf_jit_harden
+    - dconf_gnome_disable_ctrlaltdel_reboot
+    - mount_option_noexec_removable_partitions
+    - partition_for_var
+    - package_quagga_removed
+    - sshd_disable_rhosts
     - var_networkmanager_dns_mode=none
     controls: []
 -   id: SRG-OS-000425-GPOS-00189
@@ -4102,8 +4102,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - service_sshd_enabled
     - package_openssh-server_installed
+    - service_sshd_enabled
     controls: []
 -   id: SRG-OS-000481-GPOS-00481
     levels:
@@ -4145,16 +4145,16 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_usergroup_modification_passwd
-    - audit_rules_login_events_tallylog
-    - audit_rules_usergroup_modification_gshadow
-    - audit_rules_sudoers
-    - audit_rules_login_events_lastlog
-    - audit_rules_usergroup_modification_group
-    - audit_rules_usergroup_modification_shadow
-    - audit_rules_login_events_faillock
-    - audit_rules_usergroup_modification_opasswd
     - audit_rules_sudoers_d
+    - audit_rules_usergroup_modification_shadow
+    - audit_rules_login_events_tallylog
+    - audit_rules_login_events_faillock
+    - audit_rules_sudoers
+    - audit_rules_usergroup_modification_gshadow
+    - audit_rules_usergroup_modification_passwd
+    - audit_rules_usergroup_modification_group
+    - audit_rules_usergroup_modification_opasswd
+    - audit_rules_login_events_lastlog
     controls: []
 -   id: SRG-OS-000257-GPOS-00098
     levels:
@@ -4174,8 +4174,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_audit_tools_permissions
     - file_audit_tools_group_ownership
+    - file_audit_tools_permissions
     - file_audit_tools_ownership
     controls: []
 -   id: SRG-OS-000312-GPOS-00123
@@ -4220,9 +4220,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
+    - package_s-nail_installed
     - package_aide_installed
     - aide_periodic_cron_checking
-    - package_s-nail_installed
     controls: []
 -   id: SRG-OS-000447-GPOS-00201
     levels:
@@ -4265,9 +4265,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
+    - package_telnet-server_removed
     - package_tftp_removed
     - package_vsftpd_removed
-    - package_telnet-server_removed
     controls: []
 -   id: SRG-OS-000475-GPOS-00220
     levels:
@@ -4310,8 +4310,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - sshd_enable_pubkey_auth
     - configure_opensc_card_drivers
+    - sshd_enable_pubkey_auth
     controls: []
 -   id: SRG-OS-000047-GPOS-00023
     levels:
@@ -4333,9 +4333,9 @@ controls:
     related_rules: []
     rules:
     - auditd_data_disk_error_action_stig
-    - auditd_data_retention_max_log_file_action_stig
     - audit_rules_system_shutdown
     - auditd_data_disk_full_action_stig
+    - auditd_data_retention_max_log_file_action_stig
     - var_audit_failure_mode=panic
     - var_auditd_disk_error_action=halt
     - var_auditd_disk_full_action=halt
@@ -4359,8 +4359,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - sshd_set_loglevel_verbose
     - rsyslog_remote_access_monitoring
+    - sshd_set_loglevel_verbose
     controls: []
 -   id: SRG-OS-000344-GPOS-00135
     levels:
@@ -4422,10 +4422,10 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - enable_fips_mode
-    - configure_crypto_policy
     - sysctl_crypto_fips_enabled
+    - configure_crypto_policy
     - package_crypto-policies_installed
+    - enable_fips_mode
     controls: []
 -   id: SRG-OS-000075-GPOS-00043
     levels:
@@ -4494,9 +4494,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - grub2_audit_backlog_limit_argument
     - partition_for_var_log_audit
     - auditd_audispd_configure_sufficiently_large_partition
+    - grub2_audit_backlog_limit_argument
     controls: []
 -   id: SRG-OS-000046-GPOS-00022
     levels:
@@ -4517,10 +4517,10 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - postfix_client_configure_mail_alias
+    - auditd_data_retention_action_mail_acct
     - audit_rules_system_shutdown
     - postfix_client_configure_mail_alias_postmaster
-    - auditd_data_retention_action_mail_acct
+    - postfix_client_configure_mail_alias
     - var_postfix_root_mail_alias=mil_sysadmin
     - var_audit_failure_mode=panic
     - var_auditd_action_mail_acct=root
@@ -4599,9 +4599,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - sshd_enable_pubkey_auth
     - sssd_enable_smartcards
     - install_smartcard_packages
+    - sshd_enable_pubkey_auth
     controls: []
 -   id: SRG-OS-000370-GPOS-00155
     levels:
@@ -4622,8 +4622,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - package_fapolicyd_installed
     - service_fapolicyd_enabled
+    - package_fapolicyd_installed
     controls: []
 -   id: SRG-OS-000298-GPOS-00116
     levels:
@@ -4733,29 +4733,29 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - mount_option_dev_shm_nosuid
-    - mount_option_home_nodev
-    - mount_option_home_nosuid
-    - mount_option_var_tmp_nodev
-    - mount_option_tmp_noexec
-    - mount_option_var_log_audit_nosuid
+    - mount_option_var_log_nosuid
+    - mount_option_tmp_nosuid
+    - package_fapolicyd_installed
     - mount_option_var_tmp_noexec
     - mount_option_var_log_noexec
-    - mount_option_var_tmp_nosuid
     - mount_option_var_log_audit_nodev
-    - mount_option_var_log_nodev
-    - mount_option_var_log_nosuid
-    - mount_option_dev_shm_noexec
-    - mount_option_var_nodev
-    - mount_option_boot_nosuid
-    - service_fapolicyd_enabled
-    - mount_option_nodev_nonroot_local_partitions
-    - mount_option_var_log_audit_noexec
+    - mount_option_home_nosuid
     - mount_option_tmp_nodev
-    - package_fapolicyd_installed
-    - mount_option_boot_nodev
-    - mount_option_tmp_nosuid
+    - mount_option_var_log_audit_noexec
     - mount_option_dev_shm_nodev
+    - mount_option_nodev_nonroot_local_partitions
+    - mount_option_var_nodev
+    - mount_option_tmp_noexec
+    - mount_option_var_tmp_nosuid
+    - mount_option_var_log_audit_nosuid
+    - mount_option_boot_nosuid
+    - mount_option_boot_nodev
+    - mount_option_var_tmp_nodev
+    - mount_option_home_nodev
+    - mount_option_dev_shm_noexec
+    - mount_option_var_log_nodev
+    - mount_option_dev_shm_nosuid
+    - service_fapolicyd_enabled
     controls: []
 -   id: SRG-OS-000384-GPOS-00167
     levels:
@@ -4843,8 +4843,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - enable_dracut_fips_module
     - sysctl_crypto_fips_enabled
+    - enable_dracut_fips_module
     - enable_fips_mode
     controls: []
 -   id: SRG-OS-000121-GPOS-00062
@@ -4890,11 +4890,11 @@ controls:
     related_rules: []
     rules:
     - service_firewalld_enabled
-    - package_firewalld_installed
+    - chronyd_no_chronyc_network
+    - configure_firewalld_ports
     - firewalld_sshd_port_enabled
     - chronyd_client_only
-    - configure_firewalld_ports
-    - chronyd_no_chronyc_network
+    - package_firewalld_installed
     controls: []
 -   id: SRG-OS-000276-GPOS-00106
     levels:
@@ -5057,12 +5057,12 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_dac_modification_lremovexattr
     - audit_rules_dac_modification_lsetxattr
-    - audit_rules_dac_modification_setxattr
-    - audit_rules_dac_modification_removexattr
-    - audit_rules_dac_modification_fsetxattr
+    - audit_rules_dac_modification_lremovexattr
     - audit_rules_dac_modification_fremovexattr
+    - audit_rules_dac_modification_setxattr
+    - audit_rules_dac_modification_fsetxattr
+    - audit_rules_dac_modification_removexattr
     controls: []
 -   id: SRG-OS-000433-GPOS-00193
     levels:
@@ -5105,11 +5105,11 @@ controls:
     original_title: null
     related_rules: []
     rules:
+    - accounts_password_pam_maxrepeat
+    - accounts_password_pam_maxclassrepeat
+    - accounts_password_pam_minclass
     - accounts_password_pam_difok
     - accounts_password_pam_enforce_root
-    - accounts_password_pam_maxclassrepeat
-    - accounts_password_pam_maxrepeat
-    - accounts_password_pam_minclass
     - var_password_pam_difok=8
     - var_password_pam_maxclassrepeat=4
     - var_password_pam_maxrepeat=3
@@ -5133,8 +5133,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_audit_tools_permissions
     - file_audit_tools_group_ownership
+    - file_audit_tools_permissions
     - file_audit_tools_ownership
     controls: []
 -   id: SRG-OS-000029-GPOS-00010
@@ -5156,9 +5156,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - dconf_gnome_screensaver_lock_delay
-    - configure_tmux_lock_after_time
     - dconf_gnome_screensaver_idle_delay
+    - configure_tmux_lock_after_time
+    - dconf_gnome_screensaver_lock_delay
     - dconf_gnome_session_idle_user_locks
     - dconf_gnome_screensaver_user_locks
     - inactivity_timeout_value=15_minutes
@@ -5231,8 +5231,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - configure_tmux_lock_after_time
     - configure_bashrc_exec_tmux
+    - configure_tmux_lock_after_time
     controls: []
 -   id: SRG-OS-000354-GPOS-00142
     levels:
@@ -5274,12 +5274,12 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - accounts_password_pam_unix_rounds_password_auth
-    - accounts_password_all_shadowed_sha512
-    - set_password_hashing_algorithm_libuserconf
     - set_password_hashing_algorithm_logindefs
     - accounts_password_pam_unix_rounds_system_auth
+    - accounts_password_pam_unix_rounds_password_auth
     - set_password_hashing_algorithm_systemauth
+    - set_password_hashing_algorithm_libuserconf
+    - accounts_password_all_shadowed_sha512
     - set_password_hashing_min_rounds_logindefs
     controls: []
 -   id: SRG-OS-000424-GPOS-00188
@@ -5303,10 +5303,10 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - service_sshd_enabled
     - package_openssh-server_installed
-    - wireless_disable_interfaces
     - ssh_client_rekey_limit
+    - wireless_disable_interfaces
+    - service_sshd_enabled
     controls: []
 -   id: SRG-OS-000275-GPOS-00105
     levels:
@@ -5455,10 +5455,10 @@ controls:
     original_title: null
     related_rules: []
     rules:
+    - gnome_gdm_disable_automatic_login
+    - disable_host_auth
     - sshd_do_not_permit_user_env
     - sshd_disable_empty_passwords
-    - disable_host_auth
-    - gnome_gdm_disable_automatic_login
     controls: []
 -   id: SRG-OS-000471-GPOS-00215
     levels:
@@ -5479,72 +5479,72 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_dac_modification_umount
-    - audit_rules_execution_semanage
-    - audit_rules_unsuccessful_file_modification_truncate
-    - audit_rules_dac_modification_chown
-    - audit_rules_dac_modification_fchmod
-    - audit_rules_file_deletion_events_rename
-    - audit_rules_dac_modification_lremovexattr
-    - audit_rules_unsuccessful_file_modification_open_by_handle_at
-    - audit_rules_usergroup_modification_shadow
-    - audit_rules_privileged_commands_crontab
-    - audit_rules_dac_modification_removexattr
-    - audit_rules_privileged_commands_newgrp
     - audit_rules_file_deletion_events_rmdir
-    - audit_rules_kernel_module_loading_finit
-    - audit_rules_privileged_commands_umount
-    - audit_rules_dac_modification_umount2
-    - audit_rules_unsuccessful_file_modification_open
+    - audit_rules_usergroup_modification_shadow
+    - audit_rules_privileged_commands_su
+    - audit_rules_privileged_commands_passwd
+    - audit_rules_execution_setfiles
     - audit_rules_usergroup_modification_passwd
-    - audit_rules_privileged_commands_unix_chkpwd
-    - audit_rules_privileged_commands_ssh_keysign
-    - audit_rules_file_deletion_events_renameat
+    - audit_rules_dac_modification_chmod
+    - audit_rules_login_events_lastlog
+    - audit_rules_dac_modification_fchmodat
     - audit_rules_privileged_commands_pam_timestamp_check
-    - audit_rules_kernel_module_loading_delete
-    - audit_rules_execution_chacl
+    - audit_rules_dac_modification_chown
+    - audit_rules_file_deletion_events_renameat
     - audit_rules_execution_setsebool
     - audit_rules_privileged_commands_gpasswd
-    - audit_rules_privileged_commands_sudo
-    - audit_rules_usergroup_modification_opasswd
-    - audit_rules_dac_modification_fremovexattr
-    - audit_rules_unsuccessful_file_modification_creat
-    - audit_rules_privileged_commands_kmod
-    - audit_rules_kernel_module_loading_init
-    - audit_rules_privileged_commands_postqueue
-    - audit_rules_dac_modification_fchmodat
-    - audit_rules_dac_modification_chmod
-    - audit_rules_dac_modification_fchownat
-    - audit_rules_privileged_commands_unix_update
-    - audit_rules_media_export
     - audit_rules_sudoers
-    - audit_rules_login_events_lastlog
-    - audit_rules_privileged_commands_sudoedit
-    - audit_rules_dac_modification_setxattr
-    - audit_rules_file_deletion_events_unlinkat
-    - audit_rules_privileged_commands_userhelper
-    - audit_rules_dac_modification_fsetxattr
-    - audit_rules_privileged_commands_passwd
-    - audit_rules_execution_setfacl
-    - audit_rules_privileged_commands_pt_chown
-    - audit_rules_privileged_commands_usermod
-    - audit_rules_execution_setfiles
-    - grub2_audit_argument
-    - audit_rules_privileged_commands_su
-    - audit_rules_usergroup_modification_gshadow
-    - audit_rules_dac_modification_lchown
-    - audit_rules_dac_modification_lsetxattr
-    - audit_rules_execution_chcon
-    - audit_rules_privileged_commands_ssh_agent
+    - audit_rules_dac_modification_fremovexattr
     - audit_rules_file_deletion_events_unlink
+    - audit_rules_privileged_commands_sudoedit
     - audit_rules_usergroup_modification_group
-    - audit_rules_unsuccessful_file_modification_openat
-    - audit_rules_unsuccessful_file_modification_ftruncate
-    - audit_rules_privileged_commands_chage
-    - audit_rules_dac_modification_fchown
-    - audit_rules_privileged_commands_chsh
-    - audit_rules_privileged_commands_postdrop
+    - audit_rules_unsuccessful_file_modification_open_by_handle_at
+    - audit_rules_execution_chcon
+    - audit_rules_execution_chacl
     - audit_rules_sudoers_d
+    - audit_rules_kernel_module_loading_init
+    - audit_rules_privileged_commands_unix_chkpwd
+    - audit_rules_unsuccessful_file_modification_ftruncate
+    - audit_rules_dac_modification_lremovexattr
+    - audit_rules_dac_modification_fchown
+    - audit_rules_dac_modification_lchown
+    - audit_rules_file_deletion_events_rename
+    - audit_rules_unsuccessful_file_modification_creat
+    - audit_rules_unsuccessful_file_modification_openat
+    - audit_rules_dac_modification_fchmod
+    - audit_rules_privileged_commands_umount
+    - audit_rules_file_deletion_events_unlinkat
+    - audit_rules_dac_modification_fchownat
+    - audit_rules_dac_modification_setxattr
+    - audit_rules_privileged_commands_chage
+    - audit_rules_privileged_commands_kmod
+    - audit_rules_privileged_commands_userhelper
+    - audit_rules_usergroup_modification_gshadow
+    - grub2_audit_argument
+    - audit_rules_execution_semanage
+    - audit_rules_privileged_commands_sudo
+    - audit_rules_kernel_module_loading_delete
+    - audit_rules_dac_modification_umount
+    - audit_rules_dac_modification_removexattr
+    - audit_rules_privileged_commands_postdrop
+    - audit_rules_privileged_commands_ssh_agent
+    - audit_rules_privileged_commands_pt_chown
+    - audit_rules_media_export
+    - audit_rules_dac_modification_lsetxattr
+    - audit_rules_dac_modification_umount2
+    - audit_rules_execution_setfacl
+    - audit_rules_unsuccessful_file_modification_truncate
+    - audit_rules_kernel_module_loading_finit
+    - audit_rules_privileged_commands_chsh
+    - audit_rules_privileged_commands_crontab
+    - audit_rules_unsuccessful_file_modification_open
+    - audit_rules_privileged_commands_newgrp
+    - audit_rules_privileged_commands_unix_update
+    - audit_rules_dac_modification_fsetxattr
+    - audit_rules_privileged_commands_ssh_keysign
+    - audit_rules_privileged_commands_usermod
+    - audit_rules_usergroup_modification_opasswd
+    - audit_rules_privileged_commands_postqueue
     controls: []
 -   id: SRG-OS-000392-GPOS-00172
     levels:
@@ -5565,81 +5565,81 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_dac_modification_umount
-    - audit_rules_execution_semanage
-    - audit_rules_unsuccessful_file_modification_truncate
-    - audit_rules_dac_modification_chown
-    - audit_rules_dac_modification_fchmod
-    - audit_rules_file_deletion_events_rename
-    - audit_rules_dac_modification_lremovexattr
-    - audit_rules_unsuccessful_file_modification_open_by_handle_at
-    - audit_rules_usergroup_modification_shadow
-    - audit_rules_privileged_commands_crontab
-    - audit_rules_dac_modification_removexattr
-    - audit_rules_privileged_commands_newgrp
     - audit_rules_file_deletion_events_rmdir
-    - audit_rules_kernel_module_loading_finit
+    - audit_rules_usergroup_modification_shadow
+    - audit_rules_login_events_tallylog
+    - audit_rules_privileged_commands_mount
+    - audit_rules_privileged_commands_su
+    - audit_rules_privileged_commands_passwd
+    - audit_rules_execution_setfiles
     - service_auditd_enabled
-    - audit_rules_privileged_commands_umount
-    - audit_rules_dac_modification_umount2
-    - audit_rules_unsuccessful_file_modification_open
     - audit_rules_usergroup_modification_passwd
-    - audit_rules_privileged_commands_unix_chkpwd
-    - audit_rules_privileged_commands_ssh_keysign
-    - package_audit_installed
-    - audit_rules_file_deletion_events_renameat
+    - audit_rules_dac_modification_chmod
+    - audit_rules_login_events_lastlog
+    - audit_rules_dac_modification_fchmodat
     - audit_rules_privileged_commands_pam_timestamp_check
-    - audit_rules_kernel_module_loading_delete
-    - audit_rules_execution_chacl
+    - audit_rules_dac_modification_chown
+    - audit_rules_file_deletion_events_renameat
     - audit_rules_execution_setsebool
     - audit_rules_privileged_commands_gpasswd
-    - audit_rules_privileged_commands_sudo
-    - audit_rules_usergroup_modification_opasswd
-    - audit_rules_dac_modification_fremovexattr
-    - audit_rules_unsuccessful_file_modification_creat
-    - audit_rules_privileged_commands_kmod
-    - audit_rules_kernel_module_loading_init
-    - audit_rules_privileged_commands_postqueue
-    - audit_rules_dac_modification_fchmodat
-    - audit_rules_dac_modification_chmod
-    - audit_rules_dac_modification_fchownat
-    - audit_rules_privileged_commands_unix_update
-    - audit_rules_unsuccessful_file_modification_rename
-    - audit_rules_media_export
     - audit_rules_sudoers
-    - audit_rules_login_events_lastlog
-    - audit_rules_privileged_commands_sudoedit
-    - audit_rules_dac_modification_setxattr
-    - audit_rules_file_deletion_events_unlinkat
-    - audit_rules_unsuccessful_file_modification_unlinkat
-    - audit_rules_privileged_commands_userhelper
-    - audit_rules_dac_modification_fsetxattr
-    - audit_rules_privileged_commands_passwd
-    - audit_rules_execution_setfacl
-    - audit_rules_login_events_faillock
-    - audit_rules_privileged_commands_mount
-    - audit_rules_privileged_commands_pt_chown
-    - audit_rules_execution_setfiles
-    - audit_rules_privileged_commands_usermod
-    - audit_rules_login_events_tallylog
-    - grub2_audit_argument
-    - audit_rules_privileged_commands_su
-    - audit_rules_usergroup_modification_gshadow
-    - audit_rules_dac_modification_lchown
-    - audit_rules_dac_modification_lsetxattr
-    - audit_rules_execution_chcon
-    - audit_rules_privileged_commands_ssh_agent
+    - audit_rules_dac_modification_fremovexattr
     - audit_rules_file_deletion_events_unlink
+    - audit_rules_privileged_commands_sudoedit
     - audit_rules_usergroup_modification_group
-    - audit_rules_unsuccessful_file_modification_openat
-    - audit_rules_unsuccessful_file_modification_ftruncate
-    - audit_rules_privileged_commands_chage
-    - audit_rules_dac_modification_fchown
-    - audit_rules_unsuccessful_file_modification_unlink
-    - audit_rules_privileged_commands_chsh
-    - audit_rules_privileged_commands_postdrop
-    - audit_rules_unsuccessful_file_modification_renameat
+    - audit_rules_unsuccessful_file_modification_open_by_handle_at
+    - audit_rules_execution_chcon
+    - audit_rules_execution_chacl
     - audit_rules_sudoers_d
+    - audit_rules_kernel_module_loading_init
+    - audit_rules_privileged_commands_unix_chkpwd
+    - audit_rules_unsuccessful_file_modification_ftruncate
+    - package_audit_installed
+    - audit_rules_dac_modification_lremovexattr
+    - audit_rules_dac_modification_fchown
+    - audit_rules_dac_modification_lchown
+    - audit_rules_privileged_commands_sudo
+    - audit_rules_file_deletion_events_rename
+    - audit_rules_unsuccessful_file_modification_creat
+    - audit_rules_unsuccessful_file_modification_openat
+    - audit_rules_dac_modification_fchmod
+    - audit_rules_privileged_commands_umount
+    - audit_rules_file_deletion_events_unlinkat
+    - audit_rules_dac_modification_fchownat
+    - audit_rules_dac_modification_setxattr
+    - audit_rules_privileged_commands_chage
+    - audit_rules_privileged_commands_kmod
+    - audit_rules_privileged_commands_userhelper
+    - audit_rules_unsuccessful_file_modification_rename
+    - audit_rules_usergroup_modification_gshadow
+    - audit_rules_execution_semanage
+    - audit_rules_login_events_faillock
+    - audit_rules_kernel_module_loading_delete
+    - audit_rules_dac_modification_umount
+    - audit_rules_dac_modification_removexattr
+    - audit_rules_privileged_commands_postdrop
+    - grub2_audit_argument
+    - audit_rules_privileged_commands_ssh_agent
+    - audit_rules_privileged_commands_pt_chown
+    - audit_rules_media_export
+    - audit_rules_unsuccessful_file_modification_renameat
+    - audit_rules_dac_modification_lsetxattr
+    - audit_rules_dac_modification_umount2
+    - audit_rules_execution_setfacl
+    - audit_rules_unsuccessful_file_modification_unlinkat
+    - audit_rules_unsuccessful_file_modification_truncate
+    - audit_rules_kernel_module_loading_finit
+    - audit_rules_privileged_commands_chsh
+    - audit_rules_privileged_commands_crontab
+    - audit_rules_unsuccessful_file_modification_open
+    - audit_rules_privileged_commands_newgrp
+    - audit_rules_unsuccessful_file_modification_unlink
+    - audit_rules_dac_modification_fsetxattr
+    - audit_rules_privileged_commands_ssh_keysign
+    - audit_rules_privileged_commands_unix_update
+    - audit_rules_privileged_commands_usermod
+    - audit_rules_usergroup_modification_opasswd
+    - audit_rules_privileged_commands_postqueue
     controls: []
 -   id: SRG-OS-000446-GPOS-00200
     levels:
@@ -5713,11 +5713,11 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - dconf_gnome_screensaver_lock_enabled
+    - configure_tmux_lock_keybinding
+    - dconf_gnome_screensaver_lock_locked
     - package_tmux_installed
     - dconf_gnome_lock_screen_on_smartcard_removal
-    - dconf_gnome_screensaver_lock_locked
-    - configure_tmux_lock_keybinding
+    - dconf_gnome_screensaver_lock_enabled
     controls: []
 levels:
 -   id: high

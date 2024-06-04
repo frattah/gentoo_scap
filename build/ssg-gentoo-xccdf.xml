@@ -67,6 +67,11 @@ respective companies.</xccdf-1.2:rear-matter>
   <xccdf-1.2:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cunix-linux">stigid</xccdf-1.2:reference>
   <xccdf-1.2:reference href="https://public.cyber.mil/stigs/srg-stig-tools/">stigref</xccdf-1.2:reference>
   <cpe-lang:platform-specification>
+    <cpe-lang:platform id="package_sudo">
+      <cpe-lang:logical-test operator="AND" negate="false">
+        <cpe-lang:check-fact-ref system="http://oval.mitre.org/XMLSchema/oval-definitions-5" href="ssg-gentoo-cpe-oval.xml" id-ref="oval:ssg-package_sudo:def:1" />
+      </cpe-lang:logical-test>
+    </cpe-lang:platform>
     <cpe-lang:platform id="package_pam">
       <cpe-lang:logical-test operator="AND" negate="false">
         <cpe-lang:check-fact-ref system="http://oval.mitre.org/XMLSchema/oval-definitions-5" href="ssg-gentoo-cpe-oval.xml" id-ref="oval:ssg-package_pam:def:1" />
@@ -401,6 +406,12 @@ respective companies.</xccdf-1.2:rear-matter>
     <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_accounts_umask_etc_bashrc" selected="true" />
     <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_accounts_umask_etc_login_defs" selected="true" />
     <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_accounts_umask_etc_profile" selected="true" />
+    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_sudo_add_env_reset" selected="true" />
+    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_sudo_add_ignore_dot" selected="true" />
+    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_sudo_add_noexec" selected="true" />
+    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_sudo_add_requiretty" selected="true" />
+    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_sudo_add_umask" selected="true" />
+    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_sudo_add_use_pty" selected="true" />
     <xccdf-1.2:refine-value idref="xccdf_org.ssgproject.content_value_var_password_pam_minlen" selector="15" />
     <xccdf-1.2:refine-value idref="xccdf_org.ssgproject.content_value_var_password_pam_ocredit" selector="1" />
     <xccdf-1.2:refine-value idref="xccdf_org.ssgproject.content_value_var_password_pam_dcredit" selector="1" />
@@ -409,10 +420,415 @@ respective companies.</xccdf-1.2:rear-matter>
     <xccdf-1.2:refine-value idref="xccdf_org.ssgproject.content_value_var_password_pam_unix_remember" selector="2" />
     <xccdf-1.2:refine-value idref="xccdf_org.ssgproject.content_value_var_accounts_tmout" selector="10_min" />
     <xccdf-1.2:refine-value idref="xccdf_org.ssgproject.content_value_var_accounts_user_umask" selector="077" />
+    <xccdf-1.2:refine-value idref="xccdf_org.ssgproject.content_value_var_sudo_umask" selector="0077" />
   </xccdf-1.2:Profile>
   <xccdf-1.2:Group id="xccdf_org.ssgproject.content_group_system">
     <xccdf-1.2:title>System Settings</xccdf-1.2:title>
     <xccdf-1.2:description>Contains rules that check correct system settings.</xccdf-1.2:description>
+    <xccdf-1.2:Group id="xccdf_org.ssgproject.content_group_software">
+      <xccdf-1.2:title>Installing and Maintaining Software</xccdf-1.2:title>
+      <xccdf-1.2:description>The following sections contain information on
+security-relevant choices during the initial operating system
+installation process and the setup of software
+updates.</xccdf-1.2:description>
+      <xccdf-1.2:Group id="xccdf_org.ssgproject.content_group_sudo">
+        <xccdf-1.2:title>Sudo</xccdf-1.2:title>
+        <xccdf-1.2:description>
+          <html:code>Sudo</html:code>, which stands for "su 'do'", provides the ability to delegate authority
+to certain users, groups of users, or system administrators. When configured for system
+users and/or groups, <html:code>Sudo</html:code> can allow a user or group to execute privileged commands
+that normally only <html:code>root</html:code> is allowed to execute.
+<html:br />
+          <html:br />
+For more information on <html:code>Sudo</html:code> and addition <html:code>Sudo</html:code> configuration options, see
+<html:b>
+            <html:a href="https://www.sudo.ws">https://www.sudo.ws</html:a>
+          </html:b>.</xccdf-1.2:description>
+        <xccdf-1.2:Value id="xccdf_org.ssgproject.content_value_var_sudo_umask" type="string">
+          <xccdf-1.2:title>Sudo - umask value</xccdf-1.2:title>
+          <xccdf-1.2:description>Specify the sudo umask to use. The actual umask value that is used is the union
+of the user's umask and the sudo umask.
+The default sudo umask is 0022. This guarantess sudo never lowers the umask when
+running a command.</xccdf-1.2:description>
+          <xccdf-1.2:value>0022</xccdf-1.2:value>
+          <xccdf-1.2:value selector="0022">0022</xccdf-1.2:value>
+          <xccdf-1.2:value selector="0027">0027</xccdf-1.2:value>
+          <xccdf-1.2:value selector="0077">0077</xccdf-1.2:value>
+        </xccdf-1.2:Value>
+        <xccdf-1.2:Rule selected="false" id="xccdf_org.ssgproject.content_rule_sudo_add_env_reset" severity="medium">
+          <xccdf-1.2:title>Ensure sudo Runs In A Minimal Environment - sudo env_reset</xccdf-1.2:title>
+          <xccdf-1.2:description>The sudo <html:code>env_reset</html:code> tag, when specified, will run the command in a minimal environment,
+containing the TERM, PATH, HOME, MAIL, SHELL, LOGNAME, USER and SUDO_* variables.
+This should be enabled by making sure that the <html:code>env_reset</html:code> tag exists in
+<html:code>/etc/sudoers</html:code> configuration file or any sudo configuration snippets
+in <html:code>/etc/sudoers.d/</html:code>.</xccdf-1.2:description>
+          <xccdf-1.2:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R39</xccdf-1.2:reference>
+          <xccdf-1.2:rationale>Forcing sudo to reset the environment ensures that environment variables are not passed on to the
+command accidentaly, preventing leak of potentially sensitive information.</xccdf-1.2:rationale>
+          <xccdf-1.2:fix system="urn:xccdf:fix:script:sh" id="sudo_add_env_reset" complexity="low" disruption="low" reboot="false" strategy="restrict">
+if /usr/sbin/visudo -qcf /etc/sudoers; then
+    cp /etc/sudoers /etc/sudoers.bak
+    if ! grep -P '^[\s]*Defaults[\s]*\benv_reset\b.*$' /etc/sudoers; then
+        # sudoers file doesn't define Option env_reset
+        echo "Defaults env_reset" &gt;&gt; /etc/sudoers
+    fi
+    
+    # Check validity of sudoers and cleanup bak
+    if /usr/sbin/visudo -qcf /etc/sudoers; then
+        rm -f /etc/sudoers.bak
+    else
+        echo "Fail to validate remediated /etc/sudoers, reverting to original file."
+        mv /etc/sudoers.bak /etc/sudoers
+        false
+    fi
+else
+    echo "Skipping remediation, /etc/sudoers failed to validate"
+    false
+fi
+</xccdf-1.2:fix>
+          <xccdf-1.2:fix system="urn:xccdf:fix:script:ansible" id="sudo_add_env_reset" complexity="low" disruption="low" reboot="false" strategy="restrict">- name: Ensure env_reset is enabled in /etc/sudoers
+  lineinfile:
+    path: /etc/sudoers
+    regexp: ^[\s]*Defaults.*\benv_reset\b.*$
+    line: Defaults env_reset
+    validate: /usr/sbin/visudo -cf %s
+  tags:
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+  - sudo_add_env_reset
+</xccdf-1.2:fix>
+          <xccdf-1.2:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+            <xccdf-1.2:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-sudo_add_env_reset:def:1" />
+          </xccdf-1.2:check>
+          <xccdf-1.2:check system="http://scap.nist.gov/schema/ocil/2">
+            <xccdf-1.2:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-sudo_add_env_reset_ocil:questionnaire:1" />
+          </xccdf-1.2:check>
+        </xccdf-1.2:Rule>
+        <xccdf-1.2:Rule selected="false" id="xccdf_org.ssgproject.content_rule_sudo_add_ignore_dot" severity="medium">
+          <xccdf-1.2:title>Ensure sudo Ignores Commands In Current Dir - sudo ignore_dot</xccdf-1.2:title>
+          <xccdf-1.2:description>The sudo <html:code>ignore_dot</html:code> tag, when specified, will ignore the current directory
+in the PATH environment variable.
+This should be enabled by making sure that the <html:code>ignore_dot</html:code> tag exists in
+<html:code>/etc/sudoers</html:code> configuration file or any sudo configuration snippets
+in <html:code>/etc/sudoers.d/</html:code>.</xccdf-1.2:description>
+          <xccdf-1.2:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R39</xccdf-1.2:reference>
+          <xccdf-1.2:rationale>Ignoring the commands in the user's current directory prevents an attacker from executing commands
+downloaded locally.</xccdf-1.2:rationale>
+          <xccdf-1.2:fix system="urn:xccdf:fix:script:sh" id="sudo_add_ignore_dot" complexity="low" disruption="low" reboot="false" strategy="restrict">
+if /usr/sbin/visudo -qcf /etc/sudoers; then
+    cp /etc/sudoers /etc/sudoers.bak
+    if ! grep -P '^[\s]*Defaults[\s]*\bignore_dot\b.*$' /etc/sudoers; then
+        # sudoers file doesn't define Option ignore_dot
+        echo "Defaults ignore_dot" &gt;&gt; /etc/sudoers
+    fi
+    
+    # Check validity of sudoers and cleanup bak
+    if /usr/sbin/visudo -qcf /etc/sudoers; then
+        rm -f /etc/sudoers.bak
+    else
+        echo "Fail to validate remediated /etc/sudoers, reverting to original file."
+        mv /etc/sudoers.bak /etc/sudoers
+        false
+    fi
+else
+    echo "Skipping remediation, /etc/sudoers failed to validate"
+    false
+fi
+</xccdf-1.2:fix>
+          <xccdf-1.2:fix system="urn:xccdf:fix:script:ansible" id="sudo_add_ignore_dot" complexity="low" disruption="low" reboot="false" strategy="restrict">- name: Ensure ignore_dot is enabled in /etc/sudoers
+  lineinfile:
+    path: /etc/sudoers
+    regexp: ^[\s]*Defaults.*\bignore_dot\b.*$
+    line: Defaults ignore_dot
+    validate: /usr/sbin/visudo -cf %s
+  tags:
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+  - sudo_add_ignore_dot
+</xccdf-1.2:fix>
+          <xccdf-1.2:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+            <xccdf-1.2:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-sudo_add_ignore_dot:def:1" />
+          </xccdf-1.2:check>
+          <xccdf-1.2:check system="http://scap.nist.gov/schema/ocil/2">
+            <xccdf-1.2:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-sudo_add_ignore_dot_ocil:questionnaire:1" />
+          </xccdf-1.2:check>
+        </xccdf-1.2:Rule>
+        <xccdf-1.2:Rule selected="false" id="xccdf_org.ssgproject.content_rule_sudo_add_noexec" severity="high">
+          <xccdf-1.2:title>Ensure Privileged Escalated Commands Cannot Execute Other Commands - sudo NOEXEC</xccdf-1.2:title>
+          <xccdf-1.2:description>The sudo <html:code>NOEXEC</html:code> tag, when specified, prevents user executed
+commands from executing other commands, like a shell for example.
+This should be enabled by making sure that the <html:code>NOEXEC</html:code> tag exists in
+<html:code>/etc/sudoers</html:code> configuration file or any sudo configuration snippets
+in <html:code>/etc/sudoers.d/</html:code>.</xccdf-1.2:description>
+          <xccdf-1.2:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R39</xccdf-1.2:reference>
+          <xccdf-1.2:rationale>Restricting the capability of sudo allowed commands to execute sub-commands
+prevents users from running programs with privileges they wouldn't have otherwise.</xccdf-1.2:rationale>
+          <xccdf-1.2:fix system="urn:xccdf:fix:script:sh" id="sudo_add_noexec" complexity="low" disruption="low" reboot="false" strategy="restrict">
+if /usr/sbin/visudo -qcf /etc/sudoers; then
+    cp /etc/sudoers /etc/sudoers.bak
+    if ! grep -P '^[\s]*Defaults[\s]*\bnoexec\b.*$' /etc/sudoers; then
+        # sudoers file doesn't define Option noexec
+        echo "Defaults noexec" &gt;&gt; /etc/sudoers
+    fi
+    
+    # Check validity of sudoers and cleanup bak
+    if /usr/sbin/visudo -qcf /etc/sudoers; then
+        rm -f /etc/sudoers.bak
+    else
+        echo "Fail to validate remediated /etc/sudoers, reverting to original file."
+        mv /etc/sudoers.bak /etc/sudoers
+        false
+    fi
+else
+    echo "Skipping remediation, /etc/sudoers failed to validate"
+    false
+fi
+</xccdf-1.2:fix>
+          <xccdf-1.2:fix system="urn:xccdf:fix:script:ansible" id="sudo_add_noexec" complexity="low" disruption="low" reboot="false" strategy="restrict">- name: Ensure noexec is enabled in /etc/sudoers
+  lineinfile:
+    path: /etc/sudoers
+    regexp: ^[\s]*Defaults.*\bnoexec\b.*$
+    line: Defaults noexec
+    validate: /usr/sbin/visudo -cf %s
+  tags:
+  - high_severity
+  - low_complexity
+  - low_disruption
+  - no_reboot_needed
+  - restrict_strategy
+  - sudo_add_noexec
+</xccdf-1.2:fix>
+          <xccdf-1.2:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+            <xccdf-1.2:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-sudo_add_noexec:def:1" />
+          </xccdf-1.2:check>
+          <xccdf-1.2:check system="http://scap.nist.gov/schema/ocil/2">
+            <xccdf-1.2:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-sudo_add_noexec_ocil:questionnaire:1" />
+          </xccdf-1.2:check>
+        </xccdf-1.2:Rule>
+        <xccdf-1.2:Rule selected="false" id="xccdf_org.ssgproject.content_rule_sudo_add_requiretty" severity="medium">
+          <xccdf-1.2:title>Ensure Only Users Logged In To Real tty Can Execute Sudo - sudo requiretty</xccdf-1.2:title>
+          <xccdf-1.2:description>The sudo <html:code>requiretty</html:code> tag, when specified, will only execute sudo
+commands from users logged in to a real tty.
+This should be enabled by making sure that the <html:code>requiretty</html:code> tag exists in
+<html:code>/etc/sudoers</html:code> configuration file or any sudo configuration snippets
+in <html:code>/etc/sudoers.d/</html:code>.</xccdf-1.2:description>
+          <xccdf-1.2:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R39</xccdf-1.2:reference>
+          <xccdf-1.2:rationale>Restricting the use cases in which a user is allowed to execute sudo commands
+reduces the attack surface.</xccdf-1.2:rationale>
+          <xccdf-1.2:fix system="urn:xccdf:fix:script:sh" id="sudo_add_requiretty" complexity="low" disruption="low" reboot="false" strategy="restrict">
+if /usr/sbin/visudo -qcf /etc/sudoers; then
+    cp /etc/sudoers /etc/sudoers.bak
+    if ! grep -P '^[\s]*Defaults[\s]*\brequiretty\b.*$' /etc/sudoers; then
+        # sudoers file doesn't define Option requiretty
+        echo "Defaults requiretty" &gt;&gt; /etc/sudoers
+    fi
+    
+    # Check validity of sudoers and cleanup bak
+    if /usr/sbin/visudo -qcf /etc/sudoers; then
+        rm -f /etc/sudoers.bak
+    else
+        echo "Fail to validate remediated /etc/sudoers, reverting to original file."
+        mv /etc/sudoers.bak /etc/sudoers
+        false
+    fi
+else
+    echo "Skipping remediation, /etc/sudoers failed to validate"
+    false
+fi
+</xccdf-1.2:fix>
+          <xccdf-1.2:fix system="urn:xccdf:fix:script:ansible" id="sudo_add_requiretty" complexity="low" disruption="low" reboot="false" strategy="restrict">- name: Ensure requiretty is enabled in /etc/sudoers
+  lineinfile:
+    path: /etc/sudoers
+    regexp: ^[\s]*Defaults.*\brequiretty\b.*$
+    line: Defaults requiretty
+    validate: /usr/sbin/visudo -cf %s
+  tags:
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+  - sudo_add_requiretty
+</xccdf-1.2:fix>
+          <xccdf-1.2:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+            <xccdf-1.2:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-sudo_add_requiretty:def:1" />
+          </xccdf-1.2:check>
+          <xccdf-1.2:check system="http://scap.nist.gov/schema/ocil/2">
+            <xccdf-1.2:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-sudo_add_requiretty_ocil:questionnaire:1" />
+          </xccdf-1.2:check>
+        </xccdf-1.2:Rule>
+        <xccdf-1.2:Rule selected="false" id="xccdf_org.ssgproject.content_rule_sudo_add_umask" severity="medium">
+          <xccdf-1.2:title>Ensure sudo umask is appropriate - sudo umask</xccdf-1.2:title>
+          <xccdf-1.2:description>The sudo <html:code>umask</html:code> tag, when specified, will be added the to the user's umask in the
+command environment.
+The umask should be configured by making sure that the <html:code>umask=<xccdf-1.2:sub idref="xccdf_org.ssgproject.content_value_var_sudo_umask" use="legacy" />
+            </html:code> tag exists in
+<html:code>/etc/sudoers</html:code> configuration file or any sudo configuration snippets
+in <html:code>/etc/sudoers.d/</html:code>.</xccdf-1.2:description>
+          <xccdf-1.2:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R39</xccdf-1.2:reference>
+          <xccdf-1.2:rationale>The umask value influences the permissions assigned to files when they are created.
+A misconfigured umask value could result in files with excessive permissions that can be read or
+written to by unauthorized users.</xccdf-1.2:rationale>
+          <xccdf-1.2:fix system="urn:xccdf:fix:script:sh" id="sudo_add_umask" complexity="low" disruption="low" reboot="false" strategy="restrict">
+
+var_sudo_umask='<xccdf-1.2:sub idref="xccdf_org.ssgproject.content_value_var_sudo_umask" use="legacy" />'
+
+
+if /usr/sbin/visudo -qcf /etc/sudoers; then
+    cp /etc/sudoers /etc/sudoers.bak
+    if ! grep -P '^[\s]*Defaults[\s]*\bumask=\w+\b\b.*$' /etc/sudoers; then
+        # sudoers file doesn't define Option umask
+        echo "Defaults umask=${var_sudo_umask}" &gt;&gt; /etc/sudoers
+    else
+        # sudoers file defines Option umask, remediate if appropriate value is not set
+        if ! grep -P "^[\s]*Defaults.*\bumask=${var_sudo_umask}\b.*$" /etc/sudoers; then
+            
+            escaped_variable=${var_sudo_umask//$'/'/$'\/'}
+            sed -Ei "s/(^[\s]*Defaults.*\bumask=)[-]?.+(\b.*$)/\1$escaped_variable\2/" /etc/sudoers
+        fi
+    fi
+    
+    # Check validity of sudoers and cleanup bak
+    if /usr/sbin/visudo -qcf /etc/sudoers; then
+        rm -f /etc/sudoers.bak
+    else
+        echo "Fail to validate remediated /etc/sudoers, reverting to original file."
+        mv /etc/sudoers.bak /etc/sudoers
+        false
+    fi
+else
+    echo "Skipping remediation, /etc/sudoers failed to validate"
+    false
+fi
+</xccdf-1.2:fix>
+          <xccdf-1.2:fix system="urn:xccdf:fix:script:ansible" id="sudo_add_umask" complexity="low" disruption="low" reboot="false" strategy="restrict">- name: XCCDF Value var_sudo_umask # promote to variable
+  set_fact:
+    var_sudo_umask: !!str <xccdf-1.2:sub idref="xccdf_org.ssgproject.content_value_var_sudo_umask" use="legacy" />
+  tags:
+    - always
+
+- name: Ensure umask is enabled with the appropriate value in /etc/sudoers
+  lineinfile:
+    path: /etc/sudoers
+    regexp: ^[\s]*Defaults\s(.*)\bumask=[-]?.+\b(.*)$
+    line: Defaults \1umask={{ var_sudo_umask }}\2
+    validate: /usr/sbin/visudo -cf %s
+    backrefs: true
+  register: edit_sudoers_umask_option
+  tags:
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+  - sudo_add_umask
+
+- name: Enable umask option with appropriate value in /etc/sudoers
+  lineinfile:
+    path: /etc/sudoers
+    line: Defaults umask={{ var_sudo_umask }}
+    validate: /usr/sbin/visudo -cf %s
+  when: edit_sudoers_umask_option is defined and not edit_sudoers_umask_option.changed
+  tags:
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+  - sudo_add_umask
+</xccdf-1.2:fix>
+          <xccdf-1.2:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+            <xccdf-1.2:check-export export-name="oval:ssg-var_sudo_umask:var:1" value-id="xccdf_org.ssgproject.content_value_var_sudo_umask" /><xccdf-1.2:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-sudo_add_umask:def:1" />
+          </xccdf-1.2:check>
+          <xccdf-1.2:check system="http://scap.nist.gov/schema/ocil/2">
+            <xccdf-1.2:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-sudo_add_umask_ocil:questionnaire:1" />
+          </xccdf-1.2:check>
+        </xccdf-1.2:Rule>
+        <xccdf-1.2:Rule selected="false" id="xccdf_org.ssgproject.content_rule_sudo_add_use_pty" severity="medium">
+          <xccdf-1.2:title>Ensure Only Users Logged In To Real tty Can Execute Sudo - sudo use_pty</xccdf-1.2:title>
+          <xccdf-1.2:description>The sudo <html:code>use_pty</html:code> tag, when specified, will only execute sudo
+commands from users logged in to a real tty.
+This should be enabled by making sure that the <html:code>use_pty</html:code> tag exists in
+<html:code>/etc/sudoers</html:code> configuration file or any sudo configuration snippets
+in <html:code>/etc/sudoers.d/</html:code>.</xccdf-1.2:description>
+          <xccdf-1.2:reference href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">Req-10.2.5</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R39</xccdf-1.2:reference>
+          <xccdf-1.2:reference href="https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf">2.2.6</xccdf-1.2:reference>
+          <xccdf-1.2:rationale>Requiring that sudo commands be run in a pseudo-terminal can prevent an attacker from retaining
+access to the user's terminal after the main program has finished executing.</xccdf-1.2:rationale>
+          <xccdf-1.2:platform idref="#package_sudo" />
+          <xccdf-1.2:fix system="urn:xccdf:fix:script:sh" id="sudo_add_use_pty" complexity="low" disruption="low" reboot="false" strategy="restrict"># Remediation is applicable only in certain platforms
+if rpm --quiet -q sudo; then
+
+if /usr/sbin/visudo -qcf /etc/sudoers; then
+    cp /etc/sudoers /etc/sudoers.bak
+    if ! grep -P '^[\s]*Defaults[\s]*\buse_pty\b.*$' /etc/sudoers; then
+        # sudoers file doesn't define Option use_pty
+        echo "Defaults use_pty" &gt;&gt; /etc/sudoers
+    fi
+    
+    # Check validity of sudoers and cleanup bak
+    if /usr/sbin/visudo -qcf /etc/sudoers; then
+        rm -f /etc/sudoers.bak
+    else
+        echo "Fail to validate remediated /etc/sudoers, reverting to original file."
+        mv /etc/sudoers.bak /etc/sudoers
+        false
+    fi
+else
+    echo "Skipping remediation, /etc/sudoers failed to validate"
+    false
+fi
+
+else
+    &gt;&amp;2 echo 'Remediation is not applicable, nothing was done'
+fi
+</xccdf-1.2:fix>
+          <xccdf-1.2:fix system="urn:xccdf:fix:script:ansible" id="sudo_add_use_pty" complexity="low" disruption="low" reboot="false" strategy="restrict">- name: Gather the package facts
+  package_facts:
+    manager: auto
+  tags:
+  - PCI-DSS-Req-10.2.5
+  - PCI-DSSv4-2.2.6
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+  - sudo_add_use_pty
+
+- name: Ensure use_pty is enabled in /etc/sudoers
+  lineinfile:
+    path: /etc/sudoers
+    regexp: ^[\s]*Defaults.*\buse_pty\b.*$
+    line: Defaults use_pty
+    validate: /usr/sbin/visudo -cf %s
+  when: '"sudo" in ansible_facts.packages'
+  tags:
+  - PCI-DSS-Req-10.2.5
+  - PCI-DSSv4-2.2.6
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+  - sudo_add_use_pty
+</xccdf-1.2:fix>
+          <xccdf-1.2:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+            <xccdf-1.2:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-sudo_add_use_pty:def:1" />
+          </xccdf-1.2:check>
+          <xccdf-1.2:check system="http://scap.nist.gov/schema/ocil/2">
+            <xccdf-1.2:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-sudo_add_use_pty_ocil:questionnaire:1" />
+          </xccdf-1.2:check>
+        </xccdf-1.2:Rule>
+      </xccdf-1.2:Group>
+    </xccdf-1.2:Group>
     <xccdf-1.2:Group id="xccdf_org.ssgproject.content_group_accounts">
       <xccdf-1.2:title>Account and Access Control</xccdf-1.2:title>
       <xccdf-1.2:description>In traditional Unix security, if an attacker gains

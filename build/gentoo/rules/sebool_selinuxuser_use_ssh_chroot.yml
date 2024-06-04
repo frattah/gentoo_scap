@@ -38,12 +38,12 @@ platform: null
 platforms: !!set {}
 sce_metadata: {}
 inherited_platforms: !!set
-    selinux: null
     machine: null
+    selinux: null
 cpe_platform_names: !!set {}
 inherited_cpe_platform_names: !!set
-    selinux: null
     machine: null
+    selinux: null
 bash_conditional: null
 fixes: {}
 title: Disable the selinuxuser_use_ssh_chroot SELinux Boolean

@@ -8,6 +8,7 @@
     var_password_pam_ucredit: -1
     var_password_pam_unix_remember: 2
     var_accounts_tmout: 600
+    var_sudo_umask: '0077'
     var_accounts_user_umask: '077'
     var_accounts_passwords_pam_faillock_deny: 3
     var_accounts_passwords_pam_faillock_fail_interval: 900
@@ -109,3 +110,34 @@
     ansible.builtin.lineinfile:
       path: /etc/bash/bashrc
       line: umask {{ var_accounts_user_umask }}
+
+  - name: Set env_reset sudo flag
+    ansible.builtin.lineinfile:
+      path: /etc/sudoers.d/anssi_falgs
+      line: Defaults  env_reset
+      create: true
+
+  - name: Set ignore_dot sudo flag
+    ansible.builtin.lineinfile:
+      path: /etc/sudoers.d/anssi_falgs
+      line: Defaults  ignore_dot
+
+  - name: Set use_pty sudo flag
+    ansible.builtin.lineinfile:
+      path: /etc/sudoers.d/anssi_falgs
+      line: Defaults  use_pty
+
+  - name: Set noexec sudo flag
+    ansible.builtin.lineinfile:
+      path: /etc/sudoers.d/anssi_falgs
+      line: Defaults  noexec
+
+  - name: Set require_tty sudo flag
+    ansible.builtin.lineinfile:
+      path: /etc/sudoers.d/anssi_falgs
+      line: Defaults  requiretty
+
+  - name: Set umask sudo flag to {{ var_accounts_sudo_umask }}
+    ansible.builtin.lineinfile:
+      path: /etc/sudoers.d/anssi_falgs
+      line: Defaults  umask={{ var_sudo_umask }}

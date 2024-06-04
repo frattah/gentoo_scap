@@ -93,9 +93,9 @@ controls:
         y auditor\xEDa."
     related_rules: []
     rules:
+    - file_ownership_var_log_audit
     - file_group_ownership_var_log_audit
     - file_permissions_var_log_audit
-    - file_ownership_var_log_audit
     - directory_permissions_var_log_audit
     controls: []
 -   id: A.3.SEC-RHEL3
@@ -117,9 +117,9 @@ controls:
     original_title: Se controla el cambio de hora del sistema.
     related_rules: []
     rules:
+    - chronyd_specify_remote_server
     - package_chrony_installed
     - chronyd_run_as_chrony_user
-    - chronyd_specify_remote_server
     - var_multiple_time_servers=rhel
     controls: []
 -   id: A.3.SEC-RHEL4
@@ -141,9 +141,9 @@ controls:
     original_title: "Se controla qui\xE9n puede generar o modificar reglas de audit."
     related_rules: []
     rules:
-    - file_groupownership_audit_configuration
-    - file_permissions_audit_configuration
     - file_ownership_audit_configuration
+    - file_permissions_audit_configuration
+    - file_groupownership_audit_configuration
     controls: []
 -   id: A.3.SEC-RHEL5
     levels:
@@ -216,26 +216,26 @@ controls:
         los cambios en permisos, usuarios, grupos y contrase\xF1as."
     related_rules: []
     rules:
-    - audit_rules_dac_modification_chown
-    - audit_rules_dac_modification_fchmod
-    - audit_rules_dac_modification_lremovexattr
-    - audit_rules_sysadmin_actions
     - audit_rules_usergroup_modification_shadow
-    - audit_rules_dac_modification_removexattr
+    - audit_rules_sysadmin_actions
     - audit_rules_usergroup_modification_passwd
-    - audit_sudo_log_events
-    - audit_rules_usergroup_modification_opasswd
-    - audit_rules_dac_modification_fremovexattr
-    - audit_rules_dac_modification_fchmodat
     - audit_rules_dac_modification_chmod
+    - audit_rules_dac_modification_fchmodat
+    - audit_rules_dac_modification_chown
+    - audit_rules_dac_modification_fremovexattr
+    - audit_rules_usergroup_modification_group
+    - audit_rules_dac_modification_lremovexattr
+    - audit_rules_dac_modification_fchown
+    - audit_rules_dac_modification_lchown
+    - audit_rules_dac_modification_fchmod
     - audit_rules_dac_modification_fchownat
     - audit_rules_dac_modification_setxattr
-    - audit_rules_dac_modification_fsetxattr
     - audit_rules_usergroup_modification_gshadow
-    - audit_rules_dac_modification_lchown
+    - audit_rules_dac_modification_removexattr
+    - audit_sudo_log_events
     - audit_rules_dac_modification_lsetxattr
-    - audit_rules_usergroup_modification_group
-    - audit_rules_dac_modification_fchown
+    - audit_rules_dac_modification_fsetxattr
+    - audit_rules_usergroup_modification_opasswd
     controls: []
 -   id: A.3.SEC-RHEL8
     levels:
@@ -287,11 +287,11 @@ controls:
     original_title: "Se auditan los intentos de acceso a elementos cr\xEDticos."
     related_rules: []
     rules:
-    - audit_rules_unsuccessful_file_modification_open
-    - audit_rules_unsuccessful_file_modification_truncate
-    - audit_rules_unsuccessful_file_modification_openat
     - audit_rules_unsuccessful_file_modification_ftruncate
     - audit_rules_unsuccessful_file_modification_creat
+    - audit_rules_unsuccessful_file_modification_openat
+    - audit_rules_unsuccessful_file_modification_truncate
+    - audit_rules_unsuccessful_file_modification_open
     controls: []
 -   id: A.3.SEC-RHEL10
     levels:
@@ -531,11 +531,11 @@ controls:
     related_rules: []
     rules:
     - accounts_password_warn_age_login_defs
-    - accounts_password_set_min_life_existing
     - accounts_password_set_warn_age_existing
+    - accounts_password_set_max_life_existing
     - accounts_maximum_age_login_defs
     - accounts_minimum_age_login_defs
-    - accounts_password_set_max_life_existing
+    - accounts_password_set_min_life_existing
     - var_accounts_maximum_age_login_defs=45
     - var_accounts_minimum_age_login_defs=2
     - var_accounts_password_warn_age_login_defs=10
@@ -628,10 +628,10 @@ controls:
     original_title: Se refuerza la seguridad de los objetos sensibles del sistema.
     related_rules: []
     rules:
-    - selinux_state
-    - grub2_enable_selinux
-    - package_libselinux_installed
     - selinux_policytype
+    - selinux_state
+    - package_libselinux_installed
+    - grub2_enable_selinux
     - var_selinux_policy_name=targeted
     - var_selinux_state=enforcing
     controls: []
@@ -656,12 +656,12 @@ controls:
         modificaci\xF3n de inicio de grub."
     related_rules: []
     rules:
+    - file_permissions_user_cfg
+    - file_groupowner_grub2_cfg
     - file_owner_grub2_cfg
+    - file_permissions_grub2_cfg
     - file_groupowner_user_cfg
     - file_owner_user_cfg
-    - file_groupowner_grub2_cfg
-    - file_permissions_user_cfg
-    - file_permissions_grub2_cfg
     controls: []
 -   id: A.6.SEC-RHEL3
     levels:
@@ -704,8 +704,8 @@ controls:
     original_title: Se restringe el uso de sesiones con usuario "root".
     related_rules: []
     rules:
-    - no_empty_passwords_etc_shadow
     - ensure_root_password_configured
+    - no_empty_passwords_etc_shadow
     controls: []
 -   id: A.6.SEC-RHEL5
     levels:
@@ -815,10 +815,10 @@ controls:
     original_title: El sistema tiene un firewall local activado.
     related_rules: []
     rules:
-    - service_firewalld_enabled
-    - set_firewalld_default_zone
     - firewalld_loopback_traffic_restricted
+    - service_firewalld_enabled
     - service_nftables_disabled
+    - set_firewalld_default_zone
     - firewalld_loopback_traffic_trusted
     controls: []
 -   id: A.8.SEC-RHEL4
@@ -841,16 +841,16 @@ controls:
         de exposici\xF3n."
     related_rules: []
     rules:
-    - package_vsftpd_removed
-    - package_squid_removed
-    - kernel_module_udf_disabled
-    - package_cyrus-imapd_removed
-    - package_dovecot_removed
-    - package_bind_removed
-    - kernel_module_squashfs_disabled
-    - package_telnet-server_removed
     - package_net-snmp_removed
+    - package_bind_removed
+    - package_squid_removed
     - package_tftp-server_removed
+    - kernel_module_udf_disabled
+    - kernel_module_squashfs_disabled
+    - package_dovecot_removed
+    - package_cyrus-imapd_removed
+    - package_telnet-server_removed
+    - package_vsftpd_removed
     controls: []
 -   id: A.8.SEC-RHEL5
     levels:
@@ -903,29 +903,29 @@ controls:
     original_title: Se dispone de medidas anti ransomware habilitadas.
     related_rules: []
     rules:
-    - sysctl_net_ipv4_conf_all_accept_redirects
-    - sysctl_net_ipv4_conf_all_send_redirects
-    - sysctl_net_ipv6_conf_default_accept_ra
-    - sysctl_net_ipv4_conf_default_send_redirects
-    - sysctl_net_ipv4_conf_default_log_martians
-    - sysctl_net_ipv6_conf_all_accept_redirects
-    - sysctl_net_ipv6_conf_default_accept_redirects
-    - sysctl_net_ipv4_icmp_ignore_bogus_error_responses
-    - sysctl_net_ipv4_conf_all_secure_redirects
-    - sysctl_net_ipv6_conf_all_accept_source_route
-    - sysctl_net_ipv6_conf_default_accept_source_route
-    - sysctl_net_ipv4_icmp_echo_ignore_broadcasts
-    - sysctl_net_ipv4_conf_default_rp_filter
-    - sysctl_net_ipv4_conf_default_accept_redirects
     - sysctl_net_ipv4_tcp_syncookies
+    - sysctl_net_ipv4_conf_default_log_martians
+    - sysctl_net_ipv6_conf_all_accept_source_route
+    - sysctl_net_ipv4_conf_default_rp_filter
     - sysctl_net_ipv4_conf_default_secure_redirects
-    - sysctl_fs_suid_dumpable
+    - sysctl_net_ipv6_conf_default_accept_ra
+    - sysctl_net_ipv6_conf_default_accept_source_route
+    - sysctl_net_ipv4_conf_all_send_redirects
     - sysctl_net_ipv4_conf_all_accept_source_route
-    - sysctl_net_ipv4_conf_all_rp_filter
+    - sysctl_net_ipv6_conf_default_accept_redirects
     - sysctl_net_ipv4_conf_default_accept_source_route
-    - sysctl_net_ipv4_ip_forward
+    - sysctl_net_ipv4_conf_all_secure_redirects
+    - sysctl_net_ipv4_conf_all_accept_redirects
     - sysctl_net_ipv4_conf_all_log_martians
+    - sysctl_net_ipv4_conf_default_send_redirects
+    - sysctl_net_ipv4_ip_forward
     - sysctl_net_ipv6_conf_all_accept_ra
+    - sysctl_net_ipv4_conf_default_accept_redirects
+    - sysctl_net_ipv4_icmp_ignore_bogus_error_responses
+    - sysctl_net_ipv4_conf_all_rp_filter
+    - sysctl_net_ipv4_icmp_echo_ignore_broadcasts
+    - sysctl_fs_suid_dumpable
+    - sysctl_net_ipv6_conf_all_accept_redirects
     controls: []
 -   id: A.8.SEC-RHEL7
     levels:
@@ -1066,9 +1066,9 @@ controls:
     original_title: "Se dispone de una pol\xEDtica de credenciales robusta."
     related_rules: []
     rules:
+    - accounts_password_pam_minlen
     - accounts_password_pam_minclass
     - accounts_password_pam_retry
-    - accounts_password_pam_minlen
     - var_password_pam_minclass=4
     - var_password_pam_minlen=14
     controls: []
@@ -1094,12 +1094,12 @@ controls:
         cumplimiento con las normas o directivas de la organizaci\xF3n."
     related_rules: []
     rules:
-    - sshd_enable_warning_banner_net
-    - banner_etc_issue_net
+    - banner_etc_motd
+    - dconf_gnome_login_banner_text
     - banner_etc_issue
     - dconf_gnome_banner_enabled
-    - dconf_gnome_login_banner_text
-    - banner_etc_motd
+    - banner_etc_issue_net
+    - sshd_enable_warning_banner_net
     - login_banner_text=cis_banners
     - motd_banner_text=cis_banners
     - remote_login_banner_text=cis_banners
@@ -1275,8 +1275,8 @@ controls:
         en el sistema."
     related_rules: []
     rules:
-    - dconf_gnome_disable_automount
     - dconf_gnome_disable_automount_open
+    - dconf_gnome_disable_automount
     - dconf_gnome_disable_autorun
     controls: []
 -   id: A.15.SEC-RHEL1
@@ -1363,9 +1363,9 @@ controls:
     original_title: "Est\xE1 habilitado un algoritmo robusto y la complejidad de contrase\xF1as."
     related_rules: []
     rules:
-    - set_password_hashing_algorithm_passwordauth
-    - set_password_hashing_algorithm_logindefs
     - set_password_hashing_algorithm_systemauth
+    - set_password_hashing_algorithm_logindefs
+    - set_password_hashing_algorithm_passwordauth
     - var_password_hashing_algorithm=SHA512
     controls: []
 -   id: A.23.SEC-RHEL1
@@ -1389,9 +1389,9 @@ controls:
         conectado al equipo."
     related_rules: []
     rules:
-    - package_usbguard_installed
     - service_usbguard_enabled
     - usbguard_generate_policy
+    - package_usbguard_installed
     controls: []
 -   id: A.23.SEC-RHEL2
     levels:

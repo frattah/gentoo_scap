@@ -28,3 +28,10 @@ selections:
    - accounts_umask_etc_login_defs
    - accounts_umask_etc_profile
    - var_accounts_user_umask=077
+   - sudo_add_noexec
+   - sudo_add_requiretty
+   - sudo_add_use_pty
+   - sudo_add_umask
+   - var_sudo_umask=0077
+   - sudo_add_ignore_dot
+   - sudo_add_env_reset

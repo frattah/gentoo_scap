@@ -68,8 +68,8 @@ platforms: !!set
     machine: null
 sce_metadata: {}
 inherited_platforms: !!set
-    package[audit]: null
     machine: null
+    package[audit]: null
 cpe_platform_names: !!set
     machine: null
 inherited_cpe_platform_names: !!set

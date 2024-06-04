@@ -115,13 +115,13 @@ platforms: !!set
     machine: null
 sce_metadata: {}
 inherited_platforms: !!set
-    grub2: null
     non-uefi: null
+    grub2: null
 cpe_platform_names: !!set
     machine: null
 inherited_cpe_platform_names: !!set
-    grub2: null
     non-uefi: null
+    grub2: null
 bash_conditional: null
 fixes: {}
 title: Verify /boot/grub2/user.cfg User Ownership

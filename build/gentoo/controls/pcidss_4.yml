@@ -112,10 +112,10 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - package_firewalld_installed
+    - service_firewalld_enabled
     - service_nftables_disabled
     - package_nftables_installed
-    - service_firewalld_enabled
+    - package_firewalld_installed
     controls: []
 -   id: 1.2.2
     levels:
@@ -248,10 +248,10 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - selinux_state
-    - package_libselinux_installed
-    - selinux_confinement_of_daemons
     - selinux_policytype
+    - selinux_state
+    - selinux_confinement_of_daemons
+    - package_libselinux_installed
     - grub2_enable_selinux
     - var_selinux_policy_name=targeted
     - var_selinux_state=enforcing
@@ -302,9 +302,9 @@ controls:
     related_rules: []
     rules:
     - file_groupowner_etc_issue_net
+    - network_nmcli_permissions
     - file_permissions_etc_issue_net
     - file_owner_etc_issue_net
-    - network_nmcli_permissions
     controls: []
 -   id: '1.2'
     levels:
@@ -324,19 +324,19 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - selinux_state
-    - package_libselinux_installed
     - service_firewalld_enabled
-    - package_firewalld_installed
-    - selinux_confinement_of_daemons
-    - package_nftables_installed
-    - selinux_policytype
+    - selinux_state
     - service_nftables_disabled
-    - file_groupowner_etc_issue_net
-    - file_permissions_etc_issue_net
-    - grub2_enable_selinux
-    - file_owner_etc_issue_net
+    - selinux_confinement_of_daemons
+    - selinux_policytype
     - network_nmcli_permissions
+    - file_permissions_etc_issue_net
+    - package_libselinux_installed
+    - package_nftables_installed
+    - grub2_enable_selinux
+    - package_firewalld_installed
+    - file_groupowner_etc_issue_net
+    - file_owner_etc_issue_net
     - var_selinux_policy_name=targeted
     - var_selinux_state=enforcing
     controls:
@@ -372,8 +372,8 @@ controls:
     rules:
     - set_firewalld_default_zone
     - configure_firewalld_ports
-    - nftables_ensure_default_deny_policy
     - ensure_firewall_rules_for_open_ports
+    - nftables_ensure_default_deny_policy
     controls: []
 -   id: 1.3.2
     levels:
@@ -454,11 +454,11 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - ensure_firewall_rules_for_open_ports
+    - nftables_ensure_default_deny_policy
     - set_firewalld_default_zone
     - configure_firewalld_ports
     - wireless_disable_interfaces
-    - nftables_ensure_default_deny_policy
+    - ensure_firewall_rules_for_open_ports
     controls:
     - 1.3.1
     - 1.3.2
@@ -524,12 +524,12 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - sysctl_net_ipv6_conf_default_accept_source_route
     - sysctl_net_ipv4_icmp_ignore_bogus_error_responses
     - kernel_module_sctp_disabled
     - sysctl_net_ipv4_icmp_echo_ignore_broadcasts
     - kernel_module_dccp_disabled
     - postfix_network_listening_disabled
+    - sysctl_net_ipv6_conf_default_accept_source_route
     - var_postfix_inet_interfaces=loopback-only
     controls: []
 -   id: 1.4.3
@@ -552,10 +552,10 @@ controls:
     related_rules: []
     rules:
     - sysctl_net_ipv4_conf_all_rp_filter
-    - sysctl_net_ipv4_conf_all_secure_redirects
-    - sysctl_net_ipv4_ip_forward
-    - sysctl_net_ipv4_conf_default_accept_redirects
     - sysctl_net_ipv4_tcp_syncookies
+    - sysctl_net_ipv4_ip_forward
+    - sysctl_net_ipv4_conf_all_secure_redirects
+    - sysctl_net_ipv4_conf_default_accept_redirects
     controls: []
 -   id: 1.4.4
     levels:
@@ -631,25 +631,25 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - sysctl_net_ipv4_conf_all_send_redirects
-    - network_sniffer_disabled
-    - firewalld_loopback_traffic_restricted
-    - sysctl_net_ipv4_conf_default_send_redirects
-    - postfix_network_listening_disabled
-    - firewalld_loopback_traffic_trusted
-    - sysctl_net_ipv4_icmp_ignore_bogus_error_responses
-    - sysctl_net_ipv4_conf_all_secure_redirects
-    - sysctl_net_ipv6_conf_default_accept_source_route
-    - kernel_module_sctp_disabled
-    - sysctl_net_ipv4_icmp_echo_ignore_broadcasts
-    - set_ip6tables_default_rule
-    - set_ipv6_loopback_traffic
-    - sysctl_net_ipv4_conf_default_accept_redirects
     - sysctl_net_ipv4_tcp_syncookies
-    - set_loopback_traffic
-    - sysctl_net_ipv4_conf_all_rp_filter
-    - sysctl_net_ipv4_ip_forward
     - kernel_module_dccp_disabled
+    - sysctl_net_ipv6_conf_default_accept_source_route
+    - sysctl_net_ipv4_conf_all_send_redirects
+    - kernel_module_sctp_disabled
+    - network_sniffer_disabled
+    - sysctl_net_ipv4_conf_all_secure_redirects
+    - set_loopback_traffic
+    - sysctl_net_ipv4_conf_default_send_redirects
+    - sysctl_net_ipv4_ip_forward
+    - postfix_network_listening_disabled
+    - sysctl_net_ipv4_conf_default_accept_redirects
+    - sysctl_net_ipv4_icmp_ignore_bogus_error_responses
+    - firewalld_loopback_traffic_restricted
+    - set_ip6tables_default_rule
+    - sysctl_net_ipv4_conf_all_rp_filter
+    - sysctl_net_ipv4_icmp_echo_ignore_broadcasts
+    - set_ipv6_loopback_traffic
+    - firewalld_loopback_traffic_trusted
     - var_postfix_inet_interfaces=loopback-only
     controls:
     - 1.4.1
@@ -854,8 +854,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - bios_enable_execution_restrictions
     - install_PAE_kernel_on_x86-32
+    - bios_enable_execution_restrictions
     controls: []
 -   id: 2.2.2
     levels:
@@ -883,8 +883,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - no_empty_passwords_etc_shadow
     - ensure_root_password_configured
+    - no_empty_passwords_etc_shadow
     controls: []
 -   id: 2.2.3
     levels:
@@ -939,24 +939,24 @@ controls:
     - service_cups_disabled
     - service_nfs_disabled
     rules:
-    - service_rpcbind_disabled
-    - package_rsh_removed
-    - package_talk_removed
-    - package_rsh-server_removed
-    - package_tftp_removed
-    - service_rsyncd_disabled
-    - package_dhcp_removed
-    - package_ypbind_removed
-    - package_telnet_removed
-    - package_ypserv_removed
-    - package_talk-server_removed
-    - package_telnet-server_removed
     - package_net-snmp_removed
+    - package_dhcp_removed
+    - service_rsyncd_disabled
+    - package_rsh_removed
     - package_ftp_removed
-    - package_xinetd_removed
-    - package_tftp-server_removed
-    - mask_nonessential_services
+    - package_ypserv_removed
+    - package_telnet_removed
     - service_avahi-daemon_disabled
+    - package_rsh-server_removed
+    - package_tftp-server_removed
+    - package_talk_removed
+    - package_tftp_removed
+    - package_ypbind_removed
+    - package_telnet-server_removed
+    - mask_nonessential_services
+    - package_xinetd_removed
+    - service_rpcbind_disabled
+    - package_talk-server_removed
     controls: []
 -   id: 2.2.5
     levels:
@@ -1016,83 +1016,83 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_permissions_cron_allow
-    - file_permissions_backup_etc_shadow
-    - file_permissions_sshd_pub_key
-    - file_groupowner_cron_weekly
-    - sshd_disable_x11_forwarding
-    - file_groupowner_grub2_cfg
-    - file_permissions_sshd_private_key
-    - file_groupowner_cron_hourly
-    - file_groupowner_cron_daily
-    - sshd_set_maxstartups
-    - sudo_custom_logfile
-    - sshd_set_max_auth_tries
-    - file_groupowner_etc_shadow
-    - file_owner_cron_d
-    - file_permissions_cron_weekly
-    - sshd_disable_root_login
-    - sshd_enable_pam
-    - file_owner_etc_passwd
-    - file_groupowner_etc_group
-    - file_owner_cron_weekly
-    - file_permissions_cron_daily
-    - file_owner_backup_etc_shadow
-    - file_groupowner_at_allow
-    - file_groupowner_etc_passwd
-    - file_permissions_etc_shadow
-    - file_groupowner_cron_monthly
-    - file_owner_etc_shadow
-    - file_owner_etc_group
-    - sudo_require_authentication
-    - ensure_pam_wheel_group_empty
-    - file_owner_backup_etc_group
-    - sshd_do_not_permit_user_env
-    - file_owner_cron_allow
-    - sshd_disable_rhosts
-    - sshd_set_loglevel_verbose
-    - file_permissions_cron_d
-    - file_owner_user_cfg
-    - package_sudo_installed
-    - file_permissions_grub2_cfg
-    - file_groupowner_backup_etc_passwd
-    - file_permissions_at_allow
-    - sshd_limit_user_access
-    - file_owner_cron_hourly
-    - file_owner_cron_monthly
-    - file_permissions_user_cfg
-    - file_permissions_cron_hourly
-    - sshd_disable_tcp_forwarding
-    - use_pam_wheel_group_for_su
-    - file_owner_crontab
-    - file_permissions_unauthorized_world_writable
-    - file_permissions_ungroupowned
-    - dir_perms_world_writable_sticky_bits
-    - sshd_disable_empty_passwords
-    - file_groupowner_user_cfg
-    - no_files_unowned_by_user
-    - file_permissions_cron_monthly
-    - sshd_set_login_grace_time
-    - file_permissions_backup_etc_passwd
-    - sshd_set_max_sessions
-    - file_permissions_crontab
-    - file_permissions_etc_group
-    - file_cron_deny_not_exist
-    - file_groupowner_backup_etc_shadow
     - file_owner_at_allow
-    - file_groupowner_backup_etc_group
-    - file_permissions_backup_etc_group
-    - file_groupowner_crontab
-    - sudo_require_reauthentication
-    - sudo_add_use_pty
-    - file_groupowner_cron_d
-    - file_groupowner_cron_allow
-    - file_owner_backup_etc_passwd
-    - file_at_deny_not_exist
-    - file_owner_grub2_cfg
     - file_permissions_etc_passwd
-    - file_owner_cron_daily
+    - use_pam_wheel_group_for_su
+    - file_permissions_etc_group
+    - file_groupowner_cron_d
+    - file_permissions_grub2_cfg
+    - sshd_set_max_auth_tries
+    - package_sudo_installed
+    - file_owner_backup_etc_group
+    - file_groupowner_at_allow
+    - file_permissions_cron_d
+    - file_groupowner_cron_monthly
+    - file_permissions_cron_allow
+    - file_groupowner_backup_etc_passwd
+    - file_permissions_cron_hourly
+    - file_groupowner_cron_hourly
+    - sudo_add_use_pty
+    - file_permissions_sshd_pub_key
+    - file_owner_user_cfg
+    - file_groupowner_cron_daily
+    - file_at_deny_not_exist
+    - file_groupowner_etc_group
+    - file_permissions_cron_monthly
+    - file_permissions_backup_etc_shadow
+    - file_owner_cron_hourly
+    - file_permissions_ungroupowned
+    - file_groupowner_grub2_cfg
+    - file_groupowner_etc_passwd
+    - file_groupowner_backup_etc_shadow
     - file_permissions_sshd_config
+    - sudo_require_reauthentication
+    - file_permissions_etc_shadow
+    - sshd_disable_empty_passwords
+    - sshd_set_loglevel_verbose
+    - file_permissions_backup_etc_passwd
+    - file_groupowner_cron_weekly
+    - file_owner_backup_etc_shadow
+    - file_owner_crontab
+    - file_permissions_cron_weekly
+    - sshd_disable_tcp_forwarding
+    - file_owner_cron_d
+    - sudo_require_authentication
+    - file_permissions_backup_etc_group
+    - file_permissions_crontab
+    - file_cron_deny_not_exist
+    - file_owner_grub2_cfg
+    - file_permissions_cron_daily
+    - sshd_do_not_permit_user_env
+    - file_groupowner_backup_etc_group
+    - file_groupowner_cron_allow
+    - file_permissions_at_allow
+    - sshd_set_max_sessions
+    - sudo_custom_logfile
+    - file_permissions_user_cfg
+    - file_owner_cron_weekly
+    - file_owner_cron_daily
+    - file_owner_etc_group
+    - file_owner_cron_monthly
+    - file_groupowner_crontab
+    - file_permissions_sshd_private_key
+    - sshd_enable_pam
+    - no_files_unowned_by_user
+    - file_groupowner_user_cfg
+    - file_groupowner_etc_shadow
+    - dir_perms_world_writable_sticky_bits
+    - file_owner_etc_shadow
+    - sshd_set_login_grace_time
+    - file_owner_backup_etc_passwd
+    - sshd_disable_x11_forwarding
+    - sshd_disable_root_login
+    - sshd_set_maxstartups
+    - file_permissions_unauthorized_world_writable
+    - file_owner_cron_allow
+    - file_owner_etc_passwd
+    - ensure_pam_wheel_group_empty
+    - sshd_disable_rhosts
+    - sshd_limit_user_access
     - var_sshd_set_login_grace_time=60
     controls: []
 -   id: 2.2.7
@@ -1123,9 +1123,9 @@ controls:
     rules:
     - sshd_use_approved_ciphers
     - sshd_use_approved_macs
+    - configure_crypto_policy
     - configure_ssh_crypto_policy
     - sshd_use_strong_kex
-    - configure_crypto_policy
     - var_system_crypto_policy=default_policy
     controls: []
 -   id: '2.2'
@@ -1146,110 +1146,110 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_permissions_cron_allow
-    - file_permissions_backup_etc_shadow
-    - file_permissions_sshd_pub_key
-    - file_groupowner_cron_weekly
-    - package_rsh-server_removed
-    - sshd_disable_x11_forwarding
-    - file_groupowner_grub2_cfg
-    - file_permissions_sshd_private_key
-    - sshd_use_approved_ciphers
-    - package_ypbind_removed
-    - file_groupowner_cron_hourly
-    - file_groupowner_cron_daily
-    - sshd_set_maxstartups
-    - no_empty_passwords_etc_shadow
-    - sudo_custom_logfile
-    - package_xinetd_removed
-    - sshd_set_max_auth_tries
-    - file_groupowner_etc_shadow
-    - file_owner_cron_d
-    - file_permissions_cron_weekly
-    - sshd_disable_root_login
-    - bios_enable_execution_restrictions
-    - sshd_enable_pam
-    - package_telnet_removed
-    - file_owner_etc_passwd
-    - file_groupowner_etc_group
-    - file_owner_cron_weekly
-    - file_permissions_cron_daily
-    - file_owner_backup_etc_shadow
-    - file_groupowner_at_allow
-    - file_groupowner_etc_passwd
-    - file_permissions_etc_shadow
-    - service_rsyncd_disabled
-    - file_groupowner_cron_monthly
-    - package_ypserv_removed
-    - file_owner_etc_shadow
-    - file_owner_etc_group
-    - sudo_require_authentication
-    - ensure_pam_wheel_group_empty
-    - sshd_use_approved_macs
-    - file_owner_backup_etc_group
-    - sshd_do_not_permit_user_env
-    - file_owner_cron_allow
     - package_ftp_removed
-    - sshd_disable_rhosts
-    - sshd_set_loglevel_verbose
-    - file_permissions_cron_d
-    - file_owner_user_cfg
-    - package_sudo_installed
-    - file_permissions_grub2_cfg
-    - file_groupowner_backup_etc_passwd
-    - file_permissions_at_allow
-    - ensure_root_password_configured
-    - sshd_limit_user_access
-    - file_owner_cron_hourly
-    - file_owner_cron_monthly
-    - file_permissions_user_cfg
-    - file_permissions_cron_hourly
-    - sshd_disable_tcp_forwarding
-    - package_talk-server_removed
-    - package_talk_removed
-    - mask_nonessential_services
-    - service_rpcbind_disabled
-    - use_pam_wheel_group_for_su
-    - file_owner_crontab
-    - file_permissions_unauthorized_world_writable
-    - file_permissions_ungroupowned
-    - dir_perms_world_writable_sticky_bits
-    - package_telnet-server_removed
-    - install_PAE_kernel_on_x86-32
-    - sshd_disable_empty_passwords
-    - file_groupowner_user_cfg
-    - no_files_unowned_by_user
-    - file_permissions_cron_monthly
-    - sshd_set_login_grace_time
-    - file_permissions_backup_etc_passwd
-    - configure_ssh_crypto_policy
-    - sshd_set_max_sessions
-    - file_permissions_crontab
-    - file_permissions_etc_group
-    - sshd_use_strong_kex
-    - file_cron_deny_not_exist
-    - file_groupowner_backup_etc_shadow
-    - package_net-snmp_removed
+    - sshd_use_approved_macs
     - file_owner_at_allow
-    - service_avahi-daemon_disabled
-    - file_groupowner_backup_etc_group
-    - file_permissions_backup_etc_group
-    - file_groupowner_crontab
-    - sudo_require_reauthentication
-    - sudo_add_use_pty
-    - file_groupowner_cron_d
-    - file_groupowner_cron_allow
-    - file_owner_backup_etc_passwd
-    - package_dhcp_removed
-    - file_at_deny_not_exist
-    - package_tftp-server_removed
-    - configure_crypto_policy
-    - file_owner_grub2_cfg
-    - package_rsh_removed
-    - package_tftp_removed
     - file_permissions_etc_passwd
-    - file_owner_cron_daily
+    - package_net-snmp_removed
+    - use_pam_wheel_group_for_su
+    - file_permissions_etc_group
+    - package_rsh_removed
+    - sshd_use_approved_ciphers
+    - file_groupowner_cron_d
+    - file_permissions_grub2_cfg
+    - sshd_set_max_auth_tries
+    - package_sudo_installed
+    - file_owner_backup_etc_group
+    - install_PAE_kernel_on_x86-32
+    - file_groupowner_at_allow
+    - file_permissions_cron_d
+    - file_groupowner_cron_monthly
+    - file_permissions_cron_allow
+    - file_groupowner_backup_etc_passwd
+    - file_permissions_cron_hourly
+    - file_groupowner_cron_hourly
+    - sudo_add_use_pty
+    - configure_crypto_policy
+    - file_permissions_sshd_pub_key
+    - package_xinetd_removed
+    - file_owner_user_cfg
+    - package_telnet_removed
+    - file_groupowner_cron_daily
+    - file_at_deny_not_exist
+    - file_groupowner_etc_group
+    - file_permissions_cron_monthly
+    - file_permissions_backup_etc_shadow
+    - package_ypbind_removed
+    - file_owner_cron_hourly
+    - file_permissions_ungroupowned
+    - file_groupowner_grub2_cfg
+    - file_groupowner_etc_passwd
+    - file_groupowner_backup_etc_shadow
     - file_permissions_sshd_config
+    - sudo_require_reauthentication
+    - service_avahi-daemon_disabled
+    - file_permissions_etc_shadow
+    - sshd_disable_empty_passwords
+    - sshd_set_loglevel_verbose
+    - no_empty_passwords_etc_shadow
+    - file_permissions_backup_etc_passwd
+    - file_groupowner_cron_weekly
+    - configure_ssh_crypto_policy
+    - file_owner_backup_etc_shadow
+    - ensure_root_password_configured
+    - file_owner_crontab
+    - file_permissions_cron_weekly
+    - service_rsyncd_disabled
+    - sshd_disable_tcp_forwarding
+    - file_owner_cron_d
+    - sudo_require_authentication
+    - bios_enable_execution_restrictions
+    - file_permissions_backup_etc_group
+    - service_rpcbind_disabled
+    - file_permissions_crontab
+    - file_cron_deny_not_exist
+    - file_owner_grub2_cfg
+    - file_permissions_cron_daily
+    - sshd_do_not_permit_user_env
+    - file_groupowner_backup_etc_group
+    - file_groupowner_cron_allow
+    - file_permissions_at_allow
+    - sshd_set_max_sessions
+    - sudo_custom_logfile
+    - package_telnet-server_removed
+    - package_talk-server_removed
+    - file_permissions_user_cfg
+    - file_owner_cron_weekly
+    - file_owner_cron_daily
+    - file_owner_etc_group
+    - file_owner_cron_monthly
+    - package_tftp-server_removed
+    - file_groupowner_crontab
+    - package_talk_removed
+    - file_permissions_sshd_private_key
+    - package_ypserv_removed
+    - sshd_enable_pam
+    - no_files_unowned_by_user
+    - file_groupowner_user_cfg
+    - file_groupowner_etc_shadow
+    - package_tftp_removed
+    - dir_perms_world_writable_sticky_bits
+    - file_owner_etc_shadow
+    - package_rsh-server_removed
+    - sshd_set_login_grace_time
+    - file_owner_backup_etc_passwd
+    - sshd_disable_x11_forwarding
+    - sshd_disable_root_login
+    - sshd_set_maxstartups
+    - file_permissions_unauthorized_world_writable
+    - mask_nonessential_services
+    - file_owner_cron_allow
+    - file_owner_etc_passwd
+    - sshd_use_strong_kex
+    - package_dhcp_removed
+    - ensure_pam_wheel_group_empty
+    - sshd_disable_rhosts
+    - sshd_limit_user_access
     - var_system_crypto_policy=default_policy
     - var_sshd_set_login_grace_time=60
     controls:
@@ -1535,10 +1535,10 @@ controls:
     - sysctl_kernel_core_uses_pid
     rules:
     - sysctl_kernel_core_pattern
+    - coredump_disable_backtraces
     - coredump_disable_storage
     - sysctl_fs_suid_dumpable
     - disable_users_coredumps
-    - coredump_disable_backtraces
     - sysctl_kernel_randomize_va_space
     controls: []
 -   id: 3.3.1.2
@@ -1642,10 +1642,10 @@ controls:
     related_rules: []
     rules:
     - sysctl_kernel_core_pattern
+    - coredump_disable_backtraces
     - coredump_disable_storage
     - sysctl_fs_suid_dumpable
     - disable_users_coredumps
-    - coredump_disable_backtraces
     - sysctl_kernel_randomize_va_space
     controls:
     - 3.3.1.1
@@ -1766,10 +1766,10 @@ controls:
     related_rules: []
     rules:
     - sysctl_kernel_core_pattern
+    - coredump_disable_backtraces
     - coredump_disable_storage
     - sysctl_fs_suid_dumpable
     - disable_users_coredumps
-    - coredump_disable_backtraces
     - sysctl_kernel_randomize_va_space
     controls:
     - 3.3.1.1
@@ -1842,8 +1842,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - dconf_gnome_disable_automount
     - dconf_gnome_disable_automount_open
+    - dconf_gnome_disable_automount
     - kernel_module_usb-storage_disabled
     controls: []
 -   id: '3.4'
@@ -1864,8 +1864,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - dconf_gnome_disable_automount
     - dconf_gnome_disable_automount_open
+    - dconf_gnome_disable_automount
     - kernel_module_usb-storage_disabled
     controls:
     - 3.4.1
@@ -3528,11 +3528,11 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - security_patches_up_to_date
-    - ensure_gpgcheck_globally_activated
-    - ensure_redhat_gpgkey_installed
-    - ensure_suse_gpgkey_installed
     - ensure_gpgcheck_never_disabled
+    - ensure_suse_gpgkey_installed
+    - security_patches_up_to_date
+    - ensure_redhat_gpgkey_installed
+    - ensure_gpgcheck_globally_activated
     controls: []
 -   id: '6.3'
     levels:
@@ -3552,11 +3552,11 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - security_patches_up_to_date
-    - ensure_gpgcheck_globally_activated
-    - ensure_redhat_gpgkey_installed
-    - ensure_suse_gpgkey_installed
     - ensure_gpgcheck_never_disabled
+    - ensure_suse_gpgkey_installed
+    - security_patches_up_to_date
+    - ensure_redhat_gpgkey_installed
+    - ensure_gpgcheck_globally_activated
     controls:
     - 6.3.1
     - 6.3.2
@@ -4333,12 +4333,12 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - account_unique_id
-    - accounts_no_uid_except_zero
     - account_unique_name
-    - accounts_root_gid_zero
-    - group_unique_name
+    - accounts_no_uid_except_zero
     - group_unique_id
+    - group_unique_name
+    - account_unique_id
+    - accounts_root_gid_zero
     controls: []
 -   id: 8.2.2
     levels:
@@ -4451,8 +4451,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - account_disable_post_pw_expiration
     - accounts_set_post_pw_existing
+    - account_disable_post_pw_expiration
     - var_account_disable_post_pw_expiration=90
     controls: []
 -   id: 8.2.7
@@ -4507,15 +4507,15 @@ controls:
     related_rules:
     - sshd_set_keepalive_0
     rules:
+    - dconf_gnome_screensaver_idle_delay
+    - dconf_gnome_screensaver_idle_activation_enabled
     - dconf_gnome_screensaver_lock_delay
     - dconf_gnome_screensaver_mode_blank
-    - dconf_gnome_screensaver_idle_delay
+    - dconf_gnome_session_idle_user_locks
+    - dconf_db_up_to_date
+    - sshd_set_keepalive
     - sshd_set_idle_timeout
     - dconf_gnome_screensaver_lock_enabled
-    - dconf_db_up_to_date
-    - dconf_gnome_session_idle_user_locks
-    - sshd_set_keepalive
-    - dconf_gnome_screensaver_idle_activation_enabled
     - inactivity_timeout_value=15_minutes
     - var_screensaver_lock_delay=10_seconds
     - sshd_idle_timeout_value=15_minutes
@@ -4540,26 +4540,26 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - gid_passwd_group_same
-    - account_disable_post_pw_expiration
-    - dconf_db_up_to_date
-    - group_unique_id
-    - dconf_gnome_screensaver_mode_blank
-    - accounts_set_post_pw_existing
-    - no_password_auth_for_systemaccounts
-    - accounts_no_uid_except_zero
     - account_unique_name
-    - dconf_gnome_session_idle_user_locks
-    - group_unique_name
-    - dconf_gnome_screensaver_idle_activation_enabled
-    - dconf_gnome_screensaver_lock_delay
     - dconf_gnome_screensaver_idle_delay
+    - accounts_no_uid_except_zero
+    - group_unique_name
+    - dconf_db_up_to_date
     - sshd_set_idle_timeout
-    - dconf_gnome_screensaver_lock_enabled
+    - dconf_gnome_screensaver_idle_activation_enabled
+    - account_disable_post_pw_expiration
+    - dconf_gnome_session_idle_user_locks
+    - sshd_set_keepalive
+    - accounts_set_post_pw_existing
+    - gid_passwd_group_same
     - account_unique_id
+    - no_password_auth_for_systemaccounts
     - no_shelllogin_for_systemaccounts
     - accounts_root_gid_zero
-    - sshd_set_keepalive
+    - group_unique_id
+    - dconf_gnome_screensaver_lock_delay
+    - dconf_gnome_screensaver_mode_blank
+    - dconf_gnome_screensaver_lock_enabled
     - inactivity_timeout_value=15_minutes
     - var_screensaver_lock_delay=10_seconds
     - sshd_idle_timeout_value=15_minutes
@@ -4592,11 +4592,11 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - no_empty_passwords
-    - gnome_gdm_disable_guest_login
     - gnome_gdm_disable_unattended_automatic_login
-    - gnome_gdm_disable_automatic_login
     - disable_host_auth
+    - no_empty_passwords
+    - gnome_gdm_disable_automatic_login
+    - gnome_gdm_disable_guest_login
     controls: []
 -   id: 8.3.2
     levels:
@@ -4621,11 +4621,11 @@ controls:
     related_rules: []
     rules:
     - accounts_password_all_shadowed
-    - set_password_hashing_algorithm_libuserconf
     - set_password_hashing_algorithm_logindefs
+    - set_password_hashing_algorithm_commonauth
     - ensure_shadow_group_empty
     - set_password_hashing_algorithm_systemauth
-    - set_password_hashing_algorithm_commonauth
+    - set_password_hashing_algorithm_libuserconf
     - var_password_hashing_algorithm=SHA512
     controls: []
 -   id: 8.3.3
@@ -4682,12 +4682,12 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - accounts_passwords_pam_tally2
+    - cracklib_accounts_password_pam_retry
+    - enable_authselect
+    - accounts_passwords_pam_faillock_unlock_time
     - accounts_passwords_pam_tally2_unlock_time
     - accounts_passwords_pam_faillock_deny
-    - accounts_passwords_pam_faillock_unlock_time
-    - enable_authselect
-    - cracklib_accounts_password_pam_retry
+    - accounts_passwords_pam_tally2
     - var_accounts_passwords_pam_faillock_deny=10
     - var_accounts_passwords_pam_faillock_unlock_time=1800
     - var_password_pam_tally2=10
@@ -4761,11 +4761,11 @@ controls:
     - cracklib_accounts_password_pam_ucredit
     rules:
     - accounts_password_pam_dcredit
-    - cracklib_accounts_password_pam_dcredit
     - cracklib_accounts_password_pam_lcredit
-    - accounts_password_pam_lcredit
-    - accounts_password_pam_minlen
     - cracklib_accounts_password_pam_minlen
+    - accounts_password_pam_minlen
+    - accounts_password_pam_lcredit
+    - cracklib_accounts_password_pam_dcredit
     - var_password_pam_dcredit=1
     - var_password_pam_lcredit=1
     - var_password_pam_minlen=12
@@ -4808,9 +4808,9 @@ controls:
     - var_accounts_minimum_age_login_defs=1
     - accounts_minimum_age_login_defs
     rules:
-    - accounts_password_pam_unix_remember
-    - accounts_password_pam_pwhistory_remember_password_auth
     - accounts_password_pam_pwhistory_remember_system_auth
+    - accounts_password_pam_pwhistory_remember_password_auth
+    - accounts_password_pam_unix_remember
     - var_password_pam_unix_remember=4
     - var_password_pam_remember=4
     - var_password_pam_remember_control_flag=requisite_or_required
@@ -4873,10 +4873,10 @@ controls:
     original_title: null
     related_rules: []
     rules:
+    - accounts_password_set_max_life_existing
     - accounts_maximum_age_login_defs
     - accounts_password_warn_age_login_defs
     - accounts_password_set_warn_age_existing
-    - accounts_password_set_max_life_existing
     - var_accounts_maximum_age_login_defs=90
     - var_accounts_password_warn_age_login_defs=7
     controls: []
@@ -4966,37 +4966,37 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - accounts_passwords_pam_tally2
-    - accounts_password_pam_pwhistory_remember_system_auth
-    - accounts_passwords_pam_faillock_unlock_time
-    - accounts_password_all_shadowed
+    - gnome_gdm_disable_unattended_automatic_login
     - accounts_password_pam_lcredit
     - set_password_hashing_algorithm_libuserconf
-    - set_password_hashing_algorithm_logindefs
-    - cracklib_accounts_password_pam_minlen
-    - accounts_password_pam_dcredit
-    - cracklib_accounts_password_pam_dcredit
-    - accounts_password_pam_pwhistory_remember_password_auth
-    - accounts_password_warn_age_login_defs
-    - gnome_gdm_disable_unattended_automatic_login
-    - accounts_passwords_pam_faillock_deny
-    - accounts_password_set_warn_age_existing
-    - gnome_gdm_disable_automatic_login
-    - set_password_hashing_algorithm_systemauth
-    - enable_authselect
     - no_empty_passwords
-    - cracklib_accounts_password_pam_lcredit
+    - cracklib_accounts_password_pam_dcredit
+    - accounts_password_pam_dcredit
+    - accounts_password_warn_age_login_defs
     - accounts_password_pam_unix_remember
-    - accounts_passwords_pam_tally2_unlock_time
+    - cracklib_accounts_password_pam_lcredit
+    - cracklib_accounts_password_pam_minlen
+    - accounts_password_set_warn_age_existing
     - accounts_maximum_age_login_defs
-    - ensure_shadow_group_empty
-    - set_password_hashing_algorithm_commonauth
+    - accounts_passwords_pam_faillock_unlock_time
+    - accounts_passwords_pam_tally2_unlock_time
     - accounts_password_pam_minlen
-    - disable_host_auth
-    - cracklib_accounts_password_pam_retry
     - gnome_gdm_disable_guest_login
-    - accounts_password_last_change_is_in_past
+    - accounts_password_all_shadowed
+    - cracklib_accounts_password_pam_retry
     - accounts_password_set_max_life_existing
+    - accounts_password_pam_pwhistory_remember_system_auth
+    - accounts_passwords_pam_faillock_deny
+    - accounts_password_pam_pwhistory_remember_password_auth
+    - accounts_passwords_pam_tally2
+    - set_password_hashing_algorithm_logindefs
+    - set_password_hashing_algorithm_commonauth
+    - enable_authselect
+    - disable_host_auth
+    - ensure_shadow_group_empty
+    - set_password_hashing_algorithm_systemauth
+    - accounts_password_last_change_is_in_past
+    - gnome_gdm_disable_automatic_login
     - var_accounts_maximum_age_login_defs=90
     - var_accounts_password_warn_age_login_defs=7
     - var_password_pam_unix_remember=4
@@ -5211,9 +5211,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - accounts_tmout
     - no_direct_root_logins
     - securetty_root_login_console_only
+    - accounts_tmout
     controls: []
 -   id: 8.6.2
     levels:
@@ -5289,9 +5289,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - accounts_tmout
     - no_direct_root_logins
     - securetty_root_login_console_only
+    - accounts_tmout
     controls:
     - 8.6.1
     - 8.6.2
@@ -6176,11 +6176,11 @@ controls:
     related_rules:
     - audit_rules_login_events
     rules:
+    - audit_sudo_log_events
     - audit_rules_login_events_tallylog
     - audit_rules_session_events
-    - audit_rules_login_events_lastlog
-    - audit_sudo_log_events
     - audit_rules_login_events_faillock
+    - audit_rules_login_events_lastlog
     controls: []
 -   id: 10.2.1.4
     levels:
@@ -6232,12 +6232,12 @@ controls:
     related_rules:
     - audit_rules_usergroup_modification
     rules:
-    - audit_rules_usergroup_modification_passwd
-    - audit_rules_usergroup_modification_gshadow
-    - audit_rules_usergroup_modification_group
-    - audit_rules_sysadmin_actions
     - audit_rules_usergroup_modification_shadow
+    - audit_rules_sysadmin_actions
+    - audit_rules_usergroup_modification_passwd
+    - audit_rules_usergroup_modification_group
     - audit_rules_usergroup_modification_opasswd
+    - audit_rules_usergroup_modification_gshadow
     controls: []
 -   id: 10.2.1.6
     levels:
@@ -6290,12 +6290,12 @@ controls:
     related_rules:
     - audit_rules_file_deletion_events
     rules:
-    - audit_rules_file_deletion_events_renameat
-    - audit_rules_file_deletion_events_rename
+    - audit_rules_file_deletion_events_rmdir
     - audit_rules_media_export
+    - audit_rules_file_deletion_events_rename
+    - audit_rules_file_deletion_events_renameat
     - audit_rules_file_deletion_events_unlink
     - audit_rules_file_deletion_events_unlinkat
-    - audit_rules_file_deletion_events_rmdir
     controls: []
 -   id: 10.2.1
     levels:
@@ -6321,27 +6321,27 @@ controls:
     - service_systemd-journald_enabled
     - service_rsyslog_enabled
     rules:
-    - audit_rules_file_deletion_events_rename
-    - audit_rules_sysadmin_actions
-    - audit_rules_usergroup_modification_shadow
     - audit_rules_file_deletion_events_rmdir
-    - service_auditd_enabled
-    - audit_rules_usergroup_modification_passwd
-    - audit_rules_session_events
-    - package_audit_installed
-    - audit_rules_file_deletion_events_renameat
-    - audit_sudo_log_events
-    - audit_rules_usergroup_modification_opasswd
-    - audit_rules_suid_privilege_function
-    - audit_rules_media_export
-    - audit_rules_login_events_lastlog
-    - display_login_attempts
-    - audit_rules_file_deletion_events_unlinkat
-    - audit_rules_login_events_faillock
+    - audit_rules_usergroup_modification_shadow
     - audit_rules_login_events_tallylog
-    - audit_rules_usergroup_modification_gshadow
-    - audit_rules_usergroup_modification_group
+    - audit_rules_session_events
+    - service_auditd_enabled
+    - audit_rules_sysadmin_actions
+    - audit_rules_usergroup_modification_passwd
+    - audit_rules_usergroup_modification_opasswd
+    - audit_rules_login_events_lastlog
+    - audit_rules_file_deletion_events_renameat
+    - display_login_attempts
     - audit_rules_file_deletion_events_unlink
+    - audit_rules_usergroup_modification_group
+    - package_audit_installed
+    - audit_rules_file_deletion_events_rename
+    - audit_rules_suid_privilege_function
+    - audit_rules_usergroup_modification_gshadow
+    - audit_rules_login_events_faillock
+    - audit_rules_media_export
+    - audit_sudo_log_events
+    - audit_rules_file_deletion_events_unlinkat
     controls:
     - 10.2.1.1
     - 10.2.1.2
@@ -6392,28 +6392,28 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_file_deletion_events_rename
-    - audit_rules_sysadmin_actions
-    - audit_rules_usergroup_modification_shadow
     - audit_rules_file_deletion_events_rmdir
-    - service_auditd_enabled
-    - audit_rules_usergroup_modification_passwd
+    - audit_rules_usergroup_modification_shadow
+    - audit_rules_login_events_tallylog
     - audit_rules_session_events
-    - package_audit_installed
+    - service_auditd_enabled
+    - audit_rules_sysadmin_actions
+    - audit_rules_usergroup_modification_passwd
+    - audit_rules_login_events_lastlog
+    - auditd_name_format
     - audit_rules_file_deletion_events_renameat
+    - display_login_attempts
+    - audit_rules_file_deletion_events_unlink
+    - audit_rules_usergroup_modification_group
+    - package_audit_installed
+    - audit_rules_file_deletion_events_rename
+    - audit_rules_suid_privilege_function
+    - audit_rules_file_deletion_events_unlinkat
+    - audit_rules_usergroup_modification_gshadow
+    - audit_rules_login_events_faillock
+    - audit_rules_media_export
     - audit_sudo_log_events
     - audit_rules_usergroup_modification_opasswd
-    - audit_rules_suid_privilege_function
-    - audit_rules_media_export
-    - audit_rules_login_events_lastlog
-    - display_login_attempts
-    - audit_rules_file_deletion_events_unlinkat
-    - auditd_name_format
-    - audit_rules_login_events_faillock
-    - audit_rules_login_events_tallylog
-    - audit_rules_usergroup_modification_gshadow
-    - audit_rules_usergroup_modification_group
-    - audit_rules_file_deletion_events_unlink
     - var_auditd_name_format=fqd
     controls:
     - 10.2.1.1
@@ -6444,9 +6444,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_permissions_var_log_audit
     - directory_access_var_log_audit
     - permissions_local_var_log
+    - file_permissions_var_log_audit
     - rsyslog_files_permissions
     controls: []
 -   id: 10.3.2
@@ -6467,11 +6467,11 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_group_ownership_var_log_audit
     - audit_rules_immutable
-    - rsyslog_files_ownership
-    - rsyslog_files_groupownership
+    - file_group_ownership_var_log_audit
     - file_ownership_var_log_audit
+    - rsyslog_files_groupownership
+    - rsyslog_files_ownership
     controls: []
 -   id: 10.3.3
     levels:
@@ -6530,20 +6530,20 @@ controls:
     related_rules: []
     rules:
     - audit_rules_dac_modification_fchmodat
-    - audit_rules_dac_modification_chmod
-    - audit_rules_dac_modification_fchownat
-    - audit_rules_dac_modification_lchown
-    - audit_rules_dac_modification_chown
-    - audit_rules_dac_modification_fchmod
-    - audit_rules_dac_modification_lremovexattr
     - audit_rules_dac_modification_lsetxattr
-    - audit_rules_networkconfig_modification
-    - audit_rules_dac_modification_setxattr
+    - audit_rules_dac_modification_chown
+    - audit_rules_dac_modification_lremovexattr
     - audit_rules_dac_modification_fchown
-    - audit_rules_dac_modification_fsetxattr
-    - audit_rules_dac_modification_removexattr
     - audit_rules_mac_modification
+    - audit_rules_dac_modification_lchown
+    - audit_rules_networkconfig_modification
+    - audit_rules_dac_modification_fchmod
+    - audit_rules_dac_modification_fchownat
     - audit_rules_dac_modification_fremovexattr
+    - audit_rules_dac_modification_setxattr
+    - audit_rules_dac_modification_fsetxattr
+    - audit_rules_dac_modification_chmod
+    - audit_rules_dac_modification_removexattr
     controls: []
 -   id: '10.3'
     levels:
@@ -6563,33 +6563,33 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - auditd_audispd_syslog_plugin_activated
+    - audit_rules_dac_modification_chmod
+    - rsyslog_files_permissions
+    - audit_rules_dac_modification_fchmodat
     - audit_rules_dac_modification_chown
-    - audit_rules_dac_modification_fchmod
+    - package_audit-audispd-plugins_installed
+    - directory_access_var_log_audit
+    - auditd_audispd_syslog_plugin_activated
+    - audit_rules_immutable
+    - file_group_ownership_var_log_audit
+    - audit_rules_networkconfig_modification
+    - file_ownership_var_log_audit
+    - rsyslog_files_groupownership
+    - audit_rules_dac_modification_fremovexattr
+    - package_audispd-plugins_installed
     - permissions_local_var_log
     - audit_rules_dac_modification_lremovexattr
-    - audit_rules_networkconfig_modification
-    - rsyslog_files_groupownership
-    - audit_rules_dac_modification_removexattr
-    - file_group_ownership_var_log_audit
-    - audit_rules_immutable
-    - rsyslog_files_permissions
-    - file_ownership_var_log_audit
-    - audit_rules_dac_modification_fremovexattr
-    - audit_rules_dac_modification_fchmodat
-    - audit_rules_dac_modification_chmod
+    - audit_rules_dac_modification_fchown
+    - audit_rules_mac_modification
+    - audit_rules_dac_modification_lchown
+    - audit_rules_dac_modification_fchmod
     - audit_rules_dac_modification_fchownat
     - audit_rules_dac_modification_setxattr
+    - audit_rules_dac_modification_removexattr
+    - audit_rules_dac_modification_lsetxattr
+    - file_permissions_var_log_audit
     - audit_rules_dac_modification_fsetxattr
     - rsyslog_files_ownership
-    - package_audit-audispd-plugins_installed
-    - audit_rules_dac_modification_lchown
-    - directory_access_var_log_audit
-    - audit_rules_dac_modification_lsetxattr
-    - audit_rules_dac_modification_fchown
-    - file_permissions_var_log_audit
-    - audit_rules_mac_modification
-    - package_audispd-plugins_installed
     controls:
     - 10.3.1
     - 10.3.2
@@ -6774,10 +6774,10 @@ controls:
     - auditd_data_retention_max_log_file_action_stig
     - ensure_logrotate_activated
     rules:
-    - auditd_data_retention_space_left_action
-    - package_logrotate_installed
     - auditd_data_retention_space_left
     - auditd_data_retention_admin_space_left_action
+    - package_logrotate_installed
+    - auditd_data_retention_space_left_action
     - timer_logrotate_enabled
     - var_auditd_admin_space_left_action=single
     - var_auditd_space_left=100MB
@@ -6801,10 +6801,10 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - auditd_data_retention_space_left_action
-    - package_logrotate_installed
     - auditd_data_retention_space_left
     - auditd_data_retention_admin_space_left_action
+    - package_logrotate_installed
+    - auditd_data_retention_space_left_action
     - timer_logrotate_enabled
     - var_auditd_admin_space_left_action=single
     - var_auditd_space_left=100MB
@@ -6835,11 +6835,11 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - package_chrony_installed
+    - service_chronyd_or_ntpd_enabled
     - service_ntp_enabled
     - service_timesyncd_enabled
+    - package_chrony_installed
     - service_ntpd_enabled
-    - service_chronyd_or_ntpd_enabled
     controls: []
 -   id: 10.6.2
     levels:
@@ -6871,9 +6871,9 @@ controls:
     - chronyd_configure_pool_and_server
     - chronyd_or_ntpd_specify_multiple_servers
     rules:
-    - ntpd_specify_remote_server
-    - ntpd_specify_multiple_servers
     - chronyd_specify_remote_server
+    - ntpd_specify_multiple_servers
+    - ntpd_specify_remote_server
     - var_multiple_time_servers=generic
     controls: []
 -   id: 10.6.3
@@ -6899,12 +6899,12 @@ controls:
     related_rules:
     - chronyd_client_only
     rules:
-    - audit_rules_time_settimeofday
-    - audit_rules_time_adjtimex
+    - audit_rules_time_clock_settime
     - audit_rules_time_watch_localtime
     - audit_rules_time_stime
-    - audit_rules_time_clock_settime
+    - audit_rules_time_adjtimex
     - chronyd_run_as_chrony_user
+    - audit_rules_time_settimeofday
     controls: []
 -   id: '10.6'
     levels:
@@ -6925,20 +6925,20 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - ntpd_specify_remote_server
-    - ntpd_specify_multiple_servers
-    - service_ntpd_enabled
-    - audit_rules_time_settimeofday
-    - audit_rules_time_adjtimex
+    - audit_rules_time_clock_settime
     - chronyd_specify_remote_server
-    - package_chrony_installed
     - audit_rules_time_watch_localtime
+    - audit_rules_time_stime
+    - ntpd_specify_remote_server
+    - service_chronyd_or_ntpd_enabled
     - service_ntp_enabled
     - service_timesyncd_enabled
-    - audit_rules_time_stime
-    - audit_rules_time_clock_settime
-    - service_chronyd_or_ntpd_enabled
+    - package_chrony_installed
+    - audit_rules_time_adjtimex
     - chronyd_run_as_chrony_user
+    - service_ntpd_enabled
+    - audit_rules_time_settimeofday
+    - ntpd_specify_multiple_servers
     - var_multiple_time_servers=generic
     controls:
     - 10.6.1
@@ -7025,8 +7025,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - grub2_audit_backlog_limit_argument
     - grub2_audit_argument
+    - grub2_audit_backlog_limit_argument
     controls: []
 -   id: 10.7.3
     levels:
@@ -7075,8 +7075,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - grub2_audit_backlog_limit_argument
     - grub2_audit_argument
+    - grub2_audit_backlog_limit_argument
     controls:
     - 10.7.1
     - 10.7.2
@@ -7641,13 +7641,13 @@ controls:
     related_rules:
     - disable_prelink
     rules:
-    - aide_periodic_checking_systemd_timer
-    - package_aide_installed
-    - rpm_verify_ownership
-    - rpm_verify_hashes
-    - rpm_verify_permissions
-    - aide_build_database
     - aide_periodic_cron_checking
+    - package_aide_installed
+    - aide_build_database
+    - rpm_verify_ownership
+    - aide_periodic_checking_systemd_timer
+    - rpm_verify_permissions
+    - rpm_verify_hashes
     controls: []
 -   id: 11.6.1
     levels:

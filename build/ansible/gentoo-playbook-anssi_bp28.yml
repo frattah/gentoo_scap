@@ -28,6 +28,7 @@
 - name: Ansible Playbook for xccdf_org.ssgproject.content_profile_anssi_bp28
   hosts: all
   vars:
+    var_sudo_umask: !!str 0077
     var_password_pam_unix_remember: !!str 2
     var_password_pam_dcredit: !!str -1
     var_password_pam_lcredit: !!str -1
@@ -37,6 +38,128 @@
     var_accounts_tmout: !!str 600
     var_accounts_user_umask: !!str 077
   tasks:
+    - name: Ensure env_reset is enabled in /etc/sudoers
+      lineinfile:
+        path: /etc/sudoers
+        regexp: ^[\s]*Defaults.*\benv_reset\b.*$
+        line: Defaults env_reset
+        validate: /usr/sbin/visudo -cf %s
+      tags:
+      - low_complexity
+      - low_disruption
+      - medium_severity
+      - no_reboot_needed
+      - restrict_strategy
+      - sudo_add_env_reset
+
+
+    - name: Ensure ignore_dot is enabled in /etc/sudoers
+      lineinfile:
+        path: /etc/sudoers
+        regexp: ^[\s]*Defaults.*\bignore_dot\b.*$
+        line: Defaults ignore_dot
+        validate: /usr/sbin/visudo -cf %s
+      tags:
+      - low_complexity
+      - low_disruption
+      - medium_severity
+      - no_reboot_needed
+      - restrict_strategy
+      - sudo_add_ignore_dot
+
+
+    - name: Ensure noexec is enabled in /etc/sudoers
+      lineinfile:
+        path: /etc/sudoers
+        regexp: ^[\s]*Defaults.*\bnoexec\b.*$
+        line: Defaults noexec
+        validate: /usr/sbin/visudo -cf %s
+      tags:
+      - high_severity
+      - low_complexity
+      - low_disruption
+      - no_reboot_needed
+      - restrict_strategy
+      - sudo_add_noexec
+
+
+    - name: Ensure requiretty is enabled in /etc/sudoers
+      lineinfile:
+        path: /etc/sudoers
+        regexp: ^[\s]*Defaults.*\brequiretty\b.*$
+        line: Defaults requiretty
+        validate: /usr/sbin/visudo -cf %s
+      tags:
+      - low_complexity
+      - low_disruption
+      - medium_severity
+      - no_reboot_needed
+      - restrict_strategy
+      - sudo_add_requiretty
+
+
+    - name: Ensure umask is enabled with the appropriate value in /etc/sudoers
+      lineinfile:
+        path: /etc/sudoers
+        regexp: ^[\s]*Defaults\s(.*)\bumask=[-]?.+\b(.*)$
+        line: Defaults \1umask={{ var_sudo_umask }}\2
+        validate: /usr/sbin/visudo -cf %s
+        backrefs: true
+      register: edit_sudoers_umask_option
+      tags:
+      - low_complexity
+      - low_disruption
+      - medium_severity
+      - no_reboot_needed
+      - restrict_strategy
+      - sudo_add_umask
+
+    - name: Enable umask option with appropriate value in /etc/sudoers
+      lineinfile:
+        path: /etc/sudoers
+        line: Defaults umask={{ var_sudo_umask }}
+        validate: /usr/sbin/visudo -cf %s
+      when: edit_sudoers_umask_option is defined and not edit_sudoers_umask_option.changed
+      tags:
+      - low_complexity
+      - low_disruption
+      - medium_severity
+      - no_reboot_needed
+      - restrict_strategy
+      - sudo_add_umask
+
+
+    - name: Gather the package facts
+      package_facts:
+        manager: auto
+      tags:
+      - PCI-DSS-Req-10.2.5
+      - PCI-DSSv4-2.2.6
+      - low_complexity
+      - low_disruption
+      - medium_severity
+      - no_reboot_needed
+      - restrict_strategy
+      - sudo_add_use_pty
+
+    - name: Ensure use_pty is enabled in /etc/sudoers
+      lineinfile:
+        path: /etc/sudoers
+        regexp: ^[\s]*Defaults.*\buse_pty\b.*$
+        line: Defaults use_pty
+        validate: /usr/sbin/visudo -cf %s
+      when: '"sudo" in ansible_facts.packages'
+      tags:
+      - PCI-DSS-Req-10.2.5
+      - PCI-DSSv4-2.2.6
+      - low_complexity
+      - low_disruption
+      - medium_severity
+      - no_reboot_needed
+      - restrict_strategy
+      - sudo_add_use_pty
+
+
     - name: Gather the package facts
       package_facts:
         manager: auto

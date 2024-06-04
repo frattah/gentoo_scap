@@ -22,7 +22,7 @@
       <ns0:component-ref id="scap_org.open-scap_cref_ssg-gentoo-cpe-oval.xml" ns1:href="#scap_org.open-scap_comp_ssg-gentoo-cpe-oval.xml" />
     </ns0:checks>
   </ns0:data-stream>
-  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-cpe-dictionary.xml" timestamp="2024-06-04T12:03:55">
+  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-cpe-dictionary.xml" timestamp="2024-06-04T09:38:03">
     <ns3:cpe-list xsi:schemaLocation="http://cpe.mitre.org/dictionary/2.0 http://cpe.mitre.org/files/cpe-dictionary_2.1.xsd">
       <ns3:cpe-item name="cpe:/o:gentoo:linux">
         <ns3:title xml:lang="en-us">Gentoo</ns3:title>
@@ -30,7 +30,7 @@
       </ns3:cpe-item>
     </ns3:cpe-list>
   </ns0:component>
-  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-xccdf.xml" timestamp="2024-06-04T12:03:54">
+  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-xccdf.xml" timestamp="2024-06-04T09:38:02">
     <ns5:Benchmark id="xccdf_org.ssgproject.content_benchmark_GENTOO" xsi:schemaLocation="http://checklists.nist.gov/xccdf/1.2 xccdf-1.2.xsd" style="SCAP_1.2" resolved="true" xml:lang="en-US">
       <ns5:status date="2024-06-04">draft</ns5:status>
       <ns5:title>Guide to the Secure Configuration of Gentoo</ns5:title>
@@ -99,6 +99,10 @@ respective companies.</ns5:rear-matter>
       <ns5:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cunix-linux">stigid</ns5:reference>
       <ns5:reference href="https://public.cyber.mil/stigs/srg-stig-tools/">stigref</ns5:reference>
       <ns7:platform-specification>
+        <ns7:platform id="package_sudo">
+          <ns7:logical-test operator="AND" negate="false">
+            </ns7:logical-test>
+        </ns7:platform>
         <ns7:platform id="package_pam">
           <ns7:logical-test operator="AND" negate="false">
             </ns7:logical-test>
@@ -429,6 +433,12 @@ respective companies.</ns5:rear-matter>
         <ns5:select idref="xccdf_org.ssgproject.content_rule_accounts_umask_etc_bashrc" selected="true" />
         <ns5:select idref="xccdf_org.ssgproject.content_rule_accounts_umask_etc_login_defs" selected="true" />
         <ns5:select idref="xccdf_org.ssgproject.content_rule_accounts_umask_etc_profile" selected="true" />
+        <ns5:select idref="xccdf_org.ssgproject.content_rule_sudo_add_env_reset" selected="true" />
+        <ns5:select idref="xccdf_org.ssgproject.content_rule_sudo_add_ignore_dot" selected="true" />
+        <ns5:select idref="xccdf_org.ssgproject.content_rule_sudo_add_noexec" selected="true" />
+        <ns5:select idref="xccdf_org.ssgproject.content_rule_sudo_add_requiretty" selected="true" />
+        <ns5:select idref="xccdf_org.ssgproject.content_rule_sudo_add_umask" selected="true" />
+        <ns5:select idref="xccdf_org.ssgproject.content_rule_sudo_add_use_pty" selected="true" />
         <ns5:refine-value idref="xccdf_org.ssgproject.content_value_var_password_pam_minlen" selector="15" />
         <ns5:refine-value idref="xccdf_org.ssgproject.content_value_var_password_pam_ocredit" selector="1" />
         <ns5:refine-value idref="xccdf_org.ssgproject.content_value_var_password_pam_dcredit" selector="1" />
@@ -437,10 +447,413 @@ respective companies.</ns5:rear-matter>
         <ns5:refine-value idref="xccdf_org.ssgproject.content_value_var_password_pam_unix_remember" selector="2" />
         <ns5:refine-value idref="xccdf_org.ssgproject.content_value_var_accounts_tmout" selector="10_min" />
         <ns5:refine-value idref="xccdf_org.ssgproject.content_value_var_accounts_user_umask" selector="077" />
+        <ns5:refine-value idref="xccdf_org.ssgproject.content_value_var_sudo_umask" selector="0077" />
       </ns5:Profile>
       <ns5:Group id="xccdf_org.ssgproject.content_group_system">
         <ns5:title>System Settings</ns5:title>
         <ns5:description>Contains rules that check correct system settings.</ns5:description>
+        <ns5:Group id="xccdf_org.ssgproject.content_group_software">
+          <ns5:title>Installing and Maintaining Software</ns5:title>
+          <ns5:description>The following sections contain information on
+security-relevant choices during the initial operating system
+installation process and the setup of software
+updates.</ns5:description>
+          <ns5:Group id="xccdf_org.ssgproject.content_group_sudo">
+            <ns5:title>Sudo</ns5:title>
+            <ns5:description><html:code>Sudo</html:code>, which stands for "su 'do'", provides the ability to delegate authority
+to certain users, groups of users, or system administrators. When configured for system
+users and/or groups, <html:code>Sudo</html:code> can allow a user or group to execute privileged commands
+that normally only <html:code>root</html:code> is allowed to execute.
+<html:br />
+       <html:br />
+For more information on <html:code>Sudo</html:code> and addition <html:code>Sudo</html:code> configuration options, see
+<html:b><html:a href="https://www.sudo.ws">https://www.sudo.ws</html:a></html:b>.</ns5:description>
+            <ns5:Value id="xccdf_org.ssgproject.content_value_var_sudo_umask" type="string">
+              <ns5:title>Sudo - umask value</ns5:title>
+              <ns5:description>Specify the sudo umask to use. The actual umask value that is used is the union
+of the user's umask and the sudo umask.
+The default sudo umask is 0022. This guarantess sudo never lowers the umask when
+running a command.</ns5:description>
+              <ns5:value>0022</ns5:value>
+              <ns5:value selector="0022">0022</ns5:value>
+              <ns5:value selector="0027">0027</ns5:value>
+              <ns5:value selector="0077">0077</ns5:value>
+            </ns5:Value>
+            <ns5:Rule selected="false" id="xccdf_org.ssgproject.content_rule_sudo_add_env_reset" severity="medium">
+              <ns5:title>Ensure sudo Runs In A Minimal Environment - sudo env_reset</ns5:title>
+              <ns5:description>The sudo <html:code>env_reset</html:code> tag, when specified, will run the command in a minimal environment,
+containing the TERM, PATH, HOME, MAIL, SHELL, LOGNAME, USER and SUDO_* variables.
+This should be enabled by making sure that the <html:code>env_reset</html:code> tag exists in
+<html:code>/etc/sudoers</html:code> configuration file or any sudo configuration snippets
+in <html:code>/etc/sudoers.d/</html:code>.</ns5:description>
+              <ns5:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R39</ns5:reference>
+              <ns5:rationale>Forcing sudo to reset the environment ensures that environment variables are not passed on to the
+command accidentaly, preventing leak of potentially sensitive information.</ns5:rationale>
+              <ns5:fix system="urn:xccdf:fix:script:sh" id="sudo_add_env_reset" complexity="low" disruption="low" reboot="false" strategy="restrict">
+if /usr/sbin/visudo -qcf /etc/sudoers; then
+    cp /etc/sudoers /etc/sudoers.bak
+    if ! grep -P '^[\s]*Defaults[\s]*\benv_reset\b.*$' /etc/sudoers; then
+        # sudoers file doesn't define Option env_reset
+        echo "Defaults env_reset" &gt;&gt; /etc/sudoers
+    fi
+    
+    # Check validity of sudoers and cleanup bak
+    if /usr/sbin/visudo -qcf /etc/sudoers; then
+        rm -f /etc/sudoers.bak
+    else
+        echo "Fail to validate remediated /etc/sudoers, reverting to original file."
+        mv /etc/sudoers.bak /etc/sudoers
+        false
+    fi
+else
+    echo "Skipping remediation, /etc/sudoers failed to validate"
+    false
+fi
+</ns5:fix>
+              <ns5:fix system="urn:xccdf:fix:script:ansible" id="sudo_add_env_reset" complexity="low" disruption="low" reboot="false" strategy="restrict">- name: Ensure env_reset is enabled in /etc/sudoers
+  lineinfile:
+    path: /etc/sudoers
+    regexp: ^[\s]*Defaults.*\benv_reset\b.*$
+    line: Defaults env_reset
+    validate: /usr/sbin/visudo -cf %s
+  tags:
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+  - sudo_add_env_reset
+</ns5:fix>
+              <ns5:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                <ns5:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-sudo_add_env_reset:def:1" />
+              </ns5:check>
+              <ns5:check system="http://scap.nist.gov/schema/ocil/2">
+                <ns5:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-sudo_add_env_reset_ocil:questionnaire:1" />
+              </ns5:check>
+            </ns5:Rule>
+            <ns5:Rule selected="false" id="xccdf_org.ssgproject.content_rule_sudo_add_ignore_dot" severity="medium">
+              <ns5:title>Ensure sudo Ignores Commands In Current Dir - sudo ignore_dot</ns5:title>
+              <ns5:description>The sudo <html:code>ignore_dot</html:code> tag, when specified, will ignore the current directory
+in the PATH environment variable.
+This should be enabled by making sure that the <html:code>ignore_dot</html:code> tag exists in
+<html:code>/etc/sudoers</html:code> configuration file or any sudo configuration snippets
+in <html:code>/etc/sudoers.d/</html:code>.</ns5:description>
+              <ns5:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R39</ns5:reference>
+              <ns5:rationale>Ignoring the commands in the user's current directory prevents an attacker from executing commands
+downloaded locally.</ns5:rationale>
+              <ns5:fix system="urn:xccdf:fix:script:sh" id="sudo_add_ignore_dot" complexity="low" disruption="low" reboot="false" strategy="restrict">
+if /usr/sbin/visudo -qcf /etc/sudoers; then
+    cp /etc/sudoers /etc/sudoers.bak
+    if ! grep -P '^[\s]*Defaults[\s]*\bignore_dot\b.*$' /etc/sudoers; then
+        # sudoers file doesn't define Option ignore_dot
+        echo "Defaults ignore_dot" &gt;&gt; /etc/sudoers
+    fi
+    
+    # Check validity of sudoers and cleanup bak
+    if /usr/sbin/visudo -qcf /etc/sudoers; then
+        rm -f /etc/sudoers.bak
+    else
+        echo "Fail to validate remediated /etc/sudoers, reverting to original file."
+        mv /etc/sudoers.bak /etc/sudoers
+        false
+    fi
+else
+    echo "Skipping remediation, /etc/sudoers failed to validate"
+    false
+fi
+</ns5:fix>
+              <ns5:fix system="urn:xccdf:fix:script:ansible" id="sudo_add_ignore_dot" complexity="low" disruption="low" reboot="false" strategy="restrict">- name: Ensure ignore_dot is enabled in /etc/sudoers
+  lineinfile:
+    path: /etc/sudoers
+    regexp: ^[\s]*Defaults.*\bignore_dot\b.*$
+    line: Defaults ignore_dot
+    validate: /usr/sbin/visudo -cf %s
+  tags:
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+  - sudo_add_ignore_dot
+</ns5:fix>
+              <ns5:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                <ns5:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-sudo_add_ignore_dot:def:1" />
+              </ns5:check>
+              <ns5:check system="http://scap.nist.gov/schema/ocil/2">
+                <ns5:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-sudo_add_ignore_dot_ocil:questionnaire:1" />
+              </ns5:check>
+            </ns5:Rule>
+            <ns5:Rule selected="false" id="xccdf_org.ssgproject.content_rule_sudo_add_noexec" severity="high">
+              <ns5:title>Ensure Privileged Escalated Commands Cannot Execute Other Commands - sudo NOEXEC</ns5:title>
+              <ns5:description>The sudo <html:code>NOEXEC</html:code> tag, when specified, prevents user executed
+commands from executing other commands, like a shell for example.
+This should be enabled by making sure that the <html:code>NOEXEC</html:code> tag exists in
+<html:code>/etc/sudoers</html:code> configuration file or any sudo configuration snippets
+in <html:code>/etc/sudoers.d/</html:code>.</ns5:description>
+              <ns5:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R39</ns5:reference>
+              <ns5:rationale>Restricting the capability of sudo allowed commands to execute sub-commands
+prevents users from running programs with privileges they wouldn't have otherwise.</ns5:rationale>
+              <ns5:fix system="urn:xccdf:fix:script:sh" id="sudo_add_noexec" complexity="low" disruption="low" reboot="false" strategy="restrict">
+if /usr/sbin/visudo -qcf /etc/sudoers; then
+    cp /etc/sudoers /etc/sudoers.bak
+    if ! grep -P '^[\s]*Defaults[\s]*\bnoexec\b.*$' /etc/sudoers; then
+        # sudoers file doesn't define Option noexec
+        echo "Defaults noexec" &gt;&gt; /etc/sudoers
+    fi
+    
+    # Check validity of sudoers and cleanup bak
+    if /usr/sbin/visudo -qcf /etc/sudoers; then
+        rm -f /etc/sudoers.bak
+    else
+        echo "Fail to validate remediated /etc/sudoers, reverting to original file."
+        mv /etc/sudoers.bak /etc/sudoers
+        false
+    fi
+else
+    echo "Skipping remediation, /etc/sudoers failed to validate"
+    false
+fi
+</ns5:fix>
+              <ns5:fix system="urn:xccdf:fix:script:ansible" id="sudo_add_noexec" complexity="low" disruption="low" reboot="false" strategy="restrict">- name: Ensure noexec is enabled in /etc/sudoers
+  lineinfile:
+    path: /etc/sudoers
+    regexp: ^[\s]*Defaults.*\bnoexec\b.*$
+    line: Defaults noexec
+    validate: /usr/sbin/visudo -cf %s
+  tags:
+  - high_severity
+  - low_complexity
+  - low_disruption
+  - no_reboot_needed
+  - restrict_strategy
+  - sudo_add_noexec
+</ns5:fix>
+              <ns5:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                <ns5:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-sudo_add_noexec:def:1" />
+              </ns5:check>
+              <ns5:check system="http://scap.nist.gov/schema/ocil/2">
+                <ns5:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-sudo_add_noexec_ocil:questionnaire:1" />
+              </ns5:check>
+            </ns5:Rule>
+            <ns5:Rule selected="false" id="xccdf_org.ssgproject.content_rule_sudo_add_requiretty" severity="medium">
+              <ns5:title>Ensure Only Users Logged In To Real tty Can Execute Sudo - sudo requiretty</ns5:title>
+              <ns5:description>The sudo <html:code>requiretty</html:code> tag, when specified, will only execute sudo
+commands from users logged in to a real tty.
+This should be enabled by making sure that the <html:code>requiretty</html:code> tag exists in
+<html:code>/etc/sudoers</html:code> configuration file or any sudo configuration snippets
+in <html:code>/etc/sudoers.d/</html:code>.</ns5:description>
+              <ns5:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R39</ns5:reference>
+              <ns5:rationale>Restricting the use cases in which a user is allowed to execute sudo commands
+reduces the attack surface.</ns5:rationale>
+              <ns5:fix system="urn:xccdf:fix:script:sh" id="sudo_add_requiretty" complexity="low" disruption="low" reboot="false" strategy="restrict">
+if /usr/sbin/visudo -qcf /etc/sudoers; then
+    cp /etc/sudoers /etc/sudoers.bak
+    if ! grep -P '^[\s]*Defaults[\s]*\brequiretty\b.*$' /etc/sudoers; then
+        # sudoers file doesn't define Option requiretty
+        echo "Defaults requiretty" &gt;&gt; /etc/sudoers
+    fi
+    
+    # Check validity of sudoers and cleanup bak
+    if /usr/sbin/visudo -qcf /etc/sudoers; then
+        rm -f /etc/sudoers.bak
+    else
+        echo "Fail to validate remediated /etc/sudoers, reverting to original file."
+        mv /etc/sudoers.bak /etc/sudoers
+        false
+    fi
+else
+    echo "Skipping remediation, /etc/sudoers failed to validate"
+    false
+fi
+</ns5:fix>
+              <ns5:fix system="urn:xccdf:fix:script:ansible" id="sudo_add_requiretty" complexity="low" disruption="low" reboot="false" strategy="restrict">- name: Ensure requiretty is enabled in /etc/sudoers
+  lineinfile:
+    path: /etc/sudoers
+    regexp: ^[\s]*Defaults.*\brequiretty\b.*$
+    line: Defaults requiretty
+    validate: /usr/sbin/visudo -cf %s
+  tags:
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+  - sudo_add_requiretty
+</ns5:fix>
+              <ns5:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                <ns5:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-sudo_add_requiretty:def:1" />
+              </ns5:check>
+              <ns5:check system="http://scap.nist.gov/schema/ocil/2">
+                <ns5:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-sudo_add_requiretty_ocil:questionnaire:1" />
+              </ns5:check>
+            </ns5:Rule>
+            <ns5:Rule selected="false" id="xccdf_org.ssgproject.content_rule_sudo_add_umask" severity="medium">
+              <ns5:title>Ensure sudo umask is appropriate - sudo umask</ns5:title>
+              <ns5:description>The sudo <html:code>umask</html:code> tag, when specified, will be added the to the user's umask in the
+command environment.
+The umask should be configured by making sure that the <html:code>umask=<ns5:sub idref="xccdf_org.ssgproject.content_value_var_sudo_umask" use="legacy" />
+        </html:code> tag exists in
+<html:code>/etc/sudoers</html:code> configuration file or any sudo configuration snippets
+in <html:code>/etc/sudoers.d/</html:code>.</ns5:description>
+              <ns5:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R39</ns5:reference>
+              <ns5:rationale>The umask value influences the permissions assigned to files when they are created.
+A misconfigured umask value could result in files with excessive permissions that can be read or
+written to by unauthorized users.</ns5:rationale>
+              <ns5:fix system="urn:xccdf:fix:script:sh" id="sudo_add_umask" complexity="low" disruption="low" reboot="false" strategy="restrict">
+
+var_sudo_umask='<ns5:sub idref="xccdf_org.ssgproject.content_value_var_sudo_umask" use="legacy" />'
+
+
+if /usr/sbin/visudo -qcf /etc/sudoers; then
+    cp /etc/sudoers /etc/sudoers.bak
+    if ! grep -P '^[\s]*Defaults[\s]*\bumask=\w+\b\b.*$' /etc/sudoers; then
+        # sudoers file doesn't define Option umask
+        echo "Defaults umask=${var_sudo_umask}" &gt;&gt; /etc/sudoers
+    else
+        # sudoers file defines Option umask, remediate if appropriate value is not set
+        if ! grep -P "^[\s]*Defaults.*\bumask=${var_sudo_umask}\b.*$" /etc/sudoers; then
+            
+            escaped_variable=${var_sudo_umask//$'/'/$'\/'}
+            sed -Ei "s/(^[\s]*Defaults.*\bumask=)[-]?.+(\b.*$)/\1$escaped_variable\2/" /etc/sudoers
+        fi
+    fi
+    
+    # Check validity of sudoers and cleanup bak
+    if /usr/sbin/visudo -qcf /etc/sudoers; then
+        rm -f /etc/sudoers.bak
+    else
+        echo "Fail to validate remediated /etc/sudoers, reverting to original file."
+        mv /etc/sudoers.bak /etc/sudoers
+        false
+    fi
+else
+    echo "Skipping remediation, /etc/sudoers failed to validate"
+    false
+fi
+</ns5:fix>
+              <ns5:fix system="urn:xccdf:fix:script:ansible" id="sudo_add_umask" complexity="low" disruption="low" reboot="false" strategy="restrict">- name: XCCDF Value var_sudo_umask # promote to variable
+  set_fact:
+    var_sudo_umask: !!str <ns5:sub idref="xccdf_org.ssgproject.content_value_var_sudo_umask" use="legacy" />
+  tags:
+    - always
+
+- name: Ensure umask is enabled with the appropriate value in /etc/sudoers
+  lineinfile:
+    path: /etc/sudoers
+    regexp: ^[\s]*Defaults\s(.*)\bumask=[-]?.+\b(.*)$
+    line: Defaults \1umask={{ var_sudo_umask }}\2
+    validate: /usr/sbin/visudo -cf %s
+    backrefs: true
+  register: edit_sudoers_umask_option
+  tags:
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+  - sudo_add_umask
+
+- name: Enable umask option with appropriate value in /etc/sudoers
+  lineinfile:
+    path: /etc/sudoers
+    line: Defaults umask={{ var_sudo_umask }}
+    validate: /usr/sbin/visudo -cf %s
+  when: edit_sudoers_umask_option is defined and not edit_sudoers_umask_option.changed
+  tags:
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+  - sudo_add_umask
+</ns5:fix>
+              <ns5:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                <ns5:check-export export-name="oval:ssg-var_sudo_umask:var:1" value-id="xccdf_org.ssgproject.content_value_var_sudo_umask" />
+                <ns5:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-sudo_add_umask:def:1" />
+              </ns5:check>
+              <ns5:check system="http://scap.nist.gov/schema/ocil/2">
+                <ns5:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-sudo_add_umask_ocil:questionnaire:1" />
+              </ns5:check>
+            </ns5:Rule>
+            <ns5:Rule selected="false" id="xccdf_org.ssgproject.content_rule_sudo_add_use_pty" severity="medium">
+              <ns5:title>Ensure Only Users Logged In To Real tty Can Execute Sudo - sudo use_pty</ns5:title>
+              <ns5:description>The sudo <html:code>use_pty</html:code> tag, when specified, will only execute sudo
+commands from users logged in to a real tty.
+This should be enabled by making sure that the <html:code>use_pty</html:code> tag exists in
+<html:code>/etc/sudoers</html:code> configuration file or any sudo configuration snippets
+in <html:code>/etc/sudoers.d/</html:code>.</ns5:description>
+              <ns5:reference href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">Req-10.2.5</ns5:reference>
+              <ns5:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R39</ns5:reference>
+              <ns5:reference href="https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf">2.2.6</ns5:reference>
+              <ns5:rationale>Requiring that sudo commands be run in a pseudo-terminal can prevent an attacker from retaining
+access to the user's terminal after the main program has finished executing.</ns5:rationale>
+              <ns5:platform idref="#package_sudo" />
+              <ns5:fix system="urn:xccdf:fix:script:sh" id="sudo_add_use_pty" complexity="low" disruption="low" reboot="false" strategy="restrict"># Remediation is applicable only in certain platforms
+if rpm --quiet -q sudo; then
+
+if /usr/sbin/visudo -qcf /etc/sudoers; then
+    cp /etc/sudoers /etc/sudoers.bak
+    if ! grep -P '^[\s]*Defaults[\s]*\buse_pty\b.*$' /etc/sudoers; then
+        # sudoers file doesn't define Option use_pty
+        echo "Defaults use_pty" &gt;&gt; /etc/sudoers
+    fi
+    
+    # Check validity of sudoers and cleanup bak
+    if /usr/sbin/visudo -qcf /etc/sudoers; then
+        rm -f /etc/sudoers.bak
+    else
+        echo "Fail to validate remediated /etc/sudoers, reverting to original file."
+        mv /etc/sudoers.bak /etc/sudoers
+        false
+    fi
+else
+    echo "Skipping remediation, /etc/sudoers failed to validate"
+    false
+fi
+
+else
+    &gt;&amp;2 echo 'Remediation is not applicable, nothing was done'
+fi
+</ns5:fix>
+              <ns5:fix system="urn:xccdf:fix:script:ansible" id="sudo_add_use_pty" complexity="low" disruption="low" reboot="false" strategy="restrict">- name: Gather the package facts
+  package_facts:
+    manager: auto
+  tags:
+  - PCI-DSS-Req-10.2.5
+  - PCI-DSSv4-2.2.6
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+  - sudo_add_use_pty
+
+- name: Ensure use_pty is enabled in /etc/sudoers
+  lineinfile:
+    path: /etc/sudoers
+    regexp: ^[\s]*Defaults.*\buse_pty\b.*$
+    line: Defaults use_pty
+    validate: /usr/sbin/visudo -cf %s
+  when: '"sudo" in ansible_facts.packages'
+  tags:
+  - PCI-DSS-Req-10.2.5
+  - PCI-DSSv4-2.2.6
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+  - sudo_add_use_pty
+</ns5:fix>
+              <ns5:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                <ns5:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-sudo_add_use_pty:def:1" />
+              </ns5:check>
+              <ns5:check system="http://scap.nist.gov/schema/ocil/2">
+                <ns5:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-sudo_add_use_pty_ocil:questionnaire:1" />
+              </ns5:check>
+            </ns5:Rule>
+          </ns5:Group>
+        </ns5:Group>
         <ns5:Group id="xccdf_org.ssgproject.content_group_accounts">
           <ns5:title>Account and Access Control</ns5:title>
           <ns5:description>In traditional Unix security, if an attacker gains
@@ -3228,13 +3641,13 @@ fi
       </ns5:Group>
     </ns5:Benchmark>
   </ns0:component>
-  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-oval.xml" timestamp="2024-06-04T12:03:54">
+  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-oval.xml" timestamp="2024-06-04T09:38:02">
     <ns9:oval_definitions xsi:schemaLocation="http://oval.mitre.org/XMLSchema/oval-common-5 oval-common-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5 oval-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#independent independent-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#unix unix-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#linux linux-definitions-schema.xsd">
       <ns9:generator>
         <ns10:product_name>OVALFileLinker from SCAP Security Guide</ns10:product_name>
         <ns10:product_version>ssg: [0, 1, 73], python: 3.11.9</ns10:product_version>
         <ns10:schema_version>5.11</ns10:schema_version>
-        <ns10:timestamp>2024-06-04T10:03:49</ns10:timestamp>
+        <ns10:timestamp>2024-06-04T07:37:57</ns10:timestamp>
       </ns9:generator>
       <ns9:definitions>
         <ns9:definition id="oval:ssg-accounts_password_pam_unix_remember:def:1" version="2" class="compliance">
@@ -3400,6 +3813,84 @@ fi
             </ns9:criteria>
           </ns9:criteria>
         </ns9:definition>
+        <ns9:definition id="oval:ssg-sudo_add_env_reset:def:1" version="1" class="compliance">
+          <ns9:metadata>
+            <ns9:title>Ensure sudo Runs In A Minimal Environment - sudo env_reset</ns9:title>
+            <ns9:affected family="unix">
+              <ns9:platform>Gentoo</ns9:platform>
+            </ns9:affected>
+            <ns9:reference ref_id="sudo_add_env_reset" source="ssg" />
+            <ns9:description>Checks sudoers Defaults {{ OPTION }} configuration</ns9:description>
+          </ns9:metadata>
+          <ns9:criteria operator="AND">
+            <ns9:criterion comment="env_reset is configured in /etc/sudoers or /etc/sudoers.d/" test_ref="oval:ssg-test_env_reset_sudoers:tst:1" />
+          </ns9:criteria>
+        </ns9:definition>
+        <ns9:definition id="oval:ssg-sudo_add_ignore_dot:def:1" version="1" class="compliance">
+          <ns9:metadata>
+            <ns9:title>Ensure sudo Ignores Commands In Current Dir - sudo ignore_dot</ns9:title>
+            <ns9:affected family="unix">
+              <ns9:platform>Gentoo</ns9:platform>
+            </ns9:affected>
+            <ns9:reference ref_id="sudo_add_ignore_dot" source="ssg" />
+            <ns9:description>Checks sudoers Defaults {{ OPTION }} configuration</ns9:description>
+          </ns9:metadata>
+          <ns9:criteria operator="AND">
+            <ns9:criterion comment="ignore_dot is configured in /etc/sudoers or /etc/sudoers.d/" test_ref="oval:ssg-test_ignore_dot_sudoers:tst:1" />
+          </ns9:criteria>
+        </ns9:definition>
+        <ns9:definition id="oval:ssg-sudo_add_noexec:def:1" version="1" class="compliance">
+          <ns9:metadata>
+            <ns9:title>Ensure Privileged Escalated Commands Cannot Execute Other Commands - sudo NOEXEC</ns9:title>
+            <ns9:affected family="unix">
+              <ns9:platform>Gentoo</ns9:platform>
+            </ns9:affected>
+            <ns9:reference ref_id="sudo_add_noexec" source="ssg" />
+            <ns9:description>Checks sudoers Defaults {{ OPTION }} configuration</ns9:description>
+          </ns9:metadata>
+          <ns9:criteria operator="AND">
+            <ns9:criterion comment="noexec is configured in /etc/sudoers or /etc/sudoers.d/" test_ref="oval:ssg-test_noexec_sudoers:tst:1" />
+          </ns9:criteria>
+        </ns9:definition>
+        <ns9:definition id="oval:ssg-sudo_add_requiretty:def:1" version="1" class="compliance">
+          <ns9:metadata>
+            <ns9:title>Ensure Only Users Logged In To Real tty Can Execute Sudo - sudo requiretty</ns9:title>
+            <ns9:affected family="unix">
+              <ns9:platform>Gentoo</ns9:platform>
+            </ns9:affected>
+            <ns9:reference ref_id="sudo_add_requiretty" source="ssg" />
+            <ns9:description>Checks sudoers Defaults {{ OPTION }} configuration</ns9:description>
+          </ns9:metadata>
+          <ns9:criteria operator="AND">
+            <ns9:criterion comment="requiretty is configured in /etc/sudoers or /etc/sudoers.d/" test_ref="oval:ssg-test_requiretty_sudoers:tst:1" />
+          </ns9:criteria>
+        </ns9:definition>
+        <ns9:definition id="oval:ssg-sudo_add_umask:def:1" version="1" class="compliance">
+          <ns9:metadata>
+            <ns9:title>Ensure sudo umask is appropriate - sudo umask</ns9:title>
+            <ns9:affected family="unix">
+              <ns9:platform>Gentoo</ns9:platform>
+            </ns9:affected>
+            <ns9:reference ref_id="sudo_add_umask" source="ssg" />
+            <ns9:description>Checks sudoers Defaults {{ OPTION }} configuration</ns9:description>
+          </ns9:metadata>
+          <ns9:criteria operator="AND">
+            <ns9:criterion comment="umask is configured in /etc/sudoers or /etc/sudoers.d/" test_ref="oval:ssg-test_umask_sudoers:tst:1" />
+          </ns9:criteria>
+        </ns9:definition>
+        <ns9:definition id="oval:ssg-sudo_add_use_pty:def:1" version="1" class="compliance">
+          <ns9:metadata>
+            <ns9:title>Ensure Only Users Logged In To Real tty Can Execute Sudo - sudo use_pty</ns9:title>
+            <ns9:affected family="unix">
+              <ns9:platform>Gentoo</ns9:platform>
+            </ns9:affected>
+            <ns9:reference ref_id="sudo_add_use_pty" source="ssg" />
+            <ns9:description>Checks sudoers Defaults {{ OPTION }} configuration</ns9:description>
+          </ns9:metadata>
+          <ns9:criteria operator="AND">
+            <ns9:criterion comment="use_pty is configured in /etc/sudoers or /etc/sudoers.d/" test_ref="oval:ssg-test_use_pty_sudoers:tst:1" />
+          </ns9:criteria>
+        </ns9:definition>
         <ns9:definition id="oval:ssg-accounts_password_pam_pwquality:def:1" version="1" class="compliance">
           <ns9:metadata>
             <ns9:title>Check pam_pwquality Existence in system-auth</ns9:title>
@@ -3492,6 +3983,25 @@ fi
         <ns11:textfilecontent54_test id="oval:ssg-test_password_pam_pwquality_ucredit:tst:1" version="3" check="all" comment="check the configuration of /etc/security/pwquality.conf" state_operator="AND">
           <ns11:object object_ref="oval:ssg-obj_password_pam_pwquality_ucredit:obj:1" />
           <ns11:state state_ref="oval:ssg-state_password_pam_ucredit:ste:1" />
+        </ns11:textfilecontent54_test>
+        <ns11:textfilecontent54_test id="oval:ssg-test_env_reset_sudoers:tst:1" version="1" check="all" comment="env_reset exists in /etc/sudoers or /etc/sudoers.d/" state_operator="AND">
+          <ns11:object object_ref="oval:ssg-object_env_reset_sudoers:obj:1" />
+        </ns11:textfilecontent54_test>
+        <ns11:textfilecontent54_test id="oval:ssg-test_ignore_dot_sudoers:tst:1" version="1" check="all" comment="ignore_dot exists in /etc/sudoers or /etc/sudoers.d/" state_operator="AND">
+          <ns11:object object_ref="oval:ssg-object_ignore_dot_sudoers:obj:1" />
+        </ns11:textfilecontent54_test>
+        <ns11:textfilecontent54_test id="oval:ssg-test_noexec_sudoers:tst:1" version="1" check="all" comment="noexec exists in /etc/sudoers or /etc/sudoers.d/" state_operator="AND">
+          <ns11:object object_ref="oval:ssg-object_noexec_sudoers:obj:1" />
+        </ns11:textfilecontent54_test>
+        <ns11:textfilecontent54_test id="oval:ssg-test_requiretty_sudoers:tst:1" version="1" check="all" comment="requiretty exists in /etc/sudoers or /etc/sudoers.d/" state_operator="AND">
+          <ns11:object object_ref="oval:ssg-object_requiretty_sudoers:obj:1" />
+        </ns11:textfilecontent54_test>
+        <ns11:textfilecontent54_test id="oval:ssg-test_umask_sudoers:tst:1" version="1" check="all" comment="umask exists in /etc/sudoers or /etc/sudoers.d/" state_operator="AND">
+          <ns11:object object_ref="oval:ssg-object_umask_sudoers:obj:1" />
+          <ns11:state state_ref="oval:ssg-state_umask_sudoers:ste:1" />
+        </ns11:textfilecontent54_test>
+        <ns11:textfilecontent54_test id="oval:ssg-test_use_pty_sudoers:tst:1" version="1" check="all" comment="use_pty exists in /etc/sudoers or /etc/sudoers.d/" state_operator="AND">
+          <ns11:object object_ref="oval:ssg-object_use_pty_sudoers:obj:1" />
         </ns11:textfilecontent54_test>
         <ns11:textfilecontent54_test id="oval:ssg-test_password_pam_pwquality:tst:1" version="1" check="all" comment="check the configuration of /etc/pam.d/system-auth" state_operator="AND">
           <ns11:object object_ref="oval:ssg-obj_password_pam_pwquality:obj:1" />
@@ -3590,6 +4100,36 @@ fi
           <ns11:pattern operation="pattern match">^\s*ucredit[\s]*=[\s]*(-?\d+)(?:[\s]|$)</ns11:pattern>
           <ns11:instance datatype="int" operation="greater than or equal">1</ns11:instance>
         </ns11:textfilecontent54_object>
+        <ns11:textfilecontent54_object id="oval:ssg-object_env_reset_sudoers:obj:1" version="1">
+          <ns11:filepath operation="pattern match">^/etc/sudoers(|\.d/.*)$</ns11:filepath>
+          <ns11:pattern operation="pattern match">^[\s]*Defaults[\s]*\benv_reset.*$</ns11:pattern>
+          <ns11:instance datatype="int" operation="greater than or equal">1</ns11:instance>
+        </ns11:textfilecontent54_object>
+        <ns11:textfilecontent54_object id="oval:ssg-object_ignore_dot_sudoers:obj:1" version="1">
+          <ns11:filepath operation="pattern match">^/etc/sudoers(|\.d/.*)$</ns11:filepath>
+          <ns11:pattern operation="pattern match">^[\s]*Defaults[\s]*\bignore_dot.*$</ns11:pattern>
+          <ns11:instance datatype="int" operation="greater than or equal">1</ns11:instance>
+        </ns11:textfilecontent54_object>
+        <ns11:textfilecontent54_object id="oval:ssg-object_noexec_sudoers:obj:1" version="1">
+          <ns11:filepath operation="pattern match">^/etc/sudoers(|\.d/.*)$</ns11:filepath>
+          <ns11:pattern operation="pattern match">^[\s]*Defaults[\s]*\bnoexec.*$</ns11:pattern>
+          <ns11:instance datatype="int" operation="greater than or equal">1</ns11:instance>
+        </ns11:textfilecontent54_object>
+        <ns11:textfilecontent54_object id="oval:ssg-object_requiretty_sudoers:obj:1" version="1">
+          <ns11:filepath operation="pattern match">^/etc/sudoers(|\.d/.*)$</ns11:filepath>
+          <ns11:pattern operation="pattern match">^[\s]*Defaults[\s]*\brequiretty.*$</ns11:pattern>
+          <ns11:instance datatype="int" operation="greater than or equal">1</ns11:instance>
+        </ns11:textfilecontent54_object>
+        <ns11:textfilecontent54_object id="oval:ssg-object_umask_sudoers:obj:1" version="1">
+          <ns11:filepath operation="pattern match">^/etc/sudoers(|\.d/.*)$</ns11:filepath>
+          <ns11:pattern operation="pattern match">^[\s]*Defaults[\s]*\bumask=(\w+)\b.*$</ns11:pattern>
+          <ns11:instance datatype="int" operation="greater than or equal">1</ns11:instance>
+        </ns11:textfilecontent54_object>
+        <ns11:textfilecontent54_object id="oval:ssg-object_use_pty_sudoers:obj:1" version="1">
+          <ns11:filepath operation="pattern match">^/etc/sudoers(|\.d/.*)$</ns11:filepath>
+          <ns11:pattern operation="pattern match">^[\s]*Defaults[\s]*\buse_pty.*$</ns11:pattern>
+          <ns11:instance datatype="int" operation="greater than or equal">1</ns11:instance>
+        </ns11:textfilecontent54_object>
         <ns11:textfilecontent54_object id="oval:ssg-obj_password_pam_pwquality:obj:1" version="1">
           <ns11:filepath var_ref="oval:ssg-var_pam_pwquality_config_path:var:1" var_check="at least one" />
           <ns11:pattern operation="pattern match">^\s*password\s+(?:(?:required)|(?:requisite))\s+pam_pwquality\.so.*$</ns11:pattern>
@@ -3632,6 +4172,9 @@ fi
         </ns11:textfilecontent54_state>
         <ns11:textfilecontent54_state id="oval:ssg-state_password_pam_ucredit:ste:1" version="3" operator="AND">
           <ns11:subexpression datatype="int" operation="less than or equal" var_ref="oval:ssg-var_password_pam_ucredit:var:1" />
+        </ns11:textfilecontent54_state>
+        <ns11:textfilecontent54_state id="oval:ssg-state_umask_sudoers:ste:1" version="1" operator="AND">
+          <ns11:subexpression datatype="string" operation="equals" var_ref="oval:ssg-var_sudo_umask:var:1" />
         </ns11:textfilecontent54_state>
       </ns9:states>
       <ns9:variables>
@@ -3740,6 +4283,7 @@ fi
         <ns9:external_variable id="oval:ssg-var_password_pam_minlen:var:1" version="3" datatype="int" comment="External variable for pam_minlen" />
         <ns9:external_variable id="oval:ssg-var_password_pam_ocredit:var:1" version="3" datatype="int" comment="External variable for pam_ocredit" />
         <ns9:external_variable id="oval:ssg-var_password_pam_ucredit:var:1" version="3" datatype="int" comment="External variable for pam_ucredit" />
+        <ns9:external_variable id="oval:ssg-var_sudo_umask:var:1" version="1" datatype="string" comment="Variable value for sudo umask " />
         <ns9:constant_variable id="oval:ssg-var_pam_pwquality_config_path:var:1" version="1" datatype="string" comment="correct path for pam_pwquality.so check">
           <ns9:value>/etc/pam.d/system-auth</ns9:value>
         </ns9:constant_variable>
@@ -3775,19 +4319,91 @@ fi
       </ns9:variables>
     </ns9:oval_definitions>
   </ns0:component>
-  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-ocil.xml" timestamp="2024-06-04T12:03:54">
+  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-ocil.xml" timestamp="2024-06-04T09:38:02">
     <ns12:ocil>
       <ns12:generator>
         <ns12:product_name>build_shorthand.py from SCAP Security Guide</ns12:product_name>
         <ns12:product_version>ssg: 0.1.73</ns12:product_version>
         <ns12:schema_version>2.0</ns12:schema_version>
-        <ns12:timestamp>2024-06-04T10:03:49</ns12:timestamp>
+        <ns12:timestamp>2024-06-04T07:37:57</ns12:timestamp>
       </ns12:generator>
       <ns12:questionnaires>
+        <ns12:questionnaire id="ocil:ssg-accounts_tmout_ocil:questionnaire:1">
+          <ns12:title>Set Interactive Session Timeout</ns12:title>
+          <ns12:actions>
+            <ns12:test_action_ref>ocil:ssg-accounts_tmout_action:testaction:1</ns12:test_action_ref>
+          </ns12:actions>
+        </ns12:questionnaire>
+        <ns12:questionnaire id="ocil:ssg-accounts_password_pam_lcredit_ocil:questionnaire:1">
+          <ns12:title>Ensure PAM Enforces Password Requirements - Minimum Lowercase Characters</ns12:title>
+          <ns12:actions>
+            <ns12:test_action_ref>ocil:ssg-accounts_password_pam_lcredit_action:testaction:1</ns12:test_action_ref>
+          </ns12:actions>
+        </ns12:questionnaire>
+        <ns12:questionnaire id="ocil:ssg-sudo_add_ignore_dot_ocil:questionnaire:1">
+          <ns12:title>Ensure sudo Ignores Commands In Current Dir - sudo ignore_dot</ns12:title>
+          <ns12:actions>
+            <ns12:test_action_ref>ocil:ssg-sudo_add_ignore_dot_action:testaction:1</ns12:test_action_ref>
+          </ns12:actions>
+        </ns12:questionnaire>
+        <ns12:questionnaire id="ocil:ssg-accounts_umask_etc_bashrc_ocil:questionnaire:1">
+          <ns12:title>Ensure the Default Bash Umask is Set Correctly</ns12:title>
+          <ns12:actions>
+            <ns12:test_action_ref>ocil:ssg-accounts_umask_etc_bashrc_action:testaction:1</ns12:test_action_ref>
+          </ns12:actions>
+        </ns12:questionnaire>
+        <ns12:questionnaire id="ocil:ssg-accounts_password_pam_minlen_ocil:questionnaire:1">
+          <ns12:title>Ensure PAM Enforces Password Requirements - Minimum Length</ns12:title>
+          <ns12:actions>
+            <ns12:test_action_ref>ocil:ssg-accounts_password_pam_minlen_action:testaction:1</ns12:test_action_ref>
+          </ns12:actions>
+        </ns12:questionnaire>
+        <ns12:questionnaire id="ocil:ssg-accounts_umask_etc_profile_ocil:questionnaire:1">
+          <ns12:title>Ensure the Default Umask is Set Correctly in /etc/profile</ns12:title>
+          <ns12:actions>
+            <ns12:test_action_ref>ocil:ssg-accounts_umask_etc_profile_action:testaction:1</ns12:test_action_ref>
+          </ns12:actions>
+        </ns12:questionnaire>
+        <ns12:questionnaire id="ocil:ssg-sudo_add_noexec_ocil:questionnaire:1">
+          <ns12:title>Ensure Privileged Escalated Commands Cannot Execute Other Commands - sudo NOEXEC</ns12:title>
+          <ns12:actions>
+            <ns12:test_action_ref>ocil:ssg-sudo_add_noexec_action:testaction:1</ns12:test_action_ref>
+          </ns12:actions>
+        </ns12:questionnaire>
+        <ns12:questionnaire id="ocil:ssg-sudo_add_umask_ocil:questionnaire:1">
+          <ns12:title>Ensure sudo umask is appropriate - sudo umask</ns12:title>
+          <ns12:actions>
+            <ns12:test_action_ref>ocil:ssg-sudo_add_umask_action:testaction:1</ns12:test_action_ref>
+          </ns12:actions>
+        </ns12:questionnaire>
+        <ns12:questionnaire id="ocil:ssg-sudo_add_requiretty_ocil:questionnaire:1">
+          <ns12:title>Ensure Only Users Logged In To Real tty Can Execute Sudo - sudo requiretty</ns12:title>
+          <ns12:actions>
+            <ns12:test_action_ref>ocil:ssg-sudo_add_requiretty_action:testaction:1</ns12:test_action_ref>
+          </ns12:actions>
+        </ns12:questionnaire>
+        <ns12:questionnaire id="ocil:ssg-sudo_add_use_pty_ocil:questionnaire:1">
+          <ns12:title>Ensure Only Users Logged In To Real tty Can Execute Sudo - sudo use_pty</ns12:title>
+          <ns12:actions>
+            <ns12:test_action_ref>ocil:ssg-sudo_add_use_pty_action:testaction:1</ns12:test_action_ref>
+          </ns12:actions>
+        </ns12:questionnaire>
         <ns12:questionnaire id="ocil:ssg-accounts_password_pam_ocredit_ocil:questionnaire:1">
           <ns12:title>Ensure PAM Enforces Password Requirements - Minimum Special Characters</ns12:title>
           <ns12:actions>
             <ns12:test_action_ref>ocil:ssg-accounts_password_pam_ocredit_action:testaction:1</ns12:test_action_ref>
+          </ns12:actions>
+        </ns12:questionnaire>
+        <ns12:questionnaire id="ocil:ssg-sudo_add_env_reset_ocil:questionnaire:1">
+          <ns12:title>Ensure sudo Runs In A Minimal Environment - sudo env_reset</ns12:title>
+          <ns12:actions>
+            <ns12:test_action_ref>ocil:ssg-sudo_add_env_reset_action:testaction:1</ns12:test_action_ref>
+          </ns12:actions>
+        </ns12:questionnaire>
+        <ns12:questionnaire id="ocil:ssg-accounts_password_pam_dcredit_ocil:questionnaire:1">
+          <ns12:title>Ensure PAM Enforces Password Requirements - Minimum Digit Characters</ns12:title>
+          <ns12:actions>
+            <ns12:test_action_ref>ocil:ssg-accounts_password_pam_dcredit_action:testaction:1</ns12:test_action_ref>
           </ns12:actions>
         </ns12:questionnaire>
         <ns12:questionnaire id="ocil:ssg-accounts_umask_etc_login_defs_ocil:questionnaire:1">
@@ -3802,51 +4418,111 @@ fi
             <ns12:test_action_ref>ocil:ssg-accounts_password_pam_unix_remember_action:testaction:1</ns12:test_action_ref>
           </ns12:actions>
         </ns12:questionnaire>
-        <ns12:questionnaire id="ocil:ssg-accounts_password_pam_lcredit_ocil:questionnaire:1">
-          <ns12:title>Ensure PAM Enforces Password Requirements - Minimum Lowercase Characters</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-accounts_password_pam_lcredit_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
-        <ns12:questionnaire id="ocil:ssg-accounts_password_pam_dcredit_ocil:questionnaire:1">
-          <ns12:title>Ensure PAM Enforces Password Requirements - Minimum Digit Characters</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-accounts_password_pam_dcredit_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
-        <ns12:questionnaire id="ocil:ssg-accounts_tmout_ocil:questionnaire:1">
-          <ns12:title>Set Interactive Session Timeout</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-accounts_tmout_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
         <ns12:questionnaire id="ocil:ssg-accounts_password_pam_ucredit_ocil:questionnaire:1">
           <ns12:title>Ensure PAM Enforces Password Requirements - Minimum Uppercase Characters</ns12:title>
           <ns12:actions>
             <ns12:test_action_ref>ocil:ssg-accounts_password_pam_ucredit_action:testaction:1</ns12:test_action_ref>
           </ns12:actions>
         </ns12:questionnaire>
-        <ns12:questionnaire id="ocil:ssg-accounts_umask_etc_profile_ocil:questionnaire:1">
-          <ns12:title>Ensure the Default Umask is Set Correctly in /etc/profile</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-accounts_umask_etc_profile_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
-        <ns12:questionnaire id="ocil:ssg-accounts_password_pam_minlen_ocil:questionnaire:1">
-          <ns12:title>Ensure PAM Enforces Password Requirements - Minimum Length</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-accounts_password_pam_minlen_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
-        <ns12:questionnaire id="ocil:ssg-accounts_umask_etc_bashrc_ocil:questionnaire:1">
-          <ns12:title>Ensure the Default Bash Umask is Set Correctly</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-accounts_umask_etc_bashrc_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
       </ns12:questionnaires>
       <ns12:test_actions>
+        <ns12:boolean_question_test_action id="ocil:ssg-accounts_tmout_action:testaction:1" question_ref="ocil:ssg-accounts_tmout_question:question:1">
+          <ns12:when_true>
+            <ns12:result>PASS</ns12:result>
+          </ns12:when_true>
+          <ns12:when_false>
+            <ns12:result>FAIL</ns12:result>
+          </ns12:when_false>
+        </ns12:boolean_question_test_action>
+        <ns12:boolean_question_test_action id="ocil:ssg-accounts_password_pam_lcredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_lcredit_question:question:1">
+          <ns12:when_true>
+            <ns12:result>PASS</ns12:result>
+          </ns12:when_true>
+          <ns12:when_false>
+            <ns12:result>FAIL</ns12:result>
+          </ns12:when_false>
+        </ns12:boolean_question_test_action>
+        <ns12:boolean_question_test_action id="ocil:ssg-sudo_add_ignore_dot_action:testaction:1" question_ref="ocil:ssg-sudo_add_ignore_dot_question:question:1">
+          <ns12:when_true>
+            <ns12:result>PASS</ns12:result>
+          </ns12:when_true>
+          <ns12:when_false>
+            <ns12:result>FAIL</ns12:result>
+          </ns12:when_false>
+        </ns12:boolean_question_test_action>
+        <ns12:boolean_question_test_action id="ocil:ssg-accounts_umask_etc_bashrc_action:testaction:1" question_ref="ocil:ssg-accounts_umask_etc_bashrc_question:question:1">
+          <ns12:when_true>
+            <ns12:result>PASS</ns12:result>
+          </ns12:when_true>
+          <ns12:when_false>
+            <ns12:result>FAIL</ns12:result>
+          </ns12:when_false>
+        </ns12:boolean_question_test_action>
+        <ns12:boolean_question_test_action id="ocil:ssg-accounts_password_pam_minlen_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_minlen_question:question:1">
+          <ns12:when_true>
+            <ns12:result>PASS</ns12:result>
+          </ns12:when_true>
+          <ns12:when_false>
+            <ns12:result>FAIL</ns12:result>
+          </ns12:when_false>
+        </ns12:boolean_question_test_action>
+        <ns12:boolean_question_test_action id="ocil:ssg-accounts_umask_etc_profile_action:testaction:1" question_ref="ocil:ssg-accounts_umask_etc_profile_question:question:1">
+          <ns12:when_true>
+            <ns12:result>PASS</ns12:result>
+          </ns12:when_true>
+          <ns12:when_false>
+            <ns12:result>FAIL</ns12:result>
+          </ns12:when_false>
+        </ns12:boolean_question_test_action>
+        <ns12:boolean_question_test_action id="ocil:ssg-sudo_add_noexec_action:testaction:1" question_ref="ocil:ssg-sudo_add_noexec_question:question:1">
+          <ns12:when_true>
+            <ns12:result>PASS</ns12:result>
+          </ns12:when_true>
+          <ns12:when_false>
+            <ns12:result>FAIL</ns12:result>
+          </ns12:when_false>
+        </ns12:boolean_question_test_action>
+        <ns12:boolean_question_test_action id="ocil:ssg-sudo_add_umask_action:testaction:1" question_ref="ocil:ssg-sudo_add_umask_question:question:1">
+          <ns12:when_true>
+            <ns12:result>PASS</ns12:result>
+          </ns12:when_true>
+          <ns12:when_false>
+            <ns12:result>FAIL</ns12:result>
+          </ns12:when_false>
+        </ns12:boolean_question_test_action>
+        <ns12:boolean_question_test_action id="ocil:ssg-sudo_add_requiretty_action:testaction:1" question_ref="ocil:ssg-sudo_add_requiretty_question:question:1">
+          <ns12:when_true>
+            <ns12:result>PASS</ns12:result>
+          </ns12:when_true>
+          <ns12:when_false>
+            <ns12:result>FAIL</ns12:result>
+          </ns12:when_false>
+        </ns12:boolean_question_test_action>
+        <ns12:boolean_question_test_action id="ocil:ssg-sudo_add_use_pty_action:testaction:1" question_ref="ocil:ssg-sudo_add_use_pty_question:question:1">
+          <ns12:when_true>
+            <ns12:result>PASS</ns12:result>
+          </ns12:when_true>
+          <ns12:when_false>
+            <ns12:result>FAIL</ns12:result>
+          </ns12:when_false>
+        </ns12:boolean_question_test_action>
         <ns12:boolean_question_test_action id="ocil:ssg-accounts_password_pam_ocredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_ocredit_question:question:1">
+          <ns12:when_true>
+            <ns12:result>PASS</ns12:result>
+          </ns12:when_true>
+          <ns12:when_false>
+            <ns12:result>FAIL</ns12:result>
+          </ns12:when_false>
+        </ns12:boolean_question_test_action>
+        <ns12:boolean_question_test_action id="ocil:ssg-sudo_add_env_reset_action:testaction:1" question_ref="ocil:ssg-sudo_add_env_reset_question:question:1">
+          <ns12:when_true>
+            <ns12:result>PASS</ns12:result>
+          </ns12:when_true>
+          <ns12:when_false>
+            <ns12:result>FAIL</ns12:result>
+          </ns12:when_false>
+        </ns12:boolean_question_test_action>
+        <ns12:boolean_question_test_action id="ocil:ssg-accounts_password_pam_dcredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_dcredit_question:question:1">
           <ns12:when_true>
             <ns12:result>PASS</ns12:result>
           </ns12:when_true>
@@ -3870,55 +4546,7 @@ fi
             <ns12:result>FAIL</ns12:result>
           </ns12:when_false>
         </ns12:boolean_question_test_action>
-        <ns12:boolean_question_test_action id="ocil:ssg-accounts_password_pam_lcredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_lcredit_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
-        <ns12:boolean_question_test_action id="ocil:ssg-accounts_password_pam_dcredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_dcredit_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
-        <ns12:boolean_question_test_action id="ocil:ssg-accounts_tmout_action:testaction:1" question_ref="ocil:ssg-accounts_tmout_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
         <ns12:boolean_question_test_action id="ocil:ssg-accounts_password_pam_ucredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_ucredit_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
-        <ns12:boolean_question_test_action id="ocil:ssg-accounts_umask_etc_profile_action:testaction:1" question_ref="ocil:ssg-accounts_umask_etc_profile_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
-        <ns12:boolean_question_test_action id="ocil:ssg-accounts_password_pam_minlen_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_minlen_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
-        <ns12:boolean_question_test_action id="ocil:ssg-accounts_umask_etc_bashrc_action:testaction:1" question_ref="ocil:ssg-accounts_umask_etc_bashrc_question:question:1">
           <ns12:when_true>
             <ns12:result>PASS</ns12:result>
           </ns12:when_true>
@@ -3928,6 +4556,91 @@ fi
         </ns12:boolean_question_test_action>
       </ns12:test_actions>
       <ns12:questions>
+        <ns12:boolean_question id="ocil:ssg-accounts_tmout_question:question:1">
+          <ns12:question_text>Run the following command to ensure the TMOUT value is configured for all users
+on the system:
+
+$ sudo grep TMOUT /etc/profile /etc/profile.d/*.sh
+
+The output should return the following:
+TMOUT=
+      Is it the case that value of TMOUT is not less than or equal to expected setting?
+      </ns12:question_text>
+        </ns12:boolean_question>
+        <ns12:boolean_question id="ocil:ssg-accounts_password_pam_lcredit_question:question:1">
+          <ns12:question_text>Verify that Gentoo enforces password complexity by requiring that at least one lower-case character.
+
+Check the value for "lcredit" with the following command:
+
+$ sudo grep lcredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/*.conf
+
+/etc/security/pwquality.conf:lcredit = -1
+      Is it the case that the value of "lcredit" is a positive number or is commented out?
+      </ns12:question_text>
+        </ns12:boolean_question>
+        <ns12:boolean_question id="ocil:ssg-sudo_add_ignore_dot_question:question:1">
+          <ns12:question_text>To determine if ignore_dot has been configured for sudo, run the following command:
+$ sudo grep -ri "^[\s]*Defaults.*\bignore_dot\b.*" /etc/sudoers /etc/sudoers.d/
+The command should return a matching output.
+      Is it the case that ignore_dot is not enabled in sudo?
+      </ns12:question_text>
+        </ns12:boolean_question>
+        <ns12:boolean_question id="ocil:ssg-accounts_umask_etc_bashrc_question:question:1">
+          <ns12:question_text>Verify the umask setting is configured correctly in the /etc/bash/bashrc file with the following command:
+
+$ sudo grep "umask" /etc/bash/bashrc
+
+umask 
+      Is it the case that the value for the "umask" parameter is not "&lt;sub idref="var_accounts_user_umask" /&gt;", or the "umask" parameter is missing or is commented out?
+      </ns12:question_text>
+        </ns12:boolean_question>
+        <ns12:boolean_question id="ocil:ssg-accounts_password_pam_minlen_question:question:1">
+          <ns12:question_text>Verify that Gentoo enforces a minimum -character password length with the following command:
+
+$ grep minlen /etc/security/pwquality.conf
+
+minlen = 
+      Is it the case that the command does not return a "minlen" value of "&lt;sub idref="var_password_pam_minlen" /&gt;" or greater, does not return a line, or the line is commented out?
+      </ns12:question_text>
+        </ns12:boolean_question>
+        <ns12:boolean_question id="ocil:ssg-accounts_umask_etc_profile_question:question:1">
+          <ns12:question_text>Verify the umask setting is configured correctly in the /etc/profile file
+or scripts within /etc/profile.d directory with the following command:
+$ grep "umask" /etc/profile*
+umask 
+      Is it the case that the value for the "umask" parameter is not "&lt;sub idref="var_accounts_user_umask" /&gt;",
+or the "umask" parameter is missing or is commented out?
+      </ns12:question_text>
+        </ns12:boolean_question>
+        <ns12:boolean_question id="ocil:ssg-sudo_add_noexec_question:question:1">
+          <ns12:question_text>To determine if NOEXEC has been configured for sudo, run the following command:
+$ sudo grep -ri "^[\s]*Defaults.*\bnoexec\b.*" /etc/sudoers /etc/sudoers.d/
+The command should return a matching output.
+      Is it the case that noexec is not enabled in sudo?
+      </ns12:question_text>
+        </ns12:boolean_question>
+        <ns12:boolean_question id="ocil:ssg-sudo_add_umask_question:question:1">
+          <ns12:question_text>To determine if umask has been configured for sudo with the appropriate value,
+run the following command:
+$ sudo grep -ri '^Defaults.*umask=' /etc/sudoers /etc/sudoers.d/
+The command should return a matching output.
+      Is it the case that umask is not set with the appropriate value for sudo?
+      </ns12:question_text>
+        </ns12:boolean_question>
+        <ns12:boolean_question id="ocil:ssg-sudo_add_requiretty_question:question:1">
+          <ns12:question_text>To determine if requiretty has been configured for sudo, run the following command:
+$ sudo grep -ri "^[\s]*Defaults.*\brequiretty\b.*" /etc/sudoers /etc/sudoers.d/
+The command should return a matching output.
+      Is it the case that requiretty is not enabled in sudo?
+      </ns12:question_text>
+        </ns12:boolean_question>
+        <ns12:boolean_question id="ocil:ssg-sudo_add_use_pty_question:question:1">
+          <ns12:question_text>To determine if use_pty has been configured for sudo, run the following command:
+$ sudo grep -ri "^[\s]*Defaults.*\buse_pty\b.*" /etc/sudoers /etc/sudoers.d/
+The command should return a matching output.
+      Is it the case that use_pty is not enabled in sudo?
+      </ns12:question_text>
+        </ns12:boolean_question>
         <ns12:boolean_question id="ocil:ssg-accounts_password_pam_ocredit_question:question:1">
           <ns12:question_text>Verify that Gentoo enforces password complexity by requiring that at least one special character with the following command:
 
@@ -3935,6 +4648,24 @@ $ sudo grep ocredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/
 
 ocredit = 
       Is it the case that value of "ocredit" is a positive number or is commented out?
+      </ns12:question_text>
+        </ns12:boolean_question>
+        <ns12:boolean_question id="ocil:ssg-sudo_add_env_reset_question:question:1">
+          <ns12:question_text>To determine if env_reset has been configured for sudo, run the following command:
+$ sudo grep -ri "^[\s]*Defaults.*\benv_reset\b.*" /etc/sudoers /etc/sudoers.d/
+The command should return a matching output.
+      Is it the case that env_reset is not enabled in sudo?
+      </ns12:question_text>
+        </ns12:boolean_question>
+        <ns12:boolean_question id="ocil:ssg-accounts_password_pam_dcredit_question:question:1">
+          <ns12:question_text>Verify that Gentoo enforces password complexity by requiring that at least one numeric character be used.
+
+Check the value for "dcredit" with the following command:
+
+$ sudo grep dcredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/*.conf
+
+/etc/security/pwquality.conf:dcredit = 
+      Is it the case that the value of "dcredit" is a positive number or is commented out?
       </ns12:question_text>
         </ns12:boolean_question>
         <ns12:boolean_question id="ocil:ssg-accounts_umask_etc_login_defs_question:question:1">
@@ -3962,39 +4693,6 @@ The pam_pwhistory remember option must be configured only in one file.
       Is it the case that the value of remember is not equal to or greater than the expected value?
       </ns12:question_text>
         </ns12:boolean_question>
-        <ns12:boolean_question id="ocil:ssg-accounts_password_pam_lcredit_question:question:1">
-          <ns12:question_text>Verify that Gentoo enforces password complexity by requiring that at least one lower-case character.
-
-Check the value for "lcredit" with the following command:
-
-$ sudo grep lcredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/*.conf
-
-/etc/security/pwquality.conf:lcredit = -1
-      Is it the case that the value of "lcredit" is a positive number or is commented out?
-      </ns12:question_text>
-        </ns12:boolean_question>
-        <ns12:boolean_question id="ocil:ssg-accounts_password_pam_dcredit_question:question:1">
-          <ns12:question_text>Verify that Gentoo enforces password complexity by requiring that at least one numeric character be used.
-
-Check the value for "dcredit" with the following command:
-
-$ sudo grep dcredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/*.conf
-
-/etc/security/pwquality.conf:dcredit = 
-      Is it the case that the value of "dcredit" is a positive number or is commented out?
-      </ns12:question_text>
-        </ns12:boolean_question>
-        <ns12:boolean_question id="ocil:ssg-accounts_tmout_question:question:1">
-          <ns12:question_text>Run the following command to ensure the TMOUT value is configured for all users
-on the system:
-
-$ sudo grep TMOUT /etc/profile /etc/profile.d/*.sh
-
-The output should return the following:
-TMOUT=
-      Is it the case that value of TMOUT is not less than or equal to expected setting?
-      </ns12:question_text>
-        </ns12:boolean_question>
         <ns12:boolean_question id="ocil:ssg-accounts_password_pam_ucredit_question:question:1">
           <ns12:question_text>Verify that Gentoo enforces password complexity by requiring that at least one upper-case character.
 
@@ -4006,43 +4704,16 @@ ucredit = -1
       Is it the case that the value of "ucredit" is a positive number or is commented out?
       </ns12:question_text>
         </ns12:boolean_question>
-        <ns12:boolean_question id="ocil:ssg-accounts_umask_etc_profile_question:question:1">
-          <ns12:question_text>Verify the umask setting is configured correctly in the /etc/profile file
-or scripts within /etc/profile.d directory with the following command:
-$ grep "umask" /etc/profile*
-umask 
-      Is it the case that the value for the "umask" parameter is not "&lt;sub idref="var_accounts_user_umask" /&gt;",
-or the "umask" parameter is missing or is commented out?
-      </ns12:question_text>
-        </ns12:boolean_question>
-        <ns12:boolean_question id="ocil:ssg-accounts_password_pam_minlen_question:question:1">
-          <ns12:question_text>Verify that Gentoo enforces a minimum -character password length with the following command:
-
-$ grep minlen /etc/security/pwquality.conf
-
-minlen = 
-      Is it the case that the command does not return a "minlen" value of "&lt;sub idref="var_password_pam_minlen" /&gt;" or greater, does not return a line, or the line is commented out?
-      </ns12:question_text>
-        </ns12:boolean_question>
-        <ns12:boolean_question id="ocil:ssg-accounts_umask_etc_bashrc_question:question:1">
-          <ns12:question_text>Verify the umask setting is configured correctly in the /etc/bash/bashrc file with the following command:
-
-$ sudo grep "umask" /etc/bash/bashrc
-
-umask 
-      Is it the case that the value for the "umask" parameter is not "&lt;sub idref="var_accounts_user_umask" /&gt;", or the "umask" parameter is missing or is commented out?
-      </ns12:question_text>
-        </ns12:boolean_question>
       </ns12:questions>
     </ns12:ocil>
   </ns0:component>
-  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-cpe-oval.xml" timestamp="2024-06-04T12:03:55">
+  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-cpe-oval.xml" timestamp="2024-06-04T09:38:03">
     <ns9:oval_definitions xsi:schemaLocation="http://oval.mitre.org/XMLSchema/oval-common-5 oval-common-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5 oval-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#independent independent-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#unix unix-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#linux linux-definitions-schema.xsd">
       <ns9:generator>
         <ns10:product_name>build_cpe.py from SCAP Security Guide</ns10:product_name>
         <ns10:product_version>ssg: [0, 1, 73], python: 3.11.9</ns10:product_version>
         <ns10:schema_version>5.11</ns10:schema_version>
-        <ns10:timestamp>2024-06-04T10:03:54</ns10:timestamp>
+        <ns10:timestamp>2024-06-04T07:38:02</ns10:timestamp>
       </ns9:generator>
       <ns9:definitions>
         <ns9:definition id="oval:ssg-installed_env_is_a_container:def:1" version="2" class="inventory">
@@ -4125,6 +4796,15 @@ umask
             <ns9:description>The RPM package shadow-utils should be installed.</ns9:description>
           </ns9:metadata>
           </ns9:definition>
+        <ns9:definition id="oval:ssg-package_sudo:def:1" version="1" class="inventory">
+          <ns9:metadata>
+            <ns9:title>Package sudo is installed</ns9:title>
+            <ns9:affected family="unix">
+              <ns9:platform>Gentoo</ns9:platform>
+            </ns9:affected>
+            <ns9:description>The RPM package sudo should be installed.</ns9:description>
+          </ns9:metadata>
+          </ns9:definition>
       </ns9:definitions>
       <ns9:tests>
         <ns13:file_test id="oval:ssg-test_installed_env_is_a_docker_container:tst:1" version="1" check="all" comment="Check if /.dockerenv exists" check_existence="all_exist" state_operator="AND">
@@ -4160,6 +4840,9 @@ umask
         </ns14:rpminfo_object>
         <ns14:rpminfo_object id="oval:ssg-obj_inventory_test_package_shadow-utils_installed:obj:1" version="1">
           <ns14:name>shadow-utils</ns14:name>
+        </ns14:rpminfo_object>
+        <ns14:rpminfo_object id="oval:ssg-obj_inventory_test_package_sudo_installed:obj:1" version="1">
+          <ns14:name>sudo</ns14:name>
         </ns14:rpminfo_object>
       </ns9:objects>
       <ns9:states>

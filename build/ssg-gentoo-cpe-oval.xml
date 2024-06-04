@@ -4,7 +4,7 @@
     <oval:product_name>build_cpe.py from SCAP Security Guide</oval:product_name>
     <oval:product_version>ssg: [0, 1, 73], python: 3.11.9</oval:product_version>
     <oval:schema_version>5.11</oval:schema_version>
-    <oval:timestamp>2024-06-04T10:03:54</oval:timestamp>
+    <oval:timestamp>2024-06-04T07:38:02</oval:timestamp>
   </oval-def:generator>
   <oval-def:definitions>
     <oval-def:definition id="oval:ssg-installed_env_is_a_container:def:1" version="2" class="inventory">
@@ -96,6 +96,18 @@
         <oval-def:criterion comment="Platform package shadow-utils is installed" test_ref="oval:ssg-inventory_test_package_shadow-utils_installed:tst:1"/>
       </oval-def:criteria>
     </oval-def:definition>
+    <oval-def:definition id="oval:ssg-package_sudo:def:1" version="1" class="inventory">
+      <oval-def:metadata>
+        <oval-def:title>Package sudo is installed</oval-def:title>
+        <oval-def:affected family="unix">
+          <oval-def:platform>Gentoo</oval-def:platform>
+        </oval-def:affected>
+        <oval-def:description>The RPM package sudo should be installed.</oval-def:description>
+      </oval-def:metadata>
+      <oval-def:criteria operator="AND">
+        <oval-def:criterion comment="Platform package sudo is installed" test_ref="oval:ssg-inventory_test_package_sudo_installed:tst:1"/>
+      </oval-def:criteria>
+    </oval-def:definition>
   </oval-def:definitions>
   <oval-def:tests>
     <unix:file_test id="oval:ssg-test_installed_env_is_a_docker_container:tst:1" version="1" check="all" comment="Check if /.dockerenv exists" check_existence="all_exist" state_operator="AND">
@@ -120,6 +132,9 @@
     <linux:rpminfo_test id="oval:ssg-inventory_test_package_shadow-utils_installed:tst:1" version="1" check="all" comment="package shadow-utils is installed" check_existence="all_exist" state_operator="AND">
       <linux:object object_ref="oval:ssg-obj_inventory_test_package_shadow-utils_installed:obj:1"/>
     </linux:rpminfo_test>
+    <linux:rpminfo_test id="oval:ssg-inventory_test_package_sudo_installed:tst:1" version="1" check="all" comment="package sudo is installed" check_existence="all_exist" state_operator="AND">
+      <linux:object object_ref="oval:ssg-obj_inventory_test_package_sudo_installed:obj:1"/>
+    </linux:rpminfo_test>
   </oval-def:tests>
   <oval-def:objects>
     <unix:file_object id="oval:ssg-object_installed_env_is_a_docker_container:obj:1" version="1" comment="Check file /.dockerenv">
@@ -140,6 +155,9 @@
     </linux:rpminfo_object>
     <linux:rpminfo_object id="oval:ssg-obj_inventory_test_package_shadow-utils_installed:obj:1" version="1">
       <linux:name>shadow-utils</linux:name>
+    </linux:rpminfo_object>
+    <linux:rpminfo_object id="oval:ssg-obj_inventory_test_package_sudo_installed:obj:1" version="1">
+      <linux:name>sudo</linux:name>
     </linux:rpminfo_object>
   </oval-def:objects>
   <oval-def:states>

@@ -39,12 +39,12 @@ platform: null
 platforms: !!set {}
 sce_metadata: {}
 inherited_platforms: !!set
-    selinux: null
     machine: null
+    selinux: null
 cpe_platform_names: !!set {}
 inherited_cpe_platform_names: !!set
-    selinux: null
     machine: null
+    selinux: null
 bash_conditional: null
 fixes: {}
 title: Disable the httpd_can_network_connect SELinux Boolean

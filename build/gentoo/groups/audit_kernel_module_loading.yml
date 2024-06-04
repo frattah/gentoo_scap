@@ -38,8 +38,8 @@ rules:
 platform: ''
 platforms: !!set {}
 inherited_platforms: !!set
-    package[audit]: null
     machine: null
+    package[audit]: null
 cpe_platform_names: !!set {}
 title: Record Information on Kernel Modules Loading and Unloading
 definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/auditd_configure_rules/audit_kernel_module_loading/group.yml

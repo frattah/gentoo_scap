@@ -22,24 +22,24 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - dnf-automatic_security_updates_only
-    - package_squid_removed
-    - package_rsh_removed
-    - package_talk_removed
-    - package_rsh-server_removed
+    - ensure_gpgcheck_never_disabled
     - ensure_gpgcheck_local_packages
-    - package_ypbind_removed
-    - service_telnet_disabled
-    - security_patches_up_to_date
+    - package_rsh_removed
+    - package_squid_removed
+    - service_avahi-daemon_disabled
     - package_telnet_removed
+    - package_telnet-server_removed
+    - dnf-automatic_security_updates_only
+    - security_patches_up_to_date
+    - package_talk_removed
+    - service_squid_disabled
+    - package_ypbind_removed
+    - package_rsh-server_removed
+    - service_telnet_disabled
+    - package_quagga_removed
     - ensure_redhat_gpgkey_installed
     - ensure_gpgcheck_globally_activated
     - package_talk-server_removed
-    - package_telnet-server_removed
-    - service_avahi-daemon_disabled
-    - package_quagga_removed
-    - ensure_gpgcheck_never_disabled
-    - service_squid_disabled
     controls: []
 -   id: mfa
     levels:
@@ -78,10 +78,10 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - accounts_no_uid_except_zero
     - sudo_remove_nopasswd
-    - sudo_remove_no_authenticate
     - sudo_require_authentication
+    - sudo_remove_no_authenticate
+    - accounts_no_uid_except_zero
     controls: []
 -   id: app_control
     levels:
@@ -101,8 +101,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - package_fapolicyd_installed
     - service_fapolicyd_enabled
+    - package_fapolicyd_installed
     controls: []
 -   id: restrict_macros
     levels:
@@ -180,77 +180,77 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - selinux_state
-    - sysctl_kernel_kptr_restrict
-    - audit_rules_execution_semanage
-    - sshd_disable_root_login
-    - mount_option_dev_shm_nosuid
-    - sysctl_kernel_unprivileged_bpf_disabled
-    - network_sniffer_disabled
-    - audit_rules_dac_modification_chown
-    - sysctl_kernel_dmesg_restrict
-    - sysctl_net_core_bpf_jit_harden
-    - audit_rules_networkconfig_modification
-    - audit_rules_sysadmin_actions
-    - selinux_policytype
-    - sysctl_kernel_kexec_load_disabled
-    - rpm_verify_permissions
-    - sshd_use_directory_configuration
-    - file_ownership_library_dirs
-    - audit_rules_time_clock_settime
-    - audit_rules_usergroup_modification
-    - service_auditd_enabled
-    - service_rsyslog_enabled
-    - auditd_freq
     - sysctl_kernel_exec_shield
-    - sshd_enable_strictmodes
-    - file_permissions_unauthorized_suid
-    - package_firewalld_installed
-    - rpm_verify_hashes
-    - audit_rules_time_watch_localtime
-    - audit_rules_kernel_module_loading
-    - audit_rules_execution_setsebool
-    - sysctl_kernel_yama_ptrace_scope
-    - mount_option_dev_shm_noexec
-    - audit_rules_execution_seunshare
-    - file_permissions_library_dirs
-    - auditd_data_retention_flush
-    - sshd_set_loglevel_info
-    - enable_authselect
-    - sshd_disable_user_known_hosts
-    - sysctl_kernel_randomize_va_space
-    - no_empty_passwords
-    - auditd_write_logs
-    - audit_rules_dac_modification_chmod
     - service_firewalld_enabled
+    - audit_rules_login_events_tallylog
+    - audit_rules_usergroup_modification
+    - sshd_enable_strictmodes
+    - auditd_local_events
+    - configure_crypto_policy
+    - audit_rules_execution_setfiles
+    - sshd_disable_user_known_hosts
+    - dir_perms_world_writable_sticky_bits
+    - no_empty_passwords
+    - service_auditd_enabled
+    - audit_rules_sysadmin_actions
+    - package_firewalld_installed
+    - sshd_use_directory_configuration
+    - audit_rules_dac_modification_chmod
+    - audit_rules_login_events_lastlog
+    - audit_rules_time_clock_settime
+    - selinux_policytype
+    - selinux_state
+    - sshd_disable_root_login
+    - sshd_do_not_permit_user_env
+    - auditd_name_format
+    - audit_rules_dac_modification_chown
+    - audit_rules_kernel_module_loading
+    - sysctl_kernel_yama_ptrace_scope
+    - mount_option_dev_shm_nodev
+    - audit_rules_login_events
     - file_permissions_unauthorized_world_writable
-    - sshd_disable_gssapi_auth
+    - audit_rules_time_adjtimex
+    - package_rsyslog_installed
+    - audit_rules_execution_setsebool
+    - audit_rules_networkconfig_modification
+    - sysctl_kernel_dmesg_restrict
+    - auditd_freq
+    - network_sniffer_disabled
+    - auditd_log_format
+    - sysctl_kernel_randomize_va_space
+    - audit_rules_execution_chcon
+    - rpm_verify_hashes
+    - sysctl_kernel_unprivileged_bpf_disabled
+    - audit_rules_execution_seunshare
+    - sshd_print_last_log
+    - sshd_set_loglevel_info
+    - auditd_write_logs
+    - file_permissions_unauthorized_suid
+    - file_ownership_library_dirs
+    - audit_rules_execution_semanage
+    - audit_rules_login_events_faillock
+    - file_permissions_unauthorized_sgid
     - audit_rules_execution_restorecon
-    - file_permissions_binary_dirs
+    - rpm_verify_permissions
+    - audit_rules_time_watch_localtime
+    - audit_rules_time_stime
+    - sysctl_kernel_kptr_restrict
+    - sshd_disable_gssapi_auth
+    - enable_authselect
+    - service_rsyslog_enabled
+    - sshd_disable_empty_passwords
+    - file_permissions_library_dirs
+    - file_ownership_binary_dirs
+    - mount_option_dev_shm_noexec
+    - sysctl_net_core_bpf_jit_harden
+    - auditd_data_retention_flush
+    - sysctl_kernel_kexec_load_disabled
+    - configure_ssh_crypto_policy
+    - mount_option_dev_shm_nosuid
     - audit_rules_time_settimeofday
     - rpm_verify_ownership
-    - audit_rules_login_events_lastlog
-    - auditd_name_format
-    - dir_perms_world_writable_sticky_bits
-    - sshd_do_not_permit_user_env
-    - audit_rules_login_events_faillock
-    - audit_rules_execution_setfiles
-    - configure_crypto_policy
     - sshd_disable_rhosts
-    - audit_rules_login_events_tallylog
-    - sshd_disable_empty_passwords
-    - sshd_print_last_log
-    - audit_rules_time_adjtimex
-    - audit_rules_execution_chcon
-    - file_ownership_binary_dirs
-    - audit_rules_login_events
-    - package_rsyslog_installed
-    - audit_rules_time_stime
-    - configure_ssh_crypto_policy
-    - auditd_local_events
-    - file_permissions_unauthorized_sgid
-    - mount_option_dev_shm_nodev
-    - auditd_log_format
+    - file_permissions_binary_dirs
     - var_system_crypto_policy=default_nosha1
     - var_auditd_flush=incremental_async
     - var_selinux_state=enforcing

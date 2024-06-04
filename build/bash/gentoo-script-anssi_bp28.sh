@@ -23,9 +23,188 @@
 ###############################################################################
 
 ###############################################################################
-# BEGIN fix (1 / 10) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_unix_remember'
+# BEGIN fix (1 / 16) for 'xccdf_org.ssgproject.content_rule_sudo_add_env_reset'
 ###############################################################################
-(>&2 echo "Remediating rule 1/10: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_unix_remember'")
+(>&2 echo "Remediating rule 1/16: 'xccdf_org.ssgproject.content_rule_sudo_add_env_reset'")
+
+if /usr/sbin/visudo -qcf /etc/sudoers; then
+    cp /etc/sudoers /etc/sudoers.bak
+    if ! grep -P '^[\s]*Defaults[\s]*\benv_reset\b.*$' /etc/sudoers; then
+        # sudoers file doesn't define Option env_reset
+        echo "Defaults env_reset" >> /etc/sudoers
+    fi
+    
+    # Check validity of sudoers and cleanup bak
+    if /usr/sbin/visudo -qcf /etc/sudoers; then
+        rm -f /etc/sudoers.bak
+    else
+        echo "Fail to validate remediated /etc/sudoers, reverting to original file."
+        mv /etc/sudoers.bak /etc/sudoers
+        false
+    fi
+else
+    echo "Skipping remediation, /etc/sudoers failed to validate"
+    false
+fi
+
+# END fix for 'xccdf_org.ssgproject.content_rule_sudo_add_env_reset'
+
+###############################################################################
+# BEGIN fix (2 / 16) for 'xccdf_org.ssgproject.content_rule_sudo_add_ignore_dot'
+###############################################################################
+(>&2 echo "Remediating rule 2/16: 'xccdf_org.ssgproject.content_rule_sudo_add_ignore_dot'")
+
+if /usr/sbin/visudo -qcf /etc/sudoers; then
+    cp /etc/sudoers /etc/sudoers.bak
+    if ! grep -P '^[\s]*Defaults[\s]*\bignore_dot\b.*$' /etc/sudoers; then
+        # sudoers file doesn't define Option ignore_dot
+        echo "Defaults ignore_dot" >> /etc/sudoers
+    fi
+    
+    # Check validity of sudoers and cleanup bak
+    if /usr/sbin/visudo -qcf /etc/sudoers; then
+        rm -f /etc/sudoers.bak
+    else
+        echo "Fail to validate remediated /etc/sudoers, reverting to original file."
+        mv /etc/sudoers.bak /etc/sudoers
+        false
+    fi
+else
+    echo "Skipping remediation, /etc/sudoers failed to validate"
+    false
+fi
+
+# END fix for 'xccdf_org.ssgproject.content_rule_sudo_add_ignore_dot'
+
+###############################################################################
+# BEGIN fix (3 / 16) for 'xccdf_org.ssgproject.content_rule_sudo_add_noexec'
+###############################################################################
+(>&2 echo "Remediating rule 3/16: 'xccdf_org.ssgproject.content_rule_sudo_add_noexec'")
+
+if /usr/sbin/visudo -qcf /etc/sudoers; then
+    cp /etc/sudoers /etc/sudoers.bak
+    if ! grep -P '^[\s]*Defaults[\s]*\bnoexec\b.*$' /etc/sudoers; then
+        # sudoers file doesn't define Option noexec
+        echo "Defaults noexec" >> /etc/sudoers
+    fi
+    
+    # Check validity of sudoers and cleanup bak
+    if /usr/sbin/visudo -qcf /etc/sudoers; then
+        rm -f /etc/sudoers.bak
+    else
+        echo "Fail to validate remediated /etc/sudoers, reverting to original file."
+        mv /etc/sudoers.bak /etc/sudoers
+        false
+    fi
+else
+    echo "Skipping remediation, /etc/sudoers failed to validate"
+    false
+fi
+
+# END fix for 'xccdf_org.ssgproject.content_rule_sudo_add_noexec'
+
+###############################################################################
+# BEGIN fix (4 / 16) for 'xccdf_org.ssgproject.content_rule_sudo_add_requiretty'
+###############################################################################
+(>&2 echo "Remediating rule 4/16: 'xccdf_org.ssgproject.content_rule_sudo_add_requiretty'")
+
+if /usr/sbin/visudo -qcf /etc/sudoers; then
+    cp /etc/sudoers /etc/sudoers.bak
+    if ! grep -P '^[\s]*Defaults[\s]*\brequiretty\b.*$' /etc/sudoers; then
+        # sudoers file doesn't define Option requiretty
+        echo "Defaults requiretty" >> /etc/sudoers
+    fi
+    
+    # Check validity of sudoers and cleanup bak
+    if /usr/sbin/visudo -qcf /etc/sudoers; then
+        rm -f /etc/sudoers.bak
+    else
+        echo "Fail to validate remediated /etc/sudoers, reverting to original file."
+        mv /etc/sudoers.bak /etc/sudoers
+        false
+    fi
+else
+    echo "Skipping remediation, /etc/sudoers failed to validate"
+    false
+fi
+
+# END fix for 'xccdf_org.ssgproject.content_rule_sudo_add_requiretty'
+
+###############################################################################
+# BEGIN fix (5 / 16) for 'xccdf_org.ssgproject.content_rule_sudo_add_umask'
+###############################################################################
+(>&2 echo "Remediating rule 5/16: 'xccdf_org.ssgproject.content_rule_sudo_add_umask'")
+
+
+var_sudo_umask='0077'
+
+
+if /usr/sbin/visudo -qcf /etc/sudoers; then
+    cp /etc/sudoers /etc/sudoers.bak
+    if ! grep -P '^[\s]*Defaults[\s]*\bumask=\w+\b\b.*$' /etc/sudoers; then
+        # sudoers file doesn't define Option umask
+        echo "Defaults umask=${var_sudo_umask}" >> /etc/sudoers
+    else
+        # sudoers file defines Option umask, remediate if appropriate value is not set
+        if ! grep -P "^[\s]*Defaults.*\bumask=${var_sudo_umask}\b.*$" /etc/sudoers; then
+            
+            escaped_variable=${var_sudo_umask//$'/'/$'\/'}
+            sed -Ei "s/(^[\s]*Defaults.*\bumask=)[-]?.+(\b.*$)/\1$escaped_variable\2/" /etc/sudoers
+        fi
+    fi
+    
+    # Check validity of sudoers and cleanup bak
+    if /usr/sbin/visudo -qcf /etc/sudoers; then
+        rm -f /etc/sudoers.bak
+    else
+        echo "Fail to validate remediated /etc/sudoers, reverting to original file."
+        mv /etc/sudoers.bak /etc/sudoers
+        false
+    fi
+else
+    echo "Skipping remediation, /etc/sudoers failed to validate"
+    false
+fi
+
+# END fix for 'xccdf_org.ssgproject.content_rule_sudo_add_umask'
+
+###############################################################################
+# BEGIN fix (6 / 16) for 'xccdf_org.ssgproject.content_rule_sudo_add_use_pty'
+###############################################################################
+(>&2 echo "Remediating rule 6/16: 'xccdf_org.ssgproject.content_rule_sudo_add_use_pty'")
+# Remediation is applicable only in certain platforms
+if rpm --quiet -q sudo; then
+
+if /usr/sbin/visudo -qcf /etc/sudoers; then
+    cp /etc/sudoers /etc/sudoers.bak
+    if ! grep -P '^[\s]*Defaults[\s]*\buse_pty\b.*$' /etc/sudoers; then
+        # sudoers file doesn't define Option use_pty
+        echo "Defaults use_pty" >> /etc/sudoers
+    fi
+    
+    # Check validity of sudoers and cleanup bak
+    if /usr/sbin/visudo -qcf /etc/sudoers; then
+        rm -f /etc/sudoers.bak
+    else
+        echo "Fail to validate remediated /etc/sudoers, reverting to original file."
+        mv /etc/sudoers.bak /etc/sudoers
+        false
+    fi
+else
+    echo "Skipping remediation, /etc/sudoers failed to validate"
+    false
+fi
+
+else
+    >&2 echo 'Remediation is not applicable, nothing was done'
+fi
+
+# END fix for 'xccdf_org.ssgproject.content_rule_sudo_add_use_pty'
+
+###############################################################################
+# BEGIN fix (7 / 16) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_unix_remember'
+###############################################################################
+(>&2 echo "Remediating rule 7/16: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_unix_remember'")
 # Remediation is applicable only in certain platforms
 if rpm --quiet -q pam; then
 
@@ -225,9 +404,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_unix_remember'
 
 ###############################################################################
-# BEGIN fix (2 / 10) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit'
+# BEGIN fix (8 / 16) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit'
 ###############################################################################
-(>&2 echo "Remediating rule 2/10: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit'")
+(>&2 echo "Remediating rule 8/16: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit'")
 # Remediation is applicable only in certain platforms
 if rpm --quiet -q pam; then
 
@@ -265,9 +444,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit'
 
 ###############################################################################
-# BEGIN fix (3 / 10) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit'
+# BEGIN fix (9 / 16) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit'
 ###############################################################################
-(>&2 echo "Remediating rule 3/10: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit'")
+(>&2 echo "Remediating rule 9/16: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit'")
 # Remediation is applicable only in certain platforms
 if rpm --quiet -q pam; then
 
@@ -305,9 +484,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit'
 
 ###############################################################################
-# BEGIN fix (4 / 10) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen'
+# BEGIN fix (10 / 16) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen'
 ###############################################################################
-(>&2 echo "Remediating rule 4/10: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen'")
+(>&2 echo "Remediating rule 10/16: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen'")
 # Remediation is applicable only in certain platforms
 if rpm --quiet -q pam; then
 
@@ -345,9 +524,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen'
 
 ###############################################################################
-# BEGIN fix (5 / 10) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit'
+# BEGIN fix (11 / 16) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit'
 ###############################################################################
-(>&2 echo "Remediating rule 5/10: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit'")
+(>&2 echo "Remediating rule 11/16: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit'")
 # Remediation is applicable only in certain platforms
 if rpm --quiet -q pam; then
 
@@ -385,9 +564,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit'
 
 ###############################################################################
-# BEGIN fix (6 / 10) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit'
+# BEGIN fix (12 / 16) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit'
 ###############################################################################
-(>&2 echo "Remediating rule 6/10: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit'")
+(>&2 echo "Remediating rule 12/16: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit'")
 # Remediation is applicable only in certain platforms
 if rpm --quiet -q pam; then
 
@@ -425,9 +604,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit'
 
 ###############################################################################
-# BEGIN fix (7 / 10) for 'xccdf_org.ssgproject.content_rule_accounts_tmout'
+# BEGIN fix (13 / 16) for 'xccdf_org.ssgproject.content_rule_accounts_tmout'
 ###############################################################################
-(>&2 echo "Remediating rule 7/10: 'xccdf_org.ssgproject.content_rule_accounts_tmout'")
+(>&2 echo "Remediating rule 13/16: 'xccdf_org.ssgproject.content_rule_accounts_tmout'")
 # Remediation is applicable only in certain platforms
 if [ ! -f /.dockerenv ] && [ ! -f /run/.containerenv ]; then
 
@@ -458,9 +637,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_tmout'
 
 ###############################################################################
-# BEGIN fix (8 / 10) for 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_bashrc'
+# BEGIN fix (14 / 16) for 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_bashrc'
 ###############################################################################
-(>&2 echo "Remediating rule 8/10: 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_bashrc'")
+(>&2 echo "Remediating rule 14/16: 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_bashrc'")
 # Remediation is applicable only in certain platforms
 if rpm --quiet -q bash; then
 
@@ -484,9 +663,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_bashrc'
 
 ###############################################################################
-# BEGIN fix (9 / 10) for 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_login_defs'
+# BEGIN fix (15 / 16) for 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_login_defs'
 ###############################################################################
-(>&2 echo "Remediating rule 9/10: 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_login_defs'")
+(>&2 echo "Remediating rule 15/16: 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_login_defs'")
 # Remediation is applicable only in certain platforms
 if rpm --quiet -q shadow-utils; then
 
@@ -520,9 +699,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_login_defs'
 
 ###############################################################################
-# BEGIN fix (10 / 10) for 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_profile'
+# BEGIN fix (16 / 16) for 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_profile'
 ###############################################################################
-(>&2 echo "Remediating rule 10/10: 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_profile'")
+(>&2 echo "Remediating rule 16/16: 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_profile'")
 
 var_accounts_user_umask='077'
 

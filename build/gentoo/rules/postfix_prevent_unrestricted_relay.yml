@@ -76,8 +76,8 @@ inherited_platforms: !!set
     machine: null
 cpe_platform_names: !!set {}
 inherited_cpe_platform_names: !!set
-    package_postfix: null
     machine: null
+    package_postfix: null
 bash_conditional: null
 fixes: {}
 title: Prevent Unrestricted Mail Relaying

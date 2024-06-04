@@ -43,8 +43,8 @@ rules:
 platform: ''
 platforms: !!set {}
 inherited_platforms: !!set
-    package[audit]: null
     machine: null
+    package[audit]: null
 cpe_platform_names: !!set {}
 title: Record Attempts to Alter Logon and Logout Events
 definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/auditd_configure_rules/audit_login_events/group.yml

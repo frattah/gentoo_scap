@@ -2304,11 +2304,11 @@ controls:
     original_title: null
     related_rules: []
     rules:
+    - file_permissions_cron_weekly
     - file_permissions_cron_daily
     - file_permissions_cron_d
-    - file_permissions_cron_hourly
     - file_permissions_cron_monthly
-    - file_permissions_cron_weekly
+    - file_permissions_cron_hourly
     controls: []
 -   id: RHEL-09-232045
     levels:
@@ -3077,13 +3077,13 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_owner_crontab
+    - file_owner_cron_weekly
+    - file_owner_cron_monthly
     - file_owner_cron_d
     - file_owner_cron_deny
-    - file_owner_cron_hourly
-    - file_owner_cron_monthly
     - file_owner_cron_daily
-    - file_owner_cron_weekly
+    - file_owner_cron_hourly
+    - file_owner_crontab
     controls: []
 -   id: RHEL-09-232235
     levels:
@@ -3103,13 +3103,13 @@ controls:
     original_title: null
     related_rules: []
     rules:
+    - file_groupowner_cron_daily
+    - file_groupowner_cron_d
     - file_groupowner_cron_deny
     - file_groupowner_crontab
-    - file_groupowner_cron_hourly
-    - file_groupowner_cron_daily
     - file_groupowner_cron_weekly
+    - file_groupowner_cron_hourly
     - file_groupowner_cron_monthly
-    - file_groupowner_cron_d
     controls: []
 -   id: RHEL-09-232240
     levels:
@@ -3479,9 +3479,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - chronyd_or_ntpd_set_maxpoll
     - chronyd_server_directive
     - chronyd_specify_remote_server
+    - chronyd_or_ntpd_set_maxpoll
     - var_multiple_time_servers=stig
     - var_time_service_set_maxpoll=18_hours
     controls: []
@@ -5943,8 +5943,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - configure_tmux_lock_command
     - configure_tmux_lock_keybinding
+    - configure_tmux_lock_command
     controls: []
 -   id: RHEL-09-412025
     levels:
@@ -7383,8 +7383,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - package_aide_installed
     - aide_build_database
+    - package_aide_installed
     controls: []
 -   id: RHEL-09-651015
     levels:
@@ -8291,8 +8291,8 @@ controls:
     related_rules: []
     rules:
     - audit_rules_dac_modification_fchmodat
-    - audit_rules_dac_modification_fchmod
     - audit_rules_dac_modification_chmod
+    - audit_rules_dac_modification_fchmod
     controls: []
 -   id: RHEL-09-654020
     levels:
@@ -8313,10 +8313,10 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_dac_modification_chown
-    - audit_rules_dac_modification_fchownat
     - audit_rules_dac_modification_fchown
     - audit_rules_dac_modification_lchown
+    - audit_rules_dac_modification_fchownat
+    - audit_rules_dac_modification_chown
     controls: []
 -   id: RHEL-09-654025
     levels:
@@ -8337,12 +8337,12 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_dac_modification_lremovexattr
     - audit_rules_dac_modification_lsetxattr
-    - audit_rules_dac_modification_setxattr
-    - audit_rules_dac_modification_removexattr
-    - audit_rules_dac_modification_fsetxattr
+    - audit_rules_dac_modification_lremovexattr
     - audit_rules_dac_modification_fremovexattr
+    - audit_rules_dac_modification_setxattr
+    - audit_rules_dac_modification_fsetxattr
+    - audit_rules_dac_modification_removexattr
     controls: []
 -   id: RHEL-09-654030
     levels:
@@ -8503,11 +8503,11 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_file_deletion_events_renameat
+    - audit_rules_file_deletion_events_rmdir
     - audit_rules_file_deletion_events_rename
+    - audit_rules_file_deletion_events_renameat
     - audit_rules_file_deletion_events_unlink
     - audit_rules_file_deletion_events_unlinkat
-    - audit_rules_file_deletion_events_rmdir
     controls: []
 -   id: RHEL-09-654070
     levels:
@@ -8528,12 +8528,12 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_unsuccessful_file_modification_open
-    - audit_rules_unsuccessful_file_modification_truncate
-    - audit_rules_unsuccessful_file_modification_open_by_handle_at
-    - audit_rules_unsuccessful_file_modification_openat
     - audit_rules_unsuccessful_file_modification_ftruncate
     - audit_rules_unsuccessful_file_modification_creat
+    - audit_rules_unsuccessful_file_modification_openat
+    - audit_rules_unsuccessful_file_modification_truncate
+    - audit_rules_unsuccessful_file_modification_open
+    - audit_rules_unsuccessful_file_modification_open_by_handle_at
     controls: []
 -   id: RHEL-09-654075
     levels:
@@ -9391,10 +9391,10 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - enable_fips_mode
     - sysctl_crypto_fips_enabled
-    - enable_dracut_fips_module
     - configure_crypto_policy
+    - enable_dracut_fips_module
+    - enable_fips_mode
     - var_system_crypto_policy=fips
     controls: []
 -   id: RHEL-09-671015

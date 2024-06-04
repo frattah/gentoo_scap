@@ -215,8 +215,8 @@ platforms: !!set
     not aarch64_arch and not s390x_arch: null
 sce_metadata: {}
 inherited_platforms: !!set
-    package[audit]: null
     machine: null
+    package[audit]: null
 cpe_platform_names: !!set
     not_aarch64_arch_and_not_s390x_arch: null
 inherited_cpe_platform_names: !!set
