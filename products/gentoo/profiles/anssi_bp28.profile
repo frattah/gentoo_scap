@@ -19,13 +19,12 @@ selections:
    - accounts_password_pam_ucredit
    - var_password_pam_ucredit=1 # (-1)
    - accounts_password_pam_lcredit
-   - accounts_passwords_pam_faillock_interval
-   - var_accounts_passwords_pam_faillock_fail_interval=900
-   - accounts_passwords_pam_faillock_deny
-   - accounts_passwords_pam_faillock_deny_root
-   - var_accounts_passwords_pam_faillock_deny=3
    - var_password_pam_lcredit=1 # (-1)
    - accounts_password_pam_unix_remember
    - var_password_pam_unix_remember=2
    - accounts_tmout
    - var_accounts_tmout=10_min
+   - accounts_umask_etc_bashrc
+   - accounts_umask_etc_login_defs
+   - accounts_umask_etc_profile
+   - var_accounts_user_umask=077

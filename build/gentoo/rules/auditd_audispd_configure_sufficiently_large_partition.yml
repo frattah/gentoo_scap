@@ -159,8 +159,8 @@ inherited_platforms: !!set
 cpe_platform_names: !!set
     machine: null
 inherited_cpe_platform_names: !!set
-    machine: null
     package_audit: null
+    machine: null
 bash_conditional: null
 fixes: {}
 title: Configure a Sufficiently Large Partition for Audit Logs

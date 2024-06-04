@@ -4,7 +4,7 @@
     <ns2:product_name>Script combine_ovals.py from SCAP Security Guide</ns2:product_name>
     <ns2:product_version>ssg: [0, 1, 73], python: 3.11.9</ns2:product_version>
     <ns2:schema_version>5.11</ns2:schema_version>
-    <ns2:timestamp>2024-06-04T07:07:44</ns2:timestamp>
+    <ns2:timestamp>2024-06-04T10:03:33</ns2:timestamp>
   </ns0:generator>
   <ns0:definitions>
     <ns0:definition id="installed_OS_is_alinux2" version="1" class="inventory">

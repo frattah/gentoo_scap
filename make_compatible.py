@@ -30,6 +30,12 @@ for metadata in root.iter(OVAL_DEF+'metadata'):
 	for contributor in metadata.findall(DC+'contributor'):
 		metadata.remove(contributor)
 
-
 # Substitute the datastream collection
 tree.write('ssg-gentoo-ds.xml')
+
+with open(r'ssg-gentoo-ds.xml', 'r') as file:
+	data = file.read()
+	data = data.replace("/etc/bashrc","/etc/bash/bashrc")
+
+with open(r'ssg-gentoo-ds.xml', 'w') as file:
+	file.write(data)

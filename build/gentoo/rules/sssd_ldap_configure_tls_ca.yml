@@ -62,13 +62,13 @@ platforms: !!set
     sssd-ldap: null
 sce_metadata: {}
 inherited_platforms: !!set
-    package[sssd]: null
     machine: null
+    package[sssd]: null
 cpe_platform_names: !!set
     sssd-ldap: null
 inherited_cpe_platform_names: !!set
-    package_sssd: null
     machine: null
+    package_sssd: null
 bash_conditional: null
 fixes: {}
 title: Configure SSSD LDAP Backend Client CA Certificate

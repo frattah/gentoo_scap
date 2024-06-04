@@ -194,8 +194,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - coreos_audit_backlog_limit_kernel_argument
     - coreos_audit_option
+    - coreos_audit_backlog_limit_kernel_argument
     controls: []
 -   id: SRG-APP-000126-CTR-000275
     levels:
@@ -794,70 +794,70 @@ controls:
     related_rules:
     - audit_profile_set
     rules:
-    - audit_rules_kernel_module_loading_finit
-    - audit_rules_sudoers_d
-    - audit_rules_privileged_commands_pam_timestamp_check
-    - audit_rules_privileged_commands_sudoedit
-    - audit_rules_dac_modification_lremovexattr
-    - audit_rules_unsuccessful_file_modification_open
-    - audit_rules_privileged_commands_gpasswd
-    - audit_rules_privileged_commands_postdrop
-    - audit_rules_privileged_commands_sudo
-    - audit_rules_privileged_commands_su
-    - audit_rules_execution_setfacl
-    - audit_rules_usergroup_modification_group
-    - audit_rules_media_export
-    - audit_rules_dac_modification_chmod
+    - audit_rules_dac_modification_umount
+    - audit_rules_execution_semanage
     - audit_rules_unsuccessful_file_modification_truncate
-    - audit_rules_dac_modification_fchown
-    - audit_rules_kernel_module_loading_delete
-    - audit_immutable_login_uids
-    - audit_rules_privileged_commands_crontab
-    - audit_rules_dac_modification_fchmod
-    - audit_rules_dac_modification_umount2
-    - audit_rules_dac_modification_fchmodat
-    - audit_rules_execution_chacl
-    - audit_rules_privileged_commands_ssh_agent
-    - audit_rules_unsuccessful_file_modification_openat
-    - audit_rules_privileged_commands_unix_chkpwd
-    - audit_rules_privileged_commands_newgrp
-    - audit_rules_file_deletion_events_unlink
-    - audit_rules_privileged_commands_kmod
-    - audit_rules_login_events_lastlog
     - audit_rules_dac_modification_chown
-    - audit_rules_privileged_commands_chsh
+    - audit_rules_dac_modification_fchmod
+    - audit_rules_file_deletion_events_rename
+    - audit_rules_dac_modification_lremovexattr
+    - audit_rules_unsuccessful_file_modification_open_by_handle_at
+    - audit_rules_usergroup_modification_shadow
+    - audit_rules_privileged_commands_crontab
+    - audit_rules_dac_modification_removexattr
+    - audit_immutable_login_uids
+    - audit_rules_privileged_commands_newgrp
+    - audit_rules_file_deletion_events_rmdir
+    - audit_rules_kernel_module_loading_finit
+    - audit_rules_dac_modification_umount2
+    - audit_rules_unsuccessful_file_modification_open
+    - audit_rules_usergroup_modification_passwd
+    - audit_rules_privileged_commands_unix_chkpwd
     - audit_rules_privileged_commands_ssh_keysign
     - audit_rules_file_deletion_events_renameat
-    - audit_rules_execution_semanage
-    - audit_rules_unsuccessful_file_modification_ftruncate
-    - audit_rules_dac_modification_fremovexattr
-    - audit_rules_usergroup_modification_opasswd
-    - audit_rules_execution_setfiles
-    - audit_rules_dac_modification_fsetxattr
-    - audit_rules_privileged_commands_chage
-    - audit_rules_execution_chcon
-    - audit_rules_dac_modification_setxattr
-    - audit_rules_usergroup_modification_gshadow
-    - audit_rules_dac_modification_umount
+    - audit_rules_privileged_commands_pam_timestamp_check
+    - audit_rules_kernel_module_loading_delete
+    - audit_rules_execution_chacl
     - audit_rules_execution_setsebool
-    - audit_rules_kernel_module_loading_init
-    - audit_rules_dac_modification_lsetxattr
-    - audit_rules_dac_modification_fchownat
-    - audit_rules_sudoers
-    - audit_rules_privileged_commands_userhelper
-    - audit_rules_file_deletion_events_rename
-    - audit_rules_dac_modification_lchown
-    - audit_rules_privileged_commands_usermod
-    - audit_rules_privileged_commands_passwd
-    - audit_rules_privileged_commands_unix_update
+    - audit_rules_privileged_commands_gpasswd
+    - audit_rules_privileged_commands_sudo
+    - audit_rules_usergroup_modification_opasswd
+    - audit_rules_dac_modification_fremovexattr
     - audit_rules_unsuccessful_file_modification_creat
-    - audit_rules_dac_modification_removexattr
-    - audit_rules_usergroup_modification_shadow
-    - audit_rules_unsuccessful_file_modification_open_by_handle_at
-    - audit_rules_file_deletion_events_unlinkat
-    - audit_rules_file_deletion_events_rmdir
-    - audit_rules_usergroup_modification_passwd
+    - audit_rules_privileged_commands_kmod
+    - audit_rules_kernel_module_loading_init
     - audit_rules_privileged_commands_postqueue
+    - audit_rules_dac_modification_fchmodat
+    - audit_rules_dac_modification_chmod
+    - audit_rules_dac_modification_fchownat
+    - audit_rules_privileged_commands_unix_update
+    - audit_rules_media_export
+    - audit_rules_sudoers
+    - audit_rules_login_events_lastlog
+    - audit_rules_privileged_commands_sudoedit
+    - audit_rules_dac_modification_setxattr
+    - audit_rules_file_deletion_events_unlinkat
+    - audit_rules_privileged_commands_userhelper
+    - audit_rules_dac_modification_fsetxattr
+    - audit_rules_privileged_commands_passwd
+    - audit_rules_execution_setfacl
+    - audit_rules_privileged_commands_usermod
+    - audit_rules_execution_setfiles
+    - audit_rules_privileged_commands_su
+    - audit_rules_usergroup_modification_gshadow
+    - audit_rules_dac_modification_lchown
+    - audit_rules_dac_modification_lsetxattr
+    - audit_rules_execution_chcon
+    - audit_rules_privileged_commands_ssh_agent
+    - audit_rules_file_deletion_events_unlink
+    - audit_rules_usergroup_modification_group
+    - audit_rules_unsuccessful_file_modification_openat
+    - audit_rules_unsuccessful_file_modification_ftruncate
+    - audit_rules_privileged_commands_chage
+    - audit_rules_dac_modification_fchown
+    - audit_rules_privileged_commands_chsh
+    - audit_rules_privileged_commands_postdrop
+    - audit_rules_sudoers_d
     controls: []
 -   id: SRG-APP-000605-CTR-001380
     levels:
@@ -1376,22 +1376,22 @@ controls:
     related_rules:
     - audit_profile_set
     rules:
-    - audit_rules_dac_modification_fchmod
-    - audit_rules_dac_modification_fchownat
     - audit_rules_dac_modification_fchmodat
-    - audit_modify_failed
-    - audit_rules_dac_modification_chown
+    - audit_rules_dac_modification_chmod
+    - audit_create_failed
+    - audit_rules_dac_modification_fchownat
     - audit_rules_dac_modification_lchown
-    - audit_rules_dac_modification_fremovexattr
+    - audit_rules_dac_modification_chown
+    - audit_rules_dac_modification_fchmod
     - audit_rules_dac_modification_lremovexattr
+    - audit_rules_dac_modification_lsetxattr
+    - audit_access_failed
+    - audit_rules_dac_modification_setxattr
+    - audit_rules_dac_modification_fchown
     - audit_rules_dac_modification_fsetxattr
     - audit_rules_dac_modification_removexattr
-    - audit_rules_dac_modification_setxattr
-    - audit_rules_dac_modification_chmod
-    - audit_access_failed
-    - audit_rules_dac_modification_fchown
-    - audit_create_failed
-    - audit_rules_dac_modification_lsetxattr
+    - audit_modify_failed
+    - audit_rules_dac_modification_fremovexattr
     controls: []
 -   id: SRG-APP-000266-CTR-000625
     levels:
@@ -1480,23 +1480,23 @@ controls:
     related_rules:
     - audit_profile_set
     rules:
+    - audit_rules_unsuccessful_file_modification_rename
     - audit_rules_file_deletion_events_renameat
     - audit_rules_file_deletion_events_rename
+    - audit_delete_failed
     - audit_rules_dac_modification_lremovexattr
-    - audit_rules_privileged_commands_pt_chown
-    - audit_rules_file_deletion_events_unlink
-    - audit_rules_dac_modification_fsetxattr
-    - audit_rules_privileged_commands_chage
     - audit_rules_execution_chcon
+    - audit_rules_dac_modification_lsetxattr
+    - audit_rules_file_deletion_events_unlink
     - audit_rules_file_deletion_events_unlinkat
+    - audit_rules_privileged_commands_chage
     - audit_rules_unsuccessful_file_modification_unlinkat
     - audit_rules_dac_modification_removexattr
+    - audit_rules_dac_modification_fsetxattr
     - audit_rules_unsuccessful_file_modification_unlink
-    - audit_rules_unsuccessful_file_modification_rename
-    - audit_delete_failed
     - audit_rules_file_deletion_events_rmdir
     - audit_rules_unsuccessful_file_modification_renameat
-    - audit_rules_dac_modification_lsetxattr
+    - audit_rules_privileged_commands_pt_chown
     controls: []
 -   id: SRG-APP-000148-CTR-000335
     levels:
@@ -1861,22 +1861,22 @@ controls:
     related_rules:
     - audit_profile_set
     rules:
-    - audit_rules_dac_modification_fchmod
-    - audit_rules_dac_modification_fchownat
     - audit_rules_dac_modification_fchmodat
-    - audit_modify_failed
-    - audit_rules_dac_modification_chown
+    - audit_rules_dac_modification_chmod
+    - audit_create_failed
+    - audit_rules_dac_modification_fchownat
     - audit_rules_dac_modification_lchown
-    - audit_rules_dac_modification_fremovexattr
+    - audit_rules_dac_modification_chown
+    - audit_rules_dac_modification_fchmod
     - audit_rules_dac_modification_lremovexattr
+    - audit_rules_dac_modification_lsetxattr
+    - audit_access_failed
+    - audit_rules_dac_modification_setxattr
+    - audit_rules_dac_modification_fchown
     - audit_rules_dac_modification_fsetxattr
     - audit_rules_dac_modification_removexattr
-    - audit_rules_dac_modification_setxattr
-    - audit_rules_dac_modification_chmod
-    - audit_access_failed
-    - audit_rules_dac_modification_fchown
-    - audit_create_failed
-    - audit_rules_dac_modification_lsetxattr
+    - audit_modify_failed
+    - audit_rules_dac_modification_fremovexattr
     controls: []
 -   id: SRG-APP-000096-CTR-000175
     levels:
@@ -1897,8 +1897,8 @@ controls:
     related_rules:
     - audit_profile_set
     rules:
-    - auditd_data_disk_error_action
     - auditd_data_retention_max_log_file_action_stig
+    - auditd_data_disk_error_action
     - auditd_log_format
     controls: []
 -   id: SRG-APP-000150-CTR-000360
@@ -2057,14 +2057,14 @@ controls:
     - directory_permissions_var_log_oauth_audit
     - directory_permissions_var_log_ocp_audit
     rules:
-    - file_permissions_var_log
-    - file_owner_system_journal
-    - file_groupowner_system_journal
-    - file_groupowner_var_log
-    - file_permissions_var_log_audit
-    - file_owner_var_log
-    - file_ownership_var_log_audit
     - file_permissions_system_journal
+    - file_groupowner_system_journal
+    - file_permissions_var_log
+    - file_groupowner_var_log
+    - file_ownership_var_log_audit
+    - file_owner_var_log
+    - file_owner_system_journal
+    - file_permissions_var_log_audit
     controls: []
 -   id: SRG-APP-000172-CTR-000440
     levels:
@@ -2413,30 +2413,30 @@ controls:
     - ocp_idp_no_htpasswd
     - kubeadmin_removed
     rules:
-    - audit_rules_privileged_commands_sssd_krb5_child
-    - audit_rules_privileged_commands_pam_timestamp_check
-    - audit_rules_privileged_commands_fusermount
-    - audit_rules_privileged_commands_gpasswd
-    - audit_rules_privileged_commands_mount
-    - audit_rules_privileged_commands_sudo
-    - audit_rules_privileged_commands_su
+    - audit_rules_privileged_commands_dbus_daemon_launch_helper
+    - audit_rules_privileged_commands_mount_nfs
+    - audit_rules_privileged_commands_write
+    - audit_rules_privileged_commands_newgrp
+    - audit_rules_privileged_commands_umount
     - audit_rules_privileged_commands_sssd_selinux_child
     - audit_rules_privileged_commands_unix_chkpwd
-    - audit_rules_privileged_commands_pkexec
-    - audit_rules_privileged_commands_polkit_helper
-    - audit_rules_privileged_commands_sssd_ldap_child
-    - audit_rules_privileged_commands_grub2_set_bootflag
-    - audit_rules_privileged_commands_sssd_proxy_child
-    - audit_rules_privileged_commands_newgrp
-    - audit_rules_privileged_commands_mount_nfs
     - audit_rules_privileged_commands_ssh_keysign
-    - audit_rules_privileged_commands_fusermount3
-    - audit_rules_privileged_commands_dbus_daemon_launch_helper
-    - audit_rules_privileged_commands_chage
-    - audit_rules_privileged_commands_write
+    - audit_rules_privileged_commands_sssd_ldap_child
+    - audit_rules_privileged_commands_pam_timestamp_check
+    - audit_rules_privileged_commands_polkit_helper
+    - audit_rules_privileged_commands_grub2_set_bootflag
+    - audit_rules_privileged_commands_gpasswd
+    - audit_rules_privileged_commands_sssd_krb5_child
+    - audit_rules_privileged_commands_sudo
     - audit_rules_privileged_commands_utempter
+    - audit_rules_privileged_commands_pkexec
+    - audit_rules_privileged_commands_sssd_proxy_child
     - audit_rules_privileged_commands_passwd
-    - audit_rules_privileged_commands_umount
+    - audit_rules_privileged_commands_mount
+    - audit_rules_privileged_commands_fusermount
+    - audit_rules_privileged_commands_su
+    - audit_rules_privileged_commands_chage
+    - audit_rules_privileged_commands_fusermount3
     controls: []
 -   id: SRG-APP-000502-CTR-001270
     levels:
@@ -2458,23 +2458,23 @@ controls:
     related_rules:
     - audit_profile_set
     rules:
+    - audit_rules_unsuccessful_file_modification_rename
     - audit_rules_file_deletion_events_renameat
     - audit_rules_file_deletion_events_rename
+    - audit_delete_failed
     - audit_rules_dac_modification_lremovexattr
-    - audit_rules_privileged_commands_pt_chown
-    - audit_rules_file_deletion_events_unlink
-    - audit_rules_dac_modification_fsetxattr
-    - audit_rules_privileged_commands_chage
     - audit_rules_execution_chcon
+    - audit_rules_dac_modification_lsetxattr
+    - audit_rules_file_deletion_events_unlink
     - audit_rules_file_deletion_events_unlinkat
+    - audit_rules_privileged_commands_chage
     - audit_rules_unsuccessful_file_modification_unlinkat
     - audit_rules_dac_modification_removexattr
+    - audit_rules_dac_modification_fsetxattr
     - audit_rules_unsuccessful_file_modification_unlink
-    - audit_rules_unsuccessful_file_modification_rename
-    - audit_delete_failed
     - audit_rules_file_deletion_events_rmdir
     - audit_rules_unsuccessful_file_modification_renameat
-    - audit_rules_dac_modification_lsetxattr
+    - audit_rules_privileged_commands_pt_chown
     controls: []
 -   id: SRG-APP-000357-CTR-000800
     levels:
@@ -2495,10 +2495,10 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - auditd_data_disk_error_action
-    - auditd_data_retention_max_log_file_action_stig
     - partition_for_var_log_audit
+    - auditd_data_disk_error_action
     - auditd_log_format
+    - auditd_data_retention_max_log_file_action_stig
     controls: []
 -   id: SRG-APP-000095-CTR-000170
     levels:
@@ -2683,8 +2683,8 @@ controls:
     related_rules:
     - audit_log_forwarding_uses_tls
     rules:
-    - auditd_data_disk_error_action
     - auditd_data_retention_max_log_file_action_stig
+    - auditd_data_disk_error_action
     - auditd_log_format
     controls: []
 -   id: SRG-APP-000069-CTR-000125
@@ -3078,10 +3078,10 @@ controls:
     original_title: null
     related_rules: []
     rules:
+    - audit_rules_kernel_module_loading_init
+    - audit_rules_kernel_module_loading_delete
     - audit_rules_kernel_module_loading_finit
     - audit_rules_privileged_commands_kmod
-    - audit_rules_kernel_module_loading_delete
-    - audit_rules_kernel_module_loading_init
     controls: []
 -   id: SRG-APP-000496-CTR-001240
     levels:
@@ -3103,16 +3103,16 @@ controls:
     related_rules:
     - audit_profile_set
     rules:
-    - audit_rules_dac_modification_removexattr
     - audit_rules_execution_semanage
     - audit_rules_dac_modification_lremovexattr
-    - audit_rules_dac_modification_fremovexattr
-    - audit_rules_usergroup_modification_opasswd
-    - audit_rules_dac_modification_fsetxattr
     - audit_rules_dac_modification_lsetxattr
     - audit_rules_execution_chcon
-    - audit_rules_execution_setfiles
+    - audit_rules_dac_modification_removexattr
+    - audit_rules_dac_modification_fsetxattr
     - audit_rules_execution_setsebool
+    - audit_rules_usergroup_modification_opasswd
+    - audit_rules_dac_modification_fremovexattr
+    - audit_rules_execution_setfiles
     controls: []
 -   id: SRG-APP-000116-CTR-000235
     levels:
@@ -3135,8 +3135,8 @@ controls:
     - chronyd_or_ntpd_set_maxpoll
     - chronyd_client_only
     rules:
-    - chronyd_or_ntpd_specify_remote_server
     - service_chronyd_or_ntpd_enabled
+    - chronyd_or_ntpd_specify_remote_server
     controls: []
 -   id: SRG-APP-000497-CTR-001245
     levels:
@@ -3158,16 +3158,16 @@ controls:
     related_rules:
     - audit_profile_set
     rules:
-    - audit_rules_dac_modification_removexattr
     - audit_rules_execution_semanage
     - audit_rules_dac_modification_lremovexattr
-    - audit_rules_dac_modification_fremovexattr
-    - audit_rules_usergroup_modification_opasswd
-    - audit_rules_dac_modification_fsetxattr
     - audit_rules_dac_modification_lsetxattr
     - audit_rules_execution_chcon
-    - audit_rules_execution_setfiles
+    - audit_rules_dac_modification_removexattr
+    - audit_rules_dac_modification_fsetxattr
     - audit_rules_execution_setsebool
+    - audit_rules_usergroup_modification_opasswd
+    - audit_rules_dac_modification_fremovexattr
+    - audit_rules_execution_setfiles
     controls: []
 -   id: SRG-APP-000039-CTR-000110
     levels:
@@ -3271,16 +3271,16 @@ controls:
     related_rules:
     - audit_profile_set
     rules:
-    - audit_rules_dac_modification_removexattr
     - audit_rules_execution_semanage
     - audit_rules_dac_modification_lremovexattr
-    - audit_rules_dac_modification_fremovexattr
-    - audit_rules_usergroup_modification_opasswd
-    - audit_rules_dac_modification_fsetxattr
     - audit_rules_dac_modification_lsetxattr
     - audit_rules_execution_chcon
-    - audit_rules_execution_setfiles
+    - audit_rules_dac_modification_removexattr
+    - audit_rules_dac_modification_fsetxattr
     - audit_rules_execution_setsebool
+    - audit_rules_usergroup_modification_opasswd
+    - audit_rules_dac_modification_fremovexattr
+    - audit_rules_execution_setfiles
     controls: []
 -   id: SRG-APP-000510-CTR-001310
     levels:
@@ -3365,8 +3365,8 @@ controls:
     related_rules:
     - audit_profile_set
     rules:
-    - auditd_data_disk_error_action
     - auditd_data_retention_max_log_file_action_stig
+    - auditd_data_disk_error_action
     - auditd_log_format
     controls: []
 -   id: SRG-APP-000514-CTR-001315
@@ -3484,8 +3484,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - auditd_data_disk_error_action
     - auditd_data_retention_max_log_file_action_stig
+    - auditd_data_disk_error_action
     - auditd_log_format
     controls: []
 -   id: SRG-APP-000142-CTR-000325
@@ -3588,9 +3588,9 @@ controls:
     rules:
     - sysctl_kernel_perf_event_paranoid
     - coreos_page_poison_kernel_argument
-    - coreos_vsyscall_kernel_argument
-    - sysctl_kernel_dmesg_restrict
     - coreos_slub_debug_kernel_argument
+    - sysctl_kernel_dmesg_restrict
+    - coreos_vsyscall_kernel_argument
     controls: []
 -   id: SRG-APP-000164-CTR-000400
     levels:
@@ -3679,8 +3679,8 @@ controls:
     related_rules:
     - audit_profile_set
     rules:
-    - auditd_data_disk_error_action
     - auditd_data_retention_max_log_file_action_stig
+    - auditd_data_disk_error_action
     - auditd_log_format
     controls: []
 -   id: SRG-APP-000142-CTR-000330
@@ -3856,22 +3856,22 @@ controls:
     related_rules:
     - audit_profile_set
     rules:
-    - audit_rules_dac_modification_fchmod
-    - audit_rules_dac_modification_fchownat
     - audit_rules_dac_modification_fchmodat
-    - audit_modify_failed
-    - audit_rules_dac_modification_chown
+    - audit_rules_dac_modification_chmod
+    - audit_create_failed
+    - audit_rules_dac_modification_fchownat
     - audit_rules_dac_modification_lchown
-    - audit_rules_dac_modification_fremovexattr
+    - audit_rules_dac_modification_chown
+    - audit_rules_dac_modification_fchmod
     - audit_rules_dac_modification_lremovexattr
+    - audit_rules_dac_modification_lsetxattr
+    - audit_access_failed
+    - audit_rules_dac_modification_setxattr
+    - audit_rules_dac_modification_fchown
     - audit_rules_dac_modification_fsetxattr
     - audit_rules_dac_modification_removexattr
-    - audit_rules_dac_modification_setxattr
-    - audit_rules_dac_modification_chmod
-    - audit_access_failed
-    - audit_rules_dac_modification_fchown
-    - audit_create_failed
-    - audit_rules_dac_modification_lsetxattr
+    - audit_modify_failed
+    - audit_rules_dac_modification_fremovexattr
     controls: []
 -   id: SRG-APP-000635-CTR-001405
     levels:
@@ -4016,22 +4016,22 @@ controls:
     related_rules:
     - audit_profile_set
     rules:
-    - audit_rules_dac_modification_fchmod
-    - audit_rules_dac_modification_fchownat
     - audit_rules_dac_modification_fchmodat
-    - audit_modify_failed
-    - audit_rules_dac_modification_chown
+    - audit_rules_dac_modification_chmod
+    - audit_create_failed
+    - audit_rules_dac_modification_fchownat
     - audit_rules_dac_modification_lchown
-    - audit_rules_dac_modification_fremovexattr
+    - audit_rules_dac_modification_chown
+    - audit_rules_dac_modification_fchmod
     - audit_rules_dac_modification_lremovexattr
+    - audit_rules_dac_modification_lsetxattr
+    - audit_access_failed
+    - audit_rules_dac_modification_setxattr
+    - audit_rules_dac_modification_fchown
     - audit_rules_dac_modification_fsetxattr
     - audit_rules_dac_modification_removexattr
-    - audit_rules_dac_modification_setxattr
-    - audit_rules_dac_modification_chmod
-    - audit_access_failed
-    - audit_rules_dac_modification_fchown
-    - audit_create_failed
-    - audit_rules_dac_modification_lsetxattr
+    - audit_modify_failed
+    - audit_rules_dac_modification_fremovexattr
     controls: []
 -   id: SRG-APP-000378-CTR-000890
     levels:
@@ -4071,12 +4071,12 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - package_usbguard_installed
-    - service_usbguard_enabled
-    - usbguard_allow_hid_and_hub
     - kernel_module_usb-storage_disabled
+    - usbguard_allow_hid_and_hub
+    - service_usbguard_enabled
     - service_sshd_disabled
     - configure_usbguard_auditbackend
+    - package_usbguard_installed
     controls: []
 -   id: SRG-APP-000500-CTR-001260
     levels:
@@ -4098,22 +4098,22 @@ controls:
     related_rules:
     - audit_profile_set
     rules:
-    - audit_rules_dac_modification_fchmod
-    - audit_rules_dac_modification_fchownat
     - audit_rules_dac_modification_fchmodat
-    - audit_modify_failed
-    - audit_rules_dac_modification_chown
+    - audit_rules_dac_modification_chmod
+    - audit_create_failed
+    - audit_rules_dac_modification_fchownat
     - audit_rules_dac_modification_lchown
-    - audit_rules_dac_modification_fremovexattr
+    - audit_rules_dac_modification_chown
+    - audit_rules_dac_modification_fchmod
     - audit_rules_dac_modification_lremovexattr
+    - audit_rules_dac_modification_lsetxattr
+    - audit_access_failed
+    - audit_rules_dac_modification_setxattr
+    - audit_rules_dac_modification_fchown
     - audit_rules_dac_modification_fsetxattr
     - audit_rules_dac_modification_removexattr
-    - audit_rules_dac_modification_setxattr
-    - audit_rules_dac_modification_chmod
-    - audit_access_failed
-    - audit_rules_dac_modification_fchown
-    - audit_create_failed
-    - audit_rules_dac_modification_lsetxattr
+    - audit_modify_failed
+    - audit_rules_dac_modification_fremovexattr
     controls: []
 -   id: SRG-APP-000225-CTR-000570
     levels:
@@ -4381,8 +4381,8 @@ controls:
     related_rules:
     - audit_profile_set
     rules:
-    - auditd_data_disk_error_action
     - auditd_data_retention_max_log_file_action_stig
+    - auditd_data_disk_error_action
     - auditd_log_format
     controls: []
 -   id: SRG-APP-000065-CTR-000115
@@ -4437,16 +4437,16 @@ controls:
     - ocp_idp_no_htpasswd
     - kubeadmin_removed
     rules:
-    - audit_rules_login_events_faillock
-    - audit_rules_sudoers_d
-    - audit_rules_usergroup_modification_opasswd
+    - audit_rules_usergroup_modification_passwd
     - audit_rules_login_events_tallylog
+    - audit_rules_usergroup_modification_gshadow
+    - audit_rules_sudoers
+    - audit_rules_login_events_lastlog
     - audit_rules_usergroup_modification_group
     - audit_rules_usergroup_modification_shadow
-    - audit_rules_usergroup_modification_gshadow
-    - audit_rules_login_events_lastlog
-    - audit_rules_usergroup_modification_passwd
-    - audit_rules_sudoers
+    - audit_rules_login_events_faillock
+    - audit_rules_usergroup_modification_opasswd
+    - audit_rules_sudoers_d
     controls: []
 -   id: SRG-APP-000294-CTR-000690
     levels:
@@ -4532,22 +4532,22 @@ controls:
     related_rules:
     - audit_profile_set
     rules:
-    - audit_rules_dac_modification_fchmod
-    - audit_rules_dac_modification_fchownat
     - audit_rules_dac_modification_fchmodat
-    - audit_modify_failed
-    - audit_rules_dac_modification_chown
+    - audit_rules_dac_modification_chmod
+    - audit_create_failed
+    - audit_rules_dac_modification_fchownat
     - audit_rules_dac_modification_lchown
-    - audit_rules_dac_modification_fremovexattr
+    - audit_rules_dac_modification_chown
+    - audit_rules_dac_modification_fchmod
     - audit_rules_dac_modification_lremovexattr
+    - audit_rules_dac_modification_lsetxattr
+    - audit_access_failed
+    - audit_rules_dac_modification_setxattr
+    - audit_rules_dac_modification_fchown
     - audit_rules_dac_modification_fsetxattr
     - audit_rules_dac_modification_removexattr
-    - audit_rules_dac_modification_setxattr
-    - audit_rules_dac_modification_chmod
-    - audit_access_failed
-    - audit_rules_dac_modification_fchown
-    - audit_create_failed
-    - audit_rules_dac_modification_lsetxattr
+    - audit_modify_failed
+    - audit_rules_dac_modification_fremovexattr
     controls: []
 -   id: SRG-APP-000027-CTR-000075
     levels:
@@ -4843,8 +4843,8 @@ controls:
     related_rules:
     - audit_profile_set
     rules:
-    - auditd_data_disk_error_action
     - auditd_data_retention_max_log_file_action_stig
+    - auditd_data_disk_error_action
     - auditd_log_format
     controls: []
 -   id: SRG-APP-000345-CTR-000785
@@ -4897,8 +4897,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - sysctl_kernel_randomize_va_space
     - bios_enable_execution_restrictions
+    - sysctl_kernel_randomize_va_space
     controls: []
 -   id: SRG-APP-000499-CTR-001255
     levels:
@@ -4920,32 +4920,32 @@ controls:
     related_rules:
     - audit_profile_set
     rules:
-    - audit_rules_sudoers_d
-    - audit_rules_dac_modification_lremovexattr
-    - audit_rules_privileged_commands_sudo
-    - audit_rules_privileged_commands_su
-    - audit_rules_usergroup_modification_group
-    - audit_rules_dac_modification_chmod
-    - audit_rules_dac_modification_fchown
-    - audit_rules_dac_modification_fchmod
-    - audit_rules_execution_chacl
-    - audit_rules_dac_modification_fchmodat
-    - audit_rules_file_deletion_events_unlink
     - audit_rules_dac_modification_chown
-    - audit_rules_file_deletion_events_renameat
-    - audit_rules_dac_modification_fremovexattr
-    - audit_rules_usergroup_modification_gshadow
-    - audit_rules_sudoers
-    - audit_rules_dac_modification_fchownat
+    - audit_rules_dac_modification_fchmod
     - audit_rules_file_deletion_events_rename
-    - audit_rules_dac_modification_lchown
-    - audit_rules_privileged_commands_pt_chown
-    - audit_rules_privileged_commands_usermod
+    - audit_rules_dac_modification_lremovexattr
     - audit_rules_usergroup_modification_shadow
     - audit_rules_dac_modification_removexattr
-    - audit_rules_file_deletion_events_unlinkat
     - audit_rules_file_deletion_events_rmdir
     - audit_rules_usergroup_modification_passwd
+    - audit_rules_file_deletion_events_renameat
+    - audit_rules_execution_chacl
+    - audit_rules_privileged_commands_sudo
+    - audit_rules_dac_modification_fremovexattr
+    - audit_rules_dac_modification_fchmodat
+    - audit_rules_dac_modification_chmod
+    - audit_rules_dac_modification_fchownat
+    - audit_rules_sudoers
+    - audit_rules_file_deletion_events_unlinkat
+    - audit_rules_privileged_commands_pt_chown
+    - audit_rules_privileged_commands_usermod
+    - audit_rules_privileged_commands_su
+    - audit_rules_usergroup_modification_gshadow
+    - audit_rules_dac_modification_lchown
+    - audit_rules_usergroup_modification_group
+    - audit_rules_file_deletion_events_unlink
+    - audit_rules_dac_modification_fchown
+    - audit_rules_sudoers_d
     controls: []
 -   id: SRG-APP-000378-CTR-000885
     levels:
@@ -5186,8 +5186,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - coreos_enable_selinux_kernel_argument
     - selinux_state
+    - coreos_enable_selinux_kernel_argument
     - selinux_policytype
     controls: []
 -   id: SRG-APP-000100-CTR-000200
@@ -5210,8 +5210,8 @@ controls:
     related_rules:
     - audit_profile_set
     rules:
-    - auditd_data_disk_error_action
     - auditd_data_retention_max_log_file_action_stig
+    - auditd_data_disk_error_action
     - auditd_log_format
     controls: []
 -   id: SRG-APP-000505-CTR-001285

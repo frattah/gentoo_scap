@@ -265,8 +265,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_permissions_unauthorized_suid
     - file_permissions_unauthorized_sgid
+    - file_permissions_unauthorized_suid
     - file_permissions_unauthorized_suid.severity=high
     - file_permissions_unauthorized_sgid.severity=high
     controls: []
@@ -1007,30 +1007,30 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_groupowner_backup_etc_group
-    - file_owner_etc_group
-    - file_owner_backup_etc_group
-    - file_permissions_etc_gshadow
-    - file_permissions_backup_etc_passwd
     - file_owner_backup_etc_gshadow
-    - file_owner_backup_etc_passwd
-    - file_groupowner_backup_etc_shadow
-    - file_owner_backup_etc_shadow
-    - file_permissions_backup_etc_group
-    - file_owner_etc_gshadow
-    - file_permissions_etc_group
-    - file_permissions_backup_etc_gshadow
-    - file_owner_etc_shadow
-    - file_owner_etc_passwd
-    - file_groupowner_backup_etc_passwd
     - file_permissions_backup_etc_shadow
-    - file_groupowner_etc_passwd
+    - file_owner_etc_passwd
+    - file_groupowner_backup_etc_shadow
     - file_groupowner_etc_group
+    - file_groupowner_backup_etc_group
+    - file_owner_backup_etc_shadow
+    - file_groupowner_etc_passwd
+    - file_permissions_etc_shadow
+    - file_permissions_backup_etc_group
+    - file_owner_backup_etc_passwd
+    - file_owner_etc_shadow
+    - file_owner_etc_group
+    - file_owner_etc_gshadow
+    - file_groupowner_backup_etc_gshadow
+    - file_owner_backup_etc_group
+    - file_permissions_backup_etc_gshadow
+    - file_permissions_etc_gshadow
+    - file_groupowner_etc_shadow
     - file_groupowner_etc_gshadow
     - file_permissions_etc_passwd
-    - file_groupowner_backup_etc_gshadow
-    - file_groupowner_etc_shadow
-    - file_permissions_etc_shadow
+    - file_permissions_backup_etc_passwd
+    - file_permissions_etc_group
+    - file_groupowner_backup_etc_passwd
     - file_owner_etc_passwd.severity=high
     - file_groupowner_etc_passwd.severity=high
     - file_owner_etc_shadow.severity=high
@@ -1263,14 +1263,14 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - accounts_password_pam_enforce_root
-    - accounts_password_pam_minclass
-    - accounts_password_pam_lcredit
-    - accounts_password_pam_retry
-    - accounts_password_pam_minlen
-    - accounts_password_pam_ocredit
-    - accounts_password_pam_ucredit
     - accounts_password_pam_dcredit
+    - accounts_password_pam_ucredit
+    - accounts_password_pam_lcredit
+    - accounts_password_pam_enforce_root
+    - accounts_password_pam_ocredit
+    - accounts_password_pam_retry
+    - accounts_password_pam_minclass
+    - accounts_password_pam_minlen
     - var_password_pam_minlen=8
     - var_password_pam_minclass=3
     - var_password_pam_retry=3
@@ -1409,9 +1409,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - accounts_maximum_age_login_defs
-    - accounts_minimum_age_login_defs
     - accounts_password_warn_age_login_defs
+    - accounts_minimum_age_login_defs
+    - accounts_maximum_age_login_defs
     - var_accounts_maximum_age_login_defs=90
     - var_accounts_password_warn_age_login_defs=7
     - var_accounts_minimum_age_login_defs=0
@@ -1458,8 +1458,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - grub2_password
     - grub2_uefi_password
+    - grub2_password
     - grub2_password.severity=high
     - grub2_uefi_password.severity=high
     controls: []
@@ -1568,15 +1568,15 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_owner_etc_issue_net
-    - file_permissions_etc_issue
-    - file_groupowner_etc_motd
+    - file_groupowner_etc_issue
+    - file_owner_etc_motd
     - file_groupowner_etc_issue_net
     - file_permissions_etc_motd
-    - file_owner_etc_motd
-    - file_owner_etc_issue
-    - file_groupowner_etc_issue
     - file_permissions_etc_issue_net
+    - file_permissions_etc_issue
+    - file_groupowner_etc_motd
+    - file_owner_etc_issue
+    - file_owner_etc_issue_net
     - file_groupowner_etc_issue.severity=high
     - file_groupowner_etc_issue_net.severity=high
     - file_groupowner_etc_motd.severity=high
@@ -2303,8 +2303,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - disable_host_auth
     - sshd_disable_rhosts
+    - disable_host_auth
     - sshd_disable_rhosts.severity=high
     - disable_host_auth.severity=high
     controls: []
@@ -2779,31 +2779,31 @@ controls:
     original_title: null
     related_rules: []
     rules:
+    - file_permissions_cron_allow
+    - file_permissions_at_allow
+    - file_cron_deny_not_exist
+    - file_owner_cron_hourly
     - file_owner_cron_monthly
     - file_owner_at_allow
-    - file_cron_deny_not_exist
-    - file_permissions_cron_hourly
-    - file_groupowner_cron_d
     - file_owner_cron_weekly
-    - file_groupowner_cron_hourly
-    - file_permissions_cron_monthly
-    - file_owner_cron_daily
-    - file_groupowner_cron_weekly
+    - file_permissions_cron_daily
+    - file_groupowner_at_allow
+    - file_permissions_cron_hourly
+    - file_groupowner_crontab
+    - file_groupowner_cron_monthly
+    - file_groupowner_cron_d
     - file_groupowner_cron_allow
     - file_owner_crontab
-    - file_permissions_cron_daily
+    - file_groupowner_cron_hourly
     - file_groupowner_cron_daily
-    - file_groupowner_crontab
-    - file_permissions_cron_weekly
-    - file_groupowner_cron_monthly
-    - file_permissions_at_allow
-    - file_owner_cron_hourly
-    - file_permissions_cron_allow
-    - file_permissions_cron_d
-    - file_owner_cron_allow
-    - file_groupowner_at_allow
     - file_at_deny_not_exist
+    - file_owner_cron_allow
+    - file_permissions_cron_d
     - file_owner_cron_d
+    - file_permissions_cron_monthly
+    - file_permissions_cron_weekly
+    - file_owner_cron_daily
+    - file_groupowner_cron_weekly
     - file_permissions_crontab
     - file_groupowner_cron_d.severity=high
     - file_groupowner_cron_daily.severity=high
@@ -2977,10 +2977,10 @@ controls:
     original_title: null
     related_rules: []
     rules:
+    - sysctl_net_ipv6_conf_all_accept_redirects
     - sysctl_net_ipv4_conf_all_accept_redirects
     - sysctl_net_ipv4_conf_all_secure_redirects
     - sysctl_net_ipv4_conf_default_secure_redirects
-    - sysctl_net_ipv6_conf_all_accept_redirects
     - sysctl_net_ipv4_conf_all_accept_redirects_value=disabled
     - sysctl_net_ipv4_conf_all_secure_redirects_value=disabled
     - sysctl_net_ipv4_conf_default_secure_redirects_value=disabled
@@ -3008,8 +3008,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - sysctl_net_ipv4_conf_all_send_redirects
     - sysctl_net_ipv4_conf_default_send_redirects
+    - sysctl_net_ipv4_conf_all_send_redirects
     - sysctl_net_ipv4_conf_all_send_redirects.severity=high
     - sysctl_net_ipv4_conf_default_send_redirects.severity=high
     controls: []
@@ -3121,10 +3121,10 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - sysctl_net_ipv6_conf_all_accept_source_route
+    - sysctl_net_ipv4_conf_all_accept_source_route
     - sysctl_net_ipv4_conf_default_accept_source_route
     - sysctl_net_ipv6_conf_default_accept_source_route
-    - sysctl_net_ipv4_conf_all_accept_source_route
+    - sysctl_net_ipv6_conf_all_accept_source_route
     - sysctl_net_ipv4_conf_all_accept_source_route_value=disabled
     - sysctl_net_ipv4_conf_default_accept_source_route_value=disabled
     - sysctl_net_ipv6_conf_all_accept_source_route_value=disabled
@@ -3173,8 +3173,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - sysctl_net_ipv4_conf_all_log_martians
     - sysctl_net_ipv4_conf_default_log_martians
+    - sysctl_net_ipv4_conf_all_log_martians
     - sysctl_net_ipv4_conf_all_log_martians.severity=high
     - sysctl_net_ipv4_conf_default_log_martians.severity=high
     controls: []
@@ -3354,9 +3354,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - ntpd_configure_restrictions
     - service_ntpd_enabled
     - ntpd_specify_remote_server
+    - ntpd_configure_restrictions
     - service_ntpd_enabled.severity=low
     - ntpd_configure_restrictions.severity=low
     - ntpd_specify_remote_server.severity=low
@@ -3379,8 +3379,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - chronyd_specify_remote_server
     - service_chronyd_enabled
+    - chronyd_specify_remote_server
     - service_chronyd_enabled.severity=low
     - chronyd_specify_remote_server.severity=low
     controls: []
@@ -3469,11 +3469,11 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_usergroup_modification_opasswd
+    - audit_rules_usergroup_modification_passwd
+    - audit_rules_usergroup_modification_gshadow
     - audit_rules_usergroup_modification_group
     - audit_rules_usergroup_modification_shadow
-    - audit_rules_usergroup_modification_gshadow
-    - audit_rules_usergroup_modification_passwd
+    - audit_rules_usergroup_modification_opasswd
     - audit_rules_usergroup_modification_group.severity=low
     - audit_rules_usergroup_modification_gshadow.severity=low
     - audit_rules_usergroup_modification_opasswd.severity=low
@@ -3517,10 +3517,10 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_privileged_commands_modprobe
-    - audit_rules_privileged_commands_rmmod
     - audit_rules_kernel_module_loading
+    - audit_rules_privileged_commands_modprobe
     - audit_rules_privileged_commands_insmod
+    - audit_rules_privileged_commands_rmmod
     - audit_rules_privileged_commands_modprobe.severity=low
     - audit_rules_privileged_commands_insmod.severity=low
     - audit_rules_privileged_commands_rmmod.severity=low
@@ -3651,13 +3651,13 @@ controls:
     original_title: null
     related_rules: []
     rules:
+    - auditd_data_retention_space_left_action
+    - auditd_data_disk_error_action
     - auditd_data_retention_space_left
     - auditd_audispd_disk_full_action
-    - auditd_data_retention_space_left_action
+    - auditd_data_retention_admin_space_left_percentage
     - auditd_data_retention_admin_space_left_action
     - auditd_data_disk_full_action
-    - auditd_data_disk_error_action
-    - auditd_data_retention_admin_space_left_percentage
     - var_auditd_space_left_action=syslog
     - var_auditd_admin_space_left_percentage=50pc
     - var_auditd_admin_space_left_action=suspend
@@ -3731,9 +3731,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
+    - audit_rules_time_clock_settime
     - audit_rules_time_settimeofday
     - audit_rules_time_adjtimex
-    - audit_rules_time_clock_settime
     - audit_rules_time_adjtimex.severity=low
     - audit_rules_time_settimeofday.severity=low
     - audit_rules_time_clock_settime.severity=low
@@ -3800,18 +3800,18 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_successful_file_modification_lremovexattr
-    - audit_rules_successful_file_modification_fchownat
-    - audit_rules_successful_file_modification_fchown
-    - audit_rules_successful_file_modification_removexattr
-    - audit_rules_successful_file_modification_setxattr
-    - audit_rules_successful_file_modification_chmod
     - audit_rules_successful_file_modification_chown
-    - audit_rules_successful_file_modification_lsetxattr
     - audit_rules_successful_file_modification_fsetxattr
-    - audit_rules_successful_file_modification_fchmod
-    - audit_rules_successful_file_modification_fremovexattr
+    - audit_rules_successful_file_modification_fchown
+    - audit_rules_successful_file_modification_lremovexattr
+    - audit_rules_successful_file_modification_removexattr
+    - audit_rules_successful_file_modification_fchownat
+    - audit_rules_successful_file_modification_chmod
     - audit_rules_successful_file_modification_fchmodat
+    - audit_rules_successful_file_modification_fchmod
+    - audit_rules_successful_file_modification_lsetxattr
+    - audit_rules_successful_file_modification_fremovexattr
+    - audit_rules_successful_file_modification_setxattr
     - audit_rules_successful_file_modification_chmod.severity=low
     - audit_rules_successful_file_modification_fchmod.severity=low
     - audit_rules_successful_file_modification_fchmodat.severity=low
@@ -3864,9 +3864,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_successful_file_modification_renameat
-    - audit_rules_successful_file_modification_unlink
     - audit_rules_successful_file_modification_rename
+    - audit_rules_successful_file_modification_unlink
+    - audit_rules_successful_file_modification_renameat
     - audit_rules_successful_file_modification_unlinkat
     - audit_rules_successful_file_modification_rename.severity=low
     - audit_rules_successful_file_modification_renameat.severity=low

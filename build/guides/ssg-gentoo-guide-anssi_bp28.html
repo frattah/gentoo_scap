@@ -68,12 +68,12 @@ quality, reliability, or any other characteristic.
                     (as of 2024-06-04)
                 </li></ul></div><h2>Table of Contents</h2><ol><li><a href="#xccdf_org.ssgproject.content_group_system">System Settings</a><ol><li><a href="#xccdf_org.ssgproject.content_group_accounts">Account and Access Control</a></li></ol></li></ol><div id="guide-tree"><h2>Checklist</h2><table class="treetable table table-bordered"><tbody><tr data-tt-id="children-xccdf_org.ssgproject.content_benchmark_GENTOO"><td style="padding-left: 0px" id="xccdf_org.ssgproject.content_benchmark_GENTOO"><span class="label label-default">Group</span>  
                 Guide to the Secure Configuration of Gentoo
-                          <small>Group contains 7 groups and 10 rules</small></td></tr><tr data-tt-id="children-xccdf_org.ssgproject.content_group_system" data-tt-parent-id="children-xccdf_org.ssgproject.content_benchmark_GENTOO"><td style="padding-left: 19px" id="xccdf_org.ssgproject.content_group_system"><span class="label label-default">Group</span>  
+                          <small>Group contains 8 groups and 10 rules</small></td></tr><tr data-tt-id="children-xccdf_org.ssgproject.content_group_system" data-tt-parent-id="children-xccdf_org.ssgproject.content_benchmark_GENTOO"><td style="padding-left: 19px" id="xccdf_org.ssgproject.content_group_system"><span class="label label-default">Group</span>  
                 System Settings
-                          <small>Group contains 6 groups and 10 rules</small></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_group_system" class="guide-tree-inner-node guide-tree-inner-node-id-xccdf_org.ssgproject.content_group_system" data-tt-parent-id="children-xccdf_org.ssgproject.content_benchmark_GENTOO"><td style="padding-left: 19px"><div><a class="small" href="#xccdf_org.ssgproject.content_group_system">[ref]</a>  
+                          <small>Group contains 7 groups and 10 rules</small></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_group_system" class="guide-tree-inner-node guide-tree-inner-node-id-xccdf_org.ssgproject.content_group_system" data-tt-parent-id="children-xccdf_org.ssgproject.content_benchmark_GENTOO"><td style="padding-left: 19px"><div><a class="small" href="#xccdf_org.ssgproject.content_group_system">[ref]</a>  
                         Contains rules that check correct system settings.</div></td></tr><tr data-tt-id="children-xccdf_org.ssgproject.content_group_accounts" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_system"><td style="padding-left: 38px" id="xccdf_org.ssgproject.content_group_accounts"><span class="label label-default">Group</span>  
                 Account and Access Control
-                          <small>Group contains 5 groups and 10 rules</small></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_group_accounts" class="guide-tree-inner-node guide-tree-inner-node-id-xccdf_org.ssgproject.content_group_accounts" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_system"><td style="padding-left: 38px"><div><a class="small" href="#xccdf_org.ssgproject.content_group_accounts">[ref]</a>  
+                          <small>Group contains 6 groups and 10 rules</small></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_group_accounts" class="guide-tree-inner-node guide-tree-inner-node-id-xccdf_org.ssgproject.content_group_accounts" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_system"><td style="padding-left: 38px"><div><a class="small" href="#xccdf_org.ssgproject.content_group_accounts">[ref]</a>  
                         In traditional Unix security, if an attacker gains
 shell access to a certain login account, they can perform any action
 or access any file to which that account has access. Therefore,
@@ -83,7 +83,7 @@ necessary part of securing a system. This section introduces
 mechanisms for restricting access to accounts under
 Gentoo.</div></td></tr><tr data-tt-id="children-xccdf_org.ssgproject.content_group_accounts-pam" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_accounts"><td style="padding-left: 57px" id="xccdf_org.ssgproject.content_group_accounts-pam"><span class="label label-default">Group</span>  
                 Protect Accounts by Configuring PAM
-                          <small>Group contains 3 groups and 9 rules</small></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_group_accounts-pam" class="guide-tree-inner-node guide-tree-inner-node-id-xccdf_org.ssgproject.content_group_accounts-pam" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_accounts"><td style="padding-left: 57px"><div><a class="small" href="#xccdf_org.ssgproject.content_group_accounts-pam">[ref]</a>  
+                          <small>Group contains 3 groups and 6 rules</small></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_group_accounts-pam" class="guide-tree-inner-node guide-tree-inner-node-id-xccdf_org.ssgproject.content_group_accounts-pam" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_accounts"><td style="padding-left: 57px"><div><a class="small" href="#xccdf_org.ssgproject.content_group_accounts-pam">[ref]</a>  
                         PAM, or Pluggable Authentication Modules, is a system
 which implements modular authentication for Linux programs. PAM provides
 a flexible and configurable architecture for authentication, and it should be configured
@@ -127,7 +127,7 @@ One reference to the configuration file syntax can be found at
 
 <a href="https://fossies.org/linux/Linux-PAM-docs/doc/sag/Linux-PAM_SAG.pdf">https://fossies.org/linux/Linux-PAM-docs/doc/sag/Linux-PAM_SAG.pdf</a>.</div></div></td></tr><tr data-tt-id="children-xccdf_org.ssgproject.content_group_locking_out_password_attempts" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_accounts-pam"><td style="padding-left: 76px" id="xccdf_org.ssgproject.content_group_locking_out_password_attempts"><span class="label label-default">Group</span>  
                 Set Lockouts for Failed Password Attempts
-                          <small>Group contains 4 rules</small></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_group_locking_out_password_attempts" class="guide-tree-inner-node guide-tree-inner-node-id-xccdf_org.ssgproject.content_group_locking_out_password_attempts" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_accounts-pam"><td style="padding-left: 76px"><div><a class="small" href="#xccdf_org.ssgproject.content_group_locking_out_password_attempts">[ref]</a>  
+                          <small>Group contains  1 rule</small></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_group_locking_out_password_attempts" class="guide-tree-inner-node guide-tree-inner-node-id-xccdf_org.ssgproject.content_group_locking_out_password_attempts" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_accounts-pam"><td style="padding-left: 76px"><div><a class="small" href="#xccdf_org.ssgproject.content_group_locking_out_password_attempts">[ref]</a>  
                         The <code>pam_faillock</code> PAM module provides the capability to
 lock out user accounts after a number of failed login attempts. Its
 documentation is available in
@@ -1156,1599 +1156,6 @@ fi
   - medium_disruption
   - medium_severity
   - no_reboot_needed
-</code></pre></div></div></td></tr></tbody></table></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_deny" class="guide-tree-leaf guide-tree-leaf-id-xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_deny" id="guide-tree-leaf-id5" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_locking_out_password_attempts"><td style="padding-left: 95px"><table class="table table-striped table-bordered"><tbody><tr><td colspan="2"><h4 id="xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_deny"><span class="label label-default">Rule</span>  
-                                Lock Accounts After Failed Password Attempts
-                                  <a class="small" href="#xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_deny">[ref]</a></h4></td></tr><tr><td colspan="2"><div class="description">This rule configures the system to lock out accounts after a number of incorrect login attempts
-using <code>pam_faillock.so</code>.
-pam_faillock.so module requires multiple entries in pam files. These entries must be carefully
-defined to work as expected.
-
-Ensure that the file <code>/etc/security/faillock.conf</code> contains the following entry:
-<code>deny = &lt;count&gt;</code>
-Where count should be less than or equal to
-<abbr title="from Profile/refine-value: xccdf_org.ssgproject.content_value_var_accounts_passwords_pam_faillock_deny">3</abbr> and greater than 0.
-
-
-In order to avoid errors when manually editing these files, it is
-recommended to use the appropriate tools, such as <code>authselect</code> or <code>authconfig</code>,
-depending on the OS version.</div><div class="panel panel-warning"><div class="panel-heading"><span class="label label-warning">Warning:</span> 
-                                        If the system relies on <code>authselect</code> tool to manage PAM settings, the remediation
-will also use <code>authselect</code> tool. However, if any manual modification was made in
-PAM files, the <code>authselect</code> integrity check will fail and the remediation will be
-aborted in order to preserve intentional changes. In this case, an informative message will
-be shown in the remediation report.
-If the system supports the <code>/etc/security/faillock.conf</code> file, the pam_faillock
-parameters should be defined in <code>faillock.conf</code> file.</div></div></td></tr><tr><td><span class="label label-primary">Rationale:</span></td><td><div class="rationale">By limiting the number of failed logon attempts, the risk of unauthorized system access via
-user password guessing, also known as brute-forcing, is reduced. Limits are imposed by locking
-the account.</div></td></tr><tr><td><span class="label label-warning">Severity:</span> </td><td><div class="severity">medium</div></td></tr><tr><td><span class="label label-primary">Rule ID:</span></td><td>xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_deny</td></tr><tr><td><span class="label label-default" title="Provide a reference to a document or resource where the user can learn more about the subject of the Rule or Group.">References:</span></td><td class="identifiers"><table class="table table-striped table-bordered"><tr><td><a href="https://www.cisecurity.org/controls/">cis-csc</a></td><td>1, 12, 15, 16</td></tr><tr><td><a href="https://www.fbi.gov/file-repository/cjis-security-policy-v5_5_20160601-2-1.pdf">cjis</a></td><td>5.5.3</td></tr><tr><td><a href="https://www.isaca.org/resources/cobit">cobit5</a></td><td>DSS05.04, DSS05.10, DSS06.10</td></tr><tr><td><a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-171.pdf">cui</a></td><td>3.1.8</td></tr><tr><td><a href="https://public.cyber.mil/stigs/cci/">disa</a></td><td>CCI-000044, CCI-002236, CCI-002237, CCI-002238</td></tr><tr><td><a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">isa-62443-2009</a></td><td>4.3.3.6.1, 4.3.3.6.2, 4.3.3.6.3, 4.3.3.6.4, 4.3.3.6.5, 4.3.3.6.6, 4.3.3.6.7, 4.3.3.6.8, 4.3.3.6.9</td></tr><tr><td><a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">isa-62443-2013</a></td><td>SR 1.1, SR 1.10, SR 1.2, SR 1.5, SR 1.7, SR 1.8, SR 1.9</td></tr><tr><td><a href="https://www.cyber.gov.au/acsc/view-all-content/ism">ism</a></td><td>0421, 0422, 0431, 0974, 1173, 1401, 1504, 1505, 1546, 1557, 1558, 1559, 1560, 1561</td></tr><tr><td><a href="https://www.iso.org/contents/data/standard/05/45/54534.html">iso27001-2013</a></td><td>A.18.1.4, A.9.2.1, A.9.2.4, A.9.3.1, A.9.4.2, A.9.4.3</td></tr><tr><td><a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">nist</a></td><td>CM-6(a), AC-7(a)</td></tr><tr><td><a href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">nist-csf</a></td><td>PR.AC-7</td></tr><tr><td><a href="https://www.niap-ccevs.org/Profile/PP.cfm">ospp</a></td><td>FIA_AFL.1</td></tr><tr><td><a href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">pcidss</a></td><td>Req-8.1.6</td></tr><tr><td><a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">os-srg</a></td><td>SRG-OS-000329-GPOS-00128, SRG-OS-000021-GPOS-00005</td></tr><tr><td><a href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">anssi</a></td><td>R31</td></tr><tr><td><a href="https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf">pcidss4</a></td><td>8.3.4</td></tr></table></td></tr><tr><td colspan="2"><div class="remediation-description"><a class="btn btn-success" data-toggle="collapse" data-target="#id6" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Shell script ⇲</a><br><div class="panel-collapse collapse" id="id6"><pre><code># Remediation is applicable only in certain platforms
-if rpm --quiet -q pam; then
-
-var_accounts_passwords_pam_faillock_deny='<abbr title="from Profile/refine-value: xccdf_org.ssgproject.content_value_var_accounts_passwords_pam_faillock_deny">3</abbr>'
-
-
-if [ -f /usr/bin/authselect ]; then
-    if ! authselect check; then
-echo "
-authselect integrity check failed. Remediation aborted!
-This remediation could not be applied because an authselect profile was not selected or the selected profile is not intact.
-It is not recommended to manually edit the PAM files when authselect tool is available.
-In cases where the default authselect profile does not cover a specific demand, a custom authselect profile is recommended."
-exit 1
-fi
-authselect enable-feature with-faillock
-
-authselect apply-changes -b
-else
-    
-AUTH_FILES=("/etc/pam.d/system-auth" "/etc/pam.d/password-auth")
-for pam_file in "${AUTH_FILES[@]}"
-do
-    if ! grep -qE '^\s*auth\s+required\s+pam_faillock\.so\s+(preauth silent|authfail).*$' "$pam_file" ; then
-        sed -i --follow-symlinks '/^auth.*sufficient.*pam_unix\.so.*/i auth        required      pam_faillock.so preauth silent' "$pam_file"
-        sed -i --follow-symlinks '/^auth.*required.*pam_deny\.so.*/i auth        required      pam_faillock.so authfail' "$pam_file"
-        sed -i --follow-symlinks '/^account.*required.*pam_unix\.so.*/i account     required      pam_faillock.so' "$pam_file"
-    fi
-    sed -Ei 's/(auth.*)(\[default=die\])(.*pam_faillock\.so)/\1required     \3/g' "$pam_file"
-done
-
-fi
-
-AUTH_FILES=("/etc/pam.d/system-auth" "/etc/pam.d/password-auth")
-
-FAILLOCK_CONF="/etc/security/faillock.conf"
-if [ -f $FAILLOCK_CONF ]; then
-    regex="^\s*deny\s*="
-    line="deny = $var_accounts_passwords_pam_faillock_deny"
-    if ! grep -q $regex $FAILLOCK_CONF; then
-        echo $line &gt;&gt; $FAILLOCK_CONF
-    else
-        sed -i --follow-symlinks 's|^\s*\(deny\s*=\s*\)\(\S\+\)|\1'"$var_accounts_passwords_pam_faillock_deny"'|g' $FAILLOCK_CONF
-    fi
-    for pam_file in "${AUTH_FILES[@]}"
-    do
-        if [ -e "$pam_file" ] ; then
-            PAM_FILE_PATH="$pam_file"
-            if [ -f /usr/bin/authselect ]; then
-                
-                if ! authselect check; then
-                echo "
-                authselect integrity check failed. Remediation aborted!
-                This remediation could not be applied because an authselect profile was not selected or the selected profile is not intact.
-                It is not recommended to manually edit the PAM files when authselect tool is available.
-                In cases where the default authselect profile does not cover a specific demand, a custom authselect profile is recommended."
-                exit 1
-                fi
-
-                CURRENT_PROFILE=$(authselect current -r | awk '{ print $1 }')
-                # If not already in use, a custom profile is created preserving the enabled features.
-                if [[ ! $CURRENT_PROFILE == custom/* ]]; then
-                    ENABLED_FEATURES=$(authselect current | tail -n+3 | awk '{ print $2 }')
-                    authselect create-profile hardening -b $CURRENT_PROFILE
-                    CURRENT_PROFILE="custom/hardening"
-                    
-                    authselect apply-changes -b --backup=before-hardening-custom-profile
-                    authselect select $CURRENT_PROFILE
-                    for feature in $ENABLED_FEATURES; do
-                        authselect enable-feature $feature;
-                    done
-                    
-                    authselect apply-changes -b --backup=after-hardening-custom-profile
-                fi
-                PAM_FILE_NAME=$(basename "$pam_file")
-                PAM_FILE_PATH="/etc/authselect/$CURRENT_PROFILE/$PAM_FILE_NAME"
-
-                authselect apply-changes -b
-            fi
-            
-        if grep -qP '^\s*auth\s.*\bpam_faillock.so\s.*\bdeny\b' "$PAM_FILE_PATH"; then
-            sed -i -E --follow-symlinks 's/(.*auth.*pam_faillock.so.*)\bdeny\b=?[[:alnum:]]*(.*)/\1\2/g' "$PAM_FILE_PATH"
-        fi
-            if [ -f /usr/bin/authselect ]; then
-                
-                authselect apply-changes -b
-            fi
-        else
-            echo "$pam_file was not found" &gt;&amp;2
-        fi
-    done
-else
-    for pam_file in "${AUTH_FILES[@]}"
-    do
-        if ! grep -qE '^\s*auth.*pam_faillock\.so (preauth|authfail).*deny' "$pam_file"; then
-            sed -i --follow-symlinks '/^auth.*required.*pam_faillock\.so.*preauth.*silent.*/ s/$/ deny='"$var_accounts_passwords_pam_faillock_deny"'/' "$pam_file"
-            sed -i --follow-symlinks '/^auth.*required.*pam_faillock\.so.*authfail.*/ s/$/ deny='"$var_accounts_passwords_pam_faillock_deny"'/' "$pam_file"
-        else
-            sed -i --follow-symlinks 's/\(^auth.*required.*pam_faillock\.so.*preauth.*silent.*\)\('"deny"'=\)[0-9]\+\(.*\)/\1\2'"$var_accounts_passwords_pam_faillock_deny"'\3/' "$pam_file"
-            sed -i --follow-symlinks 's/\(^auth.*required.*pam_faillock\.so.*authfail.*\)\('"deny"'=\)[0-9]\+\(.*\)/\1\2'"$var_accounts_passwords_pam_faillock_deny"'\3/' "$pam_file"
-        fi
-    done
-fi
-
-else
-    &gt;&amp;2 echo 'Remediation is not applicable, nothing was done'
-fi
-</code></pre></div><a class="btn btn-success" data-toggle="collapse" data-target="#id7" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Ansible snippet ⇲</a><br><div class="panel-collapse collapse" id="id7"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>restrict</td></tr></table><pre><code>- name: Gather the package facts
-  package_facts:
-    manager: auto
-  tags:
-  - CJIS-5.5.3
-  - NIST-800-171-3.1.8
-  - NIST-800-53-AC-7(a)
-  - NIST-800-53-CM-6(a)
-  - PCI-DSS-Req-8.1.6
-  - PCI-DSSv4-8.3.4
-  - accounts_passwords_pam_faillock_deny
-  - low_complexity
-  - low_disruption
-  - medium_severity
-  - no_reboot_needed
-  - restrict_strategy
-
-- name: Lock Accounts After Failed Password Attempts - Check if system relies on authselect
-    tool
-  ansible.builtin.stat:
-    path: /usr/bin/authselect
-  register: result_authselect_present
-  when: '"pam" in ansible_facts.packages'
-  tags:
-  - CJIS-5.5.3
-  - NIST-800-171-3.1.8
-  - NIST-800-53-AC-7(a)
-  - NIST-800-53-CM-6(a)
-  - PCI-DSS-Req-8.1.6
-  - PCI-DSSv4-8.3.4
-  - accounts_passwords_pam_faillock_deny
-  - low_complexity
-  - low_disruption
-  - medium_severity
-  - no_reboot_needed
-  - restrict_strategy
-
-- name: Lock Accounts After Failed Password Attempts - Remediation where authselect
-    tool is present
-  block:
-
-  - name: Lock Accounts After Failed Password Attempts - Check integrity of authselect
-      current profile
-    ansible.builtin.command:
-      cmd: authselect check
-    register: result_authselect_check_cmd
-    changed_when: false
-    failed_when: false
-
-  - name: Lock Accounts After Failed Password Attempts - Informative message based
-      on the authselect integrity check result
-    ansible.builtin.assert:
-      that:
-      - result_authselect_check_cmd.rc == 0
-      fail_msg:
-      - authselect integrity check failed. Remediation aborted!
-      - This remediation could not be applied because an authselect profile was not
-        selected or the selected profile is not intact.
-      - It is not recommended to manually edit the PAM files when authselect tool
-        is available.
-      - In cases where the default authselect profile does not cover a specific demand,
-        a custom authselect profile is recommended.
-      success_msg:
-      - authselect integrity check passed
-
-  - name: Lock Accounts After Failed Password Attempts - Get authselect current features
-    ansible.builtin.shell:
-      cmd: authselect current | tail -n+3 | awk '{ print $2 }'
-    register: result_authselect_features
-    changed_when: false
-    when:
-    - result_authselect_check_cmd is success
-
-  - name: Lock Accounts After Failed Password Attempts - Ensure "with-faillock" feature
-      is enabled using authselect tool
-    ansible.builtin.command:
-      cmd: authselect enable-feature with-faillock
-    register: result_authselect_enable_feature_cmd
-    when:
-    - result_authselect_check_cmd is success
-    - result_authselect_features.stdout is not search("with-faillock")
-
-  - name: Lock Accounts After Failed Password Attempts - Ensure authselect changes
-      are applied
-    ansible.builtin.command:
-      cmd: authselect apply-changes -b
-    when:
-    - result_authselect_enable_feature_cmd is not skipped
-    - result_authselect_enable_feature_cmd is success
-  when:
-  - '"pam" in ansible_facts.packages'
-  - result_authselect_present.stat.exists
-  tags:
-  - CJIS-5.5.3
-  - NIST-800-171-3.1.8
-  - NIST-800-53-AC-7(a)
-  - NIST-800-53-CM-6(a)
-  - PCI-DSS-Req-8.1.6
-  - PCI-DSSv4-8.3.4
-  - accounts_passwords_pam_faillock_deny
-  - low_complexity
-  - low_disruption
-  - medium_severity
-  - no_reboot_needed
-  - restrict_strategy
-
-- name: Lock Accounts After Failed Password Attempts - Remediation where authselect
-    tool is not present
-  block:
-
-  - name: Lock Accounts After Failed Password Attempts - Check if pam_faillock.so
-      is already enabled
-    ansible.builtin.lineinfile:
-      path: /etc/pam.d/system-auth
-      regexp: .*auth.*pam_faillock\.so (preauth|authfail)
-      state: absent
-    check_mode: true
-    changed_when: false
-    register: result_pam_faillock_is_enabled
-
-  - name: Lock Accounts After Failed Password Attempts - Enable pam_faillock.so preauth
-      editing PAM files
-    ansible.builtin.lineinfile:
-      path: '{{ item }}'
-      line: auth        required      pam_faillock.so preauth
-      insertbefore: ^auth.*sufficient.*pam_unix\.so.*
-      state: present
-    loop:
-    - /etc/pam.d/system-auth
-    - /etc/pam.d/password-auth
-    when:
-    - result_pam_faillock_is_enabled.found == 0
-
-  - name: Lock Accounts After Failed Password Attempts - Enable pam_faillock.so authfail
-      editing PAM files
-    ansible.builtin.lineinfile:
-      path: '{{ item }}'
-      line: auth        required      pam_faillock.so authfail
-      insertbefore: ^auth.*required.*pam_deny\.so.*
-      state: present
-    loop:
-    - /etc/pam.d/system-auth
-    - /etc/pam.d/password-auth
-    when:
-    - result_pam_faillock_is_enabled.found == 0
-
-  - name: Lock Accounts After Failed Password Attempts - Enable pam_faillock.so account
-      section editing PAM files
-    ansible.builtin.lineinfile:
-      path: '{{ item }}'
-      line: account     required      pam_faillock.so
-      insertbefore: ^account.*required.*pam_unix\.so.*
-      state: present
-    loop:
-    - /etc/pam.d/system-auth
-    - /etc/pam.d/password-auth
-    when:
-    - result_pam_faillock_is_enabled.found == 0
-  when:
-  - '"pam" in ansible_facts.packages'
-  - not result_authselect_present.stat.exists
-  tags:
-  - CJIS-5.5.3
-  - NIST-800-171-3.1.8
-  - NIST-800-53-AC-7(a)
-  - NIST-800-53-CM-6(a)
-  - PCI-DSS-Req-8.1.6
-  - PCI-DSSv4-8.3.4
-  - accounts_passwords_pam_faillock_deny
-  - low_complexity
-  - low_disruption
-  - medium_severity
-  - no_reboot_needed
-  - restrict_strategy
-- name: XCCDF Value var_accounts_passwords_pam_faillock_deny # promote to variable
-  set_fact:
-    var_accounts_passwords_pam_faillock_deny: !!str <abbr title="from Profile/refine-value: xccdf_org.ssgproject.content_value_var_accounts_passwords_pam_faillock_deny">3</abbr>
-  tags:
-    - always
-
-- name: Lock Accounts After Failed Password Attempts - Check the presence of /etc/security/faillock.conf
-    file
-  ansible.builtin.stat:
-    path: /etc/security/faillock.conf
-  register: result_faillock_conf_check
-  when: '"pam" in ansible_facts.packages'
-  tags:
-  - CJIS-5.5.3
-  - NIST-800-171-3.1.8
-  - NIST-800-53-AC-7(a)
-  - NIST-800-53-CM-6(a)
-  - PCI-DSS-Req-8.1.6
-  - PCI-DSSv4-8.3.4
-  - accounts_passwords_pam_faillock_deny
-  - low_complexity
-  - low_disruption
-  - medium_severity
-  - no_reboot_needed
-  - restrict_strategy
-
-- name: Lock Accounts After Failed Password Attempts - Ensure the pam_faillock.so
-    deny parameter in /etc/security/faillock.conf
-  ansible.builtin.lineinfile:
-    path: /etc/security/faillock.conf
-    regexp: ^\s*deny\s*=
-    line: deny = {{ var_accounts_passwords_pam_faillock_deny }}
-    state: present
-  when:
-  - '"pam" in ansible_facts.packages'
-  - result_faillock_conf_check.stat.exists
-  tags:
-  - CJIS-5.5.3
-  - NIST-800-171-3.1.8
-  - NIST-800-53-AC-7(a)
-  - NIST-800-53-CM-6(a)
-  - PCI-DSS-Req-8.1.6
-  - PCI-DSSv4-8.3.4
-  - accounts_passwords_pam_faillock_deny
-  - low_complexity
-  - low_disruption
-  - medium_severity
-  - no_reboot_needed
-  - restrict_strategy
-
-- name: Lock Accounts After Failed Password Attempts - Ensure the pam_faillock.so
-    deny parameter not in PAM files
-  block:
-
-  - name: Lock Accounts After Failed Password Attempts - Check if /etc/pam.d/system-auth
-      file is present
-    ansible.builtin.stat:
-      path: /etc/pam.d/system-auth
-    register: result_pam_file_present
-
-  - name: Lock Accounts After Failed Password Attempts - Check the proper remediation
-      for the system
-    block:
-
-    - name: Lock Accounts After Failed Password Attempts - Define the PAM file to
-        be edited as a local fact
-      ansible.builtin.set_fact:
-        pam_file_path: /etc/pam.d/system-auth
-
-    - name: Lock Accounts After Failed Password Attempts - Check if system relies
-        on authselect tool
-      ansible.builtin.stat:
-        path: /usr/bin/authselect
-      register: result_authselect_present
-
-    - name: Lock Accounts After Failed Password Attempts - Ensure authselect custom
-        profile is used if authselect is present
-      block:
-
-      - name: Lock Accounts After Failed Password Attempts - Check integrity of authselect
-          current profile
-        ansible.builtin.command:
-          cmd: authselect check
-        register: result_authselect_check_cmd
-        changed_when: false
-        failed_when: false
-
-      - name: Lock Accounts After Failed Password Attempts - Informative message based
-          on the authselect integrity check result
-        ansible.builtin.assert:
-          that:
-          - result_authselect_check_cmd.rc == 0
-          fail_msg:
-          - authselect integrity check failed. Remediation aborted!
-          - This remediation could not be applied because an authselect profile was
-            not selected or the selected profile is not intact.
-          - It is not recommended to manually edit the PAM files when authselect tool
-            is available.
-          - In cases where the default authselect profile does not cover a specific
-            demand, a custom authselect profile is recommended.
-          success_msg:
-          - authselect integrity check passed
-
-      - name: Lock Accounts After Failed Password Attempts - Get authselect current
-          profile
-        ansible.builtin.shell:
-          cmd: authselect current -r | awk '{ print $1 }'
-        register: result_authselect_profile
-        changed_when: false
-        when:
-        - result_authselect_check_cmd is success
-
-      - name: Lock Accounts After Failed Password Attempts - Define the current authselect
-          profile as a local fact
-        ansible.builtin.set_fact:
-          authselect_current_profile: '{{ result_authselect_profile.stdout }}'
-          authselect_custom_profile: '{{ result_authselect_profile.stdout }}'
-        when:
-        - result_authselect_profile is not skipped
-        - result_authselect_profile.stdout is match("custom/")
-
-      - name: Lock Accounts After Failed Password Attempts - Define the new authselect
-          custom profile as a local fact
-        ansible.builtin.set_fact:
-          authselect_current_profile: '{{ result_authselect_profile.stdout }}'
-          authselect_custom_profile: custom/hardening
-        when:
-        - result_authselect_profile is not skipped
-        - result_authselect_profile.stdout is not match("custom/")
-
-      - name: Lock Accounts After Failed Password Attempts - Get authselect current
-          features to also enable them in the custom profile
-        ansible.builtin.shell:
-          cmd: authselect current | tail -n+3 | awk '{ print $2 }'
-        register: result_authselect_features
-        changed_when: false
-        when:
-        - result_authselect_profile is not skipped
-        - authselect_current_profile is not match("custom/")
-
-      - name: Lock Accounts After Failed Password Attempts - Check if any custom profile
-          with the same name was already created
-        ansible.builtin.stat:
-          path: /etc/authselect/{{ authselect_custom_profile }}
-        register: result_authselect_custom_profile_present
-        changed_when: false
-        when:
-        - authselect_current_profile is not match("custom/")
-
-      - name: Lock Accounts After Failed Password Attempts - Create an authselect
-          custom profile based on the current profile
-        ansible.builtin.command:
-          cmd: authselect create-profile hardening -b {{ authselect_current_profile
-            }}
-        when:
-        - result_authselect_check_cmd is success
-        - authselect_current_profile is not match("custom/")
-        - not result_authselect_custom_profile_present.stat.exists
-
-      - name: Lock Accounts After Failed Password Attempts - Ensure authselect changes
-          are applied
-        ansible.builtin.command:
-          cmd: authselect apply-changes -b --backup=before-hardening-custom-profile
-        when:
-        - result_authselect_check_cmd is success
-        - result_authselect_profile is not skipped
-        - authselect_current_profile is not match("custom/")
-        - authselect_custom_profile is not match(authselect_current_profile)
-
-      - name: Lock Accounts After Failed Password Attempts - Ensure the authselect
-          custom profile is selected
-        ansible.builtin.command:
-          cmd: authselect select {{ authselect_custom_profile }}
-        register: result_pam_authselect_select_profile
-        when:
-        - result_authselect_check_cmd is success
-        - result_authselect_profile is not skipped
-        - authselect_current_profile is not match("custom/")
-        - authselect_custom_profile is not match(authselect_current_profile)
-
-      - name: Lock Accounts After Failed Password Attempts - Restore the authselect
-          features in the custom profile
-        ansible.builtin.command:
-          cmd: authselect enable-feature {{ item }}
-        loop: '{{ result_authselect_features.stdout_lines }}'
-        register: result_pam_authselect_restore_features
-        when:
-        - result_authselect_profile is not skipped
-        - result_authselect_features is not skipped
-        - result_pam_authselect_select_profile is not skipped
-
-      - name: Lock Accounts After Failed Password Attempts - Ensure authselect changes
-          are applied
-        ansible.builtin.command:
-          cmd: authselect apply-changes -b --backup=after-hardening-custom-profile
-        when:
-        - result_authselect_check_cmd is success
-        - result_authselect_profile is not skipped
-        - result_pam_authselect_restore_features is not skipped
-
-      - name: Lock Accounts After Failed Password Attempts - Change the PAM file to
-          be edited according to the custom authselect profile
-        ansible.builtin.set_fact:
-          pam_file_path: /etc/authselect/{{ authselect_custom_profile }}/{{ pam_file_path
-            | basename }}
-      when:
-      - result_authselect_present.stat.exists
-
-    - name: Lock Accounts After Failed Password Attempts - Ensure the "deny" option
-        from "pam_faillock.so" is not present in {{ pam_file_path }}
-      ansible.builtin.replace:
-        dest: '{{ pam_file_path }}'
-        regexp: (.*auth.*pam_faillock.so.*)\bdeny\b=?[0-9a-zA-Z]*(.*)
-        replace: \1\2
-      register: result_pam_option_removal
-
-    - name: Lock Accounts After Failed Password Attempts - Ensure authselect changes
-        are applied
-      ansible.builtin.command:
-        cmd: authselect apply-changes -b
-      when:
-      - result_authselect_present.stat.exists
-      - result_pam_option_removal is changed
-    when:
-    - result_pam_file_present.stat.exists
-
-  - name: Lock Accounts After Failed Password Attempts - Check if /etc/pam.d/password-auth
-      file is present
-    ansible.builtin.stat:
-      path: /etc/pam.d/password-auth
-    register: result_pam_file_present
-
-  - name: Lock Accounts After Failed Password Attempts - Check the proper remediation
-      for the system
-    block:
-
-    - name: Lock Accounts After Failed Password Attempts - Define the PAM file to
-        be edited as a local fact
-      ansible.builtin.set_fact:
-        pam_file_path: /etc/pam.d/password-auth
-
-    - name: Lock Accounts After Failed Password Attempts - Check if system relies
-        on authselect tool
-      ansible.builtin.stat:
-        path: /usr/bin/authselect
-      register: result_authselect_present
-
-    - name: Lock Accounts After Failed Password Attempts - Ensure authselect custom
-        profile is used if authselect is present
-      block:
-
-      - name: Lock Accounts After Failed Password Attempts - Check integrity of authselect
-          current profile
-        ansible.builtin.command:
-          cmd: authselect check
-        register: result_authselect_check_cmd
-        changed_when: false
-        failed_when: false
-
-      - name: Lock Accounts After Failed Password Attempts - Informative message based
-          on the authselect integrity check result
-        ansible.builtin.assert:
-          that:
-          - result_authselect_check_cmd.rc == 0
-          fail_msg:
-          - authselect integrity check failed. Remediation aborted!
-          - This remediation could not be applied because an authselect profile was
-            not selected or the selected profile is not intact.
-          - It is not recommended to manually edit the PAM files when authselect tool
-            is available.
-          - In cases where the default authselect profile does not cover a specific
-            demand, a custom authselect profile is recommended.
-          success_msg:
-          - authselect integrity check passed
-
-      - name: Lock Accounts After Failed Password Attempts - Get authselect current
-          profile
-        ansible.builtin.shell:
-          cmd: authselect current -r | awk '{ print $1 }'
-        register: result_authselect_profile
-        changed_when: false
-        when:
-        - result_authselect_check_cmd is success
-
-      - name: Lock Accounts After Failed Password Attempts - Define the current authselect
-          profile as a local fact
-        ansible.builtin.set_fact:
-          authselect_current_profile: '{{ result_authselect_profile.stdout }}'
-          authselect_custom_profile: '{{ result_authselect_profile.stdout }}'
-        when:
-        - result_authselect_profile is not skipped
-        - result_authselect_profile.stdout is match("custom/")
-
-      - name: Lock Accounts After Failed Password Attempts - Define the new authselect
-          custom profile as a local fact
-        ansible.builtin.set_fact:
-          authselect_current_profile: '{{ result_authselect_profile.stdout }}'
-          authselect_custom_profile: custom/hardening
-        when:
-        - result_authselect_profile is not skipped
-        - result_authselect_profile.stdout is not match("custom/")
-
-      - name: Lock Accounts After Failed Password Attempts - Get authselect current
-          features to also enable them in the custom profile
-        ansible.builtin.shell:
-          cmd: authselect current | tail -n+3 | awk '{ print $2 }'
-        register: result_authselect_features
-        changed_when: false
-        when:
-        - result_authselect_profile is not skipped
-        - authselect_current_profile is not match("custom/")
-
-      - name: Lock Accounts After Failed Password Attempts - Check if any custom profile
-          with the same name was already created
-        ansible.builtin.stat:
-          path: /etc/authselect/{{ authselect_custom_profile }}
-        register: result_authselect_custom_profile_present
-        changed_when: false
-        when:
-        - authselect_current_profile is not match("custom/")
-
-      - name: Lock Accounts After Failed Password Attempts - Create an authselect
-          custom profile based on the current profile
-        ansible.builtin.command:
-          cmd: authselect create-profile hardening -b {{ authselect_current_profile
-            }}
-        when:
-        - result_authselect_check_cmd is success
-        - authselect_current_profile is not match("custom/")
-        - not result_authselect_custom_profile_present.stat.exists
-
-      - name: Lock Accounts After Failed Password Attempts - Ensure authselect changes
-          are applied
-        ansible.builtin.command:
-          cmd: authselect apply-changes -b --backup=before-hardening-custom-profile
-        when:
-        - result_authselect_check_cmd is success
-        - result_authselect_profile is not skipped
-        - authselect_current_profile is not match("custom/")
-        - authselect_custom_profile is not match(authselect_current_profile)
-
-      - name: Lock Accounts After Failed Password Attempts - Ensure the authselect
-          custom profile is selected
-        ansible.builtin.command:
-          cmd: authselect select {{ authselect_custom_profile }}
-        register: result_pam_authselect_select_profile
-        when:
-        - result_authselect_check_cmd is success
-        - result_authselect_profile is not skipped
-        - authselect_current_profile is not match("custom/")
-        - authselect_custom_profile is not match(authselect_current_profile)
-
-      - name: Lock Accounts After Failed Password Attempts - Restore the authselect
-          features in the custom profile
-        ansible.builtin.command:
-          cmd: authselect enable-feature {{ item }}
-        loop: '{{ result_authselect_features.stdout_lines }}'
-        register: result_pam_authselect_restore_features
-        when:
-        - result_authselect_profile is not skipped
-        - result_authselect_features is not skipped
-        - result_pam_authselect_select_profile is not skipped
-
-      - name: Lock Accounts After Failed Password Attempts - Ensure authselect changes
-          are applied
-        ansible.builtin.command:
-          cmd: authselect apply-changes -b --backup=after-hardening-custom-profile
-        when:
-        - result_authselect_check_cmd is success
-        - result_authselect_profile is not skipped
-        - result_pam_authselect_restore_features is not skipped
-
-      - name: Lock Accounts After Failed Password Attempts - Change the PAM file to
-          be edited according to the custom authselect profile
-        ansible.builtin.set_fact:
-          pam_file_path: /etc/authselect/{{ authselect_custom_profile }}/{{ pam_file_path
-            | basename }}
-      when:
-      - result_authselect_present.stat.exists
-
-    - name: Lock Accounts After Failed Password Attempts - Ensure the "deny" option
-        from "pam_faillock.so" is not present in {{ pam_file_path }}
-      ansible.builtin.replace:
-        dest: '{{ pam_file_path }}'
-        regexp: (.*auth.*pam_faillock.so.*)\bdeny\b=?[0-9a-zA-Z]*(.*)
-        replace: \1\2
-      register: result_pam_option_removal
-
-    - name: Lock Accounts After Failed Password Attempts - Ensure authselect changes
-        are applied
-      ansible.builtin.command:
-        cmd: authselect apply-changes -b
-      when:
-      - result_authselect_present.stat.exists
-      - result_pam_option_removal is changed
-    when:
-    - result_pam_file_present.stat.exists
-  when:
-  - '"pam" in ansible_facts.packages'
-  - result_faillock_conf_check.stat.exists
-  tags:
-  - CJIS-5.5.3
-  - NIST-800-171-3.1.8
-  - NIST-800-53-AC-7(a)
-  - NIST-800-53-CM-6(a)
-  - PCI-DSS-Req-8.1.6
-  - PCI-DSSv4-8.3.4
-  - accounts_passwords_pam_faillock_deny
-  - low_complexity
-  - low_disruption
-  - medium_severity
-  - no_reboot_needed
-  - restrict_strategy
-
-- name: Lock Accounts After Failed Password Attempts - Ensure the pam_faillock.so
-    deny parameter in PAM files
-  block:
-
-  - name: Lock Accounts After Failed Password Attempts - Check if pam_faillock.so
-      deny parameter is already enabled in pam files
-    ansible.builtin.lineinfile:
-      path: /etc/pam.d/system-auth
-      regexp: .*auth.*pam_faillock\.so (preauth|authfail).*deny
-      state: absent
-    check_mode: true
-    changed_when: false
-    register: result_pam_faillock_deny_parameter_is_present
-
-  - name: Lock Accounts After Failed Password Attempts - Ensure the inclusion of pam_faillock.so
-      preauth deny parameter in auth section
-    ansible.builtin.lineinfile:
-      path: '{{ item }}'
-      backrefs: true
-      regexp: (^\s*auth\s+)([\w\[].*\b)(\s+pam_faillock.so preauth.*)
-      line: \1required\3 deny={{ var_accounts_passwords_pam_faillock_deny }}
-      state: present
-    loop:
-    - /etc/pam.d/system-auth
-    - /etc/pam.d/password-auth
-    when:
-    - result_pam_faillock_deny_parameter_is_present.found == 0
-
-  - name: Lock Accounts After Failed Password Attempts - Ensure the inclusion of pam_faillock.so
-      authfail deny parameter in auth section
-    ansible.builtin.lineinfile:
-      path: '{{ item }}'
-      backrefs: true
-      regexp: (^\s*auth\s+)([\w\[].*\b)(\s+pam_faillock.so authfail.*)
-      line: \1required\3 deny={{ var_accounts_passwords_pam_faillock_deny }}
-      state: present
-    loop:
-    - /etc/pam.d/system-auth
-    - /etc/pam.d/password-auth
-    when:
-    - result_pam_faillock_deny_parameter_is_present.found == 0
-
-  - name: Lock Accounts After Failed Password Attempts - Ensure the desired value
-      for pam_faillock.so preauth deny parameter in auth section
-    ansible.builtin.lineinfile:
-      path: '{{ item }}'
-      backrefs: true
-      regexp: (^\s*auth\s+)([\w\[].*\b)(\s+pam_faillock.so preauth.*)(deny)=[0-9]+(.*)
-      line: \1required\3\4={{ var_accounts_passwords_pam_faillock_deny }}\5
-      state: present
-    loop:
-    - /etc/pam.d/system-auth
-    - /etc/pam.d/password-auth
-    when:
-    - result_pam_faillock_deny_parameter_is_present.found &gt; 0
-
-  - name: Lock Accounts After Failed Password Attempts - Ensure the desired value
-      for pam_faillock.so authfail deny parameter in auth section
-    ansible.builtin.lineinfile:
-      path: '{{ item }}'
-      backrefs: true
-      regexp: (^\s*auth\s+)([\w\[].*\b)(\s+pam_faillock.so authfail.*)(deny)=[0-9]+(.*)
-      line: \1required\3\4={{ var_accounts_passwords_pam_faillock_deny }}\5
-      state: present
-    loop:
-    - /etc/pam.d/system-auth
-    - /etc/pam.d/password-auth
-    when:
-    - result_pam_faillock_deny_parameter_is_present.found &gt; 0
-  when:
-  - '"pam" in ansible_facts.packages'
-  - not result_faillock_conf_check.stat.exists
-  tags:
-  - CJIS-5.5.3
-  - NIST-800-171-3.1.8
-  - NIST-800-53-AC-7(a)
-  - NIST-800-53-CM-6(a)
-  - PCI-DSS-Req-8.1.6
-  - PCI-DSSv4-8.3.4
-  - accounts_passwords_pam_faillock_deny
-  - low_complexity
-  - low_disruption
-  - medium_severity
-  - no_reboot_needed
-  - restrict_strategy
-</code></pre></div></div></td></tr></tbody></table></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_deny_root" class="guide-tree-leaf guide-tree-leaf-id-xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_deny_root" id="guide-tree-leaf-id8" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_locking_out_password_attempts"><td style="padding-left: 95px"><table class="table table-striped table-bordered"><tbody><tr><td colspan="2"><h4 id="xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_deny_root"><span class="label label-default">Rule</span>  
-                                Configure the root Account for Failed Password Attempts
-                                  <a class="small" href="#xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_deny_root">[ref]</a></h4></td></tr><tr><td colspan="2"><div class="description">This rule configures the system to lock out the <code>root</code> account after a number of
-incorrect login attempts using <code>pam_faillock.so</code>.
-
-pam_faillock.so module requires multiple entries in pam files. These entries must be carefully
-defined to work as expected. In order to avoid errors when manually editing these files, it is
-recommended to use the appropriate tools, such as <code>authselect</code> or <code>authconfig</code>,
-depending on the OS version.</div><div class="panel panel-warning"><div class="panel-heading"><span class="label label-warning">Warning:</span> 
-                                        If the system relies on <code>authselect</code> tool to manage PAM settings, the remediation
-will also use <code>authselect</code> tool. However, if any manual modification was made in
-PAM files, the <code>authselect</code> integrity check will fail and the remediation will be
-aborted in order to preserve intentional changes. In this case, an informative message will
-be shown in the remediation report.
-If the system supports the <code>/etc/security/faillock.conf</code> file, the pam_faillock
-parameters should be defined in <code>faillock.conf</code> file.</div></div></td></tr><tr><td><span class="label label-primary">Rationale:</span></td><td><div class="rationale">By limiting the number of failed logon attempts, the risk of unauthorized system access via
-user password guessing, also known as brute-forcing, is reduced. Limits are imposed by locking
-the account.</div></td></tr><tr><td><span class="label label-warning">Severity:</span> </td><td><div class="severity">medium</div></td></tr><tr><td><span class="label label-primary">Rule ID:</span></td><td>xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_deny_root</td></tr><tr><td><span class="label label-default" title="Provide a reference to a document or resource where the user can learn more about the subject of the Rule or Group.">References:</span></td><td class="identifiers"><table class="table table-striped table-bordered"><tr><td><a href="https://www.cisecurity.org/controls/">cis-csc</a></td><td>1, 12, 15, 16</td></tr><tr><td><a href="https://www.isaca.org/resources/cobit">cobit5</a></td><td>DSS05.04, DSS05.10, DSS06.10</td></tr><tr><td><a href="https://public.cyber.mil/stigs/cci/">disa</a></td><td>CCI-002238, CCI-000044</td></tr><tr><td><a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">isa-62443-2009</a></td><td>4.3.3.6.1, 4.3.3.6.2, 4.3.3.6.3, 4.3.3.6.4, 4.3.3.6.5, 4.3.3.6.6, 4.3.3.6.7, 4.3.3.6.8, 4.3.3.6.9</td></tr><tr><td><a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">isa-62443-2013</a></td><td>SR 1.1, SR 1.10, SR 1.2, SR 1.5, SR 1.7, SR 1.8, SR 1.9</td></tr><tr><td><a href="https://www.cyber.gov.au/acsc/view-all-content/ism">ism</a></td><td>0421, 0422, 0431, 0974, 1173, 1401, 1504, 1505, 1546, 1557, 1558, 1559, 1560, 1561</td></tr><tr><td><a href="https://www.iso.org/contents/data/standard/05/45/54534.html">iso27001-2013</a></td><td>A.18.1.4, A.9.2.1, A.9.2.4, A.9.3.1, A.9.4.2, A.9.4.3</td></tr><tr><td><a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">nist</a></td><td>CM-6(a), AC-7(b), IA-5(c)</td></tr><tr><td><a href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">nist-csf</a></td><td>PR.AC-7</td></tr><tr><td><a href="https://www.niap-ccevs.org/Profile/PP.cfm">ospp</a></td><td>FMT_MOF_EXT.1</td></tr><tr><td><a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">os-srg</a></td><td>SRG-OS-000329-GPOS-00128, SRG-OS-000021-GPOS-00005</td></tr><tr><td><a href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">anssi</a></td><td>R31</td></tr></table></td></tr><tr><td colspan="2"><div class="remediation-description"></div></td></tr></tbody></table></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_interval" class="guide-tree-leaf guide-tree-leaf-id-xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_interval" id="guide-tree-leaf-id9" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_locking_out_password_attempts"><td style="padding-left: 95px"><table class="table table-striped table-bordered"><tbody><tr><td colspan="2"><h4 id="xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_interval"><span class="label label-default">Rule</span>  
-                                Set Interval For Counting Failed Password Attempts
-                                  <a class="small" href="#xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_interval">[ref]</a></h4></td></tr><tr><td colspan="2"><div class="description">Utilizing <code>pam_faillock.so</code>, the <code>fail_interval</code> directive configures the system
-to lock out an account after a number of incorrect login attempts within a specified time
-period.
-
-Ensure that the file <code>/etc/security/faillock.conf</code> contains the following entry:
-<code>fail_interval = &lt;interval-in-seconds&gt;</code> where <code>interval-in-seconds</code> is <code><abbr title="from Profile/refine-value: xccdf_org.ssgproject.content_value_var_accounts_passwords_pam_faillock_fail_interval">900</abbr></code> or greater.
-
-
-In order to avoid errors when manually editing these files, it is
-recommended to use the appropriate tools, such as <code>authselect</code> or <code>authconfig</code>,
-depending on the OS version.</div><div class="panel panel-warning"><div class="panel-heading"><span class="label label-warning">Warning:</span> 
-                                        If the system relies on <code>authselect</code> tool to manage PAM settings, the remediation
-will also use <code>authselect</code> tool. However, if any manual modification was made in
-PAM files, the <code>authselect</code> integrity check will fail and the remediation will be
-aborted in order to preserve intentional changes. In this case, an informative message will
-be shown in the remediation report.
-If the system supports the <code>/etc/security/faillock.conf</code> file, the pam_faillock
-parameters should be defined in <code>faillock.conf</code> file.</div></div></td></tr><tr><td><span class="label label-primary">Rationale:</span></td><td><div class="rationale">By limiting the number of failed logon attempts the risk of unauthorized system
-access via user password guessing, otherwise known as brute-forcing, is reduced.
-Limits are imposed by locking the account.</div></td></tr><tr><td><span class="label label-warning">Severity:</span> </td><td><div class="severity">medium</div></td></tr><tr><td><span class="label label-primary">Rule ID:</span></td><td>xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_interval</td></tr><tr><td><span class="label label-default" title="Provide a reference to a document or resource where the user can learn more about the subject of the Rule or Group.">References:</span></td><td class="identifiers"><table class="table table-striped table-bordered"><tr><td><a href="https://www.cisecurity.org/controls/">cis-csc</a></td><td>1, 12, 15, 16</td></tr><tr><td><a href="https://www.isaca.org/resources/cobit">cobit5</a></td><td>DSS05.04, DSS05.10, DSS06.10</td></tr><tr><td><a href="https://public.cyber.mil/stigs/cci/">disa</a></td><td>CCI-000044, CCI-002236, CCI-002237, CCI-002238</td></tr><tr><td><a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">isa-62443-2009</a></td><td>4.3.3.6.1, 4.3.3.6.2, 4.3.3.6.3, 4.3.3.6.4, 4.3.3.6.5, 4.3.3.6.6, 4.3.3.6.7, 4.3.3.6.8, 4.3.3.6.9</td></tr><tr><td><a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">isa-62443-2013</a></td><td>SR 1.1, SR 1.10, SR 1.2, SR 1.5, SR 1.7, SR 1.8, SR 1.9</td></tr><tr><td><a href="https://www.cyber.gov.au/acsc/view-all-content/ism">ism</a></td><td>0421, 0422, 0431, 0974, 1173, 1401, 1504, 1505, 1546, 1557, 1558, 1559, 1560, 1561</td></tr><tr><td><a href="https://www.iso.org/contents/data/standard/05/45/54534.html">iso27001-2013</a></td><td>A.18.1.4, A.9.2.1, A.9.2.4, A.9.3.1, A.9.4.2, A.9.4.3</td></tr><tr><td><a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">nist</a></td><td>CM-6(a), AC-7(a)</td></tr><tr><td><a href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">nist-csf</a></td><td>PR.AC-7</td></tr><tr><td><a href="https://www.niap-ccevs.org/Profile/PP.cfm">ospp</a></td><td>FIA_AFL.1</td></tr><tr><td><a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">os-srg</a></td><td>SRG-OS-000329-GPOS-00128, SRG-OS-000021-GPOS-00005</td></tr><tr><td><a href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">anssi</a></td><td>R31</td></tr></table></td></tr><tr><td colspan="2"><div class="remediation-description"><a class="btn btn-success" data-toggle="collapse" data-target="#id10" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Shell script ⇲</a><br><div class="panel-collapse collapse" id="id10"><pre><code># Remediation is applicable only in certain platforms
-if rpm --quiet -q pam; then
-
-var_accounts_passwords_pam_faillock_fail_interval='<abbr title="from Profile/refine-value: xccdf_org.ssgproject.content_value_var_accounts_passwords_pam_faillock_fail_interval">900</abbr>'
-
-
-if [ -f /usr/bin/authselect ]; then
-    if ! authselect check; then
-echo "
-authselect integrity check failed. Remediation aborted!
-This remediation could not be applied because an authselect profile was not selected or the selected profile is not intact.
-It is not recommended to manually edit the PAM files when authselect tool is available.
-In cases where the default authselect profile does not cover a specific demand, a custom authselect profile is recommended."
-exit 1
-fi
-authselect enable-feature with-faillock
-
-authselect apply-changes -b
-else
-    
-AUTH_FILES=("/etc/pam.d/system-auth" "/etc/pam.d/password-auth")
-for pam_file in "${AUTH_FILES[@]}"
-do
-    if ! grep -qE '^\s*auth\s+required\s+pam_faillock\.so\s+(preauth silent|authfail).*$' "$pam_file" ; then
-        sed -i --follow-symlinks '/^auth.*sufficient.*pam_unix\.so.*/i auth        required      pam_faillock.so preauth silent' "$pam_file"
-        sed -i --follow-symlinks '/^auth.*required.*pam_deny\.so.*/i auth        required      pam_faillock.so authfail' "$pam_file"
-        sed -i --follow-symlinks '/^account.*required.*pam_unix\.so.*/i account     required      pam_faillock.so' "$pam_file"
-    fi
-    sed -Ei 's/(auth.*)(\[default=die\])(.*pam_faillock\.so)/\1required     \3/g' "$pam_file"
-done
-
-fi
-
-AUTH_FILES=("/etc/pam.d/system-auth" "/etc/pam.d/password-auth")
-
-FAILLOCK_CONF="/etc/security/faillock.conf"
-if [ -f $FAILLOCK_CONF ]; then
-    regex="^\s*fail_interval\s*="
-    line="fail_interval = $var_accounts_passwords_pam_faillock_fail_interval"
-    if ! grep -q $regex $FAILLOCK_CONF; then
-        echo $line &gt;&gt; $FAILLOCK_CONF
-    else
-        sed -i --follow-symlinks 's|^\s*\(fail_interval\s*=\s*\)\(\S\+\)|\1'"$var_accounts_passwords_pam_faillock_fail_interval"'|g' $FAILLOCK_CONF
-    fi
-    for pam_file in "${AUTH_FILES[@]}"
-    do
-        if [ -e "$pam_file" ] ; then
-            PAM_FILE_PATH="$pam_file"
-            if [ -f /usr/bin/authselect ]; then
-                
-                if ! authselect check; then
-                echo "
-                authselect integrity check failed. Remediation aborted!
-                This remediation could not be applied because an authselect profile was not selected or the selected profile is not intact.
-                It is not recommended to manually edit the PAM files when authselect tool is available.
-                In cases where the default authselect profile does not cover a specific demand, a custom authselect profile is recommended."
-                exit 1
-                fi
-
-                CURRENT_PROFILE=$(authselect current -r | awk '{ print $1 }')
-                # If not already in use, a custom profile is created preserving the enabled features.
-                if [[ ! $CURRENT_PROFILE == custom/* ]]; then
-                    ENABLED_FEATURES=$(authselect current | tail -n+3 | awk '{ print $2 }')
-                    authselect create-profile hardening -b $CURRENT_PROFILE
-                    CURRENT_PROFILE="custom/hardening"
-                    
-                    authselect apply-changes -b --backup=before-hardening-custom-profile
-                    authselect select $CURRENT_PROFILE
-                    for feature in $ENABLED_FEATURES; do
-                        authselect enable-feature $feature;
-                    done
-                    
-                    authselect apply-changes -b --backup=after-hardening-custom-profile
-                fi
-                PAM_FILE_NAME=$(basename "$pam_file")
-                PAM_FILE_PATH="/etc/authselect/$CURRENT_PROFILE/$PAM_FILE_NAME"
-
-                authselect apply-changes -b
-            fi
-            
-        if grep -qP '^\s*auth\s.*\bpam_faillock.so\s.*\bfail_interval\b' "$PAM_FILE_PATH"; then
-            sed -i -E --follow-symlinks 's/(.*auth.*pam_faillock.so.*)\bfail_interval\b=?[[:alnum:]]*(.*)/\1\2/g' "$PAM_FILE_PATH"
-        fi
-            if [ -f /usr/bin/authselect ]; then
-                
-                authselect apply-changes -b
-            fi
-        else
-            echo "$pam_file was not found" &gt;&amp;2
-        fi
-    done
-else
-    for pam_file in "${AUTH_FILES[@]}"
-    do
-        if ! grep -qE '^\s*auth.*pam_faillock\.so (preauth|authfail).*fail_interval' "$pam_file"; then
-            sed -i --follow-symlinks '/^auth.*required.*pam_faillock\.so.*preauth.*silent.*/ s/$/ fail_interval='"$var_accounts_passwords_pam_faillock_fail_interval"'/' "$pam_file"
-            sed -i --follow-symlinks '/^auth.*required.*pam_faillock\.so.*authfail.*/ s/$/ fail_interval='"$var_accounts_passwords_pam_faillock_fail_interval"'/' "$pam_file"
-        else
-            sed -i --follow-symlinks 's/\(^auth.*required.*pam_faillock\.so.*preauth.*silent.*\)\('"fail_interval"'=\)[0-9]\+\(.*\)/\1\2'"$var_accounts_passwords_pam_faillock_fail_interval"'\3/' "$pam_file"
-            sed -i --follow-symlinks 's/\(^auth.*required.*pam_faillock\.so.*authfail.*\)\('"fail_interval"'=\)[0-9]\+\(.*\)/\1\2'"$var_accounts_passwords_pam_faillock_fail_interval"'\3/' "$pam_file"
-        fi
-    done
-fi
-
-else
-    &gt;&amp;2 echo 'Remediation is not applicable, nothing was done'
-fi
-</code></pre></div><a class="btn btn-success" data-toggle="collapse" data-target="#id11" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Ansible snippet ⇲</a><br><div class="panel-collapse collapse" id="id11"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>restrict</td></tr></table><pre><code>- name: Gather the package facts
-  package_facts:
-    manager: auto
-  tags:
-  - NIST-800-53-AC-7(a)
-  - NIST-800-53-CM-6(a)
-  - accounts_passwords_pam_faillock_interval
-  - low_complexity
-  - low_disruption
-  - medium_severity
-  - no_reboot_needed
-  - restrict_strategy
-
-- name: Set Interval For Counting Failed Password Attempts - Check if system relies
-    on authselect tool
-  ansible.builtin.stat:
-    path: /usr/bin/authselect
-  register: result_authselect_present
-  when: '"pam" in ansible_facts.packages'
-  tags:
-  - NIST-800-53-AC-7(a)
-  - NIST-800-53-CM-6(a)
-  - accounts_passwords_pam_faillock_interval
-  - low_complexity
-  - low_disruption
-  - medium_severity
-  - no_reboot_needed
-  - restrict_strategy
-
-- name: Set Interval For Counting Failed Password Attempts - Remediation where authselect
-    tool is present
-  block:
-
-  - name: Set Interval For Counting Failed Password Attempts - Check integrity of
-      authselect current profile
-    ansible.builtin.command:
-      cmd: authselect check
-    register: result_authselect_check_cmd
-    changed_when: false
-    failed_when: false
-
-  - name: Set Interval For Counting Failed Password Attempts - Informative message
-      based on the authselect integrity check result
-    ansible.builtin.assert:
-      that:
-      - result_authselect_check_cmd.rc == 0
-      fail_msg:
-      - authselect integrity check failed. Remediation aborted!
-      - This remediation could not be applied because an authselect profile was not
-        selected or the selected profile is not intact.
-      - It is not recommended to manually edit the PAM files when authselect tool
-        is available.
-      - In cases where the default authselect profile does not cover a specific demand,
-        a custom authselect profile is recommended.
-      success_msg:
-      - authselect integrity check passed
-
-  - name: Set Interval For Counting Failed Password Attempts - Get authselect current
-      features
-    ansible.builtin.shell:
-      cmd: authselect current | tail -n+3 | awk '{ print $2 }'
-    register: result_authselect_features
-    changed_when: false
-    when:
-    - result_authselect_check_cmd is success
-
-  - name: Set Interval For Counting Failed Password Attempts - Ensure "with-faillock"
-      feature is enabled using authselect tool
-    ansible.builtin.command:
-      cmd: authselect enable-feature with-faillock
-    register: result_authselect_enable_feature_cmd
-    when:
-    - result_authselect_check_cmd is success
-    - result_authselect_features.stdout is not search("with-faillock")
-
-  - name: Set Interval For Counting Failed Password Attempts - Ensure authselect changes
-      are applied
-    ansible.builtin.command:
-      cmd: authselect apply-changes -b
-    when:
-    - result_authselect_enable_feature_cmd is not skipped
-    - result_authselect_enable_feature_cmd is success
-  when:
-  - '"pam" in ansible_facts.packages'
-  - result_authselect_present.stat.exists
-  tags:
-  - NIST-800-53-AC-7(a)
-  - NIST-800-53-CM-6(a)
-  - accounts_passwords_pam_faillock_interval
-  - low_complexity
-  - low_disruption
-  - medium_severity
-  - no_reboot_needed
-  - restrict_strategy
-
-- name: Set Interval For Counting Failed Password Attempts - Remediation where authselect
-    tool is not present
-  block:
-
-  - name: Set Interval For Counting Failed Password Attempts - Check if pam_faillock.so
-      is already enabled
-    ansible.builtin.lineinfile:
-      path: /etc/pam.d/system-auth
-      regexp: .*auth.*pam_faillock\.so (preauth|authfail)
-      state: absent
-    check_mode: true
-    changed_when: false
-    register: result_pam_faillock_is_enabled
-
-  - name: Set Interval For Counting Failed Password Attempts - Enable pam_faillock.so
-      preauth editing PAM files
-    ansible.builtin.lineinfile:
-      path: '{{ item }}'
-      line: auth        required      pam_faillock.so preauth
-      insertbefore: ^auth.*sufficient.*pam_unix\.so.*
-      state: present
-    loop:
-    - /etc/pam.d/system-auth
-    - /etc/pam.d/password-auth
-    when:
-    - result_pam_faillock_is_enabled.found == 0
-
-  - name: Set Interval For Counting Failed Password Attempts - Enable pam_faillock.so
-      authfail editing PAM files
-    ansible.builtin.lineinfile:
-      path: '{{ item }}'
-      line: auth        required      pam_faillock.so authfail
-      insertbefore: ^auth.*required.*pam_deny\.so.*
-      state: present
-    loop:
-    - /etc/pam.d/system-auth
-    - /etc/pam.d/password-auth
-    when:
-    - result_pam_faillock_is_enabled.found == 0
-
-  - name: Set Interval For Counting Failed Password Attempts - Enable pam_faillock.so
-      account section editing PAM files
-    ansible.builtin.lineinfile:
-      path: '{{ item }}'
-      line: account     required      pam_faillock.so
-      insertbefore: ^account.*required.*pam_unix\.so.*
-      state: present
-    loop:
-    - /etc/pam.d/system-auth
-    - /etc/pam.d/password-auth
-    when:
-    - result_pam_faillock_is_enabled.found == 0
-  when:
-  - '"pam" in ansible_facts.packages'
-  - not result_authselect_present.stat.exists
-  tags:
-  - NIST-800-53-AC-7(a)
-  - NIST-800-53-CM-6(a)
-  - accounts_passwords_pam_faillock_interval
-  - low_complexity
-  - low_disruption
-  - medium_severity
-  - no_reboot_needed
-  - restrict_strategy
-- name: XCCDF Value var_accounts_passwords_pam_faillock_fail_interval # promote to variable
-  set_fact:
-    var_accounts_passwords_pam_faillock_fail_interval: !!str <abbr title="from Profile/refine-value: xccdf_org.ssgproject.content_value_var_accounts_passwords_pam_faillock_fail_interval">900</abbr>
-  tags:
-    - always
-
-- name: Set Interval For Counting Failed Password Attempts - Check the presence of
-    /etc/security/faillock.conf file
-  ansible.builtin.stat:
-    path: /etc/security/faillock.conf
-  register: result_faillock_conf_check
-  when: '"pam" in ansible_facts.packages'
-  tags:
-  - NIST-800-53-AC-7(a)
-  - NIST-800-53-CM-6(a)
-  - accounts_passwords_pam_faillock_interval
-  - low_complexity
-  - low_disruption
-  - medium_severity
-  - no_reboot_needed
-  - restrict_strategy
-
-- name: Set Interval For Counting Failed Password Attempts - Ensure the pam_faillock.so
-    fail_interval parameter in /etc/security/faillock.conf
-  ansible.builtin.lineinfile:
-    path: /etc/security/faillock.conf
-    regexp: ^\s*fail_interval\s*=
-    line: fail_interval = {{ var_accounts_passwords_pam_faillock_fail_interval }}
-    state: present
-  when:
-  - '"pam" in ansible_facts.packages'
-  - result_faillock_conf_check.stat.exists
-  tags:
-  - NIST-800-53-AC-7(a)
-  - NIST-800-53-CM-6(a)
-  - accounts_passwords_pam_faillock_interval
-  - low_complexity
-  - low_disruption
-  - medium_severity
-  - no_reboot_needed
-  - restrict_strategy
-
-- name: Set Interval For Counting Failed Password Attempts - Ensure the pam_faillock.so
-    fail_interval parameter not in PAM files
-  block:
-
-  - name: Set Interval For Counting Failed Password Attempts - Check if /etc/pam.d/system-auth
-      file is present
-    ansible.builtin.stat:
-      path: /etc/pam.d/system-auth
-    register: result_pam_file_present
-
-  - name: Set Interval For Counting Failed Password Attempts - Check the proper remediation
-      for the system
-    block:
-
-    - name: Set Interval For Counting Failed Password Attempts - Define the PAM file
-        to be edited as a local fact
-      ansible.builtin.set_fact:
-        pam_file_path: /etc/pam.d/system-auth
-
-    - name: Set Interval For Counting Failed Password Attempts - Check if system relies
-        on authselect tool
-      ansible.builtin.stat:
-        path: /usr/bin/authselect
-      register: result_authselect_present
-
-    - name: Set Interval For Counting Failed Password Attempts - Ensure authselect
-        custom profile is used if authselect is present
-      block:
-
-      - name: Set Interval For Counting Failed Password Attempts - Check integrity
-          of authselect current profile
-        ansible.builtin.command:
-          cmd: authselect check
-        register: result_authselect_check_cmd
-        changed_when: false
-        failed_when: false
-
-      - name: Set Interval For Counting Failed Password Attempts - Informative message
-          based on the authselect integrity check result
-        ansible.builtin.assert:
-          that:
-          - result_authselect_check_cmd.rc == 0
-          fail_msg:
-          - authselect integrity check failed. Remediation aborted!
-          - This remediation could not be applied because an authselect profile was
-            not selected or the selected profile is not intact.
-          - It is not recommended to manually edit the PAM files when authselect tool
-            is available.
-          - In cases where the default authselect profile does not cover a specific
-            demand, a custom authselect profile is recommended.
-          success_msg:
-          - authselect integrity check passed
-
-      - name: Set Interval For Counting Failed Password Attempts - Get authselect
-          current profile
-        ansible.builtin.shell:
-          cmd: authselect current -r | awk '{ print $1 }'
-        register: result_authselect_profile
-        changed_when: false
-        when:
-        - result_authselect_check_cmd is success
-
-      - name: Set Interval For Counting Failed Password Attempts - Define the current
-          authselect profile as a local fact
-        ansible.builtin.set_fact:
-          authselect_current_profile: '{{ result_authselect_profile.stdout }}'
-          authselect_custom_profile: '{{ result_authselect_profile.stdout }}'
-        when:
-        - result_authselect_profile is not skipped
-        - result_authselect_profile.stdout is match("custom/")
-
-      - name: Set Interval For Counting Failed Password Attempts - Define the new
-          authselect custom profile as a local fact
-        ansible.builtin.set_fact:
-          authselect_current_profile: '{{ result_authselect_profile.stdout }}'
-          authselect_custom_profile: custom/hardening
-        when:
-        - result_authselect_profile is not skipped
-        - result_authselect_profile.stdout is not match("custom/")
-
-      - name: Set Interval For Counting Failed Password Attempts - Get authselect
-          current features to also enable them in the custom profile
-        ansible.builtin.shell:
-          cmd: authselect current | tail -n+3 | awk '{ print $2 }'
-        register: result_authselect_features
-        changed_when: false
-        when:
-        - result_authselect_profile is not skipped
-        - authselect_current_profile is not match("custom/")
-
-      - name: Set Interval For Counting Failed Password Attempts - Check if any custom
-          profile with the same name was already created
-        ansible.builtin.stat:
-          path: /etc/authselect/{{ authselect_custom_profile }}
-        register: result_authselect_custom_profile_present
-        changed_when: false
-        when:
-        - authselect_current_profile is not match("custom/")
-
-      - name: Set Interval For Counting Failed Password Attempts - Create an authselect
-          custom profile based on the current profile
-        ansible.builtin.command:
-          cmd: authselect create-profile hardening -b {{ authselect_current_profile
-            }}
-        when:
-        - result_authselect_check_cmd is success
-        - authselect_current_profile is not match("custom/")
-        - not result_authselect_custom_profile_present.stat.exists
-
-      - name: Set Interval For Counting Failed Password Attempts - Ensure authselect
-          changes are applied
-        ansible.builtin.command:
-          cmd: authselect apply-changes -b --backup=before-hardening-custom-profile
-        when:
-        - result_authselect_check_cmd is success
-        - result_authselect_profile is not skipped
-        - authselect_current_profile is not match("custom/")
-        - authselect_custom_profile is not match(authselect_current_profile)
-
-      - name: Set Interval For Counting Failed Password Attempts - Ensure the authselect
-          custom profile is selected
-        ansible.builtin.command:
-          cmd: authselect select {{ authselect_custom_profile }}
-        register: result_pam_authselect_select_profile
-        when:
-        - result_authselect_check_cmd is success
-        - result_authselect_profile is not skipped
-        - authselect_current_profile is not match("custom/")
-        - authselect_custom_profile is not match(authselect_current_profile)
-
-      - name: Set Interval For Counting Failed Password Attempts - Restore the authselect
-          features in the custom profile
-        ansible.builtin.command:
-          cmd: authselect enable-feature {{ item }}
-        loop: '{{ result_authselect_features.stdout_lines }}'
-        register: result_pam_authselect_restore_features
-        when:
-        - result_authselect_profile is not skipped
-        - result_authselect_features is not skipped
-        - result_pam_authselect_select_profile is not skipped
-
-      - name: Set Interval For Counting Failed Password Attempts - Ensure authselect
-          changes are applied
-        ansible.builtin.command:
-          cmd: authselect apply-changes -b --backup=after-hardening-custom-profile
-        when:
-        - result_authselect_check_cmd is success
-        - result_authselect_profile is not skipped
-        - result_pam_authselect_restore_features is not skipped
-
-      - name: Set Interval For Counting Failed Password Attempts - Change the PAM
-          file to be edited according to the custom authselect profile
-        ansible.builtin.set_fact:
-          pam_file_path: /etc/authselect/{{ authselect_custom_profile }}/{{ pam_file_path
-            | basename }}
-      when:
-      - result_authselect_present.stat.exists
-
-    - name: Set Interval For Counting Failed Password Attempts - Ensure the "fail_interval"
-        option from "pam_faillock.so" is not present in {{ pam_file_path }}
-      ansible.builtin.replace:
-        dest: '{{ pam_file_path }}'
-        regexp: (.*auth.*pam_faillock.so.*)\bfail_interval\b=?[0-9a-zA-Z]*(.*)
-        replace: \1\2
-      register: result_pam_option_removal
-
-    - name: Set Interval For Counting Failed Password Attempts - Ensure authselect
-        changes are applied
-      ansible.builtin.command:
-        cmd: authselect apply-changes -b
-      when:
-      - result_authselect_present.stat.exists
-      - result_pam_option_removal is changed
-    when:
-    - result_pam_file_present.stat.exists
-
-  - name: Set Interval For Counting Failed Password Attempts - Check if /etc/pam.d/password-auth
-      file is present
-    ansible.builtin.stat:
-      path: /etc/pam.d/password-auth
-    register: result_pam_file_present
-
-  - name: Set Interval For Counting Failed Password Attempts - Check the proper remediation
-      for the system
-    block:
-
-    - name: Set Interval For Counting Failed Password Attempts - Define the PAM file
-        to be edited as a local fact
-      ansible.builtin.set_fact:
-        pam_file_path: /etc/pam.d/password-auth
-
-    - name: Set Interval For Counting Failed Password Attempts - Check if system relies
-        on authselect tool
-      ansible.builtin.stat:
-        path: /usr/bin/authselect
-      register: result_authselect_present
-
-    - name: Set Interval For Counting Failed Password Attempts - Ensure authselect
-        custom profile is used if authselect is present
-      block:
-
-      - name: Set Interval For Counting Failed Password Attempts - Check integrity
-          of authselect current profile
-        ansible.builtin.command:
-          cmd: authselect check
-        register: result_authselect_check_cmd
-        changed_when: false
-        failed_when: false
-
-      - name: Set Interval For Counting Failed Password Attempts - Informative message
-          based on the authselect integrity check result
-        ansible.builtin.assert:
-          that:
-          - result_authselect_check_cmd.rc == 0
-          fail_msg:
-          - authselect integrity check failed. Remediation aborted!
-          - This remediation could not be applied because an authselect profile was
-            not selected or the selected profile is not intact.
-          - It is not recommended to manually edit the PAM files when authselect tool
-            is available.
-          - In cases where the default authselect profile does not cover a specific
-            demand, a custom authselect profile is recommended.
-          success_msg:
-          - authselect integrity check passed
-
-      - name: Set Interval For Counting Failed Password Attempts - Get authselect
-          current profile
-        ansible.builtin.shell:
-          cmd: authselect current -r | awk '{ print $1 }'
-        register: result_authselect_profile
-        changed_when: false
-        when:
-        - result_authselect_check_cmd is success
-
-      - name: Set Interval For Counting Failed Password Attempts - Define the current
-          authselect profile as a local fact
-        ansible.builtin.set_fact:
-          authselect_current_profile: '{{ result_authselect_profile.stdout }}'
-          authselect_custom_profile: '{{ result_authselect_profile.stdout }}'
-        when:
-        - result_authselect_profile is not skipped
-        - result_authselect_profile.stdout is match("custom/")
-
-      - name: Set Interval For Counting Failed Password Attempts - Define the new
-          authselect custom profile as a local fact
-        ansible.builtin.set_fact:
-          authselect_current_profile: '{{ result_authselect_profile.stdout }}'
-          authselect_custom_profile: custom/hardening
-        when:
-        - result_authselect_profile is not skipped
-        - result_authselect_profile.stdout is not match("custom/")
-
-      - name: Set Interval For Counting Failed Password Attempts - Get authselect
-          current features to also enable them in the custom profile
-        ansible.builtin.shell:
-          cmd: authselect current | tail -n+3 | awk '{ print $2 }'
-        register: result_authselect_features
-        changed_when: false
-        when:
-        - result_authselect_profile is not skipped
-        - authselect_current_profile is not match("custom/")
-
-      - name: Set Interval For Counting Failed Password Attempts - Check if any custom
-          profile with the same name was already created
-        ansible.builtin.stat:
-          path: /etc/authselect/{{ authselect_custom_profile }}
-        register: result_authselect_custom_profile_present
-        changed_when: false
-        when:
-        - authselect_current_profile is not match("custom/")
-
-      - name: Set Interval For Counting Failed Password Attempts - Create an authselect
-          custom profile based on the current profile
-        ansible.builtin.command:
-          cmd: authselect create-profile hardening -b {{ authselect_current_profile
-            }}
-        when:
-        - result_authselect_check_cmd is success
-        - authselect_current_profile is not match("custom/")
-        - not result_authselect_custom_profile_present.stat.exists
-
-      - name: Set Interval For Counting Failed Password Attempts - Ensure authselect
-          changes are applied
-        ansible.builtin.command:
-          cmd: authselect apply-changes -b --backup=before-hardening-custom-profile
-        when:
-        - result_authselect_check_cmd is success
-        - result_authselect_profile is not skipped
-        - authselect_current_profile is not match("custom/")
-        - authselect_custom_profile is not match(authselect_current_profile)
-
-      - name: Set Interval For Counting Failed Password Attempts - Ensure the authselect
-          custom profile is selected
-        ansible.builtin.command:
-          cmd: authselect select {{ authselect_custom_profile }}
-        register: result_pam_authselect_select_profile
-        when:
-        - result_authselect_check_cmd is success
-        - result_authselect_profile is not skipped
-        - authselect_current_profile is not match("custom/")
-        - authselect_custom_profile is not match(authselect_current_profile)
-
-      - name: Set Interval For Counting Failed Password Attempts - Restore the authselect
-          features in the custom profile
-        ansible.builtin.command:
-          cmd: authselect enable-feature {{ item }}
-        loop: '{{ result_authselect_features.stdout_lines }}'
-        register: result_pam_authselect_restore_features
-        when:
-        - result_authselect_profile is not skipped
-        - result_authselect_features is not skipped
-        - result_pam_authselect_select_profile is not skipped
-
-      - name: Set Interval For Counting Failed Password Attempts - Ensure authselect
-          changes are applied
-        ansible.builtin.command:
-          cmd: authselect apply-changes -b --backup=after-hardening-custom-profile
-        when:
-        - result_authselect_check_cmd is success
-        - result_authselect_profile is not skipped
-        - result_pam_authselect_restore_features is not skipped
-
-      - name: Set Interval For Counting Failed Password Attempts - Change the PAM
-          file to be edited according to the custom authselect profile
-        ansible.builtin.set_fact:
-          pam_file_path: /etc/authselect/{{ authselect_custom_profile }}/{{ pam_file_path
-            | basename }}
-      when:
-      - result_authselect_present.stat.exists
-
-    - name: Set Interval For Counting Failed Password Attempts - Ensure the "fail_interval"
-        option from "pam_faillock.so" is not present in {{ pam_file_path }}
-      ansible.builtin.replace:
-        dest: '{{ pam_file_path }}'
-        regexp: (.*auth.*pam_faillock.so.*)\bfail_interval\b=?[0-9a-zA-Z]*(.*)
-        replace: \1\2
-      register: result_pam_option_removal
-
-    - name: Set Interval For Counting Failed Password Attempts - Ensure authselect
-        changes are applied
-      ansible.builtin.command:
-        cmd: authselect apply-changes -b
-      when:
-      - result_authselect_present.stat.exists
-      - result_pam_option_removal is changed
-    when:
-    - result_pam_file_present.stat.exists
-  when:
-  - '"pam" in ansible_facts.packages'
-  - result_faillock_conf_check.stat.exists
-  tags:
-  - NIST-800-53-AC-7(a)
-  - NIST-800-53-CM-6(a)
-  - accounts_passwords_pam_faillock_interval
-  - low_complexity
-  - low_disruption
-  - medium_severity
-  - no_reboot_needed
-  - restrict_strategy
-
-- name: Set Interval For Counting Failed Password Attempts - Ensure the pam_faillock.so
-    fail_interval parameter in PAM files
-  block:
-
-  - name: Set Interval For Counting Failed Password Attempts - Check if pam_faillock.so
-      fail_interval parameter is already enabled in pam files
-    ansible.builtin.lineinfile:
-      path: /etc/pam.d/system-auth
-      regexp: .*auth.*pam_faillock\.so (preauth|authfail).*fail_interval
-      state: absent
-    check_mode: true
-    changed_when: false
-    register: result_pam_faillock_fail_interval_parameter_is_present
-
-  - name: Set Interval For Counting Failed Password Attempts - Ensure the inclusion
-      of pam_faillock.so preauth fail_interval parameter in auth section
-    ansible.builtin.lineinfile:
-      path: '{{ item }}'
-      backrefs: true
-      regexp: (^\s*auth\s+)([\w\[].*\b)(\s+pam_faillock.so preauth.*)
-      line: \1required\3 fail_interval={{ var_accounts_passwords_pam_faillock_fail_interval
-        }}
-      state: present
-    loop:
-    - /etc/pam.d/system-auth
-    - /etc/pam.d/password-auth
-    when:
-    - result_pam_faillock_fail_interval_parameter_is_present.found == 0
-
-  - name: Set Interval For Counting Failed Password Attempts - Ensure the inclusion
-      of pam_faillock.so authfail fail_interval parameter in auth section
-    ansible.builtin.lineinfile:
-      path: '{{ item }}'
-      backrefs: true
-      regexp: (^\s*auth\s+)([\w\[].*\b)(\s+pam_faillock.so authfail.*)
-      line: \1required\3 fail_interval={{ var_accounts_passwords_pam_faillock_fail_interval
-        }}
-      state: present
-    loop:
-    - /etc/pam.d/system-auth
-    - /etc/pam.d/password-auth
-    when:
-    - result_pam_faillock_fail_interval_parameter_is_present.found == 0
-
-  - name: Set Interval For Counting Failed Password Attempts - Ensure the desired
-      value for pam_faillock.so preauth fail_interval parameter in auth section
-    ansible.builtin.lineinfile:
-      path: '{{ item }}'
-      backrefs: true
-      regexp: (^\s*auth\s+)([\w\[].*\b)(\s+pam_faillock.so preauth.*)(fail_interval)=[0-9]+(.*)
-      line: \1required\3\4={{ var_accounts_passwords_pam_faillock_fail_interval }}\5
-      state: present
-    loop:
-    - /etc/pam.d/system-auth
-    - /etc/pam.d/password-auth
-    when:
-    - result_pam_faillock_fail_interval_parameter_is_present.found &gt; 0
-
-  - name: Set Interval For Counting Failed Password Attempts - Ensure the desired
-      value for pam_faillock.so authfail fail_interval parameter in auth section
-    ansible.builtin.lineinfile:
-      path: '{{ item }}'
-      backrefs: true
-      regexp: (^\s*auth\s+)([\w\[].*\b)(\s+pam_faillock.so authfail.*)(fail_interval)=[0-9]+(.*)
-      line: \1required\3\4={{ var_accounts_passwords_pam_faillock_fail_interval }}\5
-      state: present
-    loop:
-    - /etc/pam.d/system-auth
-    - /etc/pam.d/password-auth
-    when:
-    - result_pam_faillock_fail_interval_parameter_is_present.found &gt; 0
-  when:
-  - '"pam" in ansible_facts.packages'
-  - not result_faillock_conf_check.stat.exists
-  tags:
-  - NIST-800-53-AC-7(a)
-  - NIST-800-53-CM-6(a)
-  - accounts_passwords_pam_faillock_interval
-  - low_complexity
-  - low_disruption
-  - medium_severity
-  - no_reboot_needed
-  - restrict_strategy
 </code></pre></div></div></td></tr></tbody></table></td></tr><tr data-tt-id="children-xccdf_org.ssgproject.content_group_password_quality" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_accounts-pam"><td style="padding-left: 76px" id="xccdf_org.ssgproject.content_group_password_quality"><span class="label label-default">Group</span>  
                 Set Password Quality Requirements
                           <small>Group contains 1 group and 5 rules</small></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_group_password_quality" class="guide-tree-inner-node guide-tree-inner-node-id-xccdf_org.ssgproject.content_group_password_quality" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_accounts-pam"><td style="padding-left: 76px"><div><a class="small" href="#xccdf_org.ssgproject.content_group_password_quality">[ref]</a>  
@@ -2785,7 +1192,7 @@ lcredit = -1
 ocredit = -1
 maxrepeat = 3</pre>
 The arguments can be modified to ensure compliance with
-your organization's security policy. Discussion of each parameter follows.</div></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit" class="guide-tree-leaf guide-tree-leaf-id-xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit" id="guide-tree-leaf-id12" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_password_quality_pwquality"><td style="padding-left: 114px"><table class="table table-striped table-bordered"><tbody><tr><td colspan="2"><h4 id="xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit"><span class="label label-default">Rule</span>  
+your organization's security policy. Discussion of each parameter follows.</div></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit" class="guide-tree-leaf guide-tree-leaf-id-xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit" id="guide-tree-leaf-id5" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_password_quality_pwquality"><td style="padding-left: 114px"><table class="table table-striped table-bordered"><tbody><tr><td colspan="2"><h4 id="xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit"><span class="label label-default">Rule</span>  
                                 Ensure PAM Enforces Password Requirements - Minimum Digit Characters
                                   <a class="small" href="#xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit">[ref]</a></h4></td></tr><tr><td colspan="2"><div class="description">The pam_pwquality module's <code>dcredit</code> parameter controls requirements for
 usage of digits in a password. When set to a negative number, any password will be required to
@@ -2801,7 +1208,7 @@ Password complexity is one factor of several that determines how long it takes
 to crack a password. The more complex the password, the greater the number of
 possible combinations that need to be tested before the password is compromised.
 Requiring digits makes password guessing attacks more difficult by ensuring a larger
-search space.</div></td></tr><tr><td><span class="label label-warning">Severity:</span> </td><td><div class="severity">medium</div></td></tr><tr><td><span class="label label-primary">Rule ID:</span></td><td>xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit</td></tr><tr><td><span class="label label-default" title="Provide a reference to a document or resource where the user can learn more about the subject of the Rule or Group.">References:</span></td><td class="identifiers"><table class="table table-striped table-bordered"><tr><td><a href="https://www.cisecurity.org/controls/">cis-csc</a></td><td>1, 12, 15, 16, 5</td></tr><tr><td><a href="https://www.isaca.org/resources/cobit">cobit5</a></td><td>DSS05.04, DSS05.05, DSS05.07, DSS05.10, DSS06.03, DSS06.10</td></tr><tr><td><a href="https://public.cyber.mil/stigs/cci/">disa</a></td><td>CCI-000194</td></tr><tr><td><a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">isa-62443-2009</a></td><td>4.3.3.2.2, 4.3.3.5.1, 4.3.3.5.2, 4.3.3.6.1, 4.3.3.6.2, 4.3.3.6.3, 4.3.3.6.4, 4.3.3.6.5, 4.3.3.6.6, 4.3.3.6.7, 4.3.3.6.8, 4.3.3.6.9, 4.3.3.7.2, 4.3.3.7.4</td></tr><tr><td><a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">isa-62443-2013</a></td><td>SR 1.1, SR 1.10, SR 1.2, SR 1.3, SR 1.4, SR 1.5, SR 1.7, SR 1.8, SR 1.9, SR 2.1</td></tr><tr><td><a href="https://www.cyber.gov.au/acsc/view-all-content/ism">ism</a></td><td>0421, 0422, 0431, 0974, 1173, 1401, 1504, 1505, 1546, 1557, 1558, 1559, 1560, 1561</td></tr><tr><td><a href="https://www.iso.org/contents/data/standard/05/45/54534.html">iso27001-2013</a></td><td>A.18.1.4, A.7.1.1, A.9.2.1, A.9.2.2, A.9.2.3, A.9.2.4, A.9.2.6, A.9.3.1, A.9.4.2, A.9.4.3</td></tr><tr><td><a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">nist</a></td><td>IA-5(c), IA-5(1)(a), CM-6(a), IA-5(4)</td></tr><tr><td><a href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">nist-csf</a></td><td>PR.AC-1, PR.AC-6, PR.AC-7</td></tr><tr><td><a href="https://www.niap-ccevs.org/Profile/PP.cfm">ospp</a></td><td>FMT_SMF_EXT.1</td></tr><tr><td><a href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">pcidss</a></td><td>Req-8.2.3</td></tr><tr><td><a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">os-srg</a></td><td>SRG-OS-000071-GPOS-00039</td></tr><tr><td><a href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">anssi</a></td><td>R31</td></tr><tr><td><a href="https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf">pcidss4</a></td><td>8.3.6</td></tr></table></td></tr><tr><td colspan="2"><div class="remediation-description"><a class="btn btn-success" data-toggle="collapse" data-target="#id13" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Shell script ⇲</a><br><div class="panel-collapse collapse" id="id13"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>restrict</td></tr></table><pre><code># Remediation is applicable only in certain platforms
+search space.</div></td></tr><tr><td><span class="label label-warning">Severity:</span> </td><td><div class="severity">medium</div></td></tr><tr><td><span class="label label-primary">Rule ID:</span></td><td>xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit</td></tr><tr><td><span class="label label-default" title="Provide a reference to a document or resource where the user can learn more about the subject of the Rule or Group.">References:</span></td><td class="identifiers"><table class="table table-striped table-bordered"><tr><td><a href="https://www.cisecurity.org/controls/">cis-csc</a></td><td>1, 12, 15, 16, 5</td></tr><tr><td><a href="https://www.isaca.org/resources/cobit">cobit5</a></td><td>DSS05.04, DSS05.05, DSS05.07, DSS05.10, DSS06.03, DSS06.10</td></tr><tr><td><a href="https://public.cyber.mil/stigs/cci/">disa</a></td><td>CCI-000194</td></tr><tr><td><a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">isa-62443-2009</a></td><td>4.3.3.2.2, 4.3.3.5.1, 4.3.3.5.2, 4.3.3.6.1, 4.3.3.6.2, 4.3.3.6.3, 4.3.3.6.4, 4.3.3.6.5, 4.3.3.6.6, 4.3.3.6.7, 4.3.3.6.8, 4.3.3.6.9, 4.3.3.7.2, 4.3.3.7.4</td></tr><tr><td><a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">isa-62443-2013</a></td><td>SR 1.1, SR 1.10, SR 1.2, SR 1.3, SR 1.4, SR 1.5, SR 1.7, SR 1.8, SR 1.9, SR 2.1</td></tr><tr><td><a href="https://www.cyber.gov.au/acsc/view-all-content/ism">ism</a></td><td>0421, 0422, 0431, 0974, 1173, 1401, 1504, 1505, 1546, 1557, 1558, 1559, 1560, 1561</td></tr><tr><td><a href="https://www.iso.org/contents/data/standard/05/45/54534.html">iso27001-2013</a></td><td>A.18.1.4, A.7.1.1, A.9.2.1, A.9.2.2, A.9.2.3, A.9.2.4, A.9.2.6, A.9.3.1, A.9.4.2, A.9.4.3</td></tr><tr><td><a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">nist</a></td><td>IA-5(c), IA-5(1)(a), CM-6(a), IA-5(4)</td></tr><tr><td><a href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">nist-csf</a></td><td>PR.AC-1, PR.AC-6, PR.AC-7</td></tr><tr><td><a href="https://www.niap-ccevs.org/Profile/PP.cfm">ospp</a></td><td>FMT_SMF_EXT.1</td></tr><tr><td><a href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">pcidss</a></td><td>Req-8.2.3</td></tr><tr><td><a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">os-srg</a></td><td>SRG-OS-000071-GPOS-00039</td></tr><tr><td><a href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">anssi</a></td><td>R31</td></tr><tr><td><a href="https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf">pcidss4</a></td><td>8.3.6</td></tr></table></td></tr><tr><td colspan="2"><div class="remediation-description"><a class="btn btn-success" data-toggle="collapse" data-target="#id6" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Shell script ⇲</a><br><div class="panel-collapse collapse" id="id6"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>restrict</td></tr></table><pre><code># Remediation is applicable only in certain platforms
 if rpm --quiet -q pam; then
 
 var_password_pam_dcredit='<abbr title="from Profile/refine-value: xccdf_org.ssgproject.content_value_var_password_pam_dcredit">-1</abbr>'
@@ -2834,7 +1241,7 @@ fi
 else
     &gt;&amp;2 echo 'Remediation is not applicable, nothing was done'
 fi
-</code></pre></div><a class="btn btn-success" data-toggle="collapse" data-target="#id14" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Ansible snippet ⇲</a><br><div class="panel-collapse collapse" id="id14"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>restrict</td></tr></table><pre><code>- name: Gather the package facts
+</code></pre></div><a class="btn btn-success" data-toggle="collapse" data-target="#id7" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Ansible snippet ⇲</a><br><div class="panel-collapse collapse" id="id7"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>restrict</td></tr></table><pre><code>- name: Gather the package facts
   package_facts:
     manager: auto
   tags:
@@ -2877,7 +1284,7 @@ fi
   - medium_severity
   - no_reboot_needed
   - restrict_strategy
-</code></pre></div></div></td></tr></tbody></table></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit" class="guide-tree-leaf guide-tree-leaf-id-xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit" id="guide-tree-leaf-id15" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_password_quality_pwquality"><td style="padding-left: 114px"><table class="table table-striped table-bordered"><tbody><tr><td colspan="2"><h4 id="xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit"><span class="label label-default">Rule</span>  
+</code></pre></div></div></td></tr></tbody></table></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit" class="guide-tree-leaf guide-tree-leaf-id-xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit" id="guide-tree-leaf-id8" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_password_quality_pwquality"><td style="padding-left: 114px"><table class="table table-striped table-bordered"><tbody><tr><td colspan="2"><h4 id="xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit"><span class="label label-default">Rule</span>  
                                 Ensure PAM Enforces Password Requirements - Minimum Lowercase Characters
                                   <a class="small" href="#xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit">[ref]</a></h4></td></tr><tr><td colspan="2"><div class="description">The pam_pwquality module's <code>lcredit</code> parameter controls requirements for
 usage of lowercase letters in a password. When set to a negative number, any password will be required to
@@ -2892,7 +1299,7 @@ Password complexity is one factor of several that determines how long it takes
 to crack a password. The more complex the password, the greater the number of
 possble combinations that need to be tested before the password is compromised.
 Requiring a minimum number of lowercase characters makes password guessing attacks
-more difficult by ensuring a larger search space.</div></td></tr><tr><td><span class="label label-warning">Severity:</span> </td><td><div class="severity">medium</div></td></tr><tr><td><span class="label label-primary">Rule ID:</span></td><td>xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit</td></tr><tr><td><span class="label label-default" title="Provide a reference to a document or resource where the user can learn more about the subject of the Rule or Group.">References:</span></td><td class="identifiers"><table class="table table-striped table-bordered"><tr><td><a href="https://www.cisecurity.org/controls/">cis-csc</a></td><td>1, 12, 15, 16, 5</td></tr><tr><td><a href="https://www.isaca.org/resources/cobit">cobit5</a></td><td>DSS05.04, DSS05.05, DSS05.07, DSS05.10, DSS06.03, DSS06.10</td></tr><tr><td><a href="https://public.cyber.mil/stigs/cci/">disa</a></td><td>CCI-000193</td></tr><tr><td><a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">isa-62443-2009</a></td><td>4.3.3.2.2, 4.3.3.5.1, 4.3.3.5.2, 4.3.3.6.1, 4.3.3.6.2, 4.3.3.6.3, 4.3.3.6.4, 4.3.3.6.5, 4.3.3.6.6, 4.3.3.6.7, 4.3.3.6.8, 4.3.3.6.9, 4.3.3.7.2, 4.3.3.7.4</td></tr><tr><td><a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">isa-62443-2013</a></td><td>SR 1.1, SR 1.10, SR 1.2, SR 1.3, SR 1.4, SR 1.5, SR 1.7, SR 1.8, SR 1.9, SR 2.1</td></tr><tr><td><a href="https://www.cyber.gov.au/acsc/view-all-content/ism">ism</a></td><td>0421, 0422, 0431, 0974, 1173, 1401, 1504, 1505, 1546, 1557, 1558, 1559, 1560, 1561</td></tr><tr><td><a href="https://www.iso.org/contents/data/standard/05/45/54534.html">iso27001-2013</a></td><td>A.18.1.4, A.7.1.1, A.9.2.1, A.9.2.2, A.9.2.3, A.9.2.4, A.9.2.6, A.9.3.1, A.9.4.2, A.9.4.3</td></tr><tr><td><a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">nist</a></td><td>IA-5(c), IA-5(1)(a), CM-6(a), IA-5(4)</td></tr><tr><td><a href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">nist-csf</a></td><td>PR.AC-1, PR.AC-6, PR.AC-7</td></tr><tr><td><a href="https://www.niap-ccevs.org/Profile/PP.cfm">ospp</a></td><td>FMT_SMF_EXT.1</td></tr><tr><td><a href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">pcidss</a></td><td>Req-8.2.3</td></tr><tr><td><a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">os-srg</a></td><td>SRG-OS-000070-GPOS-00038</td></tr><tr><td><a href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">anssi</a></td><td>R31</td></tr><tr><td><a href="https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf">pcidss4</a></td><td>8.3.6</td></tr></table></td></tr><tr><td colspan="2"><div class="remediation-description"><a class="btn btn-success" data-toggle="collapse" data-target="#id16" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Shell script ⇲</a><br><div class="panel-collapse collapse" id="id16"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>restrict</td></tr></table><pre><code># Remediation is applicable only in certain platforms
+more difficult by ensuring a larger search space.</div></td></tr><tr><td><span class="label label-warning">Severity:</span> </td><td><div class="severity">medium</div></td></tr><tr><td><span class="label label-primary">Rule ID:</span></td><td>xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit</td></tr><tr><td><span class="label label-default" title="Provide a reference to a document or resource where the user can learn more about the subject of the Rule or Group.">References:</span></td><td class="identifiers"><table class="table table-striped table-bordered"><tr><td><a href="https://www.cisecurity.org/controls/">cis-csc</a></td><td>1, 12, 15, 16, 5</td></tr><tr><td><a href="https://www.isaca.org/resources/cobit">cobit5</a></td><td>DSS05.04, DSS05.05, DSS05.07, DSS05.10, DSS06.03, DSS06.10</td></tr><tr><td><a href="https://public.cyber.mil/stigs/cci/">disa</a></td><td>CCI-000193</td></tr><tr><td><a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">isa-62443-2009</a></td><td>4.3.3.2.2, 4.3.3.5.1, 4.3.3.5.2, 4.3.3.6.1, 4.3.3.6.2, 4.3.3.6.3, 4.3.3.6.4, 4.3.3.6.5, 4.3.3.6.6, 4.3.3.6.7, 4.3.3.6.8, 4.3.3.6.9, 4.3.3.7.2, 4.3.3.7.4</td></tr><tr><td><a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">isa-62443-2013</a></td><td>SR 1.1, SR 1.10, SR 1.2, SR 1.3, SR 1.4, SR 1.5, SR 1.7, SR 1.8, SR 1.9, SR 2.1</td></tr><tr><td><a href="https://www.cyber.gov.au/acsc/view-all-content/ism">ism</a></td><td>0421, 0422, 0431, 0974, 1173, 1401, 1504, 1505, 1546, 1557, 1558, 1559, 1560, 1561</td></tr><tr><td><a href="https://www.iso.org/contents/data/standard/05/45/54534.html">iso27001-2013</a></td><td>A.18.1.4, A.7.1.1, A.9.2.1, A.9.2.2, A.9.2.3, A.9.2.4, A.9.2.6, A.9.3.1, A.9.4.2, A.9.4.3</td></tr><tr><td><a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">nist</a></td><td>IA-5(c), IA-5(1)(a), CM-6(a), IA-5(4)</td></tr><tr><td><a href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">nist-csf</a></td><td>PR.AC-1, PR.AC-6, PR.AC-7</td></tr><tr><td><a href="https://www.niap-ccevs.org/Profile/PP.cfm">ospp</a></td><td>FMT_SMF_EXT.1</td></tr><tr><td><a href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">pcidss</a></td><td>Req-8.2.3</td></tr><tr><td><a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">os-srg</a></td><td>SRG-OS-000070-GPOS-00038</td></tr><tr><td><a href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">anssi</a></td><td>R31</td></tr><tr><td><a href="https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf">pcidss4</a></td><td>8.3.6</td></tr></table></td></tr><tr><td colspan="2"><div class="remediation-description"><a class="btn btn-success" data-toggle="collapse" data-target="#id9" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Shell script ⇲</a><br><div class="panel-collapse collapse" id="id9"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>restrict</td></tr></table><pre><code># Remediation is applicable only in certain platforms
 if rpm --quiet -q pam; then
 
 var_password_pam_lcredit='<abbr title="from Profile/refine-value: xccdf_org.ssgproject.content_value_var_password_pam_lcredit">-1</abbr>'
@@ -2925,7 +1332,7 @@ fi
 else
     &gt;&amp;2 echo 'Remediation is not applicable, nothing was done'
 fi
-</code></pre></div><a class="btn btn-success" data-toggle="collapse" data-target="#id17" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Ansible snippet ⇲</a><br><div class="panel-collapse collapse" id="id17"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>restrict</td></tr></table><pre><code>- name: Gather the package facts
+</code></pre></div><a class="btn btn-success" data-toggle="collapse" data-target="#id10" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Ansible snippet ⇲</a><br><div class="panel-collapse collapse" id="id10"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>restrict</td></tr></table><pre><code>- name: Gather the package facts
   package_facts:
     manager: auto
   tags:
@@ -2968,7 +1375,7 @@ fi
   - medium_severity
   - no_reboot_needed
   - restrict_strategy
-</code></pre></div></div></td></tr></tbody></table></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen" class="guide-tree-leaf guide-tree-leaf-id-xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen" id="guide-tree-leaf-id18" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_password_quality_pwquality"><td style="padding-left: 114px"><table class="table table-striped table-bordered"><tbody><tr><td colspan="2"><h4 id="xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen"><span class="label label-default">Rule</span>  
+</code></pre></div></div></td></tr></tbody></table></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen" class="guide-tree-leaf guide-tree-leaf-id-xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen" id="guide-tree-leaf-id11" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_password_quality_pwquality"><td style="padding-left: 114px"><table class="table table-striped table-bordered"><tbody><tr><td colspan="2"><h4 id="xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen"><span class="label label-default">Rule</span>  
                                 Ensure PAM Enforces Password Requirements - Minimum Length
                                   <a class="small" href="#xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen">[ref]</a></h4></td></tr><tr><td colspan="2"><div class="description">The pam_pwquality module's <code>minlen</code> parameter controls requirements for
 minimum characters required in a password. Add <code>minlen=<abbr title="from Profile/refine-value: xccdf_org.ssgproject.content_value_var_password_pam_minlen">15</abbr>
@@ -2981,7 +1388,7 @@ password in resisting attempts at guessing and brute-force attacks.
 Password length is one factor of several that helps to determine strength
 and how long it takes to crack a password. Use of more characters in a password
 helps to exponentially increase the time and/or resources required to
-compromise the password.</div></td></tr><tr><td><span class="label label-warning">Severity:</span> </td><td><div class="severity">medium</div></td></tr><tr><td><span class="label label-primary">Rule ID:</span></td><td>xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen</td></tr><tr><td><span class="label label-default" title="Provide a reference to a document or resource where the user can learn more about the subject of the Rule or Group.">References:</span></td><td class="identifiers"><table class="table table-striped table-bordered"><tr><td><a href="https://www.cisecurity.org/controls/">cis-csc</a></td><td>1, 12, 15, 16, 5</td></tr><tr><td><a href="https://www.fbi.gov/file-repository/cjis-security-policy-v5_5_20160601-2-1.pdf">cjis</a></td><td>5.6.2.1.1</td></tr><tr><td><a href="https://www.isaca.org/resources/cobit">cobit5</a></td><td>DSS05.04, DSS05.05, DSS05.07, DSS05.10, DSS06.03, DSS06.10</td></tr><tr><td><a href="https://public.cyber.mil/stigs/cci/">disa</a></td><td>CCI-000205</td></tr><tr><td><a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">isa-62443-2009</a></td><td>4.3.3.2.2, 4.3.3.5.1, 4.3.3.5.2, 4.3.3.6.1, 4.3.3.6.2, 4.3.3.6.3, 4.3.3.6.4, 4.3.3.6.5, 4.3.3.6.6, 4.3.3.6.7, 4.3.3.6.8, 4.3.3.6.9, 4.3.3.7.2, 4.3.3.7.4</td></tr><tr><td><a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">isa-62443-2013</a></td><td>SR 1.1, SR 1.10, SR 1.2, SR 1.3, SR 1.4, SR 1.5, SR 1.7, SR 1.8, SR 1.9, SR 2.1</td></tr><tr><td><a href="https://www.cyber.gov.au/acsc/view-all-content/ism">ism</a></td><td>0421, 0422, 0431, 0974, 1173, 1401, 1504, 1505, 1546, 1557, 1558, 1559, 1560, 1561</td></tr><tr><td><a href="https://www.iso.org/contents/data/standard/05/45/54534.html">iso27001-2013</a></td><td>A.18.1.4, A.7.1.1, A.9.2.1, A.9.2.2, A.9.2.3, A.9.2.4, A.9.2.6, A.9.3.1, A.9.4.2, A.9.4.3</td></tr><tr><td><a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">nist</a></td><td>IA-5(c), IA-5(1)(a), CM-6(a), IA-5(4)</td></tr><tr><td><a href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">nist-csf</a></td><td>PR.AC-1, PR.AC-6, PR.AC-7</td></tr><tr><td><a href="https://www.niap-ccevs.org/Profile/PP.cfm">ospp</a></td><td>FMT_SMF_EXT.1</td></tr><tr><td><a href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">pcidss</a></td><td>Req-8.2.3</td></tr><tr><td><a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">os-srg</a></td><td>SRG-OS-000078-GPOS-00046</td></tr><tr><td><a href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">anssi</a></td><td>R31, R68</td></tr><tr><td><a href="https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf">pcidss4</a></td><td>8.3.6</td></tr></table></td></tr><tr><td colspan="2"><div class="remediation-description"><a class="btn btn-success" data-toggle="collapse" data-target="#id19" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Shell script ⇲</a><br><div class="panel-collapse collapse" id="id19"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>restrict</td></tr></table><pre><code># Remediation is applicable only in certain platforms
+compromise the password.</div></td></tr><tr><td><span class="label label-warning">Severity:</span> </td><td><div class="severity">medium</div></td></tr><tr><td><span class="label label-primary">Rule ID:</span></td><td>xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen</td></tr><tr><td><span class="label label-default" title="Provide a reference to a document or resource where the user can learn more about the subject of the Rule or Group.">References:</span></td><td class="identifiers"><table class="table table-striped table-bordered"><tr><td><a href="https://www.cisecurity.org/controls/">cis-csc</a></td><td>1, 12, 15, 16, 5</td></tr><tr><td><a href="https://www.fbi.gov/file-repository/cjis-security-policy-v5_5_20160601-2-1.pdf">cjis</a></td><td>5.6.2.1.1</td></tr><tr><td><a href="https://www.isaca.org/resources/cobit">cobit5</a></td><td>DSS05.04, DSS05.05, DSS05.07, DSS05.10, DSS06.03, DSS06.10</td></tr><tr><td><a href="https://public.cyber.mil/stigs/cci/">disa</a></td><td>CCI-000205</td></tr><tr><td><a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">isa-62443-2009</a></td><td>4.3.3.2.2, 4.3.3.5.1, 4.3.3.5.2, 4.3.3.6.1, 4.3.3.6.2, 4.3.3.6.3, 4.3.3.6.4, 4.3.3.6.5, 4.3.3.6.6, 4.3.3.6.7, 4.3.3.6.8, 4.3.3.6.9, 4.3.3.7.2, 4.3.3.7.4</td></tr><tr><td><a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">isa-62443-2013</a></td><td>SR 1.1, SR 1.10, SR 1.2, SR 1.3, SR 1.4, SR 1.5, SR 1.7, SR 1.8, SR 1.9, SR 2.1</td></tr><tr><td><a href="https://www.cyber.gov.au/acsc/view-all-content/ism">ism</a></td><td>0421, 0422, 0431, 0974, 1173, 1401, 1504, 1505, 1546, 1557, 1558, 1559, 1560, 1561</td></tr><tr><td><a href="https://www.iso.org/contents/data/standard/05/45/54534.html">iso27001-2013</a></td><td>A.18.1.4, A.7.1.1, A.9.2.1, A.9.2.2, A.9.2.3, A.9.2.4, A.9.2.6, A.9.3.1, A.9.4.2, A.9.4.3</td></tr><tr><td><a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">nist</a></td><td>IA-5(c), IA-5(1)(a), CM-6(a), IA-5(4)</td></tr><tr><td><a href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">nist-csf</a></td><td>PR.AC-1, PR.AC-6, PR.AC-7</td></tr><tr><td><a href="https://www.niap-ccevs.org/Profile/PP.cfm">ospp</a></td><td>FMT_SMF_EXT.1</td></tr><tr><td><a href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">pcidss</a></td><td>Req-8.2.3</td></tr><tr><td><a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">os-srg</a></td><td>SRG-OS-000078-GPOS-00046</td></tr><tr><td><a href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">anssi</a></td><td>R31, R68</td></tr><tr><td><a href="https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf">pcidss4</a></td><td>8.3.6</td></tr></table></td></tr><tr><td colspan="2"><div class="remediation-description"><a class="btn btn-success" data-toggle="collapse" data-target="#id12" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Shell script ⇲</a><br><div class="panel-collapse collapse" id="id12"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>restrict</td></tr></table><pre><code># Remediation is applicable only in certain platforms
 if rpm --quiet -q pam; then
 
 var_password_pam_minlen='<abbr title="from Profile/refine-value: xccdf_org.ssgproject.content_value_var_password_pam_minlen">15</abbr>'
@@ -3014,7 +1421,7 @@ fi
 else
     &gt;&amp;2 echo 'Remediation is not applicable, nothing was done'
 fi
-</code></pre></div><a class="btn btn-success" data-toggle="collapse" data-target="#id20" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Ansible snippet ⇲</a><br><div class="panel-collapse collapse" id="id20"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>restrict</td></tr></table><pre><code>- name: Gather the package facts
+</code></pre></div><a class="btn btn-success" data-toggle="collapse" data-target="#id13" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Ansible snippet ⇲</a><br><div class="panel-collapse collapse" id="id13"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>restrict</td></tr></table><pre><code>- name: Gather the package facts
   package_facts:
     manager: auto
   tags:
@@ -3059,7 +1466,7 @@ fi
   - medium_severity
   - no_reboot_needed
   - restrict_strategy
-</code></pre></div></div></td></tr></tbody></table></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit" class="guide-tree-leaf guide-tree-leaf-id-xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit" id="guide-tree-leaf-id21" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_password_quality_pwquality"><td style="padding-left: 114px"><table class="table table-striped table-bordered"><tbody><tr><td colspan="2"><h4 id="xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit"><span class="label label-default">Rule</span>  
+</code></pre></div></div></td></tr></tbody></table></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit" class="guide-tree-leaf guide-tree-leaf-id-xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit" id="guide-tree-leaf-id14" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_password_quality_pwquality"><td style="padding-left: 114px"><table class="table table-striped table-bordered"><tbody><tr><td colspan="2"><h4 id="xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit"><span class="label label-default">Rule</span>  
                                 Ensure PAM Enforces Password Requirements - Minimum Special Characters
                                   <a class="small" href="#xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit">[ref]</a></h4></td></tr><tr><td colspan="2"><div class="description">The pam_pwquality module's <code>ocredit=</code> parameter controls requirements for
 usage of special (or "other") characters in a password. When set to a negative number,
@@ -3077,7 +1484,7 @@ Password complexity is one factor of several that determines how long it takes
 to crack a password. The more complex the password, the greater the number of
 possible combinations that need to be tested before the password is compromised.
 Requiring a minimum number of special characters makes password guessing attacks
-more difficult by ensuring a larger search space.</div></td></tr><tr><td><span class="label label-warning">Severity:</span> </td><td><div class="severity">medium</div></td></tr><tr><td><span class="label label-primary">Rule ID:</span></td><td>xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit</td></tr><tr><td><span class="label label-default" title="Provide a reference to a document or resource where the user can learn more about the subject of the Rule or Group.">References:</span></td><td class="identifiers"><table class="table table-striped table-bordered"><tr><td><a href="https://www.cisecurity.org/controls/">cis-csc</a></td><td>1, 12, 15, 16, 5</td></tr><tr><td><a href="https://www.isaca.org/resources/cobit">cobit5</a></td><td>DSS05.04, DSS05.05, DSS05.07, DSS05.10, DSS06.03, DSS06.10</td></tr><tr><td><a href="https://public.cyber.mil/stigs/cci/">disa</a></td><td>CCI-001619</td></tr><tr><td><a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">isa-62443-2009</a></td><td>4.3.3.2.2, 4.3.3.5.1, 4.3.3.5.2, 4.3.3.6.1, 4.3.3.6.2, 4.3.3.6.3, 4.3.3.6.4, 4.3.3.6.5, 4.3.3.6.6, 4.3.3.6.7, 4.3.3.6.8, 4.3.3.6.9, 4.3.3.7.2, 4.3.3.7.4</td></tr><tr><td><a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">isa-62443-2013</a></td><td>SR 1.1, SR 1.10, SR 1.2, SR 1.3, SR 1.4, SR 1.5, SR 1.7, SR 1.8, SR 1.9, SR 2.1</td></tr><tr><td><a href="https://www.cyber.gov.au/acsc/view-all-content/ism">ism</a></td><td>0421, 0422, 0431, 0974, 1173, 1401, 1504, 1505, 1546, 1557, 1558, 1559, 1560, 1561</td></tr><tr><td><a href="https://www.iso.org/contents/data/standard/05/45/54534.html">iso27001-2013</a></td><td>A.18.1.4, A.7.1.1, A.9.2.1, A.9.2.2, A.9.2.3, A.9.2.4, A.9.2.6, A.9.3.1, A.9.4.2, A.9.4.3</td></tr><tr><td><a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">nist</a></td><td>IA-5(c), IA-5(1)(a), CM-6(a), IA-5(4)</td></tr><tr><td><a href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">nist-csf</a></td><td>PR.AC-1, PR.AC-6, PR.AC-7</td></tr><tr><td><a href="https://www.niap-ccevs.org/Profile/PP.cfm">ospp</a></td><td>FMT_SMF_EXT.1</td></tr><tr><td><a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">os-srg</a></td><td>SRG-OS-000266-GPOS-00101</td></tr><tr><td><a href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">anssi</a></td><td>R31</td></tr></table></td></tr><tr><td colspan="2"><div class="remediation-description"><a class="btn btn-success" data-toggle="collapse" data-target="#id22" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Shell script ⇲</a><br><div class="panel-collapse collapse" id="id22"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>restrict</td></tr></table><pre><code># Remediation is applicable only in certain platforms
+more difficult by ensuring a larger search space.</div></td></tr><tr><td><span class="label label-warning">Severity:</span> </td><td><div class="severity">medium</div></td></tr><tr><td><span class="label label-primary">Rule ID:</span></td><td>xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit</td></tr><tr><td><span class="label label-default" title="Provide a reference to a document or resource where the user can learn more about the subject of the Rule or Group.">References:</span></td><td class="identifiers"><table class="table table-striped table-bordered"><tr><td><a href="https://www.cisecurity.org/controls/">cis-csc</a></td><td>1, 12, 15, 16, 5</td></tr><tr><td><a href="https://www.isaca.org/resources/cobit">cobit5</a></td><td>DSS05.04, DSS05.05, DSS05.07, DSS05.10, DSS06.03, DSS06.10</td></tr><tr><td><a href="https://public.cyber.mil/stigs/cci/">disa</a></td><td>CCI-001619</td></tr><tr><td><a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">isa-62443-2009</a></td><td>4.3.3.2.2, 4.3.3.5.1, 4.3.3.5.2, 4.3.3.6.1, 4.3.3.6.2, 4.3.3.6.3, 4.3.3.6.4, 4.3.3.6.5, 4.3.3.6.6, 4.3.3.6.7, 4.3.3.6.8, 4.3.3.6.9, 4.3.3.7.2, 4.3.3.7.4</td></tr><tr><td><a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">isa-62443-2013</a></td><td>SR 1.1, SR 1.10, SR 1.2, SR 1.3, SR 1.4, SR 1.5, SR 1.7, SR 1.8, SR 1.9, SR 2.1</td></tr><tr><td><a href="https://www.cyber.gov.au/acsc/view-all-content/ism">ism</a></td><td>0421, 0422, 0431, 0974, 1173, 1401, 1504, 1505, 1546, 1557, 1558, 1559, 1560, 1561</td></tr><tr><td><a href="https://www.iso.org/contents/data/standard/05/45/54534.html">iso27001-2013</a></td><td>A.18.1.4, A.7.1.1, A.9.2.1, A.9.2.2, A.9.2.3, A.9.2.4, A.9.2.6, A.9.3.1, A.9.4.2, A.9.4.3</td></tr><tr><td><a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">nist</a></td><td>IA-5(c), IA-5(1)(a), CM-6(a), IA-5(4)</td></tr><tr><td><a href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">nist-csf</a></td><td>PR.AC-1, PR.AC-6, PR.AC-7</td></tr><tr><td><a href="https://www.niap-ccevs.org/Profile/PP.cfm">ospp</a></td><td>FMT_SMF_EXT.1</td></tr><tr><td><a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">os-srg</a></td><td>SRG-OS-000266-GPOS-00101</td></tr><tr><td><a href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">anssi</a></td><td>R31</td></tr></table></td></tr><tr><td colspan="2"><div class="remediation-description"><a class="btn btn-success" data-toggle="collapse" data-target="#id15" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Shell script ⇲</a><br><div class="panel-collapse collapse" id="id15"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>restrict</td></tr></table><pre><code># Remediation is applicable only in certain platforms
 if rpm --quiet -q pam; then
 
 var_password_pam_ocredit='<abbr title="from Profile/refine-value: xccdf_org.ssgproject.content_value_var_password_pam_ocredit">-1</abbr>'
@@ -3110,7 +1517,7 @@ fi
 else
     &gt;&amp;2 echo 'Remediation is not applicable, nothing was done'
 fi
-</code></pre></div><a class="btn btn-success" data-toggle="collapse" data-target="#id23" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Ansible snippet ⇲</a><br><div class="panel-collapse collapse" id="id23"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>restrict</td></tr></table><pre><code>- name: Gather the package facts
+</code></pre></div><a class="btn btn-success" data-toggle="collapse" data-target="#id16" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Ansible snippet ⇲</a><br><div class="panel-collapse collapse" id="id16"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>restrict</td></tr></table><pre><code>- name: Gather the package facts
   package_facts:
     manager: auto
   tags:
@@ -3149,7 +1556,7 @@ fi
   - medium_severity
   - no_reboot_needed
   - restrict_strategy
-</code></pre></div></div></td></tr></tbody></table></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit" class="guide-tree-leaf guide-tree-leaf-id-xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit" id="guide-tree-leaf-id24" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_password_quality_pwquality"><td style="padding-left: 114px"><table class="table table-striped table-bordered"><tbody><tr><td colspan="2"><h4 id="xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit"><span class="label label-default">Rule</span>  
+</code></pre></div></div></td></tr></tbody></table></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit" class="guide-tree-leaf guide-tree-leaf-id-xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit" id="guide-tree-leaf-id17" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_password_quality_pwquality"><td style="padding-left: 114px"><table class="table table-striped table-bordered"><tbody><tr><td colspan="2"><h4 id="xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit"><span class="label label-default">Rule</span>  
                                 Ensure PAM Enforces Password Requirements - Minimum Uppercase Characters
                                   <a class="small" href="#xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit">[ref]</a></h4></td></tr><tr><td colspan="2"><div class="description">The pam_pwquality module's <code>ucredit=</code> parameter controls requirements for
 usage of uppercase letters in a password. When set to a negative number, any password will be required to
@@ -3162,7 +1569,7 @@ at guessing and brute-force attacks.
           <br>
 Password complexity is one factor of several that determines how long it takes to crack a password. The more
 complex the password, the greater the number of possible combinations that need to be tested before
-the password is compromised.</div></td></tr><tr><td><span class="label label-warning">Severity:</span> </td><td><div class="severity">medium</div></td></tr><tr><td><span class="label label-primary">Rule ID:</span></td><td>xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit</td></tr><tr><td><span class="label label-default" title="Provide a reference to a document or resource where the user can learn more about the subject of the Rule or Group.">References:</span></td><td class="identifiers"><table class="table table-striped table-bordered"><tr><td><a href="https://www.cisecurity.org/controls/">cis-csc</a></td><td>1, 12, 15, 16, 5</td></tr><tr><td><a href="https://www.isaca.org/resources/cobit">cobit5</a></td><td>DSS05.04, DSS05.05, DSS05.07, DSS05.10, DSS06.03, DSS06.10</td></tr><tr><td><a href="https://public.cyber.mil/stigs/cci/">disa</a></td><td>CCI-000192, CCI-000193</td></tr><tr><td><a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">isa-62443-2009</a></td><td>4.3.3.2.2, 4.3.3.5.1, 4.3.3.5.2, 4.3.3.6.1, 4.3.3.6.2, 4.3.3.6.3, 4.3.3.6.4, 4.3.3.6.5, 4.3.3.6.6, 4.3.3.6.7, 4.3.3.6.8, 4.3.3.6.9, 4.3.3.7.2, 4.3.3.7.4</td></tr><tr><td><a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">isa-62443-2013</a></td><td>SR 1.1, SR 1.10, SR 1.2, SR 1.3, SR 1.4, SR 1.5, SR 1.7, SR 1.8, SR 1.9, SR 2.1</td></tr><tr><td><a href="https://www.cyber.gov.au/acsc/view-all-content/ism">ism</a></td><td>0421, 0422, 0431, 0974, 1173, 1401, 1504, 1505, 1546, 1557, 1558, 1559, 1560, 1561</td></tr><tr><td><a href="https://www.iso.org/contents/data/standard/05/45/54534.html">iso27001-2013</a></td><td>A.18.1.4, A.7.1.1, A.9.2.1, A.9.2.2, A.9.2.3, A.9.2.4, A.9.2.6, A.9.3.1, A.9.4.2, A.9.4.3</td></tr><tr><td><a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">nist</a></td><td>IA-5(c), IA-5(1)(a), CM-6(a), IA-5(4)</td></tr><tr><td><a href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">nist-csf</a></td><td>PR.AC-1, PR.AC-6, PR.AC-7</td></tr><tr><td><a href="https://www.niap-ccevs.org/Profile/PP.cfm">ospp</a></td><td>FMT_SMF_EXT.1</td></tr><tr><td><a href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">pcidss</a></td><td>Req-8.2.3</td></tr><tr><td><a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">os-srg</a></td><td>SRG-OS-000069-GPOS-00037, SRG-OS-000070-GPOS-00038</td></tr><tr><td><a href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">anssi</a></td><td>R31</td></tr></table></td></tr><tr><td colspan="2"><div class="remediation-description"><a class="btn btn-success" data-toggle="collapse" data-target="#id25" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Shell script ⇲</a><br><div class="panel-collapse collapse" id="id25"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>restrict</td></tr></table><pre><code># Remediation is applicable only in certain platforms
+the password is compromised.</div></td></tr><tr><td><span class="label label-warning">Severity:</span> </td><td><div class="severity">medium</div></td></tr><tr><td><span class="label label-primary">Rule ID:</span></td><td>xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit</td></tr><tr><td><span class="label label-default" title="Provide a reference to a document or resource where the user can learn more about the subject of the Rule or Group.">References:</span></td><td class="identifiers"><table class="table table-striped table-bordered"><tr><td><a href="https://www.cisecurity.org/controls/">cis-csc</a></td><td>1, 12, 15, 16, 5</td></tr><tr><td><a href="https://www.isaca.org/resources/cobit">cobit5</a></td><td>DSS05.04, DSS05.05, DSS05.07, DSS05.10, DSS06.03, DSS06.10</td></tr><tr><td><a href="https://public.cyber.mil/stigs/cci/">disa</a></td><td>CCI-000192, CCI-000193</td></tr><tr><td><a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">isa-62443-2009</a></td><td>4.3.3.2.2, 4.3.3.5.1, 4.3.3.5.2, 4.3.3.6.1, 4.3.3.6.2, 4.3.3.6.3, 4.3.3.6.4, 4.3.3.6.5, 4.3.3.6.6, 4.3.3.6.7, 4.3.3.6.8, 4.3.3.6.9, 4.3.3.7.2, 4.3.3.7.4</td></tr><tr><td><a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">isa-62443-2013</a></td><td>SR 1.1, SR 1.10, SR 1.2, SR 1.3, SR 1.4, SR 1.5, SR 1.7, SR 1.8, SR 1.9, SR 2.1</td></tr><tr><td><a href="https://www.cyber.gov.au/acsc/view-all-content/ism">ism</a></td><td>0421, 0422, 0431, 0974, 1173, 1401, 1504, 1505, 1546, 1557, 1558, 1559, 1560, 1561</td></tr><tr><td><a href="https://www.iso.org/contents/data/standard/05/45/54534.html">iso27001-2013</a></td><td>A.18.1.4, A.7.1.1, A.9.2.1, A.9.2.2, A.9.2.3, A.9.2.4, A.9.2.6, A.9.3.1, A.9.4.2, A.9.4.3</td></tr><tr><td><a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">nist</a></td><td>IA-5(c), IA-5(1)(a), CM-6(a), IA-5(4)</td></tr><tr><td><a href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">nist-csf</a></td><td>PR.AC-1, PR.AC-6, PR.AC-7</td></tr><tr><td><a href="https://www.niap-ccevs.org/Profile/PP.cfm">ospp</a></td><td>FMT_SMF_EXT.1</td></tr><tr><td><a href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">pcidss</a></td><td>Req-8.2.3</td></tr><tr><td><a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">os-srg</a></td><td>SRG-OS-000069-GPOS-00037, SRG-OS-000070-GPOS-00038</td></tr><tr><td><a href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">anssi</a></td><td>R31</td></tr></table></td></tr><tr><td colspan="2"><div class="remediation-description"><a class="btn btn-success" data-toggle="collapse" data-target="#id18" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Shell script ⇲</a><br><div class="panel-collapse collapse" id="id18"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>restrict</td></tr></table><pre><code># Remediation is applicable only in certain platforms
 if rpm --quiet -q pam; then
 
 var_password_pam_ucredit='<abbr title="from Profile/refine-value: xccdf_org.ssgproject.content_value_var_password_pam_ucredit">-1</abbr>'
@@ -3195,7 +1602,7 @@ fi
 else
     &gt;&amp;2 echo 'Remediation is not applicable, nothing was done'
 fi
-</code></pre></div><a class="btn btn-success" data-toggle="collapse" data-target="#id26" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Ansible snippet ⇲</a><br><div class="panel-collapse collapse" id="id26"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>restrict</td></tr></table><pre><code>- name: Gather the package facts
+</code></pre></div><a class="btn btn-success" data-toggle="collapse" data-target="#id19" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Ansible snippet ⇲</a><br><div class="panel-collapse collapse" id="id19"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>restrict</td></tr></table><pre><code>- name: Gather the package facts
   package_facts:
     manager: auto
   tags:
@@ -3238,7 +1645,7 @@ fi
   - restrict_strategy
 </code></pre></div></div></td></tr></tbody></table></td></tr><tr data-tt-id="children-xccdf_org.ssgproject.content_group_accounts-session" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_accounts"><td style="padding-left: 57px" id="xccdf_org.ssgproject.content_group_accounts-session"><span class="label label-default">Group</span>  
                 Secure Session Configuration Files for Login Accounts
-                          <small>Group contains  1 rule</small></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_group_accounts-session" class="guide-tree-inner-node guide-tree-inner-node-id-xccdf_org.ssgproject.content_group_accounts-session" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_accounts"><td style="padding-left: 57px"><div><a class="small" href="#xccdf_org.ssgproject.content_group_accounts-session">[ref]</a>  
+                          <small>Group contains 1 group and 4 rules</small></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_group_accounts-session" class="guide-tree-inner-node guide-tree-inner-node-id-xccdf_org.ssgproject.content_group_accounts-session" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_accounts"><td style="padding-left: 57px"><div><a class="small" href="#xccdf_org.ssgproject.content_group_accounts-session">[ref]</a>  
                         When a user logs into a Unix account, the system
 configures the user's session by reading a number of files. Many of
 these files are located in the user's home directory, and may have
@@ -3248,7 +1655,338 @@ configuration information, they can often gain full access to the
 affected user's account. Therefore, it is important to test and
 correct configuration file permissions for interactive accounts,
 particularly those of privileged users such as root or system
-administrators.</div></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_rule_accounts_tmout" class="guide-tree-leaf guide-tree-leaf-id-xccdf_org.ssgproject.content_rule_accounts_tmout" id="guide-tree-leaf-id27" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_accounts-session"><td style="padding-left: 76px"><table class="table table-striped table-bordered"><tbody><tr><td colspan="2"><h4 id="xccdf_org.ssgproject.content_rule_accounts_tmout"><span class="label label-default">Rule</span>  
+administrators.</div></td></tr><tr data-tt-id="children-xccdf_org.ssgproject.content_group_user_umask" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_accounts-session"><td style="padding-left: 76px" id="xccdf_org.ssgproject.content_group_user_umask"><span class="label label-default">Group</span>  
+                Ensure that Users Have Sensible Umask Values
+                          <small>Group contains 3 rules</small></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_group_user_umask" class="guide-tree-inner-node guide-tree-inner-node-id-xccdf_org.ssgproject.content_group_user_umask" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_accounts-session"><td style="padding-left: 76px"><div><a class="small" href="#xccdf_org.ssgproject.content_group_user_umask">[ref]</a>  
+                        The umask setting controls the default permissions
+for the creation of new files.
+With a default <code>umask</code> setting of 077, files and directories
+created by users will not be readable by any other user on the
+system. Users who wish to make specific files group- or
+world-readable can accomplish this by using the chmod command.
+Additionally, users can make all their files readable to their
+group by default by setting a <code>umask</code> of 027 in their shell
+configuration files. If default per-user groups exist (that is, if
+every user has a default group whose name is the same as that
+user's username and whose only member is the user), then it may
+even be safe for users to select a <code>umask</code> of 007, making it very
+easy to intentionally share files with groups of which the user is
+a member.
+<br>
+        <br>
+       </div></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_rule_accounts_umask_etc_bashrc" class="guide-tree-leaf guide-tree-leaf-id-xccdf_org.ssgproject.content_rule_accounts_umask_etc_bashrc" id="guide-tree-leaf-id20" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_user_umask"><td style="padding-left: 95px"><table class="table table-striped table-bordered"><tbody><tr><td colspan="2"><h4 id="xccdf_org.ssgproject.content_rule_accounts_umask_etc_bashrc"><span class="label label-default">Rule</span>  
+                                Ensure the Default Bash Umask is Set Correctly
+                                  <a class="small" href="#xccdf_org.ssgproject.content_rule_accounts_umask_etc_bashrc">[ref]</a></h4></td></tr><tr><td colspan="2"><div class="description">To ensure the default umask for users of the Bash shell is set properly,
+add or correct the <code>umask</code> setting in <code>/etc/bashrc</code> to read
+as follows:
+<pre>umask <abbr title="from Profile/refine-value: xccdf_org.ssgproject.content_value_var_accounts_user_umask">077</abbr>
+         </pre>
+        </div></td></tr><tr><td><span class="label label-primary">Rationale:</span></td><td><div class="rationale">The umask value influences the permissions assigned to files when they are created.
+A misconfigured umask value could result in files with excessive permissions that can be read or
+written to by unauthorized users.</div></td></tr><tr><td><span class="label label-warning">Severity:</span> </td><td><div class="severity">medium</div></td></tr><tr><td><span class="label label-primary">Rule ID:</span></td><td>xccdf_org.ssgproject.content_rule_accounts_umask_etc_bashrc</td></tr><tr><td><span class="label label-default" title="Provide a reference to a document or resource where the user can learn more about the subject of the Rule or Group.">References:</span></td><td class="identifiers"><table class="table table-striped table-bordered"><tr><td><a href="https://www.cisecurity.org/controls/">cis-csc</a></td><td>18</td></tr><tr><td><a href="https://www.isaca.org/resources/cobit">cobit5</a></td><td>APO13.01, BAI03.01, BAI03.02, BAI03.03</td></tr><tr><td><a href="https://public.cyber.mil/stigs/cci/">disa</a></td><td>CCI-000366</td></tr><tr><td><a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">isa-62443-2009</a></td><td>4.3.4.3.3</td></tr><tr><td><a href="https://www.iso.org/contents/data/standard/05/45/54534.html">iso27001-2013</a></td><td>A.14.1.1, A.14.2.1, A.14.2.5, A.6.1.5</td></tr><tr><td><a href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">nerc-cip</a></td><td>CIP-003-8 R5.1.1, CIP-003-8 R5.3, CIP-004-6 R2.3, CIP-007-3 R2.1, CIP-007-3 R2.2, CIP-007-3 R2.3, CIP-007-3 R5.1, CIP-007-3 R5.1.1, CIP-007-3 R5.1.2</td></tr><tr><td><a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">nist</a></td><td>AC-6(1), CM-6(a)</td></tr><tr><td><a href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">nist-csf</a></td><td>PR.IP-2</td></tr><tr><td><a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">os-srg</a></td><td>SRG-OS-000480-GPOS-00228, SRG-OS-000480-GPOS-00227</td></tr><tr><td><a href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">anssi</a></td><td>R36</td></tr></table></td></tr><tr><td colspan="2"><div class="remediation-description"><a class="btn btn-success" data-toggle="collapse" data-target="#id21" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Shell script ⇲</a><br><div class="panel-collapse collapse" id="id21"><pre><code># Remediation is applicable only in certain platforms
+if rpm --quiet -q bash; then
+
+var_accounts_user_umask='<abbr title="from Profile/refine-value: xccdf_org.ssgproject.content_value_var_accounts_user_umask">077</abbr>'
+
+
+
+
+
+
+grep -q "^[^#]*\bumask" /etc/bashrc &amp;&amp; \
+  sed -i -E -e "s/^([^#]*\bumask).*/\1 $var_accounts_user_umask/g" /etc/bashrc
+if ! [ $? -eq 0 ]; then
+    echo "umask $var_accounts_user_umask" &gt;&gt; /etc/bashrc
+fi
+
+else
+    &gt;&amp;2 echo 'Remediation is not applicable, nothing was done'
+fi
+</code></pre></div><a class="btn btn-success" data-toggle="collapse" data-target="#id22" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Ansible snippet ⇲</a><br><div class="panel-collapse collapse" id="id22"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>restrict</td></tr></table><pre><code>- name: Gather the package facts
+  package_facts:
+    manager: auto
+  tags:
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - accounts_umask_etc_bashrc
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+- name: XCCDF Value var_accounts_user_umask # promote to variable
+  set_fact:
+    var_accounts_user_umask: !!str <abbr title="from Profile/refine-value: xccdf_org.ssgproject.content_value_var_accounts_user_umask">077</abbr>
+  tags:
+    - always
+
+- name: Check if umask in /etc/bashrc is already set
+  ansible.builtin.lineinfile:
+    path: /etc/bashrc
+    regexp: ^[^#]*\bumask\s+\d+$
+    state: absent
+  check_mode: true
+  changed_when: false
+  register: umask_replace
+  when: '"bash" in ansible_facts.packages'
+  tags:
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - accounts_umask_etc_bashrc
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+
+- name: Replace user umask in /etc/bashrc
+  ansible.builtin.replace:
+    path: /etc/bashrc
+    regexp: ^([^#]*\b)umask\s+\d+$
+    replace: \g&lt;1&gt;umask {{ var_accounts_user_umask }}
+  when:
+  - '"bash" in ansible_facts.packages'
+  - umask_replace.found &gt; 0
+  tags:
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - accounts_umask_etc_bashrc
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+
+- name: Ensure the Default umask is Appended Correctly
+  ansible.builtin.lineinfile:
+    create: true
+    path: /etc/bashrc
+    line: umask {{ var_accounts_user_umask }}
+  when:
+  - '"bash" in ansible_facts.packages'
+  - umask_replace.found == 0
+  tags:
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - accounts_umask_etc_bashrc
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+</code></pre></div></div></td></tr></tbody></table></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_rule_accounts_umask_etc_login_defs" class="guide-tree-leaf guide-tree-leaf-id-xccdf_org.ssgproject.content_rule_accounts_umask_etc_login_defs" id="guide-tree-leaf-id23" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_user_umask"><td style="padding-left: 95px"><table class="table table-striped table-bordered"><tbody><tr><td colspan="2"><h4 id="xccdf_org.ssgproject.content_rule_accounts_umask_etc_login_defs"><span class="label label-default">Rule</span>  
+                                Ensure the Default Umask is Set Correctly in login.defs
+                                  <a class="small" href="#xccdf_org.ssgproject.content_rule_accounts_umask_etc_login_defs">[ref]</a></h4></td></tr><tr><td colspan="2"><div class="description">To ensure the default umask controlled by <code>/etc/login.defs</code> is set properly,
+add or correct the <code>UMASK</code> setting in <code>/etc/login.defs</code> to read as follows:
+<pre>UMASK <abbr title="from Profile/refine-value: xccdf_org.ssgproject.content_value_var_accounts_user_umask">077</abbr>
+         </pre>
+        </div></td></tr><tr><td><span class="label label-primary">Rationale:</span></td><td><div class="rationale">The umask value influences the permissions assigned to files when they are created.
+A misconfigured umask value could result in files with excessive permissions that can be read and
+written to by unauthorized users.</div></td></tr><tr><td><span class="label label-warning">Severity:</span> </td><td><div class="severity">medium</div></td></tr><tr><td><span class="label label-primary">Rule ID:</span></td><td>xccdf_org.ssgproject.content_rule_accounts_umask_etc_login_defs</td></tr><tr><td><span class="label label-default" title="Provide a reference to a document or resource where the user can learn more about the subject of the Rule or Group.">References:</span></td><td class="identifiers"><table class="table table-striped table-bordered"><tr><td><a href="https://www.cisecurity.org/controls/">cis-csc</a></td><td>11, 18, 3, 9</td></tr><tr><td><a href="https://www.isaca.org/resources/cobit">cobit5</a></td><td>APO13.01, BAI03.01, BAI03.02, BAI03.03, BAI10.01, BAI10.02, BAI10.03, BAI10.05</td></tr><tr><td><a href="https://public.cyber.mil/stigs/cci/">disa</a></td><td>CCI-000366</td></tr><tr><td><a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">isa-62443-2009</a></td><td>4.3.4.3.2, 4.3.4.3.3</td></tr><tr><td><a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">isa-62443-2013</a></td><td>SR 7.6</td></tr><tr><td><a href="https://www.iso.org/contents/data/standard/05/45/54534.html">iso27001-2013</a></td><td>A.12.1.2, A.12.5.1, A.12.6.2, A.14.1.1, A.14.2.1, A.14.2.2, A.14.2.3, A.14.2.4, A.14.2.5, A.6.1.5</td></tr><tr><td><a href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">nerc-cip</a></td><td>CIP-003-8 R5.1.1, CIP-003-8 R5.3, CIP-004-6 R2.3, CIP-007-3 R2.1, CIP-007-3 R2.2, CIP-007-3 R2.3, CIP-007-3 R5.1, CIP-007-3 R5.1.1, CIP-007-3 R5.1.2</td></tr><tr><td><a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">nist</a></td><td>AC-6(1), CM-6(a)</td></tr><tr><td><a href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">nist-csf</a></td><td>PR.IP-1, PR.IP-2</td></tr><tr><td><a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">os-srg</a></td><td>SRG-OS-000480-GPOS-00228</td></tr><tr><td><a href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">anssi</a></td><td>R36</td></tr></table></td></tr><tr><td colspan="2"><div class="remediation-description"><a class="btn btn-success" data-toggle="collapse" data-target="#id24" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Shell script ⇲</a><br><div class="panel-collapse collapse" id="id24"><pre><code># Remediation is applicable only in certain platforms
+if rpm --quiet -q shadow-utils; then
+
+var_accounts_user_umask='<abbr title="from Profile/refine-value: xccdf_org.ssgproject.content_value_var_accounts_user_umask">077</abbr>'
+
+
+# Strip any search characters in the key arg so that the key can be replaced without
+# adding any search characters to the config file.
+stripped_key=$(sed 's/[\^=\$,;+]*//g' &lt;&lt;&lt; "^UMASK")
+
+# shellcheck disable=SC2059
+printf -v formatted_output "%s %s" "$stripped_key" "$var_accounts_user_umask"
+
+# If the key exists, change it. Otherwise, add it to the config_file.
+# We search for the key string followed by a word boundary (matched by \&gt;),
+# so if we search for 'setting', 'setting2' won't match.
+if LC_ALL=C grep -q -m 1 -i -e "^UMASK\\&gt;" "/etc/login.defs"; then
+    escaped_formatted_output=$(sed -e 's|/|\\/|g' &lt;&lt;&lt; "$formatted_output")
+    LC_ALL=C sed -i --follow-symlinks "s/^UMASK\\&gt;.*/$escaped_formatted_output/gi" "/etc/login.defs"
+else
+    if [[ -s "/etc/login.defs" ]] &amp;&amp; [[ -n "$(tail -c 1 -- "/etc/login.defs" || true)" ]]; then
+        LC_ALL=C sed -i --follow-symlinks '$a'\\ "/etc/login.defs"
+    fi
+    printf '%s\n' "$formatted_output" &gt;&gt; "/etc/login.defs"
+fi
+
+else
+    &gt;&amp;2 echo 'Remediation is not applicable, nothing was done'
+fi
+</code></pre></div><a class="btn btn-success" data-toggle="collapse" data-target="#id25" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Ansible snippet ⇲</a><br><div class="panel-collapse collapse" id="id25"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>restrict</td></tr></table><pre><code>- name: Gather the package facts
+  package_facts:
+    manager: auto
+  tags:
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - accounts_umask_etc_login_defs
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+- name: XCCDF Value var_accounts_user_umask # promote to variable
+  set_fact:
+    var_accounts_user_umask: !!str <abbr title="from Profile/refine-value: xccdf_org.ssgproject.content_value_var_accounts_user_umask">077</abbr>
+  tags:
+    - always
+
+- name: Check if UMASK is already set
+  ansible.builtin.lineinfile:
+    path: /etc/login.defs
+    regexp: ^(\s*)UMASK\s+.*
+    state: absent
+  check_mode: true
+  changed_when: false
+  register: result_umask_is_set
+  when: '"shadow-utils" in ansible_facts.packages'
+  tags:
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - accounts_umask_etc_login_defs
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+
+- name: Replace user UMASK in /etc/login.defs
+  ansible.builtin.replace:
+    path: /etc/login.defs
+    regexp: ^(\s*)UMASK(\s+).*
+    replace: \g&lt;1&gt;UMASK\g&lt;2&gt;{{ var_accounts_user_umask }}
+  when:
+  - '"shadow-utils" in ansible_facts.packages'
+  - result_umask_is_set.found &gt; 0
+  tags:
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - accounts_umask_etc_login_defs
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+
+- name: Ensure the Default UMASK is Appended Correctly
+  ansible.builtin.lineinfile:
+    create: true
+    path: /etc/login.defs
+    line: UMASK {{ var_accounts_user_umask }}
+  when:
+  - '"shadow-utils" in ansible_facts.packages'
+  - result_umask_is_set.found == 0
+  tags:
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - accounts_umask_etc_login_defs
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+</code></pre></div></div></td></tr></tbody></table></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_rule_accounts_umask_etc_profile" class="guide-tree-leaf guide-tree-leaf-id-xccdf_org.ssgproject.content_rule_accounts_umask_etc_profile" id="guide-tree-leaf-id26" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_user_umask"><td style="padding-left: 95px"><table class="table table-striped table-bordered"><tbody><tr><td colspan="2"><h4 id="xccdf_org.ssgproject.content_rule_accounts_umask_etc_profile"><span class="label label-default">Rule</span>  
+                                Ensure the Default Umask is Set Correctly in /etc/profile
+                                  <a class="small" href="#xccdf_org.ssgproject.content_rule_accounts_umask_etc_profile">[ref]</a></h4></td></tr><tr><td colspan="2"><div class="description">To ensure the default umask controlled by <code>/etc/profile</code> is set properly,
+add or correct the <code>umask</code> setting in <code>/etc/profile</code> to read as follows:
+<pre>umask <abbr title="from Profile/refine-value: xccdf_org.ssgproject.content_value_var_accounts_user_umask">077</abbr>
+         </pre>
+
+Note that <code>/etc/profile</code> also reads scrips within <code>/etc/profile.d</code> directory.
+These scripts are also valid files to set umask value. Therefore, they should also be
+considered during the check and properly remediated, if necessary.</div></td></tr><tr><td><span class="label label-primary">Rationale:</span></td><td><div class="rationale">The umask value influences the permissions assigned to files when they are created.
+A misconfigured umask value could result in files with excessive permissions that can be read or
+written to by unauthorized users.</div></td></tr><tr><td><span class="label label-warning">Severity:</span> </td><td><div class="severity">medium</div></td></tr><tr><td><span class="label label-primary">Rule ID:</span></td><td>xccdf_org.ssgproject.content_rule_accounts_umask_etc_profile</td></tr><tr><td><span class="label label-default" title="Provide a reference to a document or resource where the user can learn more about the subject of the Rule or Group.">References:</span></td><td class="identifiers"><table class="table table-striped table-bordered"><tr><td><a href="https://www.cisecurity.org/controls/">cis-csc</a></td><td>18</td></tr><tr><td><a href="https://www.isaca.org/resources/cobit">cobit5</a></td><td>APO13.01, BAI03.01, BAI03.02, BAI03.03</td></tr><tr><td><a href="https://public.cyber.mil/stigs/cci/">disa</a></td><td>CCI-000366</td></tr><tr><td><a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">isa-62443-2009</a></td><td>4.3.4.3.3</td></tr><tr><td><a href="https://www.iso.org/contents/data/standard/05/45/54534.html">iso27001-2013</a></td><td>A.14.1.1, A.14.2.1, A.14.2.5, A.6.1.5</td></tr><tr><td><a href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">nerc-cip</a></td><td>CIP-003-8 R5.1.1, CIP-003-8 R5.3, CIP-004-6 R2.3, CIP-007-3 R2.1, CIP-007-3 R2.2, CIP-007-3 R2.3, CIP-007-3 R5.1, CIP-007-3 R5.1.1, CIP-007-3 R5.1.2</td></tr><tr><td><a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">nist</a></td><td>AC-6(1), CM-6(a)</td></tr><tr><td><a href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">nist-csf</a></td><td>PR.IP-2</td></tr><tr><td><a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">os-srg</a></td><td>SRG-OS-000480-GPOS-00228, SRG-OS-000480-GPOS-00227</td></tr><tr><td><a href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">anssi</a></td><td>R36</td></tr></table></td></tr><tr><td colspan="2"><div class="remediation-description"><a class="btn btn-success" data-toggle="collapse" data-target="#id27" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Shell script ⇲</a><br><div class="panel-collapse collapse" id="id27"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>restrict</td></tr></table><pre><code>
+var_accounts_user_umask='<abbr title="from Profile/refine-value: xccdf_org.ssgproject.content_value_var_accounts_user_umask">077</abbr>'
+
+
+readarray -t profile_files &lt; &lt;(find /etc/profile.d/ -type f -name '*.sh' -or -name 'sh.local')
+
+for file in "${profile_files[@]}" /etc/profile; do
+  grep -qE '^[^#]*umask' "$file" &amp;&amp; sed -i -E "s/^(\s*umask\s*)[0-7]+/\1$var_accounts_user_umask/g" "$file"
+done
+
+if ! grep -qrE '^[^#]*umask' /etc/profile*; then
+  echo "umask $var_accounts_user_umask" &gt;&gt; /etc/profile
+fi
+</code></pre></div><a class="btn btn-success" data-toggle="collapse" data-target="#id28" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Ansible snippet ⇲</a><br><div class="panel-collapse collapse" id="id28"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>restrict</td></tr></table><pre><code>- name: XCCDF Value var_accounts_user_umask # promote to variable
+  set_fact:
+    var_accounts_user_umask: !!str <abbr title="from Profile/refine-value: xccdf_org.ssgproject.content_value_var_accounts_user_umask">077</abbr>
+  tags:
+    - always
+
+- name: Ensure the Default Umask is Set Correctly in /etc/profile - Locate Profile
+    Configuration Files Where umask Is Defined
+  ansible.builtin.find:
+    paths:
+    - /etc/profile.d
+    patterns:
+    - sh.local
+    - '*.sh'
+    contains: ^[\s]*umask\s+\d+
+  register: result_profile_d_files
+  tags:
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - accounts_umask_etc_profile
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+
+- name: Ensure the Default Umask is Set Correctly in /etc/profile - Replace Existing
+    umask Value in Files From /etc/profile.d
+  ansible.builtin.replace:
+    path: '{{ item.path }}'
+    regexp: ^(\s*)umask\s+\d+
+    replace: \1umask {{ var_accounts_user_umask }}
+  loop: '{{ result_profile_d_files.files }}'
+  register: result_umask_replaced_profile_d
+  when: result_profile_d_files.matched
+  tags:
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - accounts_umask_etc_profile
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+
+- name: Ensure the Default Umask is Set Correctly in /etc/profile - Ensure umask Is
+    Set in /etc/profile if Not Already Set Elsewhere
+  ansible.builtin.lineinfile:
+    create: true
+    mode: 420
+    path: /etc/profile
+    line: umask {{ var_accounts_user_umask }}
+  when: not result_profile_d_files.matched
+  tags:
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - accounts_umask_etc_profile
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+
+- name: Ensure the Default Umask is Set Correctly in /etc/profile - Ensure umask Value
+    For All Existing umask Definition in /etc/profile
+  ansible.builtin.replace:
+    path: /etc/profile
+    regexp: ^(\s*)umask\s+\d+
+    replace: \1umask {{ var_accounts_user_umask }}
+  register: result_umask_replaced_profile
+  tags:
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - accounts_umask_etc_profile
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+  - restrict_strategy
+</code></pre></div></div></td></tr></tbody></table></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_rule_accounts_tmout" class="guide-tree-leaf guide-tree-leaf-id-xccdf_org.ssgproject.content_rule_accounts_tmout" id="guide-tree-leaf-id29" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_accounts-session"><td style="padding-left: 76px"><table class="table table-striped table-bordered"><tbody><tr><td colspan="2"><h4 id="xccdf_org.ssgproject.content_rule_accounts_tmout"><span class="label label-default">Rule</span>  
                                 Set Interactive Session Timeout
                                   <a class="small" href="#xccdf_org.ssgproject.content_rule_accounts_tmout">[ref]</a></h4></td></tr><tr><td colspan="2"><div class="description">Setting the <code>TMOUT</code> option in <code>/etc/profile</code> ensures that
 all user sessions will terminate based on inactivity.
@@ -3265,7 +2003,7 @@ or
 Using the <code>typeset</code> keyword is preferred for wider compatibility with ksh and other shells.</div></td></tr><tr><td><span class="label label-primary">Rationale:</span></td><td><div class="rationale">Terminating an idle session within a short time period reduces
 the window of opportunity for unauthorized personnel to take control of a
 management session enabled on the console or console port that has been
-left unattended.</div></td></tr><tr><td><span class="label label-warning">Severity:</span> </td><td><div class="severity">medium</div></td></tr><tr><td><span class="label label-primary">Rule ID:</span></td><td>xccdf_org.ssgproject.content_rule_accounts_tmout</td></tr><tr><td><span class="label label-default" title="Provide a reference to a document or resource where the user can learn more about the subject of the Rule or Group.">References:</span></td><td class="identifiers"><table class="table table-striped table-bordered"><tr><td><a href="https://www.cisecurity.org/controls/">cis-csc</a></td><td>1, 12, 15, 16</td></tr><tr><td><a href="https://www.isaca.org/resources/cobit">cobit5</a></td><td>DSS05.04, DSS05.10, DSS06.10</td></tr><tr><td><a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-171.pdf">cui</a></td><td>3.1.11</td></tr><tr><td><a href="https://public.cyber.mil/stigs/cci/">disa</a></td><td>CCI-000057, CCI-001133, CCI-002361</td></tr><tr><td><a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">isa-62443-2009</a></td><td>4.3.3.6.1, 4.3.3.6.2, 4.3.3.6.3, 4.3.3.6.4, 4.3.3.6.5, 4.3.3.6.6, 4.3.3.6.7, 4.3.3.6.8, 4.3.3.6.9</td></tr><tr><td><a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">isa-62443-2013</a></td><td>SR 1.1, SR 1.10, SR 1.2, SR 1.5, SR 1.7, SR 1.8, SR 1.9</td></tr><tr><td><a href="https://www.iso.org/contents/data/standard/05/45/54534.html">iso27001-2013</a></td><td>A.18.1.4, A.9.2.1, A.9.2.4, A.9.3.1, A.9.4.2, A.9.4.3</td></tr><tr><td><a href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">nerc-cip</a></td><td>CIP-004-6 R2.2.3, CIP-007-3 R5.1, CIP-007-3 R5.2, CIP-007-3 R5.3.1, CIP-007-3 R5.3.2, CIP-007-3 R5.3.3</td></tr><tr><td><a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">nist</a></td><td>AC-12, SC-10, AC-2(5), CM-6(a)</td></tr><tr><td><a href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">nist-csf</a></td><td>PR.AC-7</td></tr><tr><td><a href="https://www.niap-ccevs.org/Profile/PP.cfm">ospp</a></td><td>FMT_MOF_EXT.1</td></tr><tr><td><a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">os-srg</a></td><td>SRG-OS-000163-GPOS-00072, SRG-OS-000029-GPOS-00010</td></tr><tr><td><a href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">anssi</a></td><td>R32</td></tr><tr><td><a href="https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf">pcidss4</a></td><td>8.6.1</td></tr></table></td></tr><tr><td colspan="2"><div class="remediation-description"><a class="btn btn-success" data-toggle="collapse" data-target="#id28" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Shell script ⇲</a><br><div class="panel-collapse collapse" id="id28"><pre><code># Remediation is applicable only in certain platforms
+left unattended.</div></td></tr><tr><td><span class="label label-warning">Severity:</span> </td><td><div class="severity">medium</div></td></tr><tr><td><span class="label label-primary">Rule ID:</span></td><td>xccdf_org.ssgproject.content_rule_accounts_tmout</td></tr><tr><td><span class="label label-default" title="Provide a reference to a document or resource where the user can learn more about the subject of the Rule or Group.">References:</span></td><td class="identifiers"><table class="table table-striped table-bordered"><tr><td><a href="https://www.cisecurity.org/controls/">cis-csc</a></td><td>1, 12, 15, 16</td></tr><tr><td><a href="https://www.isaca.org/resources/cobit">cobit5</a></td><td>DSS05.04, DSS05.10, DSS06.10</td></tr><tr><td><a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-171.pdf">cui</a></td><td>3.1.11</td></tr><tr><td><a href="https://public.cyber.mil/stigs/cci/">disa</a></td><td>CCI-000057, CCI-001133, CCI-002361</td></tr><tr><td><a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">isa-62443-2009</a></td><td>4.3.3.6.1, 4.3.3.6.2, 4.3.3.6.3, 4.3.3.6.4, 4.3.3.6.5, 4.3.3.6.6, 4.3.3.6.7, 4.3.3.6.8, 4.3.3.6.9</td></tr><tr><td><a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">isa-62443-2013</a></td><td>SR 1.1, SR 1.10, SR 1.2, SR 1.5, SR 1.7, SR 1.8, SR 1.9</td></tr><tr><td><a href="https://www.iso.org/contents/data/standard/05/45/54534.html">iso27001-2013</a></td><td>A.18.1.4, A.9.2.1, A.9.2.4, A.9.3.1, A.9.4.2, A.9.4.3</td></tr><tr><td><a href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">nerc-cip</a></td><td>CIP-004-6 R2.2.3, CIP-007-3 R5.1, CIP-007-3 R5.2, CIP-007-3 R5.3.1, CIP-007-3 R5.3.2, CIP-007-3 R5.3.3</td></tr><tr><td><a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">nist</a></td><td>AC-12, SC-10, AC-2(5), CM-6(a)</td></tr><tr><td><a href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">nist-csf</a></td><td>PR.AC-7</td></tr><tr><td><a href="https://www.niap-ccevs.org/Profile/PP.cfm">ospp</a></td><td>FMT_MOF_EXT.1</td></tr><tr><td><a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">os-srg</a></td><td>SRG-OS-000163-GPOS-00072, SRG-OS-000029-GPOS-00010</td></tr><tr><td><a href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">anssi</a></td><td>R32</td></tr><tr><td><a href="https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf">pcidss4</a></td><td>8.6.1</td></tr></table></td></tr><tr><td colspan="2"><div class="remediation-description"><a class="btn btn-success" data-toggle="collapse" data-target="#id30" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Shell script ⇲</a><br><div class="panel-collapse collapse" id="id30"><pre><code># Remediation is applicable only in certain platforms
 if [ ! -f /.dockerenv ] &amp;&amp; [ ! -f /run/.containerenv ]; then
 
 var_accounts_tmout='<abbr title="from Profile/refine-value: xccdf_org.ssgproject.content_value_var_accounts_tmout">600</abbr>'
@@ -3291,7 +2029,7 @@ fi
 else
     &gt;&amp;2 echo 'Remediation is not applicable, nothing was done'
 fi
-</code></pre></div><a class="btn btn-success" data-toggle="collapse" data-target="#id29" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Ansible snippet ⇲</a><br><div class="panel-collapse collapse" id="id29"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>restrict</td></tr></table><pre><code>- name: XCCDF Value var_accounts_tmout # promote to variable
+</code></pre></div><a class="btn btn-success" data-toggle="collapse" data-target="#id31" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Ansible snippet ⇲</a><br><div class="panel-collapse collapse" id="id31"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>restrict</td></tr></table><pre><code>- name: XCCDF Value var_accounts_tmout # promote to variable
   set_fact:
     var_accounts_tmout: !!str <abbr title="from Profile/refine-value: xccdf_org.ssgproject.content_value_var_accounts_tmout">600</abbr>
   tags:

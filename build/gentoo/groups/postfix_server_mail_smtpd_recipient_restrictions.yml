@@ -16,8 +16,8 @@ rules: {}
 platform: ''
 platforms: !!set {}
 inherited_platforms: !!set
-    machine: null
     package[postfix]: null
+    machine: null
 cpe_platform_names: !!set {}
 title: Enact SMTP Recipient Restrictions
 definition_location: /home/fra/gentoo_scap/linux_os/guide/services/mail/postfix_harden_os/postfix_server_cfg/postfix_server_relay/postfix_server_mail_smtpd_recipient_restrictions/group.yml

@@ -8,6 +8,7 @@
     var_password_pam_ucredit: -1
     var_password_pam_unix_remember: 2
     var_accounts_tmout: 600
+    var_accounts_user_umask: '077'
     var_accounts_passwords_pam_faillock_deny: 3
     var_accounts_passwords_pam_faillock_fail_interval: 900
   tasks:
@@ -79,3 +80,32 @@
       create: true
       regexp: (?:typeset|declare)[\s]+-xr[\s]+TMOUT=([\w$]+).*$
       line: typeset -xr TMOUT={{ var_accounts_tmout }}
+
+  - name: Ensure default umask configuration in /etc/bashrc
+    ansible.builtin.lineinfile:
+      path: /etc/bash/bashrc.d/umask.sh
+      line: umask {{ var_accounts_user_umask }}
+      create: true
+
+  - name: Ensure default umask configuration in /etc/profile
+    ansible.builtin.lineinfile:
+      path: /etc/profile
+      line: 'umask {{ var_accounts_user_umask }}'
+
+  - name: Ensure default umask configuration in /etc/login.defs
+    block:
+      - name: Remove previous UMASK configuration
+        ansible.builtin.lineinfile:
+          path: /etc/login.defs
+          regexp: '^(\s*)UMASK\s+.*'
+          state: absent
+
+      - name: Add a new UMASK configuration
+        ansible.builtin.lineinfile:
+          path: /etc/login.defs
+          line: 'UMASK {{ var_accounts_user_umask }}'
+
+  - name: Ensure default umask configuration in /etc/bash/bashrc
+    ansible.builtin.lineinfile:
+      path: /etc/bash/bashrc
+      line: umask {{ var_accounts_user_umask }}

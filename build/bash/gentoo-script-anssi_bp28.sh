@@ -225,245 +225,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_unix_remember'
 
 ###############################################################################
-# BEGIN fix (2 / 10) for 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_deny'
+# BEGIN fix (2 / 10) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit'
 ###############################################################################
-(>&2 echo "Remediating rule 2/10: 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_deny'")
-# Remediation is applicable only in certain platforms
-if rpm --quiet -q pam; then
-
-var_accounts_passwords_pam_faillock_deny='3'
-
-
-if [ -f /usr/bin/authselect ]; then
-    if ! authselect check; then
-echo "
-authselect integrity check failed. Remediation aborted!
-This remediation could not be applied because an authselect profile was not selected or the selected profile is not intact.
-It is not recommended to manually edit the PAM files when authselect tool is available.
-In cases where the default authselect profile does not cover a specific demand, a custom authselect profile is recommended."
-exit 1
-fi
-authselect enable-feature with-faillock
-
-authselect apply-changes -b
-else
-    
-AUTH_FILES=("/etc/pam.d/system-auth" "/etc/pam.d/password-auth")
-for pam_file in "${AUTH_FILES[@]}"
-do
-    if ! grep -qE '^\s*auth\s+required\s+pam_faillock\.so\s+(preauth silent|authfail).*$' "$pam_file" ; then
-        sed -i --follow-symlinks '/^auth.*sufficient.*pam_unix\.so.*/i auth        required      pam_faillock.so preauth silent' "$pam_file"
-        sed -i --follow-symlinks '/^auth.*required.*pam_deny\.so.*/i auth        required      pam_faillock.so authfail' "$pam_file"
-        sed -i --follow-symlinks '/^account.*required.*pam_unix\.so.*/i account     required      pam_faillock.so' "$pam_file"
-    fi
-    sed -Ei 's/(auth.*)(\[default=die\])(.*pam_faillock\.so)/\1required     \3/g' "$pam_file"
-done
-
-fi
-
-AUTH_FILES=("/etc/pam.d/system-auth" "/etc/pam.d/password-auth")
-
-FAILLOCK_CONF="/etc/security/faillock.conf"
-if [ -f $FAILLOCK_CONF ]; then
-    regex="^\s*deny\s*="
-    line="deny = $var_accounts_passwords_pam_faillock_deny"
-    if ! grep -q $regex $FAILLOCK_CONF; then
-        echo $line >> $FAILLOCK_CONF
-    else
-        sed -i --follow-symlinks 's|^\s*\(deny\s*=\s*\)\(\S\+\)|\1'"$var_accounts_passwords_pam_faillock_deny"'|g' $FAILLOCK_CONF
-    fi
-    for pam_file in "${AUTH_FILES[@]}"
-    do
-        if [ -e "$pam_file" ] ; then
-            PAM_FILE_PATH="$pam_file"
-            if [ -f /usr/bin/authselect ]; then
-                
-                if ! authselect check; then
-                echo "
-                authselect integrity check failed. Remediation aborted!
-                This remediation could not be applied because an authselect profile was not selected or the selected profile is not intact.
-                It is not recommended to manually edit the PAM files when authselect tool is available.
-                In cases where the default authselect profile does not cover a specific demand, a custom authselect profile is recommended."
-                exit 1
-                fi
-
-                CURRENT_PROFILE=$(authselect current -r | awk '{ print $1 }')
-                # If not already in use, a custom profile is created preserving the enabled features.
-                if [[ ! $CURRENT_PROFILE == custom/* ]]; then
-                    ENABLED_FEATURES=$(authselect current | tail -n+3 | awk '{ print $2 }')
-                    authselect create-profile hardening -b $CURRENT_PROFILE
-                    CURRENT_PROFILE="custom/hardening"
-                    
-                    authselect apply-changes -b --backup=before-hardening-custom-profile
-                    authselect select $CURRENT_PROFILE
-                    for feature in $ENABLED_FEATURES; do
-                        authselect enable-feature $feature;
-                    done
-                    
-                    authselect apply-changes -b --backup=after-hardening-custom-profile
-                fi
-                PAM_FILE_NAME=$(basename "$pam_file")
-                PAM_FILE_PATH="/etc/authselect/$CURRENT_PROFILE/$PAM_FILE_NAME"
-
-                authselect apply-changes -b
-            fi
-            
-        if grep -qP '^\s*auth\s.*\bpam_faillock.so\s.*\bdeny\b' "$PAM_FILE_PATH"; then
-            sed -i -E --follow-symlinks 's/(.*auth.*pam_faillock.so.*)\bdeny\b=?[[:alnum:]]*(.*)/\1\2/g' "$PAM_FILE_PATH"
-        fi
-            if [ -f /usr/bin/authselect ]; then
-                
-                authselect apply-changes -b
-            fi
-        else
-            echo "$pam_file was not found" >&2
-        fi
-    done
-else
-    for pam_file in "${AUTH_FILES[@]}"
-    do
-        if ! grep -qE '^\s*auth.*pam_faillock\.so (preauth|authfail).*deny' "$pam_file"; then
-            sed -i --follow-symlinks '/^auth.*required.*pam_faillock\.so.*preauth.*silent.*/ s/$/ deny='"$var_accounts_passwords_pam_faillock_deny"'/' "$pam_file"
-            sed -i --follow-symlinks '/^auth.*required.*pam_faillock\.so.*authfail.*/ s/$/ deny='"$var_accounts_passwords_pam_faillock_deny"'/' "$pam_file"
-        else
-            sed -i --follow-symlinks 's/\(^auth.*required.*pam_faillock\.so.*preauth.*silent.*\)\('"deny"'=\)[0-9]\+\(.*\)/\1\2'"$var_accounts_passwords_pam_faillock_deny"'\3/' "$pam_file"
-            sed -i --follow-symlinks 's/\(^auth.*required.*pam_faillock\.so.*authfail.*\)\('"deny"'=\)[0-9]\+\(.*\)/\1\2'"$var_accounts_passwords_pam_faillock_deny"'\3/' "$pam_file"
-        fi
-    done
-fi
-
-else
-    >&2 echo 'Remediation is not applicable, nothing was done'
-fi
-
-# END fix for 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_deny'
-
-###############################################################################
-# BEGIN fix (3 / 10) for 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_deny_root'
-###############################################################################
-(>&2 echo "Remediating rule 3/10: 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_deny_root'")
-(>&2 echo "FIX FOR THIS RULE 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_deny_root' IS MISSING!")
-
-# END fix for 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_deny_root'
-
-###############################################################################
-# BEGIN fix (4 / 10) for 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_interval'
-###############################################################################
-(>&2 echo "Remediating rule 4/10: 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_interval'")
-# Remediation is applicable only in certain platforms
-if rpm --quiet -q pam; then
-
-var_accounts_passwords_pam_faillock_fail_interval='900'
-
-
-if [ -f /usr/bin/authselect ]; then
-    if ! authselect check; then
-echo "
-authselect integrity check failed. Remediation aborted!
-This remediation could not be applied because an authselect profile was not selected or the selected profile is not intact.
-It is not recommended to manually edit the PAM files when authselect tool is available.
-In cases where the default authselect profile does not cover a specific demand, a custom authselect profile is recommended."
-exit 1
-fi
-authselect enable-feature with-faillock
-
-authselect apply-changes -b
-else
-    
-AUTH_FILES=("/etc/pam.d/system-auth" "/etc/pam.d/password-auth")
-for pam_file in "${AUTH_FILES[@]}"
-do
-    if ! grep -qE '^\s*auth\s+required\s+pam_faillock\.so\s+(preauth silent|authfail).*$' "$pam_file" ; then
-        sed -i --follow-symlinks '/^auth.*sufficient.*pam_unix\.so.*/i auth        required      pam_faillock.so preauth silent' "$pam_file"
-        sed -i --follow-symlinks '/^auth.*required.*pam_deny\.so.*/i auth        required      pam_faillock.so authfail' "$pam_file"
-        sed -i --follow-symlinks '/^account.*required.*pam_unix\.so.*/i account     required      pam_faillock.so' "$pam_file"
-    fi
-    sed -Ei 's/(auth.*)(\[default=die\])(.*pam_faillock\.so)/\1required     \3/g' "$pam_file"
-done
-
-fi
-
-AUTH_FILES=("/etc/pam.d/system-auth" "/etc/pam.d/password-auth")
-
-FAILLOCK_CONF="/etc/security/faillock.conf"
-if [ -f $FAILLOCK_CONF ]; then
-    regex="^\s*fail_interval\s*="
-    line="fail_interval = $var_accounts_passwords_pam_faillock_fail_interval"
-    if ! grep -q $regex $FAILLOCK_CONF; then
-        echo $line >> $FAILLOCK_CONF
-    else
-        sed -i --follow-symlinks 's|^\s*\(fail_interval\s*=\s*\)\(\S\+\)|\1'"$var_accounts_passwords_pam_faillock_fail_interval"'|g' $FAILLOCK_CONF
-    fi
-    for pam_file in "${AUTH_FILES[@]}"
-    do
-        if [ -e "$pam_file" ] ; then
-            PAM_FILE_PATH="$pam_file"
-            if [ -f /usr/bin/authselect ]; then
-                
-                if ! authselect check; then
-                echo "
-                authselect integrity check failed. Remediation aborted!
-                This remediation could not be applied because an authselect profile was not selected or the selected profile is not intact.
-                It is not recommended to manually edit the PAM files when authselect tool is available.
-                In cases where the default authselect profile does not cover a specific demand, a custom authselect profile is recommended."
-                exit 1
-                fi
-
-                CURRENT_PROFILE=$(authselect current -r | awk '{ print $1 }')
-                # If not already in use, a custom profile is created preserving the enabled features.
-                if [[ ! $CURRENT_PROFILE == custom/* ]]; then
-                    ENABLED_FEATURES=$(authselect current | tail -n+3 | awk '{ print $2 }')
-                    authselect create-profile hardening -b $CURRENT_PROFILE
-                    CURRENT_PROFILE="custom/hardening"
-                    
-                    authselect apply-changes -b --backup=before-hardening-custom-profile
-                    authselect select $CURRENT_PROFILE
-                    for feature in $ENABLED_FEATURES; do
-                        authselect enable-feature $feature;
-                    done
-                    
-                    authselect apply-changes -b --backup=after-hardening-custom-profile
-                fi
-                PAM_FILE_NAME=$(basename "$pam_file")
-                PAM_FILE_PATH="/etc/authselect/$CURRENT_PROFILE/$PAM_FILE_NAME"
-
-                authselect apply-changes -b
-            fi
-            
-        if grep -qP '^\s*auth\s.*\bpam_faillock.so\s.*\bfail_interval\b' "$PAM_FILE_PATH"; then
-            sed -i -E --follow-symlinks 's/(.*auth.*pam_faillock.so.*)\bfail_interval\b=?[[:alnum:]]*(.*)/\1\2/g' "$PAM_FILE_PATH"
-        fi
-            if [ -f /usr/bin/authselect ]; then
-                
-                authselect apply-changes -b
-            fi
-        else
-            echo "$pam_file was not found" >&2
-        fi
-    done
-else
-    for pam_file in "${AUTH_FILES[@]}"
-    do
-        if ! grep -qE '^\s*auth.*pam_faillock\.so (preauth|authfail).*fail_interval' "$pam_file"; then
-            sed -i --follow-symlinks '/^auth.*required.*pam_faillock\.so.*preauth.*silent.*/ s/$/ fail_interval='"$var_accounts_passwords_pam_faillock_fail_interval"'/' "$pam_file"
-            sed -i --follow-symlinks '/^auth.*required.*pam_faillock\.so.*authfail.*/ s/$/ fail_interval='"$var_accounts_passwords_pam_faillock_fail_interval"'/' "$pam_file"
-        else
-            sed -i --follow-symlinks 's/\(^auth.*required.*pam_faillock\.so.*preauth.*silent.*\)\('"fail_interval"'=\)[0-9]\+\(.*\)/\1\2'"$var_accounts_passwords_pam_faillock_fail_interval"'\3/' "$pam_file"
-            sed -i --follow-symlinks 's/\(^auth.*required.*pam_faillock\.so.*authfail.*\)\('"fail_interval"'=\)[0-9]\+\(.*\)/\1\2'"$var_accounts_passwords_pam_faillock_fail_interval"'\3/' "$pam_file"
-        fi
-    done
-fi
-
-else
-    >&2 echo 'Remediation is not applicable, nothing was done'
-fi
-
-# END fix for 'xccdf_org.ssgproject.content_rule_accounts_passwords_pam_faillock_interval'
-
-###############################################################################
-# BEGIN fix (5 / 10) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit'
-###############################################################################
-(>&2 echo "Remediating rule 5/10: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit'")
+(>&2 echo "Remediating rule 2/10: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit'")
 # Remediation is applicable only in certain platforms
 if rpm --quiet -q pam; then
 
@@ -501,9 +265,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit'
 
 ###############################################################################
-# BEGIN fix (6 / 10) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit'
+# BEGIN fix (3 / 10) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit'
 ###############################################################################
-(>&2 echo "Remediating rule 6/10: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit'")
+(>&2 echo "Remediating rule 3/10: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit'")
 # Remediation is applicable only in certain platforms
 if rpm --quiet -q pam; then
 
@@ -541,9 +305,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit'
 
 ###############################################################################
-# BEGIN fix (7 / 10) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen'
+# BEGIN fix (4 / 10) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen'
 ###############################################################################
-(>&2 echo "Remediating rule 7/10: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen'")
+(>&2 echo "Remediating rule 4/10: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen'")
 # Remediation is applicable only in certain platforms
 if rpm --quiet -q pam; then
 
@@ -581,9 +345,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen'
 
 ###############################################################################
-# BEGIN fix (8 / 10) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit'
+# BEGIN fix (5 / 10) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit'
 ###############################################################################
-(>&2 echo "Remediating rule 8/10: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit'")
+(>&2 echo "Remediating rule 5/10: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit'")
 # Remediation is applicable only in certain platforms
 if rpm --quiet -q pam; then
 
@@ -621,9 +385,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit'
 
 ###############################################################################
-# BEGIN fix (9 / 10) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit'
+# BEGIN fix (6 / 10) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit'
 ###############################################################################
-(>&2 echo "Remediating rule 9/10: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit'")
+(>&2 echo "Remediating rule 6/10: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit'")
 # Remediation is applicable only in certain platforms
 if rpm --quiet -q pam; then
 
@@ -661,9 +425,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit'
 
 ###############################################################################
-# BEGIN fix (10 / 10) for 'xccdf_org.ssgproject.content_rule_accounts_tmout'
+# BEGIN fix (7 / 10) for 'xccdf_org.ssgproject.content_rule_accounts_tmout'
 ###############################################################################
-(>&2 echo "Remediating rule 10/10: 'xccdf_org.ssgproject.content_rule_accounts_tmout'")
+(>&2 echo "Remediating rule 7/10: 'xccdf_org.ssgproject.content_rule_accounts_tmout'")
 # Remediation is applicable only in certain platforms
 if [ ! -f /.dockerenv ] && [ ! -f /run/.containerenv ]; then
 
@@ -692,4 +456,86 @@ else
 fi
 
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_tmout'
+
+###############################################################################
+# BEGIN fix (8 / 10) for 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_bashrc'
+###############################################################################
+(>&2 echo "Remediating rule 8/10: 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_bashrc'")
+# Remediation is applicable only in certain platforms
+if rpm --quiet -q bash; then
+
+var_accounts_user_umask='077'
+
+
+
+
+
+
+grep -q "^[^#]*\bumask" /etc/bashrc && \
+  sed -i -E -e "s/^([^#]*\bumask).*/\1 $var_accounts_user_umask/g" /etc/bashrc
+if ! [ $? -eq 0 ]; then
+    echo "umask $var_accounts_user_umask" >> /etc/bashrc
+fi
+
+else
+    >&2 echo 'Remediation is not applicable, nothing was done'
+fi
+
+# END fix for 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_bashrc'
+
+###############################################################################
+# BEGIN fix (9 / 10) for 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_login_defs'
+###############################################################################
+(>&2 echo "Remediating rule 9/10: 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_login_defs'")
+# Remediation is applicable only in certain platforms
+if rpm --quiet -q shadow-utils; then
+
+var_accounts_user_umask='077'
+
+
+# Strip any search characters in the key arg so that the key can be replaced without
+# adding any search characters to the config file.
+stripped_key=$(sed 's/[\^=\$,;+]*//g' <<< "^UMASK")
+
+# shellcheck disable=SC2059
+printf -v formatted_output "%s %s" "$stripped_key" "$var_accounts_user_umask"
+
+# If the key exists, change it. Otherwise, add it to the config_file.
+# We search for the key string followed by a word boundary (matched by \>),
+# so if we search for 'setting', 'setting2' won't match.
+if LC_ALL=C grep -q -m 1 -i -e "^UMASK\\>" "/etc/login.defs"; then
+    escaped_formatted_output=$(sed -e 's|/|\\/|g' <<< "$formatted_output")
+    LC_ALL=C sed -i --follow-symlinks "s/^UMASK\\>.*/$escaped_formatted_output/gi" "/etc/login.defs"
+else
+    if [[ -s "/etc/login.defs" ]] && [[ -n "$(tail -c 1 -- "/etc/login.defs" || true)" ]]; then
+        LC_ALL=C sed -i --follow-symlinks '$a'\\ "/etc/login.defs"
+    fi
+    printf '%s\n' "$formatted_output" >> "/etc/login.defs"
+fi
+
+else
+    >&2 echo 'Remediation is not applicable, nothing was done'
+fi
+
+# END fix for 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_login_defs'
+
+###############################################################################
+# BEGIN fix (10 / 10) for 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_profile'
+###############################################################################
+(>&2 echo "Remediating rule 10/10: 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_profile'")
+
+var_accounts_user_umask='077'
+
+
+readarray -t profile_files < <(find /etc/profile.d/ -type f -name '*.sh' -or -name 'sh.local')
+
+for file in "${profile_files[@]}" /etc/profile; do
+  grep -qE '^[^#]*umask' "$file" && sed -i -E "s/^(\s*umask\s*)[0-7]+/\1$var_accounts_user_umask/g" "$file"
+done
+
+if ! grep -qrE '^[^#]*umask' /etc/profile*; then
+  echo "umask $var_accounts_user_umask" >> /etc/profile
+fi
+
+# END fix for 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_profile'
 

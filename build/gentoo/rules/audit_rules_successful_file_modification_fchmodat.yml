@@ -76,8 +76,8 @@ inherited_platforms: !!set
     machine: null
 cpe_platform_names: !!set {}
 inherited_cpe_platform_names: !!set
-    machine: null
     package_audit: null
+    machine: null
 bash_conditional: null
 fixes: {}
 title: Record Successful Permission Changes to Files - fchmodat

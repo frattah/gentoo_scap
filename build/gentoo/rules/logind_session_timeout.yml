@@ -154,8 +154,8 @@ sce_metadata: {}
 inherited_platforms: !!set
     machine: null
 cpe_platform_names: !!set
-    os_linux_ol_gt_or_eq_8_7: null
     os_linux_rhel_gt_or_eq_8_7_and_os_linux_rhel_ne_9_0: null
+    os_linux_ol_gt_or_eq_8_7: null
 inherited_cpe_platform_names: !!set
     machine: null
 bash_conditional: null

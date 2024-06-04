@@ -46,8 +46,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - kernel_module_squashfs_disabled
     - kernel_module_cramfs_disabled
+    - kernel_module_squashfs_disabled
     controls: []
 -   id: 1.1.1.2
     levels:
@@ -551,8 +551,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - service_autofs_disabled
     - kernel_module_usb-storage_disabled
+    - service_autofs_disabled
     controls: []
 -   id: 1.2.1
     levels:
@@ -744,8 +744,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - grub2_password
     - grub2_uefi_password
+    - grub2_password
     controls: []
 -   id: 1.5.2
     levels:
@@ -766,9 +766,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_permissions_grub2_cfg
     - file_owner_grub2_cfg
     - file_groupowner_grub2_cfg
+    - file_permissions_grub2_cfg
     controls: []
 -   id: 1.5.3
     levels:
@@ -789,8 +789,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - require_singleuser_auth
     - require_emergency_target_auth
+    - require_singleuser_auth
     controls: []
 -   id: 1.6.1
     levels:
@@ -811,10 +811,10 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - disable_users_coredumps
     - sysctl_fs_suid_dumpable
-    - coredump_disable_storage
+    - disable_users_coredumps
     - coredump_disable_backtraces
+    - coredump_disable_storage
     controls: []
 -   id: 1.6.2
     levels:
@@ -835,8 +835,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - install_PAE_kernel_on_x86-32
     - bios_enable_execution_restrictions
+    - install_PAE_kernel_on_x86-32
     controls: []
 -   id: 1.6.3
     levels:
@@ -1050,9 +1050,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
+    - file_groupowner_etc_motd
     - file_permissions_etc_motd
     - file_owner_etc_motd
-    - file_groupowner_etc_motd
     controls: []
 -   id: 1.8.1.5
     levels:
@@ -1073,9 +1073,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_permissions_etc_issue
     - file_owner_etc_issue
     - file_groupowner_etc_issue
+    - file_permissions_etc_issue
     controls: []
 -   id: 1.8.1.6
     levels:
@@ -1097,8 +1097,8 @@ controls:
     related_rules: []
     rules:
     - file_groupowner_etc_issue_net
-    - file_owner_etc_issue_net
     - file_permissions_etc_issue_net
+    - file_owner_etc_issue_net
     controls: []
 -   id: '1.9'
     levels:
@@ -1143,10 +1143,10 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - dconf_gnome_login_banner_text
     - enable_dconf_user_profile
-    - dconf_gnome_banner_enabled
     - package_gdm_removed
+    - dconf_gnome_banner_enabled
+    - dconf_gnome_login_banner_text
     - login_banner_text=cis_default
     controls: []
 -   id: 2.1.1
@@ -1168,8 +1168,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - package_xinetd_removed
     - service_xinetd_disabled
+    - package_xinetd_removed
     - package_tcp_wrappers_removed
     controls: []
 -   id: 2.2.1.1
@@ -1258,8 +1258,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - xwindows_remove_packages
     - package_xorg-x11-server-common_removed
+    - xwindows_remove_packages
     controls: []
 -   id: 2.2.3
     levels:
@@ -1280,9 +1280,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - service_avahi-daemon_disabled
     - package_avahi-autoipd_removed
     - package_avahi_removed
+    - service_avahi-daemon_disabled
     controls: []
 -   id: 2.2.4
     levels:
@@ -1302,8 +1302,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - service_cups_disabled
     - package_cups_removed
+    - service_cups_disabled
     controls: []
 -   id: 2.2.5
     levels:
@@ -1368,8 +1368,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - package_nfs-utils_removed
     - service_nfs_disabled
+    - package_nfs-utils_removed
     controls: []
 -   id: 2.2.8
     levels:
@@ -1434,8 +1434,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - package_vsftpd_removed
     - service_vsftpd_disabled
+    - package_vsftpd_removed
     controls: []
 -   id: 2.2.11
     levels:
@@ -1500,8 +1500,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - package_samba_removed
     - service_smb_disabled
+    - package_samba_removed
     controls: []
 -   id: 2.2.14
     levels:
@@ -1544,8 +1544,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - package_net-snmp_removed
     - service_snmpd_disabled
+    - package_net-snmp_removed
     controls: []
 -   id: 2.2.16
     levels:
@@ -1588,8 +1588,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - package_rsync_removed
     - service_rsyncd_disabled
+    - package_rsync_removed
     controls: []
 -   id: 2.2.18
     levels:
@@ -1777,8 +1777,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - grub2_ipv6_disable_argument
     - sysctl_net_ipv6_conf_all_disable_ipv6
+    - grub2_ipv6_disable_argument
     controls: []
 -   id: 3.1.2
     levels:
@@ -1843,8 +1843,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - sysctl_net_ipv4_conf_all_send_redirects
     - sysctl_net_ipv4_conf_default_send_redirects
+    - sysctl_net_ipv4_conf_all_send_redirects
     controls: []
 -   id: 3.3.1
     levels:
@@ -1865,10 +1865,10 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - sysctl_net_ipv6_conf_all_accept_source_route
+    - sysctl_net_ipv4_conf_all_accept_source_route
     - sysctl_net_ipv4_conf_default_accept_source_route
     - sysctl_net_ipv6_conf_default_accept_source_route
-    - sysctl_net_ipv4_conf_all_accept_source_route
+    - sysctl_net_ipv6_conf_all_accept_source_route
     - sysctl_net_ipv4_conf_all_accept_source_route_value=disabled
     - sysctl_net_ipv4_conf_default_accept_source_route_value=disabled
     - sysctl_net_ipv6_conf_all_accept_source_route_value=disabled
@@ -1893,9 +1893,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
+    - sysctl_net_ipv6_conf_all_accept_redirects
     - sysctl_net_ipv4_conf_all_accept_redirects
     - sysctl_net_ipv6_conf_default_accept_redirects
-    - sysctl_net_ipv6_conf_all_accept_redirects
     - sysctl_net_ipv4_conf_default_accept_redirects
     - sysctl_net_ipv4_conf_all_accept_redirects_value=disabled
     - sysctl_net_ipv4_conf_default_accept_redirects_value=disabled
@@ -1945,8 +1945,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - sysctl_net_ipv4_conf_all_log_martians
     - sysctl_net_ipv4_conf_default_log_martians
+    - sysctl_net_ipv4_conf_all_log_martians
     - sysctl_net_ipv4_conf_all_log_martians_value=enabled
     - sysctl_net_ipv4_conf_default_log_martians_value=enabled
     controls: []
@@ -2815,9 +2815,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - auditd_data_retention_action_mail_acct
-    - auditd_data_retention_admin_space_left_action
     - auditd_data_retention_space_left_action
+    - auditd_data_retention_admin_space_left_action
+    - auditd_data_retention_action_mail_acct
     - var_auditd_space_left_action=email
     - var_auditd_action_mail_acct=root
     - var_auditd_admin_space_left_action=halt
@@ -2863,9 +2863,9 @@ controls:
     related_rules: []
     rules:
     - audit_rules_time_watch_localtime
+    - audit_rules_time_stime
     - audit_rules_time_settimeofday
     - audit_rules_time_adjtimex
-    - audit_rules_time_stime
     controls: []
 -   id: 4.1.4
     levels:
@@ -2886,11 +2886,11 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_usergroup_modification_opasswd
+    - audit_rules_usergroup_modification_passwd
+    - audit_rules_usergroup_modification_gshadow
     - audit_rules_usergroup_modification_group
     - audit_rules_usergroup_modification_shadow
-    - audit_rules_usergroup_modification_gshadow
-    - audit_rules_usergroup_modification_passwd
+    - audit_rules_usergroup_modification_opasswd
     controls: []
 -   id: 4.1.5
     levels:
@@ -2956,9 +2956,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_login_events_lastlog
-    - audit_rules_login_events_faillog
     - audit_rules_login_events_tallylog
+    - audit_rules_login_events_faillog
+    - audit_rules_login_events_lastlog
     controls: []
 -   id: 4.1.8
     levels:
@@ -3001,19 +3001,19 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_dac_modification_fchmod
-    - audit_rules_dac_modification_fchownat
     - audit_rules_dac_modification_fchmodat
+    - audit_rules_dac_modification_chmod
+    - audit_rules_dac_modification_fchownat
     - audit_rules_dac_modification_lchown
-    - audit_rules_dac_modification_fremovexattr
+    - audit_rules_dac_modification_chown
+    - audit_rules_dac_modification_fchmod
     - audit_rules_dac_modification_lremovexattr
+    - audit_rules_dac_modification_lsetxattr
+    - audit_rules_dac_modification_setxattr
+    - audit_rules_dac_modification_fchown
     - audit_rules_dac_modification_fsetxattr
     - audit_rules_dac_modification_removexattr
-    - audit_rules_dac_modification_setxattr
-    - audit_rules_dac_modification_chmod
-    - audit_rules_dac_modification_chown
-    - audit_rules_dac_modification_fchown
-    - audit_rules_dac_modification_lsetxattr
+    - audit_rules_dac_modification_fremovexattr
     controls: []
 -   id: 4.1.10
     levels:
@@ -3034,11 +3034,11 @@ controls:
     original_title: null
     related_rules: []
     rules:
+    - audit_rules_unsuccessful_file_modification_open
+    - audit_rules_unsuccessful_file_modification_truncate
     - audit_rules_unsuccessful_file_modification_openat
     - audit_rules_unsuccessful_file_modification_ftruncate
-    - audit_rules_unsuccessful_file_modification_open
     - audit_rules_unsuccessful_file_modification_creat
-    - audit_rules_unsuccessful_file_modification_truncate
     controls: []
 -   id: 4.1.11
     levels:
@@ -3101,10 +3101,10 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_file_deletion_events_unlinkat
     - audit_rules_file_deletion_events_renameat
     - audit_rules_file_deletion_events_rename
     - audit_rules_file_deletion_events_unlink
+    - audit_rules_file_deletion_events_unlinkat
     controls: []
 -   id: 4.1.14
     levels:
@@ -3167,12 +3167,12 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_privileged_commands_modprobe
-    - audit_rules_privileged_commands_rmmod
-    - audit_rules_privileged_commands_insmod
     - audit_rules_kernel_module_loading_init
-    - audit_rules_kernel_module_loading_delete
+    - audit_rules_privileged_commands_modprobe
     - audit_rules_kernel_module_loading
+    - audit_rules_kernel_module_loading_delete
+    - audit_rules_privileged_commands_insmod
+    - audit_rules_privileged_commands_rmmod
     controls: []
 -   id: 4.1.17
     levels:
@@ -3257,8 +3257,8 @@ controls:
     related_rules: []
     rules:
     - rsyslog_files_groupownership
-    - rsyslog_files_ownership
     - rsyslog_files_permissions
+    - rsyslog_files_ownership
     controls: []
 -   id: 4.2.1.4
     levels:
@@ -3434,8 +3434,8 @@ controls:
     related_rules: []
     rules:
     - package_logrotate_installed
-    - timer_logrotate_enabled
     - ensure_logrotate_activated
+    - timer_logrotate_enabled
     controls: []
 -   id: 5.1.1
     levels:
@@ -3478,9 +3478,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_groupowner_crontab
-    - file_owner_crontab
     - file_permissions_crontab
+    - file_owner_crontab
+    - file_groupowner_crontab
     controls: []
 -   id: 5.1.3
     levels:
@@ -3593,9 +3593,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_groupowner_cron_d
-    - file_permissions_cron_d
     - file_owner_cron_d
+    - file_permissions_cron_d
+    - file_groupowner_cron_d
     controls: []
 -   id: 5.1.8
     levels:
@@ -3616,10 +3616,10 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_cron_deny_not_exist
-    - file_permissions_cron_allow
     - file_groupowner_cron_allow
+    - file_permissions_cron_allow
     - file_owner_cron_allow
+    - file_cron_deny_not_exist
     controls: []
 -   id: 5.1.9
     levels:
@@ -3640,9 +3640,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_permissions_at_allow
-    - file_owner_at_allow
     - file_groupowner_at_allow
+    - file_owner_at_allow
+    - file_permissions_at_allow
     - file_at_deny_not_exist
     controls: []
 -   id: 5.2.1
@@ -3664,9 +3664,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_permissions_sshd_config
-    - file_owner_sshd_config
     - file_groupowner_sshd_config
+    - file_owner_sshd_config
+    - file_permissions_sshd_config
     controls: []
 -   id: 5.2.2
     levels:
@@ -3921,8 +3921,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - sshd_use_approved_ciphers
     - sshd_use_strong_ciphers
+    - sshd_use_approved_ciphers
     - sshd_approved_ciphers=cis_sle15
     controls: []
 -   id: 5.2.14
@@ -3944,8 +3944,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - sshd_use_strong_macs
     - sshd_use_approved_macs
+    - sshd_use_strong_macs
     - sshd_approved_macs=cis_sle15
     - sshd_strong_macs=cis_sle15
     controls: []
@@ -4143,12 +4143,12 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - cracklib_accounts_password_pam_minlen
-    - cracklib_accounts_password_pam_ucredit
     - cracklib_accounts_password_pam_ocredit
-    - cracklib_accounts_password_pam_retry
-    - cracklib_accounts_password_pam_lcredit
     - cracklib_accounts_password_pam_dcredit
+    - cracklib_accounts_password_pam_lcredit
+    - cracklib_accounts_password_pam_ucredit
+    - cracklib_accounts_password_pam_minlen
+    - cracklib_accounts_password_pam_retry
     - var_password_pam_dcredit=1
     - var_password_pam_ucredit=1
     - var_password_pam_lcredit=1
@@ -4175,9 +4175,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
+    - accounts_passwords_pam_tally2
     - accounts_passwords_pam_tally2_deny_root
     - accounts_passwords_pam_tally2_unlock_time
-    - accounts_passwords_pam_tally2
     - var_password_pam_tally2=5
     - var_accounts_passwords_pam_tally2_unlock_time=1800
     controls: []
@@ -4222,8 +4222,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - set_password_hashing_algorithm_logindefs
     - accounts_password_all_shadowed_sha512
+    - set_password_hashing_algorithm_logindefs
     controls: []
 -   id: 5.4.1.2
     levels:
@@ -4290,8 +4290,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - accounts_password_set_warn_age_existing
     - accounts_password_warn_age_login_defs
+    - accounts_password_set_warn_age_existing
     - var_accounts_password_warn_age_login_defs=7
     controls: []
 -   id: 5.4.1.5
@@ -4421,8 +4421,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - accounts_umask_etc_profile
     - accounts_umask_etc_login_defs
+    - accounts_umask_etc_profile
     - accounts_umask_etc_bashrc
     - var_accounts_user_umask=027
     controls: []
@@ -4445,8 +4445,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - securetty_root_login_console_only
     - no_direct_root_logins
+    - securetty_root_login_console_only
     controls: []
 -   id: 5.6
     levels:
@@ -4512,12 +4512,12 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_permissions_etc_passwd
-    - file_groupowner_etc_passwd
     - file_permissions_etc_gshadow
     - file_owner_etc_gshadow
-    - file_owner_etc_passwd
+    - file_groupowner_etc_passwd
     - file_groupowner_etc_gshadow
+    - file_owner_etc_passwd
+    - file_permissions_etc_passwd
     controls: []
 -   id: 6.1.3
     levels:
@@ -4539,8 +4539,8 @@ controls:
     related_rules: []
     rules:
     - file_groupowner_etc_shadow
-    - file_owner_etc_shadow
     - file_permissions_etc_shadow
+    - file_owner_etc_shadow
     controls: []
 -   id: 6.1.4
     levels:
@@ -4561,9 +4561,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_owner_etc_group
     - file_permissions_etc_group
     - file_groupowner_etc_group
+    - file_owner_etc_group
     controls: []
 -   id: 6.1.5
     levels:
@@ -4585,11 +4585,11 @@ controls:
     related_rules: []
     rules:
     - file_owner_backup_etc_passwd
-    - file_groupowner_backup_etc_passwd
+    - file_owner_backup_etc_gshadow
+    - file_permissions_backup_etc_passwd
     - file_groupowner_backup_etc_gshadow
     - file_permissions_backup_etc_gshadow
-    - file_permissions_backup_etc_passwd
-    - file_owner_backup_etc_gshadow
+    - file_groupowner_backup_etc_passwd
     controls: []
 -   id: 6.1.6
     levels:
@@ -4611,8 +4611,8 @@ controls:
     related_rules: []
     rules:
     - file_permissions_backup_etc_shadow
-    - file_owner_backup_etc_shadow
     - file_groupowner_backup_etc_shadow
+    - file_owner_backup_etc_shadow
     controls: []
 -   id: 6.1.7
     levels:
@@ -4633,9 +4633,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_owner_backup_etc_group
-    - file_groupowner_backup_etc_group
     - file_permissions_backup_etc_group
+    - file_groupowner_backup_etc_group
+    - file_owner_backup_etc_group
     controls: []
 -   id: 6.1.8
     levels:
@@ -4825,8 +4825,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - root_path_no_dot
     - accounts_root_path_dirs_no_write
+    - root_path_no_dot
     controls: []
 -   id: 6.2.5
     levels:
@@ -4869,8 +4869,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_permissions_home_directories
     - accounts_users_home_files_permissions
+    - file_permissions_home_directories
     controls: []
 -   id: 6.2.7
     levels:
