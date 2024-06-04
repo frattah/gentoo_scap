@@ -98,8 +98,6 @@ references:
     - Req-8.1.8
     srg:
     - SRG-OS-000029-GPOS-00010
-    pcidss4:
-    - 8.2.8
 components:
 - gnome
 identifiers: {}

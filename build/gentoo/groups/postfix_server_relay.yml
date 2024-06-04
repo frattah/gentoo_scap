@@ -24,8 +24,8 @@ rules:
 platform: ''
 platforms: !!set {}
 inherited_platforms: !!set
-    package[postfix]: null
     machine: null
+    package[postfix]: null
 cpe_platform_names: !!set {}
 title: Control Mail Relaying
 definition_location: /home/fra/gentoo_scap/linux_os/guide/services/mail/postfix_harden_os/postfix_server_cfg/postfix_server_relay/group.yml

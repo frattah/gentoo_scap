@@ -14,7 +14,6 @@
   - NIST-800-53-IA-2
   - NIST-800-53-IA-4(b)
   - PCI-DSS-Req-8.5
-  - PCI-DSSv4-8.2.1
   - accounts_no_uid_except_zero
   - high_severity
   - low_complexity
@@ -34,7 +33,6 @@
   - NIST-800-53-IA-2
   - NIST-800-53-IA-4(b)
   - PCI-DSS-Req-8.5
-  - PCI-DSSv4-8.2.1
   - accounts_no_uid_except_zero
   - high_severity
   - low_complexity

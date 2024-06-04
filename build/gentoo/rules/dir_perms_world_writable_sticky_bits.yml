@@ -108,8 +108,6 @@ references:
     - SRG-OS-000138-GPOS-00069
     anssi:
     - R54
-    pcidss4:
-    - 2.2.6
 components:
 - filesystem
 identifiers: {}

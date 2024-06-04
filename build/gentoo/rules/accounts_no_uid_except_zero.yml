@@ -134,8 +134,6 @@ references:
     - Req-8.5
     srg:
     - SRG-OS-000480-GPOS-00227
-    pcidss4:
-    - 8.2.1
 components:
 - pam
 identifiers: {}

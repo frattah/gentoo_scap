@@ -14,7 +14,6 @@
   - NIST-800-53-SI-11(a)
   - NIST-800-53-SI-11(b)
   - NIST-800-53-SI-11.1(iii)
-  - PCI-DSSv4-10.3.1
   - configure_strategy
   - low_complexity
   - low_disruption
@@ -33,7 +32,6 @@
   - NIST-800-53-SI-11(a)
   - NIST-800-53-SI-11(b)
   - NIST-800-53-SI-11.1(iii)
-  - PCI-DSSv4-10.3.1
   - configure_strategy
   - low_complexity
   - low_disruption

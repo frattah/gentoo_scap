@@ -39,8 +39,6 @@ references:
     - SRG-OS-000480-GPOS-00227
     anssi:
     - R31
-    pcidss4:
-    - 8.3.4
 components:
 - pam
 identifiers: {}

@@ -104,8 +104,6 @@ references:
     - SRG-OS-000447-GPOS-00201
     anssi:
     - R76
-    pcidss4:
-    - 11.5.2
 components:
 - aide
 identifiers: {}

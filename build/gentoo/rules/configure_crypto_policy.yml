@@ -54,8 +54,6 @@ references:
     - SRG-OS-000396-GPOS-00176
     - SRG-OS-000393-GPOS-00173
     - SRG-OS-000394-GPOS-00174
-    pcidss4:
-    - 2.2.7
 components:
 - crypto-policies
 identifiers: {}

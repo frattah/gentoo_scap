@@ -17,8 +17,6 @@ severity: medium
 references:
     pcidss:
     - Req-8.2.1
-    pcidss4:
-    - 8.3.2
 components:
 - pam
 identifiers: {}

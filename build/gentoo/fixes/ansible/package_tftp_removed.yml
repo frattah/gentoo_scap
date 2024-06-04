@@ -8,7 +8,6 @@
     name: tftp
     state: absent
   tags:
-  - PCI-DSSv4-2.2.4
   - disable_strategy
   - low_complexity
   - low_disruption

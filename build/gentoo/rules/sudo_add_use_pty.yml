@@ -17,8 +17,6 @@ references:
     - Req-10.2.5
     anssi:
     - R39
-    pcidss4:
-    - 2.2.6
 components:
 - sudo
 identifiers: {}

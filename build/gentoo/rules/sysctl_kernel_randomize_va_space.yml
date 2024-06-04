@@ -66,8 +66,6 @@ references:
     - SRG-APP-000450-CTR-001105
     anssi:
     - R9
-    pcidss4:
-    - 3.3.1.1
 components:
 - kernel
 identifiers: {}

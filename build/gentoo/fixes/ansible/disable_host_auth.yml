@@ -42,7 +42,6 @@
   - NIST-800-53-CM-6(a)
   - NIST-800-53-CM-7(a)
   - NIST-800-53-CM-7(b)
-  - PCI-DSSv4-8.3.1
   - disable_host_auth
   - low_complexity
   - low_disruption

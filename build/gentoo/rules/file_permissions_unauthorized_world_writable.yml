@@ -82,8 +82,6 @@ references:
     - PR.DS-5
     anssi:
     - R54
-    pcidss4:
-    - 2.2.6
 components:
 - filesystem
 identifiers: {}

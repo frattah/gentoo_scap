@@ -175,8 +175,6 @@ references:
     - PR.IP-1
     - PR.PT-1
     - PR.PT-3
-    pcidss4:
-    - 1.2.6
 components:
 - selinux
 identifiers: {}

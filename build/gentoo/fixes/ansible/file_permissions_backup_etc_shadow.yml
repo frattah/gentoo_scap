@@ -10,7 +10,6 @@
   tags:
   - NIST-800-53-AC-6 (1)
   - PCI-DSS-Req-8.7.c
-  - PCI-DSSv4-2.2.6
   - configure_strategy
   - file_permissions_backup_etc_shadow
   - low_complexity
@@ -26,7 +25,6 @@
   tags:
   - NIST-800-53-AC-6 (1)
   - PCI-DSS-Req-8.7.c
-  - PCI-DSSv4-2.2.6
   - configure_strategy
   - file_permissions_backup_etc_shadow
   - low_complexity

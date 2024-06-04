@@ -13,7 +13,6 @@
   - NIST-800-53-CM-6(a)
   - NIST-800-53-CM-6(b)
   - NIST-800-53-CM-6.1(iv)
-  - PCI-DSSv4-8.2.2
   - low_complexity
   - medium_disruption
   - medium_severity
@@ -30,7 +29,6 @@
   - NIST-800-53-CM-6(a)
   - NIST-800-53-CM-6(b)
   - NIST-800-53-CM-6.1(iv)
-  - PCI-DSSv4-8.2.2
   - low_complexity
   - medium_disruption
   - medium_severity
@@ -53,7 +51,6 @@
   - NIST-800-53-CM-6(a)
   - NIST-800-53-CM-6(b)
   - NIST-800-53-CM-6.1(iv)
-  - PCI-DSSv4-8.2.2
   - low_complexity
   - medium_disruption
   - medium_severity

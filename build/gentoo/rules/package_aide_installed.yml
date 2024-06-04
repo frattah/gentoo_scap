@@ -95,8 +95,6 @@ references:
     anssi:
     - R76
     - R79
-    pcidss4:
-    - 11.5.2
 components:
 - aide
 identifiers: {}

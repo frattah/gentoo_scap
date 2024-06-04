@@ -9,7 +9,6 @@
   tags:
   - NIST-800-53-CM-6
   - PCI-DSS-Req-3.2
-  - PCI-DSSv4-3.3.1.1
   - coredump_disable_storage
   - low_complexity
   - low_disruption
@@ -49,7 +48,6 @@
   tags:
   - NIST-800-53-CM-6
   - PCI-DSS-Req-3.2
-  - PCI-DSSv4-3.3.1.1
   - coredump_disable_storage
   - low_complexity
   - low_disruption

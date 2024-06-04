@@ -11,9 +11,7 @@ rationale: 'Running both <tt>firewalld</tt> and <tt>nftables</tt> may lead to co
 
     is actually one of the backends for <tt>firewalld</tt> management tools.'
 severity: medium
-references:
-    pcidss4:
-    - 1.2.1
+references: {}
 components:
 - nftables
 identifiers: {}

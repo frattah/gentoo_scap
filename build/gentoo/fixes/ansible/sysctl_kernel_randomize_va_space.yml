@@ -21,7 +21,6 @@
   - NIST-800-53-SC-30
   - NIST-800-53-SC-30(2)
   - PCI-DSS-Req-2.2.1
-  - PCI-DSSv4-3.3.1.1
   - disable_strategy
   - low_complexity
   - medium_disruption
@@ -42,7 +41,6 @@
   - NIST-800-53-SC-30
   - NIST-800-53-SC-30(2)
   - PCI-DSS-Req-2.2.1
-  - PCI-DSSv4-3.3.1.1
   - disable_strategy
   - low_complexity
   - medium_disruption
@@ -64,7 +62,6 @@
   - NIST-800-53-SC-30
   - NIST-800-53-SC-30(2)
   - PCI-DSS-Req-2.2.1
-  - PCI-DSSv4-3.3.1.1
   - disable_strategy
   - low_complexity
   - medium_disruption

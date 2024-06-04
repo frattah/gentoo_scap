@@ -16,7 +16,6 @@
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.2.2
   - PCI-DSS-Req-10.2.5.b
-  - PCI-DSSv4-10.2.1.5
   - audit_rules_sysadmin_actions
   - low_complexity
   - low_disruption
@@ -43,7 +42,6 @@
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.2.2
   - PCI-DSS-Req-10.2.5.b
-  - PCI-DSSv4-10.2.1.5
   - audit_rules_sysadmin_actions
   - low_complexity
   - low_disruption
@@ -73,7 +71,6 @@
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.2.2
   - PCI-DSS-Req-10.2.5.b
-  - PCI-DSSv4-10.2.1.5
   - audit_rules_sysadmin_actions
   - low_complexity
   - low_disruption
@@ -100,7 +97,6 @@
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.2.2
   - PCI-DSS-Req-10.2.5.b
-  - PCI-DSSv4-10.2.1.5
   - audit_rules_sysadmin_actions
   - low_complexity
   - low_disruption
@@ -129,7 +125,6 @@
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.2.2
   - PCI-DSS-Req-10.2.5.b
-  - PCI-DSSv4-10.2.1.5
   - audit_rules_sysadmin_actions
   - low_complexity
   - low_disruption
@@ -156,7 +151,6 @@
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.2.2
   - PCI-DSS-Req-10.2.5.b
-  - PCI-DSSv4-10.2.1.5
   - audit_rules_sysadmin_actions
   - low_complexity
   - low_disruption
@@ -183,7 +177,6 @@
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.2.2
   - PCI-DSS-Req-10.2.5.b
-  - PCI-DSSv4-10.2.1.5
   - audit_rules_sysadmin_actions
   - low_complexity
   - low_disruption
@@ -212,7 +205,6 @@
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.2.2
   - PCI-DSS-Req-10.2.5.b
-  - PCI-DSSv4-10.2.1.5
   - audit_rules_sysadmin_actions
   - low_complexity
   - low_disruption
@@ -239,7 +231,6 @@
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.2.2
   - PCI-DSS-Req-10.2.5.b
-  - PCI-DSSv4-10.2.1.5
   - audit_rules_sysadmin_actions
   - low_complexity
   - low_disruption
@@ -269,7 +260,6 @@
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.2.2
   - PCI-DSS-Req-10.2.5.b
-  - PCI-DSSv4-10.2.1.5
   - audit_rules_sysadmin_actions
   - low_complexity
   - low_disruption
@@ -296,7 +286,6 @@
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.2.2
   - PCI-DSS-Req-10.2.5.b
-  - PCI-DSSv4-10.2.1.5
   - audit_rules_sysadmin_actions
   - low_complexity
   - low_disruption
@@ -325,7 +314,6 @@
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.2.2
   - PCI-DSS-Req-10.2.5.b
-  - PCI-DSSv4-10.2.1.5
   - audit_rules_sysadmin_actions
   - low_complexity
   - low_disruption
@@ -352,7 +340,6 @@
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.2.2
   - PCI-DSS-Req-10.2.5.b
-  - PCI-DSSv4-10.2.1.5
   - audit_rules_sysadmin_actions
   - low_complexity
   - low_disruption
@@ -379,7 +366,6 @@
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.2.2
   - PCI-DSS-Req-10.2.5.b
-  - PCI-DSSv4-10.2.1.5
   - audit_rules_sysadmin_actions
   - low_complexity
   - low_disruption
@@ -408,7 +394,6 @@
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.2.2
   - PCI-DSS-Req-10.2.5.b
-  - PCI-DSSv4-10.2.1.5
   - audit_rules_sysadmin_actions
   - low_complexity
   - low_disruption

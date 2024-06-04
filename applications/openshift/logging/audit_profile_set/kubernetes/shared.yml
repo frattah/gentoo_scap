@@ -1,3 +1,0 @@
----
-# platform = multi_platform_ocp
-{{{ api_server_config(path='audit',parameter='profile', value='var_openshift_audit_profile') }}}

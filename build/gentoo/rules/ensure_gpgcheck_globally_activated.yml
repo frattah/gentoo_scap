@@ -108,8 +108,6 @@ references:
     - SRG-OS-000366-GPOS-00153
     anssi:
     - R59
-    pcidss4:
-    - 6.3.3
 components:
 - yum
 - rpm

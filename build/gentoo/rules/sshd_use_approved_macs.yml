@@ -129,8 +129,6 @@ references:
     - SRG-OS-000125-GPOS-00065
     - SRG-OS-000250-GPOS-00093
     - SRG-OS-000394-GPOS-00174
-    pcidss4:
-    - 2.2.7
 components:
 - openssh
 identifiers: {}

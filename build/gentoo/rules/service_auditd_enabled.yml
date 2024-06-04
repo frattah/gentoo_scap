@@ -222,8 +222,6 @@ references:
     anssi:
     - R33
     - R73
-    pcidss4:
-    - 10.2.1
 components:
 - audit
 identifiers: {}

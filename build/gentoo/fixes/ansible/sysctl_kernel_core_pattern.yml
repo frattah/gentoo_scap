@@ -17,7 +17,6 @@
   when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - NIST-800-53-SC-7(10)
-  - PCI-DSSv4-3.3.1.1
   - disable_strategy
   - low_complexity
   - medium_disruption
@@ -34,7 +33,6 @@
   when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - NIST-800-53-SC-7(10)
-  - PCI-DSSv4-3.3.1.1
   - disable_strategy
   - low_complexity
   - medium_disruption
@@ -52,7 +50,6 @@
   when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - NIST-800-53-SC-7(10)
-  - PCI-DSSv4-3.3.1.1
   - disable_strategy
   - low_complexity
   - medium_disruption

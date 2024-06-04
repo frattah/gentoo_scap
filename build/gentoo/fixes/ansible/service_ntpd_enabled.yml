@@ -10,7 +10,6 @@
   - NIST-800-53-AU-8(1)(a)
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.4
-  - PCI-DSSv4-10.6.1
   - enable_strategy
   - low_complexity
   - low_disruption
@@ -40,7 +39,6 @@
   - NIST-800-53-AU-8(1)(a)
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.4
-  - PCI-DSSv4-10.6.1
   - enable_strategy
   - low_complexity
   - low_disruption

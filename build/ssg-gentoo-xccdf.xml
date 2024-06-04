@@ -759,7 +759,6 @@ This should be enabled by making sure that the <html:code>use_pty</html:code> ta
 in <html:code>/etc/sudoers.d/</html:code>.</xccdf-1.2:description>
           <xccdf-1.2:reference href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">Req-10.2.5</xccdf-1.2:reference>
           <xccdf-1.2:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R39</xccdf-1.2:reference>
-          <xccdf-1.2:reference href="https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf">2.2.6</xccdf-1.2:reference>
           <xccdf-1.2:rationale>Requiring that sudo commands be run in a pseudo-terminal can prevent an attacker from retaining
 access to the user's terminal after the main program has finished executing.</xccdf-1.2:rationale>
           <xccdf-1.2:platform idref="#package_sudo" />
@@ -795,7 +794,6 @@ fi
     manager: auto
   tags:
   - PCI-DSS-Req-10.2.5
-  - PCI-DSSv4-2.2.6
   - low_complexity
   - low_disruption
   - medium_severity
@@ -812,7 +810,6 @@ fi
   when: '"sudo" in ansible_facts.packages'
   tags:
   - PCI-DSS-Req-10.2.5
-  - PCI-DSSv4-2.2.6
   - low_complexity
   - low_disruption
   - medium_severity
@@ -979,7 +976,6 @@ system, an authselect custom profile must be used to avoid integrity issues in P
             <xccdf-1.2:reference href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">Req-8.2.5</xccdf-1.2:reference>
             <xccdf-1.2:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000077-GPOS-00045</xccdf-1.2:reference>
             <xccdf-1.2:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R31</xccdf-1.2:reference>
-            <xccdf-1.2:reference href="https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf">8.3.7</xccdf-1.2:reference>
             <xccdf-1.2:rationale>Preventing re-use of previous passwords helps ensure that a compromised password is not
 re-used by a user.</xccdf-1.2:rationale>
             <xccdf-1.2:platform idref="#package_pam" />
@@ -1188,7 +1184,6 @@ fi
   - NIST-800-53-IA-5(1)(e)
   - NIST-800-53-IA-5(f)
   - PCI-DSS-Req-8.2.5
-  - PCI-DSSv4-8.3.7
   - accounts_password_pam_unix_remember
   - configure_strategy
   - low_complexity
@@ -1212,7 +1207,6 @@ fi
   - NIST-800-53-IA-5(1)(e)
   - NIST-800-53-IA-5(f)
   - PCI-DSS-Req-8.2.5
-  - PCI-DSSv4-8.3.7
   - accounts_password_pam_unix_remember
   - configure_strategy
   - low_complexity
@@ -1234,7 +1228,6 @@ fi
   - NIST-800-53-IA-5(1)(e)
   - NIST-800-53-IA-5(f)
   - PCI-DSS-Req-8.2.5
-  - PCI-DSSv4-8.3.7
   - accounts_password_pam_unix_remember
   - configure_strategy
   - low_complexity
@@ -1301,7 +1294,6 @@ fi
   - NIST-800-53-IA-5(1)(e)
   - NIST-800-53-IA-5(f)
   - PCI-DSS-Req-8.2.5
-  - PCI-DSSv4-8.3.7
   - accounts_password_pam_unix_remember
   - configure_strategy
   - low_complexity
@@ -1515,7 +1507,6 @@ fi
   - NIST-800-53-IA-5(1)(e)
   - NIST-800-53-IA-5(f)
   - PCI-DSS-Req-8.2.5
-  - PCI-DSSv4-8.3.7
   - accounts_password_pam_unix_remember
   - configure_strategy
   - low_complexity
@@ -1535,7 +1526,6 @@ fi
   - NIST-800-53-IA-5(1)(e)
   - NIST-800-53-IA-5(f)
   - PCI-DSS-Req-8.2.5
-  - PCI-DSSv4-8.3.7
   - accounts_password_pam_unix_remember
   - configure_strategy
   - low_complexity
@@ -1729,7 +1719,6 @@ fi
   - NIST-800-53-IA-5(1)(e)
   - NIST-800-53-IA-5(f)
   - PCI-DSS-Req-8.2.5
-  - PCI-DSSv4-8.3.7
   - accounts_password_pam_unix_remember
   - configure_strategy
   - low_complexity
@@ -1982,7 +1971,6 @@ fi
   - NIST-800-53-IA-5(1)(e)
   - NIST-800-53-IA-5(f)
   - PCI-DSS-Req-8.2.5
-  - PCI-DSSv4-8.3.7
   - accounts_password_pam_unix_remember
   - configure_strategy
   - low_complexity
@@ -2159,7 +2147,6 @@ length credit for each digit. Modify the <html:code>dcredit</html:code> setting 
               <xccdf-1.2:reference href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">Req-8.2.3</xccdf-1.2:reference>
               <xccdf-1.2:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000071-GPOS-00039</xccdf-1.2:reference>
               <xccdf-1.2:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R31</xccdf-1.2:reference>
-              <xccdf-1.2:reference href="https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf">8.3.6</xccdf-1.2:reference>
               <xccdf-1.2:rationale>Use of a complex password helps to increase the time and resources required
 to compromise the password. Password complexity, or strength, is a measure of
 the effectiveness of a password in resisting attempts at guessing and brute-force
@@ -2215,7 +2202,6 @@ fi
   - NIST-800-53-IA-5(4)
   - NIST-800-53-IA-5(c)
   - PCI-DSS-Req-8.2.3
-  - PCI-DSSv4-8.3.6
   - accounts_password_pam_dcredit
   - low_complexity
   - low_disruption
@@ -2242,7 +2228,6 @@ fi
   - NIST-800-53-IA-5(4)
   - NIST-800-53-IA-5(c)
   - PCI-DSS-Req-8.2.3
-  - PCI-DSSv4-8.3.6
   - accounts_password_pam_dcredit
   - low_complexity
   - low_disruption
@@ -2335,7 +2320,6 @@ length credit for each lowercase character. Modify the <html:code>lcredit</html:
               <xccdf-1.2:reference href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">Req-8.2.3</xccdf-1.2:reference>
               <xccdf-1.2:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000070-GPOS-00038</xccdf-1.2:reference>
               <xccdf-1.2:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R31</xccdf-1.2:reference>
-              <xccdf-1.2:reference href="https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf">8.3.6</xccdf-1.2:reference>
               <xccdf-1.2:rationale>Use of a complex password helps to increase the time and resources required
 to compromise the password. Password complexity, or strength, is a measure of
 the effectiveness of a password in resisting attempts at guessing and brute-force
@@ -2390,7 +2374,6 @@ fi
   - NIST-800-53-IA-5(4)
   - NIST-800-53-IA-5(c)
   - PCI-DSS-Req-8.2.3
-  - PCI-DSSv4-8.3.6
   - accounts_password_pam_lcredit
   - low_complexity
   - low_disruption
@@ -2417,7 +2400,6 @@ fi
   - NIST-800-53-IA-5(4)
   - NIST-800-53-IA-5(c)
   - PCI-DSS-Req-8.2.3
-  - PCI-DSSv4-8.3.6
   - accounts_password_pam_lcredit
   - low_complexity
   - low_disruption
@@ -2511,7 +2493,6 @@ after pam_pwquality to set minimum password length requirements.</xccdf-1.2:desc
               <xccdf-1.2:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000078-GPOS-00046</xccdf-1.2:reference>
               <xccdf-1.2:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R31</xccdf-1.2:reference>
               <xccdf-1.2:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R68</xccdf-1.2:reference>
-              <xccdf-1.2:reference href="https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf">8.3.6</xccdf-1.2:reference>
               <xccdf-1.2:rationale>The shorter the password, the lower the number of possible combinations
 that need to be tested before the password is compromised.
 <html:br />
@@ -2566,7 +2547,6 @@ fi
   - NIST-800-53-IA-5(4)
   - NIST-800-53-IA-5(c)
   - PCI-DSS-Req-8.2.3
-  - PCI-DSSv4-8.3.6
   - accounts_password_pam_minlen
   - low_complexity
   - low_disruption
@@ -2594,7 +2574,6 @@ fi
   - NIST-800-53-IA-5(4)
   - NIST-800-53-IA-5(c)
   - PCI-DSS-Req-8.2.3
-  - PCI-DSSv4-8.3.6
   - accounts_password_pam_minlen
   - low_complexity
   - low_disruption
@@ -3043,7 +3022,6 @@ Using the <html:code>typeset</html:code> keyword is preferred for wider compatib
           <xccdf-1.2:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000163-GPOS-00072</xccdf-1.2:reference>
           <xccdf-1.2:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000029-GPOS-00010</xccdf-1.2:reference>
           <xccdf-1.2:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R32</xccdf-1.2:reference>
-          <xccdf-1.2:reference href="https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf">8.6.1</xccdf-1.2:reference>
           <xccdf-1.2:rationale>Terminating an idle session within a short time period reduces
 the window of opportunity for unauthorized personnel to take control of a
 management session enabled on the console or console port that has been
@@ -3095,7 +3073,6 @@ fi
   - NIST-800-53-AC-2(5)
   - NIST-800-53-CM-6(a)
   - NIST-800-53-SC-10
-  - PCI-DSSv4-8.6.1
   - accounts_tmout
   - low_complexity
   - low_disruption
@@ -3117,7 +3094,6 @@ fi
   - NIST-800-53-AC-2(5)
   - NIST-800-53-CM-6(a)
   - NIST-800-53-SC-10
-  - PCI-DSSv4-8.6.1
   - accounts_tmout
   - low_complexity
   - low_disruption

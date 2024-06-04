@@ -17,7 +17,6 @@
   - NIST-800-53-CM-6(a)
   - NIST-800-53-IA-4(e)
   - PCI-DSS-Req-8.1.4
-  - PCI-DSSv4-8.2.6
   - accounts_set_post_pw_existing
   - low_complexity
   - low_disruption
@@ -36,7 +35,6 @@
   - NIST-800-53-CM-6(a)
   - NIST-800-53-IA-4(e)
   - PCI-DSS-Req-8.1.4
-  - PCI-DSSv4-8.2.6
   - accounts_set_post_pw_existing
   - low_complexity
   - low_disruption

@@ -12,9 +12,7 @@ description: 'The <tt>AllowTcpForwarding</tt> parameter specifies whether TCP fo
 rationale: Leaving port forwarding enabled can expose the organization to security
     risks and back-doors.
 severity: medium
-references:
-    pcidss4:
-    - 2.2.6
+references: {}
 components:
 - openssh
 identifiers: {}

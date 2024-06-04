@@ -23,9 +23,7 @@ rationale: 'FTP does not protect the confidentiality of data or authentication c
 
     recommended that the package be removed to reduce the potential attack surface.'
 severity: low
-references:
-    pcidss4:
-    - 2.2.4
+references: {}
 components:
 - ftp
 identifiers: {}

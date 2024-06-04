@@ -18,9 +18,7 @@ rationale: 'If the system does not require rpc based services, it is recommended
 
     rpcbind be disabled to reduce the attack surface.'
 severity: low
-references:
-    pcidss4:
-    - 2.2.4
+references: {}
 components:
 - rpcbind
 identifiers: {}

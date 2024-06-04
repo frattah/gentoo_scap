@@ -8,7 +8,6 @@
     name: cryptsetup
     state: present
   tags:
-  - PCI-DSSv4-3.5.1.2
   - enable_strategy
   - low_complexity
   - low_disruption

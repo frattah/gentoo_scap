@@ -97,8 +97,6 @@ references:
     - Req-10.7
     srg:
     - SRG-OS-000343-GPOS-00134
-    pcidss4:
-    - 10.5.1
 components:
 - audit
 identifiers: {}

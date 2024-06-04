@@ -10,7 +10,6 @@
   when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - NIST-800-53-CM-6(a)
-  - PCI-DSSv4-2.2.6
   - enable_strategy
   - low_complexity
   - low_disruption

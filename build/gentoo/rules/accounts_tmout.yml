@@ -89,8 +89,6 @@ references:
     - SRG-OS-000029-GPOS-00010
     anssi:
     - R32
-    pcidss4:
-    - 8.6.1
 components:
 - pam
 identifiers: {}

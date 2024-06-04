@@ -119,8 +119,6 @@ references:
     - SRG-OS-000142-GPOS-00071
     anssi:
     - R12
-    pcidss4:
-    - 1.4.3
 components:
 - kernel
 identifiers: {}

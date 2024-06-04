@@ -9,7 +9,6 @@
   tags:
   - NIST-800-53-CM-6
   - NIST-800-53-SC-7(10)
-  - PCI-DSSv4-3.3.1.1
   - disable_users_coredumps
   - low_complexity
   - low_disruption
@@ -27,7 +26,6 @@
   tags:
   - NIST-800-53-CM-6
   - NIST-800-53-SC-7(10)
-  - PCI-DSSv4-3.3.1.1
   - disable_users_coredumps
   - low_complexity
   - low_disruption

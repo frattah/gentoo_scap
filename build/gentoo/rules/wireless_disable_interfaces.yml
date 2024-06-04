@@ -144,8 +144,6 @@ references:
     - SRG-OS-000300-GPOS-00118
     - SRG-OS-000424-GPOS-00188
     - SRG-OS-000481-GPOS-000481
-    pcidss4:
-    - 1.3.3
 components:
 - operating-system
 identifiers: {}

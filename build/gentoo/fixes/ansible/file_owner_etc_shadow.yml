@@ -12,7 +12,6 @@
   - NIST-800-53-AC-6(1)
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-8.7.c
-  - PCI-DSSv4-2.2.6
   - configure_strategy
   - file_owner_etc_shadow
   - low_complexity
@@ -30,7 +29,6 @@
   - NIST-800-53-AC-6(1)
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-8.7.c
-  - PCI-DSSv4-2.2.6
   - configure_strategy
   - file_owner_etc_shadow
   - low_complexity

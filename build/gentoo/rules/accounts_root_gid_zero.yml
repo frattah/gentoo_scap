@@ -5,8 +5,6 @@ severity: high
 references:
     pcidss:
     - Req-8.1.1
-    pcidss4:
-    - 8.2.1
 components:
 - pam
 identifiers: {}

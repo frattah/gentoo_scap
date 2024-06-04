@@ -9,7 +9,6 @@
   register: file_exists
   when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
-  - PCI-DSSv4-2.2.6
   - configure_strategy
   - file_permissions_cron_allow
   - low_complexity
@@ -25,7 +24,6 @@
   - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - file_exists.stat is defined and file_exists.stat.exists
   tags:
-  - PCI-DSSv4-2.2.6
   - configure_strategy
   - file_permissions_cron_allow
   - low_complexity

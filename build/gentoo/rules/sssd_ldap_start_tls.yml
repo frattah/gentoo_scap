@@ -147,8 +147,8 @@ platforms: !!set
     sssd-ldap: null
 sce_metadata: {}
 inherited_platforms: !!set
-    machine: null
     package[sssd]: null
+    machine: null
 cpe_platform_names: !!set
     sssd-ldap: null
 inherited_cpe_platform_names: !!set

@@ -40,8 +40,6 @@ references:
     - CM-6(b)
     srg:
     - SRG-OS-000480-GPOS-00227
-    pcidss4:
-    - 2.2.6
 components:
 - openssh
 identifiers: {}

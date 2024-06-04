@@ -9,9 +9,7 @@ rationale: 'If the owner of the at.allow file is not set to root, the possibilit
 
     unauthorized user to view or edit sensitive information.'
 severity: medium
-references:
-    pcidss4:
-    - 2.2.6
+references: {}
 components:
 - cronie
 identifiers: {}

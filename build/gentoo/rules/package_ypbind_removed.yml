@@ -25,8 +25,6 @@ references:
     - 164.312(e)(2)(ii)
     anssi:
     - R62
-    pcidss4:
-    - 2.2.4
 components:
 - ypbind
 identifiers: {}

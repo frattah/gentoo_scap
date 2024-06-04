@@ -136,8 +136,6 @@ references:
     - SRG-OS-000256-GPOS-00097
     - SRG-OS-000257-GPOS-00098
     - SRG-OS-000278-GPOS-00108
-    pcidss4:
-    - 11.5.2
 components:
 - rpm
 identifiers: {}

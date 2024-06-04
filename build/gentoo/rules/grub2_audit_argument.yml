@@ -151,8 +151,6 @@ references:
     - SRG-OS-000471-GPOS-00215
     - SRG-OS-000473-GPOS-00218
     - SRG-OS-000254-GPOS-00095
-    pcidss4:
-    - 10.7.2
 components:
 - grub2
 - audit

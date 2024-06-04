@@ -177,8 +177,6 @@ references:
     - SRG-APP-000190-CTR-000500
     anssi:
     - R33
-    pcidss4:
-    - 2.2.6
 components:
 - openssh
 identifiers: {}

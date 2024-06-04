@@ -21,9 +21,7 @@ rationale: 'LUKS is the upcoming standard for Linux hard disk encryption. By pro
 
     <tt>cryptsetup</tt>.'
 severity: medium
-references:
-    pcidss4:
-    - 3.5.1.2
+references: {}
 components:
 - cryptsetup
 identifiers: {}

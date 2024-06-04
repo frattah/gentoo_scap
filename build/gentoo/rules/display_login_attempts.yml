@@ -73,8 +73,6 @@ references:
     - Req-10.2.4
     srg:
     - SRG-OS-000480-GPOS-00227
-    pcidss4:
-    - 10.2.1.4
 components:
 - pam
 identifiers: {}

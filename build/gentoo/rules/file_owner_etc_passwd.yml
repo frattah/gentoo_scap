@@ -75,8 +75,6 @@ references:
     - SRG-OS-000480-GPOS-00227
     anssi:
     - R50
-    pcidss4:
-    - 2.2.6
 components:
 - filesystem
 - setup

@@ -12,7 +12,6 @@
   - NIST-800-53-AU-4(1)
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.5.3
-  - PCI-DSSv4-10.3.3
   - auditd_audispd_syslog_plugin_activated
   - configure_strategy
   - low_complexity
@@ -35,7 +34,6 @@
   - NIST-800-53-AU-4(1)
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.5.3
-  - PCI-DSSv4-10.3.3
   - auditd_audispd_syslog_plugin_activated
   - configure_strategy
   - low_complexity

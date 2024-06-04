@@ -44,8 +44,6 @@ references:
     nist:
     - AC-18(4)
     - CM-6(a)
-    pcidss4:
-    - 1.2.8
 components:
 - operating-system
 identifiers: {}

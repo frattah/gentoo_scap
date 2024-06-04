@@ -42,8 +42,6 @@ references:
     - Req-2.2
     srg:
     - SRG-OS-000250-GPOS-00093
-    pcidss4:
-    - 2.2.7
 components:
 - crypto-policies
 identifiers: {}

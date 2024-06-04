@@ -16,8 +16,6 @@ references:
     - FMT_SMF_EXT.1
     srg:
     - SRG-OS-000342-GPOS-00133
-    pcidss4:
-    - 10.3.3
 components:
 - audit
 identifiers: {}

@@ -64,8 +64,6 @@ references:
     - PR.PT-1
     pcidss:
     - Req-10.4
-    pcidss4:
-    - 10.6.1
 components:
 - ntp
 identifiers: {}

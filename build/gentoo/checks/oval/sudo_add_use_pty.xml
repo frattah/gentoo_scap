@@ -4,7 +4,7 @@
     <oval:product_name>OVALFileLinker from SCAP Security Guide</oval:product_name>
     <oval:product_version>ssg: [0, 1, 73], python: 3.11.9</oval:product_version>
     <oval:schema_version>5.11</oval:schema_version>
-    <oval:timestamp>2024-06-04T07:37:57</oval:timestamp>
+    <oval:timestamp>2024-06-04T09:11:23</oval:timestamp>
   </oval-def:generator>
   <oval-def:definitions>
     <oval-def:definition id="oval:ssg-sudo_add_use_pty:def:1" version="1" class="compliance">

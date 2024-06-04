@@ -14,7 +14,6 @@
   - NIST-800-53-CM-7(a)
   - NIST-800-53-CM-7(b)
   - NIST-800-53-MA-3
-  - PCI-DSSv4-1.4.5
   - low_complexity
   - low_disruption
   - medium_severity
@@ -35,7 +34,6 @@
   - NIST-800-53-CM-7(a)
   - NIST-800-53-CM-7(b)
   - NIST-800-53-MA-3
-  - PCI-DSSv4-1.4.5
   - low_complexity
   - low_disruption
   - medium_severity

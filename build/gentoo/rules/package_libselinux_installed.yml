@@ -14,9 +14,7 @@ rationale: 'Security-enhanced Linux is a feature of the Linux kernel and a numbe
     The <tt>libselinux</tt> package contains the core library of the Security-enhanced
     Linux system.'
 severity: high
-references:
-    pcidss4:
-    - 1.2.6
+references: {}
 components:
 - selinux
 identifiers: {}

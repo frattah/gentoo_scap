@@ -137,8 +137,6 @@ references:
     - SRG-OS-000058-GPOS-00028
     - SRG-OS-000059-GPOS-00029
     - SRG-APP-000118-CTR-000240
-    pcidss4:
-    - 10.3.2
 components:
 - audit
 identifiers: {}

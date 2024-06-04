@@ -88,8 +88,6 @@ references:
     nist-csf:
     - PR.IP-1
     - PR.PT-3
-    pcidss4:
-    - 2.2.4
 components:
 - avahi
 identifiers: {}

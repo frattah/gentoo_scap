@@ -22,7 +22,7 @@
       <ns0:component-ref id="scap_org.open-scap_cref_ssg-gentoo-cpe-oval.xml" ns1:href="#scap_org.open-scap_comp_ssg-gentoo-cpe-oval.xml" />
     </ns0:checks>
   </ns0:data-stream>
-  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-cpe-dictionary.xml" timestamp="2024-06-04T09:38:03">
+  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-cpe-dictionary.xml" timestamp="2024-06-04T11:11:29">
     <ns3:cpe-list xsi:schemaLocation="http://cpe.mitre.org/dictionary/2.0 http://cpe.mitre.org/files/cpe-dictionary_2.1.xsd">
       <ns3:cpe-item name="cpe:/o:gentoo:linux">
         <ns3:title xml:lang="en-us">Gentoo</ns3:title>
@@ -30,7 +30,7 @@
       </ns3:cpe-item>
     </ns3:cpe-list>
   </ns0:component>
-  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-xccdf.xml" timestamp="2024-06-04T09:38:02">
+  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-xccdf.xml" timestamp="2024-06-04T11:11:28">
     <ns5:Benchmark id="xccdf_org.ssgproject.content_benchmark_GENTOO" xsi:schemaLocation="http://checklists.nist.gov/xccdf/1.2 xccdf-1.2.xsd" style="SCAP_1.2" resolved="true" xml:lang="en-US">
       <ns5:status date="2024-06-04">draft</ns5:status>
       <ns5:title>Guide to the Secure Configuration of Gentoo</ns5:title>
@@ -784,7 +784,6 @@ This should be enabled by making sure that the <html:code>use_pty</html:code> ta
 in <html:code>/etc/sudoers.d/</html:code>.</ns5:description>
               <ns5:reference href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">Req-10.2.5</ns5:reference>
               <ns5:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R39</ns5:reference>
-              <ns5:reference href="https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf">2.2.6</ns5:reference>
               <ns5:rationale>Requiring that sudo commands be run in a pseudo-terminal can prevent an attacker from retaining
 access to the user's terminal after the main program has finished executing.</ns5:rationale>
               <ns5:platform idref="#package_sudo" />
@@ -820,7 +819,6 @@ fi
     manager: auto
   tags:
   - PCI-DSS-Req-10.2.5
-  - PCI-DSSv4-2.2.6
   - low_complexity
   - low_disruption
   - medium_severity
@@ -837,7 +835,6 @@ fi
   when: '"sudo" in ansible_facts.packages'
   tags:
   - PCI-DSS-Req-10.2.5
-  - PCI-DSSv4-2.2.6
   - low_complexity
   - low_disruption
   - medium_severity
@@ -1004,7 +1001,6 @@ system, an authselect custom profile must be used to avoid integrity issues in P
                 <ns5:reference href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">Req-8.2.5</ns5:reference>
                 <ns5:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000077-GPOS-00045</ns5:reference>
                 <ns5:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R31</ns5:reference>
-                <ns5:reference href="https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf">8.3.7</ns5:reference>
                 <ns5:rationale>Preventing re-use of previous passwords helps ensure that a compromised password is not
 re-used by a user.</ns5:rationale>
                 <ns5:platform idref="#package_pam" />
@@ -1213,7 +1209,6 @@ fi
   - NIST-800-53-IA-5(1)(e)
   - NIST-800-53-IA-5(f)
   - PCI-DSS-Req-8.2.5
-  - PCI-DSSv4-8.3.7
   - accounts_password_pam_unix_remember
   - configure_strategy
   - low_complexity
@@ -1237,7 +1232,6 @@ fi
   - NIST-800-53-IA-5(1)(e)
   - NIST-800-53-IA-5(f)
   - PCI-DSS-Req-8.2.5
-  - PCI-DSSv4-8.3.7
   - accounts_password_pam_unix_remember
   - configure_strategy
   - low_complexity
@@ -1259,7 +1253,6 @@ fi
   - NIST-800-53-IA-5(1)(e)
   - NIST-800-53-IA-5(f)
   - PCI-DSS-Req-8.2.5
-  - PCI-DSSv4-8.3.7
   - accounts_password_pam_unix_remember
   - configure_strategy
   - low_complexity
@@ -1326,7 +1319,6 @@ fi
   - NIST-800-53-IA-5(1)(e)
   - NIST-800-53-IA-5(f)
   - PCI-DSS-Req-8.2.5
-  - PCI-DSSv4-8.3.7
   - accounts_password_pam_unix_remember
   - configure_strategy
   - low_complexity
@@ -1540,7 +1532,6 @@ fi
   - NIST-800-53-IA-5(1)(e)
   - NIST-800-53-IA-5(f)
   - PCI-DSS-Req-8.2.5
-  - PCI-DSSv4-8.3.7
   - accounts_password_pam_unix_remember
   - configure_strategy
   - low_complexity
@@ -1560,7 +1551,6 @@ fi
   - NIST-800-53-IA-5(1)(e)
   - NIST-800-53-IA-5(f)
   - PCI-DSS-Req-8.2.5
-  - PCI-DSSv4-8.3.7
   - accounts_password_pam_unix_remember
   - configure_strategy
   - low_complexity
@@ -1754,7 +1744,6 @@ fi
   - NIST-800-53-IA-5(1)(e)
   - NIST-800-53-IA-5(f)
   - PCI-DSS-Req-8.2.5
-  - PCI-DSSv4-8.3.7
   - accounts_password_pam_unix_remember
   - configure_strategy
   - low_complexity
@@ -2007,7 +1996,6 @@ fi
   - NIST-800-53-IA-5(1)(e)
   - NIST-800-53-IA-5(f)
   - PCI-DSS-Req-8.2.5
-  - PCI-DSSv4-8.3.7
   - accounts_password_pam_unix_remember
   - configure_strategy
   - low_complexity
@@ -2185,7 +2173,6 @@ length credit for each digit. Modify the <html:code>dcredit</html:code> setting 
                   <ns5:reference href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">Req-8.2.3</ns5:reference>
                   <ns5:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000071-GPOS-00039</ns5:reference>
                   <ns5:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R31</ns5:reference>
-                  <ns5:reference href="https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf">8.3.6</ns5:reference>
                   <ns5:rationale>Use of a complex password helps to increase the time and resources required
 to compromise the password. Password complexity, or strength, is a measure of
 the effectiveness of a password in resisting attempts at guessing and brute-force
@@ -2241,7 +2228,6 @@ fi
   - NIST-800-53-IA-5(4)
   - NIST-800-53-IA-5(c)
   - PCI-DSS-Req-8.2.3
-  - PCI-DSSv4-8.3.6
   - accounts_password_pam_dcredit
   - low_complexity
   - low_disruption
@@ -2268,7 +2254,6 @@ fi
   - NIST-800-53-IA-5(4)
   - NIST-800-53-IA-5(c)
   - PCI-DSS-Req-8.2.3
-  - PCI-DSSv4-8.3.6
   - accounts_password_pam_dcredit
   - low_complexity
   - low_disruption
@@ -2362,7 +2347,6 @@ length credit for each lowercase character. Modify the <html:code>lcredit</html:
                   <ns5:reference href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">Req-8.2.3</ns5:reference>
                   <ns5:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000070-GPOS-00038</ns5:reference>
                   <ns5:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R31</ns5:reference>
-                  <ns5:reference href="https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf">8.3.6</ns5:reference>
                   <ns5:rationale>Use of a complex password helps to increase the time and resources required
 to compromise the password. Password complexity, or strength, is a measure of
 the effectiveness of a password in resisting attempts at guessing and brute-force
@@ -2417,7 +2401,6 @@ fi
   - NIST-800-53-IA-5(4)
   - NIST-800-53-IA-5(c)
   - PCI-DSS-Req-8.2.3
-  - PCI-DSSv4-8.3.6
   - accounts_password_pam_lcredit
   - low_complexity
   - low_disruption
@@ -2444,7 +2427,6 @@ fi
   - NIST-800-53-IA-5(4)
   - NIST-800-53-IA-5(c)
   - PCI-DSS-Req-8.2.3
-  - PCI-DSSv4-8.3.6
   - accounts_password_pam_lcredit
   - low_complexity
   - low_disruption
@@ -2539,7 +2521,6 @@ after pam_pwquality to set minimum password length requirements.</ns5:descriptio
                   <ns5:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000078-GPOS-00046</ns5:reference>
                   <ns5:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R31</ns5:reference>
                   <ns5:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R68</ns5:reference>
-                  <ns5:reference href="https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf">8.3.6</ns5:reference>
                   <ns5:rationale>The shorter the password, the lower the number of possible combinations
 that need to be tested before the password is compromised.
 <html:br />
@@ -2594,7 +2575,6 @@ fi
   - NIST-800-53-IA-5(4)
   - NIST-800-53-IA-5(c)
   - PCI-DSS-Req-8.2.3
-  - PCI-DSSv4-8.3.6
   - accounts_password_pam_minlen
   - low_complexity
   - low_disruption
@@ -2622,7 +2602,6 @@ fi
   - NIST-800-53-IA-5(4)
   - NIST-800-53-IA-5(c)
   - PCI-DSS-Req-8.2.3
-  - PCI-DSSv4-8.3.6
   - accounts_password_pam_minlen
   - low_complexity
   - low_disruption
@@ -3074,7 +3053,6 @@ Using the <html:code>typeset</html:code> keyword is preferred for wider compatib
               <ns5:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000163-GPOS-00072</ns5:reference>
               <ns5:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000029-GPOS-00010</ns5:reference>
               <ns5:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R32</ns5:reference>
-              <ns5:reference href="https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf">8.6.1</ns5:reference>
               <ns5:rationale>Terminating an idle session within a short time period reduces
 the window of opportunity for unauthorized personnel to take control of a
 management session enabled on the console or console port that has been
@@ -3126,7 +3104,6 @@ fi
   - NIST-800-53-AC-2(5)
   - NIST-800-53-CM-6(a)
   - NIST-800-53-SC-10
-  - PCI-DSSv4-8.6.1
   - accounts_tmout
   - low_complexity
   - low_disruption
@@ -3148,7 +3125,6 @@ fi
   - NIST-800-53-AC-2(5)
   - NIST-800-53-CM-6(a)
   - NIST-800-53-SC-10
-  - PCI-DSSv4-8.6.1
   - accounts_tmout
   - low_complexity
   - low_disruption
@@ -3641,13 +3617,13 @@ fi
       </ns5:Group>
     </ns5:Benchmark>
   </ns0:component>
-  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-oval.xml" timestamp="2024-06-04T09:38:02">
+  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-oval.xml" timestamp="2024-06-04T11:11:28">
     <ns9:oval_definitions xsi:schemaLocation="http://oval.mitre.org/XMLSchema/oval-common-5 oval-common-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5 oval-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#independent independent-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#unix unix-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#linux linux-definitions-schema.xsd">
       <ns9:generator>
         <ns10:product_name>OVALFileLinker from SCAP Security Guide</ns10:product_name>
         <ns10:product_version>ssg: [0, 1, 73], python: 3.11.9</ns10:product_version>
         <ns10:schema_version>5.11</ns10:schema_version>
-        <ns10:timestamp>2024-06-04T07:37:57</ns10:timestamp>
+        <ns10:timestamp>2024-06-04T09:11:23</ns10:timestamp>
       </ns9:generator>
       <ns9:definitions>
         <ns9:definition id="oval:ssg-accounts_password_pam_unix_remember:def:1" version="2" class="compliance">
@@ -4319,103 +4295,19 @@ fi
       </ns9:variables>
     </ns9:oval_definitions>
   </ns0:component>
-  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-ocil.xml" timestamp="2024-06-04T09:38:02">
+  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-ocil.xml" timestamp="2024-06-04T11:11:28">
     <ns12:ocil>
       <ns12:generator>
         <ns12:product_name>build_shorthand.py from SCAP Security Guide</ns12:product_name>
         <ns12:product_version>ssg: 0.1.73</ns12:product_version>
         <ns12:schema_version>2.0</ns12:schema_version>
-        <ns12:timestamp>2024-06-04T07:37:57</ns12:timestamp>
+        <ns12:timestamp>2024-06-04T09:11:23</ns12:timestamp>
       </ns12:generator>
       <ns12:questionnaires>
-        <ns12:questionnaire id="ocil:ssg-accounts_tmout_ocil:questionnaire:1">
-          <ns12:title>Set Interactive Session Timeout</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-accounts_tmout_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
-        <ns12:questionnaire id="ocil:ssg-accounts_password_pam_lcredit_ocil:questionnaire:1">
-          <ns12:title>Ensure PAM Enforces Password Requirements - Minimum Lowercase Characters</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-accounts_password_pam_lcredit_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
-        <ns12:questionnaire id="ocil:ssg-sudo_add_ignore_dot_ocil:questionnaire:1">
-          <ns12:title>Ensure sudo Ignores Commands In Current Dir - sudo ignore_dot</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-sudo_add_ignore_dot_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
-        <ns12:questionnaire id="ocil:ssg-accounts_umask_etc_bashrc_ocil:questionnaire:1">
-          <ns12:title>Ensure the Default Bash Umask is Set Correctly</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-accounts_umask_etc_bashrc_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
         <ns12:questionnaire id="ocil:ssg-accounts_password_pam_minlen_ocil:questionnaire:1">
           <ns12:title>Ensure PAM Enforces Password Requirements - Minimum Length</ns12:title>
           <ns12:actions>
             <ns12:test_action_ref>ocil:ssg-accounts_password_pam_minlen_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
-        <ns12:questionnaire id="ocil:ssg-accounts_umask_etc_profile_ocil:questionnaire:1">
-          <ns12:title>Ensure the Default Umask is Set Correctly in /etc/profile</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-accounts_umask_etc_profile_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
-        <ns12:questionnaire id="ocil:ssg-sudo_add_noexec_ocil:questionnaire:1">
-          <ns12:title>Ensure Privileged Escalated Commands Cannot Execute Other Commands - sudo NOEXEC</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-sudo_add_noexec_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
-        <ns12:questionnaire id="ocil:ssg-sudo_add_umask_ocil:questionnaire:1">
-          <ns12:title>Ensure sudo umask is appropriate - sudo umask</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-sudo_add_umask_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
-        <ns12:questionnaire id="ocil:ssg-sudo_add_requiretty_ocil:questionnaire:1">
-          <ns12:title>Ensure Only Users Logged In To Real tty Can Execute Sudo - sudo requiretty</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-sudo_add_requiretty_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
-        <ns12:questionnaire id="ocil:ssg-sudo_add_use_pty_ocil:questionnaire:1">
-          <ns12:title>Ensure Only Users Logged In To Real tty Can Execute Sudo - sudo use_pty</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-sudo_add_use_pty_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
-        <ns12:questionnaire id="ocil:ssg-accounts_password_pam_ocredit_ocil:questionnaire:1">
-          <ns12:title>Ensure PAM Enforces Password Requirements - Minimum Special Characters</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-accounts_password_pam_ocredit_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
-        <ns12:questionnaire id="ocil:ssg-sudo_add_env_reset_ocil:questionnaire:1">
-          <ns12:title>Ensure sudo Runs In A Minimal Environment - sudo env_reset</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-sudo_add_env_reset_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
-        <ns12:questionnaire id="ocil:ssg-accounts_password_pam_dcredit_ocil:questionnaire:1">
-          <ns12:title>Ensure PAM Enforces Password Requirements - Minimum Digit Characters</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-accounts_password_pam_dcredit_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
-        <ns12:questionnaire id="ocil:ssg-accounts_umask_etc_login_defs_ocil:questionnaire:1">
-          <ns12:title>Ensure the Default Umask is Set Correctly in login.defs</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-accounts_umask_etc_login_defs_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
-        <ns12:questionnaire id="ocil:ssg-accounts_password_pam_unix_remember_ocil:questionnaire:1">
-          <ns12:title>Limit Password Reuse</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-accounts_password_pam_unix_remember_action:testaction:1</ns12:test_action_ref>
           </ns12:actions>
         </ns12:questionnaire>
         <ns12:questionnaire id="ocil:ssg-accounts_password_pam_ucredit_ocil:questionnaire:1">
@@ -4424,121 +4316,93 @@ fi
             <ns12:test_action_ref>ocil:ssg-accounts_password_pam_ucredit_action:testaction:1</ns12:test_action_ref>
           </ns12:actions>
         </ns12:questionnaire>
+        <ns12:questionnaire id="ocil:ssg-accounts_tmout_ocil:questionnaire:1">
+          <ns12:title>Set Interactive Session Timeout</ns12:title>
+          <ns12:actions>
+            <ns12:test_action_ref>ocil:ssg-accounts_tmout_action:testaction:1</ns12:test_action_ref>
+          </ns12:actions>
+        </ns12:questionnaire>
+        <ns12:questionnaire id="ocil:ssg-sudo_add_env_reset_ocil:questionnaire:1">
+          <ns12:title>Ensure sudo Runs In A Minimal Environment - sudo env_reset</ns12:title>
+          <ns12:actions>
+            <ns12:test_action_ref>ocil:ssg-sudo_add_env_reset_action:testaction:1</ns12:test_action_ref>
+          </ns12:actions>
+        </ns12:questionnaire>
+        <ns12:questionnaire id="ocil:ssg-accounts_umask_etc_profile_ocil:questionnaire:1">
+          <ns12:title>Ensure the Default Umask is Set Correctly in /etc/profile</ns12:title>
+          <ns12:actions>
+            <ns12:test_action_ref>ocil:ssg-accounts_umask_etc_profile_action:testaction:1</ns12:test_action_ref>
+          </ns12:actions>
+        </ns12:questionnaire>
+        <ns12:questionnaire id="ocil:ssg-accounts_password_pam_dcredit_ocil:questionnaire:1">
+          <ns12:title>Ensure PAM Enforces Password Requirements - Minimum Digit Characters</ns12:title>
+          <ns12:actions>
+            <ns12:test_action_ref>ocil:ssg-accounts_password_pam_dcredit_action:testaction:1</ns12:test_action_ref>
+          </ns12:actions>
+        </ns12:questionnaire>
+        <ns12:questionnaire id="ocil:ssg-sudo_add_ignore_dot_ocil:questionnaire:1">
+          <ns12:title>Ensure sudo Ignores Commands In Current Dir - sudo ignore_dot</ns12:title>
+          <ns12:actions>
+            <ns12:test_action_ref>ocil:ssg-sudo_add_ignore_dot_action:testaction:1</ns12:test_action_ref>
+          </ns12:actions>
+        </ns12:questionnaire>
+        <ns12:questionnaire id="ocil:ssg-sudo_add_umask_ocil:questionnaire:1">
+          <ns12:title>Ensure sudo umask is appropriate - sudo umask</ns12:title>
+          <ns12:actions>
+            <ns12:test_action_ref>ocil:ssg-sudo_add_umask_action:testaction:1</ns12:test_action_ref>
+          </ns12:actions>
+        </ns12:questionnaire>
+        <ns12:questionnaire id="ocil:ssg-sudo_add_use_pty_ocil:questionnaire:1">
+          <ns12:title>Ensure Only Users Logged In To Real tty Can Execute Sudo - sudo use_pty</ns12:title>
+          <ns12:actions>
+            <ns12:test_action_ref>ocil:ssg-sudo_add_use_pty_action:testaction:1</ns12:test_action_ref>
+          </ns12:actions>
+        </ns12:questionnaire>
+        <ns12:questionnaire id="ocil:ssg-accounts_umask_etc_login_defs_ocil:questionnaire:1">
+          <ns12:title>Ensure the Default Umask is Set Correctly in login.defs</ns12:title>
+          <ns12:actions>
+            <ns12:test_action_ref>ocil:ssg-accounts_umask_etc_login_defs_action:testaction:1</ns12:test_action_ref>
+          </ns12:actions>
+        </ns12:questionnaire>
+        <ns12:questionnaire id="ocil:ssg-sudo_add_requiretty_ocil:questionnaire:1">
+          <ns12:title>Ensure Only Users Logged In To Real tty Can Execute Sudo - sudo requiretty</ns12:title>
+          <ns12:actions>
+            <ns12:test_action_ref>ocil:ssg-sudo_add_requiretty_action:testaction:1</ns12:test_action_ref>
+          </ns12:actions>
+        </ns12:questionnaire>
+        <ns12:questionnaire id="ocil:ssg-accounts_password_pam_ocredit_ocil:questionnaire:1">
+          <ns12:title>Ensure PAM Enforces Password Requirements - Minimum Special Characters</ns12:title>
+          <ns12:actions>
+            <ns12:test_action_ref>ocil:ssg-accounts_password_pam_ocredit_action:testaction:1</ns12:test_action_ref>
+          </ns12:actions>
+        </ns12:questionnaire>
+        <ns12:questionnaire id="ocil:ssg-sudo_add_noexec_ocil:questionnaire:1">
+          <ns12:title>Ensure Privileged Escalated Commands Cannot Execute Other Commands - sudo NOEXEC</ns12:title>
+          <ns12:actions>
+            <ns12:test_action_ref>ocil:ssg-sudo_add_noexec_action:testaction:1</ns12:test_action_ref>
+          </ns12:actions>
+        </ns12:questionnaire>
+        <ns12:questionnaire id="ocil:ssg-accounts_password_pam_lcredit_ocil:questionnaire:1">
+          <ns12:title>Ensure PAM Enforces Password Requirements - Minimum Lowercase Characters</ns12:title>
+          <ns12:actions>
+            <ns12:test_action_ref>ocil:ssg-accounts_password_pam_lcredit_action:testaction:1</ns12:test_action_ref>
+          </ns12:actions>
+        </ns12:questionnaire>
+        <ns12:questionnaire id="ocil:ssg-accounts_umask_etc_bashrc_ocil:questionnaire:1">
+          <ns12:title>Ensure the Default Bash Umask is Set Correctly</ns12:title>
+          <ns12:actions>
+            <ns12:test_action_ref>ocil:ssg-accounts_umask_etc_bashrc_action:testaction:1</ns12:test_action_ref>
+          </ns12:actions>
+        </ns12:questionnaire>
+        <ns12:questionnaire id="ocil:ssg-accounts_password_pam_unix_remember_ocil:questionnaire:1">
+          <ns12:title>Limit Password Reuse</ns12:title>
+          <ns12:actions>
+            <ns12:test_action_ref>ocil:ssg-accounts_password_pam_unix_remember_action:testaction:1</ns12:test_action_ref>
+          </ns12:actions>
+        </ns12:questionnaire>
       </ns12:questionnaires>
       <ns12:test_actions>
-        <ns12:boolean_question_test_action id="ocil:ssg-accounts_tmout_action:testaction:1" question_ref="ocil:ssg-accounts_tmout_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
-        <ns12:boolean_question_test_action id="ocil:ssg-accounts_password_pam_lcredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_lcredit_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
-        <ns12:boolean_question_test_action id="ocil:ssg-sudo_add_ignore_dot_action:testaction:1" question_ref="ocil:ssg-sudo_add_ignore_dot_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
-        <ns12:boolean_question_test_action id="ocil:ssg-accounts_umask_etc_bashrc_action:testaction:1" question_ref="ocil:ssg-accounts_umask_etc_bashrc_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
         <ns12:boolean_question_test_action id="ocil:ssg-accounts_password_pam_minlen_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_minlen_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
-        <ns12:boolean_question_test_action id="ocil:ssg-accounts_umask_etc_profile_action:testaction:1" question_ref="ocil:ssg-accounts_umask_etc_profile_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
-        <ns12:boolean_question_test_action id="ocil:ssg-sudo_add_noexec_action:testaction:1" question_ref="ocil:ssg-sudo_add_noexec_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
-        <ns12:boolean_question_test_action id="ocil:ssg-sudo_add_umask_action:testaction:1" question_ref="ocil:ssg-sudo_add_umask_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
-        <ns12:boolean_question_test_action id="ocil:ssg-sudo_add_requiretty_action:testaction:1" question_ref="ocil:ssg-sudo_add_requiretty_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
-        <ns12:boolean_question_test_action id="ocil:ssg-sudo_add_use_pty_action:testaction:1" question_ref="ocil:ssg-sudo_add_use_pty_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
-        <ns12:boolean_question_test_action id="ocil:ssg-accounts_password_pam_ocredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_ocredit_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
-        <ns12:boolean_question_test_action id="ocil:ssg-sudo_add_env_reset_action:testaction:1" question_ref="ocil:ssg-sudo_add_env_reset_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
-        <ns12:boolean_question_test_action id="ocil:ssg-accounts_password_pam_dcredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_dcredit_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
-        <ns12:boolean_question_test_action id="ocil:ssg-accounts_umask_etc_login_defs_action:testaction:1" question_ref="ocil:ssg-accounts_umask_etc_login_defs_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
-        <ns12:boolean_question_test_action id="ocil:ssg-accounts_password_pam_unix_remember_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_unix_remember_question:question:1">
           <ns12:when_true>
             <ns12:result>PASS</ns12:result>
           </ns12:when_true>
@@ -4554,8 +4418,140 @@ fi
             <ns12:result>FAIL</ns12:result>
           </ns12:when_false>
         </ns12:boolean_question_test_action>
+        <ns12:boolean_question_test_action id="ocil:ssg-accounts_tmout_action:testaction:1" question_ref="ocil:ssg-accounts_tmout_question:question:1">
+          <ns12:when_true>
+            <ns12:result>PASS</ns12:result>
+          </ns12:when_true>
+          <ns12:when_false>
+            <ns12:result>FAIL</ns12:result>
+          </ns12:when_false>
+        </ns12:boolean_question_test_action>
+        <ns12:boolean_question_test_action id="ocil:ssg-sudo_add_env_reset_action:testaction:1" question_ref="ocil:ssg-sudo_add_env_reset_question:question:1">
+          <ns12:when_true>
+            <ns12:result>PASS</ns12:result>
+          </ns12:when_true>
+          <ns12:when_false>
+            <ns12:result>FAIL</ns12:result>
+          </ns12:when_false>
+        </ns12:boolean_question_test_action>
+        <ns12:boolean_question_test_action id="ocil:ssg-accounts_umask_etc_profile_action:testaction:1" question_ref="ocil:ssg-accounts_umask_etc_profile_question:question:1">
+          <ns12:when_true>
+            <ns12:result>PASS</ns12:result>
+          </ns12:when_true>
+          <ns12:when_false>
+            <ns12:result>FAIL</ns12:result>
+          </ns12:when_false>
+        </ns12:boolean_question_test_action>
+        <ns12:boolean_question_test_action id="ocil:ssg-accounts_password_pam_dcredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_dcredit_question:question:1">
+          <ns12:when_true>
+            <ns12:result>PASS</ns12:result>
+          </ns12:when_true>
+          <ns12:when_false>
+            <ns12:result>FAIL</ns12:result>
+          </ns12:when_false>
+        </ns12:boolean_question_test_action>
+        <ns12:boolean_question_test_action id="ocil:ssg-sudo_add_ignore_dot_action:testaction:1" question_ref="ocil:ssg-sudo_add_ignore_dot_question:question:1">
+          <ns12:when_true>
+            <ns12:result>PASS</ns12:result>
+          </ns12:when_true>
+          <ns12:when_false>
+            <ns12:result>FAIL</ns12:result>
+          </ns12:when_false>
+        </ns12:boolean_question_test_action>
+        <ns12:boolean_question_test_action id="ocil:ssg-sudo_add_umask_action:testaction:1" question_ref="ocil:ssg-sudo_add_umask_question:question:1">
+          <ns12:when_true>
+            <ns12:result>PASS</ns12:result>
+          </ns12:when_true>
+          <ns12:when_false>
+            <ns12:result>FAIL</ns12:result>
+          </ns12:when_false>
+        </ns12:boolean_question_test_action>
+        <ns12:boolean_question_test_action id="ocil:ssg-sudo_add_use_pty_action:testaction:1" question_ref="ocil:ssg-sudo_add_use_pty_question:question:1">
+          <ns12:when_true>
+            <ns12:result>PASS</ns12:result>
+          </ns12:when_true>
+          <ns12:when_false>
+            <ns12:result>FAIL</ns12:result>
+          </ns12:when_false>
+        </ns12:boolean_question_test_action>
+        <ns12:boolean_question_test_action id="ocil:ssg-accounts_umask_etc_login_defs_action:testaction:1" question_ref="ocil:ssg-accounts_umask_etc_login_defs_question:question:1">
+          <ns12:when_true>
+            <ns12:result>PASS</ns12:result>
+          </ns12:when_true>
+          <ns12:when_false>
+            <ns12:result>FAIL</ns12:result>
+          </ns12:when_false>
+        </ns12:boolean_question_test_action>
+        <ns12:boolean_question_test_action id="ocil:ssg-sudo_add_requiretty_action:testaction:1" question_ref="ocil:ssg-sudo_add_requiretty_question:question:1">
+          <ns12:when_true>
+            <ns12:result>PASS</ns12:result>
+          </ns12:when_true>
+          <ns12:when_false>
+            <ns12:result>FAIL</ns12:result>
+          </ns12:when_false>
+        </ns12:boolean_question_test_action>
+        <ns12:boolean_question_test_action id="ocil:ssg-accounts_password_pam_ocredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_ocredit_question:question:1">
+          <ns12:when_true>
+            <ns12:result>PASS</ns12:result>
+          </ns12:when_true>
+          <ns12:when_false>
+            <ns12:result>FAIL</ns12:result>
+          </ns12:when_false>
+        </ns12:boolean_question_test_action>
+        <ns12:boolean_question_test_action id="ocil:ssg-sudo_add_noexec_action:testaction:1" question_ref="ocil:ssg-sudo_add_noexec_question:question:1">
+          <ns12:when_true>
+            <ns12:result>PASS</ns12:result>
+          </ns12:when_true>
+          <ns12:when_false>
+            <ns12:result>FAIL</ns12:result>
+          </ns12:when_false>
+        </ns12:boolean_question_test_action>
+        <ns12:boolean_question_test_action id="ocil:ssg-accounts_password_pam_lcredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_lcredit_question:question:1">
+          <ns12:when_true>
+            <ns12:result>PASS</ns12:result>
+          </ns12:when_true>
+          <ns12:when_false>
+            <ns12:result>FAIL</ns12:result>
+          </ns12:when_false>
+        </ns12:boolean_question_test_action>
+        <ns12:boolean_question_test_action id="ocil:ssg-accounts_umask_etc_bashrc_action:testaction:1" question_ref="ocil:ssg-accounts_umask_etc_bashrc_question:question:1">
+          <ns12:when_true>
+            <ns12:result>PASS</ns12:result>
+          </ns12:when_true>
+          <ns12:when_false>
+            <ns12:result>FAIL</ns12:result>
+          </ns12:when_false>
+        </ns12:boolean_question_test_action>
+        <ns12:boolean_question_test_action id="ocil:ssg-accounts_password_pam_unix_remember_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_unix_remember_question:question:1">
+          <ns12:when_true>
+            <ns12:result>PASS</ns12:result>
+          </ns12:when_true>
+          <ns12:when_false>
+            <ns12:result>FAIL</ns12:result>
+          </ns12:when_false>
+        </ns12:boolean_question_test_action>
       </ns12:test_actions>
       <ns12:questions>
+        <ns12:boolean_question id="ocil:ssg-accounts_password_pam_minlen_question:question:1">
+          <ns12:question_text>Verify that Gentoo enforces a minimum -character password length with the following command:
+
+$ grep minlen /etc/security/pwquality.conf
+
+minlen = 
+      Is it the case that the command does not return a "minlen" value of "&lt;sub idref="var_password_pam_minlen" /&gt;" or greater, does not return a line, or the line is commented out?
+      </ns12:question_text>
+        </ns12:boolean_question>
+        <ns12:boolean_question id="ocil:ssg-accounts_password_pam_ucredit_question:question:1">
+          <ns12:question_text>Verify that Gentoo enforces password complexity by requiring that at least one upper-case character.
+
+Check the value for "ucredit" with the following command:
+
+$ sudo grep ucredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/*.conf
+
+ucredit = -1
+      Is it the case that the value of "ucredit" is a positive number or is commented out?
+      </ns12:question_text>
+        </ns12:boolean_question>
         <ns12:boolean_question id="ocil:ssg-accounts_tmout_question:question:1">
           <ns12:question_text>Run the following command to ensure the TMOUT value is configured for all users
 on the system:
@@ -4567,40 +4563,11 @@ TMOUT=
       Is it the case that value of TMOUT is not less than or equal to expected setting?
       </ns12:question_text>
         </ns12:boolean_question>
-        <ns12:boolean_question id="ocil:ssg-accounts_password_pam_lcredit_question:question:1">
-          <ns12:question_text>Verify that Gentoo enforces password complexity by requiring that at least one lower-case character.
-
-Check the value for "lcredit" with the following command:
-
-$ sudo grep lcredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/*.conf
-
-/etc/security/pwquality.conf:lcredit = -1
-      Is it the case that the value of "lcredit" is a positive number or is commented out?
-      </ns12:question_text>
-        </ns12:boolean_question>
-        <ns12:boolean_question id="ocil:ssg-sudo_add_ignore_dot_question:question:1">
-          <ns12:question_text>To determine if ignore_dot has been configured for sudo, run the following command:
-$ sudo grep -ri "^[\s]*Defaults.*\bignore_dot\b.*" /etc/sudoers /etc/sudoers.d/
+        <ns12:boolean_question id="ocil:ssg-sudo_add_env_reset_question:question:1">
+          <ns12:question_text>To determine if env_reset has been configured for sudo, run the following command:
+$ sudo grep -ri "^[\s]*Defaults.*\benv_reset\b.*" /etc/sudoers /etc/sudoers.d/
 The command should return a matching output.
-      Is it the case that ignore_dot is not enabled in sudo?
-      </ns12:question_text>
-        </ns12:boolean_question>
-        <ns12:boolean_question id="ocil:ssg-accounts_umask_etc_bashrc_question:question:1">
-          <ns12:question_text>Verify the umask setting is configured correctly in the /etc/bash/bashrc file with the following command:
-
-$ sudo grep "umask" /etc/bash/bashrc
-
-umask 
-      Is it the case that the value for the "umask" parameter is not "&lt;sub idref="var_accounts_user_umask" /&gt;", or the "umask" parameter is missing or is commented out?
-      </ns12:question_text>
-        </ns12:boolean_question>
-        <ns12:boolean_question id="ocil:ssg-accounts_password_pam_minlen_question:question:1">
-          <ns12:question_text>Verify that Gentoo enforces a minimum -character password length with the following command:
-
-$ grep minlen /etc/security/pwquality.conf
-
-minlen = 
-      Is it the case that the command does not return a "minlen" value of "&lt;sub idref="var_password_pam_minlen" /&gt;" or greater, does not return a line, or the line is commented out?
+      Is it the case that env_reset is not enabled in sudo?
       </ns12:question_text>
         </ns12:boolean_question>
         <ns12:boolean_question id="ocil:ssg-accounts_umask_etc_profile_question:question:1">
@@ -4610,51 +4577,6 @@ $ grep "umask" /etc/profile*
 umask 
       Is it the case that the value for the "umask" parameter is not "&lt;sub idref="var_accounts_user_umask" /&gt;",
 or the "umask" parameter is missing or is commented out?
-      </ns12:question_text>
-        </ns12:boolean_question>
-        <ns12:boolean_question id="ocil:ssg-sudo_add_noexec_question:question:1">
-          <ns12:question_text>To determine if NOEXEC has been configured for sudo, run the following command:
-$ sudo grep -ri "^[\s]*Defaults.*\bnoexec\b.*" /etc/sudoers /etc/sudoers.d/
-The command should return a matching output.
-      Is it the case that noexec is not enabled in sudo?
-      </ns12:question_text>
-        </ns12:boolean_question>
-        <ns12:boolean_question id="ocil:ssg-sudo_add_umask_question:question:1">
-          <ns12:question_text>To determine if umask has been configured for sudo with the appropriate value,
-run the following command:
-$ sudo grep -ri '^Defaults.*umask=' /etc/sudoers /etc/sudoers.d/
-The command should return a matching output.
-      Is it the case that umask is not set with the appropriate value for sudo?
-      </ns12:question_text>
-        </ns12:boolean_question>
-        <ns12:boolean_question id="ocil:ssg-sudo_add_requiretty_question:question:1">
-          <ns12:question_text>To determine if requiretty has been configured for sudo, run the following command:
-$ sudo grep -ri "^[\s]*Defaults.*\brequiretty\b.*" /etc/sudoers /etc/sudoers.d/
-The command should return a matching output.
-      Is it the case that requiretty is not enabled in sudo?
-      </ns12:question_text>
-        </ns12:boolean_question>
-        <ns12:boolean_question id="ocil:ssg-sudo_add_use_pty_question:question:1">
-          <ns12:question_text>To determine if use_pty has been configured for sudo, run the following command:
-$ sudo grep -ri "^[\s]*Defaults.*\buse_pty\b.*" /etc/sudoers /etc/sudoers.d/
-The command should return a matching output.
-      Is it the case that use_pty is not enabled in sudo?
-      </ns12:question_text>
-        </ns12:boolean_question>
-        <ns12:boolean_question id="ocil:ssg-accounts_password_pam_ocredit_question:question:1">
-          <ns12:question_text>Verify that Gentoo enforces password complexity by requiring that at least one special character with the following command:
-
-$ sudo grep ocredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/*.conf
-
-ocredit = 
-      Is it the case that value of "ocredit" is a positive number or is commented out?
-      </ns12:question_text>
-        </ns12:boolean_question>
-        <ns12:boolean_question id="ocil:ssg-sudo_add_env_reset_question:question:1">
-          <ns12:question_text>To determine if env_reset has been configured for sudo, run the following command:
-$ sudo grep -ri "^[\s]*Defaults.*\benv_reset\b.*" /etc/sudoers /etc/sudoers.d/
-The command should return a matching output.
-      Is it the case that env_reset is not enabled in sudo?
       </ns12:question_text>
         </ns12:boolean_question>
         <ns12:boolean_question id="ocil:ssg-accounts_password_pam_dcredit_question:question:1">
@@ -4668,6 +4590,28 @@ $ sudo grep dcredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/
       Is it the case that the value of "dcredit" is a positive number or is commented out?
       </ns12:question_text>
         </ns12:boolean_question>
+        <ns12:boolean_question id="ocil:ssg-sudo_add_ignore_dot_question:question:1">
+          <ns12:question_text>To determine if ignore_dot has been configured for sudo, run the following command:
+$ sudo grep -ri "^[\s]*Defaults.*\bignore_dot\b.*" /etc/sudoers /etc/sudoers.d/
+The command should return a matching output.
+      Is it the case that ignore_dot is not enabled in sudo?
+      </ns12:question_text>
+        </ns12:boolean_question>
+        <ns12:boolean_question id="ocil:ssg-sudo_add_umask_question:question:1">
+          <ns12:question_text>To determine if umask has been configured for sudo with the appropriate value,
+run the following command:
+$ sudo grep -ri '^Defaults.*umask=' /etc/sudoers /etc/sudoers.d/
+The command should return a matching output.
+      Is it the case that umask is not set with the appropriate value for sudo?
+      </ns12:question_text>
+        </ns12:boolean_question>
+        <ns12:boolean_question id="ocil:ssg-sudo_add_use_pty_question:question:1">
+          <ns12:question_text>To determine if use_pty has been configured for sudo, run the following command:
+$ sudo grep -ri "^[\s]*Defaults.*\buse_pty\b.*" /etc/sudoers /etc/sudoers.d/
+The command should return a matching output.
+      Is it the case that use_pty is not enabled in sudo?
+      </ns12:question_text>
+        </ns12:boolean_question>
         <ns12:boolean_question id="ocil:ssg-accounts_umask_etc_login_defs_question:question:1">
           <ns12:question_text>Verify Gentoo defines default permissions for all authenticated users in such a way that the user can only read and modify their own files with the following command:
 
@@ -4675,6 +4619,49 @@ $ sudo grep dcredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/
 
 UMASK 
       Is it the case that the value for the "UMASK" parameter is not "&lt;sub idref="var_accounts_user_umask" /&gt;", or the "UMASK" parameter is missing or is commented out?
+      </ns12:question_text>
+        </ns12:boolean_question>
+        <ns12:boolean_question id="ocil:ssg-sudo_add_requiretty_question:question:1">
+          <ns12:question_text>To determine if requiretty has been configured for sudo, run the following command:
+$ sudo grep -ri "^[\s]*Defaults.*\brequiretty\b.*" /etc/sudoers /etc/sudoers.d/
+The command should return a matching output.
+      Is it the case that requiretty is not enabled in sudo?
+      </ns12:question_text>
+        </ns12:boolean_question>
+        <ns12:boolean_question id="ocil:ssg-accounts_password_pam_ocredit_question:question:1">
+          <ns12:question_text>Verify that Gentoo enforces password complexity by requiring that at least one special character with the following command:
+
+$ sudo grep ocredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/*.conf
+
+ocredit = 
+      Is it the case that value of "ocredit" is a positive number or is commented out?
+      </ns12:question_text>
+        </ns12:boolean_question>
+        <ns12:boolean_question id="ocil:ssg-sudo_add_noexec_question:question:1">
+          <ns12:question_text>To determine if NOEXEC has been configured for sudo, run the following command:
+$ sudo grep -ri "^[\s]*Defaults.*\bnoexec\b.*" /etc/sudoers /etc/sudoers.d/
+The command should return a matching output.
+      Is it the case that noexec is not enabled in sudo?
+      </ns12:question_text>
+        </ns12:boolean_question>
+        <ns12:boolean_question id="ocil:ssg-accounts_password_pam_lcredit_question:question:1">
+          <ns12:question_text>Verify that Gentoo enforces password complexity by requiring that at least one lower-case character.
+
+Check the value for "lcredit" with the following command:
+
+$ sudo grep lcredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/*.conf
+
+/etc/security/pwquality.conf:lcredit = -1
+      Is it the case that the value of "lcredit" is a positive number or is commented out?
+      </ns12:question_text>
+        </ns12:boolean_question>
+        <ns12:boolean_question id="ocil:ssg-accounts_umask_etc_bashrc_question:question:1">
+          <ns12:question_text>Verify the umask setting is configured correctly in the /etc/bash/bashrc file with the following command:
+
+$ sudo grep "umask" /etc/bash/bashrc
+
+umask 
+      Is it the case that the value for the "umask" parameter is not "&lt;sub idref="var_accounts_user_umask" /&gt;", or the "umask" parameter is missing or is commented out?
       </ns12:question_text>
         </ns12:boolean_question>
         <ns12:boolean_question id="ocil:ssg-accounts_password_pam_unix_remember_question:question:1">
@@ -4693,27 +4680,16 @@ The pam_pwhistory remember option must be configured only in one file.
       Is it the case that the value of remember is not equal to or greater than the expected value?
       </ns12:question_text>
         </ns12:boolean_question>
-        <ns12:boolean_question id="ocil:ssg-accounts_password_pam_ucredit_question:question:1">
-          <ns12:question_text>Verify that Gentoo enforces password complexity by requiring that at least one upper-case character.
-
-Check the value for "ucredit" with the following command:
-
-$ sudo grep ucredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/*.conf
-
-ucredit = -1
-      Is it the case that the value of "ucredit" is a positive number or is commented out?
-      </ns12:question_text>
-        </ns12:boolean_question>
       </ns12:questions>
     </ns12:ocil>
   </ns0:component>
-  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-cpe-oval.xml" timestamp="2024-06-04T09:38:03">
+  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-cpe-oval.xml" timestamp="2024-06-04T11:11:29">
     <ns9:oval_definitions xsi:schemaLocation="http://oval.mitre.org/XMLSchema/oval-common-5 oval-common-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5 oval-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#independent independent-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#unix unix-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#linux linux-definitions-schema.xsd">
       <ns9:generator>
         <ns10:product_name>build_cpe.py from SCAP Security Guide</ns10:product_name>
         <ns10:product_version>ssg: [0, 1, 73], python: 3.11.9</ns10:product_version>
         <ns10:schema_version>5.11</ns10:schema_version>
-        <ns10:timestamp>2024-06-04T07:38:02</ns10:timestamp>
+        <ns10:timestamp>2024-06-04T09:11:28</ns10:timestamp>
       </ns9:generator>
       <ns9:definitions>
         <ns9:definition id="oval:ssg-installed_env_is_a_container:def:1" version="2" class="inventory">

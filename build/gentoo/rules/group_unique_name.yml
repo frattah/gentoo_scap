@@ -2,9 +2,7 @@ description: Change the group name or delete groups, so each has a unique name.
 rationale: To assure accountability and prevent unauthenticated access, groups must
     be identified uniquely to prevent potential misuse and compromise of the system.
 severity: medium
-references:
-    pcidss4:
-    - 8.2.1
+references: {}
 components:
 - pam
 identifiers: {}

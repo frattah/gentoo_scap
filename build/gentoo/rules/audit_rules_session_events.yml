@@ -173,8 +173,6 @@ references:
     - SRG-APP-000505-CTR-001285
     anssi:
     - R73
-    pcidss4:
-    - 10.2.1.3
 components:
 - audit
 identifiers: {}

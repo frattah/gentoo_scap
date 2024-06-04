@@ -19,8 +19,6 @@ severity: medium
 references:
     pcidss:
     - Req-2.3
-    pcidss4:
-    - 2.2.7
 components:
 - openssh
 identifiers: {}

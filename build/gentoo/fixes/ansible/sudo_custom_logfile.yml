@@ -8,7 +8,6 @@
     manager: auto
   tags:
   - PCI-DSS-Req-10.2.5
-  - PCI-DSSv4-2.2.6
   - low_complexity
   - low_disruption
   - low_severity
@@ -28,7 +27,6 @@
   when: '"sudo" in ansible_facts.packages'
   tags:
   - PCI-DSS-Req-10.2.5
-  - PCI-DSSv4-2.2.6
   - low_complexity
   - low_disruption
   - low_severity
@@ -46,7 +44,6 @@
   - edit_sudoers_logfile_option is defined and not edit_sudoers_logfile_option.changed
   tags:
   - PCI-DSS-Req-10.2.5
-  - PCI-DSSv4-2.2.6
   - low_complexity
   - low_disruption
   - low_severity

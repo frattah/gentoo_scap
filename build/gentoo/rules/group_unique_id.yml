@@ -7,8 +7,6 @@ references:
     - CCI-000764
     srg:
     - SRG-OS-000104-GPOS-00051
-    pcidss4:
-    - 8.2.1
 components:
 - pam
 identifiers: {}

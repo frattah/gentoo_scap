@@ -26,8 +26,6 @@ references:
     - Req-3.2
     srg:
     - SRG-OS-000480-GPOS-00227
-    pcidss4:
-    - 3.3.1.1
 components:
 - systemd
 identifiers: {}

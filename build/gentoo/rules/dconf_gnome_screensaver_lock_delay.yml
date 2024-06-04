@@ -72,8 +72,6 @@ references:
     srg:
     - SRG-OS-000029-GPOS-00010
     - SRG-OS-000031-GPOS-00012
-    pcidss4:
-    - 8.2.8
 components:
 - gnome
 identifiers: {}

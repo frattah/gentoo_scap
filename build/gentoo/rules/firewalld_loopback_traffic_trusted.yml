@@ -23,9 +23,7 @@ rationale: 'Loopback traffic is generated between processes on machine and is ty
 
     anti-spoofing measure.'
 severity: medium
-references:
-    pcidss4:
-    - 1.4.1
+references: {}
 components:
 - firewalld
 identifiers: {}

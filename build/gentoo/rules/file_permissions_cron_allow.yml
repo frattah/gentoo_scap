@@ -15,8 +15,6 @@ severity: medium
 references:
     srg:
     - SRG-OS-000480-GPOS-00227
-    pcidss4:
-    - 2.2.6
 components:
 - cronie
 identifiers: {}

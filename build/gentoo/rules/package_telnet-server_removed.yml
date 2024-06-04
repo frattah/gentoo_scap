@@ -143,8 +143,6 @@ references:
     - SRG-OS-000095-GPOS-00049
     anssi:
     - R62
-    pcidss4:
-    - 2.2.4
 components:
 - telnet
 identifiers: {}

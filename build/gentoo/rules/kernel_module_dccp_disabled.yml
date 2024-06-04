@@ -100,8 +100,6 @@ references:
     srg:
     - SRG-OS-000096-GPOS-00050
     - SRG-OS-000378-GPOS-00163
-    pcidss4:
-    - 1.4.2
 components:
 - kernel
 identifiers: {}

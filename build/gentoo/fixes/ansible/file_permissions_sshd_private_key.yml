@@ -18,7 +18,6 @@
   - NIST-800-53-AC-6(1)
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-2.2.4
-  - PCI-DSSv4-2.2.6
   - configure_strategy
   - file_permissions_sshd_private_key
   - low_complexity
@@ -41,7 +40,6 @@
   - NIST-800-53-AC-6(1)
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-2.2.4
-  - PCI-DSSv4-2.2.6
   - configure_strategy
   - file_permissions_sshd_private_key
   - low_complexity

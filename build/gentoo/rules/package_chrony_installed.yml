@@ -30,8 +30,6 @@ references:
     - SRG-OS-000355-GPOS-00143
     anssi:
     - R71
-    pcidss4:
-    - 10.6.1
 components:
 - chrony
 - ntp

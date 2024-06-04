@@ -11,7 +11,6 @@
   tags:
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.7
-  - PCI-DSSv4-10.5.1
   - enable_strategy
   - low_complexity
   - low_disruption

@@ -172,8 +172,6 @@ references:
     - RS.AN-4
     pcidss:
     - Req-10.4.2.b
-    pcidss4:
-    - 10.6.3
 components:
 - audit
 identifiers: {}

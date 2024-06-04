@@ -102,8 +102,6 @@ references:
     nist-csf:
     - PR.IP-1
     - PR.PT-3
-    pcidss4:
-    - 1.4.1
 components:
 - operating-system
 identifiers: {}

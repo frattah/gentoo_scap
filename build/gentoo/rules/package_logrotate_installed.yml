@@ -46,8 +46,6 @@ references:
     - Req-10.7
     anssi:
     - R71
-    pcidss4:
-    - 10.5.1
 components:
 - rsyslog
 - logrotate

@@ -16,7 +16,6 @@
   - NIST-800-53-SI-7
   - NIST-800-53-SI-7(1)
   - PCI-DSS-Req-11.5
-  - PCI-DSSv4-11.5.2
   - aide_periodic_cron_checking
   - low_complexity
   - low_disruption
@@ -36,7 +35,6 @@
   - NIST-800-53-SI-7
   - NIST-800-53-SI-7(1)
   - PCI-DSS-Req-11.5
-  - PCI-DSSv4-11.5.2
   - aide_periodic_cron_checking
   - low_complexity
   - low_disruption
@@ -56,7 +54,6 @@
   - NIST-800-53-SI-7
   - NIST-800-53-SI-7(1)
   - PCI-DSS-Req-11.5
-  - PCI-DSSv4-11.5.2
   - aide_periodic_cron_checking
   - low_complexity
   - low_disruption
@@ -75,7 +72,6 @@
   - NIST-800-53-SI-7
   - NIST-800-53-SI-7(1)
   - PCI-DSS-Req-11.5
-  - PCI-DSSv4-11.5.2
   - aide_periodic_cron_checking
   - low_complexity
   - low_disruption
@@ -98,7 +94,6 @@
   - NIST-800-53-SI-7
   - NIST-800-53-SI-7(1)
   - PCI-DSS-Req-11.5
-  - PCI-DSSv4-11.5.2
   - aide_periodic_cron_checking
   - low_complexity
   - low_disruption

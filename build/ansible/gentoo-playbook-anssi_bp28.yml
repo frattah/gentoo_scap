@@ -134,7 +134,6 @@
         manager: auto
       tags:
       - PCI-DSS-Req-10.2.5
-      - PCI-DSSv4-2.2.6
       - low_complexity
       - low_disruption
       - medium_severity
@@ -151,7 +150,6 @@
       when: '"sudo" in ansible_facts.packages'
       tags:
       - PCI-DSS-Req-10.2.5
-      - PCI-DSSv4-2.2.6
       - low_complexity
       - low_disruption
       - medium_severity
@@ -169,7 +167,6 @@
       - NIST-800-53-IA-5(1)(e)
       - NIST-800-53-IA-5(f)
       - PCI-DSS-Req-8.2.5
-      - PCI-DSSv4-8.3.7
       - accounts_password_pam_unix_remember
       - configure_strategy
       - low_complexity
@@ -189,7 +186,6 @@
       - NIST-800-53-IA-5(1)(e)
       - NIST-800-53-IA-5(f)
       - PCI-DSS-Req-8.2.5
-      - PCI-DSSv4-8.3.7
       - accounts_password_pam_unix_remember
       - configure_strategy
       - low_complexity
@@ -211,7 +207,6 @@
       - NIST-800-53-IA-5(1)(e)
       - NIST-800-53-IA-5(f)
       - PCI-DSS-Req-8.2.5
-      - PCI-DSSv4-8.3.7
       - accounts_password_pam_unix_remember
       - configure_strategy
       - low_complexity
@@ -278,7 +273,6 @@
       - NIST-800-53-IA-5(1)(e)
       - NIST-800-53-IA-5(f)
       - PCI-DSS-Req-8.2.5
-      - PCI-DSSv4-8.3.7
       - accounts_password_pam_unix_remember
       - configure_strategy
       - low_complexity
@@ -492,7 +486,6 @@
       - NIST-800-53-IA-5(1)(e)
       - NIST-800-53-IA-5(f)
       - PCI-DSS-Req-8.2.5
-      - PCI-DSSv4-8.3.7
       - accounts_password_pam_unix_remember
       - configure_strategy
       - low_complexity
@@ -512,7 +505,6 @@
       - NIST-800-53-IA-5(1)(e)
       - NIST-800-53-IA-5(f)
       - PCI-DSS-Req-8.2.5
-      - PCI-DSSv4-8.3.7
       - accounts_password_pam_unix_remember
       - configure_strategy
       - low_complexity
@@ -706,7 +698,6 @@
       - NIST-800-53-IA-5(1)(e)
       - NIST-800-53-IA-5(f)
       - PCI-DSS-Req-8.2.5
-      - PCI-DSSv4-8.3.7
       - accounts_password_pam_unix_remember
       - configure_strategy
       - low_complexity
@@ -959,7 +950,6 @@
       - NIST-800-53-IA-5(1)(e)
       - NIST-800-53-IA-5(f)
       - PCI-DSS-Req-8.2.5
-      - PCI-DSSv4-8.3.7
       - accounts_password_pam_unix_remember
       - configure_strategy
       - low_complexity
@@ -977,7 +967,6 @@
       - NIST-800-53-IA-5(4)
       - NIST-800-53-IA-5(c)
       - PCI-DSS-Req-8.2.3
-      - PCI-DSSv4-8.3.6
       - accounts_password_pam_dcredit
       - low_complexity
       - low_disruption
@@ -1000,7 +989,6 @@
       - NIST-800-53-IA-5(4)
       - NIST-800-53-IA-5(c)
       - PCI-DSS-Req-8.2.3
-      - PCI-DSSv4-8.3.6
       - accounts_password_pam_dcredit
       - low_complexity
       - low_disruption
@@ -1018,7 +1006,6 @@
       - NIST-800-53-IA-5(4)
       - NIST-800-53-IA-5(c)
       - PCI-DSS-Req-8.2.3
-      - PCI-DSSv4-8.3.6
       - accounts_password_pam_lcredit
       - low_complexity
       - low_disruption
@@ -1041,7 +1028,6 @@
       - NIST-800-53-IA-5(4)
       - NIST-800-53-IA-5(c)
       - PCI-DSS-Req-8.2.3
-      - PCI-DSSv4-8.3.6
       - accounts_password_pam_lcredit
       - low_complexity
       - low_disruption
@@ -1060,7 +1046,6 @@
       - NIST-800-53-IA-5(4)
       - NIST-800-53-IA-5(c)
       - PCI-DSS-Req-8.2.3
-      - PCI-DSSv4-8.3.6
       - accounts_password_pam_minlen
       - low_complexity
       - low_disruption
@@ -1084,7 +1069,6 @@
       - NIST-800-53-IA-5(4)
       - NIST-800-53-IA-5(c)
       - PCI-DSS-Req-8.2.3
-      - PCI-DSSv4-8.3.6
       - accounts_password_pam_minlen
       - low_complexity
       - low_disruption
@@ -1182,7 +1166,6 @@
       - NIST-800-53-AC-2(5)
       - NIST-800-53-CM-6(a)
       - NIST-800-53-SC-10
-      - PCI-DSSv4-8.6.1
       - accounts_tmout
       - low_complexity
       - low_disruption
@@ -1204,7 +1187,6 @@
       - NIST-800-53-AC-2(5)
       - NIST-800-53-CM-6(a)
       - NIST-800-53-SC-10
-      - PCI-DSSv4-8.6.1
       - accounts_tmout
       - low_complexity
       - low_disruption

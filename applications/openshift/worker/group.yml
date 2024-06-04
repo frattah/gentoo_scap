@@ -1,7 +1,0 @@
-documentation_complete: true
-
-
-title: 'Kubernetes - Worker Node Settings'
-
-description: |-
-    Contains evaluations for the worker node configuration settings.

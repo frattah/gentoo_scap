@@ -10,7 +10,6 @@
   - NIST-800-53-AU-8(1)(a)
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.4.3
-  - PCI-DSSv4-10.6.2
   - chronyd_specify_remote_server
   - configure_strategy
   - low_complexity
@@ -32,7 +31,6 @@
   - NIST-800-53-AU-8(1)(a)
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.4.3
-  - PCI-DSSv4-10.6.2
   - chronyd_specify_remote_server
   - configure_strategy
   - low_complexity
@@ -55,7 +53,6 @@
   - NIST-800-53-AU-8(1)(a)
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.4.3
-  - PCI-DSSv4-10.6.2
   - chronyd_specify_remote_server
   - configure_strategy
   - low_complexity

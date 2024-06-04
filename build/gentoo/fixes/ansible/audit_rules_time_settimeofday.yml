@@ -14,7 +14,6 @@
   - NIST-800-53-AU-2(d)
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.4.2.b
-  - PCI-DSSv4-10.6.3
   - audit_rules_time_settimeofday
   - low_complexity
   - low_disruption
@@ -38,7 +37,6 @@
   - NIST-800-53-AU-2(d)
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.4.2.b
-  - PCI-DSSv4-10.6.3
   - audit_rules_time_settimeofday
   - low_complexity
   - low_disruption
@@ -179,7 +177,6 @@
   - NIST-800-53-AU-2(d)
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.4.2.b
-  - PCI-DSSv4-10.6.3
   - audit_rules_time_settimeofday
   - low_complexity
   - low_disruption
@@ -321,7 +318,6 @@
   - NIST-800-53-AU-2(d)
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.4.2.b
-  - PCI-DSSv4-10.6.3
   - audit_rules_time_settimeofday
   - low_complexity
   - low_disruption

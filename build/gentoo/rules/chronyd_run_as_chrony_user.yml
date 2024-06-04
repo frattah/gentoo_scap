@@ -11,9 +11,7 @@ rationale: 'If chrony is in use on the system proper configuration is vital to e
 
     is working properly.'
 severity: medium
-references:
-    pcidss4:
-    - 10.6.3
+references: {}
 components:
 - chrony
 - ntp

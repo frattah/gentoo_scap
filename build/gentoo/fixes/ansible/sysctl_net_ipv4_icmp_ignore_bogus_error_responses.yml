@@ -21,7 +21,6 @@
   - NIST-800-53-CM-7(b)
   - NIST-800-53-SC-5
   - PCI-DSS-Req-1.4.3
-  - PCI-DSSv4-1.4.2
   - disable_strategy
   - low_complexity
   - medium_disruption
@@ -43,7 +42,6 @@
   - NIST-800-53-CM-7(b)
   - NIST-800-53-SC-5
   - PCI-DSS-Req-1.4.3
-  - PCI-DSSv4-1.4.2
   - disable_strategy
   - low_complexity
   - medium_disruption
@@ -66,7 +64,6 @@
   - NIST-800-53-CM-7(b)
   - NIST-800-53-SC-5
   - PCI-DSS-Req-1.4.3
-  - PCI-DSSv4-1.4.2
   - disable_strategy
   - low_complexity
   - medium_disruption

@@ -198,8 +198,6 @@ references:
     anssi:
     - R37
     - R79
-    pcidss4:
-    - 1.2.6
 components:
 - selinux
 identifiers: {}

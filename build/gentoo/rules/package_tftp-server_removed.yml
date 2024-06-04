@@ -123,8 +123,6 @@ references:
     - SRG-OS-000480-GPOS-00227
     anssi:
     - R62
-    pcidss4:
-    - 2.2.4
 components:
 - tftp
 identifiers: {}

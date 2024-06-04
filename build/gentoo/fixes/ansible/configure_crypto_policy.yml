@@ -19,7 +19,6 @@
   - NIST-800-53-SC-12(2)
   - NIST-800-53-SC-12(3)
   - NIST-800-53-SC-13
-  - PCI-DSSv4-2.2.7
   - configure_crypto_policy
   - high_severity
   - low_complexity
@@ -37,7 +36,6 @@
   - NIST-800-53-SC-12(2)
   - NIST-800-53-SC-12(3)
   - NIST-800-53-SC-13
-  - PCI-DSSv4-2.2.7
   - configure_crypto_policy
   - high_severity
   - low_complexity

@@ -16,8 +16,6 @@ references:
     - CCI-000804
     pcidss:
     - Req-8.1.1
-    pcidss4:
-    - 8.2.1
 components:
 - pam
 identifiers: {}

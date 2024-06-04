@@ -82,8 +82,6 @@ references:
     - SRG-APP-000116-CTR-000235
     anssi:
     - R71
-    pcidss4:
-    - 10.6.1
 components:
 - ntp
 identifiers: {}

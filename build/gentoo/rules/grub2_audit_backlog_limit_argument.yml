@@ -40,8 +40,6 @@ references:
     - SRG-OS-000392-GPOS-00172
     - SRG-OS-000462-GPOS-00206
     - SRG-OS-000471-GPOS-00215
-    pcidss4:
-    - 10.7.2
 components:
 - grub2
 - audit

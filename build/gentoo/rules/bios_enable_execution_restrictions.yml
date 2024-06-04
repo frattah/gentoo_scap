@@ -46,8 +46,6 @@ references:
     srg:
     - SRG-OS-000433-GPOS-00192
     - SRG-APP-000450-CTR-001105
-    pcidss4:
-    - 2.2.1
 components:
 - operating-system
 identifiers: {}

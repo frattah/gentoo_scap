@@ -37,7 +37,6 @@
       validate: /usr/sbin/sshd -t -f %s
   when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
-  - PCI-DSSv4-2.2.6
   - configure_strategy
   - low_complexity
   - low_disruption

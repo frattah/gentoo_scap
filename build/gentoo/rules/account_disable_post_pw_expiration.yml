@@ -129,8 +129,6 @@ references:
     - Req-8.1.4
     srg:
     - SRG-OS-000118-GPOS-00060
-    pcidss4:
-    - 8.2.6
 components:
 - pam
 - shadow-utils

@@ -56,8 +56,6 @@ references:
     - PR.IP-1
     anssi:
     - R1
-    pcidss4:
-    - 2.2.1
 components:
 - kernel
 identifiers: {}

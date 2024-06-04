@@ -152,8 +152,6 @@ references:
     - Req-10.5.5
     anssi:
     - R73
-    pcidss4:
-    - 10.3.4
 components:
 - audit
 identifiers: {}

@@ -18,7 +18,6 @@
   tags:
   - NIST-800-53-SI-11(a)
   - NIST-800-53-SI-11(b)
-  - PCI-DSSv4-3.3.1.1
   - disable_strategy
   - low_complexity
   - medium_disruption
@@ -36,7 +35,6 @@
   tags:
   - NIST-800-53-SI-11(a)
   - NIST-800-53-SI-11(b)
-  - PCI-DSSv4-3.3.1.1
   - disable_strategy
   - low_complexity
   - medium_disruption
@@ -55,7 +53,6 @@
   tags:
   - NIST-800-53-SI-11(a)
   - NIST-800-53-SI-11(b)
-  - PCI-DSSv4-3.3.1.1
   - disable_strategy
   - low_complexity
   - medium_disruption

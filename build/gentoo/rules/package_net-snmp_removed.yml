@@ -13,9 +13,7 @@ rationale: 'If there is no need to run SNMP server software,
 
     activation.'
 severity: unknown
-references:
-    pcidss4:
-    - 2.2.4
+references: {}
 components:
 - net-snmp
 identifiers: {}

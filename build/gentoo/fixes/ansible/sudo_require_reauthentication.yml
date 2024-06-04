@@ -8,7 +8,6 @@
     manager: auto
   tags:
   - NIST-800-53-IA-11
-  - PCI-DSSv4-2.2.6
   - low_complexity
   - low_disruption
   - medium_severity
@@ -27,7 +26,6 @@
   when: '"sudo" in ansible_facts.packages'
   tags:
   - NIST-800-53-IA-11
-  - PCI-DSSv4-2.2.6
   - low_complexity
   - low_disruption
   - medium_severity
@@ -45,7 +43,6 @@
   when: '"sudo" in ansible_facts.packages'
   tags:
   - NIST-800-53-IA-11
-  - PCI-DSSv4-2.2.6
   - low_complexity
   - low_disruption
   - medium_severity
@@ -65,7 +62,6 @@
   when: '"sudo" in ansible_facts.packages'
   tags:
   - NIST-800-53-IA-11
-  - PCI-DSSv4-2.2.6
   - low_complexity
   - low_disruption
   - medium_severity
@@ -85,7 +81,6 @@
     edit_sudoers_timestamp_timeout_option is defined and not edit_sudoers_timestamp_timeout_option.changed
   tags:
   - NIST-800-53-IA-11
-  - PCI-DSSv4-2.2.6
   - low_complexity
   - low_disruption
   - medium_severity
@@ -104,7 +99,6 @@
   when: '"sudo" in ansible_facts.packages'
   tags:
   - NIST-800-53-IA-11
-  - PCI-DSSv4-2.2.6
   - low_complexity
   - low_disruption
   - medium_severity

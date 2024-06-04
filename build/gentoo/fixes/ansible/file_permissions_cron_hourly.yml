@@ -14,7 +14,6 @@
   tags:
   - NIST-800-53-AC-6(1)
   - NIST-800-53-CM-6(a)
-  - PCI-DSSv4-2.2.6
   - configure_strategy
   - file_permissions_cron_hourly
   - low_complexity
@@ -33,7 +32,6 @@
   tags:
   - NIST-800-53-AC-6(1)
   - NIST-800-53-CM-6(a)
-  - PCI-DSSv4-2.2.6
   - configure_strategy
   - file_permissions_cron_hourly
   - low_complexity

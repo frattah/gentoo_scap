@@ -10,9 +10,7 @@ rationale: Services listening on the system pose a potential risk as an attack v
     packages have a dependency, the service should be stopped and masked to reduce
     the attack surface of the system.
 severity: low
-references:
-    pcidss4:
-    - 2.2.4
+references: {}
 components:
 - operating-system
 identifiers: {}

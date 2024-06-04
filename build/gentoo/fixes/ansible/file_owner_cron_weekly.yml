@@ -12,7 +12,6 @@
   tags:
   - NIST-800-53-AC-6(1)
   - NIST-800-53-CM-6(a)
-  - PCI-DSSv4-2.2.6
   - configure_strategy
   - file_owner_cron_weekly
   - low_complexity

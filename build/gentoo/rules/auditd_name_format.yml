@@ -23,8 +23,6 @@ references:
     - SRG-OS-000039-GPOS-00017
     - SRG-OS-000342-GPOS-00133
     - SRG-OS-000479-GPOS-00224
-    pcidss4:
-    - 10.2.2
 components:
 - audit
 identifiers: {}

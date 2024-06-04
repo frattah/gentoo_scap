@@ -12,7 +12,6 @@
   - NIST-800-53-CM-6(a)
   - NIST-800-53-CM-7(a)
   - NIST-800-53-CM-7(b)
-  - PCI-DSSv4-2.2.4
   - disable_strategy
   - low_complexity
   - low_disruption

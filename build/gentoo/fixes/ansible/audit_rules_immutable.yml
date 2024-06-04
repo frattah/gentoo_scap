@@ -13,7 +13,6 @@
   - NIST-800-53-AC-6(9)
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.5.2
-  - PCI-DSSv4-10.3.2
   - audit_rules_immutable
   - low_complexity
   - low_disruption
@@ -36,7 +35,6 @@
   - NIST-800-53-AC-6(9)
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.5.2
-  - PCI-DSSv4-10.3.2
   - audit_rules_immutable
   - low_complexity
   - low_disruption
@@ -61,7 +59,6 @@
   - NIST-800-53-AC-6(9)
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.5.2
-  - PCI-DSSv4-10.3.2
   - audit_rules_immutable
   - low_complexity
   - low_disruption
@@ -88,7 +85,6 @@
   - NIST-800-53-AC-6(9)
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.5.2
-  - PCI-DSSv4-10.3.2
   - audit_rules_immutable
   - low_complexity
   - low_disruption

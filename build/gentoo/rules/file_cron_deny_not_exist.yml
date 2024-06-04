@@ -5,9 +5,7 @@ rationale: 'Access to <tt>cron</tt> should be restricted.
 
     It is easier to manage an allow list than a deny list.'
 severity: medium
-references:
-    pcidss4:
-    - 2.2.6
+references: {}
 components:
 - cronie
 identifiers: {}

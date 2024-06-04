@@ -45,8 +45,6 @@ references:
     - PR.DS-4
     srg:
     - SRG-OS-000480-GPOS-00227
-    pcidss4:
-    - 3.3.1.1
 components:
 - pam
 identifiers: {}

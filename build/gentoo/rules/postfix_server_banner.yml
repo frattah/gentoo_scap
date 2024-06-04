@@ -83,12 +83,12 @@ platform: null
 platforms: !!set {}
 sce_metadata: {}
 inherited_platforms: !!set
-    package[postfix]: null
     machine: null
+    package[postfix]: null
 cpe_platform_names: !!set {}
 inherited_cpe_platform_names: !!set
-    machine: null
     package_postfix: null
+    machine: null
 bash_conditional: null
 fixes: {}
 title: Configure SMTP Greeting Banner

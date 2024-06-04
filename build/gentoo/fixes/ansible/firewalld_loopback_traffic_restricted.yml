@@ -12,7 +12,6 @@
   - firewalld
   when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
-  - PCI-DSSv4-1.4.1
   - configure_strategy
   - firewalld_loopback_traffic_restricted
   - low_complexity
@@ -26,7 +25,6 @@
   register: result_services_states
   when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
-  - PCI-DSSv4-1.4.1
   - configure_strategy
   - firewalld_loopback_traffic_restricted
   - low_complexity
@@ -68,7 +66,6 @@
   - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   - ansible_facts.services['firewalld.service'].state == 'running'
   tags:
-  - PCI-DSSv4-1.4.1
   - configure_strategy
   - firewalld_loopback_traffic_restricted
   - low_complexity
@@ -91,7 +88,6 @@
     - Configure Firewalld to Restrict Loopback Traffic remediation successfully executed
   when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
-  - PCI-DSSv4-1.4.1
   - configure_strategy
   - firewalld_loopback_traffic_restricted
   - low_complexity

@@ -116,8 +116,6 @@ references:
     - PR.PT-4
     anssi:
     - R62
-    pcidss4:
-    - 2.2.4
 components:
 - xinetd
 - inetd

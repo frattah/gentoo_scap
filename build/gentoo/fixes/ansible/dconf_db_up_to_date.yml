@@ -8,7 +8,6 @@
     manager: auto
   tags:
   - PCI-DSS-Req-6.2
-  - PCI-DSSv4-8.2.8
   - dconf_db_up_to_date
   - high_severity
   - low_complexity
@@ -24,7 +23,6 @@
   - ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
   - PCI-DSS-Req-6.2
-  - PCI-DSSv4-8.2.8
   - dconf_db_up_to_date
   - high_severity
   - low_complexity

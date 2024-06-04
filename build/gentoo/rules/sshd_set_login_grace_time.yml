@@ -14,9 +14,7 @@ rationale: 'Setting the <tt>LoginGraceTime</tt> parameter to a low number will m
 
     unauthenticated connections.'
 severity: medium
-references:
-    pcidss4:
-    - 2.2.6
+references: {}
 components:
 - openssh
 identifiers: {}

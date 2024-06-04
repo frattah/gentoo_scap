@@ -20,9 +20,7 @@ rationale: '<tt>nftables</tt> is a subsystem of the Linux kernel that can protec
 
     configured software on a host.'
 severity: medium
-references:
-    pcidss4:
-    - 1.2.1
+references: {}
 components:
 - nftables
 identifiers: {}

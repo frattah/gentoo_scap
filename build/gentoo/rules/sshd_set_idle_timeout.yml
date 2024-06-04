@@ -147,8 +147,6 @@ references:
     - SRG-OS-000163-GPOS-00072
     - SRG-OS-000279-GPOS-00109
     - SRG-OS-000395-GPOS-00175
-    pcidss4:
-    - 8.2.8
 components:
 - openssh
 identifiers: {}

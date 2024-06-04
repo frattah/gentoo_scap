@@ -113,8 +113,6 @@ references:
     - Req-6.2
     srg:
     - SRG-OS-000366-GPOS-00153
-    pcidss4:
-    - 6.3.3
 components:
 - rpm
 identifiers: {}

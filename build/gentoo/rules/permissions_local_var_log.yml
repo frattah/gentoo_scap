@@ -40,8 +40,6 @@ references:
     - PR.DS-5
     srg:
     - SRG-OS-000205-GPOS-00083
-    pcidss4:
-    - 10.3.1
 components:
 - filesystem
 identifiers: {}

@@ -13,7 +13,6 @@
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.5.1
   - PCI-DSS-Req-10.5.2
-  - PCI-DSSv4-10.3.2
   - configure_strategy
   - low_complexity
   - medium_disruption
@@ -33,7 +32,6 @@
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.5.1
   - PCI-DSS-Req-10.5.2
-  - PCI-DSSv4-10.3.2
   - configure_strategy
   - low_complexity
   - medium_disruption
@@ -53,7 +51,6 @@
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.5.1
   - PCI-DSS-Req-10.5.2
-  - PCI-DSSv4-10.3.2
   - configure_strategy
   - low_complexity
   - medium_disruption
@@ -73,7 +70,6 @@
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.5.1
   - PCI-DSS-Req-10.5.2
-  - PCI-DSSv4-10.3.2
   - configure_strategy
   - low_complexity
   - medium_disruption
@@ -99,7 +95,6 @@
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.5.1
   - PCI-DSS-Req-10.5.2
-  - PCI-DSSv4-10.3.2
   - configure_strategy
   - low_complexity
   - medium_disruption
@@ -124,7 +119,6 @@
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.5.1
   - PCI-DSS-Req-10.5.2
-  - PCI-DSSv4-10.3.2
   - configure_strategy
   - low_complexity
   - medium_disruption
@@ -150,7 +144,6 @@
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.5.1
   - PCI-DSS-Req-10.5.2
-  - PCI-DSSv4-10.3.2
   - configure_strategy
   - low_complexity
   - medium_disruption
@@ -169,7 +162,6 @@
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.5.1
   - PCI-DSS-Req-10.5.2
-  - PCI-DSSv4-10.3.2
   - configure_strategy
   - low_complexity
   - medium_disruption
@@ -190,7 +182,6 @@
   - NIST-800-53-CM-6(a)
   - PCI-DSS-Req-10.5.1
   - PCI-DSS-Req-10.5.2
-  - PCI-DSSv4-10.3.2
   - configure_strategy
   - low_complexity
   - medium_disruption

@@ -16,8 +16,6 @@ severity: medium
 references:
     pcidss:
     - Req-1.3
-    pcidss4:
-    - 1.4.1
 components:
 - operating-system
 identifiers: {}

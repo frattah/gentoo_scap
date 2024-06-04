@@ -9,7 +9,6 @@
     state: present
   when: ansible_virtualization_type not in ["docker", "lxc", "openvz", "podman", "container"]
   tags:
-  - PCI-DSSv4-10.3.3
   - enable_strategy
   - low_complexity
   - low_disruption

@@ -21,9 +21,7 @@ rationale: 'To protect a system from denial of service due to a large number of 
 
     to protect availability of sshd logins and prevent overwhelming the daemon.'
 severity: medium
-references:
-    pcidss4:
-    - 2.2.6
+references: {}
 components:
 - openssh
 identifiers: {}

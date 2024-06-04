@@ -74,8 +74,6 @@ references:
     - PR.AC-7
     srg:
     - SRG-OS-000373-GPOS-00156
-    pcidss4:
-    - 2.2.6
 components:
 - sudo
 identifiers: {}

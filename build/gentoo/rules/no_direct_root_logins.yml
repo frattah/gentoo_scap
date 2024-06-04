@@ -122,8 +122,6 @@ references:
     - PR.AC-7
     anssi:
     - R33
-    pcidss4:
-    - 8.6.1
 components:
 - pam
 identifiers: {}

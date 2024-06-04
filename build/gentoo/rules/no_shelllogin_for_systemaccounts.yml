@@ -96,8 +96,6 @@ references:
     - PR.AC-6
     srg:
     - SRG-OS-000480-GPOS-00227
-    pcidss4:
-    - 8.2.2
 components:
 - pam
 identifiers: {}
