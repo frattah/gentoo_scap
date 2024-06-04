@@ -272,13 +272,13 @@ platforms: !!set
     not aarch64_arch: null
 sce_metadata: {}
 inherited_platforms: !!set
-    machine: null
     package[audit]: null
+    machine: null
 cpe_platform_names: !!set
     not_aarch64_arch: null
 inherited_cpe_platform_names: !!set
-    machine: null
     package_audit: null
+    machine: null
 bash_conditional: null
 fixes: {}
 title: Record Events that Modify the System's Discretionary Access Controls - lchown

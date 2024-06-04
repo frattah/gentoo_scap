@@ -42,12 +42,12 @@ platform: null
 platforms: !!set {}
 sce_metadata: {}
 inherited_platforms: !!set
-    machine: null
     selinux: null
+    machine: null
 cpe_platform_names: !!set {}
 inherited_cpe_platform_names: !!set
-    machine: null
     selinux: null
+    machine: null
 bash_conditional: null
 fixes: {}
 title: Enable the antivirus_can_scan_system SELinux Boolean

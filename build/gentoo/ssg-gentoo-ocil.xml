@@ -4,49 +4,19 @@
     <ocil:product_name>build_shorthand.py from SCAP Security Guide</ocil:product_name>
     <ocil:product_version>ssg: 0.1.73</ocil:product_version>
     <ocil:schema_version>2.0</ocil:schema_version>
-    <ocil:timestamp>2024-06-13T07:08:41</ocil:timestamp>
+    <ocil:timestamp>2024-06-04T08:20:21</ocil:timestamp>
   </ocil:generator>
   <ocil:questionnaires>
-    <ocil:questionnaire id="ocil:ssg-sshd_disable_root_login_ocil:questionnaire:1">
-      <ocil:title>Disable SSH Root Login</ocil:title>
-      <ocil:actions>
-        <ocil:test_action_ref>ocil:ssg-sshd_disable_root_login_action:testaction:1</ocil:test_action_ref>
-      </ocil:actions>
-    </ocil:questionnaire>
-    <ocil:questionnaire id="ocil:ssg-sudo_add_requiretty_ocil:questionnaire:1">
-      <ocil:title>Ensure Only Users Logged In To Real tty Can Execute Sudo - sudo requiretty</ocil:title>
-      <ocil:actions>
-        <ocil:test_action_ref>ocil:ssg-sudo_add_requiretty_action:testaction:1</ocil:test_action_ref>
-      </ocil:actions>
-    </ocil:questionnaire>
-    <ocil:questionnaire id="ocil:ssg-no_direct_root_logins_ocil:questionnaire:1">
-      <ocil:title>Direct root Logins Not Allowed</ocil:title>
-      <ocil:actions>
-        <ocil:test_action_ref>ocil:ssg-no_direct_root_logins_action:testaction:1</ocil:test_action_ref>
-      </ocil:actions>
-    </ocil:questionnaire>
     <ocil:questionnaire id="ocil:ssg-accounts_password_pam_ucredit_ocil:questionnaire:1">
       <ocil:title>Ensure PAM Enforces Password Requirements - Minimum Uppercase Characters</ocil:title>
       <ocil:actions>
         <ocil:test_action_ref>ocil:ssg-accounts_password_pam_ucredit_action:testaction:1</ocil:test_action_ref>
       </ocil:actions>
     </ocil:questionnaire>
-    <ocil:questionnaire id="ocil:ssg-sudo_add_ignore_dot_ocil:questionnaire:1">
-      <ocil:title>Ensure sudo Ignores Commands In Current Dir - sudo ignore_dot</ocil:title>
+    <ocil:questionnaire id="ocil:ssg-sshd_disable_root_login_ocil:questionnaire:1">
+      <ocil:title>Disable SSH Root Login</ocil:title>
       <ocil:actions>
-        <ocil:test_action_ref>ocil:ssg-sudo_add_ignore_dot_action:testaction:1</ocil:test_action_ref>
-      </ocil:actions>
-    </ocil:questionnaire>
-    <ocil:questionnaire id="ocil:ssg-sudo_add_env_reset_ocil:questionnaire:1">
-      <ocil:title>Ensure sudo Runs In A Minimal Environment - sudo env_reset</ocil:title>
-      <ocil:actions>
-        <ocil:test_action_ref>ocil:ssg-sudo_add_env_reset_action:testaction:1</ocil:test_action_ref>
-      </ocil:actions>
-    </ocil:questionnaire>
-    <ocil:questionnaire id="ocil:ssg-logind_session_timeout_ocil:questionnaire:1">
-      <ocil:title>Configure Logind to terminate idle sessions after certain time of inactivity</ocil:title>
-      <ocil:actions>
-        <ocil:test_action_ref>ocil:ssg-logind_session_timeout_action:testaction:1</ocil:test_action_ref>
+        <ocil:test_action_ref>ocil:ssg-sshd_disable_root_login_action:testaction:1</ocil:test_action_ref>
       </ocil:actions>
     </ocil:questionnaire>
     <ocil:questionnaire id="ocil:ssg-file_owner_etc_shadow_ocil:questionnaire:1">
@@ -55,88 +25,10 @@
         <ocil:test_action_ref>ocil:ssg-file_owner_etc_shadow_action:testaction:1</ocil:test_action_ref>
       </ocil:actions>
     </ocil:questionnaire>
-    <ocil:questionnaire id="ocil:ssg-accounts_umask_etc_login_defs_ocil:questionnaire:1">
-      <ocil:title>Ensure the Default Umask is Set Correctly in login.defs</ocil:title>
-      <ocil:actions>
-        <ocil:test_action_ref>ocil:ssg-accounts_umask_etc_login_defs_action:testaction:1</ocil:test_action_ref>
-      </ocil:actions>
-    </ocil:questionnaire>
-    <ocil:questionnaire id="ocil:ssg-file_owner_etc_gshadow_ocil:questionnaire:1">
-      <ocil:title>Verify User Who Owns gshadow File</ocil:title>
-      <ocil:actions>
-        <ocil:test_action_ref>ocil:ssg-file_owner_etc_gshadow_action:testaction:1</ocil:test_action_ref>
-      </ocil:actions>
-    </ocil:questionnaire>
-    <ocil:questionnaire id="ocil:ssg-accounts_password_pam_minlen_ocil:questionnaire:1">
-      <ocil:title>Ensure PAM Enforces Password Requirements - Minimum Length</ocil:title>
-      <ocil:actions>
-        <ocil:test_action_ref>ocil:ssg-accounts_password_pam_minlen_action:testaction:1</ocil:test_action_ref>
-      </ocil:actions>
-    </ocil:questionnaire>
-    <ocil:questionnaire id="ocil:ssg-file_permissions_etc_shadow_ocil:questionnaire:1">
-      <ocil:title>Verify Permissions on shadow File</ocil:title>
-      <ocil:actions>
-        <ocil:test_action_ref>ocil:ssg-file_permissions_etc_shadow_action:testaction:1</ocil:test_action_ref>
-      </ocil:actions>
-    </ocil:questionnaire>
-    <ocil:questionnaire id="ocil:ssg-accounts_umask_etc_profile_ocil:questionnaire:1">
-      <ocil:title>Ensure the Default Umask is Set Correctly in /etc/profile</ocil:title>
-      <ocil:actions>
-        <ocil:test_action_ref>ocil:ssg-accounts_umask_etc_profile_action:testaction:1</ocil:test_action_ref>
-      </ocil:actions>
-    </ocil:questionnaire>
-    <ocil:questionnaire id="ocil:ssg-accounts_password_pam_ocredit_ocil:questionnaire:1">
-      <ocil:title>Ensure PAM Enforces Password Requirements - Minimum Special Characters</ocil:title>
-      <ocil:actions>
-        <ocil:test_action_ref>ocil:ssg-accounts_password_pam_ocredit_action:testaction:1</ocil:test_action_ref>
-      </ocil:actions>
-    </ocil:questionnaire>
-    <ocil:questionnaire id="ocil:ssg-sudo_add_use_pty_ocil:questionnaire:1">
-      <ocil:title>Ensure Only Users Logged In To Real tty Can Execute Sudo - sudo use_pty</ocil:title>
-      <ocil:actions>
-        <ocil:test_action_ref>ocil:ssg-sudo_add_use_pty_action:testaction:1</ocil:test_action_ref>
-      </ocil:actions>
-    </ocil:questionnaire>
-    <ocil:questionnaire id="ocil:ssg-file_groupowner_etc_gshadow_ocil:questionnaire:1">
-      <ocil:title>Verify Group Who Owns gshadow File</ocil:title>
-      <ocil:actions>
-        <ocil:test_action_ref>ocil:ssg-file_groupowner_etc_gshadow_action:testaction:1</ocil:test_action_ref>
-      </ocil:actions>
-    </ocil:questionnaire>
-    <ocil:questionnaire id="ocil:ssg-accounts_password_pam_dcredit_ocil:questionnaire:1">
-      <ocil:title>Ensure PAM Enforces Password Requirements - Minimum Digit Characters</ocil:title>
-      <ocil:actions>
-        <ocil:test_action_ref>ocil:ssg-accounts_password_pam_dcredit_action:testaction:1</ocil:test_action_ref>
-      </ocil:actions>
-    </ocil:questionnaire>
-    <ocil:questionnaire id="ocil:ssg-file_permissions_etc_gshadow_ocil:questionnaire:1">
-      <ocil:title>Verify Permissions on gshadow File</ocil:title>
-      <ocil:actions>
-        <ocil:test_action_ref>ocil:ssg-file_permissions_etc_gshadow_action:testaction:1</ocil:test_action_ref>
-      </ocil:actions>
-    </ocil:questionnaire>
     <ocil:questionnaire id="ocil:ssg-sudo_add_noexec_ocil:questionnaire:1">
       <ocil:title>Ensure Privileged Escalated Commands Cannot Execute Other Commands - sudo NOEXEC</ocil:title>
       <ocil:actions>
         <ocil:test_action_ref>ocil:ssg-sudo_add_noexec_action:testaction:1</ocil:test_action_ref>
-      </ocil:actions>
-    </ocil:questionnaire>
-    <ocil:questionnaire id="ocil:ssg-accounts_password_pam_lcredit_ocil:questionnaire:1">
-      <ocil:title>Ensure PAM Enforces Password Requirements - Minimum Lowercase Characters</ocil:title>
-      <ocil:actions>
-        <ocil:test_action_ref>ocil:ssg-accounts_password_pam_lcredit_action:testaction:1</ocil:test_action_ref>
-      </ocil:actions>
-    </ocil:questionnaire>
-    <ocil:questionnaire id="ocil:ssg-accounts_tmout_ocil:questionnaire:1">
-      <ocil:title>Set Interactive Session Timeout</ocil:title>
-      <ocil:actions>
-        <ocil:test_action_ref>ocil:ssg-accounts_tmout_action:testaction:1</ocil:test_action_ref>
-      </ocil:actions>
-    </ocil:questionnaire>
-    <ocil:questionnaire id="ocil:ssg-accounts_password_pam_unix_remember_ocil:questionnaire:1">
-      <ocil:title>Limit Password Reuse</ocil:title>
-      <ocil:actions>
-        <ocil:test_action_ref>ocil:ssg-accounts_password_pam_unix_remember_action:testaction:1</ocil:test_action_ref>
       </ocil:actions>
     </ocil:questionnaire>
     <ocil:questionnaire id="ocil:ssg-sudo_add_umask_ocil:questionnaire:1">
@@ -145,44 +37,128 @@
         <ocil:test_action_ref>ocil:ssg-sudo_add_umask_action:testaction:1</ocil:test_action_ref>
       </ocil:actions>
     </ocil:questionnaire>
-    <ocil:questionnaire id="ocil:ssg-accounts_umask_etc_bashrc_ocil:questionnaire:1">
-      <ocil:title>Ensure the Default Bash Umask is Set Correctly</ocil:title>
-      <ocil:actions>
-        <ocil:test_action_ref>ocil:ssg-accounts_umask_etc_bashrc_action:testaction:1</ocil:test_action_ref>
-      </ocil:actions>
-    </ocil:questionnaire>
     <ocil:questionnaire id="ocil:ssg-file_groupowner_etc_shadow_ocil:questionnaire:1">
       <ocil:title>Verify Group Who Owns shadow File</ocil:title>
       <ocil:actions>
         <ocil:test_action_ref>ocil:ssg-file_groupowner_etc_shadow_action:testaction:1</ocil:test_action_ref>
       </ocil:actions>
     </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-accounts_tmout_ocil:questionnaire:1">
+      <ocil:title>Set Interactive Session Timeout</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-accounts_tmout_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-sudo_add_requiretty_ocil:questionnaire:1">
+      <ocil:title>Ensure Only Users Logged In To Real tty Can Execute Sudo - sudo requiretty</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-sudo_add_requiretty_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-accounts_umask_etc_login_defs_ocil:questionnaire:1">
+      <ocil:title>Ensure the Default Umask is Set Correctly in login.defs</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-accounts_umask_etc_login_defs_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-accounts_password_pam_dcredit_ocil:questionnaire:1">
+      <ocil:title>Ensure PAM Enforces Password Requirements - Minimum Digit Characters</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-accounts_password_pam_dcredit_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-file_groupowner_etc_gshadow_ocil:questionnaire:1">
+      <ocil:title>Verify Group Who Owns gshadow File</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-file_groupowner_etc_gshadow_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-logind_session_timeout_ocil:questionnaire:1">
+      <ocil:title>Configure Logind to terminate idle sessions after certain time of inactivity</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-logind_session_timeout_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-sudo_add_use_pty_ocil:questionnaire:1">
+      <ocil:title>Ensure Only Users Logged In To Real tty Can Execute Sudo - sudo use_pty</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-sudo_add_use_pty_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-accounts_password_pam_unix_remember_ocil:questionnaire:1">
+      <ocil:title>Limit Password Reuse</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-accounts_password_pam_unix_remember_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-file_permissions_etc_shadow_ocil:questionnaire:1">
+      <ocil:title>Verify Permissions on shadow File</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-file_permissions_etc_shadow_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-accounts_password_pam_minlen_ocil:questionnaire:1">
+      <ocil:title>Ensure PAM Enforces Password Requirements - Minimum Length</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-accounts_password_pam_minlen_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-file_permissions_etc_gshadow_ocil:questionnaire:1">
+      <ocil:title>Verify Permissions on gshadow File</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-file_permissions_etc_gshadow_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-file_owner_etc_gshadow_ocil:questionnaire:1">
+      <ocil:title>Verify User Who Owns gshadow File</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-file_owner_etc_gshadow_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-sudo_add_ignore_dot_ocil:questionnaire:1">
+      <ocil:title>Ensure sudo Ignores Commands In Current Dir - sudo ignore_dot</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-sudo_add_ignore_dot_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-accounts_umask_etc_bashrc_ocil:questionnaire:1">
+      <ocil:title>Ensure the Default Bash Umask is Set Correctly</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-accounts_umask_etc_bashrc_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-no_direct_root_logins_ocil:questionnaire:1">
+      <ocil:title>Direct root Logins Not Allowed</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-no_direct_root_logins_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-accounts_password_pam_ocredit_ocil:questionnaire:1">
+      <ocil:title>Ensure PAM Enforces Password Requirements - Minimum Special Characters</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-accounts_password_pam_ocredit_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-sudo_add_env_reset_ocil:questionnaire:1">
+      <ocil:title>Ensure sudo Runs In A Minimal Environment - sudo env_reset</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-sudo_add_env_reset_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-accounts_password_pam_lcredit_ocil:questionnaire:1">
+      <ocil:title>Ensure PAM Enforces Password Requirements - Minimum Lowercase Characters</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-accounts_password_pam_lcredit_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
+    <ocil:questionnaire id="ocil:ssg-accounts_umask_etc_profile_ocil:questionnaire:1">
+      <ocil:title>Ensure the Default Umask is Set Correctly in /etc/profile</ocil:title>
+      <ocil:actions>
+        <ocil:test_action_ref>ocil:ssg-accounts_umask_etc_profile_action:testaction:1</ocil:test_action_ref>
+      </ocil:actions>
+    </ocil:questionnaire>
   </ocil:questionnaires>
   <ocil:test_actions>
-    <ocil:boolean_question_test_action id="ocil:ssg-sshd_disable_root_login_action:testaction:1" question_ref="ocil:ssg-sshd_disable_root_login_question:question:1">
-      <ocil:when_true>
-        <ocil:result>PASS</ocil:result>
-      </ocil:when_true>
-      <ocil:when_false>
-        <ocil:result>FAIL</ocil:result>
-      </ocil:when_false>
-    </ocil:boolean_question_test_action>
-    <ocil:boolean_question_test_action id="ocil:ssg-sudo_add_requiretty_action:testaction:1" question_ref="ocil:ssg-sudo_add_requiretty_question:question:1">
-      <ocil:when_true>
-        <ocil:result>PASS</ocil:result>
-      </ocil:when_true>
-      <ocil:when_false>
-        <ocil:result>FAIL</ocil:result>
-      </ocil:when_false>
-    </ocil:boolean_question_test_action>
-    <ocil:boolean_question_test_action id="ocil:ssg-no_direct_root_logins_action:testaction:1" question_ref="ocil:ssg-no_direct_root_logins_question:question:1">
-      <ocil:when_true>
-        <ocil:result>PASS</ocil:result>
-      </ocil:when_true>
-      <ocil:when_false>
-        <ocil:result>FAIL</ocil:result>
-      </ocil:when_false>
-    </ocil:boolean_question_test_action>
     <ocil:boolean_question_test_action id="ocil:ssg-accounts_password_pam_ucredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_ucredit_question:question:1">
       <ocil:when_true>
         <ocil:result>PASS</ocil:result>
@@ -191,23 +167,7 @@
         <ocil:result>FAIL</ocil:result>
       </ocil:when_false>
     </ocil:boolean_question_test_action>
-    <ocil:boolean_question_test_action id="ocil:ssg-sudo_add_ignore_dot_action:testaction:1" question_ref="ocil:ssg-sudo_add_ignore_dot_question:question:1">
-      <ocil:when_true>
-        <ocil:result>PASS</ocil:result>
-      </ocil:when_true>
-      <ocil:when_false>
-        <ocil:result>FAIL</ocil:result>
-      </ocil:when_false>
-    </ocil:boolean_question_test_action>
-    <ocil:boolean_question_test_action id="ocil:ssg-sudo_add_env_reset_action:testaction:1" question_ref="ocil:ssg-sudo_add_env_reset_question:question:1">
-      <ocil:when_true>
-        <ocil:result>PASS</ocil:result>
-      </ocil:when_true>
-      <ocil:when_false>
-        <ocil:result>FAIL</ocil:result>
-      </ocil:when_false>
-    </ocil:boolean_question_test_action>
-    <ocil:boolean_question_test_action id="ocil:ssg-logind_session_timeout_action:testaction:1" question_ref="ocil:ssg-logind_session_timeout_question:question:1">
+    <ocil:boolean_question_test_action id="ocil:ssg-sshd_disable_root_login_action:testaction:1" question_ref="ocil:ssg-sshd_disable_root_login_question:question:1">
       <ocil:when_true>
         <ocil:result>PASS</ocil:result>
       </ocil:when_true>
@@ -223,111 +183,7 @@
         <ocil:result>FAIL</ocil:result>
       </ocil:when_false>
     </ocil:boolean_question_test_action>
-    <ocil:boolean_question_test_action id="ocil:ssg-accounts_umask_etc_login_defs_action:testaction:1" question_ref="ocil:ssg-accounts_umask_etc_login_defs_question:question:1">
-      <ocil:when_true>
-        <ocil:result>PASS</ocil:result>
-      </ocil:when_true>
-      <ocil:when_false>
-        <ocil:result>FAIL</ocil:result>
-      </ocil:when_false>
-    </ocil:boolean_question_test_action>
-    <ocil:boolean_question_test_action id="ocil:ssg-file_owner_etc_gshadow_action:testaction:1" question_ref="ocil:ssg-file_owner_etc_gshadow_question:question:1">
-      <ocil:when_true>
-        <ocil:result>PASS</ocil:result>
-      </ocil:when_true>
-      <ocil:when_false>
-        <ocil:result>FAIL</ocil:result>
-      </ocil:when_false>
-    </ocil:boolean_question_test_action>
-    <ocil:boolean_question_test_action id="ocil:ssg-accounts_password_pam_minlen_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_minlen_question:question:1">
-      <ocil:when_true>
-        <ocil:result>PASS</ocil:result>
-      </ocil:when_true>
-      <ocil:when_false>
-        <ocil:result>FAIL</ocil:result>
-      </ocil:when_false>
-    </ocil:boolean_question_test_action>
-    <ocil:boolean_question_test_action id="ocil:ssg-file_permissions_etc_shadow_action:testaction:1" question_ref="ocil:ssg-file_permissions_etc_shadow_question:question:1">
-      <ocil:when_true>
-        <ocil:result>PASS</ocil:result>
-      </ocil:when_true>
-      <ocil:when_false>
-        <ocil:result>FAIL</ocil:result>
-      </ocil:when_false>
-    </ocil:boolean_question_test_action>
-    <ocil:boolean_question_test_action id="ocil:ssg-accounts_umask_etc_profile_action:testaction:1" question_ref="ocil:ssg-accounts_umask_etc_profile_question:question:1">
-      <ocil:when_true>
-        <ocil:result>PASS</ocil:result>
-      </ocil:when_true>
-      <ocil:when_false>
-        <ocil:result>FAIL</ocil:result>
-      </ocil:when_false>
-    </ocil:boolean_question_test_action>
-    <ocil:boolean_question_test_action id="ocil:ssg-accounts_password_pam_ocredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_ocredit_question:question:1">
-      <ocil:when_true>
-        <ocil:result>PASS</ocil:result>
-      </ocil:when_true>
-      <ocil:when_false>
-        <ocil:result>FAIL</ocil:result>
-      </ocil:when_false>
-    </ocil:boolean_question_test_action>
-    <ocil:boolean_question_test_action id="ocil:ssg-sudo_add_use_pty_action:testaction:1" question_ref="ocil:ssg-sudo_add_use_pty_question:question:1">
-      <ocil:when_true>
-        <ocil:result>PASS</ocil:result>
-      </ocil:when_true>
-      <ocil:when_false>
-        <ocil:result>FAIL</ocil:result>
-      </ocil:when_false>
-    </ocil:boolean_question_test_action>
-    <ocil:boolean_question_test_action id="ocil:ssg-file_groupowner_etc_gshadow_action:testaction:1" question_ref="ocil:ssg-file_groupowner_etc_gshadow_question:question:1">
-      <ocil:when_true>
-        <ocil:result>PASS</ocil:result>
-      </ocil:when_true>
-      <ocil:when_false>
-        <ocil:result>FAIL</ocil:result>
-      </ocil:when_false>
-    </ocil:boolean_question_test_action>
-    <ocil:boolean_question_test_action id="ocil:ssg-accounts_password_pam_dcredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_dcredit_question:question:1">
-      <ocil:when_true>
-        <ocil:result>PASS</ocil:result>
-      </ocil:when_true>
-      <ocil:when_false>
-        <ocil:result>FAIL</ocil:result>
-      </ocil:when_false>
-    </ocil:boolean_question_test_action>
-    <ocil:boolean_question_test_action id="ocil:ssg-file_permissions_etc_gshadow_action:testaction:1" question_ref="ocil:ssg-file_permissions_etc_gshadow_question:question:1">
-      <ocil:when_true>
-        <ocil:result>PASS</ocil:result>
-      </ocil:when_true>
-      <ocil:when_false>
-        <ocil:result>FAIL</ocil:result>
-      </ocil:when_false>
-    </ocil:boolean_question_test_action>
     <ocil:boolean_question_test_action id="ocil:ssg-sudo_add_noexec_action:testaction:1" question_ref="ocil:ssg-sudo_add_noexec_question:question:1">
-      <ocil:when_true>
-        <ocil:result>PASS</ocil:result>
-      </ocil:when_true>
-      <ocil:when_false>
-        <ocil:result>FAIL</ocil:result>
-      </ocil:when_false>
-    </ocil:boolean_question_test_action>
-    <ocil:boolean_question_test_action id="ocil:ssg-accounts_password_pam_lcredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_lcredit_question:question:1">
-      <ocil:when_true>
-        <ocil:result>PASS</ocil:result>
-      </ocil:when_true>
-      <ocil:when_false>
-        <ocil:result>FAIL</ocil:result>
-      </ocil:when_false>
-    </ocil:boolean_question_test_action>
-    <ocil:boolean_question_test_action id="ocil:ssg-accounts_tmout_action:testaction:1" question_ref="ocil:ssg-accounts_tmout_question:question:1">
-      <ocil:when_true>
-        <ocil:result>PASS</ocil:result>
-      </ocil:when_true>
-      <ocil:when_false>
-        <ocil:result>FAIL</ocil:result>
-      </ocil:when_false>
-    </ocil:boolean_question_test_action>
-    <ocil:boolean_question_test_action id="ocil:ssg-accounts_password_pam_unix_remember_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_unix_remember_question:question:1">
       <ocil:when_true>
         <ocil:result>PASS</ocil:result>
       </ocil:when_true>
@@ -343,6 +199,118 @@
         <ocil:result>FAIL</ocil:result>
       </ocil:when_false>
     </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-file_groupowner_etc_shadow_action:testaction:1" question_ref="ocil:ssg-file_groupowner_etc_shadow_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-accounts_tmout_action:testaction:1" question_ref="ocil:ssg-accounts_tmout_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-sudo_add_requiretty_action:testaction:1" question_ref="ocil:ssg-sudo_add_requiretty_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-accounts_umask_etc_login_defs_action:testaction:1" question_ref="ocil:ssg-accounts_umask_etc_login_defs_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-accounts_password_pam_dcredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_dcredit_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-file_groupowner_etc_gshadow_action:testaction:1" question_ref="ocil:ssg-file_groupowner_etc_gshadow_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-logind_session_timeout_action:testaction:1" question_ref="ocil:ssg-logind_session_timeout_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-sudo_add_use_pty_action:testaction:1" question_ref="ocil:ssg-sudo_add_use_pty_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-accounts_password_pam_unix_remember_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_unix_remember_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-file_permissions_etc_shadow_action:testaction:1" question_ref="ocil:ssg-file_permissions_etc_shadow_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-accounts_password_pam_minlen_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_minlen_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-file_permissions_etc_gshadow_action:testaction:1" question_ref="ocil:ssg-file_permissions_etc_gshadow_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-file_owner_etc_gshadow_action:testaction:1" question_ref="ocil:ssg-file_owner_etc_gshadow_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-sudo_add_ignore_dot_action:testaction:1" question_ref="ocil:ssg-sudo_add_ignore_dot_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
     <ocil:boolean_question_test_action id="ocil:ssg-accounts_umask_etc_bashrc_action:testaction:1" question_ref="ocil:ssg-accounts_umask_etc_bashrc_question:question:1">
       <ocil:when_true>
         <ocil:result>PASS</ocil:result>
@@ -351,7 +319,39 @@
         <ocil:result>FAIL</ocil:result>
       </ocil:when_false>
     </ocil:boolean_question_test_action>
-    <ocil:boolean_question_test_action id="ocil:ssg-file_groupowner_etc_shadow_action:testaction:1" question_ref="ocil:ssg-file_groupowner_etc_shadow_question:question:1">
+    <ocil:boolean_question_test_action id="ocil:ssg-no_direct_root_logins_action:testaction:1" question_ref="ocil:ssg-no_direct_root_logins_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-accounts_password_pam_ocredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_ocredit_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-sudo_add_env_reset_action:testaction:1" question_ref="ocil:ssg-sudo_add_env_reset_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-accounts_password_pam_lcredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_lcredit_question:question:1">
+      <ocil:when_true>
+        <ocil:result>PASS</ocil:result>
+      </ocil:when_true>
+      <ocil:when_false>
+        <ocil:result>FAIL</ocil:result>
+      </ocil:when_false>
+    </ocil:boolean_question_test_action>
+    <ocil:boolean_question_test_action id="ocil:ssg-accounts_umask_etc_profile_action:testaction:1" question_ref="ocil:ssg-accounts_umask_etc_profile_question:question:1">
       <ocil:when_true>
         <ocil:result>PASS</ocil:result>
       </ocil:when_true>
@@ -361,31 +361,6 @@
     </ocil:boolean_question_test_action>
   </ocil:test_actions>
   <ocil:questions>
-    <ocil:boolean_question id="ocil:ssg-sshd_disable_root_login_question:question:1">
-      <ocil:question_text>To determine how the SSH daemon's PermitRootLogin option is set, run the following command:
-
-$ sudo grep -i PermitRootLogin /etc/ssh/sshd_config
-
-If a line indicating no is returned, then the required value is set.
-
-      Is it the case that the required value is not set?
-      </ocil:question_text>
-    </ocil:boolean_question>
-    <ocil:boolean_question id="ocil:ssg-sudo_add_requiretty_question:question:1">
-      <ocil:question_text>To determine if requiretty has been configured for sudo, run the following command:
-$ sudo grep -ri "^[\s]*Defaults.*\brequiretty\b.*" /etc/sudoers /etc/sudoers.d/
-The command should return a matching output.
-      Is it the case that requiretty is not enabled in sudo?
-      </ocil:question_text>
-    </ocil:boolean_question>
-    <ocil:boolean_question id="ocil:ssg-no_direct_root_logins_question:question:1">
-      <ocil:question_text>To ensure root may not directly login to the system over physical consoles,
-run the following command:
-cat /etc/securetty
-If any output is returned, this is a finding.
-      Is it the case that the /etc/securetty file is not empty?
-      </ocil:question_text>
-    </ocil:boolean_question>
     <ocil:boolean_question id="ocil:ssg-accounts_password_pam_ucredit_question:question:1">
       <ocil:question_text>Verify that Gentoo enforces password complexity by requiring that at least one upper-case character.
 
@@ -397,26 +372,14 @@ ucredit = -1
       Is it the case that the value of "ucredit" is a positive number or is commented out?
       </ocil:question_text>
     </ocil:boolean_question>
-    <ocil:boolean_question id="ocil:ssg-sudo_add_ignore_dot_question:question:1">
-      <ocil:question_text>To determine if ignore_dot has been configured for sudo, run the following command:
-$ sudo grep -ri "^[\s]*Defaults.*\bignore_dot\b.*" /etc/sudoers /etc/sudoers.d/
-The command should return a matching output.
-      Is it the case that ignore_dot is not enabled in sudo?
-      </ocil:question_text>
-    </ocil:boolean_question>
-    <ocil:boolean_question id="ocil:ssg-sudo_add_env_reset_question:question:1">
-      <ocil:question_text>To determine if env_reset has been configured for sudo, run the following command:
-$ sudo grep -ri "^[\s]*Defaults.*\benv_reset\b.*" /etc/sudoers /etc/sudoers.d/
-The command should return a matching output.
-      Is it the case that env_reset is not enabled in sudo?
-      </ocil:question_text>
-    </ocil:boolean_question>
-    <ocil:boolean_question id="ocil:ssg-logind_session_timeout_question:question:1">
-      <ocil:question_text>Display the contents of the file /etc/systemd/logind.conf:
-cat /etc/systemd/logind.conf
-Ensure that there is a section [login] which contains the
-configuration StopIdleSessionSec=.
-      Is it the case that the option is not configured?
+    <ocil:boolean_question id="ocil:ssg-sshd_disable_root_login_question:question:1">
+      <ocil:question_text>To determine how the SSH daemon's PermitRootLogin option is set, run the following command:
+
+$ sudo grep -i PermitRootLogin /etc/ssh/sshd_config
+
+If a line indicating no is returned, then the required value is set.
+
+      Is it the case that the required value is not set?
       </ocil:question_text>
     </ocil:boolean_question>
     <ocil:boolean_question id="ocil:ssg-file_owner_etc_shadow_question:question:1">
@@ -428,6 +391,48 @@ root
       Is it the case that /etc/shadow does not have an owner of root?
       </ocil:question_text>
     </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-sudo_add_noexec_question:question:1">
+      <ocil:question_text>To determine if NOEXEC has been configured for sudo, run the following command:
+$ sudo grep -ri "^[\s]*Defaults.*\bnoexec\b.*" /etc/sudoers /etc/sudoers.d/
+The command should return a matching output.
+      Is it the case that noexec is not enabled in sudo?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-sudo_add_umask_question:question:1">
+      <ocil:question_text>To determine if umask has been configured for sudo with the appropriate value,
+run the following command:
+$ sudo grep -ri '^Defaults.*umask=' /etc/sudoers /etc/sudoers.d/
+The command should return a matching output.
+      Is it the case that umask is not set with the appropriate value for sudo?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-file_groupowner_etc_shadow_question:question:1">
+      <ocil:question_text>To check the group ownership of /etc/shadow,
+run the command:
+$ ls -lL /etc/shadow
+If properly configured, the output should indicate the following group-owner:
+root
+      Is it the case that /etc/shadow does not have a group owner of root?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-accounts_tmout_question:question:1">
+      <ocil:question_text>Run the following command to ensure the TMOUT value is configured for all users
+on the system:
+
+$ sudo grep TMOUT /etc/profile /etc/profile.d/*.sh
+
+The output should return the following:
+TMOUT=
+      Is it the case that value of TMOUT is not less than or equal to expected setting?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-sudo_add_requiretty_question:question:1">
+      <ocil:question_text>To determine if requiretty has been configured for sudo, run the following command:
+$ sudo grep -ri "^[\s]*Defaults.*\brequiretty\b.*" /etc/sudoers /etc/sudoers.d/
+The command should return a matching output.
+      Is it the case that requiretty is not enabled in sudo?
+      </ocil:question_text>
+    </ocil:boolean_question>
     <ocil:boolean_question id="ocil:ssg-accounts_umask_etc_login_defs_question:question:1">
       <ocil:question_text>Verify Gentoo defines default permissions for all authenticated users in such a way that the user can only read and modify their own files with the following command:
 
@@ -435,67 +440,6 @@ root
 
 UMASK 
       Is it the case that the value for the "UMASK" parameter is not "&lt;sub idref="var_accounts_user_umask" /&gt;", or the "UMASK" parameter is missing or is commented out?
-      </ocil:question_text>
-    </ocil:boolean_question>
-    <ocil:boolean_question id="ocil:ssg-file_owner_etc_gshadow_question:question:1">
-      <ocil:question_text>To check the ownership of /etc/gshadow,
-run the command:
-$ ls -lL /etc/gshadow
-If properly configured, the output should indicate the following owner:
-root
-      Is it the case that /etc/gshadow does not have an owner of root?
-      </ocil:question_text>
-    </ocil:boolean_question>
-    <ocil:boolean_question id="ocil:ssg-accounts_password_pam_minlen_question:question:1">
-      <ocil:question_text>Verify that Gentoo enforces a minimum -character password length with the following command:
-
-$ grep minlen /etc/security/pwquality.conf
-
-minlen = 
-      Is it the case that the command does not return a "minlen" value of "&lt;sub idref="var_password_pam_minlen" /&gt;" or greater, does not return a line, or the line is commented out?
-      </ocil:question_text>
-    </ocil:boolean_question>
-    <ocil:boolean_question id="ocil:ssg-file_permissions_etc_shadow_question:question:1">
-      <ocil:question_text>To check the permissions of /etc/shadow,
-run the command:
-$ ls -l /etc/shadow
-If properly configured, the output should indicate the following permissions:
-----------
-      Is it the case that /etc/shadow does not have unix mode ----------?
-      </ocil:question_text>
-    </ocil:boolean_question>
-    <ocil:boolean_question id="ocil:ssg-accounts_umask_etc_profile_question:question:1">
-      <ocil:question_text>Verify the umask setting is configured correctly in the /etc/profile file
-or scripts within /etc/profile.d directory with the following command:
-$ grep "umask" /etc/profile*
-umask 
-      Is it the case that the value for the "umask" parameter is not "&lt;sub idref="var_accounts_user_umask" /&gt;",
-or the "umask" parameter is missing or is commented out?
-      </ocil:question_text>
-    </ocil:boolean_question>
-    <ocil:boolean_question id="ocil:ssg-accounts_password_pam_ocredit_question:question:1">
-      <ocil:question_text>Verify that Gentoo enforces password complexity by requiring that at least one special character with the following command:
-
-$ sudo grep ocredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/*.conf
-
-ocredit = 
-      Is it the case that value of "ocredit" is a positive number or is commented out?
-      </ocil:question_text>
-    </ocil:boolean_question>
-    <ocil:boolean_question id="ocil:ssg-sudo_add_use_pty_question:question:1">
-      <ocil:question_text>To determine if use_pty has been configured for sudo, run the following command:
-$ sudo grep -ri "^[\s]*Defaults.*\buse_pty\b.*" /etc/sudoers /etc/sudoers.d/
-The command should return a matching output.
-      Is it the case that use_pty is not enabled in sudo?
-      </ocil:question_text>
-    </ocil:boolean_question>
-    <ocil:boolean_question id="ocil:ssg-file_groupowner_etc_gshadow_question:question:1">
-      <ocil:question_text>To check the group ownership of /etc/gshadow,
-run the command:
-$ ls -lL /etc/gshadow
-If properly configured, the output should indicate the following group-owner:
-root
-      Is it the case that /etc/gshadow does not have a group owner of root?
       </ocil:question_text>
     </ocil:boolean_question>
     <ocil:boolean_question id="ocil:ssg-accounts_password_pam_dcredit_question:question:1">
@@ -509,42 +453,28 @@ $ sudo grep dcredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/
       Is it the case that the value of "dcredit" is a positive number or is commented out?
       </ocil:question_text>
     </ocil:boolean_question>
-    <ocil:boolean_question id="ocil:ssg-file_permissions_etc_gshadow_question:question:1">
-      <ocil:question_text>To check the permissions of /etc/gshadow,
+    <ocil:boolean_question id="ocil:ssg-file_groupowner_etc_gshadow_question:question:1">
+      <ocil:question_text>To check the group ownership of /etc/gshadow,
 run the command:
-$ ls -l /etc/gshadow
-If properly configured, the output should indicate the following permissions:
-----------
-      Is it the case that /etc/gshadow does not have unix mode ----------?
+$ ls -lL /etc/gshadow
+If properly configured, the output should indicate the following group-owner:
+root
+      Is it the case that /etc/gshadow does not have a group owner of root?
       </ocil:question_text>
     </ocil:boolean_question>
-    <ocil:boolean_question id="ocil:ssg-sudo_add_noexec_question:question:1">
-      <ocil:question_text>To determine if NOEXEC has been configured for sudo, run the following command:
-$ sudo grep -ri "^[\s]*Defaults.*\bnoexec\b.*" /etc/sudoers /etc/sudoers.d/
+    <ocil:boolean_question id="ocil:ssg-logind_session_timeout_question:question:1">
+      <ocil:question_text>Display the contents of the file /etc/systemd/logind.conf:
+cat /etc/systemd/logind.conf
+Ensure that there is a section [login] which contains the
+configuration StopIdleSessionSec=.
+      Is it the case that the option is not configured?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-sudo_add_use_pty_question:question:1">
+      <ocil:question_text>To determine if use_pty has been configured for sudo, run the following command:
+$ sudo grep -ri "^[\s]*Defaults.*\buse_pty\b.*" /etc/sudoers /etc/sudoers.d/
 The command should return a matching output.
-      Is it the case that noexec is not enabled in sudo?
-      </ocil:question_text>
-    </ocil:boolean_question>
-    <ocil:boolean_question id="ocil:ssg-accounts_password_pam_lcredit_question:question:1">
-      <ocil:question_text>Verify that Gentoo enforces password complexity by requiring that at least one lower-case character.
-
-Check the value for "lcredit" with the following command:
-
-$ sudo grep lcredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/*.conf
-
-/etc/security/pwquality.conf:lcredit = -1
-      Is it the case that the value of "lcredit" is a positive number or is commented out?
-      </ocil:question_text>
-    </ocil:boolean_question>
-    <ocil:boolean_question id="ocil:ssg-accounts_tmout_question:question:1">
-      <ocil:question_text>Run the following command to ensure the TMOUT value is configured for all users
-on the system:
-
-$ sudo grep TMOUT /etc/profile /etc/profile.d/*.sh
-
-The output should return the following:
-TMOUT=
-      Is it the case that value of TMOUT is not less than or equal to expected setting?
+      Is it the case that use_pty is not enabled in sudo?
       </ocil:question_text>
     </ocil:boolean_question>
     <ocil:boolean_question id="ocil:ssg-accounts_password_pam_unix_remember_question:question:1">
@@ -563,12 +493,47 @@ The pam_pwhistory remember option must be configured only in one file.
       Is it the case that the value of remember is not equal to or greater than the expected value?
       </ocil:question_text>
     </ocil:boolean_question>
-    <ocil:boolean_question id="ocil:ssg-sudo_add_umask_question:question:1">
-      <ocil:question_text>To determine if umask has been configured for sudo with the appropriate value,
-run the following command:
-$ sudo grep -ri '^Defaults.*umask=' /etc/sudoers /etc/sudoers.d/
+    <ocil:boolean_question id="ocil:ssg-file_permissions_etc_shadow_question:question:1">
+      <ocil:question_text>To check the permissions of /etc/shadow,
+run the command:
+$ ls -l /etc/shadow
+If properly configured, the output should indicate the following permissions:
+----------
+      Is it the case that /etc/shadow does not have unix mode ----------?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-accounts_password_pam_minlen_question:question:1">
+      <ocil:question_text>Verify that Gentoo enforces a minimum -character password length with the following command:
+
+$ grep minlen /etc/security/pwquality.conf
+
+minlen = 
+      Is it the case that the command does not return a "minlen" value of "&lt;sub idref="var_password_pam_minlen" /&gt;" or greater, does not return a line, or the line is commented out?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-file_permissions_etc_gshadow_question:question:1">
+      <ocil:question_text>To check the permissions of /etc/gshadow,
+run the command:
+$ ls -l /etc/gshadow
+If properly configured, the output should indicate the following permissions:
+----------
+      Is it the case that /etc/gshadow does not have unix mode ----------?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-file_owner_etc_gshadow_question:question:1">
+      <ocil:question_text>To check the ownership of /etc/gshadow,
+run the command:
+$ ls -lL /etc/gshadow
+If properly configured, the output should indicate the following owner:
+root
+      Is it the case that /etc/gshadow does not have an owner of root?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-sudo_add_ignore_dot_question:question:1">
+      <ocil:question_text>To determine if ignore_dot has been configured for sudo, run the following command:
+$ sudo grep -ri "^[\s]*Defaults.*\bignore_dot\b.*" /etc/sudoers /etc/sudoers.d/
 The command should return a matching output.
-      Is it the case that umask is not set with the appropriate value for sudo?
+      Is it the case that ignore_dot is not enabled in sudo?
       </ocil:question_text>
     </ocil:boolean_question>
     <ocil:boolean_question id="ocil:ssg-accounts_umask_etc_bashrc_question:question:1">
@@ -580,13 +545,48 @@ umask
       Is it the case that the value for the "umask" parameter is not "&lt;sub idref="var_accounts_user_umask" /&gt;", or the "umask" parameter is missing or is commented out?
       </ocil:question_text>
     </ocil:boolean_question>
-    <ocil:boolean_question id="ocil:ssg-file_groupowner_etc_shadow_question:question:1">
-      <ocil:question_text>To check the group ownership of /etc/shadow,
-run the command:
-$ ls -lL /etc/shadow
-If properly configured, the output should indicate the following group-owner:
-root
-      Is it the case that /etc/shadow does not have a group owner of root?
+    <ocil:boolean_question id="ocil:ssg-no_direct_root_logins_question:question:1">
+      <ocil:question_text>To ensure root may not directly login to the system over physical consoles,
+run the following command:
+cat /etc/securetty
+If any output is returned, this is a finding.
+      Is it the case that the /etc/securetty file is not empty?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-accounts_password_pam_ocredit_question:question:1">
+      <ocil:question_text>Verify that Gentoo enforces password complexity by requiring that at least one special character with the following command:
+
+$ sudo grep ocredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/*.conf
+
+ocredit = 
+      Is it the case that value of "ocredit" is a positive number or is commented out?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-sudo_add_env_reset_question:question:1">
+      <ocil:question_text>To determine if env_reset has been configured for sudo, run the following command:
+$ sudo grep -ri "^[\s]*Defaults.*\benv_reset\b.*" /etc/sudoers /etc/sudoers.d/
+The command should return a matching output.
+      Is it the case that env_reset is not enabled in sudo?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-accounts_password_pam_lcredit_question:question:1">
+      <ocil:question_text>Verify that Gentoo enforces password complexity by requiring that at least one lower-case character.
+
+Check the value for "lcredit" with the following command:
+
+$ sudo grep lcredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/*.conf
+
+/etc/security/pwquality.conf:lcredit = -1
+      Is it the case that the value of "lcredit" is a positive number or is commented out?
+      </ocil:question_text>
+    </ocil:boolean_question>
+    <ocil:boolean_question id="ocil:ssg-accounts_umask_etc_profile_question:question:1">
+      <ocil:question_text>Verify the umask setting is configured correctly in the /etc/profile file
+or scripts within /etc/profile.d directory with the following command:
+$ grep "umask" /etc/profile*
+umask 
+      Is it the case that the value for the "umask" parameter is not "&lt;sub idref="var_accounts_user_umask" /&gt;",
+or the "umask" parameter is missing or is commented out?
       </ocil:question_text>
     </ocil:boolean_question>
   </ocil:questions>

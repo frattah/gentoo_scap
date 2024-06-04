@@ -45,12 +45,12 @@ platform: null
 platforms: !!set {}
 sce_metadata: {}
 inherited_platforms: !!set
-    machine: null
     package[audit]: null
+    machine: null
 cpe_platform_names: !!set {}
 inherited_cpe_platform_names: !!set
-    machine: null
     package_audit: null
+    machine: null
 bash_conditional: null
 fixes: {}
 title: Ensure the audispd's remote logging daemon type is correct

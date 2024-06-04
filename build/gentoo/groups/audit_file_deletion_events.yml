@@ -38,8 +38,8 @@ rules:
 platform: ''
 platforms: !!set {}
 inherited_platforms: !!set
-    machine: null
     package[audit]: null
+    machine: null
 cpe_platform_names: !!set {}
 title: Record File Deletion Events by User
 definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/auditd_configure_rules/audit_file_deletion_events/group.yml

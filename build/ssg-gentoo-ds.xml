@@ -22,7 +22,7 @@
       <ns0:component-ref id="scap_org.open-scap_cref_ssg-gentoo-cpe-oval.xml" ns1:href="#scap_org.open-scap_comp_ssg-gentoo-cpe-oval.xml" />
     </ns0:checks>
   </ns0:data-stream>
-  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-cpe-dictionary.xml" timestamp="2024-06-13T09:08:49">
+  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-cpe-dictionary.xml" timestamp="2024-06-04T10:20:28">
     <ns3:cpe-list xsi:schemaLocation="http://cpe.mitre.org/dictionary/2.0 http://cpe.mitre.org/files/cpe-dictionary_2.1.xsd">
       <ns3:cpe-item name="cpe:/o:gentoo:linux">
         <ns3:title xml:lang="en-us">Gentoo</ns3:title>
@@ -30,9 +30,9 @@
       </ns3:cpe-item>
     </ns3:cpe-list>
   </ns0:component>
-  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-xccdf.xml" timestamp="2024-06-13T09:08:48">
+  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-xccdf.xml" timestamp="2024-06-04T10:20:27">
     <ns5:Benchmark id="xccdf_org.ssgproject.content_benchmark_GENTOO" xsi:schemaLocation="http://checklists.nist.gov/xccdf/1.2 xccdf-1.2.xsd" style="SCAP_1.2" resolved="true" xml:lang="en-US">
-      <ns5:status date="2024-06-13">draft</ns5:status>
+      <ns5:status date="2024-06-04">draft</ns5:status>
       <ns5:title>Guide to the Secure Configuration of Gentoo</ns5:title>
       <ns5:description>This guide presents a catalog of security-relevant
 configuration settings for Gentoo. It is a rendering of
@@ -466,6 +466,28 @@ respective companies.</ns5:rear-matter>
         <ns5:refine-value idref="xccdf_org.ssgproject.content_value_var_logind_session_timeout" selector="10_minutes" />
         <ns5:refine-value idref="xccdf_org.ssgproject.content_value_var_accounts_user_umask" selector="077" />
         <ns5:refine-value idref="xccdf_org.ssgproject.content_value_var_sudo_umask" selector="0077" />
+      </ns5:Profile>
+      <ns5:Profile id="xccdf_org.ssgproject.content_profile_anssi_test">
+        <ns5:title override="true">ANSSI-BP-028 test</ns5:title>
+        <ns5:description override="true">Pass</ns5:description>
+        <ns5:select idref="xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit" selected="true" />
+        <ns5:select idref="xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen" selected="true" />
+        <ns5:select idref="xccdf_org.ssgproject.content_group_accounts-physical" selected="false" />
+        <ns5:select idref="xccdf_org.ssgproject.content_group_accounts-restrictions" selected="false" />
+        <ns5:select idref="xccdf_org.ssgproject.content_group_accounts-session" selected="false" />
+        <ns5:select idref="xccdf_org.ssgproject.content_group_files" selected="false" />
+        <ns5:select idref="xccdf_org.ssgproject.content_group_locking_out_password_attempts" selected="false" />
+        <ns5:select idref="xccdf_org.ssgproject.content_group_permissions" selected="false" />
+        <ns5:select idref="xccdf_org.ssgproject.content_group_permissions_important_account_files" selected="false" />
+        <ns5:select idref="xccdf_org.ssgproject.content_group_root_logins" selected="false" />
+        <ns5:select idref="xccdf_org.ssgproject.content_group_services" selected="false" />
+        <ns5:select idref="xccdf_org.ssgproject.content_group_software" selected="false" />
+        <ns5:select idref="xccdf_org.ssgproject.content_group_ssh" selected="false" />
+        <ns5:select idref="xccdf_org.ssgproject.content_group_ssh_server" selected="false" />
+        <ns5:select idref="xccdf_org.ssgproject.content_group_sudo" selected="false" />
+        <ns5:select idref="xccdf_org.ssgproject.content_group_user_umask" selected="false" />
+        <ns5:refine-value idref="xccdf_org.ssgproject.content_value_var_password_pam_minlen" selector="15" />
+        <ns5:refine-value idref="xccdf_org.ssgproject.content_value_var_password_pam_dcredit" selector="1" />
       </ns5:Profile>
       <ns5:Group id="xccdf_org.ssgproject.content_group_system">
         <ns5:title>System Settings</ns5:title>
@@ -4953,13 +4975,13 @@ fi
       </ns5:Group>
     </ns5:Benchmark>
   </ns0:component>
-  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-oval.xml" timestamp="2024-06-13T09:08:48">
+  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-oval.xml" timestamp="2024-06-04T10:20:27">
     <ns9:oval_definitions xsi:schemaLocation="http://oval.mitre.org/XMLSchema/oval-common-5 oval-common-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5 oval-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#independent independent-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#unix unix-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#linux linux-definitions-schema.xsd">
       <ns9:generator>
         <ns10:product_name>OVALFileLinker from SCAP Security Guide</ns10:product_name>
         <ns10:product_version>ssg: [0, 1, 73], python: 3.11.9</ns10:product_version>
         <ns10:schema_version>5.11</ns10:schema_version>
-        <ns10:timestamp>2024-06-13T07:08:41</ns10:timestamp>
+        <ns10:timestamp>2024-06-04T08:20:21</ns10:timestamp>
       </ns9:generator>
       <ns9:definitions>
         <ns9:definition id="oval:ssg-accounts_password_pam_unix_remember:def:1" version="2" class="compliance">
@@ -6027,55 +6049,25 @@ fi
       </ns9:variables>
     </ns9:oval_definitions>
   </ns0:component>
-  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-ocil.xml" timestamp="2024-06-13T09:08:48">
+  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-ocil.xml" timestamp="2024-06-04T10:20:27">
     <ns14:ocil>
       <ns14:generator>
         <ns14:product_name>build_shorthand.py from SCAP Security Guide</ns14:product_name>
         <ns14:product_version>ssg: 0.1.73</ns14:product_version>
         <ns14:schema_version>2.0</ns14:schema_version>
-        <ns14:timestamp>2024-06-13T07:08:41</ns14:timestamp>
+        <ns14:timestamp>2024-06-04T08:20:21</ns14:timestamp>
       </ns14:generator>
       <ns14:questionnaires>
-        <ns14:questionnaire id="ocil:ssg-sshd_disable_root_login_ocil:questionnaire:1">
-          <ns14:title>Disable SSH Root Login</ns14:title>
-          <ns14:actions>
-            <ns14:test_action_ref>ocil:ssg-sshd_disable_root_login_action:testaction:1</ns14:test_action_ref>
-          </ns14:actions>
-        </ns14:questionnaire>
-        <ns14:questionnaire id="ocil:ssg-sudo_add_requiretty_ocil:questionnaire:1">
-          <ns14:title>Ensure Only Users Logged In To Real tty Can Execute Sudo - sudo requiretty</ns14:title>
-          <ns14:actions>
-            <ns14:test_action_ref>ocil:ssg-sudo_add_requiretty_action:testaction:1</ns14:test_action_ref>
-          </ns14:actions>
-        </ns14:questionnaire>
-        <ns14:questionnaire id="ocil:ssg-no_direct_root_logins_ocil:questionnaire:1">
-          <ns14:title>Direct root Logins Not Allowed</ns14:title>
-          <ns14:actions>
-            <ns14:test_action_ref>ocil:ssg-no_direct_root_logins_action:testaction:1</ns14:test_action_ref>
-          </ns14:actions>
-        </ns14:questionnaire>
         <ns14:questionnaire id="ocil:ssg-accounts_password_pam_ucredit_ocil:questionnaire:1">
           <ns14:title>Ensure PAM Enforces Password Requirements - Minimum Uppercase Characters</ns14:title>
           <ns14:actions>
             <ns14:test_action_ref>ocil:ssg-accounts_password_pam_ucredit_action:testaction:1</ns14:test_action_ref>
           </ns14:actions>
         </ns14:questionnaire>
-        <ns14:questionnaire id="ocil:ssg-sudo_add_ignore_dot_ocil:questionnaire:1">
-          <ns14:title>Ensure sudo Ignores Commands In Current Dir - sudo ignore_dot</ns14:title>
+        <ns14:questionnaire id="ocil:ssg-sshd_disable_root_login_ocil:questionnaire:1">
+          <ns14:title>Disable SSH Root Login</ns14:title>
           <ns14:actions>
-            <ns14:test_action_ref>ocil:ssg-sudo_add_ignore_dot_action:testaction:1</ns14:test_action_ref>
-          </ns14:actions>
-        </ns14:questionnaire>
-        <ns14:questionnaire id="ocil:ssg-sudo_add_env_reset_ocil:questionnaire:1">
-          <ns14:title>Ensure sudo Runs In A Minimal Environment - sudo env_reset</ns14:title>
-          <ns14:actions>
-            <ns14:test_action_ref>ocil:ssg-sudo_add_env_reset_action:testaction:1</ns14:test_action_ref>
-          </ns14:actions>
-        </ns14:questionnaire>
-        <ns14:questionnaire id="ocil:ssg-logind_session_timeout_ocil:questionnaire:1">
-          <ns14:title>Configure Logind to terminate idle sessions after certain time of inactivity</ns14:title>
-          <ns14:actions>
-            <ns14:test_action_ref>ocil:ssg-logind_session_timeout_action:testaction:1</ns14:test_action_ref>
+            <ns14:test_action_ref>ocil:ssg-sshd_disable_root_login_action:testaction:1</ns14:test_action_ref>
           </ns14:actions>
         </ns14:questionnaire>
         <ns14:questionnaire id="ocil:ssg-file_owner_etc_shadow_ocil:questionnaire:1">
@@ -6084,88 +6076,10 @@ fi
             <ns14:test_action_ref>ocil:ssg-file_owner_etc_shadow_action:testaction:1</ns14:test_action_ref>
           </ns14:actions>
         </ns14:questionnaire>
-        <ns14:questionnaire id="ocil:ssg-accounts_umask_etc_login_defs_ocil:questionnaire:1">
-          <ns14:title>Ensure the Default Umask is Set Correctly in login.defs</ns14:title>
-          <ns14:actions>
-            <ns14:test_action_ref>ocil:ssg-accounts_umask_etc_login_defs_action:testaction:1</ns14:test_action_ref>
-          </ns14:actions>
-        </ns14:questionnaire>
-        <ns14:questionnaire id="ocil:ssg-file_owner_etc_gshadow_ocil:questionnaire:1">
-          <ns14:title>Verify User Who Owns gshadow File</ns14:title>
-          <ns14:actions>
-            <ns14:test_action_ref>ocil:ssg-file_owner_etc_gshadow_action:testaction:1</ns14:test_action_ref>
-          </ns14:actions>
-        </ns14:questionnaire>
-        <ns14:questionnaire id="ocil:ssg-accounts_password_pam_minlen_ocil:questionnaire:1">
-          <ns14:title>Ensure PAM Enforces Password Requirements - Minimum Length</ns14:title>
-          <ns14:actions>
-            <ns14:test_action_ref>ocil:ssg-accounts_password_pam_minlen_action:testaction:1</ns14:test_action_ref>
-          </ns14:actions>
-        </ns14:questionnaire>
-        <ns14:questionnaire id="ocil:ssg-file_permissions_etc_shadow_ocil:questionnaire:1">
-          <ns14:title>Verify Permissions on shadow File</ns14:title>
-          <ns14:actions>
-            <ns14:test_action_ref>ocil:ssg-file_permissions_etc_shadow_action:testaction:1</ns14:test_action_ref>
-          </ns14:actions>
-        </ns14:questionnaire>
-        <ns14:questionnaire id="ocil:ssg-accounts_umask_etc_profile_ocil:questionnaire:1">
-          <ns14:title>Ensure the Default Umask is Set Correctly in /etc/profile</ns14:title>
-          <ns14:actions>
-            <ns14:test_action_ref>ocil:ssg-accounts_umask_etc_profile_action:testaction:1</ns14:test_action_ref>
-          </ns14:actions>
-        </ns14:questionnaire>
-        <ns14:questionnaire id="ocil:ssg-accounts_password_pam_ocredit_ocil:questionnaire:1">
-          <ns14:title>Ensure PAM Enforces Password Requirements - Minimum Special Characters</ns14:title>
-          <ns14:actions>
-            <ns14:test_action_ref>ocil:ssg-accounts_password_pam_ocredit_action:testaction:1</ns14:test_action_ref>
-          </ns14:actions>
-        </ns14:questionnaire>
-        <ns14:questionnaire id="ocil:ssg-sudo_add_use_pty_ocil:questionnaire:1">
-          <ns14:title>Ensure Only Users Logged In To Real tty Can Execute Sudo - sudo use_pty</ns14:title>
-          <ns14:actions>
-            <ns14:test_action_ref>ocil:ssg-sudo_add_use_pty_action:testaction:1</ns14:test_action_ref>
-          </ns14:actions>
-        </ns14:questionnaire>
-        <ns14:questionnaire id="ocil:ssg-file_groupowner_etc_gshadow_ocil:questionnaire:1">
-          <ns14:title>Verify Group Who Owns gshadow File</ns14:title>
-          <ns14:actions>
-            <ns14:test_action_ref>ocil:ssg-file_groupowner_etc_gshadow_action:testaction:1</ns14:test_action_ref>
-          </ns14:actions>
-        </ns14:questionnaire>
-        <ns14:questionnaire id="ocil:ssg-accounts_password_pam_dcredit_ocil:questionnaire:1">
-          <ns14:title>Ensure PAM Enforces Password Requirements - Minimum Digit Characters</ns14:title>
-          <ns14:actions>
-            <ns14:test_action_ref>ocil:ssg-accounts_password_pam_dcredit_action:testaction:1</ns14:test_action_ref>
-          </ns14:actions>
-        </ns14:questionnaire>
-        <ns14:questionnaire id="ocil:ssg-file_permissions_etc_gshadow_ocil:questionnaire:1">
-          <ns14:title>Verify Permissions on gshadow File</ns14:title>
-          <ns14:actions>
-            <ns14:test_action_ref>ocil:ssg-file_permissions_etc_gshadow_action:testaction:1</ns14:test_action_ref>
-          </ns14:actions>
-        </ns14:questionnaire>
         <ns14:questionnaire id="ocil:ssg-sudo_add_noexec_ocil:questionnaire:1">
           <ns14:title>Ensure Privileged Escalated Commands Cannot Execute Other Commands - sudo NOEXEC</ns14:title>
           <ns14:actions>
             <ns14:test_action_ref>ocil:ssg-sudo_add_noexec_action:testaction:1</ns14:test_action_ref>
-          </ns14:actions>
-        </ns14:questionnaire>
-        <ns14:questionnaire id="ocil:ssg-accounts_password_pam_lcredit_ocil:questionnaire:1">
-          <ns14:title>Ensure PAM Enforces Password Requirements - Minimum Lowercase Characters</ns14:title>
-          <ns14:actions>
-            <ns14:test_action_ref>ocil:ssg-accounts_password_pam_lcredit_action:testaction:1</ns14:test_action_ref>
-          </ns14:actions>
-        </ns14:questionnaire>
-        <ns14:questionnaire id="ocil:ssg-accounts_tmout_ocil:questionnaire:1">
-          <ns14:title>Set Interactive Session Timeout</ns14:title>
-          <ns14:actions>
-            <ns14:test_action_ref>ocil:ssg-accounts_tmout_action:testaction:1</ns14:test_action_ref>
-          </ns14:actions>
-        </ns14:questionnaire>
-        <ns14:questionnaire id="ocil:ssg-accounts_password_pam_unix_remember_ocil:questionnaire:1">
-          <ns14:title>Limit Password Reuse</ns14:title>
-          <ns14:actions>
-            <ns14:test_action_ref>ocil:ssg-accounts_password_pam_unix_remember_action:testaction:1</ns14:test_action_ref>
           </ns14:actions>
         </ns14:questionnaire>
         <ns14:questionnaire id="ocil:ssg-sudo_add_umask_ocil:questionnaire:1">
@@ -6174,44 +6088,128 @@ fi
             <ns14:test_action_ref>ocil:ssg-sudo_add_umask_action:testaction:1</ns14:test_action_ref>
           </ns14:actions>
         </ns14:questionnaire>
-        <ns14:questionnaire id="ocil:ssg-accounts_umask_etc_bashrc_ocil:questionnaire:1">
-          <ns14:title>Ensure the Default Bash Umask is Set Correctly</ns14:title>
-          <ns14:actions>
-            <ns14:test_action_ref>ocil:ssg-accounts_umask_etc_bashrc_action:testaction:1</ns14:test_action_ref>
-          </ns14:actions>
-        </ns14:questionnaire>
         <ns14:questionnaire id="ocil:ssg-file_groupowner_etc_shadow_ocil:questionnaire:1">
           <ns14:title>Verify Group Who Owns shadow File</ns14:title>
           <ns14:actions>
             <ns14:test_action_ref>ocil:ssg-file_groupowner_etc_shadow_action:testaction:1</ns14:test_action_ref>
           </ns14:actions>
         </ns14:questionnaire>
+        <ns14:questionnaire id="ocil:ssg-accounts_tmout_ocil:questionnaire:1">
+          <ns14:title>Set Interactive Session Timeout</ns14:title>
+          <ns14:actions>
+            <ns14:test_action_ref>ocil:ssg-accounts_tmout_action:testaction:1</ns14:test_action_ref>
+          </ns14:actions>
+        </ns14:questionnaire>
+        <ns14:questionnaire id="ocil:ssg-sudo_add_requiretty_ocil:questionnaire:1">
+          <ns14:title>Ensure Only Users Logged In To Real tty Can Execute Sudo - sudo requiretty</ns14:title>
+          <ns14:actions>
+            <ns14:test_action_ref>ocil:ssg-sudo_add_requiretty_action:testaction:1</ns14:test_action_ref>
+          </ns14:actions>
+        </ns14:questionnaire>
+        <ns14:questionnaire id="ocil:ssg-accounts_umask_etc_login_defs_ocil:questionnaire:1">
+          <ns14:title>Ensure the Default Umask is Set Correctly in login.defs</ns14:title>
+          <ns14:actions>
+            <ns14:test_action_ref>ocil:ssg-accounts_umask_etc_login_defs_action:testaction:1</ns14:test_action_ref>
+          </ns14:actions>
+        </ns14:questionnaire>
+        <ns14:questionnaire id="ocil:ssg-accounts_password_pam_dcredit_ocil:questionnaire:1">
+          <ns14:title>Ensure PAM Enforces Password Requirements - Minimum Digit Characters</ns14:title>
+          <ns14:actions>
+            <ns14:test_action_ref>ocil:ssg-accounts_password_pam_dcredit_action:testaction:1</ns14:test_action_ref>
+          </ns14:actions>
+        </ns14:questionnaire>
+        <ns14:questionnaire id="ocil:ssg-file_groupowner_etc_gshadow_ocil:questionnaire:1">
+          <ns14:title>Verify Group Who Owns gshadow File</ns14:title>
+          <ns14:actions>
+            <ns14:test_action_ref>ocil:ssg-file_groupowner_etc_gshadow_action:testaction:1</ns14:test_action_ref>
+          </ns14:actions>
+        </ns14:questionnaire>
+        <ns14:questionnaire id="ocil:ssg-logind_session_timeout_ocil:questionnaire:1">
+          <ns14:title>Configure Logind to terminate idle sessions after certain time of inactivity</ns14:title>
+          <ns14:actions>
+            <ns14:test_action_ref>ocil:ssg-logind_session_timeout_action:testaction:1</ns14:test_action_ref>
+          </ns14:actions>
+        </ns14:questionnaire>
+        <ns14:questionnaire id="ocil:ssg-sudo_add_use_pty_ocil:questionnaire:1">
+          <ns14:title>Ensure Only Users Logged In To Real tty Can Execute Sudo - sudo use_pty</ns14:title>
+          <ns14:actions>
+            <ns14:test_action_ref>ocil:ssg-sudo_add_use_pty_action:testaction:1</ns14:test_action_ref>
+          </ns14:actions>
+        </ns14:questionnaire>
+        <ns14:questionnaire id="ocil:ssg-accounts_password_pam_unix_remember_ocil:questionnaire:1">
+          <ns14:title>Limit Password Reuse</ns14:title>
+          <ns14:actions>
+            <ns14:test_action_ref>ocil:ssg-accounts_password_pam_unix_remember_action:testaction:1</ns14:test_action_ref>
+          </ns14:actions>
+        </ns14:questionnaire>
+        <ns14:questionnaire id="ocil:ssg-file_permissions_etc_shadow_ocil:questionnaire:1">
+          <ns14:title>Verify Permissions on shadow File</ns14:title>
+          <ns14:actions>
+            <ns14:test_action_ref>ocil:ssg-file_permissions_etc_shadow_action:testaction:1</ns14:test_action_ref>
+          </ns14:actions>
+        </ns14:questionnaire>
+        <ns14:questionnaire id="ocil:ssg-accounts_password_pam_minlen_ocil:questionnaire:1">
+          <ns14:title>Ensure PAM Enforces Password Requirements - Minimum Length</ns14:title>
+          <ns14:actions>
+            <ns14:test_action_ref>ocil:ssg-accounts_password_pam_minlen_action:testaction:1</ns14:test_action_ref>
+          </ns14:actions>
+        </ns14:questionnaire>
+        <ns14:questionnaire id="ocil:ssg-file_permissions_etc_gshadow_ocil:questionnaire:1">
+          <ns14:title>Verify Permissions on gshadow File</ns14:title>
+          <ns14:actions>
+            <ns14:test_action_ref>ocil:ssg-file_permissions_etc_gshadow_action:testaction:1</ns14:test_action_ref>
+          </ns14:actions>
+        </ns14:questionnaire>
+        <ns14:questionnaire id="ocil:ssg-file_owner_etc_gshadow_ocil:questionnaire:1">
+          <ns14:title>Verify User Who Owns gshadow File</ns14:title>
+          <ns14:actions>
+            <ns14:test_action_ref>ocil:ssg-file_owner_etc_gshadow_action:testaction:1</ns14:test_action_ref>
+          </ns14:actions>
+        </ns14:questionnaire>
+        <ns14:questionnaire id="ocil:ssg-sudo_add_ignore_dot_ocil:questionnaire:1">
+          <ns14:title>Ensure sudo Ignores Commands In Current Dir - sudo ignore_dot</ns14:title>
+          <ns14:actions>
+            <ns14:test_action_ref>ocil:ssg-sudo_add_ignore_dot_action:testaction:1</ns14:test_action_ref>
+          </ns14:actions>
+        </ns14:questionnaire>
+        <ns14:questionnaire id="ocil:ssg-accounts_umask_etc_bashrc_ocil:questionnaire:1">
+          <ns14:title>Ensure the Default Bash Umask is Set Correctly</ns14:title>
+          <ns14:actions>
+            <ns14:test_action_ref>ocil:ssg-accounts_umask_etc_bashrc_action:testaction:1</ns14:test_action_ref>
+          </ns14:actions>
+        </ns14:questionnaire>
+        <ns14:questionnaire id="ocil:ssg-no_direct_root_logins_ocil:questionnaire:1">
+          <ns14:title>Direct root Logins Not Allowed</ns14:title>
+          <ns14:actions>
+            <ns14:test_action_ref>ocil:ssg-no_direct_root_logins_action:testaction:1</ns14:test_action_ref>
+          </ns14:actions>
+        </ns14:questionnaire>
+        <ns14:questionnaire id="ocil:ssg-accounts_password_pam_ocredit_ocil:questionnaire:1">
+          <ns14:title>Ensure PAM Enforces Password Requirements - Minimum Special Characters</ns14:title>
+          <ns14:actions>
+            <ns14:test_action_ref>ocil:ssg-accounts_password_pam_ocredit_action:testaction:1</ns14:test_action_ref>
+          </ns14:actions>
+        </ns14:questionnaire>
+        <ns14:questionnaire id="ocil:ssg-sudo_add_env_reset_ocil:questionnaire:1">
+          <ns14:title>Ensure sudo Runs In A Minimal Environment - sudo env_reset</ns14:title>
+          <ns14:actions>
+            <ns14:test_action_ref>ocil:ssg-sudo_add_env_reset_action:testaction:1</ns14:test_action_ref>
+          </ns14:actions>
+        </ns14:questionnaire>
+        <ns14:questionnaire id="ocil:ssg-accounts_password_pam_lcredit_ocil:questionnaire:1">
+          <ns14:title>Ensure PAM Enforces Password Requirements - Minimum Lowercase Characters</ns14:title>
+          <ns14:actions>
+            <ns14:test_action_ref>ocil:ssg-accounts_password_pam_lcredit_action:testaction:1</ns14:test_action_ref>
+          </ns14:actions>
+        </ns14:questionnaire>
+        <ns14:questionnaire id="ocil:ssg-accounts_umask_etc_profile_ocil:questionnaire:1">
+          <ns14:title>Ensure the Default Umask is Set Correctly in /etc/profile</ns14:title>
+          <ns14:actions>
+            <ns14:test_action_ref>ocil:ssg-accounts_umask_etc_profile_action:testaction:1</ns14:test_action_ref>
+          </ns14:actions>
+        </ns14:questionnaire>
       </ns14:questionnaires>
       <ns14:test_actions>
-        <ns14:boolean_question_test_action id="ocil:ssg-sshd_disable_root_login_action:testaction:1" question_ref="ocil:ssg-sshd_disable_root_login_question:question:1">
-          <ns14:when_true>
-            <ns14:result>PASS</ns14:result>
-          </ns14:when_true>
-          <ns14:when_false>
-            <ns14:result>FAIL</ns14:result>
-          </ns14:when_false>
-        </ns14:boolean_question_test_action>
-        <ns14:boolean_question_test_action id="ocil:ssg-sudo_add_requiretty_action:testaction:1" question_ref="ocil:ssg-sudo_add_requiretty_question:question:1">
-          <ns14:when_true>
-            <ns14:result>PASS</ns14:result>
-          </ns14:when_true>
-          <ns14:when_false>
-            <ns14:result>FAIL</ns14:result>
-          </ns14:when_false>
-        </ns14:boolean_question_test_action>
-        <ns14:boolean_question_test_action id="ocil:ssg-no_direct_root_logins_action:testaction:1" question_ref="ocil:ssg-no_direct_root_logins_question:question:1">
-          <ns14:when_true>
-            <ns14:result>PASS</ns14:result>
-          </ns14:when_true>
-          <ns14:when_false>
-            <ns14:result>FAIL</ns14:result>
-          </ns14:when_false>
-        </ns14:boolean_question_test_action>
         <ns14:boolean_question_test_action id="ocil:ssg-accounts_password_pam_ucredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_ucredit_question:question:1">
           <ns14:when_true>
             <ns14:result>PASS</ns14:result>
@@ -6220,23 +6218,7 @@ fi
             <ns14:result>FAIL</ns14:result>
           </ns14:when_false>
         </ns14:boolean_question_test_action>
-        <ns14:boolean_question_test_action id="ocil:ssg-sudo_add_ignore_dot_action:testaction:1" question_ref="ocil:ssg-sudo_add_ignore_dot_question:question:1">
-          <ns14:when_true>
-            <ns14:result>PASS</ns14:result>
-          </ns14:when_true>
-          <ns14:when_false>
-            <ns14:result>FAIL</ns14:result>
-          </ns14:when_false>
-        </ns14:boolean_question_test_action>
-        <ns14:boolean_question_test_action id="ocil:ssg-sudo_add_env_reset_action:testaction:1" question_ref="ocil:ssg-sudo_add_env_reset_question:question:1">
-          <ns14:when_true>
-            <ns14:result>PASS</ns14:result>
-          </ns14:when_true>
-          <ns14:when_false>
-            <ns14:result>FAIL</ns14:result>
-          </ns14:when_false>
-        </ns14:boolean_question_test_action>
-        <ns14:boolean_question_test_action id="ocil:ssg-logind_session_timeout_action:testaction:1" question_ref="ocil:ssg-logind_session_timeout_question:question:1">
+        <ns14:boolean_question_test_action id="ocil:ssg-sshd_disable_root_login_action:testaction:1" question_ref="ocil:ssg-sshd_disable_root_login_question:question:1">
           <ns14:when_true>
             <ns14:result>PASS</ns14:result>
           </ns14:when_true>
@@ -6252,111 +6234,7 @@ fi
             <ns14:result>FAIL</ns14:result>
           </ns14:when_false>
         </ns14:boolean_question_test_action>
-        <ns14:boolean_question_test_action id="ocil:ssg-accounts_umask_etc_login_defs_action:testaction:1" question_ref="ocil:ssg-accounts_umask_etc_login_defs_question:question:1">
-          <ns14:when_true>
-            <ns14:result>PASS</ns14:result>
-          </ns14:when_true>
-          <ns14:when_false>
-            <ns14:result>FAIL</ns14:result>
-          </ns14:when_false>
-        </ns14:boolean_question_test_action>
-        <ns14:boolean_question_test_action id="ocil:ssg-file_owner_etc_gshadow_action:testaction:1" question_ref="ocil:ssg-file_owner_etc_gshadow_question:question:1">
-          <ns14:when_true>
-            <ns14:result>PASS</ns14:result>
-          </ns14:when_true>
-          <ns14:when_false>
-            <ns14:result>FAIL</ns14:result>
-          </ns14:when_false>
-        </ns14:boolean_question_test_action>
-        <ns14:boolean_question_test_action id="ocil:ssg-accounts_password_pam_minlen_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_minlen_question:question:1">
-          <ns14:when_true>
-            <ns14:result>PASS</ns14:result>
-          </ns14:when_true>
-          <ns14:when_false>
-            <ns14:result>FAIL</ns14:result>
-          </ns14:when_false>
-        </ns14:boolean_question_test_action>
-        <ns14:boolean_question_test_action id="ocil:ssg-file_permissions_etc_shadow_action:testaction:1" question_ref="ocil:ssg-file_permissions_etc_shadow_question:question:1">
-          <ns14:when_true>
-            <ns14:result>PASS</ns14:result>
-          </ns14:when_true>
-          <ns14:when_false>
-            <ns14:result>FAIL</ns14:result>
-          </ns14:when_false>
-        </ns14:boolean_question_test_action>
-        <ns14:boolean_question_test_action id="ocil:ssg-accounts_umask_etc_profile_action:testaction:1" question_ref="ocil:ssg-accounts_umask_etc_profile_question:question:1">
-          <ns14:when_true>
-            <ns14:result>PASS</ns14:result>
-          </ns14:when_true>
-          <ns14:when_false>
-            <ns14:result>FAIL</ns14:result>
-          </ns14:when_false>
-        </ns14:boolean_question_test_action>
-        <ns14:boolean_question_test_action id="ocil:ssg-accounts_password_pam_ocredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_ocredit_question:question:1">
-          <ns14:when_true>
-            <ns14:result>PASS</ns14:result>
-          </ns14:when_true>
-          <ns14:when_false>
-            <ns14:result>FAIL</ns14:result>
-          </ns14:when_false>
-        </ns14:boolean_question_test_action>
-        <ns14:boolean_question_test_action id="ocil:ssg-sudo_add_use_pty_action:testaction:1" question_ref="ocil:ssg-sudo_add_use_pty_question:question:1">
-          <ns14:when_true>
-            <ns14:result>PASS</ns14:result>
-          </ns14:when_true>
-          <ns14:when_false>
-            <ns14:result>FAIL</ns14:result>
-          </ns14:when_false>
-        </ns14:boolean_question_test_action>
-        <ns14:boolean_question_test_action id="ocil:ssg-file_groupowner_etc_gshadow_action:testaction:1" question_ref="ocil:ssg-file_groupowner_etc_gshadow_question:question:1">
-          <ns14:when_true>
-            <ns14:result>PASS</ns14:result>
-          </ns14:when_true>
-          <ns14:when_false>
-            <ns14:result>FAIL</ns14:result>
-          </ns14:when_false>
-        </ns14:boolean_question_test_action>
-        <ns14:boolean_question_test_action id="ocil:ssg-accounts_password_pam_dcredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_dcredit_question:question:1">
-          <ns14:when_true>
-            <ns14:result>PASS</ns14:result>
-          </ns14:when_true>
-          <ns14:when_false>
-            <ns14:result>FAIL</ns14:result>
-          </ns14:when_false>
-        </ns14:boolean_question_test_action>
-        <ns14:boolean_question_test_action id="ocil:ssg-file_permissions_etc_gshadow_action:testaction:1" question_ref="ocil:ssg-file_permissions_etc_gshadow_question:question:1">
-          <ns14:when_true>
-            <ns14:result>PASS</ns14:result>
-          </ns14:when_true>
-          <ns14:when_false>
-            <ns14:result>FAIL</ns14:result>
-          </ns14:when_false>
-        </ns14:boolean_question_test_action>
         <ns14:boolean_question_test_action id="ocil:ssg-sudo_add_noexec_action:testaction:1" question_ref="ocil:ssg-sudo_add_noexec_question:question:1">
-          <ns14:when_true>
-            <ns14:result>PASS</ns14:result>
-          </ns14:when_true>
-          <ns14:when_false>
-            <ns14:result>FAIL</ns14:result>
-          </ns14:when_false>
-        </ns14:boolean_question_test_action>
-        <ns14:boolean_question_test_action id="ocil:ssg-accounts_password_pam_lcredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_lcredit_question:question:1">
-          <ns14:when_true>
-            <ns14:result>PASS</ns14:result>
-          </ns14:when_true>
-          <ns14:when_false>
-            <ns14:result>FAIL</ns14:result>
-          </ns14:when_false>
-        </ns14:boolean_question_test_action>
-        <ns14:boolean_question_test_action id="ocil:ssg-accounts_tmout_action:testaction:1" question_ref="ocil:ssg-accounts_tmout_question:question:1">
-          <ns14:when_true>
-            <ns14:result>PASS</ns14:result>
-          </ns14:when_true>
-          <ns14:when_false>
-            <ns14:result>FAIL</ns14:result>
-          </ns14:when_false>
-        </ns14:boolean_question_test_action>
-        <ns14:boolean_question_test_action id="ocil:ssg-accounts_password_pam_unix_remember_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_unix_remember_question:question:1">
           <ns14:when_true>
             <ns14:result>PASS</ns14:result>
           </ns14:when_true>
@@ -6372,6 +6250,118 @@ fi
             <ns14:result>FAIL</ns14:result>
           </ns14:when_false>
         </ns14:boolean_question_test_action>
+        <ns14:boolean_question_test_action id="ocil:ssg-file_groupowner_etc_shadow_action:testaction:1" question_ref="ocil:ssg-file_groupowner_etc_shadow_question:question:1">
+          <ns14:when_true>
+            <ns14:result>PASS</ns14:result>
+          </ns14:when_true>
+          <ns14:when_false>
+            <ns14:result>FAIL</ns14:result>
+          </ns14:when_false>
+        </ns14:boolean_question_test_action>
+        <ns14:boolean_question_test_action id="ocil:ssg-accounts_tmout_action:testaction:1" question_ref="ocil:ssg-accounts_tmout_question:question:1">
+          <ns14:when_true>
+            <ns14:result>PASS</ns14:result>
+          </ns14:when_true>
+          <ns14:when_false>
+            <ns14:result>FAIL</ns14:result>
+          </ns14:when_false>
+        </ns14:boolean_question_test_action>
+        <ns14:boolean_question_test_action id="ocil:ssg-sudo_add_requiretty_action:testaction:1" question_ref="ocil:ssg-sudo_add_requiretty_question:question:1">
+          <ns14:when_true>
+            <ns14:result>PASS</ns14:result>
+          </ns14:when_true>
+          <ns14:when_false>
+            <ns14:result>FAIL</ns14:result>
+          </ns14:when_false>
+        </ns14:boolean_question_test_action>
+        <ns14:boolean_question_test_action id="ocil:ssg-accounts_umask_etc_login_defs_action:testaction:1" question_ref="ocil:ssg-accounts_umask_etc_login_defs_question:question:1">
+          <ns14:when_true>
+            <ns14:result>PASS</ns14:result>
+          </ns14:when_true>
+          <ns14:when_false>
+            <ns14:result>FAIL</ns14:result>
+          </ns14:when_false>
+        </ns14:boolean_question_test_action>
+        <ns14:boolean_question_test_action id="ocil:ssg-accounts_password_pam_dcredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_dcredit_question:question:1">
+          <ns14:when_true>
+            <ns14:result>PASS</ns14:result>
+          </ns14:when_true>
+          <ns14:when_false>
+            <ns14:result>FAIL</ns14:result>
+          </ns14:when_false>
+        </ns14:boolean_question_test_action>
+        <ns14:boolean_question_test_action id="ocil:ssg-file_groupowner_etc_gshadow_action:testaction:1" question_ref="ocil:ssg-file_groupowner_etc_gshadow_question:question:1">
+          <ns14:when_true>
+            <ns14:result>PASS</ns14:result>
+          </ns14:when_true>
+          <ns14:when_false>
+            <ns14:result>FAIL</ns14:result>
+          </ns14:when_false>
+        </ns14:boolean_question_test_action>
+        <ns14:boolean_question_test_action id="ocil:ssg-logind_session_timeout_action:testaction:1" question_ref="ocil:ssg-logind_session_timeout_question:question:1">
+          <ns14:when_true>
+            <ns14:result>PASS</ns14:result>
+          </ns14:when_true>
+          <ns14:when_false>
+            <ns14:result>FAIL</ns14:result>
+          </ns14:when_false>
+        </ns14:boolean_question_test_action>
+        <ns14:boolean_question_test_action id="ocil:ssg-sudo_add_use_pty_action:testaction:1" question_ref="ocil:ssg-sudo_add_use_pty_question:question:1">
+          <ns14:when_true>
+            <ns14:result>PASS</ns14:result>
+          </ns14:when_true>
+          <ns14:when_false>
+            <ns14:result>FAIL</ns14:result>
+          </ns14:when_false>
+        </ns14:boolean_question_test_action>
+        <ns14:boolean_question_test_action id="ocil:ssg-accounts_password_pam_unix_remember_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_unix_remember_question:question:1">
+          <ns14:when_true>
+            <ns14:result>PASS</ns14:result>
+          </ns14:when_true>
+          <ns14:when_false>
+            <ns14:result>FAIL</ns14:result>
+          </ns14:when_false>
+        </ns14:boolean_question_test_action>
+        <ns14:boolean_question_test_action id="ocil:ssg-file_permissions_etc_shadow_action:testaction:1" question_ref="ocil:ssg-file_permissions_etc_shadow_question:question:1">
+          <ns14:when_true>
+            <ns14:result>PASS</ns14:result>
+          </ns14:when_true>
+          <ns14:when_false>
+            <ns14:result>FAIL</ns14:result>
+          </ns14:when_false>
+        </ns14:boolean_question_test_action>
+        <ns14:boolean_question_test_action id="ocil:ssg-accounts_password_pam_minlen_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_minlen_question:question:1">
+          <ns14:when_true>
+            <ns14:result>PASS</ns14:result>
+          </ns14:when_true>
+          <ns14:when_false>
+            <ns14:result>FAIL</ns14:result>
+          </ns14:when_false>
+        </ns14:boolean_question_test_action>
+        <ns14:boolean_question_test_action id="ocil:ssg-file_permissions_etc_gshadow_action:testaction:1" question_ref="ocil:ssg-file_permissions_etc_gshadow_question:question:1">
+          <ns14:when_true>
+            <ns14:result>PASS</ns14:result>
+          </ns14:when_true>
+          <ns14:when_false>
+            <ns14:result>FAIL</ns14:result>
+          </ns14:when_false>
+        </ns14:boolean_question_test_action>
+        <ns14:boolean_question_test_action id="ocil:ssg-file_owner_etc_gshadow_action:testaction:1" question_ref="ocil:ssg-file_owner_etc_gshadow_question:question:1">
+          <ns14:when_true>
+            <ns14:result>PASS</ns14:result>
+          </ns14:when_true>
+          <ns14:when_false>
+            <ns14:result>FAIL</ns14:result>
+          </ns14:when_false>
+        </ns14:boolean_question_test_action>
+        <ns14:boolean_question_test_action id="ocil:ssg-sudo_add_ignore_dot_action:testaction:1" question_ref="ocil:ssg-sudo_add_ignore_dot_question:question:1">
+          <ns14:when_true>
+            <ns14:result>PASS</ns14:result>
+          </ns14:when_true>
+          <ns14:when_false>
+            <ns14:result>FAIL</ns14:result>
+          </ns14:when_false>
+        </ns14:boolean_question_test_action>
         <ns14:boolean_question_test_action id="ocil:ssg-accounts_umask_etc_bashrc_action:testaction:1" question_ref="ocil:ssg-accounts_umask_etc_bashrc_question:question:1">
           <ns14:when_true>
             <ns14:result>PASS</ns14:result>
@@ -6380,7 +6370,39 @@ fi
             <ns14:result>FAIL</ns14:result>
           </ns14:when_false>
         </ns14:boolean_question_test_action>
-        <ns14:boolean_question_test_action id="ocil:ssg-file_groupowner_etc_shadow_action:testaction:1" question_ref="ocil:ssg-file_groupowner_etc_shadow_question:question:1">
+        <ns14:boolean_question_test_action id="ocil:ssg-no_direct_root_logins_action:testaction:1" question_ref="ocil:ssg-no_direct_root_logins_question:question:1">
+          <ns14:when_true>
+            <ns14:result>PASS</ns14:result>
+          </ns14:when_true>
+          <ns14:when_false>
+            <ns14:result>FAIL</ns14:result>
+          </ns14:when_false>
+        </ns14:boolean_question_test_action>
+        <ns14:boolean_question_test_action id="ocil:ssg-accounts_password_pam_ocredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_ocredit_question:question:1">
+          <ns14:when_true>
+            <ns14:result>PASS</ns14:result>
+          </ns14:when_true>
+          <ns14:when_false>
+            <ns14:result>FAIL</ns14:result>
+          </ns14:when_false>
+        </ns14:boolean_question_test_action>
+        <ns14:boolean_question_test_action id="ocil:ssg-sudo_add_env_reset_action:testaction:1" question_ref="ocil:ssg-sudo_add_env_reset_question:question:1">
+          <ns14:when_true>
+            <ns14:result>PASS</ns14:result>
+          </ns14:when_true>
+          <ns14:when_false>
+            <ns14:result>FAIL</ns14:result>
+          </ns14:when_false>
+        </ns14:boolean_question_test_action>
+        <ns14:boolean_question_test_action id="ocil:ssg-accounts_password_pam_lcredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_lcredit_question:question:1">
+          <ns14:when_true>
+            <ns14:result>PASS</ns14:result>
+          </ns14:when_true>
+          <ns14:when_false>
+            <ns14:result>FAIL</ns14:result>
+          </ns14:when_false>
+        </ns14:boolean_question_test_action>
+        <ns14:boolean_question_test_action id="ocil:ssg-accounts_umask_etc_profile_action:testaction:1" question_ref="ocil:ssg-accounts_umask_etc_profile_question:question:1">
           <ns14:when_true>
             <ns14:result>PASS</ns14:result>
           </ns14:when_true>
@@ -6390,31 +6412,6 @@ fi
         </ns14:boolean_question_test_action>
       </ns14:test_actions>
       <ns14:questions>
-        <ns14:boolean_question id="ocil:ssg-sshd_disable_root_login_question:question:1">
-          <ns14:question_text>To determine how the SSH daemon's PermitRootLogin option is set, run the following command:
-
-$ sudo grep -i PermitRootLogin /etc/ssh/sshd_config
-
-If a line indicating no is returned, then the required value is set.
-
-      Is it the case that the required value is not set?
-      </ns14:question_text>
-        </ns14:boolean_question>
-        <ns14:boolean_question id="ocil:ssg-sudo_add_requiretty_question:question:1">
-          <ns14:question_text>To determine if requiretty has been configured for sudo, run the following command:
-$ sudo grep -ri "^[\s]*Defaults.*\brequiretty\b.*" /etc/sudoers /etc/sudoers.d/
-The command should return a matching output.
-      Is it the case that requiretty is not enabled in sudo?
-      </ns14:question_text>
-        </ns14:boolean_question>
-        <ns14:boolean_question id="ocil:ssg-no_direct_root_logins_question:question:1">
-          <ns14:question_text>To ensure root may not directly login to the system over physical consoles,
-run the following command:
-cat /etc/securetty
-If any output is returned, this is a finding.
-      Is it the case that the /etc/securetty file is not empty?
-      </ns14:question_text>
-        </ns14:boolean_question>
         <ns14:boolean_question id="ocil:ssg-accounts_password_pam_ucredit_question:question:1">
           <ns14:question_text>Verify that Gentoo enforces password complexity by requiring that at least one upper-case character.
 
@@ -6426,26 +6423,14 @@ ucredit = -1
       Is it the case that the value of "ucredit" is a positive number or is commented out?
       </ns14:question_text>
         </ns14:boolean_question>
-        <ns14:boolean_question id="ocil:ssg-sudo_add_ignore_dot_question:question:1">
-          <ns14:question_text>To determine if ignore_dot has been configured for sudo, run the following command:
-$ sudo grep -ri "^[\s]*Defaults.*\bignore_dot\b.*" /etc/sudoers /etc/sudoers.d/
-The command should return a matching output.
-      Is it the case that ignore_dot is not enabled in sudo?
-      </ns14:question_text>
-        </ns14:boolean_question>
-        <ns14:boolean_question id="ocil:ssg-sudo_add_env_reset_question:question:1">
-          <ns14:question_text>To determine if env_reset has been configured for sudo, run the following command:
-$ sudo grep -ri "^[\s]*Defaults.*\benv_reset\b.*" /etc/sudoers /etc/sudoers.d/
-The command should return a matching output.
-      Is it the case that env_reset is not enabled in sudo?
-      </ns14:question_text>
-        </ns14:boolean_question>
-        <ns14:boolean_question id="ocil:ssg-logind_session_timeout_question:question:1">
-          <ns14:question_text>Display the contents of the file /etc/systemd/logind.conf:
-cat /etc/systemd/logind.conf
-Ensure that there is a section [login] which contains the
-configuration StopIdleSessionSec=.
-      Is it the case that the option is not configured?
+        <ns14:boolean_question id="ocil:ssg-sshd_disable_root_login_question:question:1">
+          <ns14:question_text>To determine how the SSH daemon's PermitRootLogin option is set, run the following command:
+
+$ sudo grep -i PermitRootLogin /etc/ssh/sshd_config
+
+If a line indicating no is returned, then the required value is set.
+
+      Is it the case that the required value is not set?
       </ns14:question_text>
         </ns14:boolean_question>
         <ns14:boolean_question id="ocil:ssg-file_owner_etc_shadow_question:question:1">
@@ -6457,6 +6442,48 @@ root
       Is it the case that /etc/shadow does not have an owner of root?
       </ns14:question_text>
         </ns14:boolean_question>
+        <ns14:boolean_question id="ocil:ssg-sudo_add_noexec_question:question:1">
+          <ns14:question_text>To determine if NOEXEC has been configured for sudo, run the following command:
+$ sudo grep -ri "^[\s]*Defaults.*\bnoexec\b.*" /etc/sudoers /etc/sudoers.d/
+The command should return a matching output.
+      Is it the case that noexec is not enabled in sudo?
+      </ns14:question_text>
+        </ns14:boolean_question>
+        <ns14:boolean_question id="ocil:ssg-sudo_add_umask_question:question:1">
+          <ns14:question_text>To determine if umask has been configured for sudo with the appropriate value,
+run the following command:
+$ sudo grep -ri '^Defaults.*umask=' /etc/sudoers /etc/sudoers.d/
+The command should return a matching output.
+      Is it the case that umask is not set with the appropriate value for sudo?
+      </ns14:question_text>
+        </ns14:boolean_question>
+        <ns14:boolean_question id="ocil:ssg-file_groupowner_etc_shadow_question:question:1">
+          <ns14:question_text>To check the group ownership of /etc/shadow,
+run the command:
+$ ls -lL /etc/shadow
+If properly configured, the output should indicate the following group-owner:
+root
+      Is it the case that /etc/shadow does not have a group owner of root?
+      </ns14:question_text>
+        </ns14:boolean_question>
+        <ns14:boolean_question id="ocil:ssg-accounts_tmout_question:question:1">
+          <ns14:question_text>Run the following command to ensure the TMOUT value is configured for all users
+on the system:
+
+$ sudo grep TMOUT /etc/profile /etc/profile.d/*.sh
+
+The output should return the following:
+TMOUT=
+      Is it the case that value of TMOUT is not less than or equal to expected setting?
+      </ns14:question_text>
+        </ns14:boolean_question>
+        <ns14:boolean_question id="ocil:ssg-sudo_add_requiretty_question:question:1">
+          <ns14:question_text>To determine if requiretty has been configured for sudo, run the following command:
+$ sudo grep -ri "^[\s]*Defaults.*\brequiretty\b.*" /etc/sudoers /etc/sudoers.d/
+The command should return a matching output.
+      Is it the case that requiretty is not enabled in sudo?
+      </ns14:question_text>
+        </ns14:boolean_question>
         <ns14:boolean_question id="ocil:ssg-accounts_umask_etc_login_defs_question:question:1">
           <ns14:question_text>Verify Gentoo defines default permissions for all authenticated users in such a way that the user can only read and modify their own files with the following command:
 
@@ -6464,67 +6491,6 @@ root
 
 UMASK 
       Is it the case that the value for the "UMASK" parameter is not "&lt;sub idref="var_accounts_user_umask" /&gt;", or the "UMASK" parameter is missing or is commented out?
-      </ns14:question_text>
-        </ns14:boolean_question>
-        <ns14:boolean_question id="ocil:ssg-file_owner_etc_gshadow_question:question:1">
-          <ns14:question_text>To check the ownership of /etc/gshadow,
-run the command:
-$ ls -lL /etc/gshadow
-If properly configured, the output should indicate the following owner:
-root
-      Is it the case that /etc/gshadow does not have an owner of root?
-      </ns14:question_text>
-        </ns14:boolean_question>
-        <ns14:boolean_question id="ocil:ssg-accounts_password_pam_minlen_question:question:1">
-          <ns14:question_text>Verify that Gentoo enforces a minimum -character password length with the following command:
-
-$ grep minlen /etc/security/pwquality.conf
-
-minlen = 
-      Is it the case that the command does not return a "minlen" value of "&lt;sub idref="var_password_pam_minlen" /&gt;" or greater, does not return a line, or the line is commented out?
-      </ns14:question_text>
-        </ns14:boolean_question>
-        <ns14:boolean_question id="ocil:ssg-file_permissions_etc_shadow_question:question:1">
-          <ns14:question_text>To check the permissions of /etc/shadow,
-run the command:
-$ ls -l /etc/shadow
-If properly configured, the output should indicate the following permissions:
-----------
-      Is it the case that /etc/shadow does not have unix mode ----------?
-      </ns14:question_text>
-        </ns14:boolean_question>
-        <ns14:boolean_question id="ocil:ssg-accounts_umask_etc_profile_question:question:1">
-          <ns14:question_text>Verify the umask setting is configured correctly in the /etc/profile file
-or scripts within /etc/profile.d directory with the following command:
-$ grep "umask" /etc/profile*
-umask 
-      Is it the case that the value for the "umask" parameter is not "&lt;sub idref="var_accounts_user_umask" /&gt;",
-or the "umask" parameter is missing or is commented out?
-      </ns14:question_text>
-        </ns14:boolean_question>
-        <ns14:boolean_question id="ocil:ssg-accounts_password_pam_ocredit_question:question:1">
-          <ns14:question_text>Verify that Gentoo enforces password complexity by requiring that at least one special character with the following command:
-
-$ sudo grep ocredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/*.conf
-
-ocredit = 
-      Is it the case that value of "ocredit" is a positive number or is commented out?
-      </ns14:question_text>
-        </ns14:boolean_question>
-        <ns14:boolean_question id="ocil:ssg-sudo_add_use_pty_question:question:1">
-          <ns14:question_text>To determine if use_pty has been configured for sudo, run the following command:
-$ sudo grep -ri "^[\s]*Defaults.*\buse_pty\b.*" /etc/sudoers /etc/sudoers.d/
-The command should return a matching output.
-      Is it the case that use_pty is not enabled in sudo?
-      </ns14:question_text>
-        </ns14:boolean_question>
-        <ns14:boolean_question id="ocil:ssg-file_groupowner_etc_gshadow_question:question:1">
-          <ns14:question_text>To check the group ownership of /etc/gshadow,
-run the command:
-$ ls -lL /etc/gshadow
-If properly configured, the output should indicate the following group-owner:
-root
-      Is it the case that /etc/gshadow does not have a group owner of root?
       </ns14:question_text>
         </ns14:boolean_question>
         <ns14:boolean_question id="ocil:ssg-accounts_password_pam_dcredit_question:question:1">
@@ -6538,42 +6504,28 @@ $ sudo grep dcredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/
       Is it the case that the value of "dcredit" is a positive number or is commented out?
       </ns14:question_text>
         </ns14:boolean_question>
-        <ns14:boolean_question id="ocil:ssg-file_permissions_etc_gshadow_question:question:1">
-          <ns14:question_text>To check the permissions of /etc/gshadow,
+        <ns14:boolean_question id="ocil:ssg-file_groupowner_etc_gshadow_question:question:1">
+          <ns14:question_text>To check the group ownership of /etc/gshadow,
 run the command:
-$ ls -l /etc/gshadow
-If properly configured, the output should indicate the following permissions:
-----------
-      Is it the case that /etc/gshadow does not have unix mode ----------?
+$ ls -lL /etc/gshadow
+If properly configured, the output should indicate the following group-owner:
+root
+      Is it the case that /etc/gshadow does not have a group owner of root?
       </ns14:question_text>
         </ns14:boolean_question>
-        <ns14:boolean_question id="ocil:ssg-sudo_add_noexec_question:question:1">
-          <ns14:question_text>To determine if NOEXEC has been configured for sudo, run the following command:
-$ sudo grep -ri "^[\s]*Defaults.*\bnoexec\b.*" /etc/sudoers /etc/sudoers.d/
+        <ns14:boolean_question id="ocil:ssg-logind_session_timeout_question:question:1">
+          <ns14:question_text>Display the contents of the file /etc/systemd/logind.conf:
+cat /etc/systemd/logind.conf
+Ensure that there is a section [login] which contains the
+configuration StopIdleSessionSec=.
+      Is it the case that the option is not configured?
+      </ns14:question_text>
+        </ns14:boolean_question>
+        <ns14:boolean_question id="ocil:ssg-sudo_add_use_pty_question:question:1">
+          <ns14:question_text>To determine if use_pty has been configured for sudo, run the following command:
+$ sudo grep -ri "^[\s]*Defaults.*\buse_pty\b.*" /etc/sudoers /etc/sudoers.d/
 The command should return a matching output.
-      Is it the case that noexec is not enabled in sudo?
-      </ns14:question_text>
-        </ns14:boolean_question>
-        <ns14:boolean_question id="ocil:ssg-accounts_password_pam_lcredit_question:question:1">
-          <ns14:question_text>Verify that Gentoo enforces password complexity by requiring that at least one lower-case character.
-
-Check the value for "lcredit" with the following command:
-
-$ sudo grep lcredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/*.conf
-
-/etc/security/pwquality.conf:lcredit = -1
-      Is it the case that the value of "lcredit" is a positive number or is commented out?
-      </ns14:question_text>
-        </ns14:boolean_question>
-        <ns14:boolean_question id="ocil:ssg-accounts_tmout_question:question:1">
-          <ns14:question_text>Run the following command to ensure the TMOUT value is configured for all users
-on the system:
-
-$ sudo grep TMOUT /etc/profile /etc/profile.d/*.sh
-
-The output should return the following:
-TMOUT=
-      Is it the case that value of TMOUT is not less than or equal to expected setting?
+      Is it the case that use_pty is not enabled in sudo?
       </ns14:question_text>
         </ns14:boolean_question>
         <ns14:boolean_question id="ocil:ssg-accounts_password_pam_unix_remember_question:question:1">
@@ -6592,12 +6544,47 @@ The pam_pwhistory remember option must be configured only in one file.
       Is it the case that the value of remember is not equal to or greater than the expected value?
       </ns14:question_text>
         </ns14:boolean_question>
-        <ns14:boolean_question id="ocil:ssg-sudo_add_umask_question:question:1">
-          <ns14:question_text>To determine if umask has been configured for sudo with the appropriate value,
-run the following command:
-$ sudo grep -ri '^Defaults.*umask=' /etc/sudoers /etc/sudoers.d/
+        <ns14:boolean_question id="ocil:ssg-file_permissions_etc_shadow_question:question:1">
+          <ns14:question_text>To check the permissions of /etc/shadow,
+run the command:
+$ ls -l /etc/shadow
+If properly configured, the output should indicate the following permissions:
+----------
+      Is it the case that /etc/shadow does not have unix mode ----------?
+      </ns14:question_text>
+        </ns14:boolean_question>
+        <ns14:boolean_question id="ocil:ssg-accounts_password_pam_minlen_question:question:1">
+          <ns14:question_text>Verify that Gentoo enforces a minimum -character password length with the following command:
+
+$ grep minlen /etc/security/pwquality.conf
+
+minlen = 
+      Is it the case that the command does not return a "minlen" value of "&lt;sub idref="var_password_pam_minlen" /&gt;" or greater, does not return a line, or the line is commented out?
+      </ns14:question_text>
+        </ns14:boolean_question>
+        <ns14:boolean_question id="ocil:ssg-file_permissions_etc_gshadow_question:question:1">
+          <ns14:question_text>To check the permissions of /etc/gshadow,
+run the command:
+$ ls -l /etc/gshadow
+If properly configured, the output should indicate the following permissions:
+----------
+      Is it the case that /etc/gshadow does not have unix mode ----------?
+      </ns14:question_text>
+        </ns14:boolean_question>
+        <ns14:boolean_question id="ocil:ssg-file_owner_etc_gshadow_question:question:1">
+          <ns14:question_text>To check the ownership of /etc/gshadow,
+run the command:
+$ ls -lL /etc/gshadow
+If properly configured, the output should indicate the following owner:
+root
+      Is it the case that /etc/gshadow does not have an owner of root?
+      </ns14:question_text>
+        </ns14:boolean_question>
+        <ns14:boolean_question id="ocil:ssg-sudo_add_ignore_dot_question:question:1">
+          <ns14:question_text>To determine if ignore_dot has been configured for sudo, run the following command:
+$ sudo grep -ri "^[\s]*Defaults.*\bignore_dot\b.*" /etc/sudoers /etc/sudoers.d/
 The command should return a matching output.
-      Is it the case that umask is not set with the appropriate value for sudo?
+      Is it the case that ignore_dot is not enabled in sudo?
       </ns14:question_text>
         </ns14:boolean_question>
         <ns14:boolean_question id="ocil:ssg-accounts_umask_etc_bashrc_question:question:1">
@@ -6609,25 +6596,60 @@ umask
       Is it the case that the value for the "umask" parameter is not "&lt;sub idref="var_accounts_user_umask" /&gt;", or the "umask" parameter is missing or is commented out?
       </ns14:question_text>
         </ns14:boolean_question>
-        <ns14:boolean_question id="ocil:ssg-file_groupowner_etc_shadow_question:question:1">
-          <ns14:question_text>To check the group ownership of /etc/shadow,
-run the command:
-$ ls -lL /etc/shadow
-If properly configured, the output should indicate the following group-owner:
-root
-      Is it the case that /etc/shadow does not have a group owner of root?
+        <ns14:boolean_question id="ocil:ssg-no_direct_root_logins_question:question:1">
+          <ns14:question_text>To ensure root may not directly login to the system over physical consoles,
+run the following command:
+cat /etc/securetty
+If any output is returned, this is a finding.
+      Is it the case that the /etc/securetty file is not empty?
+      </ns14:question_text>
+        </ns14:boolean_question>
+        <ns14:boolean_question id="ocil:ssg-accounts_password_pam_ocredit_question:question:1">
+          <ns14:question_text>Verify that Gentoo enforces password complexity by requiring that at least one special character with the following command:
+
+$ sudo grep ocredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/*.conf
+
+ocredit = 
+      Is it the case that value of "ocredit" is a positive number or is commented out?
+      </ns14:question_text>
+        </ns14:boolean_question>
+        <ns14:boolean_question id="ocil:ssg-sudo_add_env_reset_question:question:1">
+          <ns14:question_text>To determine if env_reset has been configured for sudo, run the following command:
+$ sudo grep -ri "^[\s]*Defaults.*\benv_reset\b.*" /etc/sudoers /etc/sudoers.d/
+The command should return a matching output.
+      Is it the case that env_reset is not enabled in sudo?
+      </ns14:question_text>
+        </ns14:boolean_question>
+        <ns14:boolean_question id="ocil:ssg-accounts_password_pam_lcredit_question:question:1">
+          <ns14:question_text>Verify that Gentoo enforces password complexity by requiring that at least one lower-case character.
+
+Check the value for "lcredit" with the following command:
+
+$ sudo grep lcredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/*.conf
+
+/etc/security/pwquality.conf:lcredit = -1
+      Is it the case that the value of "lcredit" is a positive number or is commented out?
+      </ns14:question_text>
+        </ns14:boolean_question>
+        <ns14:boolean_question id="ocil:ssg-accounts_umask_etc_profile_question:question:1">
+          <ns14:question_text>Verify the umask setting is configured correctly in the /etc/profile file
+or scripts within /etc/profile.d directory with the following command:
+$ grep "umask" /etc/profile*
+umask 
+      Is it the case that the value for the "umask" parameter is not "&lt;sub idref="var_accounts_user_umask" /&gt;",
+or the "umask" parameter is missing or is commented out?
       </ns14:question_text>
         </ns14:boolean_question>
       </ns14:questions>
     </ns14:ocil>
   </ns0:component>
-  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-cpe-oval.xml" timestamp="2024-06-13T09:08:49">
+  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-cpe-oval.xml" timestamp="2024-06-04T10:20:28">
     <ns9:oval_definitions xsi:schemaLocation="http://oval.mitre.org/XMLSchema/oval-common-5 oval-common-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5 oval-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#independent independent-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#unix unix-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#linux linux-definitions-schema.xsd">
       <ns9:generator>
         <ns10:product_name>build_cpe.py from SCAP Security Guide</ns10:product_name>
         <ns10:product_version>ssg: [0, 1, 73], python: 3.11.9</ns10:product_version>
         <ns10:schema_version>5.11</ns10:schema_version>
-        <ns10:timestamp>2024-06-13T07:08:48</ns10:timestamp>
+        <ns10:timestamp>2024-06-04T08:20:28</ns10:timestamp>
       </ns9:generator>
       <ns9:definitions>
         <ns9:definition id="oval:ssg-installed_env_is_a_container:def:1" version="2" class="inventory">

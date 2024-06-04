@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <xccdf-1.2:Benchmark xmlns:cpe-lang="http://cpe.mitre.org/language/2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xccdf-1.2="http://checklists.nist.gov/xccdf/1.2" id="xccdf_org.ssgproject.content_benchmark_GENTOO" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://checklists.nist.gov/xccdf/1.2 xccdf-1.2.xsd" style="SCAP_1.2" resolved="true" xml:lang="en-US">
-  <xccdf-1.2:status date="2024-06-13">draft</xccdf-1.2:status>
+  <xccdf-1.2:status date="2024-06-04">draft</xccdf-1.2:status>
   <xccdf-1.2:title>Guide to the Secure Configuration of Gentoo</xccdf-1.2:title>
   <xccdf-1.2:description>This guide presents a catalog of security-relevant
 configuration settings for Gentoo. It is a rendering of
@@ -442,6 +442,28 @@ respective companies.</xccdf-1.2:rear-matter>
     <xccdf-1.2:refine-value idref="xccdf_org.ssgproject.content_value_var_logind_session_timeout" selector="10_minutes" />
     <xccdf-1.2:refine-value idref="xccdf_org.ssgproject.content_value_var_accounts_user_umask" selector="077" />
     <xccdf-1.2:refine-value idref="xccdf_org.ssgproject.content_value_var_sudo_umask" selector="0077" />
+  </xccdf-1.2:Profile>
+  <xccdf-1.2:Profile id="xccdf_org.ssgproject.content_profile_anssi_test">
+    <xccdf-1.2:title override="true">ANSSI-BP-028 test</xccdf-1.2:title>
+    <xccdf-1.2:description override="true">Pass</xccdf-1.2:description>
+    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit" selected="true" />
+    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen" selected="true" />
+    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_group_accounts-physical" selected="false" />
+    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_group_accounts-restrictions" selected="false" />
+    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_group_accounts-session" selected="false" />
+    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_group_files" selected="false" />
+    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_group_locking_out_password_attempts" selected="false" />
+    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_group_permissions" selected="false" />
+    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_group_permissions_important_account_files" selected="false" />
+    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_group_root_logins" selected="false" />
+    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_group_services" selected="false" />
+    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_group_software" selected="false" />
+    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_group_ssh" selected="false" />
+    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_group_ssh_server" selected="false" />
+    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_group_sudo" selected="false" />
+    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_group_user_umask" selected="false" />
+    <xccdf-1.2:refine-value idref="xccdf_org.ssgproject.content_value_var_password_pam_minlen" selector="15" />
+    <xccdf-1.2:refine-value idref="xccdf_org.ssgproject.content_value_var_password_pam_dcredit" selector="1" />
   </xccdf-1.2:Profile>
   <xccdf-1.2:Group id="xccdf_org.ssgproject.content_group_system">
     <xccdf-1.2:title>System Settings</xccdf-1.2:title>

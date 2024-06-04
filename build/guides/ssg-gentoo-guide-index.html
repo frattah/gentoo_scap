@@ -35,13 +35,14 @@
 	</head>
 	<body onload="document.getElementById('js_switcher').style.display = 'block'">
 		<noscript>
-Profiles: <a target="guide" href="ssg-gentoo-guide-anssi_bp28.html">ANSSI-BP-028 in xccdf_org.ssgproject.content_benchmark_GENTOO</a>
+Profiles: <a target="guide" href="ssg-gentoo-guide-anssi_bp28.html">ANSSI-BP-028 in xccdf_org.ssgproject.content_benchmark_GENTOO</a>, <a target="guide" href="ssg-gentoo-guide-anssi_test.html">ANSSI-BP-028 test in xccdf_org.ssgproject.content_benchmark_GENTOO</a>
 		</noscript>
 		<div id="js_switcher" style="display: none">
 			Profile: 
 			<select style="margin-bottom: 5px" onchange="change_profile(this.options[this.selectedIndex]);">
 
 <option value="ssg-gentoo-guide-anssi_bp28.html" data-benchmark-id="" data-profile-id="xccdf_org.ssgproject.content_profile_anssi_bp28">ANSSI-BP-028</option>
+<option value="ssg-gentoo-guide-anssi_test.html" data-benchmark-id="" data-profile-id="xccdf_org.ssgproject.content_profile_anssi_test">ANSSI-BP-028 test</option>
 			</select>
 			<div id='eval_snippet' style='background: #eee; padding: 3px; border: 1px solid #000'>select a profile to display its guide and a command line snippet needed to use it</div>
 		</div>

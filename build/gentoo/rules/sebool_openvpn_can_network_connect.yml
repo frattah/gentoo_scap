@@ -38,12 +38,12 @@ platform: null
 platforms: !!set {}
 sce_metadata: {}
 inherited_platforms: !!set
-    machine: null
     selinux: null
+    machine: null
 cpe_platform_names: !!set {}
 inherited_cpe_platform_names: !!set
-    machine: null
     selinux: null
+    machine: null
 bash_conditional: null
 fixes: {}
 title: Disable the openvpn_can_network_connect SELinux Boolean
