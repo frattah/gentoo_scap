@@ -300,7 +300,7 @@ bash_conditional: null
 fixes: {}
 title: Disable Kernel Parameter for Accepting Source-Routed Packets on IPv4 Interfaces
     by Default
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-kernel/network_host_and_router_parameters/sysctl_net_ipv4_conf_default_accept_source_route/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-kernel/network_host_and_router_parameters/sysctl_net_ipv4_conf_default_accept_source_route/rule.yml
 template:
     name: sysctl
     vars:

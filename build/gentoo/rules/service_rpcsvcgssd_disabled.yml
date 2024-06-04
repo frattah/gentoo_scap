@@ -15,8 +15,8 @@ rationale: Unnecessary services should be disabled to decrease the attack surfac
 severity: unknown
 references: {}
 components:
-- libnfs
 - nfs-utils
+- libnfs
 identifiers: {}
 ocil_clause: the "rpcsvcgssd" is loaded and not masked
 ocil: 'To check that the <code>rpcsvcgssd</code> service is disabled in system boot
@@ -78,7 +78,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Disable Secure RPC Server Service (rpcsvcgssd)
-definition_location: /home/frattah/old/linux_os/guide/services/nfs_and_rpc/nfs_configuring_clients/disabling_nfsd/service_rpcsvcgssd_disabled/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/nfs_and_rpc/nfs_configuring_clients/disabling_nfsd/service_rpcsvcgssd_disabled/rule.yml
 template:
     name: service_disabled
     vars:

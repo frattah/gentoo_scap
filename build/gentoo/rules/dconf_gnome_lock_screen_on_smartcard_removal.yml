@@ -156,7 +156,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Enable the GNOME3 Screen Locking On Smartcard Removal
-definition_location: /home/frattah/old/linux_os/guide/system/software/gnome/gnome_login_screen/dconf_gnome_lock_screen_on_smartcard_removal/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/gnome/gnome_login_screen/dconf_gnome_lock_screen_on_smartcard_removal/rule.yml
 template:
     name: dconf_ini_file
     vars:

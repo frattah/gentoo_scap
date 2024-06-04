@@ -62,7 +62,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Record Attempts to Alter Process and Session Initiation Information btmp
-definition_location: /home/frattah/old/linux_os/guide/auditing/auditd_configure_rules/audit_rules_session_events_btmp/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/auditd_configure_rules/audit_rules_session_events_btmp/rule.yml
 template:
     name: audit_rules_login_events
     vars:

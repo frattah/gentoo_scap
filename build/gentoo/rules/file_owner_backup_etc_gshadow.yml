@@ -75,7 +75,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Verify User Who Owns Backup gshadow File
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/files/permissions_important_account_files/file_owner_backup_etc_gshadow/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/files/permissions_important_account_files/file_owner_backup_etc_gshadow/rule.yml
 template:
     name: file_owner
     vars:

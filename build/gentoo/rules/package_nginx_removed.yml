@@ -78,8 +78,8 @@ references:
     - PR.IP-1
     - PR.PT-3
 components:
-- httpd
 - nginx
+- httpd
 identifiers: {}
 ocil_clause: the package is installed
 ocil: 'Run the following command to determine if the <code>nginx</code> package is
@@ -104,7 +104,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Uninstall nginx Package
-definition_location: /home/frattah/old/linux_os/guide/services/http/disabling_nginx/package_nginx_removed/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/http/disabling_nginx/package_nginx_removed/rule.yml
 template:
     name: package_removed
     vars:

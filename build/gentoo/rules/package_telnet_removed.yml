@@ -55,7 +55,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Remove telnet Clients
-definition_location: /home/frattah/old/linux_os/guide/services/obsolete/telnet/package_telnet_removed/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/obsolete/telnet/package_telnet_removed/rule.yml
 template:
     name: package_removed
     vars:

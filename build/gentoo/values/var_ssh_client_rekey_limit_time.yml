@@ -13,5 +13,5 @@ options:
     1hour: 1h
 warnings: []
 title: SSH client RekeyLimit - time
-definition_location: /home/frattah/old/linux_os/guide/system/software/integrity/crypto/var_ssh_client_rekey_limit_time.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/integrity/crypto/var_ssh_client_rekey_limit_time.var
 documentation_complete: true

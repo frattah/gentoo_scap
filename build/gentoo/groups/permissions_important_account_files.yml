@@ -48,5 +48,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: Verify Permissions on Files with Local Account Information and Credentials
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/files/permissions_important_account_files/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/files/permissions_important_account_files/group.yml
 documentation_complete: true

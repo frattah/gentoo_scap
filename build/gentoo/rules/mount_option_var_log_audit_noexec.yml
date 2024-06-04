@@ -93,7 +93,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Add noexec Option to /var/log/audit
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/partitions/mount_option_var_log_audit_noexec/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/partitions/mount_option_var_log_audit_noexec/rule.yml
 template:
     name: mount_option
     vars:

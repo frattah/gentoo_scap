@@ -103,6 +103,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Disable Avahi Publishing
-definition_location: /home/frattah/old/linux_os/guide/services/avahi/avahi_configuration/avahi_disable_publishing/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/avahi/avahi_configuration/avahi_disable_publishing/rule.yml
 template: null
 documentation_complete: true

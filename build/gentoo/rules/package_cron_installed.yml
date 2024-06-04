@@ -111,7 +111,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Install the cron service
-definition_location: /home/frattah/old/linux_os/guide/services/cron_and_at/package_cron_installed/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/cron_and_at/package_cron_installed/rule.yml
 template:
     name: package_installed
     vars:

@@ -7,5 +7,5 @@ events:
       - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:233 (message)"
       - "CMakeLists.txt:20 (project)"
     message: |
-      The system is: Linux - 6.8.5-301.fc40.x86_64 - x86_64
+      The system is: Linux - 6.6.28-gentoo-dist - x86_64
 ...

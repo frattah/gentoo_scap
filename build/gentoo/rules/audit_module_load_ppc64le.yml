@@ -69,7 +69,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Configure auditing of loading and unloading of kernel modules (ppc64le)
-definition_location: /home/frattah/old/linux_os/guide/auditing/policy_rules/audit_module_load_ppc64le/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/policy_rules/audit_module_load_ppc64le/rule.yml
 template:
     name: audit_file_contents
     vars:

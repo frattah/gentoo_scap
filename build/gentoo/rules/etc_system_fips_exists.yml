@@ -95,6 +95,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Ensure '/etc/system-fips' exists
-definition_location: /home/frattah/old/linux_os/guide/system/software/integrity/fips/etc_system_fips_exists/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/integrity/fips/etc_system_fips_exists/rule.yml
 template: null
 documentation_complete: true

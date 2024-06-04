@@ -67,5 +67,5 @@ inherited_platforms: !!set {}
 cpe_platform_names: !!set
     ipv6_enabled: null
 title: Configure IPv6 Settings if Necessary
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-ipv6/configuring_ipv6/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-ipv6/configuring_ipv6/group.yml
 documentation_complete: true

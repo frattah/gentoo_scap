@@ -187,7 +187,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Disable Modprobe Loading of USB Storage Driver
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/mounting/kernel_module_usb-storage_disabled/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/mounting/kernel_module_usb-storage_disabled/rule.yml
 template:
     name: kernel_module_disabled
     vars:

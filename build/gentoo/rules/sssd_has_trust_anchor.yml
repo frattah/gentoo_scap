@@ -202,6 +202,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: SSSD Has a Correct Trust Anchor
-definition_location: /home/frattah/old/linux_os/guide/services/sssd/sssd_has_trust_anchor/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/sssd/sssd_has_trust_anchor/rule.yml
 template: null
 documentation_complete: true

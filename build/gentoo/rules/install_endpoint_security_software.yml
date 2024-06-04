@@ -45,6 +45,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Install an Endpoint Security Solution
-definition_location: /home/frattah/old/linux_os/guide/system/software/integrity/endpoint_security_software/install_endpoint_security_software/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/integrity/endpoint_security_software/install_endpoint_security_software/rule.yml
 template: null
 documentation_complete: true

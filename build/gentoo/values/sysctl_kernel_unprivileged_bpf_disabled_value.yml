@@ -8,5 +8,5 @@ options:
     2: '2'
 warnings: []
 title: kernel.unprivileged_bpf_disabled
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/restrictions/sysctl_kernel_unprivileged_bpf_disabled_value.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/restrictions/sysctl_kernel_unprivileged_bpf_disabled_value.var
 documentation_complete: true

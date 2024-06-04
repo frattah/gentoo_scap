@@ -19,5 +19,5 @@ inherited_platforms: !!set
 cpe_platform_names: !!set
     package_postfix: null
 title: Configure Operating System to Protect Mail Server
-definition_location: /home/frattah/old/linux_os/guide/services/mail/postfix_harden_os/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/mail/postfix_harden_os/group.yml
 documentation_complete: true

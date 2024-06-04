@@ -78,6 +78,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Set the GNOME3 Login Number of Failures
-definition_location: /home/frattah/old/linux_os/guide/system/software/gnome/gnome_login_screen/dconf_gnome_login_retries/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/gnome/gnome_login_screen/dconf_gnome_login_retries/rule.yml
 template: null
 documentation_complete: true

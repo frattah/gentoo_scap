@@ -49,5 +49,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: Minimize Modules for HTTP Basic Authentication
-definition_location: /home/frattah/old/linux_os/guide/services/http/securing_httpd/httpd_minimize_loadable_modules/httpd_core_modules/httpd_basic_authentication/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/http/securing_httpd/httpd_minimize_loadable_modules/httpd_core_modules/httpd_basic_authentication/group.yml
 documentation_complete: true

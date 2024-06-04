@@ -64,6 +64,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Set configuration for loopback traffic
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-iptables/iptables_activation/set_loopback_traffic/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-iptables/iptables_activation/set_loopback_traffic/rule.yml
 template: null
 documentation_complete: true

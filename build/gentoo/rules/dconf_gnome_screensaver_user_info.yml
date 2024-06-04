@@ -70,6 +70,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Disable Full User Name on Splash Shield
-definition_location: /home/frattah/old/linux_os/guide/system/software/gnome/gnome_screen_locking/dconf_gnome_screensaver_user_info/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/gnome/gnome_screen_locking/dconf_gnome_screensaver_user_info/rule.yml
 template: null
 documentation_complete: true

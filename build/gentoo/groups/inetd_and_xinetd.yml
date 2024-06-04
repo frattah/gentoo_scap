@@ -31,5 +31,5 @@ inherited_platforms: !!set {}
 cpe_platform_names: !!set
     machine: null
 title: Xinetd
-definition_location: /home/frattah/old/linux_os/guide/services/obsolete/inetd_and_xinetd/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/obsolete/inetd_and_xinetd/group.yml
 documentation_complete: true

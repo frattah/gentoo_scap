@@ -38,5 +38,5 @@ inherited_platforms: !!set {}
 cpe_platform_names: !!set
     machine: null
 title: Mount Remote Filesystems with Restrictive Options
-definition_location: /home/frattah/old/linux_os/guide/services/nfs_and_rpc/nfs_configuring_clients/mounting_remote_filesystems/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/nfs_and_rpc/nfs_configuring_clients/mounting_remote_filesystems/group.yml
 documentation_complete: true

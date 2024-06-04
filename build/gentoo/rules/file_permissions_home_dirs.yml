@@ -128,6 +128,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Ensure that User Home Directories are not Group-Writable or World-Readable
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-session/file_permissions_home_dirs/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-session/file_permissions_home_dirs/rule.yml
 template: null
 documentation_complete: true

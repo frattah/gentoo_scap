@@ -81,7 +81,7 @@ args:
         ver_specs_title: ''
 content_id: ssg
 title: The {mountpoint} mountpoint is active (mounted) or configured in /etc/fstab
-definition_location: /home/frattah/old/shared/applicability/mount.yml
+definition_location: /home/fra/gentoo_scap/shared/applicability/mount.yml
 template:
     name: platform_mount
 documentation_complete: true

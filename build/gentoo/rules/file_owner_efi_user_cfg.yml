@@ -111,7 +111,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Verify /boot/grub2/user.cfg User Ownership
-definition_location: /home/frattah/old/linux_os/guide/system/bootloader-grub2/uefi/file_owner_efi_user_cfg/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/bootloader-grub2/uefi/file_owner_efi_user_cfg/rule.yml
 template:
     name: file_owner
     vars:

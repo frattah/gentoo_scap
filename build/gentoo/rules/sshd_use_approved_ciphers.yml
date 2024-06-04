@@ -281,6 +281,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Use Only FIPS 140-2 Validated Ciphers
-definition_location: /home/frattah/old/linux_os/guide/services/ssh/ssh_server/sshd_use_approved_ciphers/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ssh/ssh_server/sshd_use_approved_ciphers/rule.yml
 template: null
 documentation_complete: true

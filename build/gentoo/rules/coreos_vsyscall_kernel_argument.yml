@@ -15,8 +15,8 @@ references:
     - SRG-OS-000480-GPOS-00227
     - SRG-APP-000243-CTR-000600
 components:
-- grub2
 - kernel
+- grub2
 identifiers: {}
 ocil_clause: vsyscalls are enabled
 ocil: 'Inspect the form of all the BLS (Boot Loader Specification) entries
@@ -52,7 +52,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Disable vsyscalls
-definition_location: /home/frattah/old/linux_os/guide/system/bootloader-grub2/coreos_vsyscall_kernel_argument/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/bootloader-grub2/coreos_vsyscall_kernel_argument/rule.yml
 template:
     name: coreos_kernel_option
     vars:

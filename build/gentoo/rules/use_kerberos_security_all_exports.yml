@@ -152,6 +152,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Use Kerberos Security on All Exports
-definition_location: /home/frattah/old/linux_os/guide/services/nfs_and_rpc/nfs_configuring_servers/use_kerberos_security_all_exports/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/nfs_and_rpc/nfs_configuring_servers/use_kerberos_security_all_exports/rule.yml
 template: null
 documentation_complete: true

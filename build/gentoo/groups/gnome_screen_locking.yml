@@ -34,5 +34,5 @@ inherited_platforms: !!set
     package[gdm]: null
 cpe_platform_names: !!set {}
 title: Configure GNOME Screen Locking
-definition_location: /home/frattah/old/linux_os/guide/system/software/gnome/gnome_screen_locking/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/gnome/gnome_screen_locking/group.yml
 documentation_complete: true

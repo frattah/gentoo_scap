@@ -14,5 +14,5 @@ options:
     ignore: ignore
 warnings: []
 title: Action for audispd to take when network fails
-definition_location: /home/frattah/old/linux_os/guide/auditing/configure_auditd_data_retention/var_audispd_network_failure_action.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/configure_auditd_data_retention/var_audispd_network_failure_action.var
 documentation_complete: true

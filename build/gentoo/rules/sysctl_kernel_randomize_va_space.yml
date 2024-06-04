@@ -168,7 +168,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Enable Randomized Layout of Virtual Address Space
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/restrictions/enable_execshield_settings/sysctl_kernel_randomize_va_space/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/restrictions/enable_execshield_settings/sysctl_kernel_randomize_va_space/rule.yml
 template:
     name: sysctl
     vars:

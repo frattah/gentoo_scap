@@ -121,6 +121,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Configure tmux to lock session after inactivity
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-physical/screen_locking/console_screen_locking/configure_tmux_lock_after_time/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-physical/screen_locking/console_screen_locking/configure_tmux_lock_after_time/rule.yml
 template: null
 documentation_complete: true

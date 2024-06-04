@@ -2,7 +2,7 @@ id: pcidss_ocp4
 policy: PCI-DSS
 title: Configuration Recommendations of a GNU/Linux System
 source: https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf
-definition_location: /home/frattah/old/controls/pcidss_ocp4.yml
+definition_location: /home/fra/gentoo_scap/controls/pcidss_ocp4.yml
 controls:
 -   id: Req-1.1.1
     levels:

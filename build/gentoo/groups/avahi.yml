@@ -22,5 +22,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: Avahi Server
-definition_location: /home/frattah/old/linux_os/guide/services/avahi/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/avahi/group.yml
 documentation_complete: true

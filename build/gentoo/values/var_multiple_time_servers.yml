@@ -13,5 +13,5 @@ options:
     alinux: 0.ntp.cloud.aliyuncs.com,1.ntp.aliyun.com,2.ntp1.aliyun.com,3.ntp1.cloud.aliyuncs.com
 warnings: []
 title: Vendor Approved Time Servers
-definition_location: /home/frattah/old/linux_os/guide/services/ntp/var_multiple_time_servers.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ntp/var_multiple_time_servers.var
 documentation_complete: true

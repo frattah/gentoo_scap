@@ -6,5 +6,5 @@ xml_content: <ns0:platform xmlns:ns0="http://cpe.mitre.org/language/2.0" id="pac
 bash_conditional: rpm --quiet -q gdm
 ansible_conditional: '"gdm" in ansible_facts.packages'
 title: ''
-definition_location: /home/frattah/old/build/gentoo/platforms/package_gdm.yml
+definition_location: /home/fra/gentoo_scap/build/gentoo/platforms/package_gdm.yml
 documentation_complete: true

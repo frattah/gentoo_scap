@@ -211,6 +211,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Ensure No Daemons are Unconfined by SELinux
-definition_location: /home/frattah/old/linux_os/guide/system/selinux/selinux_confinement_of_daemons/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/selinux/selinux_confinement_of_daemons/rule.yml
 template: null
 documentation_complete: true

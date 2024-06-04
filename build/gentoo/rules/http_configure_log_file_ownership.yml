@@ -54,6 +54,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: HTTPD Log Files Must Be Owned By Root
-definition_location: /home/frattah/old/linux_os/guide/services/http/securing_httpd/httpd_configure_os_protect_web_server/httpd_restrict_file_dir_access/http_configure_log_file_ownership/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/http/securing_httpd/httpd_configure_os_protect_web_server/httpd_restrict_file_dir_access/http_configure_log_file_ownership/rule.yml
 template: null
 documentation_complete: true

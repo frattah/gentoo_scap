@@ -39,6 +39,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Ensure nonessential services are removed or masked
-definition_location: /home/frattah/old/linux_os/guide/services/mask_nonessential_services/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/mask_nonessential_services/rule.yml
 template: null
 documentation_complete: true

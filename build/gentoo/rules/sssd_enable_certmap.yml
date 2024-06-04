@@ -129,7 +129,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Enable Certmap in SSSD
-definition_location: /home/frattah/old/linux_os/guide/services/sssd/sssd_enable_certmap/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/sssd/sssd_enable_certmap/rule.yml
 template:
     name: lineinfile
     vars:

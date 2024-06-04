@@ -10,5 +10,5 @@ bash_conditional: ( ! ( rpm --quiet -q chrony ) && ! ( rpm --quiet -q ntp ) )
 ansible_conditional: ( not ( "chrony" in ansible_facts.packages ) and not ( "ntp"
     in ansible_facts.packages ) )
 title: ''
-definition_location: /home/frattah/old/build/gentoo/platforms/not_package_chrony_and_not_package_ntp.yml
+definition_location: /home/fra/gentoo_scap/build/gentoo/platforms/not_package_chrony_and_not_package_ntp.yml
 documentation_complete: true

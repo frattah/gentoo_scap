@@ -125,6 +125,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Set Permissions on the /var/log/httpd/ Directory
-definition_location: /home/frattah/old/linux_os/guide/services/http/securing_httpd/httpd_configure_os_protect_web_server/httpd_restrict_file_dir_access/dir_perms_var_log_httpd/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/http/securing_httpd/httpd_configure_os_protect_web_server/httpd_restrict_file_dir_access/dir_perms_var_log_httpd/rule.yml
 template: null
 documentation_complete: true

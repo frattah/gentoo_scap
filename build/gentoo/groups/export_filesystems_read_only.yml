@@ -19,5 +19,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: Export Filesystems Read-Only if Possible
-definition_location: /home/frattah/old/linux_os/guide/services/nfs_and_rpc/nfs_configuring_servers/export_filesystems_read_only/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/nfs_and_rpc/nfs_configuring_servers/export_filesystems_read_only/group.yml
 documentation_complete: true

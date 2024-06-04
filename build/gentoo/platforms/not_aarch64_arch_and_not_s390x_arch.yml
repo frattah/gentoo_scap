@@ -12,5 +12,5 @@ bash_conditional: ( ! ( grep -q aarch64 /proc/sys/kernel/osrelease ) && ! ( grep
 ansible_conditional: ( not ( ansible_architecture == "aarch64" ) and not ( ansible_architecture
     == "s390x" ) )
 title: ''
-definition_location: /home/frattah/old/build/gentoo/platforms/not_aarch64_arch_and_not_s390x_arch.yml
+definition_location: /home/fra/gentoo_scap/build/gentoo/platforms/not_aarch64_arch_and_not_s390x_arch.yml
 documentation_complete: true

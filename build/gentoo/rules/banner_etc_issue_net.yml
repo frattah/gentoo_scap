@@ -111,6 +111,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Modify the System Login Banner for Remote Connections
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-banners/banner_etc_issue_net/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-banners/banner_etc_issue_net/rule.yml
 template: null
 documentation_complete: true

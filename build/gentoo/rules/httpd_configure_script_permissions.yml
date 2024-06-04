@@ -47,6 +47,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Remove Write Permissions From Filesystem Paths And Server Scripts
-definition_location: /home/frattah/old/linux_os/guide/services/http/securing_httpd/httpd_directory_restrictions/httpd_configure_script_permissions/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/http/securing_httpd/httpd_directory_restrictions/httpd_configure_script_permissions/rule.yml
 template: null
 documentation_complete: true

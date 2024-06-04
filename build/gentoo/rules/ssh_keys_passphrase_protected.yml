@@ -102,6 +102,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Verify the SSH Private Key Files Have a Passcode
-definition_location: /home/frattah/old/linux_os/guide/services/ssh/ssh_client/ssh_keys_passphrase_protected/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ssh/ssh_client/ssh_keys_passphrase_protected/rule.yml
 template: null
 documentation_complete: true

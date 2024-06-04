@@ -154,7 +154,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Disable the use of user namespaces
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/restrictions/sysctl_user_max_user_namespaces/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/restrictions/sysctl_user_max_user_namespaces/rule.yml
 template:
     name: sysctl
     vars:

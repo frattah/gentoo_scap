@@ -107,6 +107,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Ensure Chrony is only configured with the server directive
-definition_location: /home/frattah/old/linux_os/guide/services/ntp/chronyd_server_directive/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ntp/chronyd_server_directive/rule.yml
 template: null
 documentation_complete: true

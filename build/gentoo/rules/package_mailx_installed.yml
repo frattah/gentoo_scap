@@ -45,7 +45,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: The mailx Package Is Installed
-definition_location: /home/frattah/old/linux_os/guide/services/mail/package_mailx_installed/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/mail/package_mailx_installed/rule.yml
 template:
     name: package_installed
     vars:

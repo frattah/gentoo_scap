@@ -51,6 +51,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Configure The Number of Allowed Simultaneous Requests
-definition_location: /home/frattah/old/linux_os/guide/services/http/securing_httpd/httpd_configure_max_keepalive_requests/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/http/securing_httpd/httpd_configure_max_keepalive_requests/rule.yml
 template: null
 documentation_complete: true

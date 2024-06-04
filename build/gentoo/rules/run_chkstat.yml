@@ -70,6 +70,6 @@ bash_conditional: null
 fixes: {}
 title: OS commands and libraries must have the proper permissions to protect from
     unauthorized access
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/permissions_local/run_chkstat/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/permissions_local/run_chkstat/rule.yml
 template: null
 documentation_complete: true

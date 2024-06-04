@@ -167,6 +167,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Log USBGuard daemon audit events using Linux Audit
-definition_location: /home/frattah/old/linux_os/guide/services/usbguard/configure_usbguard_auditbackend/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/usbguard/configure_usbguard_auditbackend/rule.yml
 template: null
 documentation_complete: true

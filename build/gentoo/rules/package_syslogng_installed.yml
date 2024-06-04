@@ -51,8 +51,8 @@ references:
     nist-csf:
     - PR.PT-1
 components:
-- rsyslog
 - syslog-ng
+- rsyslog
 identifiers: {}
 ocil_clause: the package is not installed
 ocil: 'Run the following command to determine if the <code>syslog-ng-core</code> package
@@ -77,7 +77,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Ensure syslog-ng is Installed
-definition_location: /home/frattah/old/linux_os/guide/system/logging/rsyslog_accepting_remote_messages/package_syslogng_installed/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/logging/rsyslog_accepting_remote_messages/package_syslogng_installed/rule.yml
 template:
     name: package_installed
     vars:

@@ -47,7 +47,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Verify Group Who Owns /etc/ipsec.d Directory
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-ipsec/directory_groupowner_etc_ipsecd/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-ipsec/directory_groupowner_etc_ipsecd/rule.yml
 template:
     name: file_groupowner
     vars:

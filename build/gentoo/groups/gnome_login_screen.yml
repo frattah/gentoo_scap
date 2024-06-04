@@ -26,5 +26,5 @@ inherited_platforms: !!set
     package[gdm]: null
 cpe_platform_names: !!set {}
 title: Configure GNOME Login Screen
-definition_location: /home/frattah/old/linux_os/guide/system/software/gnome/gnome_login_screen/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/gnome/gnome_login_screen/group.yml
 documentation_complete: true

@@ -49,6 +49,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Scan All Uploaded Content for Malicious Software
-definition_location: /home/frattah/old/linux_os/guide/services/http/securing_httpd/httpd_configure_os_protect_web_server/httpd_antivirus_scan_uploads/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/http/securing_httpd/httpd_configure_os_protect_web_server/httpd_antivirus_scan_uploads/rule.yml
 template: null
 documentation_complete: true

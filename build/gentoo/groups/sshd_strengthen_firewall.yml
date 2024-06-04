@@ -32,5 +32,5 @@ inherited_platforms: !!set
     machine: null
 cpe_platform_names: !!set {}
 title: Strengthen Firewall Configuration if Possible
-definition_location: /home/frattah/old/linux_os/guide/services/ssh/ssh_server/sshd_strengthen_firewall/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ssh/ssh_server/sshd_strengthen_firewall/group.yml
 documentation_complete: true

@@ -28,5 +28,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: Allow IMAP Clients to Access the Server
-definition_location: /home/frattah/old/linux_os/guide/services/imap/configure_dovecot/dovecot_allow_imap_access/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/imap/configure_dovecot/dovecot_allow_imap_access/group.yml
 documentation_complete: true

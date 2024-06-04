@@ -35,6 +35,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Ensure Solid State Drives Do Not Contribute To Random-Number Entropy Pool
-definition_location: /home/frattah/old/linux_os/guide/system/entropy/kernel_disable_entropy_contribution_for_solid_state_drives/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/entropy/kernel_disable_entropy_contribution_for_solid_state_drives/rule.yml
 template: null
 documentation_complete: true

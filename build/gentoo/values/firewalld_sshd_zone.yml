@@ -16,5 +16,5 @@ options:
     work: work
 warnings: []
 title: SSH enabled firewalld zone
-definition_location: /home/frattah/old/linux_os/guide/services/ssh/firewalld_sshd_zone.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ssh/firewalld_sshd_zone.var
 documentation_complete: true

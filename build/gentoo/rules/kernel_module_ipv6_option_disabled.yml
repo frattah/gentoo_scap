@@ -140,6 +140,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Disable IPv6 Networking Support Automatic Loading
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-ipv6/disabling_ipv6/kernel_module_ipv6_option_disabled/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-ipv6/disabling_ipv6/kernel_module_ipv6_option_disabled/rule.yml
 template: null
 documentation_complete: true

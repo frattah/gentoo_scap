@@ -166,6 +166,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Ensure cron Is Logging To Rsyslog
-definition_location: /home/frattah/old/linux_os/guide/system/logging/ensure_rsyslog_log_file_configuration/rsyslog_cron_logging/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/logging/ensure_rsyslog_log_file_configuration/rsyslog_cron_logging/rule.yml
 template: null
 documentation_complete: true

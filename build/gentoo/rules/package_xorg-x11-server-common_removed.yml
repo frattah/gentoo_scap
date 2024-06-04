@@ -142,7 +142,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Remove the X Windows Package Group
-definition_location: /home/frattah/old/linux_os/guide/services/xwindows/disabling_xwindows/package_xorg-x11-server-common_removed/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/xwindows/disabling_xwindows/package_xorg-x11-server-common_removed/rule.yml
 template:
     name: package_removed
     vars:

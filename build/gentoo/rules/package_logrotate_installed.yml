@@ -49,8 +49,8 @@ references:
     pcidss4:
     - 10.5.1
 components:
-- logrotate
 - rsyslog
+- logrotate
 identifiers: {}
 ocil_clause: the package is not installed
 ocil: 'Run the following command to determine if the <code>logrotate</code> package
@@ -75,7 +75,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Ensure logrotate is Installed
-definition_location: /home/frattah/old/linux_os/guide/system/logging/log_rotation/package_logrotate_installed/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/logging/log_rotation/package_logrotate_installed/rule.yml
 template:
     name: package_installed
     vars:

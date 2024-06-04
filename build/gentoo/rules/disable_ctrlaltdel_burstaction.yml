@@ -101,8 +101,8 @@ references:
     - SRG-OS-000324-GPOS-00125
     - SRG-OS-000480-GPOS-00227
 components:
-- pam
 - systemd
+- pam
 identifiers: {}
 ocil_clause: the system is configured to reboot when Ctrl-Alt-Del is pressed more
     than 7 times in 2 seconds.
@@ -192,6 +192,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Disable Ctrl-Alt-Del Burst Action
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-physical/disable_ctrlaltdel_burstaction/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-physical/disable_ctrlaltdel_burstaction/rule.yml
 template: null
 documentation_complete: true

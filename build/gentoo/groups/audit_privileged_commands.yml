@@ -66,5 +66,5 @@ inherited_platforms: !!set
     machine: null
 cpe_platform_names: !!set {}
 title: Record Information on the Use of Privileged Commands
-definition_location: /home/frattah/old/linux_os/guide/auditing/auditd_configure_rules/audit_privileged_commands/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/auditd_configure_rules/audit_privileged_commands/group.yml
 documentation_complete: true

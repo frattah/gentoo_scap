@@ -98,6 +98,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Set Daemon Umask
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/restrictions/daemon_umask/umask_for_daemons/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/restrictions/daemon_umask/umask_for_daemons/rule.yml
 template: null
 documentation_complete: true

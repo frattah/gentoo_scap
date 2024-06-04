@@ -80,6 +80,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Remove Host-Based Authentication Files
-definition_location: /home/frattah/old/linux_os/guide/services/obsolete/r_services/no_host_based_files/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/obsolete/r_services/no_host_based_files/rule.yml
 template: null
 documentation_complete: true

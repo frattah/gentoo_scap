@@ -8,5 +8,5 @@ options:
     localhost: localhost
 warnings: []
 title: Postfix Network Interfaces
-definition_location: /home/frattah/old/linux_os/guide/services/mail/postfix_client/var_postfix_inet_interfaces.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/mail/postfix_client/var_postfix_inet_interfaces.var
 documentation_complete: true

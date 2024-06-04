@@ -143,6 +143,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Disable GDM Automatic Login
-definition_location: /home/frattah/old/linux_os/guide/system/software/gnome/gnome_login_screen/gnome_gdm_disable_automatic_login/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/gnome/gnome_login_screen/gnome_gdm_disable_automatic_login/rule.yml
 template: null
 documentation_complete: true

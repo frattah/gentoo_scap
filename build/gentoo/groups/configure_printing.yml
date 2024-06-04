@@ -22,5 +22,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: Configure the CUPS Service if Necessary
-definition_location: /home/frattah/old/linux_os/guide/services/printing/configure_printing/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/printing/configure_printing/group.yml
 documentation_complete: true

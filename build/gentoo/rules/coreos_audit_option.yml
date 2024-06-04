@@ -174,7 +174,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Enable Auditing for Processes Which Start Prior to the Audit Daemon
-definition_location: /home/frattah/old/linux_os/guide/auditing/coreos_audit_option/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/coreos_audit_option/rule.yml
 template:
     name: coreos_kernel_option
     vars:

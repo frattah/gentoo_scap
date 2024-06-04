@@ -12,5 +12,5 @@ options:
     'on': 'true'
 warnings: []
 title: git_system_use_nfs SELinux Boolean
-definition_location: /home/frattah/old/linux_os/guide/system/selinux/selinux-booleans/var_git_system_use_nfs.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/selinux/selinux-booleans/var_git_system_use_nfs.var
 documentation_complete: true

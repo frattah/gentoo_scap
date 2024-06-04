@@ -10,5 +10,5 @@ bash_conditional: ( [ ! -f /.dockerenv ] && [ ! -f /run/.containerenv ] && rpm -
 ansible_conditional: ( ansible_virtualization_type not in ["docker", "lxc", "openvz",
     "podman", "container"] and "autofs" in ansible_facts.packages )
 title: ''
-definition_location: /home/frattah/old/build/gentoo/platforms/machine_and_package_autofs.yml
+definition_location: /home/fra/gentoo_scap/build/gentoo/platforms/machine_and_package_autofs.yml
 documentation_complete: true

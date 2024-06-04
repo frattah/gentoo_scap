@@ -14,5 +14,5 @@ options:
     default: 7
 warnings: []
 title: minimum password age
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-restrictions/password_expiration/var_accounts_minimum_age_login_defs.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-restrictions/password_expiration/var_accounts_minimum_age_login_defs.var
 documentation_complete: true

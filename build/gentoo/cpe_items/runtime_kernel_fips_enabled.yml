@@ -7,6 +7,6 @@ versioned: false
 args: {}
 content_id: ssg
 title: Running kernel has fips mode enabled
-definition_location: /home/frattah/old/shared/applicability/runtime_kernel_fips_enabled.yml
+definition_location: /home/fra/gentoo_scap/shared/applicability/runtime_kernel_fips_enabled.yml
 template: null
 documentation_complete: true

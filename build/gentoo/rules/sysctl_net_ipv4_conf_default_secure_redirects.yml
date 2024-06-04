@@ -202,7 +202,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Configure Kernel Parameter for Accepting Secure Redirects By Default
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-kernel/network_host_and_router_parameters/sysctl_net_ipv4_conf_default_secure_redirects/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-kernel/network_host_and_router_parameters/sysctl_net_ipv4_conf_default_secure_redirects/rule.yml
 template:
     name: sysctl
     vars:

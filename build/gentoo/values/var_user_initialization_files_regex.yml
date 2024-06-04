@@ -9,5 +9,5 @@ options:
     all_dotfiles: ^\.[\w\- ]+$
 warnings: []
 title: Interactive users initialization files
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-session/var_user_initialization_files_regex.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-session/var_user_initialization_files_regex.var
 documentation_complete: true

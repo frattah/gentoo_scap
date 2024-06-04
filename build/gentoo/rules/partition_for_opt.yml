@@ -43,7 +43,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Ensure /opt Located On Separate Partition
-definition_location: /home/frattah/old/linux_os/guide/system/software/disk_partitioning/partition_for_opt/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/disk_partitioning/partition_for_opt/rule.yml
 template:
     name: mount
     vars:

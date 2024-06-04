@@ -93,6 +93,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Map System Users To The Appropriate SELinux Role
-definition_location: /home/frattah/old/linux_os/guide/system/selinux/selinux_user_login_roles/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/selinux/selinux_user_login_roles/rule.yml
 template: null
 documentation_complete: true

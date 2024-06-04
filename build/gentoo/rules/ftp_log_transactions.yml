@@ -65,6 +65,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Enable Logging of All FTP Transactions
-definition_location: /home/frattah/old/linux_os/guide/services/ftp/ftp_configure_vsftpd/ftp_log_transactions/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ftp/ftp_configure_vsftpd/ftp_log_transactions/rule.yml
 template: null
 documentation_complete: true

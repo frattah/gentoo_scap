@@ -58,5 +58,5 @@ inherited_platforms: !!set {}
 cpe_platform_names: !!set
     grub2: null
 title: GRUB2 bootloader configuration
-definition_location: /home/frattah/old/linux_os/guide/system/bootloader-grub2/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/bootloader-grub2/group.yml
 documentation_complete: true

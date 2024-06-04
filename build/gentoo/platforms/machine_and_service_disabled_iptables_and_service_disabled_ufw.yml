@@ -11,5 +11,5 @@ bash_conditional: ( [ ! -f /.dockerenv ] && [ ! -f /run/.containerenv ] )
 ansible_conditional: ( ansible_virtualization_type not in ["docker", "lxc", "openvz",
     "podman", "container"] )
 title: ''
-definition_location: /home/frattah/old/build/gentoo/platforms/machine_and_service_disabled_iptables_and_service_disabled_ufw.yml
+definition_location: /home/fra/gentoo_scap/build/gentoo/platforms/machine_and_service_disabled_iptables_and_service_disabled_ufw.yml
 documentation_complete: true

@@ -44,7 +44,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Detect stack corruption on calls to schedule()
-definition_location: /home/frattah/old/linux_os/guide/system/kernel_build_config/kernel_config_sched_stack_end_check/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/kernel_build_config/kernel_config_sched_stack_end_check/rule.yml
 template:
     name: kernel_build_config
     vars:

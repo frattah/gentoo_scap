@@ -30,7 +30,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Package "prelink" Must not be Installed
-definition_location: /home/frattah/old/linux_os/guide/system/software/integrity/package_prelink_removed/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/integrity/package_prelink_removed/rule.yml
 template:
     name: package_removed
     vars:

@@ -26,5 +26,5 @@ inherited_platforms: !!set {}
 cpe_platform_names: !!set
     package_gdm: null
 title: Implement a GUI Warning Banner
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-banners/gui_login_banner/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-banners/gui_login_banner/group.yml
 documentation_complete: true

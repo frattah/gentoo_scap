@@ -58,5 +58,5 @@ inherited_platforms: !!set
     machine: null
 cpe_platform_names: !!set {}
 title: Ensure Proper Configuration of Log Files
-definition_location: /home/frattah/old/linux_os/guide/system/logging/ensure_rsyslog_log_file_configuration/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/logging/ensure_rsyslog_log_file_configuration/group.yml
 documentation_complete: true

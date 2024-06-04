@@ -10,5 +10,5 @@ options:
     default: '027'
 warnings: []
 title: Sensible umask
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-session/user_umask/var_accounts_user_umask.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-session/user_umask/var_accounts_user_umask.var
 documentation_complete: true

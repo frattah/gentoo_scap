@@ -46,7 +46,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Add hidepid Option to /proc
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/partitions/mount_option_proc_hidepid/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/partitions/mount_option_proc_hidepid/rule.yml
 template:
     name: mount_option
     vars:

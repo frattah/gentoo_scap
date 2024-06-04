@@ -10,5 +10,5 @@ options:
     kernel_default: certs/signing_key.pem
 warnings: []
 title: Key and certificate for kernel module signing
-definition_location: /home/frattah/old/linux_os/guide/system/kernel_build_config/var_kernel_config_module_sig_key.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/kernel_build_config/var_kernel_config_module_sig_key.var
 documentation_complete: true

@@ -55,7 +55,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Extend Audit Backlog Limit for the Audit Daemon in zIPL
-definition_location: /home/frattah/old/linux_os/guide/system/bootloader-zipl/zipl_audit_backlog_limit_argument/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/bootloader-zipl/zipl_audit_backlog_limit_argument/rule.yml
 template:
     name: zipl_bls_entries_option
     vars:

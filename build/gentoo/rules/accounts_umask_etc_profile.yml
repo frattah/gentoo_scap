@@ -168,6 +168,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Ensure the Default Umask is Set Correctly in /etc/profile
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-session/user_umask/accounts_umask_etc_profile/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-session/user_umask/accounts_umask_etc_profile/rule.yml
 template: null
 documentation_complete: true

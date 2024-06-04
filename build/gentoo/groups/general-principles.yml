@@ -19,5 +19,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: General Principles
-definition_location: /home/frattah/old/linux_os/guide/intro/general-principles/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/intro/general-principles/group.yml
 documentation_complete: true

@@ -95,6 +95,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Confine SELinux Users To Roles That Conform To Least Privilege
-definition_location: /home/frattah/old/linux_os/guide/system/selinux/selinux_confine_to_least_privilege/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/selinux/selinux_confine_to_least_privilege/rule.yml
 template: null
 documentation_complete: true

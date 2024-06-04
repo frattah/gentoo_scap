@@ -198,6 +198,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Enable ExecShield via sysctl
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/restrictions/enable_execshield_settings/sysctl_kernel_exec_shield/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/restrictions/enable_execshield_settings/sysctl_kernel_exec_shield/rule.yml
 template: null
 documentation_complete: true

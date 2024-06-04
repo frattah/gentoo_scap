@@ -14,8 +14,8 @@ references:
     pcidss:
     - Req-10.4.3
 components:
-- ntp
 - systemd
+- ntp
 identifiers: {}
 ocil_clause: a remote time server is not configured
 ocil: 'Review /etc/systemd/timesyncd.conf and ensure that the NTP servers, NTP FallbackNTP
@@ -43,6 +43,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Configure Systemd Timesyncd Servers
-definition_location: /home/frattah/old/linux_os/guide/services/ntp/service_timesyncd_configured/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ntp/service_timesyncd_configured/rule.yml
 template: null
 documentation_complete: true

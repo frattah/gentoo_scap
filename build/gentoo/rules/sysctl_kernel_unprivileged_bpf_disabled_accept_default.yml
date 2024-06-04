@@ -137,7 +137,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Disable Access to Network bpf() Syscall From Unprivileged Processes
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/restrictions/sysctl_kernel_unprivileged_bpf_disabled_accept_default/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/restrictions/sysctl_kernel_unprivileged_bpf_disabled_accept_default/rule.yml
 template:
     name: sysctl
     vars:

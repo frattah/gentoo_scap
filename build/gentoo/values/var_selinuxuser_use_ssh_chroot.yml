@@ -12,5 +12,5 @@ options:
     'on': 'true'
 warnings: []
 title: selinuxuser_use_ssh_chroot SELinux Boolean
-definition_location: /home/frattah/old/linux_os/guide/system/selinux/selinux-booleans/var_selinuxuser_use_ssh_chroot.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/selinux/selinux-booleans/var_selinuxuser_use_ssh_chroot.var
 documentation_complete: true

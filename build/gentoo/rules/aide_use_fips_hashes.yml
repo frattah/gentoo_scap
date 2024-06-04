@@ -153,6 +153,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Configure AIDE to Use FIPS 140-2 for Validating Hashes
-definition_location: /home/frattah/old/linux_os/guide/system/software/integrity/software-integrity/aide/aide_use_fips_hashes/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/integrity/software-integrity/aide/aide_use_fips_hashes/rule.yml
 template: null
 documentation_complete: true

@@ -83,7 +83,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Verify Permissions on Backup shadow File
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/files/permissions_important_account_files/file_permissions_backup_etc_shadow/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/files/permissions_important_account_files/file_permissions_backup_etc_shadow/rule.yml
 template:
     name: file_permissions
     vars:

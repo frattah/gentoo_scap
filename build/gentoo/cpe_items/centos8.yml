@@ -7,6 +7,6 @@ versioned: false
 args: {}
 content_id: ssg
 title: CentOS 8
-definition_location: /home/frattah/old/shared/applicability/centos8.yml
+definition_location: /home/fra/gentoo_scap/shared/applicability/centos8.yml
 template: null
 documentation_complete: true

@@ -47,7 +47,7 @@ args:
         ver_specs_title: ''
 content_id: ssg
 title: The {servicename} is disabled on the system
-definition_location: /home/frattah/old/shared/applicability/service_disabled.yml
+definition_location: /home/fra/gentoo_scap/shared/applicability/service_disabled.yml
 template:
     name: platform_service_disabled
 documentation_complete: true

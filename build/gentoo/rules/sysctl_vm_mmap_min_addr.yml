@@ -48,7 +48,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Prevent applications from mapping low portion of virtual memory
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/restrictions/sysctl_vm_mmap_min_addr/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/restrictions/sysctl_vm_mmap_min_addr/rule.yml
 template:
     name: sysctl
     vars:

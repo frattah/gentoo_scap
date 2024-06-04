@@ -47,7 +47,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Emulate Privileged Access Never (PAN)
-definition_location: /home/frattah/old/linux_os/guide/system/kernel_build_config/kernel_config_arm64_sw_ttbr0_pan/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/kernel_build_config/kernel_config_arm64_sw_ttbr0_pan/rule.yml
 template:
     name: kernel_build_config
     vars:

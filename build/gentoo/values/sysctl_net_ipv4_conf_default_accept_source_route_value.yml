@@ -8,5 +8,5 @@ options:
     enabled: 1
 warnings: []
 title: net.ipv4.conf.default.accept_source_route
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-kernel/network_host_and_router_parameters/sysctl_net_ipv4_conf_default_accept_source_route_value.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-kernel/network_host_and_router_parameters/sysctl_net_ipv4_conf_default_accept_source_route_value.var
 documentation_complete: true

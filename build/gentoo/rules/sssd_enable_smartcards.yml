@@ -138,6 +138,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Enable Smartcards in SSSD
-definition_location: /home/frattah/old/linux_os/guide/services/sssd/sssd_enable_smartcards/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/sssd/sssd_enable_smartcards/rule.yml
 template: null
 documentation_complete: true

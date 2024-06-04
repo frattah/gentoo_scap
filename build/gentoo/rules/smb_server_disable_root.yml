@@ -35,6 +35,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Disable Root Access to SMB Shares
-definition_location: /home/frattah/old/linux_os/guide/services/smb/configuring_samba/smb_server_disable_root/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/smb/configuring_samba/smb_server_disable_root/rule.yml
 template: null
 documentation_complete: true

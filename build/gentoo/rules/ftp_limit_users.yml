@@ -53,6 +53,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Limit Users Allowed FTP Access if Necessary
-definition_location: /home/frattah/old/linux_os/guide/services/ftp/ftp_configure_vsftpd/ftp_restrict_users/ftp_limit_users/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ftp/ftp_configure_vsftpd/ftp_restrict_users/ftp_limit_users/rule.yml
 template: null
 documentation_complete: true

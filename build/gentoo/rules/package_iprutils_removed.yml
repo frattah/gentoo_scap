@@ -93,7 +93,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Uninstall iprutils Package
-definition_location: /home/frattah/old/linux_os/guide/system/software/system-tools/package_iprutils_removed/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/system-tools/package_iprutils_removed/rule.yml
 template:
     name: package_removed
     vars:

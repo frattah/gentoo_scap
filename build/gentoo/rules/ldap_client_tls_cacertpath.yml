@@ -90,8 +90,8 @@ references:
     - PR.IP-1
     - PR.PT-3
 components:
-- nss-pam-ldapd
 - openldap
+- nss-pam-ldapd
 identifiers: {}
 ocil_clause: LDAP is not in use, the line is commented out, or not configured correctly
 ocil: 'To ensure TLS is configured with trust certificates, run the following command:
@@ -117,6 +117,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Configure Certificate Directives for LDAP Use of TLS
-definition_location: /home/frattah/old/linux_os/guide/services/ldap/openldap_client/ldap_client_tls_cacertpath/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ldap/openldap_client/ldap_client_tls_cacertpath/rule.yml
 template: null
 documentation_complete: true

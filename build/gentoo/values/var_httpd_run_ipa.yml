@@ -12,5 +12,5 @@ options:
     'on': 'true'
 warnings: []
 title: httpd_run_ipa SELinux Boolean
-definition_location: /home/frattah/old/linux_os/guide/system/selinux/selinux-booleans/var_httpd_run_ipa.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/selinux/selinux-booleans/var_httpd_run_ipa.var
 documentation_complete: true

@@ -28,5 +28,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: Disable Wireless Through Software Configuration
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-wireless/wireless_software/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-wireless/wireless_software/group.yml
 documentation_complete: true

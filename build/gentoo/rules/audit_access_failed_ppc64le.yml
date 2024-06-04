@@ -84,7 +84,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Configure auditing of unsuccessful file accesses (ppc64le)
-definition_location: /home/frattah/old/linux_os/guide/auditing/policy_rules/audit_access_failed_ppc64le/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/policy_rules/audit_access_failed_ppc64le/rule.yml
 template:
     name: audit_file_contents
     vars:

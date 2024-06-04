@@ -138,7 +138,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Enable Kernel Parameter to Enforce DAC on Hardlinks
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/files/sysctl_fs_protected_hardlinks/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/files/sysctl_fs_protected_hardlinks/rule.yml
 template:
     name: sysctl
     vars:

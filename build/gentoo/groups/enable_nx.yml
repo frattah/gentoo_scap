@@ -36,5 +36,5 @@ cpe_platform_names: !!set {}
 title: 'Enable Execute Disable (XD) or No Execute (NX) Support on
 
     x86 Systems'
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/restrictions/enable_nx/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/restrictions/enable_nx/group.yml
 documentation_complete: true

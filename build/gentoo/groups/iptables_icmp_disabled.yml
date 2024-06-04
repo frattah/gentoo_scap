@@ -55,5 +55,5 @@ inherited_platforms: !!set
     package[iptables]: null
 cpe_platform_names: !!set {}
 title: Restrict ICMP Message Types
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-iptables/iptables_ruleset_modifications/iptables_icmp_disabled/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-iptables/iptables_ruleset_modifications/iptables_icmp_disabled/group.yml
 documentation_complete: true

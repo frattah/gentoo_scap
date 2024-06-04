@@ -153,6 +153,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Enable the LDAP Client For Use in Authconfig
-definition_location: /home/frattah/old/linux_os/guide/services/ldap/openldap_client/enable_ldap_client/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ldap/openldap_client/enable_ldap_client/rule.yml
 template: null
 documentation_complete: true

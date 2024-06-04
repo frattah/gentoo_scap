@@ -80,5 +80,5 @@ inherited_platforms: !!set {}
 cpe_platform_names: !!set
     machine: null
 title: Kernel Configuration
-definition_location: /home/frattah/old/linux_os/guide/system/kernel_build_config/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/kernel_build_config/group.yml
 documentation_complete: true

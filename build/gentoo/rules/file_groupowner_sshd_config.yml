@@ -146,7 +146,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Verify Group Who Owns SSH Server config file
-definition_location: /home/frattah/old/linux_os/guide/services/ssh/file_groupowner_sshd_config/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ssh/file_groupowner_sshd_config/rule.yml
 template:
     name: file_groupowner
     vars:

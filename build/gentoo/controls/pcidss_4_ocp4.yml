@@ -2,7 +2,7 @@ id: pcidss_4_ocp4
 policy: PCI-DSS
 title: Payment Card Industry - Data Security Standard (PCI-DSS)
 source: https://docs-prv.pcisecuritystandards.org/PCI%20DSS/Standard/PCI-DSS-v4_0.pdf
-definition_location: /home/frattah/old/controls/pcidss_4_ocp4.yml
+definition_location: /home/fra/gentoo_scap/controls/pcidss_4_ocp4.yml
 controls:
 -   id: 1.1.1
     levels:

@@ -121,8 +121,8 @@ references:
     - PR.PT-3
     - PR.PT-4
 components:
-- inetd
 - xinetd
+- inetd
 identifiers: {}
 ocil_clause: the "xinetd" is loaded and not masked
 ocil: 'If network services are using the xinetd service, this is not applicable.
@@ -188,7 +188,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Disable xinetd Service
-definition_location: /home/frattah/old/linux_os/guide/services/obsolete/inetd_and_xinetd/service_xinetd_disabled/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/obsolete/inetd_and_xinetd/service_xinetd_disabled/rule.yml
 template:
     name: service_disabled
     vars:

@@ -17,8 +17,8 @@ references:
     pcidss4:
     - 1.2.8
 components:
-- fedora-release-common
 - pam
+- fedora-release-common
 identifiers: {}
 ocil_clause: /etc/issue.net does not have a group owner of root
 ocil: 'To check the group ownership of <code>/etc/issue.net</code>,
@@ -48,7 +48,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Verify Group Ownership of System Login Banner for Remote Connections
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-banners/file_groupowner_etc_issue_net/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-banners/file_groupowner_etc_issue_net/rule.yml
 template:
     name: file_groupowner
     vars:

@@ -2,7 +2,7 @@ id: cis_rhel9
 policy: CIS Benchmark for Red Hat Enterprise Linux 9
 title: CIS Benchmark for Red Hat Enterprise Linux 9
 source: https://www.cisecurity.org/cis-benchmarks/#red_hat_linux
-definition_location: /home/frattah/old/controls/cis_rhel9.yml
+definition_location: /home/fra/gentoo_scap/controls/cis_rhel9.yml
 controls:
 -   id: reload_dconf_db
     levels:
@@ -853,9 +853,9 @@ controls:
     - file_permissions_efi_user_cfg
     rules:
     - file_owner_grub2_cfg
-    - file_groupowner_user_cfg
-    - file_permissions_grub2_cfg
     - file_owner_user_cfg
+    - file_permissions_grub2_cfg
+    - file_groupowner_user_cfg
     - file_permissions_user_cfg
     - file_groupowner_grub2_cfg
     controls: []
@@ -1176,9 +1176,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_groupowner_etc_motd
-    - file_owner_etc_motd
     - file_permissions_etc_motd
+    - file_owner_etc_motd
+    - file_groupowner_etc_motd
     controls: []
 -   id: 1.7.5
     levels:
@@ -1199,9 +1199,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_groupowner_etc_issue
-    - file_owner_etc_issue
     - file_permissions_etc_issue
+    - file_owner_etc_issue
+    - file_groupowner_etc_issue
     controls: []
 -   id: 1.7.6
     levels:
@@ -1223,8 +1223,8 @@ controls:
     related_rules: []
     rules:
     - file_groupowner_etc_issue_net
-    - file_permissions_etc_issue_net
     - file_owner_etc_issue_net
+    - file_permissions_etc_issue_net
     controls: []
 -   id: 1.8.1
     levels:
@@ -1309,8 +1309,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - dconf_gnome_screensaver_idle_delay
     - dconf_gnome_screensaver_lock_delay
+    - dconf_gnome_screensaver_idle_delay
     - inactivity_timeout_value=15_minutes
     - var_screensaver_lock_delay=5_seconds
     controls: []
@@ -1528,8 +1528,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - chronyd_run_as_chrony_user
     - chronyd_specify_remote_server
+    - chronyd_run_as_chrony_user
     - var_multiple_time_servers=rhel
     controls: []
 -   id: 2.2.1
@@ -1698,8 +1698,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - package_nginx_removed
     - package_httpd_removed
+    - package_nginx_removed
     controls: []
 -   id: 2.2.9
     levels:
@@ -1720,8 +1720,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - package_dovecot_removed
     - package_cyrus-imapd_removed
+    - package_dovecot_removed
     controls: []
 -   id: 2.2.10
     levels:
@@ -2124,8 +2124,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - sysctl_net_ipv4_conf_default_send_redirects
     - sysctl_net_ipv4_conf_all_send_redirects
+    - sysctl_net_ipv4_conf_default_send_redirects
     controls: []
 -   id: 3.3.1
     levels:
@@ -2146,10 +2146,10 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - sysctl_net_ipv6_conf_default_accept_source_route
-    - sysctl_net_ipv4_conf_all_accept_source_route
     - sysctl_net_ipv6_conf_all_accept_source_route
     - sysctl_net_ipv4_conf_default_accept_source_route
+    - sysctl_net_ipv6_conf_default_accept_source_route
+    - sysctl_net_ipv4_conf_all_accept_source_route
     - sysctl_net_ipv4_conf_all_accept_source_route_value=disabled
     - sysctl_net_ipv4_conf_default_accept_source_route_value=disabled
     - sysctl_net_ipv6_conf_all_accept_source_route_value=disabled
@@ -2175,9 +2175,9 @@ controls:
     related_rules: []
     rules:
     - sysctl_net_ipv4_conf_all_accept_redirects
-    - sysctl_net_ipv4_conf_default_accept_redirects
-    - sysctl_net_ipv6_conf_all_accept_redirects
     - sysctl_net_ipv6_conf_default_accept_redirects
+    - sysctl_net_ipv6_conf_all_accept_redirects
+    - sysctl_net_ipv4_conf_default_accept_redirects
     - sysctl_net_ipv4_conf_all_accept_redirects_value=disabled
     - sysctl_net_ipv4_conf_default_accept_redirects_value=disabled
     - sysctl_net_ipv6_conf_all_accept_redirects_value=disabled
@@ -2385,9 +2385,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - package_firewalld_installed
-    - service_firewalld_enabled
     - service_nftables_disabled
+    - service_firewalld_enabled
+    - package_firewalld_installed
     controls: []
 -   id: 3.4.2.1
     levels:
@@ -2708,9 +2708,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - auditd_data_retention_space_left_action
     - auditd_data_retention_action_mail_acct
     - auditd_data_retention_admin_space_left_action
+    - auditd_data_retention_space_left_action
     - var_auditd_action_mail_acct=root
     - var_auditd_admin_space_left_action=halt
     - var_auditd_space_left_action=email
@@ -2797,10 +2797,10 @@ controls:
     original_title: null
     related_rules: []
     rules:
+    - audit_rules_time_stime
+    - audit_rules_time_settimeofday
     - audit_rules_time_watch_localtime
     - audit_rules_time_adjtimex
-    - audit_rules_time_settimeofday
-    - audit_rules_time_stime
     - audit_rules_time_clock_settime
     controls: []
 -   id: 4.1.3.5
@@ -2823,8 +2823,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_networkconfig_modification_network_scripts
     - audit_rules_networkconfig_modification
+    - audit_rules_networkconfig_modification_network_scripts
     controls: []
 -   id: 4.1.3.6
     levels:
@@ -2867,10 +2867,10 @@ controls:
     related_rules: []
     rules:
     - audit_rules_unsuccessful_file_modification_openat
-    - audit_rules_unsuccessful_file_modification_truncate
-    - audit_rules_unsuccessful_file_modification_creat
     - audit_rules_unsuccessful_file_modification_ftruncate
     - audit_rules_unsuccessful_file_modification_open
+    - audit_rules_unsuccessful_file_modification_creat
+    - audit_rules_unsuccessful_file_modification_truncate
     controls: []
 -   id: 4.1.3.8
     levels:
@@ -2891,11 +2891,11 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_usergroup_modification_passwd
-    - audit_rules_usergroup_modification_gshadow
-    - audit_rules_usergroup_modification_group
     - audit_rules_usergroup_modification_opasswd
+    - audit_rules_usergroup_modification_group
     - audit_rules_usergroup_modification_shadow
+    - audit_rules_usergroup_modification_gshadow
+    - audit_rules_usergroup_modification_passwd
     controls: []
 -   id: 4.1.3.9
     levels:
@@ -2917,19 +2917,19 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_dac_modification_removexattr
-    - audit_rules_dac_modification_fremovexattr
-    - audit_rules_dac_modification_fchownat
     - audit_rules_dac_modification_fchmod
-    - audit_rules_dac_modification_chmod
-    - audit_rules_dac_modification_setxattr
-    - audit_rules_dac_modification_lchown
-    - audit_rules_dac_modification_fsetxattr
-    - audit_rules_dac_modification_chown
+    - audit_rules_dac_modification_fchownat
     - audit_rules_dac_modification_fchmodat
+    - audit_rules_dac_modification_lchown
+    - audit_rules_dac_modification_fremovexattr
     - audit_rules_dac_modification_lremovexattr
-    - audit_rules_dac_modification_lsetxattr
+    - audit_rules_dac_modification_fsetxattr
+    - audit_rules_dac_modification_removexattr
+    - audit_rules_dac_modification_setxattr
+    - audit_rules_dac_modification_chmod
+    - audit_rules_dac_modification_chown
     - audit_rules_dac_modification_fchown
+    - audit_rules_dac_modification_lsetxattr
     controls: []
 -   id: 4.1.3.10
     levels:
@@ -2992,8 +2992,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_login_events_lastlog
     - audit_rules_login_events_faillock
+    - audit_rules_login_events_lastlog
     - var_accounts_passwords_pam_faillock_dir=run
     controls: []
 -   id: 4.1.3.13
@@ -3015,9 +3015,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
+    - audit_rules_file_deletion_events_unlinkat
     - audit_rules_file_deletion_events_renameat
     - audit_rules_file_deletion_events_rename
-    - audit_rules_file_deletion_events_unlinkat
     - audit_rules_file_deletion_events_unlink
     controls: []
 -   id: 4.1.3.14
@@ -3040,8 +3040,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - audit_rules_mac_modification_usr_share
     - audit_rules_mac_modification
+    - audit_rules_mac_modification_usr_share
     controls: []
 -   id: 4.1.3.15
     levels:
@@ -3150,12 +3150,12 @@ controls:
     original_title: null
     related_rules: []
     rules:
+    - audit_rules_kernel_module_loading_finit
+    - audit_rules_kernel_module_loading_create
+    - audit_rules_privileged_commands_kmod
     - audit_rules_kernel_module_loading_query
     - audit_rules_kernel_module_loading_delete
-    - audit_rules_kernel_module_loading_create
     - audit_rules_kernel_module_loading_init
-    - audit_rules_privileged_commands_kmod
-    - audit_rules_kernel_module_loading_finit
     controls: []
 -   id: 4.1.3.20
     levels:
@@ -3779,8 +3779,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - rsyslog_files_ownership
     - rsyslog_files_groupownership
+    - rsyslog_files_ownership
     - rsyslog_files_permissions
     controls: []
 -   id: 4.3
@@ -3847,8 +3847,8 @@ controls:
     related_rules: []
     rules:
     - file_groupowner_crontab
-    - file_permissions_crontab
     - file_owner_crontab
+    - file_permissions_crontab
     controls: []
 -   id: 5.1.3
     levels:
@@ -3892,8 +3892,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_groupowner_cron_daily
     - file_permissions_cron_daily
+    - file_groupowner_cron_daily
     - file_owner_cron_daily
     controls: []
 -   id: 5.1.5
@@ -3938,9 +3938,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
+    - file_groupowner_cron_monthly
     - file_owner_cron_monthly
     - file_permissions_cron_monthly
-    - file_groupowner_cron_monthly
     controls: []
 -   id: 5.1.7
     levels:
@@ -3984,11 +3984,11 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_groupowner_cron_allow
-    - file_cron_allow_exists
     - file_permissions_cron_allow
-    - file_cron_deny_not_exist
+    - file_cron_allow_exists
+    - file_groupowner_cron_allow
     - file_owner_cron_allow
+    - file_cron_deny_not_exist
     controls: []
 -   id: 5.1.9
     levels:
@@ -4009,10 +4009,10 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_owner_at_allow
-    - file_at_deny_not_exist
     - file_permissions_at_allow
+    - file_owner_at_allow
     - file_groupowner_at_allow
+    - file_at_deny_not_exist
     controls: []
 -   id: 5.2.1
     levels:
@@ -4033,9 +4033,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
+    - file_permissions_sshd_config
     - file_owner_sshd_config
     - file_groupowner_sshd_config
-    - file_permissions_sshd_config
     controls: []
 -   id: 5.2.2
     levels:
@@ -4079,9 +4079,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
+    - file_ownership_sshd_pub_key
     - file_permissions_sshd_pub_key
     - file_groupownership_sshd_pub_key
-    - file_ownership_sshd_pub_key
     controls: []
 -   id: 5.2.4
     levels:
@@ -4444,8 +4444,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - sshd_set_idle_timeout
     - sshd_set_keepalive
+    - sshd_set_idle_timeout
     - sshd_idle_timeout_value=15_minutes
     - var_sshd_set_keepalive=1
     controls: []
@@ -4680,8 +4680,8 @@ controls:
     related_rules: []
     rules:
     - accounts_password_pam_retry
-    - accounts_password_pam_minclass
     - accounts_password_pam_minlen
+    - accounts_password_pam_minclass
     - var_password_pam_minclass=4
     - var_password_pam_minlen=14
     controls: []
@@ -4757,9 +4757,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
+    - set_password_hashing_algorithm_logindefs
     - set_password_hashing_algorithm_passwordauth
     - set_password_hashing_algorithm_systemauth
-    - set_password_hashing_algorithm_logindefs
     - var_password_hashing_algorithm=SHA512
     controls: []
 -   id: 5.6.1.1
@@ -4781,8 +4781,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - accounts_password_set_max_life_existing
     - accounts_maximum_age_login_defs
+    - accounts_password_set_max_life_existing
     - var_accounts_maximum_age_login_defs=365
     controls: []
 -   id: 5.6.1.2
@@ -4804,8 +4804,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - accounts_password_set_min_life_existing
     - accounts_minimum_age_login_defs
+    - accounts_password_set_min_life_existing
     - var_accounts_minimum_age_login_defs=1
     controls: []
 -   id: 5.6.1.3
@@ -5005,9 +5005,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_owner_etc_passwd
     - file_groupowner_etc_passwd
     - file_permissions_etc_passwd
+    - file_owner_etc_passwd
     controls: []
 -   id: 6.1.2
     levels:
@@ -5029,8 +5029,8 @@ controls:
     related_rules: []
     rules:
     - file_owner_backup_etc_passwd
-    - file_groupowner_backup_etc_passwd
     - file_permissions_backup_etc_passwd
+    - file_groupowner_backup_etc_passwd
     controls: []
 -   id: 6.1.3
     levels:
@@ -5052,8 +5052,8 @@ controls:
     related_rules: []
     rules:
     - file_owner_etc_group
-    - file_groupowner_etc_group
     - file_permissions_etc_group
+    - file_groupowner_etc_group
     controls: []
 -   id: 6.1.4
     levels:
@@ -5075,8 +5075,8 @@ controls:
     related_rules: []
     rules:
     - file_owner_backup_etc_group
-    - file_permissions_backup_etc_group
     - file_groupowner_backup_etc_group
+    - file_permissions_backup_etc_group
     controls: []
 -   id: 6.1.5
     levels:
@@ -5098,8 +5098,8 @@ controls:
     related_rules: []
     rules:
     - file_groupowner_etc_shadow
-    - file_permissions_etc_shadow
     - file_owner_etc_shadow
+    - file_permissions_etc_shadow
     controls: []
 -   id: 6.1.6
     levels:
@@ -5121,8 +5121,8 @@ controls:
     related_rules: []
     rules:
     - file_permissions_backup_etc_shadow
-    - file_groupowner_backup_etc_shadow
     - file_owner_backup_etc_shadow
+    - file_groupowner_backup_etc_shadow
     controls: []
 -   id: 6.1.7
     levels:
@@ -5143,9 +5143,9 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_groupowner_etc_gshadow
-    - file_permissions_etc_gshadow
     - file_owner_etc_gshadow
+    - file_permissions_etc_gshadow
+    - file_groupowner_etc_gshadow
     controls: []
 -   id: 6.1.8
     levels:
@@ -5167,8 +5167,8 @@ controls:
     related_rules: []
     rules:
     - file_permissions_backup_etc_gshadow
-    - file_groupowner_backup_etc_gshadow
     - file_owner_backup_etc_gshadow
+    - file_groupowner_backup_etc_gshadow
     controls: []
 -   id: 6.1.9
     levels:
@@ -5548,8 +5548,8 @@ controls:
     original_title: null
     related_rules: []
     rules:
-    - file_groupownership_home_directories
     - file_ownership_home_directories
+    - file_groupownership_home_directories
     controls: []
 -   id: 6.2.12
     levels:

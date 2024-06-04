@@ -41,7 +41,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Verify Ownership on SSH Server Private *_key Key Files
-definition_location: /home/frattah/old/linux_os/guide/services/ssh/file_ownership_sshd_private_key/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ssh/file_ownership_sshd_private_key/rule.yml
 template:
     name: file_owner
     vars:

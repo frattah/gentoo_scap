@@ -56,6 +56,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Don't target root user in the sudoers file
-definition_location: /home/frattah/old/linux_os/guide/system/software/sudo/sudoers_no_root_target/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/sudo/sudoers_no_root_target/rule.yml
 template: null
 documentation_complete: true

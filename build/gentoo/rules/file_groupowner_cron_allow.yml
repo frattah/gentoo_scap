@@ -110,7 +110,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Verify Group Who Owns /etc/cron.allow file
-definition_location: /home/frattah/old/linux_os/guide/services/cron_and_at/restrict_at_cron_users/file_groupowner_cron_allow/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/cron_and_at/restrict_at_cron_users/file_groupowner_cron_allow/rule.yml
 template:
     name: file_groupowner
     vars:

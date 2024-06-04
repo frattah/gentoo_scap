@@ -124,6 +124,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Set Default iptables Policy for Incoming Packets
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-iptables/iptables_ruleset_modifications/set_iptables_default_rule/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-iptables/iptables_ruleset_modifications/set_iptables_default_rule/rule.yml
 template: null
 documentation_complete: true

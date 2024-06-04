@@ -63,7 +63,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Disable Core Dumps for SUID programs
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/restrictions/coredumps/sysctl_fs_suid_dumpable/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/restrictions/coredumps/sysctl_fs_suid_dumpable/rule.yml
 template:
     name: sysctl
     vars:

@@ -119,8 +119,8 @@ references:
     pcidss4:
     - 2.2.4
 components:
-- inetd
 - xinetd
+- inetd
 identifiers: {}
 ocil_clause: the package is installed
 ocil: 'Run the following command to determine if the <code>xinetd</code> package is
@@ -147,7 +147,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Uninstall xinetd Package
-definition_location: /home/frattah/old/linux_os/guide/services/obsolete/inetd_and_xinetd/package_xinetd_removed/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/obsolete/inetd_and_xinetd/package_xinetd_removed/rule.yml
 template:
     name: package_removed
     vars:

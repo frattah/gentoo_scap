@@ -8,6 +8,6 @@ versioned: false
 args: {}
 content_id: ssg
 title: System secure boot is enabled
-definition_location: /home/frattah/old/shared/applicability/secure_boot.yml
+definition_location: /home/fra/gentoo_scap/shared/applicability/secure_boot.yml
 template: null
 documentation_complete: true

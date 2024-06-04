@@ -59,7 +59,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Ensure the audispd's remote logging daemon direction is correct
-definition_location: /home/frattah/old/linux_os/guide/auditing/configure_auditd_data_retention/auditd_audispd_remote_daemon_direction/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/configure_auditd_data_retention/auditd_audispd_remote_daemon_direction/rule.yml
 template:
     name: key_value_pair_in_file
     vars:

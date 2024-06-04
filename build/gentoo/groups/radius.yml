@@ -17,5 +17,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: Remote Authentication Dial-In User Service (RADIUS)
-definition_location: /home/frattah/old/linux_os/guide/services/radius/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/radius/group.yml
 documentation_complete: true

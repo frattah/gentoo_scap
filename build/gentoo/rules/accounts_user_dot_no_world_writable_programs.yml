@@ -94,6 +94,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: User Initialization Files Must Not Run World-Writable Programs
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-session/accounts_user_dot_no_world_writable_programs/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-session/accounts_user_dot_no_world_writable_programs/rule.yml
 template: null
 documentation_complete: true

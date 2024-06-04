@@ -137,7 +137,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Verify User Who Owns group File
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/files/permissions_important_account_files/file_owner_etc_group/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/files/permissions_important_account_files/file_owner_etc_group/rule.yml
 template:
     name: file_owner
     vars:

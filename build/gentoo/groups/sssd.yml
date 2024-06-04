@@ -43,5 +43,5 @@ inherited_platforms: !!set {}
 cpe_platform_names: !!set
     package_sssd: null
 title: System Security Services Daemon
-definition_location: /home/frattah/old/linux_os/guide/services/sssd/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/sssd/group.yml
 documentation_complete: true

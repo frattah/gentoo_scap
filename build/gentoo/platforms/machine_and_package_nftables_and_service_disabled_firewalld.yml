@@ -12,5 +12,5 @@ bash_conditional: ( [ ! -f /.dockerenv ] && [ ! -f /run/.containerenv ] && rpm -
 ansible_conditional: ( ansible_virtualization_type not in ["docker", "lxc", "openvz",
     "podman", "container"] and "nftables" in ansible_facts.packages )
 title: ''
-definition_location: /home/frattah/old/build/gentoo/platforms/machine_and_package_nftables_and_service_disabled_firewalld.yml
+definition_location: /home/fra/gentoo_scap/build/gentoo/platforms/machine_and_package_nftables_and_service_disabled_firewalld.yml
 documentation_complete: true

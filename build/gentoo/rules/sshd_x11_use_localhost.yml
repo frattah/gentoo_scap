@@ -128,7 +128,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Prevent remote hosts from connecting to the proxy display
-definition_location: /home/frattah/old/linux_os/guide/services/ssh/ssh_server/sshd_x11_use_localhost/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ssh/ssh_server/sshd_x11_use_localhost/rule.yml
 template:
     name: sshd_lineinfile
     vars:

@@ -84,7 +84,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Disable User Administration in GNOME3
-definition_location: /home/frattah/old/linux_os/guide/system/software/gnome/gnome_system_settings/dconf_gnome_disable_user_admin/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/gnome/gnome_system_settings/dconf_gnome_disable_user_admin/rule.yml
 template:
     name: dconf_ini_file
     vars:

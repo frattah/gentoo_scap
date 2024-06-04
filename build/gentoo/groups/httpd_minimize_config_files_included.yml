@@ -43,5 +43,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: Minimize Configuration Files Included
-definition_location: /home/frattah/old/linux_os/guide/services/http/securing_httpd/httpd_minimize_loadable_modules/httpd_core_modules/httpd_minimize_config_files_included/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/http/securing_httpd/httpd_minimize_loadable_modules/httpd_core_modules/httpd_minimize_config_files_included/group.yml
 documentation_complete: true

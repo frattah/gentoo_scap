@@ -199,7 +199,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Add nodev Option to Removable Media Partitions
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/partitions/mount_option_nodev_removable_partitions/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/partitions/mount_option_nodev_removable_partitions/rule.yml
 template:
     name: mount_option_removable_partitions
     vars:

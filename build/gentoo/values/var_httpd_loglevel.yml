@@ -11,5 +11,5 @@ options:
     warn: warn
 warnings: []
 title: HTTPD Log Level
-definition_location: /home/frattah/old/linux_os/guide/services/http/securing_httpd/var_httpd_loglevel.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/http/securing_httpd/var_httpd_loglevel.var
 documentation_complete: true

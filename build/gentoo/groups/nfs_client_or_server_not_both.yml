@@ -22,5 +22,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: Make Each System a Client or a Server, not Both
-definition_location: /home/frattah/old/linux_os/guide/services/nfs_and_rpc/nfs_configuring_all_machines/nfs_client_or_server_not_both/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/nfs_and_rpc/nfs_configuring_all_machines/nfs_client_or_server_not_both/group.yml
 documentation_complete: true

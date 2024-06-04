@@ -96,6 +96,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Ensure All User Initialization Files Have Mode 0740 Or Less Permissive
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-session/file_permission_user_init_files_root/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-session/file_permission_user_init_files_root/rule.yml
 template: null
 documentation_complete: true

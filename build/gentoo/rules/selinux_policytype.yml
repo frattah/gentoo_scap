@@ -294,6 +294,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Configure SELinux Policy
-definition_location: /home/frattah/old/linux_os/guide/system/selinux/selinux_policytype/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/selinux/selinux_policytype/rule.yml
 template: null
 documentation_complete: true

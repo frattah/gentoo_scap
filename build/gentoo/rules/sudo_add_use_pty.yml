@@ -49,7 +49,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Ensure Only Users Logged In To Real tty Can Execute Sudo - sudo use_pty
-definition_location: /home/frattah/old/linux_os/guide/system/software/sudo/sudo_add_use_pty/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/sudo/sudo_add_use_pty/rule.yml
 template:
     name: sudo_defaults_option
     vars:

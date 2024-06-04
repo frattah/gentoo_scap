@@ -73,5 +73,5 @@ inherited_platforms: !!set
     machine: null
 cpe_platform_names: !!set {}
 title: Configure OpenSSH Server if Necessary
-definition_location: /home/frattah/old/linux_os/guide/services/ssh/ssh_server/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ssh/ssh_server/group.yml
 documentation_complete: true

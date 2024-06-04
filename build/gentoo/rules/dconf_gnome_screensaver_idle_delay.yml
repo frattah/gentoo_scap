@@ -216,6 +216,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Set GNOME3 Screensaver Inactivity Timeout
-definition_location: /home/frattah/old/linux_os/guide/system/software/gnome/gnome_screen_locking/dconf_gnome_screensaver_idle_delay/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/gnome/gnome_screen_locking/dconf_gnome_screensaver_idle_delay/rule.yml
 template: null
 documentation_complete: true

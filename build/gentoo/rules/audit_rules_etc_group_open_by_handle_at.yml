@@ -95,7 +95,7 @@ bash_conditional: null
 fixes: {}
 title: Record Events that Modify User/Group Information via open_by_handle_at syscall
     - /etc/group
-definition_location: /home/frattah/old/linux_os/guide/auditing/auditd_configure_rules/audit_rules_etc_group_open_by_handle_at/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/auditd_configure_rules/audit_rules_etc_group_open_by_handle_at/rule.yml
 template:
     name: audit_rules_path_syscall
     vars:

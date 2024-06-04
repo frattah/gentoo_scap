@@ -108,6 +108,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Force frequent session key renegotiation
-definition_location: /home/frattah/old/linux_os/guide/services/ssh/ssh_server/sshd_rekey_limit/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ssh/ssh_server/sshd_rekey_limit/rule.yml
 template: null
 documentation_complete: true

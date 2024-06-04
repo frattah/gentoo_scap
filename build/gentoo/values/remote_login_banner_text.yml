@@ -17,5 +17,5 @@ options:
     default: ^Authorized[\s\n]+uses[\s\n]+only\.[\s\n]+All[\s\n]+activity[\s\n]+may[\s\n]+be[\s\n]+monitored[\s\n]+and[\s\n]+reported\.$
 warnings: []
 title: Remote Login Banner Verbiage
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-banners/remote_login_banner_text.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-banners/remote_login_banner_text.var
 documentation_complete: true

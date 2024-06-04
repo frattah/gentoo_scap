@@ -49,6 +49,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Only Allow DoD PKI-established CAs
-definition_location: /home/frattah/old/linux_os/guide/system/network/network_ssl/only_allow_dod_certs/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network_ssl/only_allow_dod_certs/rule.yml
 template: null
 documentation_complete: true

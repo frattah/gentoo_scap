@@ -46,5 +46,5 @@ inherited_platforms: !!set {}
 cpe_platform_names: !!set
     machine: null
 title: Cron and At Daemons
-definition_location: /home/frattah/old/linux_os/guide/services/cron_and_at/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/cron_and_at/group.yml
 documentation_complete: true

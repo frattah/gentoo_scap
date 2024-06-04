@@ -89,7 +89,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Configure auditing of unsuccessful ownership changes
-definition_location: /home/frattah/old/linux_os/guide/auditing/policy_rules/audit_owner_change_failed/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/policy_rules/audit_owner_change_failed/rule.yml
 template:
     name: audit_file_contents
     vars:

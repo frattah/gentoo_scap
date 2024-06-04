@@ -49,6 +49,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Enable log_config_module For HTTPD Logging
-definition_location: /home/frattah/old/linux_os/guide/services/http/securing_httpd/httpd_minimize_loadable_modules/httpd_core_modules/httpd_enable_log_config/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/http/securing_httpd/httpd_minimize_loadable_modules/httpd_core_modules/httpd_enable_log_config/rule.yml
 template: null
 documentation_complete: true

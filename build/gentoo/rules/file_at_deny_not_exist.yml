@@ -9,8 +9,8 @@ references:
     pcidss4:
     - 2.2.6
 components:
-- at
 - cronie
+- at
 identifiers: {}
 ocil_clause: the file /etc/at.deny exists
 ocil: 'The file <tt>/etc/at.deny</tt> should not exist.
@@ -50,7 +50,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Ensure that /etc/at.deny does not exist
-definition_location: /home/frattah/old/linux_os/guide/services/cron_and_at/restrict_at_cron_users/file_at_deny_not_exist/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/cron_and_at/restrict_at_cron_users/file_at_deny_not_exist/rule.yml
 template:
     name: file_existence
     vars:

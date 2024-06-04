@@ -11,5 +11,5 @@ options:
     flush_nowarn: flush,nowarn
 warnings: []
 title: L1TF vulnerability mitigation
-definition_location: /home/frattah/old/linux_os/guide/system/bootloader-grub2/var_l1tf_options.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/bootloader-grub2/var_l1tf_options.var
 documentation_complete: true

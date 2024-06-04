@@ -16,5 +16,5 @@ options:
     '0077': '0077'
 warnings: []
 title: Sudo - umask value
-definition_location: /home/frattah/old/linux_os/guide/system/software/sudo/var_sudo_umask.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/sudo/var_sudo_umask.var
 documentation_complete: true

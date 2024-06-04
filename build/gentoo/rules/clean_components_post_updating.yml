@@ -53,9 +53,9 @@ references:
     srg:
     - SRG-OS-000437-GPOS-00194
 components:
-- dnf
-- rpm
 - yum
+- rpm
+- dnf
 - emerge
 identifiers: {}
 ocil_clause: '''"clean_requirements_on_remove" is not set to "1"'''
@@ -111,6 +111,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Ensure yum Removes Previous Package Versions
-definition_location: /home/frattah/old/linux_os/guide/system/software/updating/clean_components_post_updating/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/updating/clean_components_post_updating/rule.yml
 template: null
 documentation_complete: true

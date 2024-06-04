@@ -34,5 +34,5 @@ ansible_conditional: not ( ( ( ansible_architecture == "aarch64" and ansible_dis
     is version('9.0', '>=') ) or ( ansible_distribution == 'RedHat' and ansible_distribution_version
     is version('8.4', '<=') and ansible_architecture == "s390x" ) ) )
 title: ''
-definition_location: /home/frattah/old/build/gentoo/platforms/not_aarch64_arch_and_os_linux_ol_gt_or_eq_9_0_or_aarch64_arch_and_os_linux_rhel_gt_or_eq_9_0_or_os_linux_rhel_le_or_eq_8_4_and_s390x_arch.yml
+definition_location: /home/fra/gentoo_scap/build/gentoo/platforms/not_aarch64_arch_and_os_linux_ol_gt_or_eq_9_0_or_aarch64_arch_and_os_linux_rhel_gt_or_eq_9_0_or_os_linux_rhel_le_or_eq_8_4_and_s390x_arch.yml
 documentation_complete: true

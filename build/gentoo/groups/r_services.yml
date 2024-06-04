@@ -22,5 +22,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: Rlogin, Rsh, and Rexec
-definition_location: /home/frattah/old/linux_os/guide/services/obsolete/r_services/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/obsolete/r_services/group.yml
 documentation_complete: true

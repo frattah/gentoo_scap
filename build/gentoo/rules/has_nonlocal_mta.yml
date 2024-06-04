@@ -47,6 +47,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Ensure Mail Transfer Agent is not Listening on any non-loopback Address
-definition_location: /home/frattah/old/linux_os/guide/services/mail/has_nonlocal_mta/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/mail/has_nonlocal_mta/rule.yml
 template: null
 documentation_complete: true

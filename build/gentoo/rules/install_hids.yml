@@ -125,6 +125,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Install Intrusion Detection Software
-definition_location: /home/frattah/old/linux_os/guide/system/software/integrity/endpoint_security_software/install_hids/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/integrity/endpoint_security_software/install_hids/rule.yml
 template: null
 documentation_complete: true

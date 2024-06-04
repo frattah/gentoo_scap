@@ -169,7 +169,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Add noexec Option to /tmp
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/partitions/mount_option_tmp_noexec/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/partitions/mount_option_tmp_noexec/rule.yml
 template:
     name: mount_option
     vars:

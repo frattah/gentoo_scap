@@ -87,7 +87,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Record Unsuccessful Ownership Changes to Files - fchown
-definition_location: /home/frattah/old/linux_os/guide/auditing/auditd_configure_rules/audit_file_modification/audit_rules_unsuccessful_file_modification_fchown/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/auditd_configure_rules/audit_file_modification/audit_rules_unsuccessful_file_modification_fchown/rule.yml
 template:
     name: audit_rules_unsuccessful_file_modification
     vars:

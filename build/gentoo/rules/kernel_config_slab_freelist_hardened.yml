@@ -44,7 +44,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Harden slab freelist metadata
-definition_location: /home/frattah/old/linux_os/guide/system/kernel_build_config/kernel_config_slab_freelist_hardened/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/kernel_build_config/kernel_config_slab_freelist_hardened/rule.yml
 template:
     name: kernel_build_config
     vars:

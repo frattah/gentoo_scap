@@ -154,6 +154,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Remove Rsh Trust Files
-definition_location: /home/frattah/old/linux_os/guide/services/obsolete/r_services/no_rsh_trust_files/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/obsolete/r_services/no_rsh_trust_files/rule.yml
 template: null
 documentation_complete: true

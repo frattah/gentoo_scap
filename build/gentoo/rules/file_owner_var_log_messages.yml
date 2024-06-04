@@ -86,7 +86,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Verify User Who Owns /var/log/messages File
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/files/permissions_var_log_dir/file_owner_var_log_messages/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/files/permissions_var_log_dir/file_owner_var_log_messages/rule.yml
 template:
     name: file_owner
     vars:

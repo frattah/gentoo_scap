@@ -2,7 +2,7 @@ id: bsi_sys_1_6
 policy: BSI-SYS-1-6
 title: SYS.1.6 Containerisation
 source: https://www.bsi.bund.de/SharedDocs/Downloads/EN/BSI/Grundschutz/International/bsi_it_gs_comp_2022.pdf
-definition_location: /home/frattah/old/controls/bsi_sys_1_6.yml
+definition_location: /home/fra/gentoo_scap/controls/bsi_sys_1_6.yml
 controls:
 -   id: SYS.1.6.A1
     levels:

@@ -163,6 +163,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Configure Multiple DNS Servers in /etc/resolv.conf
-definition_location: /home/frattah/old/linux_os/guide/system/network/network_configure_name_resolution/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network_configure_name_resolution/rule.yml
 template: null
 documentation_complete: true

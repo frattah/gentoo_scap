@@ -20,5 +20,5 @@ inherited_platforms: !!set {}
 cpe_platform_names: !!set
     machine_and_not_s390x_arch: null
 title: USBGuard daemon
-definition_location: /home/frattah/old/linux_os/guide/services/usbguard/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/usbguard/group.yml
 documentation_complete: true

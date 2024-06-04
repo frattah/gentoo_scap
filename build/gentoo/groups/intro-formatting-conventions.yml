@@ -17,5 +17,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: Formatting Conventions
-definition_location: /home/frattah/old/linux_os/guide/intro/how-to-use/intro-formatting-conventions/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/intro/how-to-use/intro-formatting-conventions/group.yml
 documentation_complete: true

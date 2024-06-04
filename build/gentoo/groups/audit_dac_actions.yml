@@ -44,5 +44,5 @@ inherited_platforms: !!set
     machine: null
 cpe_platform_names: !!set {}
 title: Record Events that Modify the System's Discretionary Access Controls
-definition_location: /home/frattah/old/linux_os/guide/auditing/auditd_configure_rules/audit_dac_actions/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/auditd_configure_rules/audit_dac_actions/group.yml
 documentation_complete: true

@@ -116,6 +116,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Disable anacron Service
-definition_location: /home/frattah/old/linux_os/guide/services/cron_and_at/disable_anacron/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/cron_and_at/disable_anacron/rule.yml
 template: null
 documentation_complete: true

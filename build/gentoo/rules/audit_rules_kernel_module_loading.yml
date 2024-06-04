@@ -154,8 +154,8 @@ references:
     pcidss:
     - Req-10.2.7
 components:
-- audit
 - kernel
+- audit
 identifiers: {}
 ocil_clause: no line is returned
 ocil: 'To determine if the system is configured to audit calls to the
@@ -203,6 +203,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Ensure auditd Collects Information on Kernel Module Loading and Unloading
-definition_location: /home/frattah/old/linux_os/guide/auditing/auditd_configure_rules/audit_kernel_module_loading/audit_rules_kernel_module_loading/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/auditd_configure_rules/audit_kernel_module_loading/audit_rules_kernel_module_loading/rule.yml
 template: null
 documentation_complete: true

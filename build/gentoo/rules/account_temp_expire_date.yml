@@ -192,6 +192,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Assign Expiration Date to Temporary Accounts
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-restrictions/account_expiration/account_temp_expire_date/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-restrictions/account_expiration/account_temp_expire_date/rule.yml
 template: null
 documentation_complete: true

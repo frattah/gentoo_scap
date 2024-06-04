@@ -14,5 +14,5 @@ options:
     default: 180
 warnings: []
 title: SSSD ssh_known_hosts_timeout option
-definition_location: /home/frattah/old/linux_os/guide/services/sssd/var_sssd_ssh_known_hosts_timeout.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/sssd/var_sssd_ssh_known_hosts_timeout.var
 documentation_complete: true

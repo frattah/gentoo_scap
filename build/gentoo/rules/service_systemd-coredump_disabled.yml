@@ -95,7 +95,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Disable acquiring, saving, and processing core dumps
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/restrictions/coredumps/service_systemd-coredump_disabled/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/restrictions/coredumps/service_systemd-coredump_disabled/rule.yml
 template:
     name: socket_disabled
     vars:

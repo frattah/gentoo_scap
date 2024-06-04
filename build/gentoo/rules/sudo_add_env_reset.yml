@@ -44,7 +44,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Ensure sudo Runs In A Minimal Environment - sudo env_reset
-definition_location: /home/frattah/old/linux_os/guide/system/software/sudo/sudo_add_env_reset/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/sudo/sudo_add_env_reset/rule.yml
 template:
     name: sudo_defaults_option
     vars:

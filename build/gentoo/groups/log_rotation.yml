@@ -27,5 +27,5 @@ inherited_platforms: !!set
     machine: null
 cpe_platform_names: !!set {}
 title: Ensure All Logs are Rotated by logrotate
-definition_location: /home/frattah/old/linux_os/guide/system/logging/log_rotation/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/logging/log_rotation/group.yml
 documentation_complete: true

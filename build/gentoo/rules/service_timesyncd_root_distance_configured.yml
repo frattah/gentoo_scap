@@ -15,8 +15,8 @@ references:
     pcidss:
     - Req-10.4.3
 components:
-- ntp
 - systemd
+- ntp
 identifiers: {}
 ocil_clause: a remote time server RootDistanceMaxSec is not configured
 ocil: 'Review /etc/systemd/timesyncd.conf and ensure that the RootDistanceMaxSec
@@ -44,6 +44,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Configure Systemd Timesyncd Root Distance Servers
-definition_location: /home/frattah/old/linux_os/guide/services/ntp/service_timesyncd_root_distance_configured/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ntp/service_timesyncd_root_distance_configured/rule.yml
 template: null
 documentation_complete: true

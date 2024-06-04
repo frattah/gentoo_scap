@@ -10,5 +10,5 @@ options:
     enabled: 1
 warnings: []
 title: net.ipv4.conf.default.log_martians
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-kernel/network_host_and_router_parameters/sysctl_net_ipv4_conf_default_log_martians_value.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-kernel/network_host_and_router_parameters/sysctl_net_ipv4_conf_default_log_martians_value.var
 documentation_complete: true

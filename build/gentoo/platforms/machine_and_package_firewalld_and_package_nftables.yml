@@ -13,5 +13,5 @@ ansible_conditional: ( ansible_virtualization_type not in ["docker", "lxc", "ope
     "podman", "container"] and "firewalld" in ansible_facts.packages and "nftables"
     in ansible_facts.packages )
 title: ''
-definition_location: /home/frattah/old/build/gentoo/platforms/machine_and_package_firewalld_and_package_nftables.yml
+definition_location: /home/fra/gentoo_scap/build/gentoo/platforms/machine_and_package_firewalld_and_package_nftables.yml
 documentation_complete: true

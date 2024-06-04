@@ -41,7 +41,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Remove the ntp service
-definition_location: /home/frattah/old/linux_os/guide/services/ntp/package_ntp_removed/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ntp/package_ntp_removed/rule.yml
 template:
     name: package_removed
     vars:

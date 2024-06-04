@@ -40,7 +40,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Ensure only owner and members of group owner of /usr/bin/sudo can execute it
-definition_location: /home/frattah/old/linux_os/guide/system/software/sudo/sudo_restrict_others_executable_permission/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/sudo/sudo_restrict_others_executable_permission/rule.yml
 template:
     name: file_permissions
     vars:

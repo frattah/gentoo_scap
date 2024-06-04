@@ -48,6 +48,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Installation of a compiler on production web server is prohibited
-definition_location: /home/frattah/old/linux_os/guide/services/http/securing_httpd/httpd_no_compilers_in_prod/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/http/securing_httpd/httpd_no_compilers_in_prod/rule.yml
 template: null
 documentation_complete: true

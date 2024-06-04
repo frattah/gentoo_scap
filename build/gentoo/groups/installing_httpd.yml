@@ -29,5 +29,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: Install Apache if Necessary
-definition_location: /home/frattah/old/linux_os/guide/services/http/installing_httpd/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/http/installing_httpd/group.yml
 documentation_complete: true

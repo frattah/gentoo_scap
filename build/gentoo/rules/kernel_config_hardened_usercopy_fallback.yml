@@ -43,7 +43,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Do not allow usercopy whitelist violations to fallback to object size
-definition_location: /home/frattah/old/linux_os/guide/system/kernel_build_config/kernel_config_hardened_usercopy_fallback/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/kernel_build_config/kernel_config_hardened_usercopy_fallback/rule.yml
 template:
     name: kernel_build_config
     vars:

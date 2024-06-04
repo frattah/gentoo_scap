@@ -55,6 +55,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: All Interactive User Home Directories Must Be Owned By The Primary User
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-session/file_ownership_home_directories/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-session/file_ownership_home_directories/rule.yml
 template: null
 documentation_complete: true

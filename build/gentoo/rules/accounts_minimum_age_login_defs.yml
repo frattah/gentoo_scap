@@ -199,6 +199,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Set Password Minimum Age
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-restrictions/password_expiration/accounts_minimum_age_login_defs/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-restrictions/password_expiration/accounts_minimum_age_login_defs/rule.yml
 template: null
 documentation_complete: true

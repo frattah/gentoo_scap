@@ -144,6 +144,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Configure auditd admin_space_left on Low Disk Space
-definition_location: /home/frattah/old/linux_os/guide/auditing/configure_auditd_data_retention/auditd_data_retention_admin_space_left_percentage/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/configure_auditd_data_retention/auditd_data_retention_admin_space_left_percentage/rule.yml
 template: null
 documentation_complete: true

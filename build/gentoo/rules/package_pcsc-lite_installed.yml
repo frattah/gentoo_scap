@@ -21,8 +21,8 @@ references:
     - SRG-OS-000375-GPOS-00160
 components:
 - opensc
-- pam
 - pcsc-lite
+- pam
 identifiers: {}
 ocil_clause: the package is not installed
 ocil: 'Run the following command to determine if the <code>pcsc-lite</code> package
@@ -74,7 +74,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Install the pcsc-lite package
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-physical/screen_locking/smart_card_login/package_pcsc-lite_installed/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-physical/screen_locking/smart_card_login/package_pcsc-lite_installed/rule.yml
 template:
     name: package_installed
     vars:

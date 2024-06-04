@@ -40,6 +40,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Disable Logwatch on Clients if a Logserver Exists
-definition_location: /home/frattah/old/linux_os/guide/system/logging/disable_logwatch_for_logserver/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/logging/disable_logwatch_for_logserver/rule.yml
 template: null
 documentation_complete: true

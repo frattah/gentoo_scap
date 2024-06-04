@@ -67,6 +67,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Configure audispd Plugin To Send Logs To Remote Server
-definition_location: /home/frattah/old/linux_os/guide/auditing/configure_auditd_data_retention/auditd_audispd_configure_remote_server/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/configure_auditd_data_retention/auditd_audispd_configure_remote_server/rule.yml
 template: null
 documentation_complete: true

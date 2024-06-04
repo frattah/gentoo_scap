@@ -97,6 +97,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Configure Firewalld to Restrict Loopback Traffic
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-firewalld/ruleset_modifications/firewalld_loopback_traffic_restricted/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-firewalld/ruleset_modifications/firewalld_loopback_traffic_restricted/rule.yml
 template: null
 documentation_complete: true

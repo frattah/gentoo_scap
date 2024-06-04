@@ -25,8 +25,8 @@ references:
     srg:
     - SRG-OS-000063-GPOS-00032
 components:
-- audit
 - filesystem
+- audit
 identifiers: {}
 ocil_clause: /etc/audit/rules.d/*.rules does not have unix mode -rw-r-----
 ocil: 'To check the permissions of <code>/etc/audit/rules.d/*.rules</code>,
@@ -93,7 +93,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Verify Permissions on /etc/audit/rules.d/*.rules
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/files/file_permissions_etc_audit_rulesd/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/files/file_permissions_etc_audit_rulesd/rule.yml
 template:
     name: file_permissions
     vars:

@@ -50,8 +50,8 @@ references:
     - SRG-OS-000324-GPOS-00125
     - SRG-OS-000480-GPOS-00227
 components:
-- pam
 - systemd
+- pam
 identifiers: {}
 ocil_clause: the "debug-shell" is loaded and not masked
 ocil: 'To check that the <code>debug-shell</code> service is disabled in system boot
@@ -151,7 +151,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Disable debug-shell SystemD Service
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-physical/service_debug-shell_disabled/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-physical/service_debug-shell_disabled/rule.yml
 template:
     name: service_disabled
     vars:

@@ -72,6 +72,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Authorize Human Interface Devices and USB hubs in USBGuard daemon
-definition_location: /home/frattah/old/linux_os/guide/services/usbguard/usbguard_allow_hid_and_hub/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/usbguard/usbguard_allow_hid_and_hub/rule.yml
 template: null
 documentation_complete: true

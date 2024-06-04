@@ -185,8 +185,8 @@ references:
     pcidss4:
     - 1.2.6
 components:
-- grub2
 - selinux
+- grub2
 identifiers: {}
 ocil_clause: SELinux is disabled at boot time
 ocil: 'Inspect <tt>/etc/default/grub</tt> for any instances of <tt>selinux=0</tt>
@@ -216,6 +216,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Ensure SELinux Not Disabled in /etc/default/grub
-definition_location: /home/frattah/old/linux_os/guide/system/selinux/grub2_enable_selinux/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/selinux/grub2_enable_selinux/rule.yml
 template: null
 documentation_complete: true

@@ -53,6 +53,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: OpenSSH Service Must Use Passcode for Their Private Keys
-definition_location: /home/frattah/old/linux_os/guide/services/ssh/ssh_private_keys_have_passcode/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ssh/ssh_private_keys_have_passcode/rule.yml
 template: null
 documentation_complete: true

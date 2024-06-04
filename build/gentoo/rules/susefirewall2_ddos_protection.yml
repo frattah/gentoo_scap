@@ -83,6 +83,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Enable DoS Protections in SuSEfirewall2
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-susefirewall2/susefirewall2_ddos_protection/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-susefirewall2/susefirewall2_ddos_protection/rule.yml
 template: null
 documentation_complete: true

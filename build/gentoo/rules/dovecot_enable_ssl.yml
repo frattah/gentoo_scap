@@ -37,6 +37,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Enable the SSL flag in /etc/dovecot.conf
-definition_location: /home/frattah/old/linux_os/guide/services/imap/configure_dovecot/dovecot_enabling_ssl/dovecot_enable_ssl/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/imap/configure_dovecot/dovecot_enabling_ssl/dovecot_enable_ssl/rule.yml
 template: null
 documentation_complete: true

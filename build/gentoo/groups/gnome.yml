@@ -27,5 +27,5 @@ inherited_platforms: !!set {}
 cpe_platform_names: !!set
     package_gdm: null
 title: GNOME Desktop Environment
-definition_location: /home/frattah/old/linux_os/guide/system/software/gnome/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/gnome/group.yml
 documentation_complete: true

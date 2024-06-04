@@ -45,7 +45,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Verify Ownership of /etc/hosts.deny
-definition_location: /home/frattah/old/linux_os/guide/services/obsolete/inetd_and_xinetd/file_owner_etc_hosts_deny/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/obsolete/inetd_and_xinetd/file_owner_etc_hosts_deny/rule.yml
 template:
     name: file_owner
     vars:

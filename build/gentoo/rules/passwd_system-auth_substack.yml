@@ -49,6 +49,6 @@ bash_conditional: null
 fixes: {}
 title: Configure PAMs passwd Module To Implement system-auth Substack When Changing
     Passwords
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-pam/password_quality/passwd_system-auth_substack/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-pam/password_quality/passwd_system-auth_substack/rule.yml
 template: null
 documentation_complete: true

@@ -54,6 +54,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Configure Smart Card Local Cache of Revocation Data
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-physical/screen_locking/smart_card_login/smartcard_configure_crl/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-physical/screen_locking/smart_card_login/smartcard_configure_crl/rule.yml
 template: null
 documentation_complete: true

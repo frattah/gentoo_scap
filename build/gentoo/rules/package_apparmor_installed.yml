@@ -41,7 +41,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Ensure AppArmor is installed
-definition_location: /home/frattah/old/linux_os/guide/system/apparmor/package_apparmor_installed/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/apparmor/package_apparmor_installed/rule.yml
 template:
     name: package_installed
     vars:

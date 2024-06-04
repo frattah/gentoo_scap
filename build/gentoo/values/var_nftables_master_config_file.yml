@@ -11,5 +11,5 @@ options:
     etc: /etc/nftables.conf
 warnings: []
 title: Nftables Master configuration file
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-nftables/var_nftables_master_config_file.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-nftables/var_nftables_master_config_file.var
 documentation_complete: true

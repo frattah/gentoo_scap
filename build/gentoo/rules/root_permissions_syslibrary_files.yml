@@ -126,7 +126,7 @@ fixes: {}
 title: 'Verify the system-wide library files in directories
 
     "/lib", "/lib64", "/usr/lib/" and "/usr/lib64" are group-owned by root.'
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/files/permissions_within_important_dirs/root_permissions_syslibrary_files/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/files/permissions_within_important_dirs/root_permissions_syslibrary_files/rule.yml
 template:
     name: file_groupowner
     vars:

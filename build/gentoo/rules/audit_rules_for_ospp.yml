@@ -116,6 +116,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Configure audit according to OSPP requirements
-definition_location: /home/frattah/old/linux_os/guide/auditing/policy_rules/audit_rules_for_ospp/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/policy_rules/audit_rules_for_ospp/rule.yml
 template: null
 documentation_complete: true

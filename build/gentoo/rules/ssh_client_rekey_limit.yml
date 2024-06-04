@@ -138,6 +138,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Configure session renegotiation for SSH client
-definition_location: /home/frattah/old/linux_os/guide/services/ssh/ssh_client/ssh_client_rekey_limit/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ssh/ssh_client/ssh_client_rekey_limit/rule.yml
 template: null
 documentation_complete: true

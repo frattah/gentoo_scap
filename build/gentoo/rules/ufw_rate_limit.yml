@@ -112,6 +112,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: ufw Must rate-limit network interfaces
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-ufw/ufw_rate_limit/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-ufw/ufw_rate_limit/rule.yml
 template: null
 documentation_complete: true

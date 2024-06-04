@@ -80,6 +80,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Configure audispd's Plugin disk_full_action When Disk Is Full
-definition_location: /home/frattah/old/linux_os/guide/auditing/configure_auditd_data_retention/auditd_audispd_disk_full_action/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/configure_auditd_data_retention/auditd_audispd_disk_full_action/rule.yml
 template: null
 documentation_complete: true

@@ -46,7 +46,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Disable rpcbind Service
-definition_location: /home/frattah/old/linux_os/guide/services/nfs_and_rpc/disabling_nfs/disabling_nfs_services/service_rpcbind_disabled/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/nfs_and_rpc/disabling_nfs/disabling_nfs_services/service_rpcbind_disabled/rule.yml
 template:
     name: service_disabled
     vars:

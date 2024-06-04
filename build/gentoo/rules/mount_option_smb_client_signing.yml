@@ -48,6 +48,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Require Client SMB Packet Signing, if using mount.cifs
-definition_location: /home/frattah/old/linux_os/guide/services/smb/configuring_samba/mount_option_smb_client_signing/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/smb/configuring_samba/mount_option_smb_client_signing/rule.yml
 template: null
 documentation_complete: true

@@ -141,7 +141,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Enable SSH Print Last Log
-definition_location: /home/frattah/old/linux_os/guide/services/ssh/ssh_server/sshd_print_last_log/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ssh/ssh_server/sshd_print_last_log/rule.yml
 template:
     name: sshd_lineinfile
     vars:

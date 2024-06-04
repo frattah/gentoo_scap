@@ -8,5 +8,5 @@ bash_conditional: '[ ! -d /sys/firmware/efi ]'
 ansible_conditional: '"/boot/efi" not in ansible_mounts | map(attribute="mount") |
     list'
 title: ''
-definition_location: /home/frattah/old/build/gentoo/platforms/non-uefi.yml
+definition_location: /home/fra/gentoo_scap/build/gentoo/platforms/non-uefi.yml
 documentation_complete: true

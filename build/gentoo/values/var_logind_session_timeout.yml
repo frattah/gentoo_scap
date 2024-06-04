@@ -13,5 +13,5 @@ options:
     default: 300
 warnings: []
 title: Login timeout for idle sessions
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-physical/var_logind_session_timeout.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-physical/var_logind_session_timeout.var
 documentation_complete: true

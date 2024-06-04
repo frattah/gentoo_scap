@@ -104,7 +104,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Ensure AppArmor is Active and Configured
-definition_location: /home/frattah/old/linux_os/guide/system/apparmor/apparmor_configured/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/apparmor/apparmor_configured/rule.yml
 template:
     name: service_enabled
     vars:

@@ -34,6 +34,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Ensure users own their home directories
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-session/accounts_users_own_home_directories/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-session/accounts_users_own_home_directories/rule.yml
 template: null
 documentation_complete: true

@@ -86,5 +86,5 @@ inherited_platforms: !!set {}
 cpe_platform_names: !!set
     machine: null
 title: System Accounting with auditd
-definition_location: /home/frattah/old/linux_os/guide/auditing/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/group.yml
 documentation_complete: true

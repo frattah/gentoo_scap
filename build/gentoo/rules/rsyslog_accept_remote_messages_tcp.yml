@@ -85,6 +85,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Enable rsyslog to Accept Messages via TCP, if Acting As Log Server
-definition_location: /home/frattah/old/linux_os/guide/system/logging/rsyslog_accepting_remote_messages/rsyslog_accept_remote_messages_tcp/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/logging/rsyslog_accepting_remote_messages/rsyslog_accept_remote_messages_tcp/rule.yml
 template: null
 documentation_complete: true

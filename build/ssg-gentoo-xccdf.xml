@@ -67,14 +67,14 @@ respective companies.</xccdf-1.2:rear-matter>
   <xccdf-1.2:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cunix-linux">stigid</xccdf-1.2:reference>
   <xccdf-1.2:reference href="https://public.cyber.mil/stigs/srg-stig-tools/">stigref</xccdf-1.2:reference>
   <cpe-lang:platform-specification>
-    <cpe-lang:platform id="machine">
-      <cpe-lang:logical-test operator="AND" negate="false">
-        <cpe-lang:check-fact-ref system="http://oval.mitre.org/XMLSchema/oval-definitions-5" href="ssg-gentoo-cpe-oval.xml" id-ref="oval:ssg-installed_env_is_a_machine:def:1" />
-      </cpe-lang:logical-test>
-    </cpe-lang:platform>
     <cpe-lang:platform id="package_pam">
       <cpe-lang:logical-test operator="AND" negate="false">
         <cpe-lang:check-fact-ref system="http://oval.mitre.org/XMLSchema/oval-definitions-5" href="ssg-gentoo-cpe-oval.xml" id-ref="oval:ssg-package_pam:def:1" />
+      </cpe-lang:logical-test>
+    </cpe-lang:platform>
+    <cpe-lang:platform id="machine">
+      <cpe-lang:logical-test operator="AND" negate="false">
+        <cpe-lang:check-fact-ref system="http://oval.mitre.org/XMLSchema/oval-definitions-5" href="ssg-gentoo-cpe-oval.xml" id-ref="oval:ssg-installed_env_is_a_machine:def:1" />
       </cpe-lang:logical-test>
     </cpe-lang:platform>
   </cpe-lang:platform-specification>

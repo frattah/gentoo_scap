@@ -146,6 +146,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Configure System to Forward All Mail For The Root Account
-definition_location: /home/frattah/old/linux_os/guide/services/mail/postfix_client/postfix_client_configure_mail_alias/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/mail/postfix_client/postfix_client_configure_mail_alias/rule.yml
 template: null
 documentation_complete: true

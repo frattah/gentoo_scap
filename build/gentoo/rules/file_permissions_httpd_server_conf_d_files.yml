@@ -113,7 +113,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Set Permissions on All Configuration Files Inside /etc/httpd/conf.d/
-definition_location: /home/frattah/old/linux_os/guide/services/http/securing_httpd/httpd_configure_os_protect_web_server/httpd_restrict_file_dir_access/file_permissions_httpd_server_conf_d_files/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/http/securing_httpd/httpd_configure_os_protect_web_server/httpd_restrict_file_dir_access/file_permissions_httpd_server_conf_d_files/rule.yml
 template:
     name: file_permissions
     vars:

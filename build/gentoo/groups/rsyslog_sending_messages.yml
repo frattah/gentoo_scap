@@ -51,5 +51,5 @@ inherited_platforms: !!set
     machine: null
 cpe_platform_names: !!set {}
 title: Rsyslog Logs Sent To Remote Host
-definition_location: /home/frattah/old/linux_os/guide/system/logging/rsyslog_sending_messages/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/logging/rsyslog_sending_messages/group.yml
 documentation_complete: true

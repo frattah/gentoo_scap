@@ -169,6 +169,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Configure SSSD to Expire Offline Credentials
-definition_location: /home/frattah/old/linux_os/guide/services/sssd/sssd_offline_cred_expiration/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/sssd/sssd_offline_cred_expiration/rule.yml
 template: null
 documentation_complete: true

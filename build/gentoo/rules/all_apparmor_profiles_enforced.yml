@@ -50,6 +50,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Enforce all AppArmor Profiles
-definition_location: /home/frattah/old/linux_os/guide/system/apparmor/all_apparmor_profiles_enforced/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/apparmor/all_apparmor_profiles_enforced/rule.yml
 template: null
 documentation_complete: true

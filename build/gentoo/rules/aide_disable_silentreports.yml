@@ -61,7 +61,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Configure AIDE To Notify Personnel if Baseline Configurations Are Altered
-definition_location: /home/frattah/old/linux_os/guide/system/software/integrity/software-integrity/aide/aide_disable_silentreports/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/integrity/software-integrity/aide/aide_disable_silentreports/rule.yml
 template:
     name: key_value_pair_in_file
     vars:

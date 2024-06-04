@@ -52,5 +52,5 @@ options:
     westcos: westcos
 warnings: []
 title: OpenSC Smart Card Drivers
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-physical/screen_locking/smart_card_login/var_smartcard_drivers.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-physical/screen_locking/smart_card_login/var_smartcard_drivers.var
 documentation_complete: true

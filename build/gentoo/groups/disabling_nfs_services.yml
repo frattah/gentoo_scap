@@ -27,5 +27,5 @@ inherited_platforms: !!set
 cpe_platform_names: !!set
     machine: null
 title: Disable Services Used Only by NFS
-definition_location: /home/frattah/old/linux_os/guide/services/nfs_and_rpc/disabling_nfs/disabling_nfs_services/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/nfs_and_rpc/disabling_nfs/disabling_nfs_services/group.yml
 documentation_complete: true

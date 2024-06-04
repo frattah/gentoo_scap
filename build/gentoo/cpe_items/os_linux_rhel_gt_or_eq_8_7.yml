@@ -10,7 +10,7 @@ versioned: true
 args: {}
 content_id: ssg
 title: Operating System is rhel
-definition_location: /home/frattah/old/shared/applicability/os_linux.yml
+definition_location: /home/fra/gentoo_scap/shared/applicability/os_linux.yml
 template:
     name: platform_os_linux
     vars:

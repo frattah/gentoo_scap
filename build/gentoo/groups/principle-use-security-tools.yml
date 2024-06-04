@@ -22,5 +22,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: Configure Security Tools to Improve System Robustness
-definition_location: /home/frattah/old/linux_os/guide/intro/general-principles/principle-use-security-tools/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/intro/general-principles/principle-use-security-tools/group.yml
 documentation_complete: true

@@ -54,7 +54,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Configure file name of core dumps
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/restrictions/sysctl_kernel_core_uses_pid/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/restrictions/sysctl_kernel_core_uses_pid/rule.yml
 template:
     name: sysctl
     vars:

@@ -52,6 +52,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Specify UID and GID for Anonymous NFS Connections
-definition_location: /home/frattah/old/linux_os/guide/services/nfs_and_rpc/nfs_configuring_clients/disabling_nfsd/nfs_no_anonymous/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/nfs_and_rpc/nfs_configuring_clients/disabling_nfsd/nfs_no_anonymous/rule.yml
 template: null
 documentation_complete: true

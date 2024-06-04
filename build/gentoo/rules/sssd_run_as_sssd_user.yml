@@ -41,6 +41,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Configure SSSD to run as user sssd
-definition_location: /home/frattah/old/linux_os/guide/services/sssd/sssd_run_as_sssd_user/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/sssd/sssd_run_as_sssd_user/rule.yml
 template: null
 documentation_complete: true

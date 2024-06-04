@@ -12,5 +12,5 @@ options:
     default: 1
 warnings: []
 title: Maximum concurrent login sessions
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-session/var_accounts_max_concurrent_login_sessions.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-session/var_accounts_max_concurrent_login_sessions.var
 documentation_complete: true

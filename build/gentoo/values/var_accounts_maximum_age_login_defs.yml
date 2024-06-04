@@ -12,5 +12,5 @@ options:
     default: 60
 warnings: []
 title: maximum password age
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-restrictions/password_expiration/var_accounts_maximum_age_login_defs.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-restrictions/password_expiration/var_accounts_maximum_age_login_defs.var
 documentation_complete: true

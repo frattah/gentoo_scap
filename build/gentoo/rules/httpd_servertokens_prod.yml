@@ -110,6 +110,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Set httpd ServerTokens Directive to Prod
-definition_location: /home/frattah/old/linux_os/guide/services/http/securing_httpd/httpd_restrict_info_leakage/httpd_servertokens_prod/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/http/securing_httpd/httpd_restrict_info_leakage/httpd_servertokens_prod/rule.yml
 template: null
 documentation_complete: true

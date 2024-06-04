@@ -19,5 +19,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: SAP Specific Requirement
-definition_location: /home/frattah/old/linux_os/guide/system/software/sap_host/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/sap_host/group.yml
 documentation_complete: true

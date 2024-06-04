@@ -79,7 +79,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Record Any Attempts to Run chmod
-definition_location: /home/frattah/old/linux_os/guide/auditing/auditd_configure_rules/audit_execution_acl_commands/audit_rules_execution_chmod/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/auditd_configure_rules/audit_execution_acl_commands/audit_rules_execution_chmod/rule.yml
 template:
     name: audit_rules_privileged_commands
     vars:

@@ -84,7 +84,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Add nodev Option to /boot
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/partitions/mount_option_boot_nodev/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/partitions/mount_option_boot_nodev/rule.yml
 template:
     name: mount_option
     vars:

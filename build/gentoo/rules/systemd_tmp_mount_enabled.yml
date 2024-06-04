@@ -49,7 +49,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Ensure tmp.mount Unit Us Enabled
-definition_location: /home/frattah/old/linux_os/guide/system/software/disk_partitioning/systemd_tmp_mount_enabled/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/disk_partitioning/systemd_tmp_mount_enabled/rule.yml
 template:
     name: systemd_mount_enabled
     vars:

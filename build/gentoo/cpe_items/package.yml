@@ -351,7 +351,7 @@ args:
         pkgname: apt
 content_id: ssg
 title: Package {pkgname} is installed
-definition_location: /home/frattah/old/shared/applicability/package.yml
+definition_location: /home/fra/gentoo_scap/shared/applicability/package.yml
 template:
     name: platform_package
 documentation_complete: true

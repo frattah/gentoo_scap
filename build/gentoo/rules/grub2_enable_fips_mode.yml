@@ -106,8 +106,8 @@ references:
     - SRG-OS-000405-GPOS-00184
     - SRG-OS-000478-GPOS-00223
 components:
-- fips
 - grub2
+- fips
 identifiers: {}
 ocil_clause: FIPS is not configured or enabled in grub
 ocil: 'To verify that FIPS is enabled properly in grub, run the following command:
@@ -173,6 +173,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Enable FIPS Mode in GRUB2
-definition_location: /home/frattah/old/linux_os/guide/system/software/integrity/fips/grub2_enable_fips_mode/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/integrity/fips/grub2_enable_fips_mode/rule.yml
 template: null
 documentation_complete: true

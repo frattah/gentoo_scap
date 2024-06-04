@@ -128,6 +128,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Set existing passwords a period of inactivity before they been locked
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-restrictions/password_expiration/accounts_set_post_pw_existing/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-restrictions/password_expiration/accounts_set_post_pw_existing/rule.yml
 template: null
 documentation_complete: true

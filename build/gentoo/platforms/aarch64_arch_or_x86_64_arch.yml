@@ -11,5 +11,5 @@ bash_conditional: ( grep -q aarch64 /proc/sys/kernel/osrelease || grep -q x86_64
 ansible_conditional: ( ansible_architecture == "aarch64" or ansible_architecture ==
     "x86_64" )
 title: ''
-definition_location: /home/frattah/old/build/gentoo/platforms/aarch64_arch_or_x86_64_arch.yml
+definition_location: /home/fra/gentoo_scap/build/gentoo/platforms/aarch64_arch_or_x86_64_arch.yml
 documentation_complete: true

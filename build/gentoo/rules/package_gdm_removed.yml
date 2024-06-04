@@ -29,8 +29,8 @@ references:
     srg:
     - SRG-OS-000480-GPOS-00227
 components:
-- gdm
 - gnome
+- gdm
 identifiers: {}
 ocil_clause: gdm has not been removed
 ocil: 'To ensure the gdm package group is removed, run the following command:
@@ -87,7 +87,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Remove the GDM Package Group
-definition_location: /home/frattah/old/linux_os/guide/system/software/gnome/package_gdm_removed/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/gnome/package_gdm_removed/rule.yml
 template:
     name: package_removed
     vars:

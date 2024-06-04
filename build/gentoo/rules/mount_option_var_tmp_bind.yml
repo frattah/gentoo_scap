@@ -120,6 +120,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Bind Mount /var/tmp To /tmp
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/partitions/mount_option_var_tmp_bind/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/partitions/mount_option_var_tmp_bind/rule.yml
 template: null
 documentation_complete: true

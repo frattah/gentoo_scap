@@ -60,6 +60,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Disable Recovery Booting
-definition_location: /home/frattah/old/linux_os/guide/system/bootloader-grub2/grub2_disable_recovery/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/bootloader-grub2/grub2_disable_recovery/rule.yml
 template: null
 documentation_complete: true

@@ -211,6 +211,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Record Attempts to Alter Time Through clock_settime
-definition_location: /home/frattah/old/linux_os/guide/auditing/auditd_configure_rules/audit_time_rules/audit_rules_time_clock_settime/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/auditd_configure_rules/audit_time_rules/audit_rules_time_clock_settime/rule.yml
 template: null
 documentation_complete: true

@@ -46,6 +46,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Ensure that chronyd is running under chrony user account
-definition_location: /home/frattah/old/linux_os/guide/services/ntp/chronyd_run_as_chrony_user/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ntp/chronyd_run_as_chrony_user/rule.yml
 template: null
 documentation_complete: true

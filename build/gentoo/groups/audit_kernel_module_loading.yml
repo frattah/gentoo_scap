@@ -42,5 +42,5 @@ inherited_platforms: !!set
     machine: null
 cpe_platform_names: !!set {}
 title: Record Information on Kernel Modules Loading and Unloading
-definition_location: /home/frattah/old/linux_os/guide/auditing/auditd_configure_rules/audit_kernel_module_loading/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/auditd_configure_rules/audit_kernel_module_loading/group.yml
 documentation_complete: true

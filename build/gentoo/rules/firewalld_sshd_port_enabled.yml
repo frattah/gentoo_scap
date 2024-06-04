@@ -172,6 +172,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Enable SSH Server firewalld Firewall Exception
-definition_location: /home/frattah/old/linux_os/guide/services/ssh/ssh_server/firewalld_sshd_port_enabled/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ssh/ssh_server/firewalld_sshd_port_enabled/rule.yml
 template: null
 documentation_complete: true

@@ -83,6 +83,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Elevate The SELinux Context When An Administrator Calls The Sudo Command
-definition_location: /home/frattah/old/linux_os/guide/system/selinux/selinux_context_elevation_for_sudo/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/selinux/selinux_context_elevation_for_sudo/rule.yml
 template: null
 documentation_complete: true

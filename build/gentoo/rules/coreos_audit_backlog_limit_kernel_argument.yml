@@ -22,8 +22,8 @@ references:
     - SRG-OS-000254-GPOS-00095
     - SRG-APP-000092-CTR-000165
 components:
-- audit
 - kernel
+- audit
 identifiers: {}
 ocil_clause: audit backlog limit is not configured
 ocil: 'Inspect the form of all the BLS (Boot Loader Specification) entries
@@ -60,7 +60,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Extend Audit Backlog Limit for the Audit Daemon
-definition_location: /home/frattah/old/linux_os/guide/auditing/coreos_audit_backlog_limit_kernel_argument/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/coreos_audit_backlog_limit_kernel_argument/rule.yml
 template:
     name: coreos_kernel_option
     vars:

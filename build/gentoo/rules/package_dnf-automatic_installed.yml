@@ -14,8 +14,8 @@ references:
     anssi:
     - R61
 components:
-- dnf
 - rpm
+- dnf
 identifiers: {}
 ocil_clause: the package is not installed
 ocil: 'Run the following command to determine if the <code>dnf-automatic</code> package
@@ -38,7 +38,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Install dnf-automatic Package
-definition_location: /home/frattah/old/linux_os/guide/system/software/updating/package_dnf-automatic_installed/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/updating/package_dnf-automatic_installed/rule.yml
 template:
     name: package_installed
     vars:

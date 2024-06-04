@@ -69,7 +69,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Disable merging of slabs with similar size
-definition_location: /home/frattah/old/linux_os/guide/system/bootloader-grub2/grub2_slab_nomerge_argument/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/bootloader-grub2/grub2_slab_nomerge_argument/rule.yml
 template:
     name: grub2_bootloader_argument
     vars:

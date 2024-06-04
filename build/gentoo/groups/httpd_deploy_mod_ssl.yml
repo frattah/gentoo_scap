@@ -32,5 +32,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: Deploy mod_ssl
-definition_location: /home/frattah/old/linux_os/guide/services/http/securing_httpd/httpd_modules_improve_security/httpd_deploy_mod_ssl/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/http/securing_httpd/httpd_modules_improve_security/httpd_deploy_mod_ssl/group.yml
 documentation_complete: true

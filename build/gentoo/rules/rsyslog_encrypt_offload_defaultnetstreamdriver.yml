@@ -123,6 +123,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Ensure Rsyslog Encrypts Off-Loaded Audit Records
-definition_location: /home/frattah/old/linux_os/guide/system/logging/ensure_rsyslog_log_file_configuration/rsyslog_encrypt_offload_defaultnetstreamdriver/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/logging/ensure_rsyslog_log_file_configuration/rsyslog_encrypt_offload_defaultnetstreamdriver/rule.yml
 template: null
 documentation_complete: true

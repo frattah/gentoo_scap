@@ -19,5 +19,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: Configure the Exports File Restrictively
-definition_location: /home/frattah/old/linux_os/guide/services/nfs_and_rpc/nfs_configuring_servers/configure_exports_restrictively/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/nfs_and_rpc/nfs_configuring_servers/configure_exports_restrictively/group.yml
 documentation_complete: true

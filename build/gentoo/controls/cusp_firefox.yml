@@ -3,7 +3,7 @@ policy: Firefox Common User Security Policy
 title: Firefox Common User Security Policy
 source: jodehnal's bachelor thesis on creating a SCAP profile for common users of
     Fedora workstation - link will be added after publication
-definition_location: /home/frattah/old/controls/cusp_firefox.yml
+definition_location: /home/fra/gentoo_scap/controls/cusp_firefox.yml
 controls:
 -   id: 1.0
     levels:

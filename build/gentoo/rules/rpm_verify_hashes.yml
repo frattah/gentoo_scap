@@ -203,6 +203,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Verify File Hashes with RPM
-definition_location: /home/frattah/old/linux_os/guide/system/software/integrity/software-integrity/rpm_verification/rpm_verify_hashes/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/integrity/software-integrity/rpm_verification/rpm_verify_hashes/rule.yml
 template: null
 documentation_complete: true

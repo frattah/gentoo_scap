@@ -7,5 +7,5 @@ options:
     mil_sysadmin: system.administrator@mail.mil
 warnings: []
 title: Postfix Root Mail Alias
-definition_location: /home/frattah/old/linux_os/guide/services/mail/postfix_client/var_postfix_root_mail_alias.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/mail/postfix_client/var_postfix_root_mail_alias.var
 documentation_complete: true

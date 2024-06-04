@@ -2,7 +2,7 @@ id: cis_eks
 policy: CIS
 title: Configuration Recommendations of an EKS System
 source: https://www.cisecurity.org/cis-benchmarks/
-definition_location: /home/frattah/old/controls/cis_eks.yml
+definition_location: /home/fra/gentoo_scap/controls/cis_eks.yml
 controls:
 -   id: '1'
     levels:

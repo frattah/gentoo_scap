@@ -39,6 +39,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Ensure network interfaces are assigned to appropriate zone
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-firewalld/set_firewalld_appropriate_zone/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-firewalld/set_firewalld_appropriate_zone/rule.yml
 template: null
 documentation_complete: true

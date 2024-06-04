@@ -2,7 +2,7 @@ id: nist_ansible-tower
 policy: NIST
 title: Configuration Recommendations for Ansible Tower
 source: https://www.fedramp.gov/assets/resources/documents/FedRAMP_Security_Controls_Baseline.xlsx
-definition_location: /home/frattah/old/controls/nist_ansibletower.yml
+definition_location: /home/fra/gentoo_scap/controls/nist_ansibletower.yml
 controls:
 -   id: AC-1
     levels:

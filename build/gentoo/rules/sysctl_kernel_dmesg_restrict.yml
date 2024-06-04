@@ -168,7 +168,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Restrict Access to Kernel Message Buffer
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/restrictions/sysctl_kernel_dmesg_restrict/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/restrictions/sysctl_kernel_dmesg_restrict/rule.yml
 template:
     name: sysctl
     vars:

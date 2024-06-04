@@ -140,8 +140,8 @@ references:
     - SRG-APP-000029-CTR-000085
     - SRG-APP-000495-CTR-001235
 components:
-- audit
 - pam
+- audit
 identifiers: {}
 ocil_clause: the command does not return a line, or the line is commented out
 ocil: 'Verify that Gentoo is configured to audit the execution of the "pam_timestamp_check"
@@ -254,7 +254,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Ensure auditd Collects Information on the Use of Privileged Commands - pam_timestamp_check
-definition_location: /home/frattah/old/linux_os/guide/auditing/auditd_configure_rules/audit_privileged_commands/audit_rules_privileged_commands_pam_timestamp_check/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/auditd_configure_rules/audit_privileged_commands/audit_rules_privileged_commands_pam_timestamp_check/rule.yml
 template:
     name: audit_rules_privileged_commands
     vars:

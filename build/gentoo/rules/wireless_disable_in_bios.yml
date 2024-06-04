@@ -139,6 +139,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Disable WiFi or Bluetooth in BIOS
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-wireless/wireless_software/wireless_disable_in_bios/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-wireless/wireless_software/wireless_disable_in_bios/rule.yml
 template: null
 documentation_complete: true

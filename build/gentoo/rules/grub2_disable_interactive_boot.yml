@@ -186,6 +186,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Verify that Interactive Boot is Disabled
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-physical/grub2_disable_interactive_boot/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-physical/grub2_disable_interactive_boot/rule.yml
 template: null
 documentation_complete: true

@@ -8,5 +8,5 @@ options:
     2: 2
 warnings: []
 title: kernel.kptr_restrict
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/restrictions/enable_execshield_settings/sysctl_kernel_kptr_restrict_value.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/restrictions/enable_execshield_settings/sysctl_kernel_kptr_restrict_value.var
 documentation_complete: true

@@ -79,27 +79,3 @@
       create: true
       regexp: (?:typeset|declare)[\s]+-xr[\s]+TMOUT=([\w$]+).*$
       line: typeset -xr TMOUT={{ var_accounts_tmout }}
-
-  - name: Ensure pam is correctly configured to use faillock.so
-    ansible.builtin.lineinfile:
-      path: /etc/pam.d/system-auth
-      state: present
-      regexp: ^auth[\s]+required[\s]+pam_faillock.so[\s]+(preauth|authfail)
-      state: present
-      line: password    required    pam_faillock.so preauth
-
-  - name: Lock out users after {{ var_accounts_passwords_pam_faillock_deny }} failed authentication attempts
-    ansible.builtin.lineinfile:
-      path: /etc/security/faillock.conf
-      create: true
-      line: deny = {{ var_accounts_passwords_pam_faillock_deny }}
-
-  - name: Lock out users after failed authentication attempts within {{ var_accounts_passwords_pam_faillock_fail_interaval }}s
-    ansible.builtin.lineinfile:
-      path: /etc/security/faillock.conf
-      line: fail_interval = {{ var_accounts_passwords_pam_faillock_fail_interval }}
-
-  - name: Ensure the lock is enabled also for root
-    ansible.builtin.lineinfile:
-      path: /etc/security/faillock.conf
-      line: even_deny_root

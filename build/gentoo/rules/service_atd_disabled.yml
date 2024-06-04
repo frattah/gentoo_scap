@@ -99,8 +99,8 @@ references:
     - PR.IP-1
     - PR.PT-3
 components:
-- at
 - cronie
+- at
 identifiers: {}
 ocil_clause: the "atd" is loaded and not masked
 ocil: 'To check that the <code>atd</code> service is disabled in system boot configuration,
@@ -162,7 +162,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Disable At Service (atd)
-definition_location: /home/frattah/old/linux_os/guide/services/cron_and_at/service_atd_disabled/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/cron_and_at/service_atd_disabled/rule.yml
 template:
     name: service_disabled
     vars:

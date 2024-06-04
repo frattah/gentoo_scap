@@ -18,8 +18,8 @@ rationale: 'Unless a system is specifically designated to act as a DNS
 severity: low
 references: {}
 components:
-- bind
 - dnsmasq
+- bind
 identifiers: {}
 ocil_clause: the package is installed
 ocil: 'Run the following command to determine if the <code>dnsmasq</code> package
@@ -44,7 +44,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Uninstall dnsmasq Package
-definition_location: /home/frattah/old/linux_os/guide/services/dns/package_dnsmasq_removed/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/dns/package_dnsmasq_removed/rule.yml
 template:
     name: package_removed
     vars:

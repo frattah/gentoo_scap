@@ -48,7 +48,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Verify Group Who Owns /etc/sysctl.d Directory
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/files/permissions_within_important_dirs/directory_groupowner_etc_sysctld/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/files/permissions_within_important_dirs/directory_groupowner_etc_sysctld/rule.yml
 template:
     name: file_groupowner
     vars:

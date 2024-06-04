@@ -7,5 +7,5 @@ xml_content: <ns0:platform xmlns:ns0="http://cpe.mitre.org/language/2.0" id="uef
 bash_conditional: '[ -d /sys/firmware/efi ]'
 ansible_conditional: '"/boot/efi" in ansible_mounts | map(attribute="mount") | list'
 title: ''
-definition_location: /home/frattah/old/build/gentoo/platforms/uefi.yml
+definition_location: /home/fra/gentoo_scap/build/gentoo/platforms/uefi.yml
 documentation_complete: true

@@ -23,5 +23,5 @@ inherited_platforms: !!set
 cpe_platform_names: !!set
     non-uefi: null
 title: Non-UEFI GRUB2 bootloader configuration
-definition_location: /home/frattah/old/linux_os/guide/system/bootloader-grub2/non-uefi/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/bootloader-grub2/non-uefi/group.yml
 documentation_complete: true

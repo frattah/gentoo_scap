@@ -33,5 +33,5 @@ inherited_platforms: !!set
     machine: null
 cpe_platform_names: !!set {}
 title: Configure Console Screen Locking
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-physical/screen_locking/console_screen_locking/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-physical/screen_locking/console_screen_locking/group.yml
 documentation_complete: true

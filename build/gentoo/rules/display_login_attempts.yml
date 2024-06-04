@@ -180,6 +180,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Ensure PAM Displays Last Logon/Access Notification
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-pam/display_login_attempts/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-pam/display_login_attempts/rule.yml
 template: null
 documentation_complete: true

@@ -78,9 +78,9 @@ references:
     nist:
     - AC-8(b)
 components:
-- gdm
 - gnome
 - pam
+- gdm
 identifiers: {}
 ocil_clause: it does not display the required banner
 ocil: 'To check if the system login banner is compliant,
@@ -108,6 +108,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Modify the System GUI Login Banner
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-banners/gui_login_banner/banner_etc_gdm_banner/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-banners/gui_login_banner/banner_etc_gdm_banner/rule.yml
 template: null
 documentation_complete: true

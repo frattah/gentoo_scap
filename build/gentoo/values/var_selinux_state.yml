@@ -13,5 +13,5 @@ options:
     permissive: permissive
 warnings: []
 title: SELinux state
-definition_location: /home/frattah/old/linux_os/guide/system/selinux/var_selinux_state.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/selinux/var_selinux_state.var
 documentation_complete: true

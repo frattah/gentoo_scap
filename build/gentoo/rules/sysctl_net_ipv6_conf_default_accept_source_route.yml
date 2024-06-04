@@ -229,7 +229,7 @@ bash_conditional: null
 fixes: {}
 title: Disable Kernel Parameter for Accepting Source-Routed Packets on IPv6 Interfaces
     by Default
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-ipv6/configuring_ipv6/sysctl_net_ipv6_conf_default_accept_source_route/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-ipv6/configuring_ipv6/sysctl_net_ipv6_conf_default_accept_source_route/rule.yml
 template:
     name: sysctl
     vars:

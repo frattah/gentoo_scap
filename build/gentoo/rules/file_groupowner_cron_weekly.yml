@@ -117,7 +117,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Verify Group Who Owns cron.weekly
-definition_location: /home/frattah/old/linux_os/guide/services/cron_and_at/file_groupowner_cron_weekly/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/cron_and_at/file_groupowner_cron_weekly/rule.yml
 template:
     name: file_groupowner
     vars:

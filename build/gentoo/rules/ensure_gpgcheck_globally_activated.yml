@@ -111,9 +111,9 @@ references:
     pcidss4:
     - 6.3.3
 components:
-- dnf
-- rpm
 - yum
+- rpm
+- dnf
 identifiers: {}
 ocil_clause: there is no process to validate certificates that is approved by the
     organization
@@ -220,6 +220,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Ensure gpgcheck Enabled In Main yum Configuration
-definition_location: /home/frattah/old/linux_os/guide/system/software/updating/ensure_gpgcheck_globally_activated/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/updating/ensure_gpgcheck_globally_activated/rule.yml
 template: null
 documentation_complete: true

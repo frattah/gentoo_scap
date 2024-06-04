@@ -66,7 +66,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Verify Permissions on the system journal directories
-definition_location: /home/frattah/old/linux_os/guide/system/logging/journald/dir_permissions_system_journal/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/logging/journald/dir_permissions_system_journal/rule.yml
 template:
     name: file_permissions
     vars:

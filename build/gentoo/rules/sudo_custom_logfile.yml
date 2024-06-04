@@ -41,7 +41,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Ensure Sudo Logfile Exists - sudo logfile
-definition_location: /home/frattah/old/linux_os/guide/system/software/sudo/sudo_custom_logfile/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/sudo/sudo_custom_logfile/rule.yml
 template:
     name: sudo_defaults_option
     vars:

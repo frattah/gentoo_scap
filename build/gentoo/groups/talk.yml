@@ -14,5 +14,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: Chat/Messaging Services
-definition_location: /home/frattah/old/linux_os/guide/services/obsolete/talk/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/obsolete/talk/group.yml
 documentation_complete: true

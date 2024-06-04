@@ -16,5 +16,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: Kernel Parameters Which Affect Networking
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-kernel/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-kernel/group.yml
 documentation_complete: true

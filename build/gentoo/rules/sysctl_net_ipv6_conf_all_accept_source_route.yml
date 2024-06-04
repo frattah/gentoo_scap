@@ -214,7 +214,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Disable Kernel Parameter for Accepting Source-Routed Packets on all IPv6 Interfaces
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-ipv6/configuring_ipv6/sysctl_net_ipv6_conf_all_accept_source_route/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-ipv6/configuring_ipv6/sysctl_net_ipv6_conf_all_accept_source_route/rule.yml
 template:
     name: sysctl
     vars:

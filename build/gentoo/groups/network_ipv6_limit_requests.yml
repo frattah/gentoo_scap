@@ -75,5 +75,5 @@ inherited_platforms: !!set
     ipv6[enabled]: null
 cpe_platform_names: !!set {}
 title: Limit Network-Transmitted Configuration if Using Static IPv6 Addresses
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-ipv6/configuring_ipv6/network_ipv6_limit_requests/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-ipv6/configuring_ipv6/network_ipv6_limit_requests/group.yml
 documentation_complete: true

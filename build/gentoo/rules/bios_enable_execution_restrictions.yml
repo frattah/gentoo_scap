@@ -144,6 +144,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Enable NX or XD Support in the BIOS
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/restrictions/enable_nx/bios_enable_execution_restrictions/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/restrictions/enable_nx/bios_enable_execution_restrictions/rule.yml
 template: null
 documentation_complete: true

@@ -15,5 +15,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: Configure OpenLDAP Server
-definition_location: /home/frattah/old/linux_os/guide/services/ldap/openldap_server/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ldap/openldap_server/group.yml
 documentation_complete: true

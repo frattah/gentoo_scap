@@ -11,5 +11,5 @@ options:
     seccomp: seccomp
 warnings: []
 title: Spec Store Bypass Mitigation
-definition_location: /home/frattah/old/linux_os/guide/system/bootloader-grub2/var_spec_store_bypass_disable_options.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/bootloader-grub2/var_spec_store_bypass_disable_options.var
 documentation_complete: true

@@ -47,7 +47,7 @@ bash_conditional: null
 fixes: {}
 title: Configure Maximum Number of Autoconfigured Addresses on All IPv6 Interfaces
     By Default
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-ipv6/configuring_ipv6/sysctl_net_ipv6_conf_default_max_addresses/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-ipv6/configuring_ipv6/sysctl_net_ipv6_conf_default_max_addresses/rule.yml
 template:
     name: sysctl
     vars:

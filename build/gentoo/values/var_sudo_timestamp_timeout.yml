@@ -15,5 +15,5 @@ options:
     15_minutes: '15'
 warnings: []
 title: Sudo - timestamp_timeout value
-definition_location: /home/frattah/old/linux_os/guide/system/software/sudo/var_sudo_timestamp_timeout.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/sudo/var_sudo_timestamp_timeout.var
 documentation_complete: true

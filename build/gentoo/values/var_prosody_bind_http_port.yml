@@ -12,5 +12,5 @@ options:
     'on': 'true'
 warnings: []
 title: prosody_bind_http_port SELinux Boolean
-definition_location: /home/frattah/old/linux_os/guide/system/selinux/selinux-booleans/var_prosody_bind_http_port.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/selinux/selinux-booleans/var_prosody_bind_http_port.var
 documentation_complete: true

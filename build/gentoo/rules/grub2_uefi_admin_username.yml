@@ -214,6 +214,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Set the UEFI Boot Loader Admin Username to a Non-Default Value
-definition_location: /home/frattah/old/linux_os/guide/system/bootloader-grub2/uefi/grub2_uefi_admin_username/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/bootloader-grub2/uefi/grub2_uefi_admin_username/rule.yml
 template: null
 documentation_complete: true

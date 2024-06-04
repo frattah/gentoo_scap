@@ -10,5 +10,5 @@ bash_conditional: grep -qP "^ID=[\"']?ol[\"']?$" "/etc/os-release" && { real="$(
 ansible_conditional: ansible_distribution == 'OracleLinux' and ansible_distribution_version
     is version('8.7', '>=')
 title: ''
-definition_location: /home/frattah/old/build/gentoo/platforms/os_linux_ol_gt_or_eq_8_7.yml
+definition_location: /home/fra/gentoo_scap/build/gentoo/platforms/os_linux_ol_gt_or_eq_8_7.yml
 documentation_complete: true

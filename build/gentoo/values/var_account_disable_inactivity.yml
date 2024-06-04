@@ -18,5 +18,5 @@ options:
 warnings: []
 title: number of days after the last login of the user when the user will be locked
     out
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-restrictions/account_expiration/var_account_disable_inactivity.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-restrictions/account_expiration/var_account_disable_inactivity.var
 documentation_complete: true

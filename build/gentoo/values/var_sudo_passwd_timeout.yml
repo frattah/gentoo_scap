@@ -14,5 +14,5 @@ options:
     5_minutes: '5'
 warnings: []
 title: Sudo - passwd_timeout value
-definition_location: /home/frattah/old/linux_os/guide/system/software/sudo/var_sudo_passwd_timeout.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/sudo/var_sudo_passwd_timeout.var
 documentation_complete: true

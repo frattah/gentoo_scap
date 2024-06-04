@@ -90,6 +90,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Verify that Local Logs of the audit Daemon are not World-Readable
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/permissions_local/permissions_local_var_log_audit/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/permissions_local/permissions_local_var_log_audit/rule.yml
 template: null
 documentation_complete: true

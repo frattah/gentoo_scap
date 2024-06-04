@@ -9,5 +9,5 @@ options:
     default: 25
 warnings: []
 title: The percentage remaining in disk space before prompting space_left_action
-definition_location: /home/frattah/old/linux_os/guide/auditing/configure_auditd_data_retention/var_auditd_space_left_percentage.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/configure_auditd_data_retention/var_auditd_space_left_percentage.var
 documentation_complete: true

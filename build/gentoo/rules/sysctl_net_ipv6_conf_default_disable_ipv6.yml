@@ -137,7 +137,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Disable IPv6 Addressing on IPv6 Interfaces by Default
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-ipv6/disabling_ipv6/sysctl_net_ipv6_conf_default_disable_ipv6/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-ipv6/disabling_ipv6/sysctl_net_ipv6_conf_default_disable_ipv6/rule.yml
 template:
     name: sysctl
     vars:

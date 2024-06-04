@@ -112,7 +112,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Uninstall CUPS Package
-definition_location: /home/frattah/old/linux_os/guide/services/printing/package_cups_removed/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/printing/package_cups_removed/rule.yml
 template:
     name: package_removed
     vars:

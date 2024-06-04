@@ -115,6 +115,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Disable Zeroconf Networking
-definition_location: /home/frattah/old/linux_os/guide/system/network/network_disable_zeroconf/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network_disable_zeroconf/rule.yml
 template: null
 documentation_complete: true

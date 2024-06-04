@@ -46,8 +46,8 @@ references:
     - SRG-OS-000375-GPOS-00160
 components:
 - opensc
-- pam
 - pcsc-lite
+- pam
 identifiers: {}
 ocil_clause: the pcscd service is not enabled
 ocil: '
@@ -120,7 +120,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Enable the pcscd Service
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-physical/screen_locking/smart_card_login/service_pcscd_enabled/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-physical/screen_locking/smart_card_login/service_pcscd_enabled/rule.yml
 template:
     name: service_enabled
     vars:

@@ -35,5 +35,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: Disable Unused Interfaces
-definition_location: /home/frattah/old/linux_os/guide/system/network/network_disable_unused_interfaces/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network_disable_unused_interfaces/group.yml
 documentation_complete: true

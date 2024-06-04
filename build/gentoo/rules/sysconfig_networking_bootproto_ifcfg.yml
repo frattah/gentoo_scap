@@ -148,6 +148,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Disable DHCP Client in ifcfg
-definition_location: /home/frattah/old/linux_os/guide/services/dhcp/disabling_dhcp_client/sysconfig_networking_bootproto_ifcfg/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/dhcp/disabling_dhcp_client/sysconfig_networking_bootproto_ifcfg/rule.yml
 template: null
 documentation_complete: true

@@ -38,5 +38,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: Use Access Lists to Enforce Authorization Restrictions
-definition_location: /home/frattah/old/linux_os/guide/services/nfs_and_rpc/nfs_configuring_servers/use_acl_enforce_auth_restrictions/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/nfs_and_rpc/nfs_configuring_servers/use_acl_enforce_auth_restrictions/group.yml
 documentation_complete: true

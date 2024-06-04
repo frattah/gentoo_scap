@@ -12,5 +12,5 @@ options:
     default: sha1
 warnings: []
 title: SSSD certificate_verification option
-definition_location: /home/frattah/old/linux_os/guide/services/sssd/var_sssd_certificate_verification_digest_function.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/sssd/var_sssd_certificate_verification_digest_function.var
 documentation_complete: true

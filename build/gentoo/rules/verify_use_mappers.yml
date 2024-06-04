@@ -58,7 +58,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Verify that 'use_mappers' is set to 'pwent' in PAM
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-physical/screen_locking/smart_card_login/verify_use_mappers/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-physical/screen_locking/smart_card_login/verify_use_mappers/rule.yml
 template:
     name: lineinfile
     vars:

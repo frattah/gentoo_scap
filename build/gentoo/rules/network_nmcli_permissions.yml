@@ -115,6 +115,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Prevent non-Privileged Users from Modifying Network Interfaces using nmcli
-definition_location: /home/frattah/old/linux_os/guide/system/network/network_nmcli_permissions/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network_nmcli_permissions/rule.yml
 template: null
 documentation_complete: true

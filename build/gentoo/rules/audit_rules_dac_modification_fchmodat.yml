@@ -287,7 +287,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Record Events that Modify the System's Discretionary Access Controls - fchmodat
-definition_location: /home/frattah/old/linux_os/guide/auditing/auditd_configure_rules/audit_dac_actions/audit_rules_dac_modification_fchmodat/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/auditd_configure_rules/audit_dac_actions/audit_rules_dac_modification_fchmodat/rule.yml
 template:
     name: audit_rules_dac_modification
     vars:

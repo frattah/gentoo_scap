@@ -134,6 +134,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Disable core dump backtraces
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/restrictions/coredumps/coredump_disable_backtraces/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/restrictions/coredumps/coredump_disable_backtraces/rule.yml
 template: null
 documentation_complete: true

@@ -36,5 +36,5 @@ inherited_platforms: !!set {}
 cpe_platform_names: !!set
     machine: null
 title: Mail Server Software
-definition_location: /home/frattah/old/linux_os/guide/services/mail/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/mail/group.yml
 documentation_complete: true

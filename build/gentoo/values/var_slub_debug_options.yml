@@ -12,5 +12,5 @@ options:
     FZP: FZP
 warnings: []
 title: slub_debug - debug options
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/restrictions/poisoning/var_slub_debug_options.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/restrictions/poisoning/var_slub_debug_options.var
 documentation_complete: true

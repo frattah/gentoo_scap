@@ -51,7 +51,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Ensure sudo umask is appropriate - sudo umask
-definition_location: /home/frattah/old/linux_os/guide/system/software/sudo/sudo_add_umask/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/sudo/sudo_add_umask/rule.yml
 template:
     name: sudo_defaults_option
     vars:

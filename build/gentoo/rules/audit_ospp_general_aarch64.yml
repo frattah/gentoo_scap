@@ -445,7 +445,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Perform general configuration of Audit for OSPP (AArch64)
-definition_location: /home/frattah/old/linux_os/guide/auditing/policy_rules/audit_ospp_general_aarch64/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/policy_rules/audit_ospp_general_aarch64/rule.yml
 template:
     name: audit_file_contents
     vars:

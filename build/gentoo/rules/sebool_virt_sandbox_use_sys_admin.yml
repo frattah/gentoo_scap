@@ -38,16 +38,16 @@ platform: null
 platforms: !!set {}
 sce_metadata: {}
 inherited_platforms: !!set
-    selinux: null
     machine: null
+    selinux: null
 cpe_platform_names: !!set {}
 inherited_cpe_platform_names: !!set
-    selinux: null
     machine: null
+    selinux: null
 bash_conditional: null
 fixes: {}
 title: Disable the virt_sandbox_use_sys_admin SELinux Boolean
-definition_location: /home/frattah/old/linux_os/guide/system/selinux/selinux-booleans/sebool_virt_sandbox_use_sys_admin/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/selinux/selinux-booleans/sebool_virt_sandbox_use_sys_admin/rule.yml
 template:
     name: sebool
     vars:

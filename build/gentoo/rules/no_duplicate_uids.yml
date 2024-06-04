@@ -43,6 +43,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Ensure no duplicate UIDs exist
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-restrictions/password_storage/no_duplicate_uids/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-restrictions/password_storage/no_duplicate_uids/rule.yml
 template: null
 documentation_complete: true

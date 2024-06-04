@@ -70,7 +70,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Record Unsuccessful Delete Attempts to Files - renameat2
-definition_location: /home/frattah/old/linux_os/guide/auditing/auditd_configure_rules/audit_file_modification/audit_rules_unsuccessful_file_modification_renameat2/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/auditd_configure_rules/audit_file_modification/audit_rules_unsuccessful_file_modification_renameat2/rule.yml
 template:
     name: audit_rules_unsuccessful_file_modification
     vars:

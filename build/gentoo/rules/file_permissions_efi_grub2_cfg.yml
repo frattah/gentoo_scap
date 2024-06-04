@@ -102,7 +102,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Verify the UEFI Boot Loader grub.cfg Permissions
-definition_location: /home/frattah/old/linux_os/guide/system/bootloader-grub2/uefi/file_permissions_efi_grub2_cfg/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/bootloader-grub2/uefi/file_permissions_efi_grub2_cfg/rule.yml
 template:
     name: file_permissions
     vars:

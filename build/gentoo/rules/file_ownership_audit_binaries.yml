@@ -112,7 +112,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Verify that audit tools are owned by root
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/files/permissions_within_important_dirs/file_ownership_audit_binaries/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/files/permissions_within_important_dirs/file_ownership_audit_binaries/rule.yml
 template:
     name: file_owner
     vars:

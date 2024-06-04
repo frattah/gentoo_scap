@@ -71,7 +71,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Ensure debug-shell service is not enabled during boot
-definition_location: /home/frattah/old/linux_os/guide/system/bootloader-grub2/grub2_systemd_debug-shell_argument_absent/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/bootloader-grub2/grub2_systemd_debug-shell_argument_absent/rule.yml
 template:
     name: grub2_bootloader_argument_absent
     vars:

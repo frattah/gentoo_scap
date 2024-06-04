@@ -6,5 +6,5 @@ xml_content: <ns0:platform xmlns:ns0="http://cpe.mitre.org/language/2.0" id="ipv
 bash_conditional: ''
 ansible_conditional: ''
 title: ''
-definition_location: /home/frattah/old/build/gentoo/platforms/ipv6_enabled.yml
+definition_location: /home/fra/gentoo_scap/build/gentoo/platforms/ipv6_enabled.yml
 documentation_complete: true

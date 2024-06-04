@@ -81,6 +81,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Record Successful Permission Changes to Files - lsetxattr
-definition_location: /home/frattah/old/linux_os/guide/auditing/auditd_configure_rules/audit_file_modification/audit_rules_successful_file_modification_lsetxattr/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/auditd_configure_rules/audit_file_modification/audit_rules_successful_file_modification_lsetxattr/rule.yml
 template: null
 documentation_complete: true

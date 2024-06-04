@@ -38,7 +38,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Enable automatic signing of all modules
-definition_location: /home/frattah/old/linux_os/guide/system/kernel_build_config/kernel_config_module_sig_all/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/kernel_build_config/kernel_config_module_sig_all/rule.yml
 template:
     name: kernel_build_config
     vars:

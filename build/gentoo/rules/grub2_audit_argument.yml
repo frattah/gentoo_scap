@@ -154,8 +154,8 @@ references:
     pcidss4:
     - 10.7.2
 components:
-- audit
 - grub2
+- audit
 identifiers: {}
 ocil_clause: auditing is not enabled at boot time
 ocil: 'Inspect the form of default GRUB 2 command line for the Linux operating system
@@ -256,7 +256,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Enable Auditing for Processes Which Start Prior to the Audit Daemon
-definition_location: /home/frattah/old/linux_os/guide/auditing/grub2_audit_argument/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/grub2_audit_argument/rule.yml
 template:
     name: grub2_bootloader_argument
     vars:

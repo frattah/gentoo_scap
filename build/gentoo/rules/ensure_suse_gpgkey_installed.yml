@@ -144,6 +144,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Ensure SUSE GPG Key Installed
-definition_location: /home/frattah/old/linux_os/guide/system/software/updating/ensure_suse_gpgkey_installed/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/updating/ensure_suse_gpgkey_installed/rule.yml
 template: null
 documentation_complete: true

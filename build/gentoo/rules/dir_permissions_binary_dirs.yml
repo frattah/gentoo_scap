@@ -75,7 +75,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Verify that System Executable Directories Have Restrictive Permissions
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/files/permissions_within_important_dirs/dir_permissions_binary_dirs/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/files/permissions_within_important_dirs/dir_permissions_binary_dirs/rule.yml
 template:
     name: file_permissions
     vars:

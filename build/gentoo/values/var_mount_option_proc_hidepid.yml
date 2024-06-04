@@ -15,5 +15,5 @@ options:
     default: 2
 warnings: []
 title: Value for hidepid option
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/partitions/var_mount_option_proc_hidepid.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/partitions/var_mount_option_proc_hidepid.var
 documentation_complete: true

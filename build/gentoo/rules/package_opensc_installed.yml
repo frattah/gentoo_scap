@@ -113,7 +113,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Install the opensc Package For Multifactor Authentication
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-physical/screen_locking/smart_card_login/package_opensc_installed/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-physical/screen_locking/smart_card_login/package_opensc_installed/rule.yml
 template:
     name: package_installed
     vars:

@@ -35,6 +35,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Ensure All Groups on the System Have Unique Group Names
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-restrictions/group_unique_name/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-restrictions/group_unique_name/rule.yml
 template: null
 documentation_complete: true

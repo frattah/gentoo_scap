@@ -103,9 +103,9 @@ references:
     srg:
     - SRG-OS-000023-GPOS-00006
 components:
-- gdm
 - gnome
 - pam
+- gdm
 identifiers: {}
 ocil_clause: the GNOME environment does not display the standard mandatory DoD notice
     and consent banner
@@ -166,6 +166,6 @@ bash_conditional: null
 fixes: {}
 title: Display the Standard Mandatory DoD Notice and Consent Banner until Explicit
     Acknowledgement
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-banners/gui_login_banner/gui_login_dod_acknowledgement/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-banners/gui_login_banner/gui_login_dod_acknowledgement/rule.yml
 template: null
 documentation_complete: true

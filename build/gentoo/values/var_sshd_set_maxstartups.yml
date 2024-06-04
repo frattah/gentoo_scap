@@ -8,5 +8,5 @@ options:
     10:30:60: 10:30:60
 warnings: []
 title: SSH MaxStartups setting
-definition_location: /home/frattah/old/linux_os/guide/services/ssh/ssh_server/var_sshd_set_maxstartups.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ssh/ssh_server/var_sshd_set_maxstartups.var
 documentation_complete: true

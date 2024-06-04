@@ -36,8 +36,8 @@ references:
     - SRG-OS-000480-GPOS-00231
     - SRG-OS-000480-GPOS-00232
 components:
-- apparmor
 - pam
+- apparmor
 identifiers: {}
 ocil_clause: the package is not installed
 ocil: 'Run the following command to determine if the <code>pam_apparmor</code> package
@@ -62,7 +62,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Install the pam_apparmor Package
-definition_location: /home/frattah/old/linux_os/guide/system/apparmor/package_pam_apparmor_installed/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/apparmor/package_pam_apparmor_installed/rule.yml
 template:
     name: package_installed
     vars:

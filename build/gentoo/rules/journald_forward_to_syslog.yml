@@ -50,7 +50,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Ensure journald is configured to send logs to rsyslog
-definition_location: /home/frattah/old/linux_os/guide/system/logging/journald/journald_forward_to_syslog/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/logging/journald/journald_forward_to_syslog/rule.yml
 template:
     name: shell_lineinfile
     vars:

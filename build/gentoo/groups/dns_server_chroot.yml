@@ -49,5 +49,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: Run DNS Software in a chroot Jail
-definition_location: /home/frattah/old/linux_os/guide/services/dns/dns_server_isolation/dns_server_chroot/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/dns/dns_server_isolation/dns_server_chroot/group.yml
 documentation_complete: true

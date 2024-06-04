@@ -205,7 +205,7 @@ bash_conditional: null
 fixes: {}
 title: Enable Kernel Parameter to Use Reverse Path Filtering on all IPv4 Interfaces
     by Default
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-kernel/network_host_and_router_parameters/sysctl_net_ipv4_conf_default_rp_filter/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-kernel/network_host_and_router_parameters/sysctl_net_ipv4_conf_default_rp_filter/rule.yml
 template:
     name: sysctl
     vars:

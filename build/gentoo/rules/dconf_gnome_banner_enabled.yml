@@ -97,9 +97,9 @@ references:
     - SRG-OS-000023-GPOS-00006
     - SRG-OS-000228-GPOS-00088
 components:
-- gdm
 - gnome
 - pam
+- gdm
 identifiers: {}
 ocil_clause: it is not
 ocil: 'To ensure a login warning banner is enabled, run the following:
@@ -248,6 +248,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Enable GNOME3 Login Warning Banner
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-banners/gui_login_banner/dconf_gnome_banner_enabled/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-banners/gui_login_banner/dconf_gnome_banner_enabled/rule.yml
 template: null
 documentation_complete: true

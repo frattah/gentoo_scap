@@ -47,5 +47,5 @@ inherited_platforms: !!set
     machine: null
 cpe_platform_names: !!set {}
 title: Record Attempts to Alter Logon and Logout Events
-definition_location: /home/frattah/old/linux_os/guide/auditing/auditd_configure_rules/audit_login_events/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/auditd_configure_rules/audit_login_events/group.yml
 documentation_complete: true

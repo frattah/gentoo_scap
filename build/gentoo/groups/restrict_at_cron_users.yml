@@ -61,5 +61,5 @@ inherited_platforms: !!set
     machine: null
 cpe_platform_names: !!set {}
 title: Restrict at and cron to Authorized Users if Necessary
-definition_location: /home/frattah/old/linux_os/guide/services/cron_and_at/restrict_at_cron_users/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/cron_and_at/restrict_at_cron_users/group.yml
 documentation_complete: true

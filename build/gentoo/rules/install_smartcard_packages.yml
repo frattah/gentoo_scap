@@ -47,8 +47,8 @@ references:
     - SRG-OS-000377-GPOS-00162
 components:
 - opensc
-- openssl-pkcs11
 - pam
+- openssl-pkcs11
 identifiers: {}
 ocil_clause: smartcard software is not installed
 ocil: 'Check that Gentoo has the packages for smart card support installed.
@@ -128,7 +128,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Install Smart Card Packages For Multifactor Authentication
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-physical/screen_locking/smart_card_login/install_smartcard_packages/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-physical/screen_locking/smart_card_login/install_smartcard_packages/rule.yml
 template:
     name: package_installed
     vars:

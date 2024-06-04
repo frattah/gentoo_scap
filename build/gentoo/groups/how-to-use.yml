@@ -15,5 +15,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: How to Use This Guide
-definition_location: /home/frattah/old/linux_os/guide/intro/how-to-use/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/intro/how-to-use/group.yml
 documentation_complete: true

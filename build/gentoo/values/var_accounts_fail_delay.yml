@@ -11,5 +11,5 @@ options:
     default: 4
 warnings: []
 title: Maximum login attempts delay
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-session/var_accounts_fail_delay.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-session/var_accounts_fail_delay.var
 documentation_complete: true

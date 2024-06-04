@@ -257,6 +257,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Deactivate Wireless Network Interfaces
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-wireless/wireless_software/wireless_disable_interfaces/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-wireless/wireless_software/wireless_disable_interfaces/rule.yml
 template: null
 documentation_complete: true

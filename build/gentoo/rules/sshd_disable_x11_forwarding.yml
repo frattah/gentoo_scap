@@ -126,7 +126,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Disable X11 Forwarding
-definition_location: /home/frattah/old/linux_os/guide/services/ssh/ssh_server/sshd_disable_x11_forwarding/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ssh/ssh_server/sshd_disable_x11_forwarding/rule.yml
 template:
     name: sshd_lineinfile
     vars:

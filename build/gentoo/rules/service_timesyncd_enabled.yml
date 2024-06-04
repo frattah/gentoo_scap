@@ -56,8 +56,8 @@ references:
     pcidss4:
     - 10.6.1
 components:
-- ntp
 - systemd
+- ntp
 identifiers: {}
 ocil_clause: null
 ocil: '
@@ -92,7 +92,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Enable systemd_timesyncd Service
-definition_location: /home/frattah/old/linux_os/guide/services/ntp/service_timesyncd_enabled/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ntp/service_timesyncd_enabled/rule.yml
 template:
     name: service_enabled
     vars:

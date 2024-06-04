@@ -132,6 +132,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Configure AIDE to Verify Access Control Lists (ACLs)
-definition_location: /home/frattah/old/linux_os/guide/system/software/integrity/software-integrity/aide/aide_verify_acls/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/integrity/software-integrity/aide/aide_verify_acls/rule.yml
 template: null
 documentation_complete: true

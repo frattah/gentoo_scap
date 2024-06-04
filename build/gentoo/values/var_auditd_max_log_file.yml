@@ -11,5 +11,5 @@ options:
     default: 6
 warnings: []
 title: Maximum audit log file size for auditd
-definition_location: /home/frattah/old/linux_os/guide/auditing/configure_auditd_data_retention/var_auditd_max_log_file.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/configure_auditd_data_retention/var_auditd_max_log_file.var
 documentation_complete: true

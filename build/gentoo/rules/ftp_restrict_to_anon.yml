@@ -137,6 +137,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Restrict Access to Anonymous Users if Possible
-definition_location: /home/frattah/old/linux_os/guide/services/ftp/ftp_configure_vsftpd/ftp_restrict_users/ftp_restrict_to_anon/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ftp/ftp_configure_vsftpd/ftp_restrict_users/ftp_restrict_to_anon/rule.yml
 template: null
 documentation_complete: true

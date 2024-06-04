@@ -201,7 +201,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Set Default firewalld Zone for Incoming Packets
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-firewalld/ruleset_modifications/set_firewalld_default_zone/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-firewalld/ruleset_modifications/set_firewalld_default_zone/rule.yml
 template:
     name: lineinfile
     vars:

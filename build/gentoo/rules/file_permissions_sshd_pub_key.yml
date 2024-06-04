@@ -158,7 +158,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Verify Permissions on SSH Server Public *.pub Key Files
-definition_location: /home/frattah/old/linux_os/guide/services/ssh/file_permissions_sshd_pub_key/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ssh/file_permissions_sshd_pub_key/rule.yml
 template:
     name: file_permissions
     vars:

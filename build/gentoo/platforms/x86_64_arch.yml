@@ -7,5 +7,5 @@ xml_content: <ns0:platform xmlns:ns0="http://cpe.mitre.org/language/2.0" id="x86
 bash_conditional: grep -q x86_64 /proc/sys/kernel/osrelease
 ansible_conditional: ansible_architecture == "x86_64"
 title: ''
-definition_location: /home/frattah/old/build/gentoo/platforms/x86_64_arch.yml
+definition_location: /home/fra/gentoo_scap/build/gentoo/platforms/x86_64_arch.yml
 documentation_complete: true

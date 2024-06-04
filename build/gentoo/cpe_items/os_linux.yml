@@ -45,7 +45,7 @@ args:
         ver_specs_title: greater than or equal 9.0
 content_id: ssg
 title: Operating System is {arg}
-definition_location: /home/frattah/old/shared/applicability/os_linux.yml
+definition_location: /home/fra/gentoo_scap/shared/applicability/os_linux.yml
 template:
     name: platform_os_linux
 documentation_complete: true

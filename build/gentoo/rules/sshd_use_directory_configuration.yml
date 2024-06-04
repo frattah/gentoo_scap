@@ -46,6 +46,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Distribute the SSH Server configuration to multiple files in a config directory.
-definition_location: /home/frattah/old/linux_os/guide/services/ssh/ssh_server/sshd_use_directory_configuration/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ssh/ssh_server/sshd_use_directory_configuration/rule.yml
 template: null
 documentation_complete: true

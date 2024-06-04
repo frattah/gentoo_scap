@@ -46,6 +46,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Configure Dovecot to Use the SSL Key file
-definition_location: /home/frattah/old/linux_os/guide/services/imap/configure_dovecot/dovecot_enabling_ssl/dovecot_configure_ssl_key/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/imap/configure_dovecot/dovecot_enabling_ssl/dovecot_configure_ssl_key/rule.yml
 template: null
 documentation_complete: true

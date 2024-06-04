@@ -7,6 +7,6 @@ versioned: false
 args: {}
 content_id: ssg
 title: System boot mode is UEFI
-definition_location: /home/frattah/old/shared/applicability/uefi.yml
+definition_location: /home/fra/gentoo_scap/shared/applicability/uefi.yml
 template: null
 documentation_complete: true

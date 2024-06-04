@@ -18,8 +18,8 @@ references:
     srg:
     - SRG-OS-000433-GPOS-00193
 components:
-- grub2
 - kernel
+- grub2
 identifiers: {}
 ocil_clause: Kernel page-table isolation is not enabled
 ocil: 'Inspect the form of all the BLS (Boot Loader Specification) entries
@@ -55,7 +55,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Enable Kernel Page-Table Isolation (KPTI)
-definition_location: /home/frattah/old/linux_os/guide/system/bootloader-grub2/coreos_pti_kernel_argument/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/bootloader-grub2/coreos_pti_kernel_argument/rule.yml
 template:
     name: coreos_kernel_option
     vars:

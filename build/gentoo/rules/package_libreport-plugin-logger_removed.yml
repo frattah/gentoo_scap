@@ -40,7 +40,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Uninstall libreport-plugin-logger Package
-definition_location: /home/frattah/old/linux_os/guide/system/software/system-tools/package_libreport-plugin-logger_removed/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/system-tools/package_libreport-plugin-logger_removed/rule.yml
 template:
     name: package_removed
     vars:

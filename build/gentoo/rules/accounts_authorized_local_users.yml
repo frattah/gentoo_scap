@@ -119,6 +119,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Only Authorized Local User Accounts Exist on Operating System
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-restrictions/accounts_authorized_local_users/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-restrictions/accounts_authorized_local_users/rule.yml
 template: null
 documentation_complete: true

@@ -42,7 +42,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Ensure Privileged Escalated Commands Cannot Execute Other Commands - sudo NOEXEC
-definition_location: /home/frattah/old/linux_os/guide/system/software/sudo/sudo_add_noexec/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/sudo/sudo_add_noexec/rule.yml
 template:
     name: sudo_defaults_option
     vars:

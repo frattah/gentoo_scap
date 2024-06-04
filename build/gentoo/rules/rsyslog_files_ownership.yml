@@ -145,7 +145,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Ensure Log Files Are Owned By Appropriate User
-definition_location: /home/frattah/old/linux_os/guide/system/logging/ensure_rsyslog_log_file_configuration/rsyslog_files_ownership/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/logging/ensure_rsyslog_log_file_configuration/rsyslog_files_ownership/rule.yml
 template:
     name: rsyslog_logfiles_attributes_modify
     vars:

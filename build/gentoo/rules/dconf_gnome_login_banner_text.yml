@@ -92,9 +92,9 @@ references:
     - SRG-OS-000023-GPOS-00006
     - SRG-OS-000228-GPOS-00088
 components:
-- gdm
 - gnome
 - pam
+- gdm
 identifiers: {}
 ocil_clause: it does not
 ocil: '
@@ -176,6 +176,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Set the GNOME3 Login Warning Banner Text
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-banners/gui_login_banner/dconf_gnome_login_banner_text/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-banners/gui_login_banner/dconf_gnome_login_banner_text/rule.yml
 template: null
 documentation_complete: true

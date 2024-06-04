@@ -145,6 +145,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Grant Or Deny System Access To Specific Hosts And Services
-definition_location: /home/frattah/old/linux_os/guide/system/network/network_implement_access_control/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network_implement_access_control/rule.yml
 template: null
 documentation_complete: true

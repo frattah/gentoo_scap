@@ -67,11 +67,11 @@ inherited_platforms: !!set
 cpe_platform_names: !!set
     sssd-ldap: null
 inherited_cpe_platform_names: !!set
-    machine: null
     package_sssd: null
+    machine: null
 bash_conditional: null
 fixes: {}
 title: Configure SSSD LDAP Backend Client CA Certificate
-definition_location: /home/frattah/old/linux_os/guide/services/sssd/sssd-ldap/sssd_ldap_configure_tls_ca/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/sssd/sssd-ldap/sssd_ldap_configure_tls_ca/rule.yml
 template: null
 documentation_complete: true

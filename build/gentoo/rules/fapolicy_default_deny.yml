@@ -97,6 +97,6 @@ bash_conditional: null
 fixes: {}
 title: Configure Fapolicy Module to Employ a Deny-all, Permit-by-exception Policy
     to Allow the Execution of Authorized Software Programs.
-definition_location: /home/frattah/old/linux_os/guide/services/fapolicyd/fapolicy_default_deny/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/fapolicyd/fapolicy_default_deny/rule.yml
 template: null
 documentation_complete: true

@@ -83,6 +83,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: fapolicyd Must be Configured to Limit Access to Users Home Folders
-definition_location: /home/frattah/old/linux_os/guide/services/fapolicyd/fapolicyd_prevent_home_folder_access/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/fapolicyd/fapolicyd_prevent_home_folder_access/rule.yml
 template: null
 documentation_complete: true

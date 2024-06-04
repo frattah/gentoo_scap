@@ -11,5 +11,5 @@ options:
     default: 0
 warnings: []
 title: SSH Max Keep Alive Count
-definition_location: /home/frattah/old/linux_os/guide/services/ssh/var_sshd_set_keepalive.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ssh/var_sshd_set_keepalive.var
 documentation_complete: true

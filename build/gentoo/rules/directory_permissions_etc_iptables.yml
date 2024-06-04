@@ -47,7 +47,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Verify Permissions On /etc/iptables Directory
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-iptables/directory_permissions_etc_iptables/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-iptables/directory_permissions_etc_iptables/rule.yml
 template:
     name: file_permissions
     vars:

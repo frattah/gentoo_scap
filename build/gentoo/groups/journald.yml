@@ -30,5 +30,5 @@ inherited_platforms: !!set
     machine: null
 cpe_platform_names: !!set {}
 title: systemd-journald
-definition_location: /home/frattah/old/linux_os/guide/system/logging/journald/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/logging/journald/group.yml
 documentation_complete: true

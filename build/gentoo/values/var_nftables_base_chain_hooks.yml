@@ -22,5 +22,5 @@ options:
     chain_hooks: input,forward,output
 warnings: []
 title: Nftables Base Chain Hooks
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-nftables/var_nftables_base_chain_hooks.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-nftables/var_nftables_base_chain_hooks.var
 documentation_complete: true

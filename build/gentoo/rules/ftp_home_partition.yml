@@ -31,6 +31,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Place the FTP Home Directory on its Own Partition
-definition_location: /home/frattah/old/linux_os/guide/services/ftp/ftp_configure_vsftpd/ftp_home_partition/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ftp/ftp_configure_vsftpd/ftp_home_partition/rule.yml
 template: null
 documentation_complete: true

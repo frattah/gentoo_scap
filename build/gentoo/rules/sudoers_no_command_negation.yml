@@ -55,6 +55,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Don't define allowed commands in sudoers by means of exclusion
-definition_location: /home/frattah/old/linux_os/guide/system/software/sudo/sudoers_no_command_negation/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/sudo/sudoers_no_command_negation/rule.yml
 template: null
 documentation_complete: true

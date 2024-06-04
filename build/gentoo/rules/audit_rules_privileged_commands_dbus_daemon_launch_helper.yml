@@ -141,7 +141,7 @@ bash_conditional: null
 fixes: {}
 title: Ensure auditd Collects Information on the Use of Privileged Commands - dbus
     helper
-definition_location: /home/frattah/old/linux_os/guide/auditing/auditd_configure_rules/audit_privileged_commands/audit_rules_privileged_commands_dbus_daemon_launch_helper/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/auditd_configure_rules/audit_privileged_commands/audit_rules_privileged_commands_dbus_daemon_launch_helper/rule.yml
 template:
     name: audit_rules_privileged_commands
     vars:

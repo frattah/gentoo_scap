@@ -45,8 +45,8 @@ references:
     srg:
     - SRG-OS-000480-GPOS-00227
 components:
-- inetd
 - tcp_wrappers
+- inetd
 identifiers: {}
 ocil_clause: the package is not installed
 ocil: 'Run the following command to determine if the <code>tcp_wrappers</code> package
@@ -71,7 +71,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Install tcp_wrappers Package
-definition_location: /home/frattah/old/linux_os/guide/services/obsolete/inetd_and_xinetd/package_tcp_wrappers_installed/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/obsolete/inetd_and_xinetd/package_tcp_wrappers_installed/rule.yml
 template:
     name: package_installed
     vars:

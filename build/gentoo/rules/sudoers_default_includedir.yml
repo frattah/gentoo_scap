@@ -66,6 +66,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Ensure sudo only includes the default configuration directory
-definition_location: /home/frattah/old/linux_os/guide/system/software/sudo/sudoers_default_includedir/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/sudo/sudoers_default_includedir/rule.yml
 template: null
 documentation_complete: true

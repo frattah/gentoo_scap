@@ -21,5 +21,5 @@ options:
     chain_types: filter,filter,filter
 warnings: []
 title: Nftables Base Chain Types
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-nftables/var_nftables_base_chain_types.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-nftables/var_nftables_base_chain_types.var
 documentation_complete: true

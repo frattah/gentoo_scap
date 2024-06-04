@@ -11,5 +11,5 @@ options:
     syslog: syslog
 warnings: []
 title: User who owns log files
-definition_location: /home/frattah/old/linux_os/guide/system/logging/ensure_rsyslog_log_file_configuration/file_owner_logfiles_value.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/logging/ensure_rsyslog_log_file_configuration/file_owner_logfiles_value.var
 documentation_complete: true

@@ -71,7 +71,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Verify that System Executable Have Root Ownership
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/files/permissions_within_important_dirs/dir_ownership_binary_dirs/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/files/permissions_within_important_dirs/dir_ownership_binary_dirs/rule.yml
 template:
     name: file_owner
     vars:

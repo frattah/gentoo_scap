@@ -11,5 +11,5 @@ bash_conditional: ( ! ( grep -q aarch64 /proc/sys/kernel/osrelease ) && [ ! -f /
 ansible_conditional: ( not ( ansible_architecture == "aarch64" ) and ansible_virtualization_type
     not in ["docker", "lxc", "openvz", "podman", "container"] )
 title: ''
-definition_location: /home/frattah/old/build/gentoo/platforms/not_aarch64_arch_and_machine.yml
+definition_location: /home/fra/gentoo_scap/build/gentoo/platforms/not_aarch64_arch_and_machine.yml
 documentation_complete: true

@@ -7,5 +7,5 @@ xml_content: <ns0:platform xmlns:ns0="http://cpe.mitre.org/language/2.0" id="gru
 bash_conditional: rpm --quiet -q grub2-common
 ansible_conditional: '"grub2-common" in ansible_facts.packages'
 title: ''
-definition_location: /home/frattah/old/build/gentoo/platforms/grub2.yml
+definition_location: /home/fra/gentoo_scap/build/gentoo/platforms/grub2.yml
 documentation_complete: true

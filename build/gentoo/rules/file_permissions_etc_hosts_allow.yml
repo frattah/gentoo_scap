@@ -45,7 +45,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Verify Permissions on /etc/hosts.allow
-definition_location: /home/frattah/old/linux_os/guide/services/obsolete/inetd_and_xinetd/file_permissions_etc_hosts_allow/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/obsolete/inetd_and_xinetd/file_permissions_etc_hosts_allow/rule.yml
 template:
     name: file_permissions
     vars:

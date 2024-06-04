@@ -44,5 +44,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: Ensure that Users Have Sensible Umask Values
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-session/user_umask/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-session/user_umask/group.yml
 documentation_complete: true

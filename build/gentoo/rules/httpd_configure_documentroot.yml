@@ -55,6 +55,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Each Web Content Directory Must Contain An index.html File
-definition_location: /home/frattah/old/linux_os/guide/services/http/securing_httpd/httpd_secure_content/httpd_configure_documentroot/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/http/securing_httpd/httpd_secure_content/httpd_configure_documentroot/rule.yml
 template: null
 documentation_complete: true

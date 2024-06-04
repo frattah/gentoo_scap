@@ -7,6 +7,6 @@ versioned: false
 args: {}
 content_id: ssg
 title: CentOS Stream 10
-definition_location: /home/frattah/old/shared/applicability/cs10.yml
+definition_location: /home/fra/gentoo_scap/shared/applicability/cs10.yml
 template: null
 documentation_complete: true

@@ -148,7 +148,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Audit Tools Must Be Owned by Root
-definition_location: /home/frattah/old/linux_os/guide/system/software/integrity/software-integrity/aide/file_audit_tools_ownership/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/integrity/software-integrity/aide/file_audit_tools_ownership/rule.yml
 template:
     name: file_owner
     vars:

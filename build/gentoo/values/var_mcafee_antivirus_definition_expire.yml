@@ -12,5 +12,5 @@ options:
     30_days: 2592000
 warnings: []
 title: The age of McAfee defintion file before requiring updating
-definition_location: /home/frattah/old/linux_os/guide/system/software/integrity/endpoint_security_software/mcafee_security_software/var_mcafee_antivirus_definition_expire.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/integrity/endpoint_security_software/mcafee_security_software/var_mcafee_antivirus_definition_expire.var
 documentation_complete: true

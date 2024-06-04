@@ -20,7 +20,7 @@ args:
         ipv6_disable_value: 1
 content_id: ssg
 title: IPv6 is {arg} on system
-definition_location: /home/frattah/old/shared/applicability/ipv6.yml
+definition_location: /home/fra/gentoo_scap/shared/applicability/ipv6.yml
 template:
     name: platform_ipv6_state
 documentation_complete: true

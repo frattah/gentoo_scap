@@ -19,5 +19,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: Support Only the Necessary Protocols
-definition_location: /home/frattah/old/linux_os/guide/services/imap/configure_dovecot/dovecot_support_necessary_protocols/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/imap/configure_dovecot/dovecot_support_necessary_protocols/group.yml
 documentation_complete: true

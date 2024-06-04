@@ -50,6 +50,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Configure dnf-automatic to Install Only Security Updates
-definition_location: /home/frattah/old/linux_os/guide/system/software/updating/dnf-automatic_security_updates_only/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/updating/dnf-automatic_security_updates_only/rule.yml
 template: null
 documentation_complete: true

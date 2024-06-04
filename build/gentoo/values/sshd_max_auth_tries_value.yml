@@ -10,5 +10,5 @@ options:
     default: 4
 warnings: []
 title: SSH Max authentication attempts
-definition_location: /home/frattah/old/linux_os/guide/services/ssh/sshd_max_auth_tries_value.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ssh/sshd_max_auth_tries_value.var
 documentation_complete: true

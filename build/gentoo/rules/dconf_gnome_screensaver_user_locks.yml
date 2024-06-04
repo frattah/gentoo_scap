@@ -209,6 +209,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Ensure Users Cannot Change GNOME3 Screensaver Settings
-definition_location: /home/frattah/old/linux_os/guide/system/software/gnome/gnome_screen_locking/dconf_gnome_screensaver_user_locks/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/gnome/gnome_screen_locking/dconf_gnome_screensaver_user_locks/rule.yml
 template: null
 documentation_complete: true

@@ -128,7 +128,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Install libreswan Package
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-ipsec/package_libreswan_installed/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-ipsec/package_libreswan_installed/rule.yml
 template:
     name: package_installed
     vars:

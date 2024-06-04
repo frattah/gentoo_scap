@@ -15,8 +15,8 @@ rationale: 'Since this service is not used very often, disable it to reduce the
 severity: low
 references: {}
 components:
-- mcstrans
 - selinux
+- mcstrans
 identifiers: {}
 ocil_clause: null
 ocil: null
@@ -40,7 +40,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Uninstall mcstrans Package
-definition_location: /home/frattah/old/linux_os/guide/system/selinux/package_mcstrans_removed/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/selinux/package_mcstrans_removed/rule.yml
 template:
     name: package_removed
     vars:

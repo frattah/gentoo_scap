@@ -33,5 +33,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: System and Software Integrity
-definition_location: /home/frattah/old/linux_os/guide/system/software/integrity/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/integrity/group.yml
 documentation_complete: true

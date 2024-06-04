@@ -151,6 +151,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: All GIDs referenced in /etc/passwd must be defined in /etc/group
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-restrictions/password_storage/gid_passwd_group_same/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-restrictions/password_storage/gid_passwd_group_same/rule.yml
 template: null
 documentation_complete: true

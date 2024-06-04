@@ -253,6 +253,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Set SSH Client Alive Interval
-definition_location: /home/frattah/old/linux_os/guide/services/ssh/ssh_server/sshd_set_idle_timeout/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ssh/ssh_server/sshd_set_idle_timeout/rule.yml
 template: null
 documentation_complete: true

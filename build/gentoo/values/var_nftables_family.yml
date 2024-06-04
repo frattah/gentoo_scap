@@ -25,5 +25,5 @@ options:
     netdev: netdev
 warnings: []
 title: Nftables Families
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-nftables/var_nftables_family.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-nftables/var_nftables_family.var
 documentation_complete: true

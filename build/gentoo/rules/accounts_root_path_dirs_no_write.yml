@@ -64,6 +64,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Ensure that Root's Path Does Not Include World or Group-Writable Directories
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-session/root_paths/accounts_root_path_dirs_no_write/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-session/root_paths/accounts_root_path_dirs_no_write/rule.yml
 template: null
 documentation_complete: true

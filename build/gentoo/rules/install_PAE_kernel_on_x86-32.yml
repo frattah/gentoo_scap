@@ -88,6 +88,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Install PAE Kernel on Supported 32-bit x86 Systems
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/restrictions/enable_nx/install_PAE_kernel_on_x86-32/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/restrictions/enable_nx/install_PAE_kernel_on_x86-32/rule.yml
 template: null
 documentation_complete: true

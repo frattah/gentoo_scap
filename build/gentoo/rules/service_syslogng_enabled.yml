@@ -90,8 +90,8 @@ references:
     - PR.DS-4
     - PR.PT-1
 components:
-- rsyslog
 - syslog-ng
+- rsyslog
 identifiers: {}
 ocil_clause: the "syslog-ng" service is disabled, masked, or not started.
 ocil: '
@@ -126,7 +126,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Enable syslog-ng Service
-definition_location: /home/frattah/old/linux_os/guide/system/logging/rsyslog_accepting_remote_messages/service_syslogng_enabled/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/logging/rsyslog_accepting_remote_messages/service_syslogng_enabled/rule.yml
 template:
     name: service_enabled
     vars:

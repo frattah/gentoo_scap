@@ -57,7 +57,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Add grpquota Option to /home
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/partitions/mount_option_home_grpquota/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/partitions/mount_option_home_grpquota/rule.yml
 template:
     name: mount_option
     vars:

@@ -7,7 +7,7 @@ versioned: true
 args: {}
 content_id: ssg
 title: Package logrotate is installed
-definition_location: /home/frattah/old/shared/applicability/package.yml
+definition_location: /home/fra/gentoo_scap/shared/applicability/package.yml
 template:
     name: platform_package
     vars:

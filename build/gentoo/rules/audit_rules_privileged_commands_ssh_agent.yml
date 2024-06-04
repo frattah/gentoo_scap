@@ -161,7 +161,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Record Any Attempts to Run ssh-agent
-definition_location: /home/frattah/old/linux_os/guide/auditing/auditd_configure_rules/audit_privileged_commands/audit_rules_privileged_commands_ssh_agent/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/auditd_configure_rules/audit_privileged_commands/audit_rules_privileged_commands_ssh_agent/rule.yml
 template:
     name: audit_rules_privileged_commands
     vars:

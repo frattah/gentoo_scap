@@ -39,8 +39,8 @@ references:
     - SRG-OS-000028-GPOS-00009
     - SRG-OS-000030-GPOS-00011
 components:
-- kbd
 - pam
+- kbd
 identifiers: {}
 ocil_clause: the package is not installed
 ocil: '
@@ -68,7 +68,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Check that vlock is installed to allow session locking
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-physical/screen_locking/console_screen_locking/vlock_installed/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-physical/screen_locking/console_screen_locking/vlock_installed/rule.yml
 template:
     name: package_installed
     vars:

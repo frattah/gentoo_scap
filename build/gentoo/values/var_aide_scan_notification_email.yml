@@ -8,5 +8,5 @@ options:
     default: root@localhost
 warnings: []
 title: Integrity Scan Notification Email Address
-definition_location: /home/frattah/old/linux_os/guide/system/software/integrity/software-integrity/var_aide_scan_notification_email.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/integrity/software-integrity/var_aide_scan_notification_email.var
 documentation_complete: true

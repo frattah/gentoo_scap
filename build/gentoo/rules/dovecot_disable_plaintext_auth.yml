@@ -33,6 +33,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Disable Plaintext Authentication
-definition_location: /home/frattah/old/linux_os/guide/services/imap/configure_dovecot/dovecot_enabling_ssl/dovecot_disable_plaintext_auth/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/imap/configure_dovecot/dovecot_enabling_ssl/dovecot_disable_plaintext_auth/rule.yml
 template: null
 documentation_complete: true

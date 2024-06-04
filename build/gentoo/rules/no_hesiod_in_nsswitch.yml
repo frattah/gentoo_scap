@@ -48,6 +48,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Name Service Switch does not use Hesiod
-definition_location: /home/frattah/old/linux_os/guide/services/obsolete/no_hesiod_in_nsswitch/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/obsolete/no_hesiod_in_nsswitch/rule.yml
 template: null
 documentation_complete: true

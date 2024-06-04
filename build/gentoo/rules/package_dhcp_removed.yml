@@ -119,7 +119,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Uninstall DHCP Server Package
-definition_location: /home/frattah/old/linux_os/guide/services/dhcp/disabling_dhcp_server/package_dhcp_removed/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/dhcp/disabling_dhcp_server/package_dhcp_removed/rule.yml
 template:
     name: package_removed
     vars:

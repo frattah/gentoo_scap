@@ -102,5 +102,5 @@ inherited_platforms: !!set
     package[iptables]: null
 cpe_platform_names: !!set {}
 title: Log and Drop Packets with Suspicious Source Addresses
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-iptables/iptables_ruleset_modifications/iptables_log_and_drop_suspicious/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-iptables/iptables_ruleset_modifications/iptables_log_and_drop_suspicious/group.yml
 documentation_complete: true

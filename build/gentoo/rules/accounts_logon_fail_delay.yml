@@ -113,6 +113,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Ensure the Logon Failure Delay is Set Correctly in login.defs
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-session/accounts_logon_fail_delay/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-session/accounts_logon_fail_delay/rule.yml
 template: null
 documentation_complete: true

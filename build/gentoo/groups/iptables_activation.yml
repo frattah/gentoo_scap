@@ -29,5 +29,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: Inspect and Activate Default Rules
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-iptables/iptables_activation/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-iptables/iptables_activation/group.yml
 documentation_complete: true

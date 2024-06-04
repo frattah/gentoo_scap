@@ -111,6 +111,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Deny Decline Messages
-definition_location: /home/frattah/old/linux_os/guide/services/dhcp/dhcp_server_configuration/dhcp_server_deny_decline/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/dhcp/dhcp_server_configuration/dhcp_server_deny_decline/rule.yml
 template: null
 documentation_complete: true

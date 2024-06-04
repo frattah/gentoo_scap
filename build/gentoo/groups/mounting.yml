@@ -49,5 +49,5 @@ cpe_platform_names: !!set {}
 title: 'Restrict Dynamic Mounting and Unmounting of
 
     Filesystems'
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/mounting/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/mounting/group.yml
 documentation_complete: true

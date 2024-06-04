@@ -80,7 +80,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Verify nftables Service is Disabled
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-nftables/service_nftables_disabled/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-nftables/service_nftables_disabled/rule.yml
 template:
     name: service_disabled
     vars:

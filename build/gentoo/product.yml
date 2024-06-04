@@ -44,7 +44,7 @@ platform_package_overrides:
   uefi: null
   zipl: s390utils-base
 product: gentoo
-product_dir: /home/frattah/old/products/gentoo
+product_dir: /home/fra/gentoo_scap/products/gentoo
 profiles_root: ./profiles
 reference_uris:
   anssi: https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf

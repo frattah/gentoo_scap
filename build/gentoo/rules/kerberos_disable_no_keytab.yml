@@ -99,6 +99,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Disable Kerberos by removing host keytab
-definition_location: /home/frattah/old/linux_os/guide/services/kerberos/kerberos_disable_no_keytab/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/kerberos/kerberos_disable_no_keytab/rule.yml
 template: null
 documentation_complete: true

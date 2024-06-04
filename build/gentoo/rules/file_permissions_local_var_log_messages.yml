@@ -87,6 +87,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Verify that local /var/log/messages is not world-readable
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/permissions_local/file_permissions_local_var_log_messages/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/permissions_local/file_permissions_local_var_log_messages/rule.yml
 template: null
 documentation_complete: true

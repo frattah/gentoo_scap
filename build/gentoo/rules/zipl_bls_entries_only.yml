@@ -43,6 +43,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Ensure all zIPL boot entries are BLS compliant
-definition_location: /home/frattah/old/linux_os/guide/system/bootloader-zipl/zipl_bls_entries_only/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/bootloader-zipl/zipl_bls_entries_only/rule.yml
 template: null
 documentation_complete: true

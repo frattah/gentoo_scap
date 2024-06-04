@@ -56,5 +56,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: Warning Banners for System Accesses
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-banners/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-banners/group.yml
 documentation_complete: true

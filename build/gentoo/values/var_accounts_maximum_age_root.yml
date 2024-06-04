@@ -7,5 +7,5 @@ options:
     default: 99999
 warnings: []
 title: Maximum Root Password Age
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-restrictions/password_expiration/var_accounts_maximum_age_root.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-restrictions/password_expiration/var_accounts_maximum_age_root.var
 documentation_complete: true

@@ -48,7 +48,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Configure Sending and Accepting Shared Media Redirects for All IPv4 Interfaces
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-kernel/network_host_and_router_parameters/sysctl_net_ipv4_conf_all_shared_media/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-kernel/network_host_and_router_parameters/sysctl_net_ipv4_conf_all_shared_media/rule.yml
 template:
     name: sysctl
     vars:

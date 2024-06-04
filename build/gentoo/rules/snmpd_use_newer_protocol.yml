@@ -42,6 +42,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Configure SNMP Service to Use Only SNMPv3 or Newer
-definition_location: /home/frattah/old/linux_os/guide/services/snmp/snmp_configure_server/snmpd_use_newer_protocol/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/snmp/snmp_configure_server/snmpd_use_newer_protocol/rule.yml
 template: null
 documentation_complete: true

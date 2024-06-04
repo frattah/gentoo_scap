@@ -45,6 +45,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Manually Assign Global IPv6 Address
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-ipv6/configuring_ipv6/network_ipv6_static_address/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-ipv6/configuring_ipv6/network_ipv6_static_address/rule.yml
 template: null
 documentation_complete: true

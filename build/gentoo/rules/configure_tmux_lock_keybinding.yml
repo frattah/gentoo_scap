@@ -74,6 +74,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Configure the tmux lock session key binding
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-physical/screen_locking/console_screen_locking/configure_tmux_lock_keybinding/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-physical/screen_locking/console_screen_locking/configure_tmux_lock_keybinding/rule.yml
 template: null
 documentation_complete: true

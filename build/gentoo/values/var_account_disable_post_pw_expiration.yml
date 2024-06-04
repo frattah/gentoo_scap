@@ -14,5 +14,5 @@ options:
     default: 35
 warnings: []
 title: number of days after a password expires until the account is permanently disabled
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-restrictions/account_expiration/var_account_disable_post_pw_expiration.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-restrictions/account_expiration/var_account_disable_post_pw_expiration.var
 documentation_complete: true

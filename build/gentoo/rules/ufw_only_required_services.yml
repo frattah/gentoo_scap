@@ -117,6 +117,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Only Allow Authorized Network Services in ufw
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-ufw/ufw_only_required_services/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-ufw/ufw_only_required_services/rule.yml
 template: null
 documentation_complete: true

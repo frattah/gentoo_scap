@@ -29,5 +29,5 @@ inherited_platforms: !!set
     machine: null
 cpe_platform_names: !!set {}
 title: Dectivate firewalld Rules
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-firewalld/firewalld_deactivation/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-firewalld/firewalld_deactivation/group.yml
 documentation_complete: true

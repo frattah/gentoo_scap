@@ -13,5 +13,5 @@ ansible_conditional: ( ansible_virtualization_type not in ["docker", "lxc", "ope
     "podman", "container"] and ( "chrony" in ansible_facts.packages or "ntp" in ansible_facts.packages
     ) )
 title: ''
-definition_location: /home/frattah/old/build/gentoo/platforms/machine_and_package_chrony_or_package_ntp.yml
+definition_location: /home/fra/gentoo_scap/build/gentoo/platforms/machine_and_package_chrony_or_package_ntp.yml
 documentation_complete: true

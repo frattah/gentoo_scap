@@ -28,5 +28,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: Use Views to Partition External and Internal Information
-definition_location: /home/frattah/old/linux_os/guide/services/dns/dns_server_protection/dns_server_partition_with_views/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/dns/dns_server_protection/dns_server_partition_with_views/group.yml
 documentation_complete: true

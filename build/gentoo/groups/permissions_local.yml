@@ -24,5 +24,5 @@ cpe_platform_names: !!set {}
 title: 'Verify Permissions on Important Files and
 
     Directories Are Configured in /etc/permissions.local'
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/permissions_local/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/permissions_local/group.yml
 documentation_complete: true

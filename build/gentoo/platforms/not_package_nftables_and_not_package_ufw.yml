@@ -10,5 +10,5 @@ bash_conditional: ( ! ( rpm --quiet -q nftables ) && ! ( rpm --quiet -q ufw ) )
 ansible_conditional: ( not ( "nftables" in ansible_facts.packages ) and not ( "ufw"
     in ansible_facts.packages ) )
 title: ''
-definition_location: /home/frattah/old/build/gentoo/platforms/not_package_nftables_and_not_package_ufw.yml
+definition_location: /home/fra/gentoo_scap/build/gentoo/platforms/not_package_nftables_and_not_package_ufw.yml
 documentation_complete: true

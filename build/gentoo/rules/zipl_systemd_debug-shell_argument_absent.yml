@@ -69,6 +69,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Ensure debug-shell service is not enabled in zIPL
-definition_location: /home/frattah/old/linux_os/guide/system/bootloader-zipl/zipl_systemd_debug-shell_argument_absent/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/bootloader-zipl/zipl_systemd_debug-shell_argument_absent/rule.yml
 template: null
 documentation_complete: true

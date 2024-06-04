@@ -37,6 +37,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Install mod_security
-definition_location: /home/frattah/old/linux_os/guide/services/http/securing_httpd/httpd_modules_improve_security/httpd_deploy_mod_security/httpd_install_mod_security/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/http/securing_httpd/httpd_modules_improve_security/httpd_deploy_mod_security/httpd_install_mod_security/rule.yml
 template: null
 documentation_complete: true

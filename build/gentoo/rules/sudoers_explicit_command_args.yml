@@ -72,6 +72,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Explicit arguments in sudo specifications
-definition_location: /home/frattah/old/linux_os/guide/system/software/sudo/sudoers_explicit_command_args/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/sudo/sudoers_explicit_command_args/rule.yml
 template: null
 documentation_complete: true

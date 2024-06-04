@@ -53,7 +53,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Configure kernel to zero out memory before allocation in zIPL
-definition_location: /home/frattah/old/linux_os/guide/system/bootloader-zipl/zipl_init_on_alloc_argument/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/bootloader-zipl/zipl_init_on_alloc_argument/rule.yml
 template:
     name: zipl_bls_entries_option
     vars:

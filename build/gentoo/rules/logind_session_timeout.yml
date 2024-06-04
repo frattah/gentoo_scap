@@ -148,19 +148,19 @@ requires: []
 policy_specific_content: {}
 platform: null
 platforms: !!set
-    os_linux[rhel]>=8.7 and os_linux[rhel]!=9.0: null
     os_linux[ol]>=8.7: null
+    os_linux[rhel]>=8.7 and os_linux[rhel]!=9.0: null
 sce_metadata: {}
 inherited_platforms: !!set
     machine: null
 cpe_platform_names: !!set
-    os_linux_rhel_gt_or_eq_8_7_and_os_linux_rhel_ne_9_0: null
     os_linux_ol_gt_or_eq_8_7: null
+    os_linux_rhel_gt_or_eq_8_7_and_os_linux_rhel_ne_9_0: null
 inherited_cpe_platform_names: !!set
     machine: null
 bash_conditional: null
 fixes: {}
 title: Configure Logind to terminate idle sessions after certain time of inactivity
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-physical/logind_session_timeout/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-physical/logind_session_timeout/rule.yml
 template: null
 documentation_complete: true

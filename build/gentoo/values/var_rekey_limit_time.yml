@@ -8,5 +8,5 @@ options:
     1hour: 1h
 warnings: []
 title: SSH RekeyLimit - size
-definition_location: /home/frattah/old/linux_os/guide/services/ssh/ssh_server/var_rekey_limit_time.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ssh/ssh_server/var_rekey_limit_time.var
 documentation_complete: true

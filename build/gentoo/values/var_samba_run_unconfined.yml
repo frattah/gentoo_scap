@@ -12,5 +12,5 @@ options:
     'on': 'true'
 warnings: []
 title: samba_run_unconfined SELinux Boolean
-definition_location: /home/frattah/old/linux_os/guide/system/selinux/selinux-booleans/var_samba_run_unconfined.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/selinux/selinux-booleans/var_samba_run_unconfined.var
 documentation_complete: true

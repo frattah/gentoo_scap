@@ -180,7 +180,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Verify iptables Enabled
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-iptables/iptables_activation/service_iptables_enabled/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-iptables/iptables_activation/service_iptables_enabled/rule.yml
 template:
     name: service_enabled
     vars:

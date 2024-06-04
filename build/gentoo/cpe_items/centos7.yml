@@ -7,6 +7,6 @@ versioned: false
 args: {}
 content_id: ssg
 title: CentOS 7
-definition_location: /home/frattah/old/shared/applicability/centos7.yml
+definition_location: /home/fra/gentoo_scap/shared/applicability/centos7.yml
 template: null
 documentation_complete: true

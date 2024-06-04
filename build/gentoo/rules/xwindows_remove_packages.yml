@@ -130,6 +130,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Disable graphical user interface
-definition_location: /home/frattah/old/linux_os/guide/services/xwindows/disabling_xwindows/xwindows_remove_packages/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/xwindows/disabling_xwindows/xwindows_remove_packages/rule.yml
 template: null
 documentation_complete: true

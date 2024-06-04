@@ -18,5 +18,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: Run Separate DNS Servers for External and Internal Queries
-definition_location: /home/frattah/old/linux_os/guide/services/dns/dns_server_protection/dns_server_separate_internal_external/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/dns/dns_server_protection/dns_server_separate_internal_external/group.yml
 documentation_complete: true

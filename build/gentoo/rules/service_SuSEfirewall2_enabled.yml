@@ -62,7 +62,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Enable the SuSEfirewall 2
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-susefirewall2/service_SuSEfirewall2_enabled/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-susefirewall2/service_SuSEfirewall2_enabled/rule.yml
 template:
     name: service_enabled
     vars:

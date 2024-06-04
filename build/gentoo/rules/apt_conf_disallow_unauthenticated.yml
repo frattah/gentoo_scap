@@ -27,6 +27,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Disable unauthenticated repositories in APT configuration
-definition_location: /home/frattah/old/linux_os/guide/services/apt/apt_conf_disallow_unauthenticated/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/apt/apt_conf_disallow_unauthenticated/rule.yml
 template: null
 documentation_complete: true

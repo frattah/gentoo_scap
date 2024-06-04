@@ -82,7 +82,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Set number of records to cause an explicit flush to audit logs
-definition_location: /home/frattah/old/linux_os/guide/auditing/configure_auditd_data_retention/auditd_freq/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/configure_auditd_data_retention/auditd_freq/rule.yml
 template:
     name: auditd_lineinfile
     vars:

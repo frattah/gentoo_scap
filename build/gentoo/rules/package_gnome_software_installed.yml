@@ -38,7 +38,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Install GNOME Software
-definition_location: /home/frattah/old/linux_os/guide/system/software/updating/package_gnome_software_installed/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/updating/package_gnome_software_installed/rule.yml
 template:
     name: package_installed
     vars:

@@ -197,6 +197,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Disable Ctrl-Alt-Del Reboot Activation
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-physical/disable_ctrlaltdel_reboot/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-physical/disable_ctrlaltdel_reboot/rule.yml
 template: null
 documentation_complete: true

@@ -181,6 +181,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Set kernel parameter 'crypto.fips_enabled' to 1
-definition_location: /home/frattah/old/linux_os/guide/system/software/integrity/fips/sysctl_crypto_fips_enabled/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/integrity/fips/sysctl_crypto_fips_enabled/rule.yml
 template: null
 documentation_complete: true

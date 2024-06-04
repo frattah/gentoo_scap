@@ -12,5 +12,5 @@ options:
     cis: sugroup
 warnings: []
 title: Group Name Used by pam_wheel Group Parameter
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-restrictions/root_logins/var_pam_wheel_group_for_su.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-restrictions/root_logins/var_pam_wheel_group_for_su.var
 documentation_complete: true

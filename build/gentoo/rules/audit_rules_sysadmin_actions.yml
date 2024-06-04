@@ -261,6 +261,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Ensure auditd Collects System Administrator Actions
-definition_location: /home/frattah/old/linux_os/guide/auditing/auditd_configure_rules/audit_rules_sysadmin_actions/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/auditd_configure_rules/audit_rules_sysadmin_actions/rule.yml
 template: null
 documentation_complete: true

@@ -283,7 +283,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Record Unsuccessful Modification Attempts to Files - open_by_handle_at O_TRUNC_WRITE
-definition_location: /home/frattah/old/linux_os/guide/auditing/auditd_configure_rules/audit_file_modification/audit_rules_unsuccessful_file_modification_open_by_handle_at_o_trunc_write/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/auditd_configure_rules/audit_file_modification/audit_rules_unsuccessful_file_modification_open_by_handle_at_o_trunc_write/rule.yml
 template:
     vars:
         pos: a2

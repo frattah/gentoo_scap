@@ -63,5 +63,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: Install and Protect LDAP Certificate Files
-definition_location: /home/frattah/old/linux_os/guide/services/ldap/openldap_server/ldap_server_config_certificate_files/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ldap/openldap_server/ldap_server_config_certificate_files/group.yml
 documentation_complete: true

@@ -119,8 +119,8 @@ references:
     - PR.PT-3
     - PR.PT-4
 components:
-- inetd
 - tcpd
+- inetd
 identifiers: {}
 ocil_clause: the package is installed
 ocil: 'Run the following command to determine if the <code>tcpd</code> package is
@@ -150,7 +150,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Uninstall tcpd Package
-definition_location: /home/frattah/old/linux_os/guide/services/obsolete/inetd_and_xinetd/package_tcp_wrappers_removed/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/obsolete/inetd_and_xinetd/package_tcp_wrappers_removed/rule.yml
 template:
     name: package_removed
     vars:

@@ -113,6 +113,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Enable the GNOME3 Login Smartcard Authentication
-definition_location: /home/frattah/old/linux_os/guide/system/software/gnome/gnome_login_screen/dconf_gnome_enable_smartcard_auth/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/gnome/gnome_login_screen/dconf_gnome_enable_smartcard_auth/rule.yml
 template: null
 documentation_complete: true

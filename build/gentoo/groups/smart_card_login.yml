@@ -33,5 +33,5 @@ inherited_platforms: !!set
     machine: null
 cpe_platform_names: !!set {}
 title: Hardware Tokens for Authentication
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-physical/screen_locking/smart_card_login/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-physical/screen_locking/smart_card_login/group.yml
 documentation_complete: true

@@ -164,8 +164,8 @@ references:
     anssi:
     - R73
 components:
-- audit
 - kernel
+- audit
 identifiers: {}
 ocil_clause: no line is returned
 ocil: 'To determine if the system is configured to audit calls to the
@@ -267,6 +267,6 @@ bash_conditional: null
 fixes: {}
 title: Ensure auditd Collects Information on Kernel Module Loading and Unloading -
     finit_module
-definition_location: /home/frattah/old/linux_os/guide/auditing/auditd_configure_rules/audit_kernel_module_loading/audit_rules_kernel_module_loading_finit/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/auditd_configure_rules/audit_kernel_module_loading/audit_rules_kernel_module_loading_finit/rule.yml
 template: null
 documentation_complete: true

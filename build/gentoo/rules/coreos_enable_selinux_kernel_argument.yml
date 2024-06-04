@@ -185,8 +185,8 @@ references:
     srg:
     - SRG-APP-000233-CTR-000585
 components:
-- kernel
 - selinux
+- kernel
 identifiers: {}
 ocil_clause: SELinux is disabled at boot time
 ocil: 'Inspect <tt>/proc/cmdline</tt> for any instances of <tt>selinux=0</tt>
@@ -219,7 +219,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Ensure SELinux Not Disabled in the kernel arguments
-definition_location: /home/frattah/old/linux_os/guide/system/selinux/coreos_enable_selinux_kernel_argument/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/selinux/coreos_enable_selinux_kernel_argument/rule.yml
 template:
     name: coreos_kernel_option
     vars:

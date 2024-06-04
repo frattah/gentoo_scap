@@ -46,6 +46,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Ensure SELinux support is enabled in Docker
-definition_location: /home/frattah/old/linux_os/guide/services/docker/docker_selinux_enabled/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/docker/docker_selinux_enabled/rule.yml
 template: null
 documentation_complete: true

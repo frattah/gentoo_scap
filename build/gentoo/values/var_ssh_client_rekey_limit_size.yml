@@ -17,5 +17,5 @@ options:
     1G: 1G
 warnings: []
 title: SSH client RekeyLimit - size
-definition_location: /home/frattah/old/linux_os/guide/system/software/integrity/crypto/var_ssh_client_rekey_limit_size.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/integrity/crypto/var_ssh_client_rekey_limit_size.var
 documentation_complete: true

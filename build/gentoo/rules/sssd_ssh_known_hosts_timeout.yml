@@ -112,6 +112,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Configure SSSD to Expire SSH Known Hosts
-definition_location: /home/frattah/old/linux_os/guide/services/sssd/sssd_ssh_known_hosts_timeout/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/sssd/sssd_ssh_known_hosts_timeout/rule.yml
 template: null
 documentation_complete: true

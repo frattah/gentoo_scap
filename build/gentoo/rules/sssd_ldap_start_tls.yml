@@ -152,11 +152,11 @@ inherited_platforms: !!set
 cpe_platform_names: !!set
     sssd-ldap: null
 inherited_cpe_platform_names: !!set
-    machine: null
     package_sssd: null
+    machine: null
 bash_conditional: null
 fixes: {}
 title: Configure SSSD LDAP Backend to Use TLS For All Transactions
-definition_location: /home/frattah/old/linux_os/guide/services/sssd/sssd-ldap/sssd_ldap_start_tls/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/sssd/sssd-ldap/sssd_ldap_start_tls/rule.yml
 template: null
 documentation_complete: true

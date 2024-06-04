@@ -53,6 +53,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Create Warning Banners for All FTP Users
-definition_location: /home/frattah/old/linux_os/guide/services/ftp/ftp_configure_vsftpd/ftp_present_banner/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ftp/ftp_configure_vsftpd/ftp_present_banner/rule.yml
 template: null
 documentation_complete: true

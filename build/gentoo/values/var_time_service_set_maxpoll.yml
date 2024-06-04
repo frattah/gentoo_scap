@@ -10,5 +10,5 @@ options:
     system_default: 10
 warnings: []
 title: Maximum NTP or Chrony Poll
-definition_location: /home/frattah/old/linux_os/guide/services/ntp/var_time_service_set_maxpoll.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ntp/var_time_service_set_maxpoll.var
 documentation_complete: true

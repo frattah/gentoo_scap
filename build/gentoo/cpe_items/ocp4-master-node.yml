@@ -7,6 +7,6 @@ versioned: false
 args: {}
 content_id: ssg
 title: Node is an OpenShift 4 master node
-definition_location: /home/frattah/old/shared/applicability/ocp4-master-node.yml
+definition_location: /home/fra/gentoo_scap/shared/applicability/ocp4-master-node.yml
 template: null
 documentation_complete: true

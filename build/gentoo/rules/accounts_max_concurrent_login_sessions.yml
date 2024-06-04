@@ -153,6 +153,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Limit the Number of Concurrent Login Sessions Allowed Per User
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-session/accounts_max_concurrent_login_sessions/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-session/accounts_max_concurrent_login_sessions/rule.yml
 template: null
 documentation_complete: true

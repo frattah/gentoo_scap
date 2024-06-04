@@ -10,5 +10,5 @@ options:
     default: 900
 warnings: []
 title: Screensaver Inactivity timeout
-definition_location: /home/frattah/old/linux_os/guide/system/software/gnome/gnome_screen_locking/inactivity_timeout_value.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/gnome/gnome_screen_locking/inactivity_timeout_value.var
 documentation_complete: true

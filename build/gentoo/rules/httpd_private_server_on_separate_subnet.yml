@@ -53,6 +53,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: A private web server must be located on a separate controlled access subnet
-definition_location: /home/frattah/old/linux_os/guide/services/http/securing_httpd/httpd_private_server_on_separate_subnet/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/http/securing_httpd/httpd_private_server_on_separate_subnet/rule.yml
 template: null
 documentation_complete: true

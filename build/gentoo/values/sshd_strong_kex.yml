@@ -16,5 +16,5 @@ options:
     std_openeuler: curve25519-sha256,curve25519-sha256@libssh.org,diffie-hellman-group-exchange-sha256
 warnings: []
 title: SSH Strong KEX by FIPS
-definition_location: /home/frattah/old/linux_os/guide/services/ssh/sshd_strong_kex.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ssh/sshd_strong_kex.var
 documentation_complete: true

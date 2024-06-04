@@ -37,6 +37,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Disable Zone Transfers from the Nameserver
-definition_location: /home/frattah/old/linux_os/guide/services/dns/dns_server_protection/dns_server_disable_zone_transfers/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/dns/dns_server_protection/dns_server_disable_zone_transfers/rule.yml
 template: null
 documentation_complete: true

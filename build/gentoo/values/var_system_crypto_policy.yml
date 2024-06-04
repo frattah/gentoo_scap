@@ -13,5 +13,5 @@ options:
     next: NEXT
 warnings: []
 title: The system-provided crypto policies
-definition_location: /home/frattah/old/linux_os/guide/system/software/integrity/crypto/var_system_crypto_policy.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/integrity/crypto/var_system_crypto_policy.var
 documentation_complete: true

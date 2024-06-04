@@ -10,5 +10,5 @@ options:
     default: sandbox
 warnings: []
 title: SSH Privilege Separation Setting
-definition_location: /home/frattah/old/linux_os/guide/services/ssh/ssh_server/var_sshd_priv_separation.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ssh/ssh_server/var_sshd_priv_separation.var
 documentation_complete: true

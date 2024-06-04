@@ -54,7 +54,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Enable SLUB/SLAB allocator poisoning in zIPL
-definition_location: /home/frattah/old/linux_os/guide/system/bootloader-zipl/zipl_slub_debug_argument/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/bootloader-zipl/zipl_slub_debug_argument/rule.yml
 template:
     name: zipl_bls_entries_option
     vars:

@@ -187,6 +187,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Verify Any Configured IPSec Tunnel Connections
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-ipsec/libreswan_approved_tunnels/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-ipsec/libreswan_approved_tunnels/rule.yml
 template: null
 documentation_complete: true

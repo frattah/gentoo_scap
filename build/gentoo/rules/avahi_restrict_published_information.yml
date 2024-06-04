@@ -136,6 +136,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Restrict Information Published by Avahi
-definition_location: /home/frattah/old/linux_os/guide/services/avahi/avahi_configuration/avahi_restrict_published_information/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/avahi/avahi_configuration/avahi_restrict_published_information/rule.yml
 template: null
 documentation_complete: true

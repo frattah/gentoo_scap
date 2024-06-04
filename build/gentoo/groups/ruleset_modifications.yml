@@ -47,5 +47,5 @@ inherited_platforms: !!set
     machine: null
 cpe_platform_names: !!set {}
 title: Strengthen the Default Ruleset
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-firewalld/ruleset_modifications/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-firewalld/ruleset_modifications/group.yml
 documentation_complete: true

@@ -14,8 +14,8 @@ rationale: 'AppArmor must be enabled at boot time in your bootloader configurati
 severity: medium
 references: {}
 components:
-- apparmor
 - grub2
+- apparmor
 identifiers: {}
 ocil_clause: null
 ocil: null
@@ -39,6 +39,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Ensure AppArmor is enabled in the bootloader configuration
-definition_location: /home/frattah/old/linux_os/guide/system/apparmor/grub2_enable_apparmor/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/apparmor/grub2_enable_apparmor/rule.yml
 template: null
 documentation_complete: true

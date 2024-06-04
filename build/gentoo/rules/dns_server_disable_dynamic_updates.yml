@@ -40,6 +40,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Disable Dynamic Updates
-definition_location: /home/frattah/old/linux_os/guide/services/dns/dns_server_protection/dns_server_disable_dynamic_updates/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/dns/dns_server_protection/dns_server_disable_dynamic_updates/rule.yml
 template: null
 documentation_complete: true

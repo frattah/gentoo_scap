@@ -12,5 +12,5 @@ options:
     'on': 'true'
 warnings: []
 title: ssh_keysign SELinux Boolean
-definition_location: /home/frattah/old/linux_os/guide/system/selinux/selinux-booleans/var_ssh_keysign.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/selinux/selinux-booleans/var_ssh_keysign.var
 documentation_complete: true

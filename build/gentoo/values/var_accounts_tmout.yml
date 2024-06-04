@@ -16,5 +16,5 @@ options:
     default: 600
 warnings: []
 title: Account Inactivity Timeout (seconds)
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-session/var_accounts_tmout.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-session/var_accounts_tmout.var
 documentation_complete: true

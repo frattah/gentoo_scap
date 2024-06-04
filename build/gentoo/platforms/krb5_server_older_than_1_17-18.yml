@@ -7,5 +7,5 @@ xml_content: <ns0:platform xmlns:ns0="http://cpe.mitre.org/language/2.0" id="krb
 bash_conditional: ''
 ansible_conditional: ''
 title: ''
-definition_location: /home/frattah/old/build/gentoo/platforms/krb5_server_older_than_1_17-18.yml
+definition_location: /home/fra/gentoo_scap/build/gentoo/platforms/krb5_server_older_than_1_17-18.yml
 documentation_complete: true

@@ -58,6 +58,6 @@ bash_conditional: null
 fixes: {}
 title: All User Files and Directories In The Home Directory Must Be Group-Owned By
     The Primary Group
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-session/accounts_users_home_files_groupownership/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-session/accounts_users_home_files_groupownership/rule.yml
 template: null
 documentation_complete: true

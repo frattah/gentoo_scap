@@ -106,6 +106,6 @@ fixes: {}
 title: 'Ensure system-auth and password-auth files are symbolic links pointing
 
     to system-auth-local and password-auth-local'
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/authconfig_config_files_symlinks/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/authconfig_config_files_symlinks/rule.yml
 template: null
 documentation_complete: true

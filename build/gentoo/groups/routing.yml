@@ -16,5 +16,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: Network Routing
-definition_location: /home/frattah/old/linux_os/guide/services/routing/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/routing/group.yml
 documentation_complete: true

@@ -63,6 +63,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: The robots.txt Files Must Not Exist
-definition_location: /home/frattah/old/linux_os/guide/services/http/securing_httpd/httpd_secure_content/httpd_remove_robots_file/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/http/securing_httpd/httpd_secure_content/httpd_remove_robots_file/rule.yml
 template: null
 documentation_complete: true

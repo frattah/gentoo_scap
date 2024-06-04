@@ -12,5 +12,5 @@ options:
     'on': 'true'
 warnings: []
 title: named_tcp_bind_http_port SELinux Boolean
-definition_location: /home/frattah/old/linux_os/guide/system/selinux/selinux-booleans/var_named_tcp_bind_http_port.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/selinux/selinux-booleans/var_named_tcp_bind_http_port.var
 documentation_complete: true

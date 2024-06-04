@@ -13,5 +13,5 @@ options:
     chain_names: input,forward,output
 warnings: []
 title: Nftables Chain Names
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-nftables/var_nftables_base_chain_names.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-nftables/var_nftables_base_chain_names.var
 documentation_complete: true

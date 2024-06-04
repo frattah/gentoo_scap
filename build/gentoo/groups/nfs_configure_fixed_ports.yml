@@ -50,5 +50,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: Configure NFS Services to Use Fixed Ports (NFSv3 and NFSv2)
-definition_location: /home/frattah/old/linux_os/guide/services/nfs_and_rpc/nfs_configuring_all_machines/nfs_configure_fixed_ports/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/nfs_and_rpc/nfs_configuring_all_machines/nfs_configure_fixed_ports/group.yml
 documentation_complete: true

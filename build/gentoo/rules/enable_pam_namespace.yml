@@ -46,6 +46,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Set Up a Private Namespace in PAM Configuration
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-pam/enable_pam_namespace/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-pam/enable_pam_namespace/rule.yml
 template: null
 documentation_complete: true

@@ -10,5 +10,5 @@ options:
     var_log_sudo_log: /var/log/sudo.log
 warnings: []
 title: Sudo - logfile value
-definition_location: /home/frattah/old/linux_os/guide/system/software/sudo/var_sudo_logfile.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/sudo/var_sudo_logfile.var
 documentation_complete: true

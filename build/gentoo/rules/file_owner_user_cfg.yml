@@ -120,12 +120,12 @@ inherited_platforms: !!set
 cpe_platform_names: !!set
     machine: null
 inherited_cpe_platform_names: !!set
-    non-uefi: null
     grub2: null
+    non-uefi: null
 bash_conditional: null
 fixes: {}
 title: Verify /boot/grub2/user.cfg User Ownership
-definition_location: /home/frattah/old/linux_os/guide/system/bootloader-grub2/non-uefi/file_owner_user_cfg/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/bootloader-grub2/non-uefi/file_owner_user_cfg/rule.yml
 template:
     name: file_owner
     vars:

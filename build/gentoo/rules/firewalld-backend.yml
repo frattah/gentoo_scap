@@ -100,7 +100,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Configure Firewalld to Use the Nftables Backend
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-firewalld/firewalld-backend/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-firewalld/firewalld-backend/rule.yml
 template:
     name: shell_lineinfile
     vars:

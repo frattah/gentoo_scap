@@ -152,6 +152,6 @@ bash_conditional: null
 fixes: {}
 title: Firewalld Must Employ a Deny-all, Allow-by-exception Policy for Allowing Connections
     to Other Systems
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-firewalld/ruleset_modifications/configured_firewalld_default_deny/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-firewalld/ruleset_modifications/configured_firewalld_default_deny/rule.yml
 template: null
 documentation_complete: true

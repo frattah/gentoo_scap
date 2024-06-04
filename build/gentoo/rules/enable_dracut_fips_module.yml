@@ -156,6 +156,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Enable Dracut FIPS Module
-definition_location: /home/frattah/old/linux_os/guide/system/software/integrity/fips/enable_dracut_fips_module/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/integrity/fips/enable_dracut_fips_module/rule.yml
 template: null
 documentation_complete: true

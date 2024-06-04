@@ -20,5 +20,5 @@ options:
     panic: 2
 warnings: []
 title: Audit failure mode
-definition_location: /home/frattah/old/linux_os/guide/auditing/auditd_configure_rules/var_audit_failure_mode.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/auditd_configure_rules/var_audit_failure_mode.var
 documentation_complete: true

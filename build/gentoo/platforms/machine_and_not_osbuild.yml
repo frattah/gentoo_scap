@@ -12,5 +12,5 @@ ansible_conditional: ( ansible_virtualization_type not in ["docker", "lxc", "ope
     "podman", "container"] and not ( lookup("env", "container") == "bwrap-osbuild"
     ) )
 title: ''
-definition_location: /home/frattah/old/build/gentoo/platforms/machine_and_not_osbuild.yml
+definition_location: /home/fra/gentoo_scap/build/gentoo/platforms/machine_and_not_osbuild.yml
 documentation_complete: true

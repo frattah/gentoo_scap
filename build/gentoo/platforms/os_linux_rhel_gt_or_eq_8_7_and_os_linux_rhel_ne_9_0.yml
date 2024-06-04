@@ -15,5 +15,5 @@ ansible_conditional: ( ansible_distribution == 'RedHat' and ansible_distribution
     is version('8.7', '>=') and ansible_distribution == 'RedHat' and ansible_distribution_version
     is version('9.0', '!=') )
 title: ''
-definition_location: /home/frattah/old/build/gentoo/platforms/os_linux_rhel_gt_or_eq_8_7_and_os_linux_rhel_ne_9_0.yml
+definition_location: /home/fra/gentoo_scap/build/gentoo/platforms/os_linux_rhel_gt_or_eq_8_7_and_os_linux_rhel_ne_9_0.yml
 documentation_complete: true

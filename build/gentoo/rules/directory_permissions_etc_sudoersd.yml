@@ -46,7 +46,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Verify Permissions On /etc/sudoers.d Directory
-definition_location: /home/frattah/old/linux_os/guide/system/software/sudo/directory_permissions_etc_sudoersd/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/sudo/directory_permissions_etc_sudoersd/rule.yml
 template:
     name: file_permissions
     vars:

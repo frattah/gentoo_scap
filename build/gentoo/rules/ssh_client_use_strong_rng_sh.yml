@@ -58,6 +58,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: SSH client uses strong entropy to seed (Bash-like shells)
-definition_location: /home/frattah/old/linux_os/guide/services/ssh/ssh_client/ssh_client_use_strong_rng_sh/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ssh/ssh_client/ssh_client_use_strong_rng_sh/rule.yml
 template: null
 documentation_complete: true

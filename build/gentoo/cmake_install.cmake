@@ -1,4 +1,4 @@
-# Install script for directory: /home/frattah/old/products/gentoo
+# Install script for directory: /home/fra/gentoo_scap/products/gentoo
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,32 +38,32 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/xml/scap/ssg/content" TYPE FILE FILES "/home/frattah/old/build/ssg-gentoo-xccdf.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/xml/scap/ssg/content" TYPE FILE FILES "/home/fra/gentoo_scap/build/ssg-gentoo-xccdf.xml")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/xml/scap/ssg/content" TYPE FILE FILES "/home/frattah/old/build/ssg-gentoo-oval.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/xml/scap/ssg/content" TYPE FILE FILES "/home/fra/gentoo_scap/build/ssg-gentoo-oval.xml")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/xml/scap/ssg/content" TYPE FILE FILES "/home/frattah/old/build/ssg-gentoo-ocil.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/xml/scap/ssg/content" TYPE FILE FILES "/home/fra/gentoo_scap/build/ssg-gentoo-ocil.xml")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/xml/scap/ssg/content" TYPE FILE FILES "/home/frattah/old/build/ssg-gentoo-cpe-dictionary.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/xml/scap/ssg/content" TYPE FILE FILES "/home/fra/gentoo_scap/build/ssg-gentoo-cpe-dictionary.xml")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/xml/scap/ssg/content" TYPE FILE FILES "/home/frattah/old/build/ssg-gentoo-cpe-oval.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/xml/scap/ssg/content" TYPE FILE FILES "/home/fra/gentoo_scap/build/ssg-gentoo-cpe-oval.xml")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/xml/scap/ssg/content" TYPE FILE FILES "/home/frattah/old/build/ssg-gentoo-ds.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/xml/scap/ssg/content" TYPE FILE FILES "/home/fra/gentoo_scap/build/ssg-gentoo-ds.xml")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   
-        file(GLOB GUIDE_FILES "/home/frattah/old/build/guides/ssg-gentoo-*.html") 
+        file(GLOB GUIDE_FILES "/home/fra/gentoo_scap/build/guides/ssg-gentoo-*.html") 
 
         if(NOT IS_ABSOLUTE share/doc/scap-security-guide/guides)
             file(INSTALL DESTINATION "/usr/local/share/doc/scap-security-guide/guides"
@@ -77,7 +77,7 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   
-            file(GLOB ROLE_FILES "/home/frattah/old/build/ansible/gentoo-playbook-*.yml") 
+            file(GLOB ROLE_FILES "/home/fra/gentoo_scap/build/ansible/gentoo-playbook-*.yml") 
 
             if(NOT IS_ABSOLUTE share/scap-security-guide/ansible)
                 file(INSTALL DESTINATION "/usr/local/share/scap-security-guide/ansible"
@@ -91,7 +91,7 @@ endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   
-            file(GLOB ROLE_FILES "/home/frattah/old/build/bash/gentoo-script-*.sh") 
+            file(GLOB ROLE_FILES "/home/fra/gentoo_scap/build/bash/gentoo-script-*.sh") 
 
             if(NOT IS_ABSOLUTE share/scap-security-guide/bash)
                 file(INSTALL DESTINATION "/usr/local/share/scap-security-guide/bash"

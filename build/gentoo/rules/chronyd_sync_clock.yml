@@ -60,7 +60,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Synchronize internal information system clocks
-definition_location: /home/frattah/old/linux_os/guide/services/ntp/chronyd_sync_clock/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ntp/chronyd_sync_clock/rule.yml
 template:
     name: lineinfile
     vars:

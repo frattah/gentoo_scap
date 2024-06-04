@@ -62,8 +62,8 @@ references:
     anssi:
     - R71
 components:
-- logrotate
 - rsyslog
+- logrotate
 identifiers: {}
 ocil_clause: logrotate is not configured to run daily
 ocil: 'To determine the status and frequency of logrotate, run the following command:
@@ -95,6 +95,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Ensure Logrotate Runs Periodically
-definition_location: /home/frattah/old/linux_os/guide/system/logging/log_rotation/ensure_logrotate_activated/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/logging/log_rotation/ensure_logrotate_activated/rule.yml
 template: null
 documentation_complete: true

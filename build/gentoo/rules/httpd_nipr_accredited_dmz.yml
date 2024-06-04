@@ -63,6 +63,6 @@ bash_conditional: null
 fixes: {}
 title: A public web server, if hosted on the NIPRNet, must be isolated in an accredited
     DoD DMZ extension
-definition_location: /home/frattah/old/linux_os/guide/services/http/securing_httpd/httpd_nipr_accredited_dmz/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/http/securing_httpd/httpd_nipr_accredited_dmz/rule.yml
 template: null
 documentation_complete: true

@@ -143,5 +143,5 @@ inherited_platforms: !!set
 cpe_platform_names: !!set
     package_audit: null
 title: Configure auditd Rules for Comprehensive Auditing
-definition_location: /home/frattah/old/linux_os/guide/auditing/auditd_configure_rules/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/auditd_configure_rules/group.yml
 documentation_complete: true

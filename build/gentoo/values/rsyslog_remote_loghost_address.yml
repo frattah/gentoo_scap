@@ -7,5 +7,5 @@ options:
     default: logcollector
 warnings: []
 title: Remote Log Server
-definition_location: /home/frattah/old/linux_os/guide/system/logging/rsyslog_sending_messages/rsyslog_remote_loghost_address.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/logging/rsyslog_sending_messages/rsyslog_remote_loghost_address.var
 documentation_complete: true

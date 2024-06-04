@@ -104,7 +104,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Verify /boot/grub2/user.cfg Permissions
-definition_location: /home/frattah/old/linux_os/guide/system/bootloader-grub2/uefi/file_permissions_efi_user_cfg/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/bootloader-grub2/uefi/file_permissions_efi_user_cfg/rule.yml
 template:
     name: file_permissions
     vars:

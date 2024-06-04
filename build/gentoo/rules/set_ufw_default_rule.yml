@@ -54,6 +54,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Ensure ufw Default Deny Firewall Policy
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-ufw/set_ufw_default_rule/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-ufw/set_ufw_default_rule/rule.yml
 template: null
 documentation_complete: true

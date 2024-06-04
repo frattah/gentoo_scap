@@ -79,6 +79,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Disable network management of chrony daemon
-definition_location: /home/frattah/old/linux_os/guide/services/ntp/chronyd_no_chronyc_network/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ntp/chronyd_no_chronyc_network/rule.yml
 template: null
 documentation_complete: true

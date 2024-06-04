@@ -36,6 +36,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Configure mountd to use static port
-definition_location: /home/frattah/old/linux_os/guide/services/nfs_and_rpc/nfs_configuring_all_machines/nfs_configure_fixed_ports/nfs_fixed_mountd_port/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/nfs_and_rpc/nfs_configuring_all_machines/nfs_configure_fixed_ports/nfs_fixed_mountd_port/rule.yml
 template: null
 documentation_complete: true

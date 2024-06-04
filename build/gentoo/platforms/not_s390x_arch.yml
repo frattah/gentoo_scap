@@ -7,5 +7,5 @@ xml_content: <ns0:platform xmlns:ns0="http://cpe.mitre.org/language/2.0" id="not
 bash_conditional: '! grep -q s390x /proc/sys/kernel/osrelease'
 ansible_conditional: ansible_architecture != "s390x"
 title: ''
-definition_location: /home/frattah/old/build/gentoo/platforms/not_s390x_arch.yml
+definition_location: /home/fra/gentoo_scap/build/gentoo/platforms/not_s390x_arch.yml
 documentation_complete: true

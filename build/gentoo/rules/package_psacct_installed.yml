@@ -167,7 +167,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Install the psacct package
-definition_location: /home/frattah/old/linux_os/guide/services/base/package_psacct_installed/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/base/package_psacct_installed/rule.yml
 template:
     name: package_installed
     vars:

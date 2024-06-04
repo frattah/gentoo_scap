@@ -47,7 +47,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Limit CPU consumption of the Perf system
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/restrictions/sysctl_kernel_perf_cpu_time_max_percent/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/restrictions/sysctl_kernel_perf_cpu_time_max_percent/rule.yml
 template:
     name: sysctl
     vars:

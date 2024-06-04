@@ -57,8 +57,8 @@ references:
     pcidss4:
     - 10.5.1
 components:
-- logrotate
 - rsyslog
+- logrotate
 identifiers: {}
 ocil_clause: logrotate timer is not enabled
 ocil: ' Run the following command to determine the current status of the <code>logrotate</code>
@@ -86,7 +86,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Enable logrotate Timer
-definition_location: /home/frattah/old/linux_os/guide/system/logging/log_rotation/timer_logrotate_enabled/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/logging/log_rotation/timer_logrotate_enabled/rule.yml
 template:
     name: timer_enabled
     vars:

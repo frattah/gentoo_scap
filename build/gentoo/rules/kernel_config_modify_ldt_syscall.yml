@@ -46,7 +46,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Disable the LDT (local descriptor table)
-definition_location: /home/frattah/old/linux_os/guide/system/kernel_build_config/kernel_config_modify_ldt_syscall/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/kernel_build_config/kernel_config_modify_ldt_syscall/rule.yml
 template:
     name: kernel_build_config
     vars:

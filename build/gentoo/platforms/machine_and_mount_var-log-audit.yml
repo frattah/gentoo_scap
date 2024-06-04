@@ -13,5 +13,5 @@ ansible_conditional: ( ansible_virtualization_type not in ["docker", "lxc", "ope
     "podman", "container"] and "/var/log/audit" in ansible_mounts | map(attribute="mount")
     | list )
 title: ''
-definition_location: /home/frattah/old/build/gentoo/platforms/machine_and_mount_var-log-audit.yml
+definition_location: /home/fra/gentoo_scap/build/gentoo/platforms/machine_and_mount_var-log-audit.yml
 documentation_complete: true

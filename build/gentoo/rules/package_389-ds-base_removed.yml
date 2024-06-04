@@ -89,8 +89,8 @@ references:
     - PR.IP-1
     - PR.PT-3
 components:
-- 389-ds-base
 - openldap
+- 389-ds-base
 identifiers: {}
 ocil_clause: the package is installed
 ocil: 'To verify the <tt>389-ds-base</tt> package is not installed, run the
@@ -120,7 +120,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Uninstall 389-ds-base Package
-definition_location: /home/frattah/old/linux_os/guide/services/ldap/389_ds/package_389-ds-base_removed/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ldap/389_ds/package_389-ds-base_removed/rule.yml
 template:
     name: package_removed
     vars:

@@ -87,7 +87,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Verify that system commands directories are group owned by root
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/files/permissions_within_important_dirs/dir_groupownership_binary_dirs/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/files/permissions_within_important_dirs/dir_groupownership_binary_dirs/rule.yml
 template:
     name: file_groupowner
     vars:

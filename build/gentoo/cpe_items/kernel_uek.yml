@@ -7,6 +7,6 @@ versioned: false
 args: {}
 content_id: ssg
 title: System is running on uek kernel
-definition_location: /home/frattah/old/shared/applicability/kernel_uek.yml
+definition_location: /home/fra/gentoo_scap/shared/applicability/kernel_uek.yml
 template: null
 documentation_complete: true

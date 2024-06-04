@@ -14,5 +14,5 @@ inherited_platforms: !!set
     machine: null
 cpe_platform_names: !!set {}
 title: Configure Logwatch on the Central Log Server
-definition_location: /home/frattah/old/linux_os/guide/system/logging/configure_logwatch_on_logserver/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/logging/configure_logwatch_on_logserver/group.yml
 documentation_complete: true

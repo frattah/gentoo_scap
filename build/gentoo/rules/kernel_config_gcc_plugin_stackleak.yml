@@ -47,7 +47,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Poison kernel stack before returning from syscalls
-definition_location: /home/frattah/old/linux_os/guide/system/kernel_build_config/gcc_plugin/kernel_config_gcc_plugin_stackleak/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/kernel_build_config/gcc_plugin/kernel_config_gcc_plugin_stackleak/rule.yml
 template:
     name: kernel_build_config
     vars:

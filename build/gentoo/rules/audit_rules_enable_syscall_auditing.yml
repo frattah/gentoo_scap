@@ -49,6 +49,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Remove Default Configuration to Disable Syscall Auditing
-definition_location: /home/frattah/old/linux_os/guide/auditing/auditd_configure_rules/audit_rules_enable_syscall_auditing/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/auditd_configure_rules/audit_rules_enable_syscall_auditing/rule.yml
 template: null
 documentation_complete: true

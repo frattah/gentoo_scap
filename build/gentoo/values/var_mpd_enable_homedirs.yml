@@ -12,5 +12,5 @@ options:
     'on': 'true'
 warnings: []
 title: mpd_enable_homedirs SELinux Boolean
-definition_location: /home/frattah/old/linux_os/guide/system/selinux/selinux-booleans/var_mpd_enable_homedirs.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/selinux/selinux-booleans/var_mpd_enable_homedirs.var
 documentation_complete: true

@@ -7,5 +7,5 @@ xml_content: <ns0:platform xmlns:ns0="http://cpe.mitre.org/language/2.0" id="ppc
 bash_conditional: grep -q ppc64le /proc/sys/kernel/osrelease
 ansible_conditional: ansible_architecture == "ppc64le"
 title: ''
-definition_location: /home/frattah/old/build/gentoo/platforms/ppc64le_arch.yml
+definition_location: /home/fra/gentoo_scap/build/gentoo/platforms/ppc64le_arch.yml
 documentation_complete: true

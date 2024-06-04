@@ -297,6 +297,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Ensure Logs Sent To Remote Host
-definition_location: /home/frattah/old/linux_os/guide/system/logging/rsyslog_sending_messages/rsyslog_remote_loghost/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/logging/rsyslog_sending_messages/rsyslog_remote_loghost/rule.yml
 template: null
 documentation_complete: true

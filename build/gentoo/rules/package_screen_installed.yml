@@ -80,8 +80,8 @@ references:
     srg:
     - SRG-OS-000029-GPOS-00010
 components:
-- pam
 - screen
+- pam
 identifiers: {}
 ocil_clause: the package is not installed
 ocil: 'Run the following command to determine if the <code>screen</code> package is
@@ -106,7 +106,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Install the screen Package
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-physical/screen_locking/console_screen_locking/package_screen_installed/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-physical/screen_locking/console_screen_locking/package_screen_installed/rule.yml
 template:
     name: package_installed
     vars:

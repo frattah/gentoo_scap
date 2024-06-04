@@ -6,5 +6,5 @@ options:
     default: smtp.$mydomain
 warnings: []
 title: Postfix relayhost
-definition_location: /home/frattah/old/linux_os/guide/services/mail/postfix_client/var_postfix_relayhost.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/mail/postfix_client/var_postfix_relayhost.var
 documentation_complete: true

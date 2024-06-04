@@ -26,5 +26,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: Disable X Windows
-definition_location: /home/frattah/old/linux_os/guide/services/xwindows/disabling_xwindows/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/xwindows/disabling_xwindows/group.yml
 documentation_complete: true

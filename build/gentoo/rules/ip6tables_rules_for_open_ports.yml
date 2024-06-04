@@ -49,6 +49,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Ensure ip6tables Firewall Rules Exist for All Open Ports
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-iptables/iptables_ruleset_modifications/ip6tables_rules_for_open_ports/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-iptables/iptables_ruleset_modifications/ip6tables_rules_for_open_ports/rule.yml
 template: null
 documentation_complete: true

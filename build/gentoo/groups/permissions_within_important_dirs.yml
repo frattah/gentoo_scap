@@ -39,5 +39,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: Verify File Permissions Within Some Important Directories
-definition_location: /home/frattah/old/linux_os/guide/system/permissions/files/permissions_within_important_dirs/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/permissions/files/permissions_within_important_dirs/group.yml
 documentation_complete: true

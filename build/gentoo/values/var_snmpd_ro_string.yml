@@ -6,5 +6,5 @@ options:
     default: changemero
 warnings: []
 title: SNMP read-only community string
-definition_location: /home/frattah/old/linux_os/guide/services/snmp/snmp_configure_server/var_snmpd_ro_string.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/snmp/snmp_configure_server/var_snmpd_ro_string.var
 documentation_complete: true

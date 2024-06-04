@@ -56,8 +56,8 @@ references:
     srg:
     - SRG-OS-000480-GPOS-00227
 components:
-- mcafee
 - nails
+- mcafee
 identifiers: {}
 ocil_clause: null
 ocil: '
@@ -90,7 +90,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Enable nails Service
-definition_location: /home/frattah/old/linux_os/guide/system/software/integrity/endpoint_security_software/mcafee_security_software/service_nails_enabled/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/integrity/endpoint_security_software/mcafee_security_software/service_nails_enabled/rule.yml
 template:
     name: service_enabled
     vars:

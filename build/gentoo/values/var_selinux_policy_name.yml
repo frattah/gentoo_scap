@@ -14,5 +14,5 @@ options:
     targeted: targeted
 warnings: []
 title: SELinux policy
-definition_location: /home/frattah/old/linux_os/guide/system/selinux/var_selinux_policy_name.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/selinux/var_selinux_policy_name.var
 documentation_complete: true

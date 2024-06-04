@@ -323,7 +323,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Record Events that Modify User/Group Information - /etc/group
-definition_location: /home/frattah/old/linux_os/guide/auditing/auditd_configure_rules/audit_rules_usergroup_modification_group/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/auditd_configure_rules/audit_rules_usergroup_modification_group/rule.yml
 template:
     name: audit_rules_usergroup_modification
     vars:

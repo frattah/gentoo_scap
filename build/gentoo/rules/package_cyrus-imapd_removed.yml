@@ -35,7 +35,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Uninstall cyrus-imapd Package
-definition_location: /home/frattah/old/linux_os/guide/services/imap/disabling_cyrus-imapd/package_cyrus-imapd_removed/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/imap/disabling_cyrus-imapd/package_cyrus-imapd_removed/rule.yml
 template:
     name: package_removed
     vars:

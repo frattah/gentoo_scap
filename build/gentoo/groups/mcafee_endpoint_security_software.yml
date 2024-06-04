@@ -16,5 +16,5 @@ inherited_platforms: !!set {}
 cpe_platform_names: !!set
     machine: null
 title: McAfee Endpoint Security for Linux (ENSL)
-definition_location: /home/frattah/old/linux_os/guide/system/software/integrity/endpoint_security_software/mcafee_security_software/mcafee_endpoint_security_software/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/integrity/endpoint_security_software/mcafee_security_software/mcafee_endpoint_security_software/group.yml
 documentation_complete: true

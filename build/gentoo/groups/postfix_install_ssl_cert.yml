@@ -47,5 +47,5 @@ inherited_platforms: !!set
     package[postfix]: null
 cpe_platform_names: !!set {}
 title: Ensure Security of Postfix SSL Certificate
-definition_location: /home/frattah/old/linux_os/guide/services/mail/postfix_harden_os/postfix_configure_ssl_certs/postfix_install_ssl_cert/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/mail/postfix_harden_os/postfix_configure_ssl_certs/postfix_install_ssl_cert/group.yml
 documentation_complete: true

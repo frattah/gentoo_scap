@@ -12,5 +12,5 @@ options:
     1000: 1000
 warnings: []
 title: Confidence level on Hardware Random Number Generator
-definition_location: /home/frattah/old/linux_os/guide/system/bootloader-grub2/var_rng_core_default_quality.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/bootloader-grub2/var_rng_core_default_quality.var
 documentation_complete: true

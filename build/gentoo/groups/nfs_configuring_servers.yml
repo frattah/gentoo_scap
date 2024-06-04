@@ -19,5 +19,5 @@ platforms: !!set {}
 inherited_platforms: !!set {}
 cpe_platform_names: !!set {}
 title: Configure NFS Servers
-definition_location: /home/frattah/old/linux_os/guide/services/nfs_and_rpc/nfs_configuring_servers/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/nfs_and_rpc/nfs_configuring_servers/group.yml
 documentation_complete: true

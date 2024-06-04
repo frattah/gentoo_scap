@@ -52,7 +52,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Audit Configuration Files Permissions are 640 or More Restrictive
-definition_location: /home/frattah/old/linux_os/guide/auditing/auditd_configure_rules/file_permissions_audit_configuration/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/auditd_configure_rules/file_permissions_audit_configuration/rule.yml
 template:
     name: file_permissions
     vars:

@@ -8,5 +8,5 @@ options:
     enabled: 1
 warnings: []
 title: net.ipv6.conf.all.accept_ra_defrtr
-definition_location: /home/frattah/old/linux_os/guide/system/network/network-ipv6/configuring_ipv6/sysctl_net_ipv6_conf_all_accept_ra_defrtr_value.var
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/network/network-ipv6/configuring_ipv6/sysctl_net_ipv6_conf_all_accept_ra_defrtr_value.var
 documentation_complete: true

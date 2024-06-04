@@ -21,8 +21,8 @@ references:
     srg:
     - SRG-OS-000480-GPOS-00225
 components:
-- libpwquality
 - pam
+- libpwquality
 identifiers: {}
 ocil_clause: the package is not installed
 ocil: 'Run the following command to determine if the <code>libpwquality</code> package
@@ -49,7 +49,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Install pam_pwquality Package
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-pam/package_pam_pwquality_installed/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-pam/package_pam_pwquality_installed/rule.yml
 template:
     name: package_installed
     vars:

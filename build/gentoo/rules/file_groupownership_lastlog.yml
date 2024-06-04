@@ -52,7 +52,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Verify Group Who Owns lastlog Command
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-session/file_groupownership_lastlog/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-session/file_groupownership_lastlog/rule.yml
 template:
     name: file_groupowner
     vars:

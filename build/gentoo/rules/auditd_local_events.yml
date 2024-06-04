@@ -93,7 +93,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Include Local Events in Audit Logs
-definition_location: /home/frattah/old/linux_os/guide/auditing/configure_auditd_data_retention/auditd_local_events/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/auditing/configure_auditd_data_retention/auditd_local_events/rule.yml
 template:
     name: auditd_lineinfile
     vars:

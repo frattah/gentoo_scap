@@ -30,5 +30,5 @@ inherited_platforms: !!set {}
 cpe_platform_names: !!set
     machine_and_not_osbuild: null
 title: Federal Information Processing Standard (FIPS)
-definition_location: /home/frattah/old/linux_os/guide/system/software/integrity/fips/group.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/integrity/fips/group.yml
 documentation_complete: true

@@ -201,6 +201,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Disable the GNOME3 Login Restart and Shutdown Buttons
-definition_location: /home/frattah/old/linux_os/guide/system/software/gnome/gnome_login_screen/dconf_gnome_disable_restart_shutdown/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/software/gnome/gnome_login_screen/dconf_gnome_disable_restart_shutdown/rule.yml
 template: null
 documentation_complete: true

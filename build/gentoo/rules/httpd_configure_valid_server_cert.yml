@@ -68,6 +68,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Configure A Valid Server Certificate
-definition_location: /home/frattah/old/linux_os/guide/services/http/securing_httpd/httpd_modules_improve_security/httpd_deploy_mod_ssl/httpd_configure_valid_server_cert/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/http/securing_httpd/httpd_modules_improve_security/httpd_deploy_mod_ssl/httpd_configure_valid_server_cert/rule.yml
 template: null
 documentation_complete: true

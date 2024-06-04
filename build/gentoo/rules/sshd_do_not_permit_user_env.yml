@@ -148,7 +148,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Do Not Allow SSH Environment Options
-definition_location: /home/frattah/old/linux_os/guide/services/ssh/ssh_server/sshd_do_not_permit_user_env/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/ssh/ssh_server/sshd_do_not_permit_user_env/rule.yml
 template:
     name: sshd_lineinfile
     vars:

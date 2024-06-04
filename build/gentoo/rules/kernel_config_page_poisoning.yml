@@ -41,7 +41,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Enable poison of pages after freeing
-definition_location: /home/frattah/old/linux_os/guide/system/kernel_build_config/kernel_config_page_poisoning/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/kernel_build_config/kernel_config_page_poisoning/rule.yml
 template:
     name: kernel_build_config
     vars:

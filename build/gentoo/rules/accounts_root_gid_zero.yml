@@ -31,6 +31,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Verify Root Has A Primary GID 0
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-restrictions/root_logins/accounts_root_gid_zero/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-restrictions/root_logins/accounts_root_gid_zero/rule.yml
 template: null
 documentation_complete: true

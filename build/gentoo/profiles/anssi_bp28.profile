@@ -32,5 +32,5 @@ platform: null
 filter_rules: ''
 policies: []
 title: ANSSI-BP-028
-definition_location: /home/frattah/old/products/gentoo/profiles/anssi_bp28.profile
+definition_location: /home/fra/gentoo_scap/products/gentoo/profiles/anssi_bp28.profile
 documentation_complete: true

@@ -90,8 +90,8 @@ references:
     - PR.AC-6
     - PR.PT-3
 components:
-- libnfs
 - nfs-utils
+- libnfs
 identifiers: {}
 ocil_clause: the "nfs-server" is loaded and not masked
 ocil: 'To check that the <code>nfs-server</code> service is disabled in system boot
@@ -153,7 +153,7 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Disable Network File System (nfs)
-definition_location: /home/frattah/old/linux_os/guide/services/nfs_and_rpc/nfs_configuring_clients/disabling_nfsd/service_nfs_disabled/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/nfs_and_rpc/nfs_configuring_clients/disabling_nfsd/service_nfs_disabled/rule.yml
 template:
     name: service_disabled
     vars:

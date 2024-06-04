@@ -279,6 +279,6 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Ensure No Device Files are Unlabeled by SELinux
-definition_location: /home/frattah/old/linux_os/guide/system/selinux/selinux_all_devicefiles_labeled/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/selinux/selinux_all_devicefiles_labeled/rule.yml
 template: null
 documentation_complete: true

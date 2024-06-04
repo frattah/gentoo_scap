@@ -140,7 +140,7 @@ inherited_cpe_platform_names: !!set
 bash_conditional: null
 fixes: {}
 title: Verify that Interactive Boot is Disabled
-definition_location: /home/frattah/old/linux_os/guide/system/accounts/accounts-physical/coreos_disable_interactive_boot/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/system/accounts/accounts-physical/coreos_disable_interactive_boot/rule.yml
 template:
     name: coreos_kernel_option
     vars:

@@ -102,6 +102,6 @@ inherited_cpe_platform_names: !!set {}
 bash_conditional: null
 fixes: {}
 title: Minimize the DHCP-Configured Options
-definition_location: /home/frattah/old/linux_os/guide/services/dhcp/dhcp_client_configuration/dhcp_client_restrict_options/rule.yml
+definition_location: /home/fra/gentoo_scap/linux_os/guide/services/dhcp/dhcp_client_configuration/dhcp_client_restrict_options/rule.yml
 template: null
 documentation_complete: true
