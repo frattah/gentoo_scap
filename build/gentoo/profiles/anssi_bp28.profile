@@ -16,6 +16,12 @@ selections:
 - accounts_umask_etc_bashrc
 - accounts_umask_etc_login_defs
 - accounts_umask_etc_profile
+- file_groupowner_etc_gshadow
+- file_groupowner_etc_shadow
+- file_owner_etc_gshadow
+- file_owner_etc_shadow
+- file_permissions_etc_gshadow
+- file_permissions_etc_shadow
 - sudo_add_env_reset
 - sudo_add_ignore_dot
 - sudo_add_noexec

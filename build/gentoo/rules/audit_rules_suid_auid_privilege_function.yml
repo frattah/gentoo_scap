@@ -100,8 +100,8 @@ inherited_platforms: !!set
 cpe_platform_names: !!set
     machine: null
 inherited_cpe_platform_names: !!set
-    package_audit: null
     machine: null
+    package_audit: null
 bash_conditional: null
 fixes: {}
 title: Record Events When Executables Are Run As Another User

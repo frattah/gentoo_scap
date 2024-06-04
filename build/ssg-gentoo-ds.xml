@@ -1,4 +1,4 @@
-<ns0:data-stream-collection xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:ns0="http://scap.nist.gov/schema/scap/source/1.2" xmlns:ns1="http://www.w3.org/1999/xlink" xmlns:ns10="http://oval.mitre.org/XMLSchema/oval-common-5" xmlns:ns11="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" xmlns:ns12="http://scap.nist.gov/schema/ocil/2.0" xmlns:ns13="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" xmlns:ns14="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux" xmlns:ns2="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:ns3="http://cpe.mitre.org/dictionary/2.0" xmlns:ns5="http://checklists.nist.gov/xccdf/1.2" xmlns:ns7="http://cpe.mitre.org/language/2.0" xmlns:ns9="http://oval.mitre.org/XMLSchema/oval-definitions-5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="scap_org.open-scap_collection_from_xccdf_ssg-gentoo-xccdf.xml" schematron-version="1.3">
+<ns0:data-stream-collection xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:ns0="http://scap.nist.gov/schema/scap/source/1.2" xmlns:ns1="http://www.w3.org/1999/xlink" xmlns:ns10="http://oval.mitre.org/XMLSchema/oval-common-5" xmlns:ns11="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" xmlns:ns12="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" xmlns:ns13="http://scap.nist.gov/schema/ocil/2.0" xmlns:ns14="http://oval.mitre.org/XMLSchema/oval-definitions-5#linux" xmlns:ns2="urn:oasis:names:tc:entity:xmlns:xml:catalog" xmlns:ns3="http://cpe.mitre.org/dictionary/2.0" xmlns:ns5="http://checklists.nist.gov/xccdf/1.2" xmlns:ns7="http://cpe.mitre.org/language/2.0" xmlns:ns9="http://oval.mitre.org/XMLSchema/oval-definitions-5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="scap_org.open-scap_collection_from_xccdf_ssg-gentoo-xccdf.xml" schematron-version="1.3">
   <ns0:data-stream id="scap_org.open-scap_datastream_from_xccdf_ssg-gentoo-xccdf.xml" scap-version="1.3" use-case="OTHER">
     <ns0:dictionaries>
       <ns0:component-ref id="scap_org.open-scap_cref_ssg-gentoo-cpe-dictionary.xml" ns1:href="#scap_org.open-scap_comp_ssg-gentoo-cpe-dictionary.xml">
@@ -22,7 +22,7 @@
       <ns0:component-ref id="scap_org.open-scap_cref_ssg-gentoo-cpe-oval.xml" ns1:href="#scap_org.open-scap_comp_ssg-gentoo-cpe-oval.xml" />
     </ns0:checks>
   </ns0:data-stream>
-  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-cpe-dictionary.xml" timestamp="2024-06-04T11:11:29">
+  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-cpe-dictionary.xml" timestamp="2024-06-04T11:17:11">
     <ns3:cpe-list xsi:schemaLocation="http://cpe.mitre.org/dictionary/2.0 http://cpe.mitre.org/files/cpe-dictionary_2.1.xsd">
       <ns3:cpe-item name="cpe:/o:gentoo:linux">
         <ns3:title xml:lang="en-us">Gentoo</ns3:title>
@@ -30,7 +30,7 @@
       </ns3:cpe-item>
     </ns3:cpe-list>
   </ns0:component>
-  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-xccdf.xml" timestamp="2024-06-04T11:11:28">
+  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-xccdf.xml" timestamp="2024-06-04T11:17:10">
     <ns5:Benchmark id="xccdf_org.ssgproject.content_benchmark_GENTOO" xsi:schemaLocation="http://checklists.nist.gov/xccdf/1.2 xccdf-1.2.xsd" style="SCAP_1.2" resolved="true" xml:lang="en-US">
       <ns5:status date="2024-06-04">draft</ns5:status>
       <ns5:title>Guide to the Secure Configuration of Gentoo</ns5:title>
@@ -433,6 +433,12 @@ respective companies.</ns5:rear-matter>
         <ns5:select idref="xccdf_org.ssgproject.content_rule_accounts_umask_etc_bashrc" selected="true" />
         <ns5:select idref="xccdf_org.ssgproject.content_rule_accounts_umask_etc_login_defs" selected="true" />
         <ns5:select idref="xccdf_org.ssgproject.content_rule_accounts_umask_etc_profile" selected="true" />
+        <ns5:select idref="xccdf_org.ssgproject.content_rule_file_groupowner_etc_gshadow" selected="true" />
+        <ns5:select idref="xccdf_org.ssgproject.content_rule_file_groupowner_etc_shadow" selected="true" />
+        <ns5:select idref="xccdf_org.ssgproject.content_rule_file_owner_etc_gshadow" selected="true" />
+        <ns5:select idref="xccdf_org.ssgproject.content_rule_file_owner_etc_shadow" selected="true" />
+        <ns5:select idref="xccdf_org.ssgproject.content_rule_file_permissions_etc_gshadow" selected="true" />
+        <ns5:select idref="xccdf_org.ssgproject.content_rule_file_permissions_etc_shadow" selected="true" />
         <ns5:select idref="xccdf_org.ssgproject.content_rule_sudo_add_env_reset" selected="true" />
         <ns5:select idref="xccdf_org.ssgproject.content_rule_sudo_add_ignore_dot" selected="true" />
         <ns5:select idref="xccdf_org.ssgproject.content_rule_sudo_add_noexec" selected="true" />
@@ -3614,16 +3620,681 @@ fi
             </ns5:Group>
           </ns5:Group>
         </ns5:Group>
+        <ns5:Group id="xccdf_org.ssgproject.content_group_permissions">
+          <ns5:title>File Permissions and Masks</ns5:title>
+          <ns5:description>Traditional Unix security relies heavily on file and
+directory permissions to prevent unauthorized users from reading or
+modifying files to which they should not have access.
+<html:br />
+      <html:br />
+Several of the commands in this section search filesystems
+for files or directories with certain characteristics, and are
+intended to be run on every local partition on a given system.
+When the variable <html:i>PART</html:i> appears in one of the commands below,
+it means that the command is intended to be run repeatedly, with the
+name of each local partition substituted for <html:i>PART</html:i> in turn.
+<html:br />
+      <html:br />
+The following command prints a list of all xfs partitions on the local
+system, which is the default filesystem for Gentoo
+installations:
+<html:pre>$ mount -t xfs | awk '{print $3}'</html:pre>
+For any systems that use a different
+local filesystem type, modify this command as appropriate.</ns5:description>
+          <ns5:Group id="xccdf_org.ssgproject.content_group_files">
+            <ns5:title>Verify Permissions on Important Files and
+Directories</ns5:title>
+            <ns5:description>Permissions for many files on a system must be set
+restrictively to ensure sensitive information is properly protected.
+This section discusses important
+permission restrictions which can be verified
+to ensure that no harmful discrepancies have
+arisen.</ns5:description>
+            <ns5:Group id="xccdf_org.ssgproject.content_group_permissions_important_account_files">
+              <ns5:title>Verify Permissions on Files with Local Account Information and Credentials</ns5:title>
+              <ns5:description>The default restrictive permissions for files which act as
+important security databases such as <html:code>passwd</html:code>, <html:code>shadow</html:code>,
+<html:code>group</html:code>, and <html:code>gshadow</html:code> files must be maintained.  Many utilities
+need read access to the <html:code>passwd</html:code> file in order to function properly, but
+read access to the <html:code>shadow</html:code> file allows malicious attacks against system
+passwords, and should never be enabled.</ns5:description>
+              <ns5:Rule selected="false" id="xccdf_org.ssgproject.content_rule_file_groupowner_etc_gshadow" severity="medium">
+                <ns5:title>Verify Group Who Owns gshadow File</ns5:title>
+                <ns5:description> To properly set the group owner of <html:code>/etc/gshadow</html:code>, run the command: <html:pre>$ sudo chgrp root /etc/gshadow</html:pre>
+        </ns5:description>
+                <ns5:reference href="https://www.cisecurity.org/controls/">12</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">13</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">14</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">15</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">16</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">18</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">3</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">5</ns5:reference>
+                <ns5:reference href="https://www.isaca.org/resources/cobit">APO01.06</ns5:reference>
+                <ns5:reference href="https://www.isaca.org/resources/cobit">DSS05.04</ns5:reference>
+                <ns5:reference href="https://www.isaca.org/resources/cobit">DSS05.07</ns5:reference>
+                <ns5:reference href="https://www.isaca.org/resources/cobit">DSS06.02</ns5:reference>
+                <ns5:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.7.3</ns5:reference>
+                <ns5:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 2.1</ns5:reference>
+                <ns5:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 5.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.10.1.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.1.4</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.1.5</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.2.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.1.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.1.3</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.3</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.4</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.14.1.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.14.1.3</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.6.1.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.1.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.1.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.3.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.8.2.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.8.2.3</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.1.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.1.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.3</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.4</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.5</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-003-8 R5.1.1</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-003-8 R5.3</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-004-6 R2.3</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.1</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.2</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.3</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1.1</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1.2</ns5:reference>
+                <ns5:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">CM-6(a)</ns5:reference>
+                <ns5:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">AC-6(1)</ns5:reference>
+                <ns5:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-4</ns5:reference>
+                <ns5:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.DS-5</ns5:reference>
+                <ns5:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000480-GPOS-00227</ns5:reference>
+                <ns5:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R50</ns5:reference>
+                <ns5:rationale>The <html:code>/etc/gshadow</html:code> file contains group password hashes. Protection of this file
+is critical for system security.</ns5:rationale>
+                <ns5:fix system="urn:xccdf:fix:script:sh" id="file_groupowner_etc_gshadow" complexity="low" disruption="low" reboot="false" strategy="configure">chgrp 0 /etc/gshadow
+</ns5:fix>
+                <ns5:fix system="urn:xccdf:fix:script:ansible" id="file_groupowner_etc_gshadow" complexity="low" disruption="low" reboot="false" strategy="configure">- name: Test for existence /etc/gshadow
+  stat:
+    path: /etc/gshadow
+  register: file_exists
+  tags:
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - configure_strategy
+  - file_groupowner_etc_gshadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+
+- name: Ensure group owner 0 on /etc/gshadow
+  file:
+    path: /etc/gshadow
+    group: '0'
+  when: file_exists.stat is defined and file_exists.stat.exists
+  tags:
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - configure_strategy
+  - file_groupowner_etc_gshadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+</ns5:fix>
+                <ns5:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                  <ns5:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-file_groupowner_etc_gshadow:def:1" />
+                </ns5:check>
+                <ns5:check system="http://scap.nist.gov/schema/ocil/2">
+                  <ns5:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-file_groupowner_etc_gshadow_ocil:questionnaire:1" />
+                </ns5:check>
+              </ns5:Rule>
+              <ns5:Rule selected="false" id="xccdf_org.ssgproject.content_rule_file_groupowner_etc_shadow" severity="medium">
+                <ns5:title>Verify Group Who Owns shadow File</ns5:title>
+                <ns5:description> To properly set the group owner of <html:code>/etc/shadow</html:code>, run the command: <html:pre>$ sudo chgrp root /etc/shadow</html:pre>
+        </ns5:description>
+                <ns5:reference href="https://www.cisecurity.org/controls/">12</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">13</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">14</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">15</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">16</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">18</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">3</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">5</ns5:reference>
+                <ns5:reference href="https://www.fbi.gov/file-repository/cjis-security-policy-v5_5_20160601-2-1.pdf">5.5.2.2</ns5:reference>
+                <ns5:reference href="https://www.isaca.org/resources/cobit">APO01.06</ns5:reference>
+                <ns5:reference href="https://www.isaca.org/resources/cobit">DSS05.04</ns5:reference>
+                <ns5:reference href="https://www.isaca.org/resources/cobit">DSS05.07</ns5:reference>
+                <ns5:reference href="https://www.isaca.org/resources/cobit">DSS06.02</ns5:reference>
+                <ns5:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.7.3</ns5:reference>
+                <ns5:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 2.1</ns5:reference>
+                <ns5:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 5.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.10.1.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.1.4</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.1.5</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.2.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.1.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.1.3</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.3</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.4</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.14.1.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.14.1.3</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.6.1.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.1.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.1.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.3.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.8.2.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.8.2.3</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.1.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.1.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.3</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.4</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.5</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-003-8 R5.1.1</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-003-8 R5.3</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-004-6 R2.3</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.1</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.2</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.3</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1.1</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1.2</ns5:reference>
+                <ns5:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">CM-6(a)</ns5:reference>
+                <ns5:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">AC-6(1)</ns5:reference>
+                <ns5:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-4</ns5:reference>
+                <ns5:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.DS-5</ns5:reference>
+                <ns5:reference href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">Req-8.7.c</ns5:reference>
+                <ns5:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000480-GPOS-00227</ns5:reference>
+                <ns5:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R50</ns5:reference>
+                <ns5:rationale>The <html:code>/etc/shadow</html:code> file stores password hashes. Protection of this file is
+critical for system security.</ns5:rationale>
+                <ns5:fix system="urn:xccdf:fix:script:sh" id="file_groupowner_etc_shadow" complexity="low" disruption="low" reboot="false" strategy="configure">chgrp 0 /etc/shadow
+</ns5:fix>
+                <ns5:fix system="urn:xccdf:fix:script:ansible" id="file_groupowner_etc_shadow" complexity="low" disruption="low" reboot="false" strategy="configure">- name: Test for existence /etc/shadow
+  stat:
+    path: /etc/shadow
+  register: file_exists
+  tags:
+  - CJIS-5.5.2.2
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-8.7.c
+  - configure_strategy
+  - file_groupowner_etc_shadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+
+- name: Ensure group owner 0 on /etc/shadow
+  file:
+    path: /etc/shadow
+    group: '0'
+  when: file_exists.stat is defined and file_exists.stat.exists
+  tags:
+  - CJIS-5.5.2.2
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-8.7.c
+  - configure_strategy
+  - file_groupowner_etc_shadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+</ns5:fix>
+                <ns5:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                  <ns5:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-file_groupowner_etc_shadow:def:1" />
+                </ns5:check>
+                <ns5:check system="http://scap.nist.gov/schema/ocil/2">
+                  <ns5:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-file_groupowner_etc_shadow_ocil:questionnaire:1" />
+                </ns5:check>
+              </ns5:Rule>
+              <ns5:Rule selected="false" id="xccdf_org.ssgproject.content_rule_file_owner_etc_gshadow" severity="medium">
+                <ns5:title>Verify User Who Owns gshadow File</ns5:title>
+                <ns5:description> To properly set the owner of <html:code>/etc/gshadow</html:code>, run the command: <html:pre>$ sudo chown root /etc/gshadow </html:pre>
+        </ns5:description>
+                <ns5:reference href="https://www.cisecurity.org/controls/">12</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">13</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">14</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">15</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">16</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">18</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">3</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">5</ns5:reference>
+                <ns5:reference href="https://www.isaca.org/resources/cobit">APO01.06</ns5:reference>
+                <ns5:reference href="https://www.isaca.org/resources/cobit">DSS05.04</ns5:reference>
+                <ns5:reference href="https://www.isaca.org/resources/cobit">DSS05.07</ns5:reference>
+                <ns5:reference href="https://www.isaca.org/resources/cobit">DSS06.02</ns5:reference>
+                <ns5:reference href="https://public.cyber.mil/stigs/cci/">CCI-002223</ns5:reference>
+                <ns5:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.7.3</ns5:reference>
+                <ns5:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 2.1</ns5:reference>
+                <ns5:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 5.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.10.1.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.1.4</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.1.5</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.2.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.1.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.1.3</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.3</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.4</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.14.1.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.14.1.3</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.6.1.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.1.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.1.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.3.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.8.2.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.8.2.3</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.1.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.1.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.3</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.4</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.5</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-003-8 R5.1.1</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-003-8 R5.3</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-004-6 R2.3</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.1</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.2</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.3</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1.1</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1.2</ns5:reference>
+                <ns5:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">CM-6(a)</ns5:reference>
+                <ns5:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">AC-6(1)</ns5:reference>
+                <ns5:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-4</ns5:reference>
+                <ns5:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.DS-5</ns5:reference>
+                <ns5:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000480-GPOS-00227</ns5:reference>
+                <ns5:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R50</ns5:reference>
+                <ns5:rationale>The <html:code>/etc/gshadow</html:code> file contains group password hashes. Protection of this file
+is critical for system security.</ns5:rationale>
+                <ns5:fix system="urn:xccdf:fix:script:sh" id="file_owner_etc_gshadow" complexity="low" disruption="low" reboot="false" strategy="configure">chown 0 /etc/gshadow
+</ns5:fix>
+                <ns5:fix system="urn:xccdf:fix:script:ansible" id="file_owner_etc_gshadow" complexity="low" disruption="low" reboot="false" strategy="configure">- name: Test for existence /etc/gshadow
+  stat:
+    path: /etc/gshadow
+  register: file_exists
+  tags:
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - configure_strategy
+  - file_owner_etc_gshadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+
+- name: Ensure owner 0 on /etc/gshadow
+  file:
+    path: /etc/gshadow
+    owner: '0'
+  when: file_exists.stat is defined and file_exists.stat.exists
+  tags:
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - configure_strategy
+  - file_owner_etc_gshadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+</ns5:fix>
+                <ns5:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                  <ns5:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-file_owner_etc_gshadow:def:1" />
+                </ns5:check>
+                <ns5:check system="http://scap.nist.gov/schema/ocil/2">
+                  <ns5:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-file_owner_etc_gshadow_ocil:questionnaire:1" />
+                </ns5:check>
+              </ns5:Rule>
+              <ns5:Rule selected="false" id="xccdf_org.ssgproject.content_rule_file_owner_etc_shadow" severity="medium">
+                <ns5:title>Verify User Who Owns shadow File</ns5:title>
+                <ns5:description> To properly set the owner of <html:code>/etc/shadow</html:code>, run the command: <html:pre>$ sudo chown root /etc/shadow </html:pre>
+        </ns5:description>
+                <ns5:reference href="https://www.cisecurity.org/controls/">12</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">13</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">14</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">15</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">16</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">18</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">3</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">5</ns5:reference>
+                <ns5:reference href="https://www.fbi.gov/file-repository/cjis-security-policy-v5_5_20160601-2-1.pdf">5.5.2.2</ns5:reference>
+                <ns5:reference href="https://www.isaca.org/resources/cobit">APO01.06</ns5:reference>
+                <ns5:reference href="https://www.isaca.org/resources/cobit">DSS05.04</ns5:reference>
+                <ns5:reference href="https://www.isaca.org/resources/cobit">DSS05.07</ns5:reference>
+                <ns5:reference href="https://www.isaca.org/resources/cobit">DSS06.02</ns5:reference>
+                <ns5:reference href="https://public.cyber.mil/stigs/cci/">CCI-002223</ns5:reference>
+                <ns5:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.7.3</ns5:reference>
+                <ns5:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 2.1</ns5:reference>
+                <ns5:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 5.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.10.1.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.1.4</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.1.5</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.2.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.1.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.1.3</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.3</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.4</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.14.1.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.14.1.3</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.6.1.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.1.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.1.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.3.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.8.2.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.8.2.3</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.1.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.1.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.3</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.4</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.5</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-003-8 R5.1.1</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-003-8 R5.3</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-004-6 R2.3</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.1</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.2</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.3</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1.1</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1.2</ns5:reference>
+                <ns5:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">CM-6(a)</ns5:reference>
+                <ns5:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">AC-6(1)</ns5:reference>
+                <ns5:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-4</ns5:reference>
+                <ns5:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.DS-5</ns5:reference>
+                <ns5:reference href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">Req-8.7.c</ns5:reference>
+                <ns5:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000480-GPOS-00227</ns5:reference>
+                <ns5:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R50</ns5:reference>
+                <ns5:rationale>The <html:code>/etc/shadow</html:code> file contains the list of local
+system accounts and stores password hashes. Protection of this file is
+critical for system security. Failure to give ownership of this file
+to root provides the designated owner with access to sensitive information
+which could weaken the system security posture.</ns5:rationale>
+                <ns5:fix system="urn:xccdf:fix:script:sh" id="file_owner_etc_shadow" complexity="low" disruption="low" reboot="false" strategy="configure">chown 0 /etc/shadow
+</ns5:fix>
+                <ns5:fix system="urn:xccdf:fix:script:ansible" id="file_owner_etc_shadow" complexity="low" disruption="low" reboot="false" strategy="configure">- name: Test for existence /etc/shadow
+  stat:
+    path: /etc/shadow
+  register: file_exists
+  tags:
+  - CJIS-5.5.2.2
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-8.7.c
+  - configure_strategy
+  - file_owner_etc_shadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+
+- name: Ensure owner 0 on /etc/shadow
+  file:
+    path: /etc/shadow
+    owner: '0'
+  when: file_exists.stat is defined and file_exists.stat.exists
+  tags:
+  - CJIS-5.5.2.2
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-8.7.c
+  - configure_strategy
+  - file_owner_etc_shadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+</ns5:fix>
+                <ns5:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                  <ns5:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-file_owner_etc_shadow:def:1" />
+                </ns5:check>
+                <ns5:check system="http://scap.nist.gov/schema/ocil/2">
+                  <ns5:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-file_owner_etc_shadow_ocil:questionnaire:1" />
+                </ns5:check>
+              </ns5:Rule>
+              <ns5:Rule selected="false" id="xccdf_org.ssgproject.content_rule_file_permissions_etc_gshadow" severity="medium">
+                <ns5:title>Verify Permissions on gshadow File</ns5:title>
+                <ns5:description>
+To properly set the permissions of <html:code>/etc/gshadow</html:code>, run the command:
+<html:pre>$ sudo chmod 0000 /etc/gshadow</html:pre>
+        </ns5:description>
+                <ns5:reference href="https://www.cisecurity.org/controls/">12</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">13</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">14</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">15</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">16</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">18</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">3</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">5</ns5:reference>
+                <ns5:reference href="https://www.isaca.org/resources/cobit">APO01.06</ns5:reference>
+                <ns5:reference href="https://www.isaca.org/resources/cobit">DSS05.04</ns5:reference>
+                <ns5:reference href="https://www.isaca.org/resources/cobit">DSS05.07</ns5:reference>
+                <ns5:reference href="https://www.isaca.org/resources/cobit">DSS06.02</ns5:reference>
+                <ns5:reference href="https://public.cyber.mil/stigs/cci/">CCI-002223</ns5:reference>
+                <ns5:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.7.3</ns5:reference>
+                <ns5:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 2.1</ns5:reference>
+                <ns5:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 5.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.10.1.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.1.4</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.1.5</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.2.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.1.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.1.3</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.3</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.4</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.14.1.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.14.1.3</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.6.1.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.1.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.1.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.3.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.8.2.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.8.2.3</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.1.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.1.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.3</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.4</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.5</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-003-8 R5.1.1</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-003-8 R5.3</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-004-6 R2.3</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.1</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.2</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.3</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1.1</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1.2</ns5:reference>
+                <ns5:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">CM-6(a)</ns5:reference>
+                <ns5:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">AC-6(1)</ns5:reference>
+                <ns5:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-4</ns5:reference>
+                <ns5:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.DS-5</ns5:reference>
+                <ns5:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000480-GPOS-00227</ns5:reference>
+                <ns5:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R50</ns5:reference>
+                <ns5:rationale>The <html:code>/etc/gshadow</html:code> file contains group password hashes. Protection of this file
+is critical for system security.</ns5:rationale>
+                <ns5:fix system="urn:xccdf:fix:script:sh" id="file_permissions_etc_gshadow" complexity="low" disruption="low" reboot="false" strategy="configure">
+
+
+
+
+chmod u-xwrs,g-xwrs,o-xwrt /etc/gshadow
+</ns5:fix>
+                <ns5:fix system="urn:xccdf:fix:script:ansible" id="file_permissions_etc_gshadow" complexity="low" disruption="low" reboot="false" strategy="configure">- name: Test for existence /etc/gshadow
+  stat:
+    path: /etc/gshadow
+  register: file_exists
+  tags:
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - configure_strategy
+  - file_permissions_etc_gshadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+
+- name: Ensure permission u-xwrs,g-xwrs,o-xwrt on /etc/gshadow
+  file:
+    path: /etc/gshadow
+    mode: u-xwrs,g-xwrs,o-xwrt
+  when: file_exists.stat is defined and file_exists.stat.exists
+  tags:
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - configure_strategy
+  - file_permissions_etc_gshadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+</ns5:fix>
+                <ns5:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                  <ns5:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-file_permissions_etc_gshadow:def:1" />
+                </ns5:check>
+                <ns5:check system="http://scap.nist.gov/schema/ocil/2">
+                  <ns5:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-file_permissions_etc_gshadow_ocil:questionnaire:1" />
+                </ns5:check>
+              </ns5:Rule>
+              <ns5:Rule selected="false" id="xccdf_org.ssgproject.content_rule_file_permissions_etc_shadow" severity="medium">
+                <ns5:title>Verify Permissions on shadow File</ns5:title>
+                <ns5:description>
+To properly set the permissions of <html:code>/etc/shadow</html:code>, run the command:
+<html:pre>$ sudo chmod 0000 /etc/shadow</html:pre>
+        </ns5:description>
+                <ns5:reference href="https://www.cisecurity.org/controls/">12</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">13</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">14</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">15</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">16</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">18</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">3</ns5:reference>
+                <ns5:reference href="https://www.cisecurity.org/controls/">5</ns5:reference>
+                <ns5:reference href="https://www.fbi.gov/file-repository/cjis-security-policy-v5_5_20160601-2-1.pdf">5.5.2.2</ns5:reference>
+                <ns5:reference href="https://www.isaca.org/resources/cobit">APO01.06</ns5:reference>
+                <ns5:reference href="https://www.isaca.org/resources/cobit">DSS05.04</ns5:reference>
+                <ns5:reference href="https://www.isaca.org/resources/cobit">DSS05.07</ns5:reference>
+                <ns5:reference href="https://www.isaca.org/resources/cobit">DSS06.02</ns5:reference>
+                <ns5:reference href="https://public.cyber.mil/stigs/cci/">CCI-002223</ns5:reference>
+                <ns5:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.7.3</ns5:reference>
+                <ns5:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 2.1</ns5:reference>
+                <ns5:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 5.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.10.1.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.1.4</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.1.5</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.2.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.1.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.1.3</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.3</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.4</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.14.1.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.14.1.3</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.6.1.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.1.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.1.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.3.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.8.2.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.8.2.3</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.1.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.1.2</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.3</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.1</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.4</ns5:reference>
+                <ns5:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.5</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-003-8 R5.1.1</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-003-8 R5.3</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-004-6 R2.3</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.1</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.2</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.3</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1.1</ns5:reference>
+                <ns5:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1.2</ns5:reference>
+                <ns5:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">CM-6(a)</ns5:reference>
+                <ns5:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">AC-6(1)</ns5:reference>
+                <ns5:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-4</ns5:reference>
+                <ns5:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.DS-5</ns5:reference>
+                <ns5:reference href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">Req-8.7.c</ns5:reference>
+                <ns5:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000480-GPOS-00227</ns5:reference>
+                <ns5:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R50</ns5:reference>
+                <ns5:rationale>The <html:code>/etc/shadow</html:code> file contains the list of local
+system accounts and stores password hashes. Protection of this file is
+critical for system security. Failure to give ownership of this file
+to root provides the designated owner with access to sensitive information
+which could weaken the system security posture.</ns5:rationale>
+                <ns5:fix system="urn:xccdf:fix:script:sh" id="file_permissions_etc_shadow" complexity="low" disruption="low" reboot="false" strategy="configure">
+
+
+
+
+chmod u-xwrs,g-xwrs,o-xwrt /etc/shadow
+</ns5:fix>
+                <ns5:fix system="urn:xccdf:fix:script:ansible" id="file_permissions_etc_shadow" complexity="low" disruption="low" reboot="false" strategy="configure">- name: Test for existence /etc/shadow
+  stat:
+    path: /etc/shadow
+  register: file_exists
+  tags:
+  - CJIS-5.5.2.2
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-8.7.c
+  - configure_strategy
+  - file_permissions_etc_shadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+
+- name: Ensure permission u-xwrs,g-xwrs,o-xwrt on /etc/shadow
+  file:
+    path: /etc/shadow
+    mode: u-xwrs,g-xwrs,o-xwrt
+  when: file_exists.stat is defined and file_exists.stat.exists
+  tags:
+  - CJIS-5.5.2.2
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-8.7.c
+  - configure_strategy
+  - file_permissions_etc_shadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+</ns5:fix>
+                <ns5:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+                  <ns5:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-file_permissions_etc_shadow:def:1" />
+                </ns5:check>
+                <ns5:check system="http://scap.nist.gov/schema/ocil/2">
+                  <ns5:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-file_permissions_etc_shadow_ocil:questionnaire:1" />
+                </ns5:check>
+              </ns5:Rule>
+            </ns5:Group>
+          </ns5:Group>
+        </ns5:Group>
       </ns5:Group>
     </ns5:Benchmark>
   </ns0:component>
-  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-oval.xml" timestamp="2024-06-04T11:11:28">
+  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-oval.xml" timestamp="2024-06-04T11:17:10">
     <ns9:oval_definitions xsi:schemaLocation="http://oval.mitre.org/XMLSchema/oval-common-5 oval-common-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5 oval-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#independent independent-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#unix unix-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#linux linux-definitions-schema.xsd">
       <ns9:generator>
         <ns10:product_name>OVALFileLinker from SCAP Security Guide</ns10:product_name>
         <ns10:product_version>ssg: [0, 1, 73], python: 3.11.9</ns10:product_version>
         <ns10:schema_version>5.11</ns10:schema_version>
-        <ns10:timestamp>2024-06-04T09:11:23</ns10:timestamp>
+        <ns10:timestamp>2024-06-04T09:17:05</ns10:timestamp>
       </ns9:generator>
       <ns9:definitions>
         <ns9:definition id="oval:ssg-accounts_password_pam_unix_remember:def:1" version="2" class="compliance">
@@ -3787,6 +4458,88 @@ fi
             <ns9:criteria operator="OR">
               <ns9:criterion comment="pwquality.conf" test_ref="oval:ssg-test_password_pam_pwquality_ucredit:tst:1" />
             </ns9:criteria>
+          </ns9:criteria>
+        </ns9:definition>
+        <ns9:definition id="oval:ssg-file_groupowner_etc_gshadow:def:1" version="1" class="compliance">
+          <ns9:metadata>
+            <ns9:title>Verify Group Who Owns gshadow File</ns9:title>
+            <ns9:affected family="unix">
+              <ns9:platform>Gentoo</ns9:platform>
+            </ns9:affected>
+            <ns9:reference ref_id="file_groupowner_etc_gshadow" source="ssg" />
+            <ns9:description>This test makes sure that /etc/gshadow is group owned by 0.</ns9:description>
+          </ns9:metadata>
+          <ns9:criteria operator="AND">
+            <ns9:criterion comment="Check file group ownership of /etc/gshadow" test_ref="oval:ssg-test_file_groupowner_etc_gshadow_0:tst:1" />
+          </ns9:criteria>
+        </ns9:definition>
+        <ns9:definition id="oval:ssg-file_groupowner_etc_shadow:def:1" version="1" class="compliance">
+          <ns9:metadata>
+            <ns9:title>Verify Group Who Owns shadow File</ns9:title>
+            <ns9:affected family="unix">
+              <ns9:platform>Gentoo</ns9:platform>
+            </ns9:affected>
+            <ns9:reference ref_id="file_groupowner_etc_shadow" source="ssg" />
+            <ns9:description>This test makes sure that /etc/shadow is group owned by 0.</ns9:description>
+          </ns9:metadata>
+          <ns9:criteria operator="AND">
+            <ns9:criterion comment="Check file group ownership of /etc/shadow" test_ref="oval:ssg-test_file_groupowner_etc_shadow_0:tst:1" />
+          </ns9:criteria>
+        </ns9:definition>
+        <ns9:definition id="oval:ssg-file_owner_etc_gshadow:def:1" version="1" class="compliance">
+          <ns9:metadata>
+            <ns9:title>Verify User Who Owns gshadow File</ns9:title>
+            <ns9:affected family="unix">
+              <ns9:platform>Gentoo</ns9:platform>
+            </ns9:affected>
+            <ns9:reference ref_id="file_owner_etc_gshadow" source="ssg" />
+            <ns9:description>This test makes sure that /etc/gshadow is owned by 0.</ns9:description>
+          </ns9:metadata>
+          <ns9:criteria operator="AND">
+            <ns9:criterion comment="Check file ownership of /etc/gshadow" test_ref="oval:ssg-test_file_owner_etc_gshadow_0:tst:1" />
+          </ns9:criteria>
+        </ns9:definition>
+        <ns9:definition id="oval:ssg-file_owner_etc_shadow:def:1" version="1" class="compliance">
+          <ns9:metadata>
+            <ns9:title>Verify User Who Owns shadow File</ns9:title>
+            <ns9:affected family="unix">
+              <ns9:platform>Gentoo</ns9:platform>
+            </ns9:affected>
+            <ns9:reference ref_id="file_owner_etc_shadow" source="ssg" />
+            <ns9:description>This test makes sure that /etc/shadow is owned by 0.</ns9:description>
+          </ns9:metadata>
+          <ns9:criteria operator="AND">
+            <ns9:criterion comment="Check file ownership of /etc/shadow" test_ref="oval:ssg-test_file_owner_etc_shadow_0:tst:1" />
+          </ns9:criteria>
+        </ns9:definition>
+        <ns9:definition id="oval:ssg-file_permissions_etc_gshadow:def:1" version="1" class="compliance">
+          <ns9:metadata>
+            <ns9:title>Verify Permissions on gshadow File</ns9:title>
+            <ns9:affected family="unix">
+              <ns9:platform>Gentoo</ns9:platform>
+            </ns9:affected>
+            <ns9:reference ref_id="file_permissions_etc_gshadow" source="ssg" />
+            <ns9:description>This test makes sure that /etc/gshadow has mode 0000.
+      If the target file or directory has an extended ACL, then it will fail the mode check.
+      </ns9:description>
+          </ns9:metadata>
+          <ns9:criteria operator="AND">
+            <ns9:criterion comment="Check file mode of /etc/gshadow" test_ref="oval:ssg-test_file_permissions_etc_gshadow_0:tst:1" />
+          </ns9:criteria>
+        </ns9:definition>
+        <ns9:definition id="oval:ssg-file_permissions_etc_shadow:def:1" version="1" class="compliance">
+          <ns9:metadata>
+            <ns9:title>Verify Permissions on shadow File</ns9:title>
+            <ns9:affected family="unix">
+              <ns9:platform>Gentoo</ns9:platform>
+            </ns9:affected>
+            <ns9:reference ref_id="file_permissions_etc_shadow" source="ssg" />
+            <ns9:description>This test makes sure that /etc/shadow has mode 0000.
+      If the target file or directory has an extended ACL, then it will fail the mode check.
+      </ns9:description>
+          </ns9:metadata>
+          <ns9:criteria operator="AND">
+            <ns9:criterion comment="Check file mode of /etc/shadow" test_ref="oval:ssg-test_file_permissions_etc_shadow_0:tst:1" />
           </ns9:criteria>
         </ns9:definition>
         <ns9:definition id="oval:ssg-sudo_add_env_reset:def:1" version="1" class="compliance">
@@ -3960,6 +4713,24 @@ fi
           <ns11:object object_ref="oval:ssg-obj_password_pam_pwquality_ucredit:obj:1" />
           <ns11:state state_ref="oval:ssg-state_password_pam_ucredit:ste:1" />
         </ns11:textfilecontent54_test>
+        <ns12:file_test id="oval:ssg-test_file_groupowner_etc_gshadow_0:tst:1" version="1" check="all" comment="Testing group ownership of /etc/gshadow" check_existence="none_exist" state_operator="AND">
+          <ns12:object object_ref="oval:ssg-object_file_groupowner_etc_gshadow_0:obj:1" />
+        </ns12:file_test>
+        <ns12:file_test id="oval:ssg-test_file_groupowner_etc_shadow_0:tst:1" version="1" check="all" comment="Testing group ownership of /etc/shadow" check_existence="none_exist" state_operator="AND">
+          <ns12:object object_ref="oval:ssg-object_file_groupowner_etc_shadow_0:obj:1" />
+        </ns12:file_test>
+        <ns12:file_test id="oval:ssg-test_file_owner_etc_gshadow_0:tst:1" version="1" check="all" comment="Testing user ownership of /etc/gshadow" check_existence="none_exist" state_operator="AND">
+          <ns12:object object_ref="oval:ssg-object_file_owner_etc_gshadow_0:obj:1" />
+        </ns12:file_test>
+        <ns12:file_test id="oval:ssg-test_file_owner_etc_shadow_0:tst:1" version="1" check="all" comment="Testing user ownership of /etc/shadow" check_existence="none_exist" state_operator="AND">
+          <ns12:object object_ref="oval:ssg-object_file_owner_etc_shadow_0:obj:1" />
+        </ns12:file_test>
+        <ns12:file_test id="oval:ssg-test_file_permissions_etc_gshadow_0:tst:1" version="3" check="all" comment="Testing mode of /etc/gshadow" check_existence="none_exist" state_operator="AND">
+          <ns12:object object_ref="oval:ssg-object_file_permissions_etc_gshadow_0:obj:1" />
+        </ns12:file_test>
+        <ns12:file_test id="oval:ssg-test_file_permissions_etc_shadow_0:tst:1" version="3" check="all" comment="Testing mode of /etc/shadow" check_existence="none_exist" state_operator="AND">
+          <ns12:object object_ref="oval:ssg-object_file_permissions_etc_shadow_0:obj:1" />
+        </ns12:file_test>
         <ns11:textfilecontent54_test id="oval:ssg-test_env_reset_sudoers:tst:1" version="1" check="all" comment="env_reset exists in /etc/sudoers or /etc/sudoers.d/" state_operator="AND">
           <ns11:object object_ref="oval:ssg-object_env_reset_sudoers:obj:1" />
         </ns11:textfilecontent54_test>
@@ -4076,6 +4847,36 @@ fi
           <ns11:pattern operation="pattern match">^\s*ucredit[\s]*=[\s]*(-?\d+)(?:[\s]|$)</ns11:pattern>
           <ns11:instance datatype="int" operation="greater than or equal">1</ns11:instance>
         </ns11:textfilecontent54_object>
+        <ns12:file_object id="oval:ssg-object_file_groupowner_etc_gshadow_0:obj:1" version="1" comment="/etc/gshadow">
+          <ns12:filepath>/etc/gshadow</ns12:filepath>
+          <ns9:filter action="exclude">oval:ssg-symlink_file_groupowner_etc_gshadow_uid_0:ste:1</ns9:filter>
+          <ns9:filter action="exclude">oval:ssg-state_file_groupowner_etc_gshadow_gid_0_0:ste:1</ns9:filter>
+        </ns12:file_object>
+        <ns12:file_object id="oval:ssg-object_file_groupowner_etc_shadow_0:obj:1" version="1" comment="/etc/shadow">
+          <ns12:filepath>/etc/shadow</ns12:filepath>
+          <ns9:filter action="exclude">oval:ssg-symlink_file_groupowner_etc_shadow_uid_0:ste:1</ns9:filter>
+          <ns9:filter action="exclude">oval:ssg-state_file_groupowner_etc_shadow_gid_0_0:ste:1</ns9:filter>
+        </ns12:file_object>
+        <ns12:file_object id="oval:ssg-object_file_owner_etc_gshadow_0:obj:1" version="1" comment="/etc/gshadow">
+          <ns12:filepath>/etc/gshadow</ns12:filepath>
+          <ns9:filter action="exclude">oval:ssg-symlink_file_owner_etc_gshadow_uid_0:ste:1</ns9:filter>
+          <ns9:filter action="exclude">oval:ssg-state_file_owner_etc_gshadow_uid_0_0:ste:1</ns9:filter>
+        </ns12:file_object>
+        <ns12:file_object id="oval:ssg-object_file_owner_etc_shadow_0:obj:1" version="1" comment="/etc/shadow">
+          <ns12:filepath>/etc/shadow</ns12:filepath>
+          <ns9:filter action="exclude">oval:ssg-symlink_file_owner_etc_shadow_uid_0:ste:1</ns9:filter>
+          <ns9:filter action="exclude">oval:ssg-state_file_owner_etc_shadow_uid_0_0:ste:1</ns9:filter>
+        </ns12:file_object>
+        <ns12:file_object id="oval:ssg-object_file_permissions_etc_gshadow_0:obj:1" version="1" comment="/etc/gshadow">
+          <ns12:filepath>/etc/gshadow</ns12:filepath>
+          <ns9:filter action="exclude">oval:ssg-exclude_symlinks__etc_gshadow:ste:1</ns9:filter>
+          <ns9:filter action="exclude">oval:ssg-state_file_permissions_etc_gshadow_0_mode_0000or_stricter_:ste:1</ns9:filter>
+        </ns12:file_object>
+        <ns12:file_object id="oval:ssg-object_file_permissions_etc_shadow_0:obj:1" version="1" comment="/etc/shadow">
+          <ns12:filepath>/etc/shadow</ns12:filepath>
+          <ns9:filter action="exclude">oval:ssg-exclude_symlinks__etc_shadow:ste:1</ns9:filter>
+          <ns9:filter action="exclude">oval:ssg-state_file_permissions_etc_shadow_0_mode_0000or_stricter_:ste:1</ns9:filter>
+        </ns12:file_object>
         <ns11:textfilecontent54_object id="oval:ssg-object_env_reset_sudoers:obj:1" version="1">
           <ns11:filepath operation="pattern match">^/etc/sudoers(|\.d/.*)$</ns11:filepath>
           <ns11:pattern operation="pattern match">^[\s]*Defaults[\s]*\benv_reset.*$</ns11:pattern>
@@ -4149,6 +4950,64 @@ fi
         <ns11:textfilecontent54_state id="oval:ssg-state_password_pam_ucredit:ste:1" version="3" operator="AND">
           <ns11:subexpression datatype="int" operation="less than or equal" var_ref="oval:ssg-var_password_pam_ucredit:var:1" />
         </ns11:textfilecontent54_state>
+        <ns12:file_state id="oval:ssg-state_file_groupowner_etc_gshadow_gid_0_0:ste:1" version="1" operator="AND">
+          <ns12:group_id datatype="int">0</ns12:group_id>
+        </ns12:file_state>
+        <ns12:file_state id="oval:ssg-symlink_file_groupowner_etc_gshadow_uid_0:ste:1" version="1" operator="AND">
+          <ns12:type operation="equals">symbolic link</ns12:type>
+        </ns12:file_state>
+        <ns12:file_state id="oval:ssg-state_file_groupowner_etc_shadow_gid_0_0:ste:1" version="1" operator="AND">
+          <ns12:group_id datatype="int">0</ns12:group_id>
+        </ns12:file_state>
+        <ns12:file_state id="oval:ssg-symlink_file_groupowner_etc_shadow_uid_0:ste:1" version="1" operator="AND">
+          <ns12:type operation="equals">symbolic link</ns12:type>
+        </ns12:file_state>
+        <ns12:file_state id="oval:ssg-state_file_owner_etc_gshadow_uid_0_0:ste:1" version="1" operator="AND">
+          <ns12:user_id datatype="int">0</ns12:user_id>
+        </ns12:file_state>
+        <ns12:file_state id="oval:ssg-symlink_file_owner_etc_gshadow_uid_0:ste:1" version="1" operator="AND">
+          <ns12:type operation="equals">symbolic link</ns12:type>
+        </ns12:file_state>
+        <ns12:file_state id="oval:ssg-state_file_owner_etc_shadow_uid_0_0:ste:1" version="1" operator="AND">
+          <ns12:user_id datatype="int">0</ns12:user_id>
+        </ns12:file_state>
+        <ns12:file_state id="oval:ssg-symlink_file_owner_etc_shadow_uid_0:ste:1" version="1" operator="AND">
+          <ns12:type operation="equals">symbolic link</ns12:type>
+        </ns12:file_state>
+        <ns12:file_state id="oval:ssg-state_file_permissions_etc_gshadow_0_mode_0000or_stricter_:ste:1" version="3" operator="AND">
+          <ns12:suid datatype="boolean">false</ns12:suid>
+          <ns12:sgid datatype="boolean">false</ns12:sgid>
+          <ns12:sticky datatype="boolean">false</ns12:sticky>
+          <ns12:uread datatype="boolean">false</ns12:uread>
+          <ns12:uwrite datatype="boolean">false</ns12:uwrite>
+          <ns12:uexec datatype="boolean">false</ns12:uexec>
+          <ns12:gread datatype="boolean">false</ns12:gread>
+          <ns12:gwrite datatype="boolean">false</ns12:gwrite>
+          <ns12:gexec datatype="boolean">false</ns12:gexec>
+          <ns12:oread datatype="boolean">false</ns12:oread>
+          <ns12:owrite datatype="boolean">false</ns12:owrite>
+          <ns12:oexec datatype="boolean">false</ns12:oexec>
+        </ns12:file_state>
+        <ns12:file_state id="oval:ssg-exclude_symlinks__etc_gshadow:ste:1" version="1" operator="AND">
+          <ns12:type operation="equals">symbolic link</ns12:type>
+        </ns12:file_state>
+        <ns12:file_state id="oval:ssg-state_file_permissions_etc_shadow_0_mode_0000or_stricter_:ste:1" version="3" operator="AND">
+          <ns12:suid datatype="boolean">false</ns12:suid>
+          <ns12:sgid datatype="boolean">false</ns12:sgid>
+          <ns12:sticky datatype="boolean">false</ns12:sticky>
+          <ns12:uread datatype="boolean">false</ns12:uread>
+          <ns12:uwrite datatype="boolean">false</ns12:uwrite>
+          <ns12:uexec datatype="boolean">false</ns12:uexec>
+          <ns12:gread datatype="boolean">false</ns12:gread>
+          <ns12:gwrite datatype="boolean">false</ns12:gwrite>
+          <ns12:gexec datatype="boolean">false</ns12:gexec>
+          <ns12:oread datatype="boolean">false</ns12:oread>
+          <ns12:owrite datatype="boolean">false</ns12:owrite>
+          <ns12:oexec datatype="boolean">false</ns12:oexec>
+        </ns12:file_state>
+        <ns12:file_state id="oval:ssg-exclude_symlinks__etc_shadow:ste:1" version="1" operator="AND">
+          <ns12:type operation="equals">symbolic link</ns12:type>
+        </ns12:file_state>
         <ns11:textfilecontent54_state id="oval:ssg-state_umask_sudoers:ste:1" version="1" operator="AND">
           <ns11:subexpression datatype="string" operation="equals" var_ref="oval:ssg-var_sudo_umask:var:1" />
         </ns11:textfilecontent54_state>
@@ -4295,254 +5154,329 @@ fi
       </ns9:variables>
     </ns9:oval_definitions>
   </ns0:component>
-  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-ocil.xml" timestamp="2024-06-04T11:11:28">
-    <ns12:ocil>
-      <ns12:generator>
-        <ns12:product_name>build_shorthand.py from SCAP Security Guide</ns12:product_name>
-        <ns12:product_version>ssg: 0.1.73</ns12:product_version>
-        <ns12:schema_version>2.0</ns12:schema_version>
-        <ns12:timestamp>2024-06-04T09:11:23</ns12:timestamp>
-      </ns12:generator>
-      <ns12:questionnaires>
-        <ns12:questionnaire id="ocil:ssg-accounts_password_pam_minlen_ocil:questionnaire:1">
-          <ns12:title>Ensure PAM Enforces Password Requirements - Minimum Length</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-accounts_password_pam_minlen_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
-        <ns12:questionnaire id="ocil:ssg-accounts_password_pam_ucredit_ocil:questionnaire:1">
-          <ns12:title>Ensure PAM Enforces Password Requirements - Minimum Uppercase Characters</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-accounts_password_pam_ucredit_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
-        <ns12:questionnaire id="ocil:ssg-accounts_tmout_ocil:questionnaire:1">
-          <ns12:title>Set Interactive Session Timeout</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-accounts_tmout_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
-        <ns12:questionnaire id="ocil:ssg-sudo_add_env_reset_ocil:questionnaire:1">
-          <ns12:title>Ensure sudo Runs In A Minimal Environment - sudo env_reset</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-sudo_add_env_reset_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
-        <ns12:questionnaire id="ocil:ssg-accounts_umask_etc_profile_ocil:questionnaire:1">
-          <ns12:title>Ensure the Default Umask is Set Correctly in /etc/profile</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-accounts_umask_etc_profile_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
-        <ns12:questionnaire id="ocil:ssg-accounts_password_pam_dcredit_ocil:questionnaire:1">
-          <ns12:title>Ensure PAM Enforces Password Requirements - Minimum Digit Characters</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-accounts_password_pam_dcredit_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
-        <ns12:questionnaire id="ocil:ssg-sudo_add_ignore_dot_ocil:questionnaire:1">
-          <ns12:title>Ensure sudo Ignores Commands In Current Dir - sudo ignore_dot</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-sudo_add_ignore_dot_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
-        <ns12:questionnaire id="ocil:ssg-sudo_add_umask_ocil:questionnaire:1">
-          <ns12:title>Ensure sudo umask is appropriate - sudo umask</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-sudo_add_umask_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
-        <ns12:questionnaire id="ocil:ssg-sudo_add_use_pty_ocil:questionnaire:1">
-          <ns12:title>Ensure Only Users Logged In To Real tty Can Execute Sudo - sudo use_pty</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-sudo_add_use_pty_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
-        <ns12:questionnaire id="ocil:ssg-accounts_umask_etc_login_defs_ocil:questionnaire:1">
-          <ns12:title>Ensure the Default Umask is Set Correctly in login.defs</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-accounts_umask_etc_login_defs_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
-        <ns12:questionnaire id="ocil:ssg-sudo_add_requiretty_ocil:questionnaire:1">
-          <ns12:title>Ensure Only Users Logged In To Real tty Can Execute Sudo - sudo requiretty</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-sudo_add_requiretty_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
-        <ns12:questionnaire id="ocil:ssg-accounts_password_pam_ocredit_ocil:questionnaire:1">
-          <ns12:title>Ensure PAM Enforces Password Requirements - Minimum Special Characters</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-accounts_password_pam_ocredit_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
-        <ns12:questionnaire id="ocil:ssg-sudo_add_noexec_ocil:questionnaire:1">
-          <ns12:title>Ensure Privileged Escalated Commands Cannot Execute Other Commands - sudo NOEXEC</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-sudo_add_noexec_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
-        <ns12:questionnaire id="ocil:ssg-accounts_password_pam_lcredit_ocil:questionnaire:1">
-          <ns12:title>Ensure PAM Enforces Password Requirements - Minimum Lowercase Characters</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-accounts_password_pam_lcredit_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
-        <ns12:questionnaire id="ocil:ssg-accounts_umask_etc_bashrc_ocil:questionnaire:1">
-          <ns12:title>Ensure the Default Bash Umask is Set Correctly</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-accounts_umask_etc_bashrc_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
-        <ns12:questionnaire id="ocil:ssg-accounts_password_pam_unix_remember_ocil:questionnaire:1">
-          <ns12:title>Limit Password Reuse</ns12:title>
-          <ns12:actions>
-            <ns12:test_action_ref>ocil:ssg-accounts_password_pam_unix_remember_action:testaction:1</ns12:test_action_ref>
-          </ns12:actions>
-        </ns12:questionnaire>
-      </ns12:questionnaires>
-      <ns12:test_actions>
-        <ns12:boolean_question_test_action id="ocil:ssg-accounts_password_pam_minlen_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_minlen_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
-        <ns12:boolean_question_test_action id="ocil:ssg-accounts_password_pam_ucredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_ucredit_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
-        <ns12:boolean_question_test_action id="ocil:ssg-accounts_tmout_action:testaction:1" question_ref="ocil:ssg-accounts_tmout_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
-        <ns12:boolean_question_test_action id="ocil:ssg-sudo_add_env_reset_action:testaction:1" question_ref="ocil:ssg-sudo_add_env_reset_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
-        <ns12:boolean_question_test_action id="ocil:ssg-accounts_umask_etc_profile_action:testaction:1" question_ref="ocil:ssg-accounts_umask_etc_profile_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
-        <ns12:boolean_question_test_action id="ocil:ssg-accounts_password_pam_dcredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_dcredit_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
-        <ns12:boolean_question_test_action id="ocil:ssg-sudo_add_ignore_dot_action:testaction:1" question_ref="ocil:ssg-sudo_add_ignore_dot_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
-        <ns12:boolean_question_test_action id="ocil:ssg-sudo_add_umask_action:testaction:1" question_ref="ocil:ssg-sudo_add_umask_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
-        <ns12:boolean_question_test_action id="ocil:ssg-sudo_add_use_pty_action:testaction:1" question_ref="ocil:ssg-sudo_add_use_pty_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
-        <ns12:boolean_question_test_action id="ocil:ssg-accounts_umask_etc_login_defs_action:testaction:1" question_ref="ocil:ssg-accounts_umask_etc_login_defs_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
-        <ns12:boolean_question_test_action id="ocil:ssg-sudo_add_requiretty_action:testaction:1" question_ref="ocil:ssg-sudo_add_requiretty_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
-        <ns12:boolean_question_test_action id="ocil:ssg-accounts_password_pam_ocredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_ocredit_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
-        <ns12:boolean_question_test_action id="ocil:ssg-sudo_add_noexec_action:testaction:1" question_ref="ocil:ssg-sudo_add_noexec_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
-        <ns12:boolean_question_test_action id="ocil:ssg-accounts_password_pam_lcredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_lcredit_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
-        <ns12:boolean_question_test_action id="ocil:ssg-accounts_umask_etc_bashrc_action:testaction:1" question_ref="ocil:ssg-accounts_umask_etc_bashrc_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
-        <ns12:boolean_question_test_action id="ocil:ssg-accounts_password_pam_unix_remember_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_unix_remember_question:question:1">
-          <ns12:when_true>
-            <ns12:result>PASS</ns12:result>
-          </ns12:when_true>
-          <ns12:when_false>
-            <ns12:result>FAIL</ns12:result>
-          </ns12:when_false>
-        </ns12:boolean_question_test_action>
-      </ns12:test_actions>
-      <ns12:questions>
-        <ns12:boolean_question id="ocil:ssg-accounts_password_pam_minlen_question:question:1">
-          <ns12:question_text>Verify that Gentoo enforces a minimum -character password length with the following command:
-
-$ grep minlen /etc/security/pwquality.conf
-
-minlen = 
-      Is it the case that the command does not return a "minlen" value of "&lt;sub idref="var_password_pam_minlen" /&gt;" or greater, does not return a line, or the line is commented out?
-      </ns12:question_text>
-        </ns12:boolean_question>
-        <ns12:boolean_question id="ocil:ssg-accounts_password_pam_ucredit_question:question:1">
-          <ns12:question_text>Verify that Gentoo enforces password complexity by requiring that at least one upper-case character.
+  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-ocil.xml" timestamp="2024-06-04T11:17:10">
+    <ns13:ocil>
+      <ns13:generator>
+        <ns13:product_name>build_shorthand.py from SCAP Security Guide</ns13:product_name>
+        <ns13:product_version>ssg: 0.1.73</ns13:product_version>
+        <ns13:schema_version>2.0</ns13:schema_version>
+        <ns13:timestamp>2024-06-04T09:17:05</ns13:timestamp>
+      </ns13:generator>
+      <ns13:questionnaires>
+        <ns13:questionnaire id="ocil:ssg-accounts_password_pam_ucredit_ocil:questionnaire:1">
+          <ns13:title>Ensure PAM Enforces Password Requirements - Minimum Uppercase Characters</ns13:title>
+          <ns13:actions>
+            <ns13:test_action_ref>ocil:ssg-accounts_password_pam_ucredit_action:testaction:1</ns13:test_action_ref>
+          </ns13:actions>
+        </ns13:questionnaire>
+        <ns13:questionnaire id="ocil:ssg-file_permissions_etc_shadow_ocil:questionnaire:1">
+          <ns13:title>Verify Permissions on shadow File</ns13:title>
+          <ns13:actions>
+            <ns13:test_action_ref>ocil:ssg-file_permissions_etc_shadow_action:testaction:1</ns13:test_action_ref>
+          </ns13:actions>
+        </ns13:questionnaire>
+        <ns13:questionnaire id="ocil:ssg-accounts_umask_etc_bashrc_ocil:questionnaire:1">
+          <ns13:title>Ensure the Default Bash Umask is Set Correctly</ns13:title>
+          <ns13:actions>
+            <ns13:test_action_ref>ocil:ssg-accounts_umask_etc_bashrc_action:testaction:1</ns13:test_action_ref>
+          </ns13:actions>
+        </ns13:questionnaire>
+        <ns13:questionnaire id="ocil:ssg-sudo_add_umask_ocil:questionnaire:1">
+          <ns13:title>Ensure sudo umask is appropriate - sudo umask</ns13:title>
+          <ns13:actions>
+            <ns13:test_action_ref>ocil:ssg-sudo_add_umask_action:testaction:1</ns13:test_action_ref>
+          </ns13:actions>
+        </ns13:questionnaire>
+        <ns13:questionnaire id="ocil:ssg-accounts_umask_etc_profile_ocil:questionnaire:1">
+          <ns13:title>Ensure the Default Umask is Set Correctly in /etc/profile</ns13:title>
+          <ns13:actions>
+            <ns13:test_action_ref>ocil:ssg-accounts_umask_etc_profile_action:testaction:1</ns13:test_action_ref>
+          </ns13:actions>
+        </ns13:questionnaire>
+        <ns13:questionnaire id="ocil:ssg-file_groupowner_etc_gshadow_ocil:questionnaire:1">
+          <ns13:title>Verify Group Who Owns gshadow File</ns13:title>
+          <ns13:actions>
+            <ns13:test_action_ref>ocil:ssg-file_groupowner_etc_gshadow_action:testaction:1</ns13:test_action_ref>
+          </ns13:actions>
+        </ns13:questionnaire>
+        <ns13:questionnaire id="ocil:ssg-sudo_add_env_reset_ocil:questionnaire:1">
+          <ns13:title>Ensure sudo Runs In A Minimal Environment - sudo env_reset</ns13:title>
+          <ns13:actions>
+            <ns13:test_action_ref>ocil:ssg-sudo_add_env_reset_action:testaction:1</ns13:test_action_ref>
+          </ns13:actions>
+        </ns13:questionnaire>
+        <ns13:questionnaire id="ocil:ssg-sudo_add_requiretty_ocil:questionnaire:1">
+          <ns13:title>Ensure Only Users Logged In To Real tty Can Execute Sudo - sudo requiretty</ns13:title>
+          <ns13:actions>
+            <ns13:test_action_ref>ocil:ssg-sudo_add_requiretty_action:testaction:1</ns13:test_action_ref>
+          </ns13:actions>
+        </ns13:questionnaire>
+        <ns13:questionnaire id="ocil:ssg-accounts_tmout_ocil:questionnaire:1">
+          <ns13:title>Set Interactive Session Timeout</ns13:title>
+          <ns13:actions>
+            <ns13:test_action_ref>ocil:ssg-accounts_tmout_action:testaction:1</ns13:test_action_ref>
+          </ns13:actions>
+        </ns13:questionnaire>
+        <ns13:questionnaire id="ocil:ssg-file_groupowner_etc_shadow_ocil:questionnaire:1">
+          <ns13:title>Verify Group Who Owns shadow File</ns13:title>
+          <ns13:actions>
+            <ns13:test_action_ref>ocil:ssg-file_groupowner_etc_shadow_action:testaction:1</ns13:test_action_ref>
+          </ns13:actions>
+        </ns13:questionnaire>
+        <ns13:questionnaire id="ocil:ssg-accounts_password_pam_minlen_ocil:questionnaire:1">
+          <ns13:title>Ensure PAM Enforces Password Requirements - Minimum Length</ns13:title>
+          <ns13:actions>
+            <ns13:test_action_ref>ocil:ssg-accounts_password_pam_minlen_action:testaction:1</ns13:test_action_ref>
+          </ns13:actions>
+        </ns13:questionnaire>
+        <ns13:questionnaire id="ocil:ssg-file_owner_etc_shadow_ocil:questionnaire:1">
+          <ns13:title>Verify User Who Owns shadow File</ns13:title>
+          <ns13:actions>
+            <ns13:test_action_ref>ocil:ssg-file_owner_etc_shadow_action:testaction:1</ns13:test_action_ref>
+          </ns13:actions>
+        </ns13:questionnaire>
+        <ns13:questionnaire id="ocil:ssg-accounts_password_pam_lcredit_ocil:questionnaire:1">
+          <ns13:title>Ensure PAM Enforces Password Requirements - Minimum Lowercase Characters</ns13:title>
+          <ns13:actions>
+            <ns13:test_action_ref>ocil:ssg-accounts_password_pam_lcredit_action:testaction:1</ns13:test_action_ref>
+          </ns13:actions>
+        </ns13:questionnaire>
+        <ns13:questionnaire id="ocil:ssg-sudo_add_noexec_ocil:questionnaire:1">
+          <ns13:title>Ensure Privileged Escalated Commands Cannot Execute Other Commands - sudo NOEXEC</ns13:title>
+          <ns13:actions>
+            <ns13:test_action_ref>ocil:ssg-sudo_add_noexec_action:testaction:1</ns13:test_action_ref>
+          </ns13:actions>
+        </ns13:questionnaire>
+        <ns13:questionnaire id="ocil:ssg-file_permissions_etc_gshadow_ocil:questionnaire:1">
+          <ns13:title>Verify Permissions on gshadow File</ns13:title>
+          <ns13:actions>
+            <ns13:test_action_ref>ocil:ssg-file_permissions_etc_gshadow_action:testaction:1</ns13:test_action_ref>
+          </ns13:actions>
+        </ns13:questionnaire>
+        <ns13:questionnaire id="ocil:ssg-sudo_add_ignore_dot_ocil:questionnaire:1">
+          <ns13:title>Ensure sudo Ignores Commands In Current Dir - sudo ignore_dot</ns13:title>
+          <ns13:actions>
+            <ns13:test_action_ref>ocil:ssg-sudo_add_ignore_dot_action:testaction:1</ns13:test_action_ref>
+          </ns13:actions>
+        </ns13:questionnaire>
+        <ns13:questionnaire id="ocil:ssg-accounts_password_pam_dcredit_ocil:questionnaire:1">
+          <ns13:title>Ensure PAM Enforces Password Requirements - Minimum Digit Characters</ns13:title>
+          <ns13:actions>
+            <ns13:test_action_ref>ocil:ssg-accounts_password_pam_dcredit_action:testaction:1</ns13:test_action_ref>
+          </ns13:actions>
+        </ns13:questionnaire>
+        <ns13:questionnaire id="ocil:ssg-accounts_umask_etc_login_defs_ocil:questionnaire:1">
+          <ns13:title>Ensure the Default Umask is Set Correctly in login.defs</ns13:title>
+          <ns13:actions>
+            <ns13:test_action_ref>ocil:ssg-accounts_umask_etc_login_defs_action:testaction:1</ns13:test_action_ref>
+          </ns13:actions>
+        </ns13:questionnaire>
+        <ns13:questionnaire id="ocil:ssg-file_owner_etc_gshadow_ocil:questionnaire:1">
+          <ns13:title>Verify User Who Owns gshadow File</ns13:title>
+          <ns13:actions>
+            <ns13:test_action_ref>ocil:ssg-file_owner_etc_gshadow_action:testaction:1</ns13:test_action_ref>
+          </ns13:actions>
+        </ns13:questionnaire>
+        <ns13:questionnaire id="ocil:ssg-accounts_password_pam_ocredit_ocil:questionnaire:1">
+          <ns13:title>Ensure PAM Enforces Password Requirements - Minimum Special Characters</ns13:title>
+          <ns13:actions>
+            <ns13:test_action_ref>ocil:ssg-accounts_password_pam_ocredit_action:testaction:1</ns13:test_action_ref>
+          </ns13:actions>
+        </ns13:questionnaire>
+        <ns13:questionnaire id="ocil:ssg-accounts_password_pam_unix_remember_ocil:questionnaire:1">
+          <ns13:title>Limit Password Reuse</ns13:title>
+          <ns13:actions>
+            <ns13:test_action_ref>ocil:ssg-accounts_password_pam_unix_remember_action:testaction:1</ns13:test_action_ref>
+          </ns13:actions>
+        </ns13:questionnaire>
+        <ns13:questionnaire id="ocil:ssg-sudo_add_use_pty_ocil:questionnaire:1">
+          <ns13:title>Ensure Only Users Logged In To Real tty Can Execute Sudo - sudo use_pty</ns13:title>
+          <ns13:actions>
+            <ns13:test_action_ref>ocil:ssg-sudo_add_use_pty_action:testaction:1</ns13:test_action_ref>
+          </ns13:actions>
+        </ns13:questionnaire>
+      </ns13:questionnaires>
+      <ns13:test_actions>
+        <ns13:boolean_question_test_action id="ocil:ssg-accounts_password_pam_ucredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_ucredit_question:question:1">
+          <ns13:when_true>
+            <ns13:result>PASS</ns13:result>
+          </ns13:when_true>
+          <ns13:when_false>
+            <ns13:result>FAIL</ns13:result>
+          </ns13:when_false>
+        </ns13:boolean_question_test_action>
+        <ns13:boolean_question_test_action id="ocil:ssg-file_permissions_etc_shadow_action:testaction:1" question_ref="ocil:ssg-file_permissions_etc_shadow_question:question:1">
+          <ns13:when_true>
+            <ns13:result>PASS</ns13:result>
+          </ns13:when_true>
+          <ns13:when_false>
+            <ns13:result>FAIL</ns13:result>
+          </ns13:when_false>
+        </ns13:boolean_question_test_action>
+        <ns13:boolean_question_test_action id="ocil:ssg-accounts_umask_etc_bashrc_action:testaction:1" question_ref="ocil:ssg-accounts_umask_etc_bashrc_question:question:1">
+          <ns13:when_true>
+            <ns13:result>PASS</ns13:result>
+          </ns13:when_true>
+          <ns13:when_false>
+            <ns13:result>FAIL</ns13:result>
+          </ns13:when_false>
+        </ns13:boolean_question_test_action>
+        <ns13:boolean_question_test_action id="ocil:ssg-sudo_add_umask_action:testaction:1" question_ref="ocil:ssg-sudo_add_umask_question:question:1">
+          <ns13:when_true>
+            <ns13:result>PASS</ns13:result>
+          </ns13:when_true>
+          <ns13:when_false>
+            <ns13:result>FAIL</ns13:result>
+          </ns13:when_false>
+        </ns13:boolean_question_test_action>
+        <ns13:boolean_question_test_action id="ocil:ssg-accounts_umask_etc_profile_action:testaction:1" question_ref="ocil:ssg-accounts_umask_etc_profile_question:question:1">
+          <ns13:when_true>
+            <ns13:result>PASS</ns13:result>
+          </ns13:when_true>
+          <ns13:when_false>
+            <ns13:result>FAIL</ns13:result>
+          </ns13:when_false>
+        </ns13:boolean_question_test_action>
+        <ns13:boolean_question_test_action id="ocil:ssg-file_groupowner_etc_gshadow_action:testaction:1" question_ref="ocil:ssg-file_groupowner_etc_gshadow_question:question:1">
+          <ns13:when_true>
+            <ns13:result>PASS</ns13:result>
+          </ns13:when_true>
+          <ns13:when_false>
+            <ns13:result>FAIL</ns13:result>
+          </ns13:when_false>
+        </ns13:boolean_question_test_action>
+        <ns13:boolean_question_test_action id="ocil:ssg-sudo_add_env_reset_action:testaction:1" question_ref="ocil:ssg-sudo_add_env_reset_question:question:1">
+          <ns13:when_true>
+            <ns13:result>PASS</ns13:result>
+          </ns13:when_true>
+          <ns13:when_false>
+            <ns13:result>FAIL</ns13:result>
+          </ns13:when_false>
+        </ns13:boolean_question_test_action>
+        <ns13:boolean_question_test_action id="ocil:ssg-sudo_add_requiretty_action:testaction:1" question_ref="ocil:ssg-sudo_add_requiretty_question:question:1">
+          <ns13:when_true>
+            <ns13:result>PASS</ns13:result>
+          </ns13:when_true>
+          <ns13:when_false>
+            <ns13:result>FAIL</ns13:result>
+          </ns13:when_false>
+        </ns13:boolean_question_test_action>
+        <ns13:boolean_question_test_action id="ocil:ssg-accounts_tmout_action:testaction:1" question_ref="ocil:ssg-accounts_tmout_question:question:1">
+          <ns13:when_true>
+            <ns13:result>PASS</ns13:result>
+          </ns13:when_true>
+          <ns13:when_false>
+            <ns13:result>FAIL</ns13:result>
+          </ns13:when_false>
+        </ns13:boolean_question_test_action>
+        <ns13:boolean_question_test_action id="ocil:ssg-file_groupowner_etc_shadow_action:testaction:1" question_ref="ocil:ssg-file_groupowner_etc_shadow_question:question:1">
+          <ns13:when_true>
+            <ns13:result>PASS</ns13:result>
+          </ns13:when_true>
+          <ns13:when_false>
+            <ns13:result>FAIL</ns13:result>
+          </ns13:when_false>
+        </ns13:boolean_question_test_action>
+        <ns13:boolean_question_test_action id="ocil:ssg-accounts_password_pam_minlen_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_minlen_question:question:1">
+          <ns13:when_true>
+            <ns13:result>PASS</ns13:result>
+          </ns13:when_true>
+          <ns13:when_false>
+            <ns13:result>FAIL</ns13:result>
+          </ns13:when_false>
+        </ns13:boolean_question_test_action>
+        <ns13:boolean_question_test_action id="ocil:ssg-file_owner_etc_shadow_action:testaction:1" question_ref="ocil:ssg-file_owner_etc_shadow_question:question:1">
+          <ns13:when_true>
+            <ns13:result>PASS</ns13:result>
+          </ns13:when_true>
+          <ns13:when_false>
+            <ns13:result>FAIL</ns13:result>
+          </ns13:when_false>
+        </ns13:boolean_question_test_action>
+        <ns13:boolean_question_test_action id="ocil:ssg-accounts_password_pam_lcredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_lcredit_question:question:1">
+          <ns13:when_true>
+            <ns13:result>PASS</ns13:result>
+          </ns13:when_true>
+          <ns13:when_false>
+            <ns13:result>FAIL</ns13:result>
+          </ns13:when_false>
+        </ns13:boolean_question_test_action>
+        <ns13:boolean_question_test_action id="ocil:ssg-sudo_add_noexec_action:testaction:1" question_ref="ocil:ssg-sudo_add_noexec_question:question:1">
+          <ns13:when_true>
+            <ns13:result>PASS</ns13:result>
+          </ns13:when_true>
+          <ns13:when_false>
+            <ns13:result>FAIL</ns13:result>
+          </ns13:when_false>
+        </ns13:boolean_question_test_action>
+        <ns13:boolean_question_test_action id="ocil:ssg-file_permissions_etc_gshadow_action:testaction:1" question_ref="ocil:ssg-file_permissions_etc_gshadow_question:question:1">
+          <ns13:when_true>
+            <ns13:result>PASS</ns13:result>
+          </ns13:when_true>
+          <ns13:when_false>
+            <ns13:result>FAIL</ns13:result>
+          </ns13:when_false>
+        </ns13:boolean_question_test_action>
+        <ns13:boolean_question_test_action id="ocil:ssg-sudo_add_ignore_dot_action:testaction:1" question_ref="ocil:ssg-sudo_add_ignore_dot_question:question:1">
+          <ns13:when_true>
+            <ns13:result>PASS</ns13:result>
+          </ns13:when_true>
+          <ns13:when_false>
+            <ns13:result>FAIL</ns13:result>
+          </ns13:when_false>
+        </ns13:boolean_question_test_action>
+        <ns13:boolean_question_test_action id="ocil:ssg-accounts_password_pam_dcredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_dcredit_question:question:1">
+          <ns13:when_true>
+            <ns13:result>PASS</ns13:result>
+          </ns13:when_true>
+          <ns13:when_false>
+            <ns13:result>FAIL</ns13:result>
+          </ns13:when_false>
+        </ns13:boolean_question_test_action>
+        <ns13:boolean_question_test_action id="ocil:ssg-accounts_umask_etc_login_defs_action:testaction:1" question_ref="ocil:ssg-accounts_umask_etc_login_defs_question:question:1">
+          <ns13:when_true>
+            <ns13:result>PASS</ns13:result>
+          </ns13:when_true>
+          <ns13:when_false>
+            <ns13:result>FAIL</ns13:result>
+          </ns13:when_false>
+        </ns13:boolean_question_test_action>
+        <ns13:boolean_question_test_action id="ocil:ssg-file_owner_etc_gshadow_action:testaction:1" question_ref="ocil:ssg-file_owner_etc_gshadow_question:question:1">
+          <ns13:when_true>
+            <ns13:result>PASS</ns13:result>
+          </ns13:when_true>
+          <ns13:when_false>
+            <ns13:result>FAIL</ns13:result>
+          </ns13:when_false>
+        </ns13:boolean_question_test_action>
+        <ns13:boolean_question_test_action id="ocil:ssg-accounts_password_pam_ocredit_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_ocredit_question:question:1">
+          <ns13:when_true>
+            <ns13:result>PASS</ns13:result>
+          </ns13:when_true>
+          <ns13:when_false>
+            <ns13:result>FAIL</ns13:result>
+          </ns13:when_false>
+        </ns13:boolean_question_test_action>
+        <ns13:boolean_question_test_action id="ocil:ssg-accounts_password_pam_unix_remember_action:testaction:1" question_ref="ocil:ssg-accounts_password_pam_unix_remember_question:question:1">
+          <ns13:when_true>
+            <ns13:result>PASS</ns13:result>
+          </ns13:when_true>
+          <ns13:when_false>
+            <ns13:result>FAIL</ns13:result>
+          </ns13:when_false>
+        </ns13:boolean_question_test_action>
+        <ns13:boolean_question_test_action id="ocil:ssg-sudo_add_use_pty_action:testaction:1" question_ref="ocil:ssg-sudo_add_use_pty_question:question:1">
+          <ns13:when_true>
+            <ns13:result>PASS</ns13:result>
+          </ns13:when_true>
+          <ns13:when_false>
+            <ns13:result>FAIL</ns13:result>
+          </ns13:when_false>
+        </ns13:boolean_question_test_action>
+      </ns13:test_actions>
+      <ns13:questions>
+        <ns13:boolean_question id="ocil:ssg-accounts_password_pam_ucredit_question:question:1">
+          <ns13:question_text>Verify that Gentoo enforces password complexity by requiring that at least one upper-case character.
 
 Check the value for "ucredit" with the following command:
 
@@ -4550,10 +5484,68 @@ $ sudo grep ucredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/
 
 ucredit = -1
       Is it the case that the value of "ucredit" is a positive number or is commented out?
-      </ns12:question_text>
-        </ns12:boolean_question>
-        <ns12:boolean_question id="ocil:ssg-accounts_tmout_question:question:1">
-          <ns12:question_text>Run the following command to ensure the TMOUT value is configured for all users
+      </ns13:question_text>
+        </ns13:boolean_question>
+        <ns13:boolean_question id="ocil:ssg-file_permissions_etc_shadow_question:question:1">
+          <ns13:question_text>To check the permissions of /etc/shadow,
+run the command:
+$ ls -l /etc/shadow
+If properly configured, the output should indicate the following permissions:
+----------
+      Is it the case that /etc/shadow does not have unix mode ----------?
+      </ns13:question_text>
+        </ns13:boolean_question>
+        <ns13:boolean_question id="ocil:ssg-accounts_umask_etc_bashrc_question:question:1">
+          <ns13:question_text>Verify the umask setting is configured correctly in the /etc/bash/bashrc file with the following command:
+
+$ sudo grep "umask" /etc/bash/bashrc
+
+umask 
+      Is it the case that the value for the "umask" parameter is not "&lt;sub idref="var_accounts_user_umask" /&gt;", or the "umask" parameter is missing or is commented out?
+      </ns13:question_text>
+        </ns13:boolean_question>
+        <ns13:boolean_question id="ocil:ssg-sudo_add_umask_question:question:1">
+          <ns13:question_text>To determine if umask has been configured for sudo with the appropriate value,
+run the following command:
+$ sudo grep -ri '^Defaults.*umask=' /etc/sudoers /etc/sudoers.d/
+The command should return a matching output.
+      Is it the case that umask is not set with the appropriate value for sudo?
+      </ns13:question_text>
+        </ns13:boolean_question>
+        <ns13:boolean_question id="ocil:ssg-accounts_umask_etc_profile_question:question:1">
+          <ns13:question_text>Verify the umask setting is configured correctly in the /etc/profile file
+or scripts within /etc/profile.d directory with the following command:
+$ grep "umask" /etc/profile*
+umask 
+      Is it the case that the value for the "umask" parameter is not "&lt;sub idref="var_accounts_user_umask" /&gt;",
+or the "umask" parameter is missing or is commented out?
+      </ns13:question_text>
+        </ns13:boolean_question>
+        <ns13:boolean_question id="ocil:ssg-file_groupowner_etc_gshadow_question:question:1">
+          <ns13:question_text>To check the group ownership of /etc/gshadow,
+run the command:
+$ ls -lL /etc/gshadow
+If properly configured, the output should indicate the following group-owner:
+root
+      Is it the case that /etc/gshadow does not have a group owner of root?
+      </ns13:question_text>
+        </ns13:boolean_question>
+        <ns13:boolean_question id="ocil:ssg-sudo_add_env_reset_question:question:1">
+          <ns13:question_text>To determine if env_reset has been configured for sudo, run the following command:
+$ sudo grep -ri "^[\s]*Defaults.*\benv_reset\b.*" /etc/sudoers /etc/sudoers.d/
+The command should return a matching output.
+      Is it the case that env_reset is not enabled in sudo?
+      </ns13:question_text>
+        </ns13:boolean_question>
+        <ns13:boolean_question id="ocil:ssg-sudo_add_requiretty_question:question:1">
+          <ns13:question_text>To determine if requiretty has been configured for sudo, run the following command:
+$ sudo grep -ri "^[\s]*Defaults.*\brequiretty\b.*" /etc/sudoers /etc/sudoers.d/
+The command should return a matching output.
+      Is it the case that requiretty is not enabled in sudo?
+      </ns13:question_text>
+        </ns13:boolean_question>
+        <ns13:boolean_question id="ocil:ssg-accounts_tmout_question:question:1">
+          <ns13:question_text>Run the following command to ensure the TMOUT value is configured for all users
 on the system:
 
 $ sudo grep TMOUT /etc/profile /etc/profile.d/*.sh
@@ -4561,91 +5553,37 @@ $ sudo grep TMOUT /etc/profile /etc/profile.d/*.sh
 The output should return the following:
 TMOUT=
       Is it the case that value of TMOUT is not less than or equal to expected setting?
-      </ns12:question_text>
-        </ns12:boolean_question>
-        <ns12:boolean_question id="ocil:ssg-sudo_add_env_reset_question:question:1">
-          <ns12:question_text>To determine if env_reset has been configured for sudo, run the following command:
-$ sudo grep -ri "^[\s]*Defaults.*\benv_reset\b.*" /etc/sudoers /etc/sudoers.d/
-The command should return a matching output.
-      Is it the case that env_reset is not enabled in sudo?
-      </ns12:question_text>
-        </ns12:boolean_question>
-        <ns12:boolean_question id="ocil:ssg-accounts_umask_etc_profile_question:question:1">
-          <ns12:question_text>Verify the umask setting is configured correctly in the /etc/profile file
-or scripts within /etc/profile.d directory with the following command:
-$ grep "umask" /etc/profile*
-umask 
-      Is it the case that the value for the "umask" parameter is not "&lt;sub idref="var_accounts_user_umask" /&gt;",
-or the "umask" parameter is missing or is commented out?
-      </ns12:question_text>
-        </ns12:boolean_question>
-        <ns12:boolean_question id="ocil:ssg-accounts_password_pam_dcredit_question:question:1">
-          <ns12:question_text>Verify that Gentoo enforces password complexity by requiring that at least one numeric character be used.
+      </ns13:question_text>
+        </ns13:boolean_question>
+        <ns13:boolean_question id="ocil:ssg-file_groupowner_etc_shadow_question:question:1">
+          <ns13:question_text>To check the group ownership of /etc/shadow,
+run the command:
+$ ls -lL /etc/shadow
+If properly configured, the output should indicate the following group-owner:
+root
+      Is it the case that /etc/shadow does not have a group owner of root?
+      </ns13:question_text>
+        </ns13:boolean_question>
+        <ns13:boolean_question id="ocil:ssg-accounts_password_pam_minlen_question:question:1">
+          <ns13:question_text>Verify that Gentoo enforces a minimum -character password length with the following command:
 
-Check the value for "dcredit" with the following command:
+$ grep minlen /etc/security/pwquality.conf
 
-$ sudo grep dcredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/*.conf
-
-/etc/security/pwquality.conf:dcredit = 
-      Is it the case that the value of "dcredit" is a positive number or is commented out?
-      </ns12:question_text>
-        </ns12:boolean_question>
-        <ns12:boolean_question id="ocil:ssg-sudo_add_ignore_dot_question:question:1">
-          <ns12:question_text>To determine if ignore_dot has been configured for sudo, run the following command:
-$ sudo grep -ri "^[\s]*Defaults.*\bignore_dot\b.*" /etc/sudoers /etc/sudoers.d/
-The command should return a matching output.
-      Is it the case that ignore_dot is not enabled in sudo?
-      </ns12:question_text>
-        </ns12:boolean_question>
-        <ns12:boolean_question id="ocil:ssg-sudo_add_umask_question:question:1">
-          <ns12:question_text>To determine if umask has been configured for sudo with the appropriate value,
-run the following command:
-$ sudo grep -ri '^Defaults.*umask=' /etc/sudoers /etc/sudoers.d/
-The command should return a matching output.
-      Is it the case that umask is not set with the appropriate value for sudo?
-      </ns12:question_text>
-        </ns12:boolean_question>
-        <ns12:boolean_question id="ocil:ssg-sudo_add_use_pty_question:question:1">
-          <ns12:question_text>To determine if use_pty has been configured for sudo, run the following command:
-$ sudo grep -ri "^[\s]*Defaults.*\buse_pty\b.*" /etc/sudoers /etc/sudoers.d/
-The command should return a matching output.
-      Is it the case that use_pty is not enabled in sudo?
-      </ns12:question_text>
-        </ns12:boolean_question>
-        <ns12:boolean_question id="ocil:ssg-accounts_umask_etc_login_defs_question:question:1">
-          <ns12:question_text>Verify Gentoo defines default permissions for all authenticated users in such a way that the user can only read and modify their own files with the following command:
-
-# grep -i umask /etc/login.defs
-
-UMASK 
-      Is it the case that the value for the "UMASK" parameter is not "&lt;sub idref="var_accounts_user_umask" /&gt;", or the "UMASK" parameter is missing or is commented out?
-      </ns12:question_text>
-        </ns12:boolean_question>
-        <ns12:boolean_question id="ocil:ssg-sudo_add_requiretty_question:question:1">
-          <ns12:question_text>To determine if requiretty has been configured for sudo, run the following command:
-$ sudo grep -ri "^[\s]*Defaults.*\brequiretty\b.*" /etc/sudoers /etc/sudoers.d/
-The command should return a matching output.
-      Is it the case that requiretty is not enabled in sudo?
-      </ns12:question_text>
-        </ns12:boolean_question>
-        <ns12:boolean_question id="ocil:ssg-accounts_password_pam_ocredit_question:question:1">
-          <ns12:question_text>Verify that Gentoo enforces password complexity by requiring that at least one special character with the following command:
-
-$ sudo grep ocredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/*.conf
-
-ocredit = 
-      Is it the case that value of "ocredit" is a positive number or is commented out?
-      </ns12:question_text>
-        </ns12:boolean_question>
-        <ns12:boolean_question id="ocil:ssg-sudo_add_noexec_question:question:1">
-          <ns12:question_text>To determine if NOEXEC has been configured for sudo, run the following command:
-$ sudo grep -ri "^[\s]*Defaults.*\bnoexec\b.*" /etc/sudoers /etc/sudoers.d/
-The command should return a matching output.
-      Is it the case that noexec is not enabled in sudo?
-      </ns12:question_text>
-        </ns12:boolean_question>
-        <ns12:boolean_question id="ocil:ssg-accounts_password_pam_lcredit_question:question:1">
-          <ns12:question_text>Verify that Gentoo enforces password complexity by requiring that at least one lower-case character.
+minlen = 
+      Is it the case that the command does not return a "minlen" value of "&lt;sub idref="var_password_pam_minlen" /&gt;" or greater, does not return a line, or the line is commented out?
+      </ns13:question_text>
+        </ns13:boolean_question>
+        <ns13:boolean_question id="ocil:ssg-file_owner_etc_shadow_question:question:1">
+          <ns13:question_text>To check the ownership of /etc/shadow,
+run the command:
+$ ls -lL /etc/shadow
+If properly configured, the output should indicate the following owner:
+root
+      Is it the case that /etc/shadow does not have an owner of root?
+      </ns13:question_text>
+        </ns13:boolean_question>
+        <ns13:boolean_question id="ocil:ssg-accounts_password_pam_lcredit_question:question:1">
+          <ns13:question_text>Verify that Gentoo enforces password complexity by requiring that at least one lower-case character.
 
 Check the value for "lcredit" with the following command:
 
@@ -4653,19 +5591,71 @@ $ sudo grep lcredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/
 
 /etc/security/pwquality.conf:lcredit = -1
       Is it the case that the value of "lcredit" is a positive number or is commented out?
-      </ns12:question_text>
-        </ns12:boolean_question>
-        <ns12:boolean_question id="ocil:ssg-accounts_umask_etc_bashrc_question:question:1">
-          <ns12:question_text>Verify the umask setting is configured correctly in the /etc/bash/bashrc file with the following command:
+      </ns13:question_text>
+        </ns13:boolean_question>
+        <ns13:boolean_question id="ocil:ssg-sudo_add_noexec_question:question:1">
+          <ns13:question_text>To determine if NOEXEC has been configured for sudo, run the following command:
+$ sudo grep -ri "^[\s]*Defaults.*\bnoexec\b.*" /etc/sudoers /etc/sudoers.d/
+The command should return a matching output.
+      Is it the case that noexec is not enabled in sudo?
+      </ns13:question_text>
+        </ns13:boolean_question>
+        <ns13:boolean_question id="ocil:ssg-file_permissions_etc_gshadow_question:question:1">
+          <ns13:question_text>To check the permissions of /etc/gshadow,
+run the command:
+$ ls -l /etc/gshadow
+If properly configured, the output should indicate the following permissions:
+----------
+      Is it the case that /etc/gshadow does not have unix mode ----------?
+      </ns13:question_text>
+        </ns13:boolean_question>
+        <ns13:boolean_question id="ocil:ssg-sudo_add_ignore_dot_question:question:1">
+          <ns13:question_text>To determine if ignore_dot has been configured for sudo, run the following command:
+$ sudo grep -ri "^[\s]*Defaults.*\bignore_dot\b.*" /etc/sudoers /etc/sudoers.d/
+The command should return a matching output.
+      Is it the case that ignore_dot is not enabled in sudo?
+      </ns13:question_text>
+        </ns13:boolean_question>
+        <ns13:boolean_question id="ocil:ssg-accounts_password_pam_dcredit_question:question:1">
+          <ns13:question_text>Verify that Gentoo enforces password complexity by requiring that at least one numeric character be used.
 
-$ sudo grep "umask" /etc/bash/bashrc
+Check the value for "dcredit" with the following command:
 
-umask 
-      Is it the case that the value for the "umask" parameter is not "&lt;sub idref="var_accounts_user_umask" /&gt;", or the "umask" parameter is missing or is commented out?
-      </ns12:question_text>
-        </ns12:boolean_question>
-        <ns12:boolean_question id="ocil:ssg-accounts_password_pam_unix_remember_question:question:1">
-          <ns12:question_text>To verify the password reuse setting is compliant, run the following command:
+$ sudo grep dcredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/*.conf
+
+/etc/security/pwquality.conf:dcredit = 
+      Is it the case that the value of "dcredit" is a positive number or is commented out?
+      </ns13:question_text>
+        </ns13:boolean_question>
+        <ns13:boolean_question id="ocil:ssg-accounts_umask_etc_login_defs_question:question:1">
+          <ns13:question_text>Verify Gentoo defines default permissions for all authenticated users in such a way that the user can only read and modify their own files with the following command:
+
+# grep -i umask /etc/login.defs
+
+UMASK 
+      Is it the case that the value for the "UMASK" parameter is not "&lt;sub idref="var_accounts_user_umask" /&gt;", or the "UMASK" parameter is missing or is commented out?
+      </ns13:question_text>
+        </ns13:boolean_question>
+        <ns13:boolean_question id="ocil:ssg-file_owner_etc_gshadow_question:question:1">
+          <ns13:question_text>To check the ownership of /etc/gshadow,
+run the command:
+$ ls -lL /etc/gshadow
+If properly configured, the output should indicate the following owner:
+root
+      Is it the case that /etc/gshadow does not have an owner of root?
+      </ns13:question_text>
+        </ns13:boolean_question>
+        <ns13:boolean_question id="ocil:ssg-accounts_password_pam_ocredit_question:question:1">
+          <ns13:question_text>Verify that Gentoo enforces password complexity by requiring that at least one special character with the following command:
+
+$ sudo grep ocredit /etc/security/pwquality.conf /etc/security/pwquality.conf.d/*.conf
+
+ocredit = 
+      Is it the case that value of "ocredit" is a positive number or is commented out?
+      </ns13:question_text>
+        </ns13:boolean_question>
+        <ns13:boolean_question id="ocil:ssg-accounts_password_pam_unix_remember_question:question:1">
+          <ns13:question_text>To verify the password reuse setting is compliant, run the following command:
 $ grep remember /etc/pam.d/system-auth
 The output should show the following at the end of the line:
 remember=
@@ -4678,18 +5668,25 @@ remember =
 
 The pam_pwhistory remember option must be configured only in one file.
       Is it the case that the value of remember is not equal to or greater than the expected value?
-      </ns12:question_text>
-        </ns12:boolean_question>
-      </ns12:questions>
-    </ns12:ocil>
+      </ns13:question_text>
+        </ns13:boolean_question>
+        <ns13:boolean_question id="ocil:ssg-sudo_add_use_pty_question:question:1">
+          <ns13:question_text>To determine if use_pty has been configured for sudo, run the following command:
+$ sudo grep -ri "^[\s]*Defaults.*\buse_pty\b.*" /etc/sudoers /etc/sudoers.d/
+The command should return a matching output.
+      Is it the case that use_pty is not enabled in sudo?
+      </ns13:question_text>
+        </ns13:boolean_question>
+      </ns13:questions>
+    </ns13:ocil>
   </ns0:component>
-  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-cpe-oval.xml" timestamp="2024-06-04T11:11:29">
+  <ns0:component id="scap_org.open-scap_comp_ssg-gentoo-cpe-oval.xml" timestamp="2024-06-04T11:17:11">
     <ns9:oval_definitions xsi:schemaLocation="http://oval.mitre.org/XMLSchema/oval-common-5 oval-common-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5 oval-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#independent independent-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#unix unix-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#linux linux-definitions-schema.xsd">
       <ns9:generator>
         <ns10:product_name>build_cpe.py from SCAP Security Guide</ns10:product_name>
         <ns10:product_version>ssg: [0, 1, 73], python: 3.11.9</ns10:product_version>
         <ns10:schema_version>5.11</ns10:schema_version>
-        <ns10:timestamp>2024-06-04T09:11:28</ns10:timestamp>
+        <ns10:timestamp>2024-06-04T09:17:10</ns10:timestamp>
       </ns9:generator>
       <ns9:definitions>
         <ns9:definition id="oval:ssg-installed_env_is_a_container:def:1" version="2" class="inventory">
@@ -4783,30 +5780,30 @@ The pam_pwhistory remember option must be configured only in one file.
           </ns9:definition>
       </ns9:definitions>
       <ns9:tests>
-        <ns13:file_test id="oval:ssg-test_installed_env_is_a_docker_container:tst:1" version="1" check="all" comment="Check if /.dockerenv exists" check_existence="all_exist" state_operator="AND">
-          <ns13:object object_ref="oval:ssg-object_installed_env_is_a_docker_container:obj:1" />
-        </ns13:file_test>
-        <ns13:file_test id="oval:ssg-test_installed_env_is_a_podman_container:tst:1" version="1" check="all" comment="Check if /run/.containerenv exists" check_existence="all_exist" state_operator="AND">
-          <ns13:object object_ref="oval:ssg-object_installed_env_is_a_podman_container:obj:1" />
-        </ns13:file_test>
-        <ns13:file_test id="oval:ssg-test_gentoo_release:tst:1" version="1" check="all" comment="/etc/gentoo exists" check_existence="all_exist" state_operator="AND">
-          <ns13:object object_ref="oval:ssg-obj_gentoo_release:obj:1" />
-        </ns13:file_test>
+        <ns12:file_test id="oval:ssg-test_installed_env_is_a_docker_container:tst:1" version="1" check="all" comment="Check if /.dockerenv exists" check_existence="all_exist" state_operator="AND">
+          <ns12:object object_ref="oval:ssg-object_installed_env_is_a_docker_container:obj:1" />
+        </ns12:file_test>
+        <ns12:file_test id="oval:ssg-test_installed_env_is_a_podman_container:tst:1" version="1" check="all" comment="Check if /run/.containerenv exists" check_existence="all_exist" state_operator="AND">
+          <ns12:object object_ref="oval:ssg-object_installed_env_is_a_podman_container:obj:1" />
+        </ns12:file_test>
+        <ns12:file_test id="oval:ssg-test_gentoo_release:tst:1" version="1" check="all" comment="/etc/gentoo exists" check_existence="all_exist" state_operator="AND">
+          <ns12:object object_ref="oval:ssg-obj_gentoo_release:obj:1" />
+        </ns12:file_test>
         <ns11:family_test id="oval:ssg-test_unix_family:tst:1" version="1" check="all" comment="Test installed OS is part of the unix family" state_operator="AND">
           <ns11:object object_ref="oval:ssg-object_unix_family:obj:1" />
           <ns11:state state_ref="oval:ssg-state_unix_family:ste:1" />
         </ns11:family_test>
         </ns9:tests>
       <ns9:objects>
-        <ns13:file_object id="oval:ssg-object_installed_env_is_a_docker_container:obj:1" version="1" comment="Check file /.dockerenv">
-          <ns13:filepath datatype="string">/.dockerenv</ns13:filepath>
-        </ns13:file_object>
-        <ns13:file_object id="oval:ssg-object_installed_env_is_a_podman_container:obj:1" version="1" comment="Check file /run/.containerenv">
-          <ns13:filepath datatype="string">/run/.containerenv</ns13:filepath>
-        </ns13:file_object>
-        <ns13:file_object id="oval:ssg-obj_gentoo_release:obj:1" version="1" comment="check /etc/gentoo-release file">
-          <ns13:filepath>/etc/gentoo-release</ns13:filepath>
-        </ns13:file_object>
+        <ns12:file_object id="oval:ssg-object_installed_env_is_a_docker_container:obj:1" version="1" comment="Check file /.dockerenv">
+          <ns12:filepath datatype="string">/.dockerenv</ns12:filepath>
+        </ns12:file_object>
+        <ns12:file_object id="oval:ssg-object_installed_env_is_a_podman_container:obj:1" version="1" comment="Check file /run/.containerenv">
+          <ns12:filepath datatype="string">/run/.containerenv</ns12:filepath>
+        </ns12:file_object>
+        <ns12:file_object id="oval:ssg-obj_gentoo_release:obj:1" version="1" comment="check /etc/gentoo-release file">
+          <ns12:filepath>/etc/gentoo-release</ns12:filepath>
+        </ns12:file_object>
         <ns11:family_object id="oval:ssg-object_unix_family:obj:1" version="1" />
         <ns14:rpminfo_object id="oval:ssg-obj_inventory_test_package_bash_installed:obj:1" version="1">
           <ns14:name>bash</ns14:name>

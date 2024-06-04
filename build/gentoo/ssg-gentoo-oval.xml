@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
-<oval-def:oval_definitions xmlns:ind="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" xmlns:oval="http://oval.mitre.org/XMLSchema/oval-common-5" xmlns:oval-def="http://oval.mitre.org/XMLSchema/oval-definitions-5" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://oval.mitre.org/XMLSchema/oval-common-5 oval-common-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5 oval-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#independent independent-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#unix unix-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#linux linux-definitions-schema.xsd">
+<oval-def:oval_definitions xmlns:ind="http://oval.mitre.org/XMLSchema/oval-definitions-5#independent" xmlns:oval="http://oval.mitre.org/XMLSchema/oval-common-5" xmlns:oval-def="http://oval.mitre.org/XMLSchema/oval-definitions-5" xmlns:unix="http://oval.mitre.org/XMLSchema/oval-definitions-5#unix" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://oval.mitre.org/XMLSchema/oval-common-5 oval-common-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5 oval-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#independent independent-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#unix unix-definitions-schema.xsd  http://oval.mitre.org/XMLSchema/oval-definitions-5#linux linux-definitions-schema.xsd">
   <oval-def:generator>
     <oval:product_name>OVALFileLinker from SCAP Security Guide</oval:product_name>
     <oval:product_version>ssg: [0, 1, 73], python: 3.11.9</oval:product_version>
     <oval:schema_version>5.11</oval:schema_version>
-    <oval:timestamp>2024-06-04T09:11:23</oval:timestamp>
+    <oval:timestamp>2024-06-04T09:17:05</oval:timestamp>
   </oval-def:generator>
   <oval-def:definitions>
     <oval-def:definition id="oval:ssg-accounts_password_pam_unix_remember:def:1" version="2" class="compliance">
@@ -168,6 +168,88 @@
         <oval-def:criteria operator="OR">
           <oval-def:criterion comment="pwquality.conf" test_ref="oval:ssg-test_password_pam_pwquality_ucredit:tst:1" />
         </oval-def:criteria>
+      </oval-def:criteria>
+    </oval-def:definition>
+    <oval-def:definition id="oval:ssg-file_groupowner_etc_gshadow:def:1" version="1" class="compliance">
+      <oval-def:metadata>
+        <oval-def:title>Verify Group Who Owns gshadow File</oval-def:title>
+        <oval-def:affected family="unix">
+          <oval-def:platform>Gentoo</oval-def:platform>
+        </oval-def:affected>
+        <oval-def:reference ref_id="file_groupowner_etc_gshadow" source="ssg" />
+        <oval-def:description>This test makes sure that /etc/gshadow is group owned by 0.</oval-def:description>
+      </oval-def:metadata>
+      <oval-def:criteria operator="AND">
+        <oval-def:criterion comment="Check file group ownership of /etc/gshadow" test_ref="oval:ssg-test_file_groupowner_etc_gshadow_0:tst:1" />
+      </oval-def:criteria>
+    </oval-def:definition>
+    <oval-def:definition id="oval:ssg-file_groupowner_etc_shadow:def:1" version="1" class="compliance">
+      <oval-def:metadata>
+        <oval-def:title>Verify Group Who Owns shadow File</oval-def:title>
+        <oval-def:affected family="unix">
+          <oval-def:platform>Gentoo</oval-def:platform>
+        </oval-def:affected>
+        <oval-def:reference ref_id="file_groupowner_etc_shadow" source="ssg" />
+        <oval-def:description>This test makes sure that /etc/shadow is group owned by 0.</oval-def:description>
+      </oval-def:metadata>
+      <oval-def:criteria operator="AND">
+        <oval-def:criterion comment="Check file group ownership of /etc/shadow" test_ref="oval:ssg-test_file_groupowner_etc_shadow_0:tst:1" />
+      </oval-def:criteria>
+    </oval-def:definition>
+    <oval-def:definition id="oval:ssg-file_owner_etc_gshadow:def:1" version="1" class="compliance">
+      <oval-def:metadata>
+        <oval-def:title>Verify User Who Owns gshadow File</oval-def:title>
+        <oval-def:affected family="unix">
+          <oval-def:platform>Gentoo</oval-def:platform>
+        </oval-def:affected>
+        <oval-def:reference ref_id="file_owner_etc_gshadow" source="ssg" />
+        <oval-def:description>This test makes sure that /etc/gshadow is owned by 0.</oval-def:description>
+      </oval-def:metadata>
+      <oval-def:criteria operator="AND">
+        <oval-def:criterion comment="Check file ownership of /etc/gshadow" test_ref="oval:ssg-test_file_owner_etc_gshadow_0:tst:1" />
+      </oval-def:criteria>
+    </oval-def:definition>
+    <oval-def:definition id="oval:ssg-file_owner_etc_shadow:def:1" version="1" class="compliance">
+      <oval-def:metadata>
+        <oval-def:title>Verify User Who Owns shadow File</oval-def:title>
+        <oval-def:affected family="unix">
+          <oval-def:platform>Gentoo</oval-def:platform>
+        </oval-def:affected>
+        <oval-def:reference ref_id="file_owner_etc_shadow" source="ssg" />
+        <oval-def:description>This test makes sure that /etc/shadow is owned by 0.</oval-def:description>
+      </oval-def:metadata>
+      <oval-def:criteria operator="AND">
+        <oval-def:criterion comment="Check file ownership of /etc/shadow" test_ref="oval:ssg-test_file_owner_etc_shadow_0:tst:1" />
+      </oval-def:criteria>
+    </oval-def:definition>
+    <oval-def:definition id="oval:ssg-file_permissions_etc_gshadow:def:1" version="1" class="compliance">
+      <oval-def:metadata>
+        <oval-def:title>Verify Permissions on gshadow File</oval-def:title>
+        <oval-def:affected family="unix">
+          <oval-def:platform>Gentoo</oval-def:platform>
+        </oval-def:affected>
+        <oval-def:reference ref_id="file_permissions_etc_gshadow" source="ssg" />
+        <oval-def:description>This test makes sure that /etc/gshadow has mode 0000.
+      If the target file or directory has an extended ACL, then it will fail the mode check.
+      </oval-def:description>
+      </oval-def:metadata>
+      <oval-def:criteria operator="AND">
+        <oval-def:criterion comment="Check file mode of /etc/gshadow" test_ref="oval:ssg-test_file_permissions_etc_gshadow_0:tst:1" />
+      </oval-def:criteria>
+    </oval-def:definition>
+    <oval-def:definition id="oval:ssg-file_permissions_etc_shadow:def:1" version="1" class="compliance">
+      <oval-def:metadata>
+        <oval-def:title>Verify Permissions on shadow File</oval-def:title>
+        <oval-def:affected family="unix">
+          <oval-def:platform>Gentoo</oval-def:platform>
+        </oval-def:affected>
+        <oval-def:reference ref_id="file_permissions_etc_shadow" source="ssg" />
+        <oval-def:description>This test makes sure that /etc/shadow has mode 0000.
+      If the target file or directory has an extended ACL, then it will fail the mode check.
+      </oval-def:description>
+      </oval-def:metadata>
+      <oval-def:criteria operator="AND">
+        <oval-def:criterion comment="Check file mode of /etc/shadow" test_ref="oval:ssg-test_file_permissions_etc_shadow_0:tst:1" />
       </oval-def:criteria>
     </oval-def:definition>
     <oval-def:definition id="oval:ssg-sudo_add_env_reset:def:1" version="1" class="compliance">
@@ -341,6 +423,24 @@
       <ind:object object_ref="oval:ssg-obj_password_pam_pwquality_ucredit:obj:1" />
       <ind:state state_ref="oval:ssg-state_password_pam_ucredit:ste:1" />
     </ind:textfilecontent54_test>
+    <unix:file_test id="oval:ssg-test_file_groupowner_etc_gshadow_0:tst:1" version="1" check="all" comment="Testing group ownership of /etc/gshadow" check_existence="none_exist" state_operator="AND">
+      <unix:object object_ref="oval:ssg-object_file_groupowner_etc_gshadow_0:obj:1" />
+    </unix:file_test>
+    <unix:file_test id="oval:ssg-test_file_groupowner_etc_shadow_0:tst:1" version="1" check="all" comment="Testing group ownership of /etc/shadow" check_existence="none_exist" state_operator="AND">
+      <unix:object object_ref="oval:ssg-object_file_groupowner_etc_shadow_0:obj:1" />
+    </unix:file_test>
+    <unix:file_test id="oval:ssg-test_file_owner_etc_gshadow_0:tst:1" version="1" check="all" comment="Testing user ownership of /etc/gshadow" check_existence="none_exist" state_operator="AND">
+      <unix:object object_ref="oval:ssg-object_file_owner_etc_gshadow_0:obj:1" />
+    </unix:file_test>
+    <unix:file_test id="oval:ssg-test_file_owner_etc_shadow_0:tst:1" version="1" check="all" comment="Testing user ownership of /etc/shadow" check_existence="none_exist" state_operator="AND">
+      <unix:object object_ref="oval:ssg-object_file_owner_etc_shadow_0:obj:1" />
+    </unix:file_test>
+    <unix:file_test id="oval:ssg-test_file_permissions_etc_gshadow_0:tst:1" version="3" check="all" comment="Testing mode of /etc/gshadow" check_existence="none_exist" state_operator="AND">
+      <unix:object object_ref="oval:ssg-object_file_permissions_etc_gshadow_0:obj:1" />
+    </unix:file_test>
+    <unix:file_test id="oval:ssg-test_file_permissions_etc_shadow_0:tst:1" version="3" check="all" comment="Testing mode of /etc/shadow" check_existence="none_exist" state_operator="AND">
+      <unix:object object_ref="oval:ssg-object_file_permissions_etc_shadow_0:obj:1" />
+    </unix:file_test>
     <ind:textfilecontent54_test id="oval:ssg-test_env_reset_sudoers:tst:1" version="1" check="all" comment="env_reset exists in /etc/sudoers or /etc/sudoers.d/" state_operator="AND">
       <ind:object object_ref="oval:ssg-object_env_reset_sudoers:obj:1" />
     </ind:textfilecontent54_test>
@@ -457,6 +557,36 @@
       <ind:pattern operation="pattern match">^\s*ucredit[\s]*=[\s]*(-?\d+)(?:[\s]|$)</ind:pattern>
       <ind:instance datatype="int" operation="greater than or equal">1</ind:instance>
     </ind:textfilecontent54_object>
+    <unix:file_object id="oval:ssg-object_file_groupowner_etc_gshadow_0:obj:1" version="1" comment="/etc/gshadow">
+      <unix:filepath>/etc/gshadow</unix:filepath>
+      <oval-def:filter action="exclude">oval:ssg-symlink_file_groupowner_etc_gshadow_uid_0:ste:1</oval-def:filter>
+      <oval-def:filter action="exclude">oval:ssg-state_file_groupowner_etc_gshadow_gid_0_0:ste:1</oval-def:filter>
+    </unix:file_object>
+    <unix:file_object id="oval:ssg-object_file_groupowner_etc_shadow_0:obj:1" version="1" comment="/etc/shadow">
+      <unix:filepath>/etc/shadow</unix:filepath>
+      <oval-def:filter action="exclude">oval:ssg-symlink_file_groupowner_etc_shadow_uid_0:ste:1</oval-def:filter>
+      <oval-def:filter action="exclude">oval:ssg-state_file_groupowner_etc_shadow_gid_0_0:ste:1</oval-def:filter>
+    </unix:file_object>
+    <unix:file_object id="oval:ssg-object_file_owner_etc_gshadow_0:obj:1" version="1" comment="/etc/gshadow">
+      <unix:filepath>/etc/gshadow</unix:filepath>
+      <oval-def:filter action="exclude">oval:ssg-symlink_file_owner_etc_gshadow_uid_0:ste:1</oval-def:filter>
+      <oval-def:filter action="exclude">oval:ssg-state_file_owner_etc_gshadow_uid_0_0:ste:1</oval-def:filter>
+    </unix:file_object>
+    <unix:file_object id="oval:ssg-object_file_owner_etc_shadow_0:obj:1" version="1" comment="/etc/shadow">
+      <unix:filepath>/etc/shadow</unix:filepath>
+      <oval-def:filter action="exclude">oval:ssg-symlink_file_owner_etc_shadow_uid_0:ste:1</oval-def:filter>
+      <oval-def:filter action="exclude">oval:ssg-state_file_owner_etc_shadow_uid_0_0:ste:1</oval-def:filter>
+    </unix:file_object>
+    <unix:file_object id="oval:ssg-object_file_permissions_etc_gshadow_0:obj:1" version="1" comment="/etc/gshadow">
+      <unix:filepath>/etc/gshadow</unix:filepath>
+      <oval-def:filter action="exclude">oval:ssg-exclude_symlinks__etc_gshadow:ste:1</oval-def:filter>
+      <oval-def:filter action="exclude">oval:ssg-state_file_permissions_etc_gshadow_0_mode_0000or_stricter_:ste:1</oval-def:filter>
+    </unix:file_object>
+    <unix:file_object id="oval:ssg-object_file_permissions_etc_shadow_0:obj:1" version="1" comment="/etc/shadow">
+      <unix:filepath>/etc/shadow</unix:filepath>
+      <oval-def:filter action="exclude">oval:ssg-exclude_symlinks__etc_shadow:ste:1</oval-def:filter>
+      <oval-def:filter action="exclude">oval:ssg-state_file_permissions_etc_shadow_0_mode_0000or_stricter_:ste:1</oval-def:filter>
+    </unix:file_object>
     <ind:textfilecontent54_object id="oval:ssg-object_env_reset_sudoers:obj:1" version="1">
       <ind:filepath operation="pattern match">^/etc/sudoers(|\.d/.*)$</ind:filepath>
       <ind:pattern operation="pattern match">^[\s]*Defaults[\s]*\benv_reset.*$</ind:pattern>
@@ -530,6 +660,64 @@
     <ind:textfilecontent54_state id="oval:ssg-state_password_pam_ucredit:ste:1" version="3" operator="AND">
       <ind:subexpression datatype="int" operation="less than or equal" var_ref="oval:ssg-var_password_pam_ucredit:var:1" />
     </ind:textfilecontent54_state>
+    <unix:file_state id="oval:ssg-state_file_groupowner_etc_gshadow_gid_0_0:ste:1" version="1" operator="AND">
+      <unix:group_id datatype="int">0</unix:group_id>
+    </unix:file_state>
+    <unix:file_state id="oval:ssg-symlink_file_groupowner_etc_gshadow_uid_0:ste:1" version="1" operator="AND">
+      <unix:type operation="equals">symbolic link</unix:type>
+    </unix:file_state>
+    <unix:file_state id="oval:ssg-state_file_groupowner_etc_shadow_gid_0_0:ste:1" version="1" operator="AND">
+      <unix:group_id datatype="int">0</unix:group_id>
+    </unix:file_state>
+    <unix:file_state id="oval:ssg-symlink_file_groupowner_etc_shadow_uid_0:ste:1" version="1" operator="AND">
+      <unix:type operation="equals">symbolic link</unix:type>
+    </unix:file_state>
+    <unix:file_state id="oval:ssg-state_file_owner_etc_gshadow_uid_0_0:ste:1" version="1" operator="AND">
+      <unix:user_id datatype="int">0</unix:user_id>
+    </unix:file_state>
+    <unix:file_state id="oval:ssg-symlink_file_owner_etc_gshadow_uid_0:ste:1" version="1" operator="AND">
+      <unix:type operation="equals">symbolic link</unix:type>
+    </unix:file_state>
+    <unix:file_state id="oval:ssg-state_file_owner_etc_shadow_uid_0_0:ste:1" version="1" operator="AND">
+      <unix:user_id datatype="int">0</unix:user_id>
+    </unix:file_state>
+    <unix:file_state id="oval:ssg-symlink_file_owner_etc_shadow_uid_0:ste:1" version="1" operator="AND">
+      <unix:type operation="equals">symbolic link</unix:type>
+    </unix:file_state>
+    <unix:file_state id="oval:ssg-state_file_permissions_etc_gshadow_0_mode_0000or_stricter_:ste:1" version="3" operator="AND">
+      <unix:suid datatype="boolean">false</unix:suid>
+      <unix:sgid datatype="boolean">false</unix:sgid>
+      <unix:sticky datatype="boolean">false</unix:sticky>
+      <unix:uread datatype="boolean">false</unix:uread>
+      <unix:uwrite datatype="boolean">false</unix:uwrite>
+      <unix:uexec datatype="boolean">false</unix:uexec>
+      <unix:gread datatype="boolean">false</unix:gread>
+      <unix:gwrite datatype="boolean">false</unix:gwrite>
+      <unix:gexec datatype="boolean">false</unix:gexec>
+      <unix:oread datatype="boolean">false</unix:oread>
+      <unix:owrite datatype="boolean">false</unix:owrite>
+      <unix:oexec datatype="boolean">false</unix:oexec>
+    </unix:file_state>
+    <unix:file_state id="oval:ssg-exclude_symlinks__etc_gshadow:ste:1" version="1" operator="AND">
+      <unix:type operation="equals">symbolic link</unix:type>
+    </unix:file_state>
+    <unix:file_state id="oval:ssg-state_file_permissions_etc_shadow_0_mode_0000or_stricter_:ste:1" version="3" operator="AND">
+      <unix:suid datatype="boolean">false</unix:suid>
+      <unix:sgid datatype="boolean">false</unix:sgid>
+      <unix:sticky datatype="boolean">false</unix:sticky>
+      <unix:uread datatype="boolean">false</unix:uread>
+      <unix:uwrite datatype="boolean">false</unix:uwrite>
+      <unix:uexec datatype="boolean">false</unix:uexec>
+      <unix:gread datatype="boolean">false</unix:gread>
+      <unix:gwrite datatype="boolean">false</unix:gwrite>
+      <unix:gexec datatype="boolean">false</unix:gexec>
+      <unix:oread datatype="boolean">false</unix:oread>
+      <unix:owrite datatype="boolean">false</unix:owrite>
+      <unix:oexec datatype="boolean">false</unix:oexec>
+    </unix:file_state>
+    <unix:file_state id="oval:ssg-exclude_symlinks__etc_shadow:ste:1" version="1" operator="AND">
+      <unix:type operation="equals">symbolic link</unix:type>
+    </unix:file_state>
     <ind:textfilecontent54_state id="oval:ssg-state_umask_sudoers:ste:1" version="1" operator="AND">
       <ind:subexpression datatype="string" operation="equals" var_ref="oval:ssg-var_sudo_umask:var:1" />
     </ind:textfilecontent54_state>

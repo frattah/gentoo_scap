@@ -66,11 +66,11 @@ other parties, and makes no guarantees, expressed or implied, about its
 quality, reliability, or any other characteristic.
 </div></div></div></div></div><div id="profileinfo"><h2>Profile Information</h2><div class="row"><div class="col-md-5 well well-lg horizontal-scroll"><table class="table table-bordered"><tr><th>Profile Title</th><td>ANSSI-BP-028</td></tr><tr><th>Profile ID</th><td>xccdf_org.ssgproject.content_profile_anssi_bp28</td></tr></table></div><div class="col-md-3"><h4>CPE Platforms</h4><ul class="list-group"><li class="list-group-item"><span class="label label-default" title="CPE platform cpe:/o:gentoo:linux is applicable to this Benchmark">cpe:/o:gentoo:linux</span></li></ul></div></div></div><div id="revisionhistory"><h2>Revision History</h2><p>Current version: <strong>0.1.73</strong></p><ul><li><strong>draft</strong>
                     (as of 2024-06-04)
-                </li></ul></div><h2>Table of Contents</h2><ol><li><a href="#xccdf_org.ssgproject.content_group_system">System Settings</a><ol><li><a href="#xccdf_org.ssgproject.content_group_software">Installing and Maintaining Software</a></li><li><a href="#xccdf_org.ssgproject.content_group_accounts">Account and Access Control</a></li></ol></li></ol><div id="guide-tree"><h2>Checklist</h2><table class="treetable table table-bordered"><tbody><tr data-tt-id="children-xccdf_org.ssgproject.content_benchmark_GENTOO"><td style="padding-left: 0px" id="xccdf_org.ssgproject.content_benchmark_GENTOO"><span class="label label-default">Group</span>  
+                </li></ul></div><h2>Table of Contents</h2><ol><li><a href="#xccdf_org.ssgproject.content_group_system">System Settings</a><ol><li><a href="#xccdf_org.ssgproject.content_group_software">Installing and Maintaining Software</a></li><li><a href="#xccdf_org.ssgproject.content_group_accounts">Account and Access Control</a></li><li><a href="#xccdf_org.ssgproject.content_group_permissions">File Permissions and Masks</a></li></ol></li></ol><div id="guide-tree"><h2>Checklist</h2><table class="treetable table table-bordered"><tbody><tr data-tt-id="children-xccdf_org.ssgproject.content_benchmark_GENTOO"><td style="padding-left: 0px" id="xccdf_org.ssgproject.content_benchmark_GENTOO"><span class="label label-default">Group</span>  
                 Guide to the Secure Configuration of Gentoo
-                          <small>Group contains 10 groups and 16 rules</small></td></tr><tr data-tt-id="children-xccdf_org.ssgproject.content_group_system" data-tt-parent-id="children-xccdf_org.ssgproject.content_benchmark_GENTOO"><td style="padding-left: 19px" id="xccdf_org.ssgproject.content_group_system"><span class="label label-default">Group</span>  
+                          <small>Group contains 13 groups and 22 rules</small></td></tr><tr data-tt-id="children-xccdf_org.ssgproject.content_group_system" data-tt-parent-id="children-xccdf_org.ssgproject.content_benchmark_GENTOO"><td style="padding-left: 19px" id="xccdf_org.ssgproject.content_group_system"><span class="label label-default">Group</span>  
                 System Settings
-                          <small>Group contains 9 groups and 16 rules</small></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_group_system" class="guide-tree-inner-node guide-tree-inner-node-id-xccdf_org.ssgproject.content_group_system" data-tt-parent-id="children-xccdf_org.ssgproject.content_benchmark_GENTOO"><td style="padding-left: 19px"><div><a class="small" href="#xccdf_org.ssgproject.content_group_system">[ref]</a>  
+                          <small>Group contains 12 groups and 22 rules</small></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_group_system" class="guide-tree-inner-node guide-tree-inner-node-id-xccdf_org.ssgproject.content_group_system" data-tt-parent-id="children-xccdf_org.ssgproject.content_benchmark_GENTOO"><td style="padding-left: 19px"><div><a class="small" href="#xccdf_org.ssgproject.content_group_system">[ref]</a>  
                         Contains rules that check correct system settings.</div></td></tr><tr data-tt-id="children-xccdf_org.ssgproject.content_group_software" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_system"><td style="padding-left: 38px" id="xccdf_org.ssgproject.content_group_software"><span class="label label-default">Group</span>  
                 Installing and Maintaining Software
                           <small>Group contains 1 group and 6 rules</small></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_group_software" class="guide-tree-inner-node guide-tree-inner-node-id-xccdf_org.ssgproject.content_group_software" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_system"><td style="padding-left: 38px"><div><a class="small" href="#xccdf_org.ssgproject.content_group_software">[ref]</a>  
@@ -2372,6 +2372,274 @@ fi
   - medium_severity
   - no_reboot_needed
   - restrict_strategy
+</code></pre></div></div></td></tr></tbody></table></td></tr><tr data-tt-id="children-xccdf_org.ssgproject.content_group_permissions" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_system"><td style="padding-left: 38px" id="xccdf_org.ssgproject.content_group_permissions"><span class="label label-default">Group</span>  
+                File Permissions and Masks
+                          <small>Group contains 2 groups and 6 rules</small></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_group_permissions" class="guide-tree-inner-node guide-tree-inner-node-id-xccdf_org.ssgproject.content_group_permissions" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_system"><td style="padding-left: 38px"><div><a class="small" href="#xccdf_org.ssgproject.content_group_permissions">[ref]</a>  
+                        Traditional Unix security relies heavily on file and
+directory permissions to prevent unauthorized users from reading or
+modifying files to which they should not have access.
+<br>
+      <br>
+Several of the commands in this section search filesystems
+for files or directories with certain characteristics, and are
+intended to be run on every local partition on a given system.
+When the variable <i>PART</i> appears in one of the commands below,
+it means that the command is intended to be run repeatedly, with the
+name of each local partition substituted for <i>PART</i> in turn.
+<br>
+      <br>
+The following command prints a list of all xfs partitions on the local
+system, which is the default filesystem for Gentoo
+installations:
+<pre>$ mount -t xfs | awk '{print $3}'</pre>
+For any systems that use a different
+local filesystem type, modify this command as appropriate.</div></td></tr><tr data-tt-id="children-xccdf_org.ssgproject.content_group_files" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_permissions"><td style="padding-left: 57px" id="xccdf_org.ssgproject.content_group_files"><span class="label label-default">Group</span>  
+                Verify Permissions on Important Files and
+Directories
+                          <small>Group contains 1 group and 6 rules</small></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_group_files" class="guide-tree-inner-node guide-tree-inner-node-id-xccdf_org.ssgproject.content_group_files" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_permissions"><td style="padding-left: 57px"><div><a class="small" href="#xccdf_org.ssgproject.content_group_files">[ref]</a>  
+                        Permissions for many files on a system must be set
+restrictively to ensure sensitive information is properly protected.
+This section discusses important
+permission restrictions which can be verified
+to ensure that no harmful discrepancies have
+arisen.</div></td></tr><tr data-tt-id="children-xccdf_org.ssgproject.content_group_permissions_important_account_files" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_files"><td style="padding-left: 76px" id="xccdf_org.ssgproject.content_group_permissions_important_account_files"><span class="label label-default">Group</span>  
+                Verify Permissions on Files with Local Account Information and Credentials
+                          <small>Group contains 6 rules</small></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_group_permissions_important_account_files" class="guide-tree-inner-node guide-tree-inner-node-id-xccdf_org.ssgproject.content_group_permissions_important_account_files" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_files"><td style="padding-left: 76px"><div><a class="small" href="#xccdf_org.ssgproject.content_group_permissions_important_account_files">[ref]</a>  
+                        The default restrictive permissions for files which act as
+important security databases such as <code>passwd</code>, <code>shadow</code>,
+<code>group</code>, and <code>gshadow</code> files must be maintained.  Many utilities
+need read access to the <code>passwd</code> file in order to function properly, but
+read access to the <code>shadow</code> file allows malicious attacks against system
+passwords, and should never be enabled.</div></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_rule_file_groupowner_etc_gshadow" class="guide-tree-leaf guide-tree-leaf-id-xccdf_org.ssgproject.content_rule_file_groupowner_etc_gshadow" id="guide-tree-leaf-id50" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_permissions_important_account_files"><td style="padding-left: 95px"><table class="table table-striped table-bordered"><tbody><tr><td colspan="2"><h4 id="xccdf_org.ssgproject.content_rule_file_groupowner_etc_gshadow"><span class="label label-default">Rule</span>  
+                                Verify Group Who Owns gshadow File
+                                  <a class="small" href="#xccdf_org.ssgproject.content_rule_file_groupowner_etc_gshadow">[ref]</a></h4></td></tr><tr><td colspan="2"><div class="description"> To properly set the group owner of <code>/etc/gshadow</code>, run the command: <pre>$ sudo chgrp root /etc/gshadow</pre>
+        </div></td></tr><tr><td><span class="label label-primary">Rationale:</span></td><td><div class="rationale">The <code>/etc/gshadow</code> file contains group password hashes. Protection of this file
+is critical for system security.</div></td></tr><tr><td><span class="label label-warning">Severity:</span> </td><td><div class="severity">medium</div></td></tr><tr><td><span class="label label-primary">Rule ID:</span></td><td>xccdf_org.ssgproject.content_rule_file_groupowner_etc_gshadow</td></tr><tr><td><span class="label label-default" title="Provide a reference to a document or resource where the user can learn more about the subject of the Rule or Group.">References:</span></td><td class="identifiers"><table class="table table-striped table-bordered"><tr><td><a href="https://www.cisecurity.org/controls/">cis-csc</a></td><td>12, 13, 14, 15, 16, 18, 3, 5</td></tr><tr><td><a href="https://www.isaca.org/resources/cobit">cobit5</a></td><td>APO01.06, DSS05.04, DSS05.07, DSS06.02</td></tr><tr><td><a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">isa-62443-2009</a></td><td>4.3.3.7.3</td></tr><tr><td><a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">isa-62443-2013</a></td><td>SR 2.1, SR 5.2</td></tr><tr><td><a href="https://www.iso.org/contents/data/standard/05/45/54534.html">iso27001-2013</a></td><td>A.10.1.1, A.11.1.4, A.11.1.5, A.11.2.1, A.13.1.1, A.13.1.3, A.13.2.1, A.13.2.3, A.13.2.4, A.14.1.2, A.14.1.3, A.6.1.2, A.7.1.1, A.7.1.2, A.7.3.1, A.8.2.2, A.8.2.3, A.9.1.1, A.9.1.2, A.9.2.3, A.9.4.1, A.9.4.4, A.9.4.5</td></tr><tr><td><a href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">nerc-cip</a></td><td>CIP-003-8 R5.1.1, CIP-003-8 R5.3, CIP-004-6 R2.3, CIP-007-3 R2.1, CIP-007-3 R2.2, CIP-007-3 R2.3, CIP-007-3 R5.1, CIP-007-3 R5.1.1, CIP-007-3 R5.1.2</td></tr><tr><td><a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">nist</a></td><td>CM-6(a), AC-6(1)</td></tr><tr><td><a href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">nist-csf</a></td><td>PR.AC-4, PR.DS-5</td></tr><tr><td><a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">os-srg</a></td><td>SRG-OS-000480-GPOS-00227</td></tr><tr><td><a href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">anssi</a></td><td>R50</td></tr></table></td></tr><tr><td colspan="2"><div class="remediation-description"><a class="btn btn-success" data-toggle="collapse" data-target="#id51" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Shell script ⇲</a><br><div class="panel-collapse collapse" id="id51"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>configure</td></tr></table><pre><code>chgrp 0 /etc/gshadow
+</code></pre></div><a class="btn btn-success" data-toggle="collapse" data-target="#id52" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Ansible snippet ⇲</a><br><div class="panel-collapse collapse" id="id52"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>configure</td></tr></table><pre><code>- name: Test for existence /etc/gshadow
+  stat:
+    path: /etc/gshadow
+  register: file_exists
+  tags:
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - configure_strategy
+  - file_groupowner_etc_gshadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+
+- name: Ensure group owner 0 on /etc/gshadow
+  file:
+    path: /etc/gshadow
+    group: '0'
+  when: file_exists.stat is defined and file_exists.stat.exists
+  tags:
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - configure_strategy
+  - file_groupowner_etc_gshadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+</code></pre></div></div></td></tr></tbody></table></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_rule_file_groupowner_etc_shadow" class="guide-tree-leaf guide-tree-leaf-id-xccdf_org.ssgproject.content_rule_file_groupowner_etc_shadow" id="guide-tree-leaf-id53" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_permissions_important_account_files"><td style="padding-left: 95px"><table class="table table-striped table-bordered"><tbody><tr><td colspan="2"><h4 id="xccdf_org.ssgproject.content_rule_file_groupowner_etc_shadow"><span class="label label-default">Rule</span>  
+                                Verify Group Who Owns shadow File
+                                  <a class="small" href="#xccdf_org.ssgproject.content_rule_file_groupowner_etc_shadow">[ref]</a></h4></td></tr><tr><td colspan="2"><div class="description"> To properly set the group owner of <code>/etc/shadow</code>, run the command: <pre>$ sudo chgrp root /etc/shadow</pre>
+        </div></td></tr><tr><td><span class="label label-primary">Rationale:</span></td><td><div class="rationale">The <code>/etc/shadow</code> file stores password hashes. Protection of this file is
+critical for system security.</div></td></tr><tr><td><span class="label label-warning">Severity:</span> </td><td><div class="severity">medium</div></td></tr><tr><td><span class="label label-primary">Rule ID:</span></td><td>xccdf_org.ssgproject.content_rule_file_groupowner_etc_shadow</td></tr><tr><td><span class="label label-default" title="Provide a reference to a document or resource where the user can learn more about the subject of the Rule or Group.">References:</span></td><td class="identifiers"><table class="table table-striped table-bordered"><tr><td><a href="https://www.cisecurity.org/controls/">cis-csc</a></td><td>12, 13, 14, 15, 16, 18, 3, 5</td></tr><tr><td><a href="https://www.fbi.gov/file-repository/cjis-security-policy-v5_5_20160601-2-1.pdf">cjis</a></td><td>5.5.2.2</td></tr><tr><td><a href="https://www.isaca.org/resources/cobit">cobit5</a></td><td>APO01.06, DSS05.04, DSS05.07, DSS06.02</td></tr><tr><td><a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">isa-62443-2009</a></td><td>4.3.3.7.3</td></tr><tr><td><a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">isa-62443-2013</a></td><td>SR 2.1, SR 5.2</td></tr><tr><td><a href="https://www.iso.org/contents/data/standard/05/45/54534.html">iso27001-2013</a></td><td>A.10.1.1, A.11.1.4, A.11.1.5, A.11.2.1, A.13.1.1, A.13.1.3, A.13.2.1, A.13.2.3, A.13.2.4, A.14.1.2, A.14.1.3, A.6.1.2, A.7.1.1, A.7.1.2, A.7.3.1, A.8.2.2, A.8.2.3, A.9.1.1, A.9.1.2, A.9.2.3, A.9.4.1, A.9.4.4, A.9.4.5</td></tr><tr><td><a href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">nerc-cip</a></td><td>CIP-003-8 R5.1.1, CIP-003-8 R5.3, CIP-004-6 R2.3, CIP-007-3 R2.1, CIP-007-3 R2.2, CIP-007-3 R2.3, CIP-007-3 R5.1, CIP-007-3 R5.1.1, CIP-007-3 R5.1.2</td></tr><tr><td><a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">nist</a></td><td>CM-6(a), AC-6(1)</td></tr><tr><td><a href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">nist-csf</a></td><td>PR.AC-4, PR.DS-5</td></tr><tr><td><a href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">pcidss</a></td><td>Req-8.7.c</td></tr><tr><td><a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">os-srg</a></td><td>SRG-OS-000480-GPOS-00227</td></tr><tr><td><a href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">anssi</a></td><td>R50</td></tr></table></td></tr><tr><td colspan="2"><div class="remediation-description"><a class="btn btn-success" data-toggle="collapse" data-target="#id54" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Shell script ⇲</a><br><div class="panel-collapse collapse" id="id54"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>configure</td></tr></table><pre><code>chgrp 0 /etc/shadow
+</code></pre></div><a class="btn btn-success" data-toggle="collapse" data-target="#id55" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Ansible snippet ⇲</a><br><div class="panel-collapse collapse" id="id55"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>configure</td></tr></table><pre><code>- name: Test for existence /etc/shadow
+  stat:
+    path: /etc/shadow
+  register: file_exists
+  tags:
+  - CJIS-5.5.2.2
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-8.7.c
+  - configure_strategy
+  - file_groupowner_etc_shadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+
+- name: Ensure group owner 0 on /etc/shadow
+  file:
+    path: /etc/shadow
+    group: '0'
+  when: file_exists.stat is defined and file_exists.stat.exists
+  tags:
+  - CJIS-5.5.2.2
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-8.7.c
+  - configure_strategy
+  - file_groupowner_etc_shadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+</code></pre></div></div></td></tr></tbody></table></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_rule_file_owner_etc_gshadow" class="guide-tree-leaf guide-tree-leaf-id-xccdf_org.ssgproject.content_rule_file_owner_etc_gshadow" id="guide-tree-leaf-id56" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_permissions_important_account_files"><td style="padding-left: 95px"><table class="table table-striped table-bordered"><tbody><tr><td colspan="2"><h4 id="xccdf_org.ssgproject.content_rule_file_owner_etc_gshadow"><span class="label label-default">Rule</span>  
+                                Verify User Who Owns gshadow File
+                                  <a class="small" href="#xccdf_org.ssgproject.content_rule_file_owner_etc_gshadow">[ref]</a></h4></td></tr><tr><td colspan="2"><div class="description"> To properly set the owner of <code>/etc/gshadow</code>, run the command: <pre>$ sudo chown root /etc/gshadow </pre>
+        </div></td></tr><tr><td><span class="label label-primary">Rationale:</span></td><td><div class="rationale">The <code>/etc/gshadow</code> file contains group password hashes. Protection of this file
+is critical for system security.</div></td></tr><tr><td><span class="label label-warning">Severity:</span> </td><td><div class="severity">medium</div></td></tr><tr><td><span class="label label-primary">Rule ID:</span></td><td>xccdf_org.ssgproject.content_rule_file_owner_etc_gshadow</td></tr><tr><td><span class="label label-default" title="Provide a reference to a document or resource where the user can learn more about the subject of the Rule or Group.">References:</span></td><td class="identifiers"><table class="table table-striped table-bordered"><tr><td><a href="https://www.cisecurity.org/controls/">cis-csc</a></td><td>12, 13, 14, 15, 16, 18, 3, 5</td></tr><tr><td><a href="https://www.isaca.org/resources/cobit">cobit5</a></td><td>APO01.06, DSS05.04, DSS05.07, DSS06.02</td></tr><tr><td><a href="https://public.cyber.mil/stigs/cci/">disa</a></td><td>CCI-002223</td></tr><tr><td><a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">isa-62443-2009</a></td><td>4.3.3.7.3</td></tr><tr><td><a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">isa-62443-2013</a></td><td>SR 2.1, SR 5.2</td></tr><tr><td><a href="https://www.iso.org/contents/data/standard/05/45/54534.html">iso27001-2013</a></td><td>A.10.1.1, A.11.1.4, A.11.1.5, A.11.2.1, A.13.1.1, A.13.1.3, A.13.2.1, A.13.2.3, A.13.2.4, A.14.1.2, A.14.1.3, A.6.1.2, A.7.1.1, A.7.1.2, A.7.3.1, A.8.2.2, A.8.2.3, A.9.1.1, A.9.1.2, A.9.2.3, A.9.4.1, A.9.4.4, A.9.4.5</td></tr><tr><td><a href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">nerc-cip</a></td><td>CIP-003-8 R5.1.1, CIP-003-8 R5.3, CIP-004-6 R2.3, CIP-007-3 R2.1, CIP-007-3 R2.2, CIP-007-3 R2.3, CIP-007-3 R5.1, CIP-007-3 R5.1.1, CIP-007-3 R5.1.2</td></tr><tr><td><a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">nist</a></td><td>CM-6(a), AC-6(1)</td></tr><tr><td><a href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">nist-csf</a></td><td>PR.AC-4, PR.DS-5</td></tr><tr><td><a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">os-srg</a></td><td>SRG-OS-000480-GPOS-00227</td></tr><tr><td><a href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">anssi</a></td><td>R50</td></tr></table></td></tr><tr><td colspan="2"><div class="remediation-description"><a class="btn btn-success" data-toggle="collapse" data-target="#id57" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Shell script ⇲</a><br><div class="panel-collapse collapse" id="id57"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>configure</td></tr></table><pre><code>chown 0 /etc/gshadow
+</code></pre></div><a class="btn btn-success" data-toggle="collapse" data-target="#id58" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Ansible snippet ⇲</a><br><div class="panel-collapse collapse" id="id58"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>configure</td></tr></table><pre><code>- name: Test for existence /etc/gshadow
+  stat:
+    path: /etc/gshadow
+  register: file_exists
+  tags:
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - configure_strategy
+  - file_owner_etc_gshadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+
+- name: Ensure owner 0 on /etc/gshadow
+  file:
+    path: /etc/gshadow
+    owner: '0'
+  when: file_exists.stat is defined and file_exists.stat.exists
+  tags:
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - configure_strategy
+  - file_owner_etc_gshadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+</code></pre></div></div></td></tr></tbody></table></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_rule_file_owner_etc_shadow" class="guide-tree-leaf guide-tree-leaf-id-xccdf_org.ssgproject.content_rule_file_owner_etc_shadow" id="guide-tree-leaf-id59" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_permissions_important_account_files"><td style="padding-left: 95px"><table class="table table-striped table-bordered"><tbody><tr><td colspan="2"><h4 id="xccdf_org.ssgproject.content_rule_file_owner_etc_shadow"><span class="label label-default">Rule</span>  
+                                Verify User Who Owns shadow File
+                                  <a class="small" href="#xccdf_org.ssgproject.content_rule_file_owner_etc_shadow">[ref]</a></h4></td></tr><tr><td colspan="2"><div class="description"> To properly set the owner of <code>/etc/shadow</code>, run the command: <pre>$ sudo chown root /etc/shadow </pre>
+        </div></td></tr><tr><td><span class="label label-primary">Rationale:</span></td><td><div class="rationale">The <code>/etc/shadow</code> file contains the list of local
+system accounts and stores password hashes. Protection of this file is
+critical for system security. Failure to give ownership of this file
+to root provides the designated owner with access to sensitive information
+which could weaken the system security posture.</div></td></tr><tr><td><span class="label label-warning">Severity:</span> </td><td><div class="severity">medium</div></td></tr><tr><td><span class="label label-primary">Rule ID:</span></td><td>xccdf_org.ssgproject.content_rule_file_owner_etc_shadow</td></tr><tr><td><span class="label label-default" title="Provide a reference to a document or resource where the user can learn more about the subject of the Rule or Group.">References:</span></td><td class="identifiers"><table class="table table-striped table-bordered"><tr><td><a href="https://www.cisecurity.org/controls/">cis-csc</a></td><td>12, 13, 14, 15, 16, 18, 3, 5</td></tr><tr><td><a href="https://www.fbi.gov/file-repository/cjis-security-policy-v5_5_20160601-2-1.pdf">cjis</a></td><td>5.5.2.2</td></tr><tr><td><a href="https://www.isaca.org/resources/cobit">cobit5</a></td><td>APO01.06, DSS05.04, DSS05.07, DSS06.02</td></tr><tr><td><a href="https://public.cyber.mil/stigs/cci/">disa</a></td><td>CCI-002223</td></tr><tr><td><a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">isa-62443-2009</a></td><td>4.3.3.7.3</td></tr><tr><td><a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">isa-62443-2013</a></td><td>SR 2.1, SR 5.2</td></tr><tr><td><a href="https://www.iso.org/contents/data/standard/05/45/54534.html">iso27001-2013</a></td><td>A.10.1.1, A.11.1.4, A.11.1.5, A.11.2.1, A.13.1.1, A.13.1.3, A.13.2.1, A.13.2.3, A.13.2.4, A.14.1.2, A.14.1.3, A.6.1.2, A.7.1.1, A.7.1.2, A.7.3.1, A.8.2.2, A.8.2.3, A.9.1.1, A.9.1.2, A.9.2.3, A.9.4.1, A.9.4.4, A.9.4.5</td></tr><tr><td><a href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">nerc-cip</a></td><td>CIP-003-8 R5.1.1, CIP-003-8 R5.3, CIP-004-6 R2.3, CIP-007-3 R2.1, CIP-007-3 R2.2, CIP-007-3 R2.3, CIP-007-3 R5.1, CIP-007-3 R5.1.1, CIP-007-3 R5.1.2</td></tr><tr><td><a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">nist</a></td><td>CM-6(a), AC-6(1)</td></tr><tr><td><a href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">nist-csf</a></td><td>PR.AC-4, PR.DS-5</td></tr><tr><td><a href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">pcidss</a></td><td>Req-8.7.c</td></tr><tr><td><a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">os-srg</a></td><td>SRG-OS-000480-GPOS-00227</td></tr><tr><td><a href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">anssi</a></td><td>R50</td></tr></table></td></tr><tr><td colspan="2"><div class="remediation-description"><a class="btn btn-success" data-toggle="collapse" data-target="#id60" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Shell script ⇲</a><br><div class="panel-collapse collapse" id="id60"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>configure</td></tr></table><pre><code>chown 0 /etc/shadow
+</code></pre></div><a class="btn btn-success" data-toggle="collapse" data-target="#id61" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Ansible snippet ⇲</a><br><div class="panel-collapse collapse" id="id61"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>configure</td></tr></table><pre><code>- name: Test for existence /etc/shadow
+  stat:
+    path: /etc/shadow
+  register: file_exists
+  tags:
+  - CJIS-5.5.2.2
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-8.7.c
+  - configure_strategy
+  - file_owner_etc_shadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+
+- name: Ensure owner 0 on /etc/shadow
+  file:
+    path: /etc/shadow
+    owner: '0'
+  when: file_exists.stat is defined and file_exists.stat.exists
+  tags:
+  - CJIS-5.5.2.2
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-8.7.c
+  - configure_strategy
+  - file_owner_etc_shadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+</code></pre></div></div></td></tr></tbody></table></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_rule_file_permissions_etc_gshadow" class="guide-tree-leaf guide-tree-leaf-id-xccdf_org.ssgproject.content_rule_file_permissions_etc_gshadow" id="guide-tree-leaf-id62" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_permissions_important_account_files"><td style="padding-left: 95px"><table class="table table-striped table-bordered"><tbody><tr><td colspan="2"><h4 id="xccdf_org.ssgproject.content_rule_file_permissions_etc_gshadow"><span class="label label-default">Rule</span>  
+                                Verify Permissions on gshadow File
+                                  <a class="small" href="#xccdf_org.ssgproject.content_rule_file_permissions_etc_gshadow">[ref]</a></h4></td></tr><tr><td colspan="2"><div class="description">
+To properly set the permissions of <code>/etc/gshadow</code>, run the command:
+<pre>$ sudo chmod 0000 /etc/gshadow</pre>
+        </div></td></tr><tr><td><span class="label label-primary">Rationale:</span></td><td><div class="rationale">The <code>/etc/gshadow</code> file contains group password hashes. Protection of this file
+is critical for system security.</div></td></tr><tr><td><span class="label label-warning">Severity:</span> </td><td><div class="severity">medium</div></td></tr><tr><td><span class="label label-primary">Rule ID:</span></td><td>xccdf_org.ssgproject.content_rule_file_permissions_etc_gshadow</td></tr><tr><td><span class="label label-default" title="Provide a reference to a document or resource where the user can learn more about the subject of the Rule or Group.">References:</span></td><td class="identifiers"><table class="table table-striped table-bordered"><tr><td><a href="https://www.cisecurity.org/controls/">cis-csc</a></td><td>12, 13, 14, 15, 16, 18, 3, 5</td></tr><tr><td><a href="https://www.isaca.org/resources/cobit">cobit5</a></td><td>APO01.06, DSS05.04, DSS05.07, DSS06.02</td></tr><tr><td><a href="https://public.cyber.mil/stigs/cci/">disa</a></td><td>CCI-002223</td></tr><tr><td><a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">isa-62443-2009</a></td><td>4.3.3.7.3</td></tr><tr><td><a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">isa-62443-2013</a></td><td>SR 2.1, SR 5.2</td></tr><tr><td><a href="https://www.iso.org/contents/data/standard/05/45/54534.html">iso27001-2013</a></td><td>A.10.1.1, A.11.1.4, A.11.1.5, A.11.2.1, A.13.1.1, A.13.1.3, A.13.2.1, A.13.2.3, A.13.2.4, A.14.1.2, A.14.1.3, A.6.1.2, A.7.1.1, A.7.1.2, A.7.3.1, A.8.2.2, A.8.2.3, A.9.1.1, A.9.1.2, A.9.2.3, A.9.4.1, A.9.4.4, A.9.4.5</td></tr><tr><td><a href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">nerc-cip</a></td><td>CIP-003-8 R5.1.1, CIP-003-8 R5.3, CIP-004-6 R2.3, CIP-007-3 R2.1, CIP-007-3 R2.2, CIP-007-3 R2.3, CIP-007-3 R5.1, CIP-007-3 R5.1.1, CIP-007-3 R5.1.2</td></tr><tr><td><a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">nist</a></td><td>CM-6(a), AC-6(1)</td></tr><tr><td><a href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">nist-csf</a></td><td>PR.AC-4, PR.DS-5</td></tr><tr><td><a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">os-srg</a></td><td>SRG-OS-000480-GPOS-00227</td></tr><tr><td><a href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">anssi</a></td><td>R50</td></tr></table></td></tr><tr><td colspan="2"><div class="remediation-description"><a class="btn btn-success" data-toggle="collapse" data-target="#id63" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Shell script ⇲</a><br><div class="panel-collapse collapse" id="id63"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>configure</td></tr></table><pre><code>
+
+
+
+
+chmod u-xwrs,g-xwrs,o-xwrt /etc/gshadow
+</code></pre></div><a class="btn btn-success" data-toggle="collapse" data-target="#id64" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Ansible snippet ⇲</a><br><div class="panel-collapse collapse" id="id64"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>configure</td></tr></table><pre><code>- name: Test for existence /etc/gshadow
+  stat:
+    path: /etc/gshadow
+  register: file_exists
+  tags:
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - configure_strategy
+  - file_permissions_etc_gshadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+
+- name: Ensure permission u-xwrs,g-xwrs,o-xwrt on /etc/gshadow
+  file:
+    path: /etc/gshadow
+    mode: u-xwrs,g-xwrs,o-xwrt
+  when: file_exists.stat is defined and file_exists.stat.exists
+  tags:
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - configure_strategy
+  - file_permissions_etc_gshadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+</code></pre></div></div></td></tr></tbody></table></td></tr><tr data-tt-id="xccdf_org.ssgproject.content_rule_file_permissions_etc_shadow" class="guide-tree-leaf guide-tree-leaf-id-xccdf_org.ssgproject.content_rule_file_permissions_etc_shadow" id="guide-tree-leaf-id65" data-tt-parent-id="children-xccdf_org.ssgproject.content_group_permissions_important_account_files"><td style="padding-left: 95px"><table class="table table-striped table-bordered"><tbody><tr><td colspan="2"><h4 id="xccdf_org.ssgproject.content_rule_file_permissions_etc_shadow"><span class="label label-default">Rule</span>  
+                                Verify Permissions on shadow File
+                                  <a class="small" href="#xccdf_org.ssgproject.content_rule_file_permissions_etc_shadow">[ref]</a></h4></td></tr><tr><td colspan="2"><div class="description">
+To properly set the permissions of <code>/etc/shadow</code>, run the command:
+<pre>$ sudo chmod 0000 /etc/shadow</pre>
+        </div></td></tr><tr><td><span class="label label-primary">Rationale:</span></td><td><div class="rationale">The <code>/etc/shadow</code> file contains the list of local
+system accounts and stores password hashes. Protection of this file is
+critical for system security. Failure to give ownership of this file
+to root provides the designated owner with access to sensitive information
+which could weaken the system security posture.</div></td></tr><tr><td><span class="label label-warning">Severity:</span> </td><td><div class="severity">medium</div></td></tr><tr><td><span class="label label-primary">Rule ID:</span></td><td>xccdf_org.ssgproject.content_rule_file_permissions_etc_shadow</td></tr><tr><td><span class="label label-default" title="Provide a reference to a document or resource where the user can learn more about the subject of the Rule or Group.">References:</span></td><td class="identifiers"><table class="table table-striped table-bordered"><tr><td><a href="https://www.cisecurity.org/controls/">cis-csc</a></td><td>12, 13, 14, 15, 16, 18, 3, 5</td></tr><tr><td><a href="https://www.fbi.gov/file-repository/cjis-security-policy-v5_5_20160601-2-1.pdf">cjis</a></td><td>5.5.2.2</td></tr><tr><td><a href="https://www.isaca.org/resources/cobit">cobit5</a></td><td>APO01.06, DSS05.04, DSS05.07, DSS06.02</td></tr><tr><td><a href="https://public.cyber.mil/stigs/cci/">disa</a></td><td>CCI-002223</td></tr><tr><td><a href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">isa-62443-2009</a></td><td>4.3.3.7.3</td></tr><tr><td><a href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">isa-62443-2013</a></td><td>SR 2.1, SR 5.2</td></tr><tr><td><a href="https://www.iso.org/contents/data/standard/05/45/54534.html">iso27001-2013</a></td><td>A.10.1.1, A.11.1.4, A.11.1.5, A.11.2.1, A.13.1.1, A.13.1.3, A.13.2.1, A.13.2.3, A.13.2.4, A.14.1.2, A.14.1.3, A.6.1.2, A.7.1.1, A.7.1.2, A.7.3.1, A.8.2.2, A.8.2.3, A.9.1.1, A.9.1.2, A.9.2.3, A.9.4.1, A.9.4.4, A.9.4.5</td></tr><tr><td><a href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">nerc-cip</a></td><td>CIP-003-8 R5.1.1, CIP-003-8 R5.3, CIP-004-6 R2.3, CIP-007-3 R2.1, CIP-007-3 R2.2, CIP-007-3 R2.3, CIP-007-3 R5.1, CIP-007-3 R5.1.1, CIP-007-3 R5.1.2</td></tr><tr><td><a href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">nist</a></td><td>CM-6(a), AC-6(1)</td></tr><tr><td><a href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">nist-csf</a></td><td>PR.AC-4, PR.DS-5</td></tr><tr><td><a href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">pcidss</a></td><td>Req-8.7.c</td></tr><tr><td><a href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">os-srg</a></td><td>SRG-OS-000480-GPOS-00227</td></tr><tr><td><a href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">anssi</a></td><td>R50</td></tr></table></td></tr><tr><td colspan="2"><div class="remediation-description"><a class="btn btn-success" data-toggle="collapse" data-target="#id66" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Shell script ⇲</a><br><div class="panel-collapse collapse" id="id66"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>configure</td></tr></table><pre><code>
+
+
+
+
+chmod u-xwrs,g-xwrs,o-xwrt /etc/shadow
+</code></pre></div><a class="btn btn-success" data-toggle="collapse" data-target="#id67" tabindex="0" role="button" aria-expanded="false" title="Activate to reveal" href="#!">Remediation Ansible snippet ⇲</a><br><div class="panel-collapse collapse" id="id67"><table class="table table-striped table-bordered table-condensed"><tr><th>Complexity:</th><td>low</td></tr><tr><th>Disruption:</th><td>low</td></tr><tr><th>Reboot:</th><td>false</td></tr><tr><th>Strategy:</th><td>configure</td></tr></table><pre><code>- name: Test for existence /etc/shadow
+  stat:
+    path: /etc/shadow
+  register: file_exists
+  tags:
+  - CJIS-5.5.2.2
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-8.7.c
+  - configure_strategy
+  - file_permissions_etc_shadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+
+- name: Ensure permission u-xwrs,g-xwrs,o-xwrt on /etc/shadow
+  file:
+    path: /etc/shadow
+    mode: u-xwrs,g-xwrs,o-xwrt
+  when: file_exists.stat is defined and file_exists.stat.exists
+  tags:
+  - CJIS-5.5.2.2
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-8.7.c
+  - configure_strategy
+  - file_permissions_etc_shadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
 </code></pre></div></div></td></tr></tbody></table></td></tr></tbody></table></div><div id="rear-matter"><div class="row top-spacer-10"><div class="col-md-12 well well-lg"><div class="rear-matter">Red Hat and Red Hat Enterprise Linux are either registered
 trademarks or trademarks of Red Hat, Inc. in the United States and other
 countries. All other names are registered trademarks or trademarks of their

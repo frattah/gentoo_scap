@@ -141,3 +141,15 @@
     ansible.builtin.lineinfile:
       path: /etc/sudoers.d/anssi_falgs
       line: Defaults  umask={{ var_sudo_umask }}
+
+  - name: Set /etc/shadow file permissions
+    ansible.builtin.file:
+      path: /etc/shadow
+      state: touch
+      mode: '0000'
+
+  - name: Set /etc/gshadow file permissions
+    ansible.builtin.file:
+      path: /etc/gshadow
+      state: touch
+      mode: '0000'

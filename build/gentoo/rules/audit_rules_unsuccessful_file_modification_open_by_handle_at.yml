@@ -316,8 +316,8 @@ inherited_platforms: !!set
     package[audit]: null
 cpe_platform_names: !!set {}
 inherited_cpe_platform_names: !!set
-    package_audit: null
     machine: null
+    package_audit: null
 bash_conditional: null
 fixes: {}
 title: Record Unsuccessful Access Attempts to Files - open_by_handle_at

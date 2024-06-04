@@ -261,8 +261,8 @@ inherited_platforms: !!set
     package[audit]: null
 cpe_platform_names: !!set {}
 inherited_cpe_platform_names: !!set
-    package_audit: null
     machine: null
+    package_audit: null
 bash_conditional: null
 fixes: {}
 title: Ensure auditd Collects Information on Kernel Module Loading and Unloading -

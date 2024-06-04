@@ -406,6 +406,12 @@ respective companies.</xccdf-1.2:rear-matter>
     <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_accounts_umask_etc_bashrc" selected="true" />
     <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_accounts_umask_etc_login_defs" selected="true" />
     <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_accounts_umask_etc_profile" selected="true" />
+    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_file_groupowner_etc_gshadow" selected="true" />
+    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_file_groupowner_etc_shadow" selected="true" />
+    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_file_owner_etc_gshadow" selected="true" />
+    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_file_owner_etc_shadow" selected="true" />
+    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_file_permissions_etc_gshadow" selected="true" />
+    <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_file_permissions_etc_shadow" selected="true" />
     <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_sudo_add_env_reset" selected="true" />
     <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_sudo_add_ignore_dot" selected="true" />
     <xccdf-1.2:select idref="xccdf_org.ssgproject.content_rule_sudo_add_noexec" selected="true" />
@@ -3574,6 +3580,671 @@ fi
             </xccdf-1.2:check>
             <xccdf-1.2:check system="http://scap.nist.gov/schema/ocil/2">
               <xccdf-1.2:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-accounts_umask_etc_profile_ocil:questionnaire:1" />
+            </xccdf-1.2:check>
+          </xccdf-1.2:Rule>
+        </xccdf-1.2:Group>
+      </xccdf-1.2:Group>
+    </xccdf-1.2:Group>
+    <xccdf-1.2:Group id="xccdf_org.ssgproject.content_group_permissions">
+      <xccdf-1.2:title>File Permissions and Masks</xccdf-1.2:title>
+      <xccdf-1.2:description>Traditional Unix security relies heavily on file and
+directory permissions to prevent unauthorized users from reading or
+modifying files to which they should not have access.
+<html:br />
+        <html:br />
+Several of the commands in this section search filesystems
+for files or directories with certain characteristics, and are
+intended to be run on every local partition on a given system.
+When the variable <html:i>PART</html:i> appears in one of the commands below,
+it means that the command is intended to be run repeatedly, with the
+name of each local partition substituted for <html:i>PART</html:i> in turn.
+<html:br />
+        <html:br />
+The following command prints a list of all xfs partitions on the local
+system, which is the default filesystem for Gentoo
+installations:
+<html:pre>$ mount -t xfs | awk '{print $3}'</html:pre>
+For any systems that use a different
+local filesystem type, modify this command as appropriate.</xccdf-1.2:description>
+      <xccdf-1.2:Group id="xccdf_org.ssgproject.content_group_files">
+        <xccdf-1.2:title>Verify Permissions on Important Files and
+Directories</xccdf-1.2:title>
+        <xccdf-1.2:description>Permissions for many files on a system must be set
+restrictively to ensure sensitive information is properly protected.
+This section discusses important
+permission restrictions which can be verified
+to ensure that no harmful discrepancies have
+arisen.</xccdf-1.2:description>
+        <xccdf-1.2:Group id="xccdf_org.ssgproject.content_group_permissions_important_account_files">
+          <xccdf-1.2:title>Verify Permissions on Files with Local Account Information and Credentials</xccdf-1.2:title>
+          <xccdf-1.2:description>The default restrictive permissions for files which act as
+important security databases such as <html:code>passwd</html:code>, <html:code>shadow</html:code>,
+<html:code>group</html:code>, and <html:code>gshadow</html:code> files must be maintained.  Many utilities
+need read access to the <html:code>passwd</html:code> file in order to function properly, but
+read access to the <html:code>shadow</html:code> file allows malicious attacks against system
+passwords, and should never be enabled.</xccdf-1.2:description>
+          <xccdf-1.2:Rule selected="false" id="xccdf_org.ssgproject.content_rule_file_groupowner_etc_gshadow" severity="medium">
+            <xccdf-1.2:title>Verify Group Who Owns gshadow File</xccdf-1.2:title>
+            <xccdf-1.2:description> To properly set the group owner of <html:code>/etc/gshadow</html:code>, run the command: <html:pre>$ sudo chgrp root /etc/gshadow</html:pre>
+            </xccdf-1.2:description>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">12</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">13</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">14</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">15</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">16</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">18</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">5</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">APO01.06</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.04</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.07</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS06.02</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.7.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 2.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 5.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.10.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.1.4</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.1.5</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.2.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.1.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.4</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.14.1.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.14.1.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.6.1.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.1.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.3.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.8.2.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.8.2.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.1.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.4</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.5</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-003-8 R5.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-003-8 R5.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-004-6 R2.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">CM-6(a)</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">AC-6(1)</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-4</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.DS-5</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000480-GPOS-00227</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R50</xccdf-1.2:reference>
+            <xccdf-1.2:rationale>The <html:code>/etc/gshadow</html:code> file contains group password hashes. Protection of this file
+is critical for system security.</xccdf-1.2:rationale>
+            <xccdf-1.2:fix system="urn:xccdf:fix:script:sh" id="file_groupowner_etc_gshadow" complexity="low" disruption="low" reboot="false" strategy="configure">chgrp 0 /etc/gshadow
+</xccdf-1.2:fix>
+            <xccdf-1.2:fix system="urn:xccdf:fix:script:ansible" id="file_groupowner_etc_gshadow" complexity="low" disruption="low" reboot="false" strategy="configure">- name: Test for existence /etc/gshadow
+  stat:
+    path: /etc/gshadow
+  register: file_exists
+  tags:
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - configure_strategy
+  - file_groupowner_etc_gshadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+
+- name: Ensure group owner 0 on /etc/gshadow
+  file:
+    path: /etc/gshadow
+    group: '0'
+  when: file_exists.stat is defined and file_exists.stat.exists
+  tags:
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - configure_strategy
+  - file_groupowner_etc_gshadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+</xccdf-1.2:fix>
+            <xccdf-1.2:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+              <xccdf-1.2:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-file_groupowner_etc_gshadow:def:1" />
+            </xccdf-1.2:check>
+            <xccdf-1.2:check system="http://scap.nist.gov/schema/ocil/2">
+              <xccdf-1.2:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-file_groupowner_etc_gshadow_ocil:questionnaire:1" />
+            </xccdf-1.2:check>
+          </xccdf-1.2:Rule>
+          <xccdf-1.2:Rule selected="false" id="xccdf_org.ssgproject.content_rule_file_groupowner_etc_shadow" severity="medium">
+            <xccdf-1.2:title>Verify Group Who Owns shadow File</xccdf-1.2:title>
+            <xccdf-1.2:description> To properly set the group owner of <html:code>/etc/shadow</html:code>, run the command: <html:pre>$ sudo chgrp root /etc/shadow</html:pre>
+            </xccdf-1.2:description>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">12</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">13</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">14</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">15</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">16</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">18</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">5</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.fbi.gov/file-repository/cjis-security-policy-v5_5_20160601-2-1.pdf">5.5.2.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">APO01.06</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.04</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.07</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS06.02</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.7.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 2.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 5.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.10.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.1.4</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.1.5</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.2.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.1.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.4</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.14.1.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.14.1.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.6.1.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.1.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.3.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.8.2.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.8.2.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.1.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.4</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.5</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-003-8 R5.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-003-8 R5.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-004-6 R2.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">CM-6(a)</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">AC-6(1)</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-4</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.DS-5</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">Req-8.7.c</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000480-GPOS-00227</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R50</xccdf-1.2:reference>
+            <xccdf-1.2:rationale>The <html:code>/etc/shadow</html:code> file stores password hashes. Protection of this file is
+critical for system security.</xccdf-1.2:rationale>
+            <xccdf-1.2:fix system="urn:xccdf:fix:script:sh" id="file_groupowner_etc_shadow" complexity="low" disruption="low" reboot="false" strategy="configure">chgrp 0 /etc/shadow
+</xccdf-1.2:fix>
+            <xccdf-1.2:fix system="urn:xccdf:fix:script:ansible" id="file_groupowner_etc_shadow" complexity="low" disruption="low" reboot="false" strategy="configure">- name: Test for existence /etc/shadow
+  stat:
+    path: /etc/shadow
+  register: file_exists
+  tags:
+  - CJIS-5.5.2.2
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-8.7.c
+  - configure_strategy
+  - file_groupowner_etc_shadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+
+- name: Ensure group owner 0 on /etc/shadow
+  file:
+    path: /etc/shadow
+    group: '0'
+  when: file_exists.stat is defined and file_exists.stat.exists
+  tags:
+  - CJIS-5.5.2.2
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-8.7.c
+  - configure_strategy
+  - file_groupowner_etc_shadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+</xccdf-1.2:fix>
+            <xccdf-1.2:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+              <xccdf-1.2:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-file_groupowner_etc_shadow:def:1" />
+            </xccdf-1.2:check>
+            <xccdf-1.2:check system="http://scap.nist.gov/schema/ocil/2">
+              <xccdf-1.2:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-file_groupowner_etc_shadow_ocil:questionnaire:1" />
+            </xccdf-1.2:check>
+          </xccdf-1.2:Rule>
+          <xccdf-1.2:Rule selected="false" id="xccdf_org.ssgproject.content_rule_file_owner_etc_gshadow" severity="medium">
+            <xccdf-1.2:title>Verify User Who Owns gshadow File</xccdf-1.2:title>
+            <xccdf-1.2:description> To properly set the owner of <html:code>/etc/gshadow</html:code>, run the command: <html:pre>$ sudo chown root /etc/gshadow </html:pre>
+            </xccdf-1.2:description>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">12</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">13</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">14</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">15</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">16</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">18</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">5</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">APO01.06</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.04</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.07</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS06.02</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://public.cyber.mil/stigs/cci/">CCI-002223</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.7.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 2.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 5.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.10.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.1.4</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.1.5</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.2.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.1.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.4</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.14.1.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.14.1.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.6.1.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.1.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.3.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.8.2.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.8.2.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.1.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.4</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.5</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-003-8 R5.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-003-8 R5.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-004-6 R2.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">CM-6(a)</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">AC-6(1)</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-4</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.DS-5</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000480-GPOS-00227</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R50</xccdf-1.2:reference>
+            <xccdf-1.2:rationale>The <html:code>/etc/gshadow</html:code> file contains group password hashes. Protection of this file
+is critical for system security.</xccdf-1.2:rationale>
+            <xccdf-1.2:fix system="urn:xccdf:fix:script:sh" id="file_owner_etc_gshadow" complexity="low" disruption="low" reboot="false" strategy="configure">chown 0 /etc/gshadow
+</xccdf-1.2:fix>
+            <xccdf-1.2:fix system="urn:xccdf:fix:script:ansible" id="file_owner_etc_gshadow" complexity="low" disruption="low" reboot="false" strategy="configure">- name: Test for existence /etc/gshadow
+  stat:
+    path: /etc/gshadow
+  register: file_exists
+  tags:
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - configure_strategy
+  - file_owner_etc_gshadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+
+- name: Ensure owner 0 on /etc/gshadow
+  file:
+    path: /etc/gshadow
+    owner: '0'
+  when: file_exists.stat is defined and file_exists.stat.exists
+  tags:
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - configure_strategy
+  - file_owner_etc_gshadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+</xccdf-1.2:fix>
+            <xccdf-1.2:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+              <xccdf-1.2:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-file_owner_etc_gshadow:def:1" />
+            </xccdf-1.2:check>
+            <xccdf-1.2:check system="http://scap.nist.gov/schema/ocil/2">
+              <xccdf-1.2:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-file_owner_etc_gshadow_ocil:questionnaire:1" />
+            </xccdf-1.2:check>
+          </xccdf-1.2:Rule>
+          <xccdf-1.2:Rule selected="false" id="xccdf_org.ssgproject.content_rule_file_owner_etc_shadow" severity="medium">
+            <xccdf-1.2:title>Verify User Who Owns shadow File</xccdf-1.2:title>
+            <xccdf-1.2:description> To properly set the owner of <html:code>/etc/shadow</html:code>, run the command: <html:pre>$ sudo chown root /etc/shadow </html:pre>
+            </xccdf-1.2:description>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">12</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">13</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">14</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">15</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">16</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">18</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">5</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.fbi.gov/file-repository/cjis-security-policy-v5_5_20160601-2-1.pdf">5.5.2.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">APO01.06</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.04</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.07</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS06.02</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://public.cyber.mil/stigs/cci/">CCI-002223</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.7.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 2.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 5.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.10.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.1.4</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.1.5</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.2.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.1.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.4</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.14.1.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.14.1.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.6.1.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.1.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.3.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.8.2.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.8.2.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.1.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.4</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.5</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-003-8 R5.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-003-8 R5.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-004-6 R2.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">CM-6(a)</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">AC-6(1)</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-4</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.DS-5</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">Req-8.7.c</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000480-GPOS-00227</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R50</xccdf-1.2:reference>
+            <xccdf-1.2:rationale>The <html:code>/etc/shadow</html:code> file contains the list of local
+system accounts and stores password hashes. Protection of this file is
+critical for system security. Failure to give ownership of this file
+to root provides the designated owner with access to sensitive information
+which could weaken the system security posture.</xccdf-1.2:rationale>
+            <xccdf-1.2:fix system="urn:xccdf:fix:script:sh" id="file_owner_etc_shadow" complexity="low" disruption="low" reboot="false" strategy="configure">chown 0 /etc/shadow
+</xccdf-1.2:fix>
+            <xccdf-1.2:fix system="urn:xccdf:fix:script:ansible" id="file_owner_etc_shadow" complexity="low" disruption="low" reboot="false" strategy="configure">- name: Test for existence /etc/shadow
+  stat:
+    path: /etc/shadow
+  register: file_exists
+  tags:
+  - CJIS-5.5.2.2
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-8.7.c
+  - configure_strategy
+  - file_owner_etc_shadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+
+- name: Ensure owner 0 on /etc/shadow
+  file:
+    path: /etc/shadow
+    owner: '0'
+  when: file_exists.stat is defined and file_exists.stat.exists
+  tags:
+  - CJIS-5.5.2.2
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-8.7.c
+  - configure_strategy
+  - file_owner_etc_shadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+</xccdf-1.2:fix>
+            <xccdf-1.2:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+              <xccdf-1.2:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-file_owner_etc_shadow:def:1" />
+            </xccdf-1.2:check>
+            <xccdf-1.2:check system="http://scap.nist.gov/schema/ocil/2">
+              <xccdf-1.2:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-file_owner_etc_shadow_ocil:questionnaire:1" />
+            </xccdf-1.2:check>
+          </xccdf-1.2:Rule>
+          <xccdf-1.2:Rule selected="false" id="xccdf_org.ssgproject.content_rule_file_permissions_etc_gshadow" severity="medium">
+            <xccdf-1.2:title>Verify Permissions on gshadow File</xccdf-1.2:title>
+            <xccdf-1.2:description>
+To properly set the permissions of <html:code>/etc/gshadow</html:code>, run the command:
+<html:pre>$ sudo chmod 0000 /etc/gshadow</html:pre>
+            </xccdf-1.2:description>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">12</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">13</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">14</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">15</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">16</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">18</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">5</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">APO01.06</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.04</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.07</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS06.02</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://public.cyber.mil/stigs/cci/">CCI-002223</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.7.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 2.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 5.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.10.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.1.4</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.1.5</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.2.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.1.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.4</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.14.1.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.14.1.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.6.1.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.1.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.3.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.8.2.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.8.2.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.1.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.4</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.5</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-003-8 R5.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-003-8 R5.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-004-6 R2.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">CM-6(a)</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">AC-6(1)</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-4</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.DS-5</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000480-GPOS-00227</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R50</xccdf-1.2:reference>
+            <xccdf-1.2:rationale>The <html:code>/etc/gshadow</html:code> file contains group password hashes. Protection of this file
+is critical for system security.</xccdf-1.2:rationale>
+            <xccdf-1.2:fix system="urn:xccdf:fix:script:sh" id="file_permissions_etc_gshadow" complexity="low" disruption="low" reboot="false" strategy="configure">
+
+
+
+
+chmod u-xwrs,g-xwrs,o-xwrt /etc/gshadow
+</xccdf-1.2:fix>
+            <xccdf-1.2:fix system="urn:xccdf:fix:script:ansible" id="file_permissions_etc_gshadow" complexity="low" disruption="low" reboot="false" strategy="configure">- name: Test for existence /etc/gshadow
+  stat:
+    path: /etc/gshadow
+  register: file_exists
+  tags:
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - configure_strategy
+  - file_permissions_etc_gshadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+
+- name: Ensure permission u-xwrs,g-xwrs,o-xwrt on /etc/gshadow
+  file:
+    path: /etc/gshadow
+    mode: u-xwrs,g-xwrs,o-xwrt
+  when: file_exists.stat is defined and file_exists.stat.exists
+  tags:
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - configure_strategy
+  - file_permissions_etc_gshadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+</xccdf-1.2:fix>
+            <xccdf-1.2:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+              <xccdf-1.2:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-file_permissions_etc_gshadow:def:1" />
+            </xccdf-1.2:check>
+            <xccdf-1.2:check system="http://scap.nist.gov/schema/ocil/2">
+              <xccdf-1.2:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-file_permissions_etc_gshadow_ocil:questionnaire:1" />
+            </xccdf-1.2:check>
+          </xccdf-1.2:Rule>
+          <xccdf-1.2:Rule selected="false" id="xccdf_org.ssgproject.content_rule_file_permissions_etc_shadow" severity="medium">
+            <xccdf-1.2:title>Verify Permissions on shadow File</xccdf-1.2:title>
+            <xccdf-1.2:description>
+To properly set the permissions of <html:code>/etc/shadow</html:code>, run the command:
+<html:pre>$ sudo chmod 0000 /etc/shadow</html:pre>
+            </xccdf-1.2:description>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">12</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">13</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">14</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">15</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">16</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">18</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.cisecurity.org/controls/">5</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.fbi.gov/file-repository/cjis-security-policy-v5_5_20160601-2-1.pdf">5.5.2.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">APO01.06</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.04</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS05.07</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isaca.org/resources/cobit">DSS06.02</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://public.cyber.mil/stigs/cci/">CCI-002223</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isa.org/products/isa-62443-2-1-2009-security-for-industrial-automat">4.3.3.7.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 2.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.isa.org/products/ansi-isa-62443-3-3-99-03-03-2013-security-for-indu">SR 5.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.10.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.1.4</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.1.5</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.11.2.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.1.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.13.2.4</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.14.1.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.14.1.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.6.1.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.1.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.7.3.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.8.2.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.8.2.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.1.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.2.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.4</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.iso.org/contents/data/standard/05/45/54534.html">A.9.4.5</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-003-8 R5.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-003-8 R5.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-004-6 R2.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R2.3</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1.1</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.nerc.com/pa/Stand/Standard%20Purpose%20Statement%20DL/US_Standard_One-Stop-Shop.xlsx">CIP-007-3 R5.1.2</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">CM-6(a)</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-53r4.pdf">AC-6(1)</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.AC-4</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf">PR.DS-5</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf">Req-8.7.c</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://public.cyber.mil/stigs/downloads/?_dl_facet_stigs=operating-systems%2Cgeneral-purpose-os">SRG-OS-000480-GPOS-00227</xccdf-1.2:reference>
+            <xccdf-1.2:reference href="https://cyber.gouv.fr/sites/default/files/document/linux_configuration-en-v2.pdf">R50</xccdf-1.2:reference>
+            <xccdf-1.2:rationale>The <html:code>/etc/shadow</html:code> file contains the list of local
+system accounts and stores password hashes. Protection of this file is
+critical for system security. Failure to give ownership of this file
+to root provides the designated owner with access to sensitive information
+which could weaken the system security posture.</xccdf-1.2:rationale>
+            <xccdf-1.2:fix system="urn:xccdf:fix:script:sh" id="file_permissions_etc_shadow" complexity="low" disruption="low" reboot="false" strategy="configure">
+
+
+
+
+chmod u-xwrs,g-xwrs,o-xwrt /etc/shadow
+</xccdf-1.2:fix>
+            <xccdf-1.2:fix system="urn:xccdf:fix:script:ansible" id="file_permissions_etc_shadow" complexity="low" disruption="low" reboot="false" strategy="configure">- name: Test for existence /etc/shadow
+  stat:
+    path: /etc/shadow
+  register: file_exists
+  tags:
+  - CJIS-5.5.2.2
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-8.7.c
+  - configure_strategy
+  - file_permissions_etc_shadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+
+- name: Ensure permission u-xwrs,g-xwrs,o-xwrt on /etc/shadow
+  file:
+    path: /etc/shadow
+    mode: u-xwrs,g-xwrs,o-xwrt
+  when: file_exists.stat is defined and file_exists.stat.exists
+  tags:
+  - CJIS-5.5.2.2
+  - NIST-800-53-AC-6(1)
+  - NIST-800-53-CM-6(a)
+  - PCI-DSS-Req-8.7.c
+  - configure_strategy
+  - file_permissions_etc_shadow
+  - low_complexity
+  - low_disruption
+  - medium_severity
+  - no_reboot_needed
+</xccdf-1.2:fix>
+            <xccdf-1.2:check system="http://oval.mitre.org/XMLSchema/oval-definitions-5">
+              <xccdf-1.2:check-content-ref href="ssg-gentoo-oval.xml" name="oval:ssg-file_permissions_etc_shadow:def:1" />
+            </xccdf-1.2:check>
+            <xccdf-1.2:check system="http://scap.nist.gov/schema/ocil/2">
+              <xccdf-1.2:check-content-ref href="ssg-gentoo-ocil.xml" name="ocil:ssg-file_permissions_etc_shadow_ocil:questionnaire:1" />
             </xccdf-1.2:check>
           </xccdf-1.2:Rule>
         </xccdf-1.2:Group>

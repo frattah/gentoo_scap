@@ -23,9 +23,9 @@
 ###############################################################################
 
 ###############################################################################
-# BEGIN fix (1 / 16) for 'xccdf_org.ssgproject.content_rule_sudo_add_env_reset'
+# BEGIN fix (1 / 22) for 'xccdf_org.ssgproject.content_rule_sudo_add_env_reset'
 ###############################################################################
-(>&2 echo "Remediating rule 1/16: 'xccdf_org.ssgproject.content_rule_sudo_add_env_reset'")
+(>&2 echo "Remediating rule 1/22: 'xccdf_org.ssgproject.content_rule_sudo_add_env_reset'")
 
 if /usr/sbin/visudo -qcf /etc/sudoers; then
     cp /etc/sudoers /etc/sudoers.bak
@@ -50,9 +50,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_sudo_add_env_reset'
 
 ###############################################################################
-# BEGIN fix (2 / 16) for 'xccdf_org.ssgproject.content_rule_sudo_add_ignore_dot'
+# BEGIN fix (2 / 22) for 'xccdf_org.ssgproject.content_rule_sudo_add_ignore_dot'
 ###############################################################################
-(>&2 echo "Remediating rule 2/16: 'xccdf_org.ssgproject.content_rule_sudo_add_ignore_dot'")
+(>&2 echo "Remediating rule 2/22: 'xccdf_org.ssgproject.content_rule_sudo_add_ignore_dot'")
 
 if /usr/sbin/visudo -qcf /etc/sudoers; then
     cp /etc/sudoers /etc/sudoers.bak
@@ -77,9 +77,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_sudo_add_ignore_dot'
 
 ###############################################################################
-# BEGIN fix (3 / 16) for 'xccdf_org.ssgproject.content_rule_sudo_add_noexec'
+# BEGIN fix (3 / 22) for 'xccdf_org.ssgproject.content_rule_sudo_add_noexec'
 ###############################################################################
-(>&2 echo "Remediating rule 3/16: 'xccdf_org.ssgproject.content_rule_sudo_add_noexec'")
+(>&2 echo "Remediating rule 3/22: 'xccdf_org.ssgproject.content_rule_sudo_add_noexec'")
 
 if /usr/sbin/visudo -qcf /etc/sudoers; then
     cp /etc/sudoers /etc/sudoers.bak
@@ -104,9 +104,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_sudo_add_noexec'
 
 ###############################################################################
-# BEGIN fix (4 / 16) for 'xccdf_org.ssgproject.content_rule_sudo_add_requiretty'
+# BEGIN fix (4 / 22) for 'xccdf_org.ssgproject.content_rule_sudo_add_requiretty'
 ###############################################################################
-(>&2 echo "Remediating rule 4/16: 'xccdf_org.ssgproject.content_rule_sudo_add_requiretty'")
+(>&2 echo "Remediating rule 4/22: 'xccdf_org.ssgproject.content_rule_sudo_add_requiretty'")
 
 if /usr/sbin/visudo -qcf /etc/sudoers; then
     cp /etc/sudoers /etc/sudoers.bak
@@ -131,9 +131,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_sudo_add_requiretty'
 
 ###############################################################################
-# BEGIN fix (5 / 16) for 'xccdf_org.ssgproject.content_rule_sudo_add_umask'
+# BEGIN fix (5 / 22) for 'xccdf_org.ssgproject.content_rule_sudo_add_umask'
 ###############################################################################
-(>&2 echo "Remediating rule 5/16: 'xccdf_org.ssgproject.content_rule_sudo_add_umask'")
+(>&2 echo "Remediating rule 5/22: 'xccdf_org.ssgproject.content_rule_sudo_add_umask'")
 
 
 var_sudo_umask='0077'
@@ -169,9 +169,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_sudo_add_umask'
 
 ###############################################################################
-# BEGIN fix (6 / 16) for 'xccdf_org.ssgproject.content_rule_sudo_add_use_pty'
+# BEGIN fix (6 / 22) for 'xccdf_org.ssgproject.content_rule_sudo_add_use_pty'
 ###############################################################################
-(>&2 echo "Remediating rule 6/16: 'xccdf_org.ssgproject.content_rule_sudo_add_use_pty'")
+(>&2 echo "Remediating rule 6/22: 'xccdf_org.ssgproject.content_rule_sudo_add_use_pty'")
 # Remediation is applicable only in certain platforms
 if rpm --quiet -q sudo; then
 
@@ -202,9 +202,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_sudo_add_use_pty'
 
 ###############################################################################
-# BEGIN fix (7 / 16) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_unix_remember'
+# BEGIN fix (7 / 22) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_unix_remember'
 ###############################################################################
-(>&2 echo "Remediating rule 7/16: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_unix_remember'")
+(>&2 echo "Remediating rule 7/22: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_unix_remember'")
 # Remediation is applicable only in certain platforms
 if rpm --quiet -q pam; then
 
@@ -404,9 +404,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_unix_remember'
 
 ###############################################################################
-# BEGIN fix (8 / 16) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit'
+# BEGIN fix (8 / 22) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit'
 ###############################################################################
-(>&2 echo "Remediating rule 8/16: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit'")
+(>&2 echo "Remediating rule 8/22: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit'")
 # Remediation is applicable only in certain platforms
 if rpm --quiet -q pam; then
 
@@ -444,9 +444,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_dcredit'
 
 ###############################################################################
-# BEGIN fix (9 / 16) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit'
+# BEGIN fix (9 / 22) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit'
 ###############################################################################
-(>&2 echo "Remediating rule 9/16: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit'")
+(>&2 echo "Remediating rule 9/22: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit'")
 # Remediation is applicable only in certain platforms
 if rpm --quiet -q pam; then
 
@@ -484,9 +484,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_lcredit'
 
 ###############################################################################
-# BEGIN fix (10 / 16) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen'
+# BEGIN fix (10 / 22) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen'
 ###############################################################################
-(>&2 echo "Remediating rule 10/16: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen'")
+(>&2 echo "Remediating rule 10/22: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen'")
 # Remediation is applicable only in certain platforms
 if rpm --quiet -q pam; then
 
@@ -524,9 +524,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_minlen'
 
 ###############################################################################
-# BEGIN fix (11 / 16) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit'
+# BEGIN fix (11 / 22) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit'
 ###############################################################################
-(>&2 echo "Remediating rule 11/16: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit'")
+(>&2 echo "Remediating rule 11/22: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit'")
 # Remediation is applicable only in certain platforms
 if rpm --quiet -q pam; then
 
@@ -564,9 +564,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ocredit'
 
 ###############################################################################
-# BEGIN fix (12 / 16) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit'
+# BEGIN fix (12 / 22) for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit'
 ###############################################################################
-(>&2 echo "Remediating rule 12/16: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit'")
+(>&2 echo "Remediating rule 12/22: 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit'")
 # Remediation is applicable only in certain platforms
 if rpm --quiet -q pam; then
 
@@ -604,9 +604,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_password_pam_ucredit'
 
 ###############################################################################
-# BEGIN fix (13 / 16) for 'xccdf_org.ssgproject.content_rule_accounts_tmout'
+# BEGIN fix (13 / 22) for 'xccdf_org.ssgproject.content_rule_accounts_tmout'
 ###############################################################################
-(>&2 echo "Remediating rule 13/16: 'xccdf_org.ssgproject.content_rule_accounts_tmout'")
+(>&2 echo "Remediating rule 13/22: 'xccdf_org.ssgproject.content_rule_accounts_tmout'")
 # Remediation is applicable only in certain platforms
 if [ ! -f /.dockerenv ] && [ ! -f /run/.containerenv ]; then
 
@@ -637,9 +637,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_tmout'
 
 ###############################################################################
-# BEGIN fix (14 / 16) for 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_bashrc'
+# BEGIN fix (14 / 22) for 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_bashrc'
 ###############################################################################
-(>&2 echo "Remediating rule 14/16: 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_bashrc'")
+(>&2 echo "Remediating rule 14/22: 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_bashrc'")
 # Remediation is applicable only in certain platforms
 if rpm --quiet -q bash; then
 
@@ -663,9 +663,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_bashrc'
 
 ###############################################################################
-# BEGIN fix (15 / 16) for 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_login_defs'
+# BEGIN fix (15 / 22) for 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_login_defs'
 ###############################################################################
-(>&2 echo "Remediating rule 15/16: 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_login_defs'")
+(>&2 echo "Remediating rule 15/22: 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_login_defs'")
 # Remediation is applicable only in certain platforms
 if rpm --quiet -q shadow-utils; then
 
@@ -699,9 +699,9 @@ fi
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_login_defs'
 
 ###############################################################################
-# BEGIN fix (16 / 16) for 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_profile'
+# BEGIN fix (16 / 22) for 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_profile'
 ###############################################################################
-(>&2 echo "Remediating rule 16/16: 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_profile'")
+(>&2 echo "Remediating rule 16/22: 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_profile'")
 
 var_accounts_user_umask='077'
 
@@ -717,4 +717,62 @@ if ! grep -qrE '^[^#]*umask' /etc/profile*; then
 fi
 
 # END fix for 'xccdf_org.ssgproject.content_rule_accounts_umask_etc_profile'
+
+###############################################################################
+# BEGIN fix (17 / 22) for 'xccdf_org.ssgproject.content_rule_file_groupowner_etc_gshadow'
+###############################################################################
+(>&2 echo "Remediating rule 17/22: 'xccdf_org.ssgproject.content_rule_file_groupowner_etc_gshadow'")
+chgrp 0 /etc/gshadow
+
+# END fix for 'xccdf_org.ssgproject.content_rule_file_groupowner_etc_gshadow'
+
+###############################################################################
+# BEGIN fix (18 / 22) for 'xccdf_org.ssgproject.content_rule_file_groupowner_etc_shadow'
+###############################################################################
+(>&2 echo "Remediating rule 18/22: 'xccdf_org.ssgproject.content_rule_file_groupowner_etc_shadow'")
+chgrp 0 /etc/shadow
+
+# END fix for 'xccdf_org.ssgproject.content_rule_file_groupowner_etc_shadow'
+
+###############################################################################
+# BEGIN fix (19 / 22) for 'xccdf_org.ssgproject.content_rule_file_owner_etc_gshadow'
+###############################################################################
+(>&2 echo "Remediating rule 19/22: 'xccdf_org.ssgproject.content_rule_file_owner_etc_gshadow'")
+chown 0 /etc/gshadow
+
+# END fix for 'xccdf_org.ssgproject.content_rule_file_owner_etc_gshadow'
+
+###############################################################################
+# BEGIN fix (20 / 22) for 'xccdf_org.ssgproject.content_rule_file_owner_etc_shadow'
+###############################################################################
+(>&2 echo "Remediating rule 20/22: 'xccdf_org.ssgproject.content_rule_file_owner_etc_shadow'")
+chown 0 /etc/shadow
+
+# END fix for 'xccdf_org.ssgproject.content_rule_file_owner_etc_shadow'
+
+###############################################################################
+# BEGIN fix (21 / 22) for 'xccdf_org.ssgproject.content_rule_file_permissions_etc_gshadow'
+###############################################################################
+(>&2 echo "Remediating rule 21/22: 'xccdf_org.ssgproject.content_rule_file_permissions_etc_gshadow'")
+
+
+
+
+
+chmod u-xwrs,g-xwrs,o-xwrt /etc/gshadow
+
+# END fix for 'xccdf_org.ssgproject.content_rule_file_permissions_etc_gshadow'
+
+###############################################################################
+# BEGIN fix (22 / 22) for 'xccdf_org.ssgproject.content_rule_file_permissions_etc_shadow'
+###############################################################################
+(>&2 echo "Remediating rule 22/22: 'xccdf_org.ssgproject.content_rule_file_permissions_etc_shadow'")
+
+
+
+
+
+chmod u-xwrs,g-xwrs,o-xwrt /etc/shadow
+
+# END fix for 'xccdf_org.ssgproject.content_rule_file_permissions_etc_shadow'
 

@@ -57,8 +57,8 @@ inherited_platforms: !!set
     package[audit]: null
 cpe_platform_names: !!set {}
 inherited_cpe_platform_names: !!set
-    package_audit: null
     machine: null
+    package_audit: null
 bash_conditional: null
 fixes: {}
 title: Offload audit Logs to External Media

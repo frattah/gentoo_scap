@@ -18,8 +18,8 @@ rules: {}
 platform: ''
 platforms: !!set {}
 inherited_platforms: !!set
-    machine: null
     package[postfix]: null
+    machine: null
 cpe_platform_names: !!set {}
 title: Configure SSL Certificates for Use with SMTP AUTH
 definition_location: /home/fra/gentoo_scap/linux_os/guide/services/mail/postfix_harden_os/postfix_configure_ssl_certs/group.yml
