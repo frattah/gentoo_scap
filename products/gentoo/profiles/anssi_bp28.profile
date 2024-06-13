@@ -24,6 +24,10 @@ selections:
    - var_password_pam_unix_remember=2
    - accounts_tmout
    - var_accounts_tmout=10_min
+   - logind_session_timeout
+   - var_logind_session_timeout=10_minutes
+   - no_direct_root_logins
+   - sshd_disable_root_login
    - accounts_umask_etc_bashrc
    - accounts_umask_etc_login_defs
    - accounts_umask_etc_profile

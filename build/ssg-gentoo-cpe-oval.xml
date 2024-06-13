@@ -4,7 +4,7 @@
     <oval:product_name>build_cpe.py from SCAP Security Guide</oval:product_name>
     <oval:product_version>ssg: [0, 1, 73], python: 3.11.9</oval:product_version>
     <oval:schema_version>5.11</oval:schema_version>
-    <oval:timestamp>2024-06-04T09:17:10</oval:timestamp>
+    <oval:timestamp>2024-06-13T07:08:48</oval:timestamp>
   </oval-def:generator>
   <oval-def:definitions>
     <oval-def:definition id="oval:ssg-installed_env_is_a_container:def:1" version="2" class="inventory">
@@ -58,6 +58,45 @@
       </oval-def:metadata>
       <oval-def:criteria operator="AND">
         <oval-def:criterion comment="Installed operating system is part of the unix family" test_ref="oval:ssg-test_unix_family:tst:1"/>
+      </oval-def:criteria>
+    </oval-def:definition>
+    <oval-def:definition id="oval:ssg-os_linux_ol_gt_or_eq_8_7:def:1" version="1" class="inventory">
+      <oval-def:metadata>
+        <oval-def:title>Operating System is ol</oval-def:title>
+        <oval-def:affected family="unix">
+          <oval-def:platform>Gentoo</oval-def:platform>
+        </oval-def:affected>
+        <oval-def:description>The installed operating system is Oracle Linux</oval-def:description>
+      </oval-def:metadata>
+      <oval-def:criteria operator="AND">
+        <oval-def:criterion comment="The operating system installed on the system is Oracle Linux" test_ref="oval:ssg-test_os_id_is_os_linux_ol_gt_or_eq_8_7:tst:1"/>
+        <oval-def:criterion comment="The operating system Oracle Linux of version greater than or equal 8.7 is installed" test_ref="oval:ssg-test_os_linux_ol_gt_or_eq_8_7_gt_or_eq_8_7:tst:1"/>
+      </oval-def:criteria>
+    </oval-def:definition>
+    <oval-def:definition id="oval:ssg-os_linux_rhel_gt_or_eq_8_7:def:1" version="1" class="inventory">
+      <oval-def:metadata>
+        <oval-def:title>Operating System is rhel</oval-def:title>
+        <oval-def:affected family="unix">
+          <oval-def:platform>Gentoo</oval-def:platform>
+        </oval-def:affected>
+        <oval-def:description>The installed operating system is Red Hat Enterprise Linux</oval-def:description>
+      </oval-def:metadata>
+      <oval-def:criteria operator="AND">
+        <oval-def:criterion comment="The operating system installed on the system is Red Hat Enterprise Linux" test_ref="oval:ssg-test_os_id_is_os_linux_rhel_gt_or_eq_8_7:tst:1"/>
+        <oval-def:criterion comment="The operating system Red Hat Enterprise Linux of version greater than or equal 8.7 is installed" test_ref="oval:ssg-test_os_linux_rhel_gt_or_eq_8_7_gt_or_eq_8_7:tst:1"/>
+      </oval-def:criteria>
+    </oval-def:definition>
+    <oval-def:definition id="oval:ssg-os_linux_rhel_ne_9_0:def:1" version="1" class="inventory">
+      <oval-def:metadata>
+        <oval-def:title>Operating System is rhel</oval-def:title>
+        <oval-def:affected family="unix">
+          <oval-def:platform>Gentoo</oval-def:platform>
+        </oval-def:affected>
+        <oval-def:description>The installed operating system is Red Hat Enterprise Linux</oval-def:description>
+      </oval-def:metadata>
+      <oval-def:criteria operator="AND">
+        <oval-def:criterion comment="The operating system installed on the system is Red Hat Enterprise Linux" test_ref="oval:ssg-test_os_id_is_os_linux_rhel_ne_9_0:tst:1"/>
+        <oval-def:criterion comment="The operating system Red Hat Enterprise Linux of version not equal 9.0 is installed" test_ref="oval:ssg-test_os_linux_rhel_ne_9_0_ne_9_0:tst:1"/>
       </oval-def:criteria>
     </oval-def:definition>
     <oval-def:definition id="oval:ssg-package_bash:def:1" version="1" class="inventory">
@@ -123,6 +162,30 @@
       <ind:object object_ref="oval:ssg-object_unix_family:obj:1"/>
       <ind:state state_ref="oval:ssg-state_unix_family:ste:1"/>
     </ind:family_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_os_id_is_os_linux_ol_gt_or_eq_8_7:tst:1" version="1" check="all" comment="ID in os-release is ol" state_operator="AND">
+      <ind:object object_ref="oval:ssg-obj_os_id_is_os_linux_ol_gt_or_eq_8_7:obj:1"/>
+      <ind:state state_ref="oval:ssg-state_os_id_is_os_linux_ol_gt_or_eq_8_7:ste:1"/>
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_os_linux_ol_gt_or_eq_8_7_gt_or_eq_8_7:tst:1" version="1" check="all" comment="VERSION_ID in os-release is greater than or equal 8.7" state_operator="AND">
+      <ind:object object_ref="oval:ssg-obj_os_linux_ol_gt_or_eq_8_7_gt_or_eq_8_7:obj:1"/>
+      <ind:state state_ref="oval:ssg-state_os_linux_ol_gt_or_eq_8_7_gt_or_eq_8_7:ste:1"/>
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_os_id_is_os_linux_rhel_gt_or_eq_8_7:tst:1" version="1" check="all" comment="ID in os-release is rhel" state_operator="AND">
+      <ind:object object_ref="oval:ssg-obj_os_id_is_os_linux_rhel_gt_or_eq_8_7:obj:1"/>
+      <ind:state state_ref="oval:ssg-state_os_id_is_os_linux_rhel_gt_or_eq_8_7:ste:1"/>
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_os_linux_rhel_gt_or_eq_8_7_gt_or_eq_8_7:tst:1" version="1" check="all" comment="VERSION_ID in os-release is greater than or equal 8.7" state_operator="AND">
+      <ind:object object_ref="oval:ssg-obj_os_linux_rhel_gt_or_eq_8_7_gt_or_eq_8_7:obj:1"/>
+      <ind:state state_ref="oval:ssg-state_os_linux_rhel_gt_or_eq_8_7_gt_or_eq_8_7:ste:1"/>
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_os_id_is_os_linux_rhel_ne_9_0:tst:1" version="1" check="all" comment="ID in os-release is rhel" state_operator="AND">
+      <ind:object object_ref="oval:ssg-obj_os_id_is_os_linux_rhel_ne_9_0:obj:1"/>
+      <ind:state state_ref="oval:ssg-state_os_id_is_os_linux_rhel_ne_9_0:ste:1"/>
+    </ind:textfilecontent54_test>
+    <ind:textfilecontent54_test id="oval:ssg-test_os_linux_rhel_ne_9_0_ne_9_0:tst:1" version="1" check="all" comment="VERSION_ID in os-release is not equal 9.0" state_operator="AND">
+      <ind:object object_ref="oval:ssg-obj_os_linux_rhel_ne_9_0_ne_9_0:obj:1"/>
+      <ind:state state_ref="oval:ssg-state_os_linux_rhel_ne_9_0_ne_9_0:ste:1"/>
+    </ind:textfilecontent54_test>
     <linux:rpminfo_test id="oval:ssg-inventory_test_package_bash_installed:tst:1" version="1" check="all" comment="package bash is installed" check_existence="all_exist" state_operator="AND">
       <linux:object object_ref="oval:ssg-obj_inventory_test_package_bash_installed:obj:1"/>
     </linux:rpminfo_test>
@@ -147,6 +210,36 @@
       <unix:filepath>/etc/gentoo-release</unix:filepath>
     </unix:file_object>
     <ind:family_object id="oval:ssg-object_unix_family:obj:1" version="1"/>
+    <ind:textfilecontent54_object id="oval:ssg-obj_os_id_is_os_linux_ol_gt_or_eq_8_7:obj:1" version="1">
+      <ind:filepath>/etc/os-release</ind:filepath>
+      <ind:pattern operation="pattern match">^ID=["']?(\w+)["']?$</ind:pattern>
+      <ind:instance operation="greater than or equal" datatype="int">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-obj_os_linux_ol_gt_or_eq_8_7_gt_or_eq_8_7:obj:1" version="1">
+      <ind:filepath>/etc/os-release</ind:filepath>
+      <ind:pattern operation="pattern match">^VERSION_ID=["']?([\w.]+)["']?$</ind:pattern>
+      <ind:instance operation="greater than or equal" datatype="int">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-obj_os_id_is_os_linux_rhel_gt_or_eq_8_7:obj:1" version="1">
+      <ind:filepath>/etc/os-release</ind:filepath>
+      <ind:pattern operation="pattern match">^ID=["']?(\w+)["']?$</ind:pattern>
+      <ind:instance operation="greater than or equal" datatype="int">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-obj_os_linux_rhel_gt_or_eq_8_7_gt_or_eq_8_7:obj:1" version="1">
+      <ind:filepath>/etc/os-release</ind:filepath>
+      <ind:pattern operation="pattern match">^VERSION_ID=["']?([\w.]+)["']?$</ind:pattern>
+      <ind:instance operation="greater than or equal" datatype="int">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-obj_os_id_is_os_linux_rhel_ne_9_0:obj:1" version="1">
+      <ind:filepath>/etc/os-release</ind:filepath>
+      <ind:pattern operation="pattern match">^ID=["']?(\w+)["']?$</ind:pattern>
+      <ind:instance operation="greater than or equal" datatype="int">1</ind:instance>
+    </ind:textfilecontent54_object>
+    <ind:textfilecontent54_object id="oval:ssg-obj_os_linux_rhel_ne_9_0_ne_9_0:obj:1" version="1">
+      <ind:filepath>/etc/os-release</ind:filepath>
+      <ind:pattern operation="pattern match">^VERSION_ID=["']?([\w.]+)["']?$</ind:pattern>
+      <ind:instance operation="greater than or equal" datatype="int">1</ind:instance>
+    </ind:textfilecontent54_object>
     <linux:rpminfo_object id="oval:ssg-obj_inventory_test_package_bash_installed:obj:1" version="1">
       <linux:name>bash</linux:name>
     </linux:rpminfo_object>
@@ -164,5 +257,23 @@
     <ind:family_state id="oval:ssg-state_unix_family:ste:1" version="1" operator="AND">
       <ind:family>unix</ind:family>
     </ind:family_state>
+    <ind:textfilecontent54_state id="oval:ssg-state_os_id_is_os_linux_ol_gt_or_eq_8_7:ste:1" version="1" operator="AND">
+      <ind:subexpression operation="pattern match">ol</ind:subexpression>
+    </ind:textfilecontent54_state>
+    <ind:textfilecontent54_state id="oval:ssg-state_os_linux_ol_gt_or_eq_8_7_gt_or_eq_8_7:ste:1" version="1" operator="AND">
+      <ind:subexpression operation="greater than or equal" datatype="version">8.7</ind:subexpression>
+    </ind:textfilecontent54_state>
+    <ind:textfilecontent54_state id="oval:ssg-state_os_id_is_os_linux_rhel_gt_or_eq_8_7:ste:1" version="1" operator="AND">
+      <ind:subexpression operation="pattern match">rhel</ind:subexpression>
+    </ind:textfilecontent54_state>
+    <ind:textfilecontent54_state id="oval:ssg-state_os_linux_rhel_gt_or_eq_8_7_gt_or_eq_8_7:ste:1" version="1" operator="AND">
+      <ind:subexpression operation="greater than or equal" datatype="version">8.7</ind:subexpression>
+    </ind:textfilecontent54_state>
+    <ind:textfilecontent54_state id="oval:ssg-state_os_id_is_os_linux_rhel_ne_9_0:ste:1" version="1" operator="AND">
+      <ind:subexpression operation="pattern match">rhel</ind:subexpression>
+    </ind:textfilecontent54_state>
+    <ind:textfilecontent54_state id="oval:ssg-state_os_linux_rhel_ne_9_0_ne_9_0:ste:1" version="1" operator="AND">
+      <ind:subexpression operation="not equal" datatype="version">9.0</ind:subexpression>
+    </ind:textfilecontent54_state>
   </oval-def:states>
 </oval-def:oval_definitions>

@@ -22,6 +22,9 @@ selections:
 - file_owner_etc_shadow
 - file_permissions_etc_gshadow
 - file_permissions_etc_shadow
+- logind_session_timeout
+- no_direct_root_logins
+- sshd_disable_root_login
 - sudo_add_env_reset
 - sudo_add_ignore_dot
 - sudo_add_noexec
@@ -35,6 +38,7 @@ selections:
 - var_password_pam_lcredit=1
 - var_password_pam_unix_remember=2
 - var_accounts_tmout=10_min
+- var_logind_session_timeout=10_minutes
 - var_accounts_user_umask=077
 - var_sudo_umask=0077
 unselected_groups: []

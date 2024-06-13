@@ -13,6 +13,8 @@
     var_accounts_passwords_pam_faillock_deny: 3
     var_accounts_passwords_pam_faillock_fail_interval: 900
   tasks:
+# Rule: 31
+# To install pwquality you need to disable passwdqc support and is required the pwquality flag
   - name: Add pwquality and -passwdqc flag
     ansible.builtin.lineinfile:
       path: /etc/portage/package.use/pambase
@@ -20,6 +22,7 @@
       create: true
     register: compile_flags
 
+# If the previous task did something is needed to recompile with emerge to ensure the pwquality support
   - name: Emerge pambase
     community.general.portage:
       package: pambase
@@ -75,6 +78,7 @@
       create: true
       line: remember = {{ var_password_pam_unix_remember }}
 
+# Rule: 32
   - name: Set interactive session timeout at {{ var_accounts_tmout }} s
     ansible.builtin.lineinfile:
       path: /etc/profile.d/tmout.sh
